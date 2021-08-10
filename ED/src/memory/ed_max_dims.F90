@@ -40,13 +40,13 @@ module ed_max_dims
    !---------------------------------------------------------------------------------------!
 #if defined(COUPLED)
    integer, parameter :: maxgrds = brams_maxgrds
-   integer, parameter :: nxpmax  = brams_nxpmax 
-   integer, parameter :: nypmax  = brams_nypmax 
-   integer, parameter :: nzpmax  = brams_nzpmax 
-   integer, parameter :: nzgmax  = brams_nzgmax 
-   integer, parameter :: maxdim  = brams_maxdim 
+   integer, parameter :: nxpmax  = brams_nxpmax
+   integer, parameter :: nypmax  = brams_nypmax
+   integer, parameter :: nzpmax  = brams_nzpmax
+   integer, parameter :: nzgmax  = brams_nzgmax
+   integer, parameter :: maxdim  = brams_maxdim
    integer, parameter :: maxdimp = brams_maxdimp
-   integer, parameter :: nxyzpm  = brams_nxyzpm 
+   integer, parameter :: nxyzpm  = brams_nxyzpm
    integer, parameter :: maxmach = brams_maxmach
 #else
    integer, parameter :: maxgrds = 10
@@ -131,8 +131,9 @@ module ed_max_dims
    ! 15 - c4 crop (e.g.,corn/maize)                                                        !
    ! 16 - Subtropical C3 grass                                                             !
    ! 17 - Araucaria                                                                        !
+   ! 18 - Palm                                                                             !
    !---------------------------------------------------------------------------------------!
-   integer, parameter :: n_pft = 17
+   integer, parameter :: n_pft = 18
    !---------------------------------------------------------------------------------------!
 
 
@@ -148,7 +149,7 @@ module ed_max_dims
    ! 10 - ]90;100cm]                                                                       !
    ! 11 - ]100cm;Infinity[                                                                 !
    !---------------------------------------------------------------------------------------!
-   integer, parameter :: n_dbh = 11 
+   integer, parameter :: n_dbh = 11
    !---------------------------------------------------------------------------------------!
 
 
@@ -165,7 +166,7 @@ module ed_max_dims
    ! 20 - ]190;200yr]                                                                      !
    ! 21 - ]200yr;Infinity[                                                                 !
    !---------------------------------------------------------------------------------------!
-   integer, parameter :: n_age = 21 
+   integer, parameter :: n_age = 21
    !---------------------------------------------------------------------------------------!
 
 

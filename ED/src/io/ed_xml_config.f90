@@ -4,12 +4,12 @@
 !! Original code by Mike Dietze
 !!
 !! Main Functions:
-!! 
+!!
 !! read_ed_xml_config(filename,data)
 !!    filename = character string
 !!    data = ed_data object where parameters are set
 !!   Intended to be called by ED_init.f90::EDinit(data) after hardwired defaults are read
-!!   in order to set different/site-specific values and/or 
+!!   in order to set different/site-specific values and/or
 !!   when running batch/optimization/ensemble runs to reset parameters between runs
 !!
 !! TODO:
@@ -28,7 +28,7 @@ print*,'count xml pft : ',trim(filename)
   call libxml2f90__setformat(1) !set to pure XML but with blank removal
   call libxml2f90__readin_file(trim(filename),'CONFIG')
 
-  call libxml2f90__ll_selectlist('CONFIG')       
+  call libxml2f90__ll_selectlist('CONFIG')
   call libxml2f90__ll_selecttag('ACT','config',1) !select upper level tag
   call libxml2f90__ll_exist('DOWN','pft',npft)    !get number of pft tags
   print*,"NPFT = ",npft
@@ -46,7 +46,7 @@ print*,'count xml pft : ',trim(filename)
   call libxml2f90__ll_exist('DOWN','maxpft',npft)    !get number of pft tags
   if(npft .ge. 1) then
      do i= 1,npft
-        call getConfigINT   ('maxpft','config',i,myPFT,texist)  
+        call getConfigINT   ('maxpft','config',i,myPFT,texist)
         if(texist .and. myPFT > maxpft) maxpft = myPFT
      enddo
   endif
@@ -96,7 +96,7 @@ recursive subroutine read_ed_xml_config(filename)
   !!********* EXTERN
   !! FIRST, check if any subfiles have to be loaded
 
-  call libxml2f90__ll_selectlist(TRIM(FILENAME))       
+  call libxml2f90__ll_selectlist(TRIM(FILENAME))
   call libxml2f90__ll_selecttag('ACT','config',1) !select upper level tag
   call libxml2f90__ll_exist('DOWN','extern',ntag)    !get number of pft tags
   print*,"EXTERN READ FROM FILE ::",ntag
@@ -107,7 +107,7 @@ recursive subroutine read_ed_xml_config(filename)
 !print*,cval,texist
         call libxml2f90__ll_selecttag('DOWN','extern',i)
         call libxml2f90__existid('extern',texist)
-        if(texist) then 
+        if(texist) then
            call libxml2f90__ll_getsize('extern',len)
            !----- MLO. Changed this to scalar so the interface check will work. -----------!
            call libxml2f90__ll_getch_scal('extern',len,cval)
@@ -116,17 +116,17 @@ recursive subroutine read_ed_xml_config(filename)
            call read_ed_xml_config(trim(cval))
         endif
         !! reset to original list
-        call libxml2f90__ll_selectlist(TRIM(FILENAME))       
+        call libxml2f90__ll_selectlist(TRIM(FILENAME))
         call libxml2f90__ll_selecttag('ACT','config',1) !select upper level tag
         call libxml2f90__ll_exist('DOWN','extern',ntag)    !get number of pft tags
      enddo
 !!     stop
   endif
-  
+
 
 
   !*******  MET PARAMS
-  call libxml2f90__ll_selectlist(TRIM(FILENAME))       
+  call libxml2f90__ll_selectlist(TRIM(FILENAME))
   call libxml2f90__ll_selecttag('ACT','config',1) !select upper level tag
   call libxml2f90__ll_exist('DOWN','met',ntag)    !get number of met tags
   print*,"MET READ FROM FILE ::",ntag
@@ -195,7 +195,7 @@ recursive subroutine read_ed_xml_config(filename)
 
 
   !*******  MET PARAMS
-  call libxml2f90__ll_selectlist(TRIM(FILENAME))       
+  call libxml2f90__ll_selectlist(TRIM(FILENAME))
   call libxml2f90__ll_selecttag('ACT','config',1) !select upper level tag
   call libxml2f90__ll_exist('DOWN','can_air',ntag)    !get number of met tags
   print*,"CAN_AIR READ FROM FILE ::",ntag
@@ -213,7 +213,7 @@ recursive subroutine read_ed_xml_config(filename)
 
 
   !*******  MISC
-  call libxml2f90__ll_selectlist(TRIM(FILENAME))       
+  call libxml2f90__ll_selectlist(TRIM(FILENAME))
   call libxml2f90__ll_selecttag('ACT','config',1) !select upper level tag
   call libxml2f90__ll_exist('DOWN','misc',ntag)    !get number of pft tags
   print*,"MISC READ FROM FILE ::",ntag
@@ -245,14 +245,14 @@ recursive subroutine read_ed_xml_config(filename)
 
 
   !*******  ED_MISC
-  call libxml2f90__ll_selectlist(TRIM(FILENAME))       
+  call libxml2f90__ll_selectlist(TRIM(FILENAME))
   call libxml2f90__ll_selecttag('ACT','config',1) !select upper level tag
   call libxml2f90__ll_exist('DOWN','ed_misc',ntag)    !get number of pft tags
   print*,"ED_MISC READ FROM FILE ::",ntag
   if(ntag .ge. 1) then
      do i=1,ntag
         call libxml2f90__ll_selecttag('DOWN','ed_misc',i)
-        
+
         call getConfigINT  ('restart_target_year','ed_misc',i,ival,texist)
         if(texist) then
            restart_target_year = ival
@@ -261,7 +261,7 @@ recursive subroutine read_ed_xml_config(filename)
         call getConfigINT  ('outputMonth','ed_misc',i,ival,texist)
         ! Output month no longer exists (conflict between branches)
         ! Kept month_yrstep because it does what outputMonth did plus it changes
-        ! the month in which patch dynamics occurs.  In case it is set, issue a 
+        ! the month in which patch dynamics occurs.  In case it is set, issue a
         ! warning.
         if (texist) then
            call warning(" Found ""outputMonth"" was found in XML.  This will overwrite "// &
@@ -279,20 +279,20 @@ recursive subroutine read_ed_xml_config(filename)
         if(texist) vary_rad = ival
         call getConfigINT  ('vary_hyd','ed_misc',i,ival,texist)
         if(texist) vary_hyd = ival
-        
+
         call getConfigINT  ('use_efrd_trtree','ed_misc',i,ival,texist)
         if(texist) use_efrd_trtree = ival == 1
-        
-        
+
+
         call libxml2f90__ll_selecttag('UP','config',1) !move back up to top level
-        
+
       enddo
   endif
 
 
 
   !! read land use data
-  call libxml2f90__ll_selectlist(TRIM(FILENAME))       
+  call libxml2f90__ll_selectlist(TRIM(FILENAME))
   call libxml2f90__ll_selecttag('ACT','config',1) !select upper level tag
   call libxml2f90__ll_exist('DOWN','landuse',nlu)    !get number of land use tags
   write(unit=*,fmt='(a,1x,i5)') ' Number of land use types to be read from file =',nlu
@@ -311,7 +311,7 @@ recursive subroutine read_ed_xml_config(filename)
 
 
   !! read PFT data
-  call libxml2f90__ll_selectlist(TRIM(FILENAME))       
+  call libxml2f90__ll_selectlist(TRIM(FILENAME))
   call libxml2f90__ll_selecttag('ACT','config',1) !select upper level tag
   call libxml2f90__ll_exist('DOWN','pft',npft)    !get number of pft tags
   print*,"NPFT = ",npft
@@ -719,6 +719,10 @@ recursive subroutine read_ed_xml_config(filename)
            if(texist) hgt_max(myPFT) = sngloff(rval,tiny_offset)
            call getConfigREAL  ('min_dbh','pft',i,rval,texist)
            if(texist) min_dbh(myPFT) = sngloff(rval,tiny_offset)
+
+           call getConfigREAL  ('max_dbh','pft',i,rval,texist)
+           if(texist) max_dbh(myPFT) = sngloff(rval,tiny_offset)
+
            call getConfigREAL  ('dbh_crit','pft',i,rval,texist)
            if(texist) dbh_crit(myPFT) = sngloff(rval,tiny_offset)
            call getConfigREAL  ('dbh_bigleaf','pft',i,rval,texist)
@@ -875,14 +879,14 @@ recursive subroutine read_ed_xml_config(filename)
   endif
 
   !********* READ PFT CONSTANTS (PFTCONST) PARMS
-  call libxml2f90__ll_selectlist(TRIM(FILENAME))       
+  call libxml2f90__ll_selectlist(TRIM(FILENAME))
   call libxml2f90__ll_selecttag('ACT','config',1) !select upper level tag
   call libxml2f90__ll_exist('DOWN','pftconst',ntag)    !get number of pft tags
   print*,"PFTCONST READ FROM FILE ::",ntag
   if(ntag .ge. 1) then
      do i=1,ntag
         call libxml2f90__ll_selecttag('DOWN','pftconst',i)
-        
+
 !        call getConfigREAL  ('c2n_stem','pftconst',i,rval,texist)
 !        if(texist) c2n_stem = sngloff(rval,tiny_offset)
         call getConfigREAL  ('l2n_stem','pftconst',i,rval,texist)
@@ -897,14 +901,14 @@ recursive subroutine read_ed_xml_config(filename)
         call getConfigREAL  ('liana_dbh_crit','pftconst',i,rval,texist)
         if(texist) liana_dbh_crit = sngloff(rval,tiny_offset)
 
-        
+
         call libxml2f90__ll_selecttag('UP','config',1) !move back up to top level
      enddo
   endif
-  
+
 
   !********* READ HYDROLOGY PARMS
-  call libxml2f90__ll_selectlist(TRIM(FILENAME))       
+  call libxml2f90__ll_selectlist(TRIM(FILENAME))
   call libxml2f90__ll_selecttag('ACT','config',1) !select upper level tag
   call libxml2f90__ll_exist('DOWN','hydro',ntag)    !get number of pft tags
   print*,"HYDROLOGY READ FROM FILE ::",ntag
@@ -930,28 +934,28 @@ recursive subroutine read_ed_xml_config(filename)
          if(texist) runoff_vmax = sngloff(rval,tiny_offset)
          call getConfigREAL  ('GrassLAImax','hydro',i,rval,texist)
          if(texist) GrassLAImax = sngloff(rval,tiny_offset)
-!! redundant with SOIL runoff_time 
+!! redundant with SOIL runoff_time
          call getConfigREAL  ('inverse_runoff_time','hydro',i,rval,texist)
          if(texist) then
             print*,"hydro::inverse_runoff_time was found to be redundant with soil::runoff_time"
             print*,"Please update your xml config file"
             stop
          endif
- 
+
          call libxml2f90__ll_selecttag('UP','config',1) !move back up to top level
 
       enddo
   endif
 
   !********* READ CLIMATE SCENARIO PARMS
-  call libxml2f90__ll_selectlist(TRIM(FILENAME))       
+  call libxml2f90__ll_selectlist(TRIM(FILENAME))
   call libxml2f90__ll_selecttag('ACT','config',1) !select upper level tag
   call libxml2f90__ll_exist('DOWN','scenario',ntag)    !get number of pft tags
   print*,"SCENARIO READ FROM FILE ::",ntag
   if(ntag .ge. 1) then
      do i=1,ntag
         call libxml2f90__ll_selecttag('DOWN','scenario',i)
-        
+
         call getConfigREAL  ('atm_tmp_intercept','scenario',i,rval,texist)
         if(texist) atm_tmp_intercept = sngloff(rval,tiny_offset)
         call getConfigREAL  ('atm_tmp_slope','scenario',i,rval,texist)
@@ -962,14 +966,14 @@ recursive subroutine read_ed_xml_config(filename)
         if(texist) prec_slope = sngloff(rval,tiny_offset)
         call getConfigINT  ('humid_scenario','scenario',i,ival,texist)
         if(texist)  humid_scenario = ival
-        
+
         call libxml2f90__ll_selecttag('UP','config',1) !move back up to top level
      enddo
   endif
-   
+
 
   !********* READ LAPSE PARMS
-  call libxml2f90__ll_selectlist(TRIM(FILENAME))       
+  call libxml2f90__ll_selectlist(TRIM(FILENAME))
   call libxml2f90__ll_selecttag('ACT','config',1) !select upper level tag
   call libxml2f90__ll_exist('DOWN','lapse',ntag)    !get number of pft tags
   print*,"LAPSE READ FROM FILE ::",ntag
@@ -1012,7 +1016,7 @@ recursive subroutine read_ed_xml_config(filename)
   endif
 
   !********  CANOPY_RADIATION
-  call libxml2f90__ll_selectlist(TRIM(FILENAME))       
+  call libxml2f90__ll_selectlist(TRIM(FILENAME))
   call libxml2f90__ll_selecttag('ACT','config',1) !select upper level tag
   call libxml2f90__ll_exist('DOWN','radiation',ntag)    !get number of pft tags
   print*,"CANOPY RADIATION READ FROM FILE ::",ntag
@@ -1020,11 +1024,11 @@ recursive subroutine read_ed_xml_config(filename)
      do i=1,ntag
 
         call libxml2f90__ll_selecttag('DOWN','radiation',i)
-        
+
         call getConfigREAL  ('rlong_min','radiation',i,rval,texist)
-        if(texist) rlong_min = sngloff(rval,tiny_offset) 
+        if(texist) rlong_min = sngloff(rval,tiny_offset)
         call getConfigREAL  ('veg_temp_min','radiation',i,rval,texist)
-        if(texist) rk4min_veg_temp = rval ! This is double precision. 
+        if(texist) rk4min_veg_temp = rval ! This is double precision.
 !        call getConfigREAL  ('visible_fraction','radiation',i,rval,texist)
 !        if(texist) visible_fraction = sngloff(rval,tiny_offset)
 !        call getConfigREAL  ('visible_fraction_dir','radiation',i,rval,texist)
@@ -1054,7 +1058,7 @@ recursive subroutine read_ed_xml_config(filename)
   endif
 
   !********  BUDGET
-  call libxml2f90__ll_selectlist(TRIM(FILENAME))       
+  call libxml2f90__ll_selectlist(TRIM(FILENAME))
   call libxml2f90__ll_selecttag('ACT','config',1) !select upper level tag
   call libxml2f90__ll_exist('DOWN','budget',ntag)    !get number of pft tags
   print*,"BUDGET READ FROM FILE ::",ntag
@@ -1062,11 +1066,11 @@ recursive subroutine read_ed_xml_config(filename)
      do i=1,ntag
 
         call libxml2f90__ll_selecttag('DOWN','budget',i)
-        
+
         call getConfigREAL  ('tol_subday_budget','budget',i,rval,texist)
-        if(texist) tol_subday_budget = sngloff(rval,tiny_offset) 
+        if(texist) tol_subday_budget = sngloff(rval,tiny_offset)
         call getConfigREAL  ('tol_carbon_budget','budget',i,rval,texist)
-        if(texist) tol_carbon_budget = sngloff(rval,tiny_offset) 
+        if(texist) tol_carbon_budget = sngloff(rval,tiny_offset)
         !----------------------------------------------------------------------------------!
 
         call libxml2f90__ll_selecttag('UP','config',1) !move back up to top level
@@ -1075,7 +1079,7 @@ recursive subroutine read_ed_xml_config(filename)
 
 
   !********* SOILS
-  call libxml2f90__ll_selectlist(TRIM(FILENAME))       
+  call libxml2f90__ll_selectlist(TRIM(FILENAME))
   call libxml2f90__ll_selecttag('ACT','config',1) !select upper level tag
   call libxml2f90__ll_exist('DOWN','soil',ntag)    !get number of pft tags
   print*,"SOIL READ FROM FILE ::",ntag
@@ -1148,25 +1152,25 @@ recursive subroutine read_ed_xml_config(filename)
          if(texist) isoildepthflg = ival
 
          !!CHECK FOR CONFLICT WITH INVERSE_RUNOFF_TIME
-         call getConfigREAL  ('runoff_time','soil',i,rval,texist) 
+         call getConfigREAL  ('runoff_time','soil',i,rval,texist)
          if(texist) runoff_time = sngloff(rval,tiny_offset)
-      
+
         call libxml2f90__ll_selecttag('UP','config',1) !move back up to top level
      enddo
   endif
-  
+
 
 
   !********* DECOMPOSITION
-  call libxml2f90__ll_selectlist(TRIM(FILENAME))       
+  call libxml2f90__ll_selectlist(TRIM(FILENAME))
   call libxml2f90__ll_selecttag('ACT','config',1) !select upper level tag
   call libxml2f90__ll_exist('DOWN','decomposition',ntag)    !get number of pft tags
   print*,"DECOMPOSITION READ FROM FILE ::",ntag
   if(ntag .ge. 1) then
      do i=1,ntag
-        
+
         call libxml2f90__ll_selecttag('DOWN','decomposition',i)
-        
+
 
         call getConfigREAL  ('resp_opt_water','decomposition',i,rval,texist)
         if(texist)  resp_opt_water = sngloff(rval,tiny_offset)
@@ -1279,15 +1283,15 @@ recursive subroutine read_ed_xml_config(filename)
 
 
   !******** FUSION/FISSION
-  call libxml2f90__ll_selectlist(TRIM(FILENAME))       
+  call libxml2f90__ll_selectlist(TRIM(FILENAME))
   call libxml2f90__ll_selecttag('ACT','config',1) !select upper level tag
   call libxml2f90__ll_exist('DOWN','fusefiss',ntag)    !get number of pft tags
   print*,"FUSEFISS READ FROM FILE ::",ntag
   if(ntag .ge. 1) then
      do i=1,ntag
-        
+
         call libxml2f90__ll_selecttag('DOWN','fusefiss',i)
-        
+
         call getConfigREAL  ('min_recruit_size','fusefiss',i,rval,texist)
         if(texist) min_recruit_size = sngloff(rval,tiny_offset)
 
@@ -1353,13 +1357,13 @@ recursive subroutine read_ed_xml_config(filename)
         call getConfigREAL  ('lai_tol','fusefiss',i,rval,texist)
         if(texist) lai_tol = sngloff(rval,tiny_offset)
 !        call getConfigREAL  ('ntol','fusefiss',i,rval,texist)
-        
+
         call libxml2f90__ll_selecttag('UP','config',1) !move back up to top level
      enddo
   endif
-    
+
   !*********  Horizontal shading
-  call libxml2f90__ll_selectlist(TRIM(FILENAME))       
+  call libxml2f90__ll_selectlist(TRIM(FILENAME))
   call libxml2f90__ll_selecttag('ACT','config',1) !select upper level tag
   call libxml2f90__ll_exist('DOWN','hrzshade',ntag)    !get number of hrzshade tags
   print*,"HORIZONTAL SHADING READ FROM FILE ::",ntag
@@ -1388,7 +1392,7 @@ recursive subroutine read_ed_xml_config(filename)
 
 
   !*********  DISTURBANCE
-  call libxml2f90__ll_selectlist(TRIM(FILENAME))       
+  call libxml2f90__ll_selectlist(TRIM(FILENAME))
   call libxml2f90__ll_selecttag('ACT','config',1) !select upper level tag
   call libxml2f90__ll_exist('DOWN','disturbance',ntag)    !get number of pft tags
   print*,"DISTURBANCE READ FROM FILE ::",ntag
@@ -1396,7 +1400,7 @@ recursive subroutine read_ed_xml_config(filename)
      do i=1,ntag
 
         call libxml2f90__ll_selecttag('DOWN','disturbance',i)
-        
+
         !! GENERAL
         call getConfigREAL  ('min_new_patch_area','disturbance',i,rval,texist)
         if(texist) min_patch_area = sngloff(rval,tiny_offset)
@@ -1407,14 +1411,14 @@ recursive subroutine read_ed_xml_config(filename)
         if(texist) include_fire = ival
         call getConfigINT  ('ianth_disturb','disturbance',i,ival,texist)
         if(texist) ianth_disturb = ival
- 
+
         !! TREEFALL
         call getConfigREAL  ('treefall_disturbance_rate','disturbance',i,rval,texist)
         if(texist) treefall_disturbance_rate = sngloff(rval,tiny_offset)
-        
+
         call getConfigREAL  ('Time2Canopy','disturbance',i,rval,texist)
         if(texist) Time2Canopy = sngloff(rval,tiny_offset)
-        
+
         call getConfigREAL  ('treefall_hite_threshold','disturbance',i,rval,texist)
         if(texist) treefall_hite_threshold = sngloff(rval,tiny_offset)
         call getConfigINT  ('does_hite_limit_tfpatch' ,'disturbance',i,ival,texist)
@@ -1429,12 +1433,12 @@ recursive subroutine read_ed_xml_config(filename)
         if(texist) min_harvest_biomass = sngloff(rval,tiny_offset)
         call getConfigREAL  ('mature_harvest_age','disturbance',i,rval,texist)
         if(texist) mature_harvest_age = sngloff(rval,tiny_offset)
-        !! Possibly DEPRECATED 
+        !! Possibly DEPRECATED
         call getConfigINT  ('forestry_on','disturbance',i,ival,texist)
         if(texist) forestry_on = ival
         call getConfigINT  ('agriculture_on','disturbance',i,ival,texist)
         if(texist) agriculture_on = ival
-        
+
         !! FIRE
         call getConfigREAL  ('fire_dryness_threshold','disturbance',i,rval,texist)
         if(texist) fire_dryness_threshold = sngloff(rval,tiny_offset)
@@ -1456,18 +1460,18 @@ recursive subroutine read_ed_xml_config(filename)
         call libxml2f90__ll_selecttag('UP','config',1) !move back up to top level
      enddo
   endif
-  
+
 
   !********** PHENOLOGY
-  call libxml2f90__ll_selectlist(TRIM(FILENAME))       
+  call libxml2f90__ll_selectlist(TRIM(FILENAME))
   call libxml2f90__ll_selecttag('ACT','config',1) !select upper level tag
   call libxml2f90__ll_exist('DOWN','phenology',ntag)    !get number of pft tags
   print*,"PHENOLOGY READ FROM FILE ::",ntag
   if(ntag .ge. 1) then
      do i=1,ntag
-        
+
         call libxml2f90__ll_selecttag('DOWN','phenology',i)
-        
+
         call getConfigREAL  ('retained_carbon_fraction','phenology',i,rval,texist)
         if(texist)  retained_carbon_fraction = sngloff(rval,tiny_offset)
         call getConfigREAL  ('root_phen_factor','phenology',i,rval,texist)
@@ -1527,25 +1531,25 @@ recursive subroutine read_ed_xml_config(filename)
         call getConfigINT  ('iphenyff','phenology',i,ival,texist)
         if(texist) iphenyff = ival
 
-        
+
         call libxml2f90__ll_selecttag('UP','config',1) !move back up to top level
      enddo
   endif
 
 
   !********** PHYSIOLOGY
-  call libxml2f90__ll_selectlist(TRIM(FILENAME))       
+  call libxml2f90__ll_selectlist(TRIM(FILENAME))
   call libxml2f90__ll_selecttag('ACT','config',1) !select upper level tag
   call libxml2f90__ll_exist('DOWN','physiology',ntag)    !get number of pft tags
   print*,"PHYSIOLOGY READ FROM FILE ::",ntag
   if(ntag .ge. 1) then
      do i=1,ntag
-        
+
         call libxml2f90__ll_selecttag('DOWN','physiology',i)
 
         call getConfigINT  ('n_plant_lim','physiology',i,ival,texist)
         if(texist) n_plant_lim = ival
-        
+
         call getConfigINT  ('plant_hydro_scheme','physiology',i,ival,texist)
         if(texist) plant_hydro_scheme = ival
 
@@ -1573,7 +1577,7 @@ recursive subroutine read_ed_xml_config(filename)
 
 
   !********** INITIAL CONDITIONS
-  call libxml2f90__ll_selectlist(TRIM(FILENAME))       
+  call libxml2f90__ll_selectlist(TRIM(FILENAME))
   call libxml2f90__ll_selecttag('ACT','config',1) !select upper level tag
   call libxml2f90__ll_exist('DOWN','initcond',ntag)    !get number of pft tags
   init_fgc  = -1.0
@@ -1588,11 +1592,11 @@ recursive subroutine read_ed_xml_config(filename)
   init_fgn  = -1.0
   init_fsn  = -1.0
   init_msn  = -1.0
-  
+
   print*,"INITCOND READ FROM FILE ::",ntag
   if(ntag .ge. 1) then
      do i=1,ntag
-        
+
         call libxml2f90__ll_selecttag('DOWN','initcond',i)
 
         call getConfigREAL  ('fgc','initcond',i,rval,texist)
@@ -1619,13 +1623,13 @@ recursive subroutine read_ed_xml_config(filename)
         if(texist) init_fsn = sngloff(rval,tiny_offset)
         call getConfigREAL  ('msn','initcond',i,rval,texist)
         if(texist) init_msn = sngloff(rval,tiny_offset)
-        
 
-        
+
+
         call libxml2f90__ll_selecttag('UP','config',1) !move back up to top level
      enddo
   endif
-  
+
 
 
   !********* LOST PARAMETERS
@@ -1711,7 +1715,7 @@ recursive subroutine read_ed_xml_config(filename)
 !!$         if(texist) data%grid_resolution = sngloff(rval,tiny_offset)
 
 
-       
+
 
 end subroutine read_ed_xml_config
 
@@ -1728,7 +1732,7 @@ subroutine getConfigINT(ctag,ptag,pwhich,val,texist)
 
   j=0
   texist = .false.
-  
+
   call libxml2f90__ll_exist('DOWN',ctag,j)
   if(j .gt. 0) then
      call libxml2f90__ll_selecttag('DOWN',ctag,1)
@@ -1745,12 +1749,12 @@ subroutine getConfigSTRING(ctag,ptag,pwhich,val,texist)
   logical(4) :: texist
   j=0
   texist = .false.
-  
+
   call libxml2f90__ll_exist('DOWN',ctag,j)
   if(j .gt. 0) then
      call libxml2f90__ll_selecttag('DOWN',ctag,1)
      call libxml2f90__existid(ctag,texist)
-     if(texist) then 
+     if(texist) then
         call libxml2f90__ll_getsize(ctag,len)
         call libxml2f90__ll_getch(ctag,len,val)
         val = val(1:len)
@@ -1767,7 +1771,7 @@ subroutine getConfigREAL(ctag,ptag,pwhich,val,texist)
   logical(4) :: texist
   j=0
   texist = .false.
-  
+
   call libxml2f90__ll_exist('DOWN',ctag,j)
   if(j .gt. 0) then
      call libxml2f90__ll_selecttag('DOWN',ctag,1)
@@ -1804,7 +1808,7 @@ subroutine write_ed_xml_config
   implicit none
 !  integer :: ival
   integer(4) :: i,ival
-  character(512) :: xfilout 
+  character(512) :: xfilout
 !  integer :: i
 !  character*(*) :: filename
   integer             :: ng
@@ -1896,7 +1900,7 @@ subroutine write_ed_xml_config
 
         call libxml2f90_ll_opentag("pft")
 
-!! GENERAL PFT     
+!! GENERAL PFT
         call putConfigINT("num",i)
         if (is_tropical(i)) then
            ival = 1
@@ -1946,7 +1950,7 @@ subroutine write_ed_xml_config
            ival = 0
         end if
         call putConfigINT("include_pft_fp",ival)
-     
+
 !! CANOPY RADIATION
         call putConfigREAL8("clumping_factor",clumping_factor(i))
         call putConfigREAL8("orient_factor",orient_factor(i))
@@ -2058,7 +2062,7 @@ subroutine write_ed_xml_config
         call putConfigREAL("fire_s_max"        ,fire_s_max   (i))
         call putConfigREAL("fire_s_inter"      ,fire_s_inter (i))
         call putConfigREAL("fire_s_slope"      ,fire_s_slope (i))
- 
+
         call putConfigREAL("plant_min_temp",plant_min_temp(i))
 
 !! ALLOCATION
@@ -2115,6 +2119,7 @@ subroutine write_ed_xml_config
         call putConfigREAL("hgt_min",    hgt_min(i))
         call putConfigREAL("hgt_max",    hgt_max(i))
         call putConfigREAL("min_dbh",    min_dbh(i))
+        call putConfigREAL("max_dbh",    max_dbh(i))
         call putConfigREAL("dbh_crit",   dbh_crit(i))
         call putConfigREAL("dbh_bigleaf",dbh_bigleaf(i))
 
@@ -2159,7 +2164,7 @@ subroutine write_ed_xml_config
         call putConfigREAL("b2d18O"  , b2d18O  (i))
         call putConfigREAL("b1Efrd"  , b1Efrd  (i))
         call putConfigREAL("b2Efrd"  , b2Efrd  (i))
-        
+
         call putConfigSCIENTIFIC("init_laimax",init_laimax(i))
 
      !! NITRO
@@ -2200,7 +2205,7 @@ subroutine write_ed_xml_config
         call libxml2f90_ll_closetag("pft")
      endif
   end do
- 
+
   !************   PFT CONSTANTS  *****************
   call libxml2f90_ll_opentag("pftconst")
      call putConfigREAL("l2n_stem",l2n_stem)
@@ -2498,9 +2503,9 @@ end subroutine write_ed_xml_config
 
 
 subroutine putConfigSTRING(tag,value)
-  character(*),intent(in) :: tag 
+  character(*),intent(in) :: tag
   character(*),intent(in) :: value
-  integer :: lenval 
+  integer :: lenval
   !! `len(value)` includes trailing whitespace and other stuff, but below, we
   !! only write `trim(value)`, which is shorter. This leads to a bunch of
   !! non-readable garbage getting dumped into the output file. We can avoid that
@@ -2513,10 +2518,10 @@ end subroutine putConfigSTRING
 
 subroutine putConfigINT(tag,ivalue)
   use ed_max_dims, only : str_len
-  character(*),intent(in) :: tag 
+  character(*),intent(in) :: tag
   integer,intent(in) :: ivalue
   character(str_len) :: value
-  integer :: lenval 
+  integer :: lenval
   write(value,"(i11.1)") ivalue
   lenval = len(trim(value))
   call libxml2f90_ll_opentag(tag)
@@ -2526,10 +2531,10 @@ end subroutine putConfigINT
 
 subroutine putConfigREAL(tag,rvalue)
   use ed_max_dims, only : str_len
-  character(*),intent(in) :: tag 
+  character(*),intent(in) :: tag
   real,intent(in) :: rvalue
   character(str_len) :: value
-  integer :: lenval 
+  integer :: lenval
   write(value,"(f40.10)") rvalue
   lenval = len(trim(value))
   call libxml2f90_ll_opentag(tag)
@@ -2539,10 +2544,10 @@ end subroutine putConfigREAL
 
 subroutine putConfigSCIENTIFIC(tag,rvalue)
   use ed_max_dims, only : str_len
-  character(*),intent(in) :: tag 
+  character(*),intent(in) :: tag
   real,intent(in) :: rvalue
   character(str_len) :: value
-  integer :: lenval 
+  integer :: lenval
   write(value,"(es14.7)") rvalue
   lenval = len(trim(value))
   call libxml2f90_ll_opentag(tag)
@@ -2552,14 +2557,13 @@ end subroutine putConfigSCIENTIFIC
 
 subroutine putConfigREAL8(tag,rvalue)
   use ed_max_dims, only : str_len
-  character(*),intent(in) :: tag 
+  character(*),intent(in) :: tag
   real(kind=8),intent(in) :: rvalue
   character(str_len) :: value
-  integer :: lenval 
+  integer :: lenval
   write(value,"(f40.20)") rvalue
   lenval = len(trim(value))
   call libxml2f90_ll_opentag(tag)
   call libxml2f90_ll_addid(trim(tag),lenval,trim(value))
   call libxml2f90_ll_closetag(tag)
 end subroutine putConfigREAL8
-

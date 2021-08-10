@@ -905,6 +905,7 @@ module structural_growth
                                , repro_min_h    & ! intent(in)
                                , repro_min_dbh  & ! intent(in)
                                , hgt_max        & ! intent(in)
+                               , max_dbh        & 
                                , r_bang         & ! intent(in)
                                , r_fract        & ! intent(in)
                                , r_cv50         & ! intent(in)
@@ -1106,6 +1107,9 @@ module structural_growth
                !---------------------------------------------------------------------------!
                zero_growth = is_grass(ipft) .and.                                          &
                              hite >= ( (1.0-r_tol_trunc) * hgt_max(ipft)     )
+
+               ! Respect the maximum DBH - only used for palms at the moment
+               zero_growth = dbh >= max_dbh(ipft)
                !---------------------------------------------------------------------------!
 
 
