@@ -49,6 +49,7 @@ module vegetation_dynamics
       use fusion_fission_coms  , only : ifusion                       ! ! intent(in)
       use fire                 , only : fire_frequency                ! ! sub-routine
       use budget_utils         , only : ed_init_budget                ! ! sub-routine
+      use hurricane            , only : apply_hurricane               ! ! sub-routine
       implicit none
       !----- Arguments. -------------------------------------------------------------------!
       logical          , intent(in)   :: new_month    !> First dtlsm of a new month?
@@ -70,7 +71,7 @@ module vegetation_dynamics
 
       !----- Find the day of year. --------------------------------------------------------!
       doy = julday(current_time%month, current_time%date, current_time%year)
-     
+
       !----- Time factor for normalizing daily variables updated on the DTLSM step. -------!
       dtlsm_o_day = dtlsm / day_sec
       !----- Time factor for averaging dailies. -------------------------------------------!
@@ -91,7 +92,7 @@ module vegetation_dynamics
       !------------------------------------------------------------------------------------!
       do ifm=1,ngrids
 
-         cgrid => edgrid_g(ifm) 
+         cgrid => edgrid_g(ifm)
 
          !---------------------------------------------------------------------------------!
          !     The following block corresponds to the daily time-step.                     !
@@ -113,6 +114,9 @@ module vegetation_dynamics
 
             !----- Update the mean workload counter. --------------------------------------!
             call update_workload(cgrid)
+
+            !----- Apply hurricanes. ------------------------------------------------------!
+            call apply_hurricane(cgrid)
 
             !----- Update the growth of the structural biomass. ---------------------------!
             call dbstruct_dt(cgrid,veget_dyn_on,new_year)
@@ -189,7 +193,7 @@ module vegetation_dynamics
                   end if
                   do ipy = 1,cgrid%npolygons
                      cpoly => cgrid%polygon(ipy)
-                       
+
                      do isi = 1, cpoly%nsites
                         call terminate_patches(cpoly%site(isi))
                      end do
@@ -229,7 +233,7 @@ module vegetation_dynamics
                   !------------------------------------------------------------------------!
                   do ipy = 1,cgrid%npolygons
                      cpoly => cgrid%polygon(ipy)
-                       
+
                      do isi = 1, cpoly%nsites
                         call rescale_patches(cpoly%site(isi))
                      end do
