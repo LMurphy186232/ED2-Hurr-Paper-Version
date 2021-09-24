@@ -2963,7 +2963,8 @@ subroutine init_pft_alloc_params()
                              , branch_diam           & ! intent(out)
                              , h_edge                & ! intent(out)
                              , liana_dbh_crit        & ! intent(out)
-                             , nbt_lut               ! ! intent(out)
+                             , nbt_lut               & ! intent(out)
+                             , off_allom_tol         ! ! intent(out)
    use allometry      , only : h2dbh                 & ! function
                              , dbh2h                 & ! function
                              , size2bd               & ! function
@@ -2972,6 +2973,7 @@ subroutine init_pft_alloc_params()
                              , onesixth              & ! intent(in)
                              , twothirds             & ! intent(in)
                              , huge_num              & ! intent(in)
+                             , almost_zero           & ! intent(in)
                              , pi1                   ! ! intent(in)
    use ed_max_dims    , only : n_pft                 & ! intent(in)
                              , str_len               & ! intent(in)
@@ -3738,8 +3740,6 @@ subroutine init_pft_alloc_params()
    end do
    !---------------------------------------------------------------------------------------!
 
-
-
    !---------------------------------------------------------------------------------------!
    !    Minimum and maximum height allowed for each cohort.                                !
    !---------------------------------------------------------------------------------------!
@@ -3781,6 +3781,14 @@ subroutine init_pft_alloc_params()
    !---------------------------------------------------------------------------------------!
    max_dbh(1:17) = 1000.0
    max_dbh(18)   = 30.0
+
+   !---------------------------------------------------------------------------------------!
+   !   Tolerance for being off allometry in the DBH-height relationship. This is in        !
+   ! units of m of height; if expected height from DBH is more than this value greater     !
+   ! than actual height, structural growth will strive to get back on allometry before     !
+   ! reproducing. Default is no tolerance. --LEM                                                                    !
+   !---------------------------------------------------------------------------------------!
+   off_allom_tol(1:18) = almost_zero
 
    !---------------------------------------------------------------------------------------!
    !    This is the typical DBH that all big leaf plants will have.  Because the big-leaf  !

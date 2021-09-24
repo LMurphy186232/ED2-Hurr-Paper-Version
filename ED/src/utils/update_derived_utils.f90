@@ -19,10 +19,10 @@ module update_derived_utils
       integer                     :: isi
       integer                     :: ipa
       !------------------------------------------------------------------------------------!
-      
+
       do ipy = 1,cgrid%npolygons
         cpoly => cgrid%polygon(ipy)
-        
+
         do isi = 1,cpoly%nsites
            csite => cpoly%site(isi)
 
@@ -50,6 +50,7 @@ module update_derived_utils
    !=======================================================================================!
    !     This subroutine will assign values derived from the basic properties of a given   !
    ! cohort.                                                                               !
+   ! Modified by Lora Murphy to not allow DBH to shrink.                                   !
    !---------------------------------------------------------------------------------------!
    subroutine update_cohort_derived_props(cpatch,ico,lsl,new_year,llspan_toc            &
                                          ,vm_bar_toc,rd_bar_toc,sla_toc)
@@ -86,6 +87,7 @@ module update_derived_utils
       real           , intent(in) :: sla_toc
       !----- Local variables --------------------------------------------------------------!
       real                        :: bleaf_max
+      real                        :: dbh_aim
       integer                     :: ipft
       integer                     :: elapsed_months
       logical                     :: census_time
@@ -116,8 +118,20 @@ module update_derived_utils
           cpatch%hite(ico) = bl2h  (cpatch%bleaf(ico), cpatch%sla(ico), ipft)
       else
           !---- Trees and old grasses get dbh from bdead. ---------------------------------!
-          cpatch%dbh(ico)  = bd2dbh(ipft, cpatch%bdeada(ico), cpatch%bdeadb(ico))
-          cpatch%hite(ico) = dbh2h (ipft, cpatch%dbh   (ico))
+          !---- Determine what DBH should be based on BDEAD -------------------------------!
+          dbh_aim          = bd2dbh(ipft, cpatch%bdeada(ico), cpatch%bdeadb(ico))
+          if (dbh_aim >= cpatch%dbh(ico)) then
+            !---- DBH has increased! Proceed as normal ------------------------------------!
+            cpatch%dbh(ico)  = bd2dbh(ipft, cpatch%bdeada(ico), cpatch%bdeadb(ico))
+            cpatch%hite(ico) = dbh2h (ipft, cpatch%dbh   (ico))
+          else
+            !------------------------------------------------------------------------------!
+            !   Do not let DBH shrink. Height matches BDEAD, not DBH. Cohort will be       !
+            ! off allometry. There is missing BDEAD biomass and the cohort must replace    !
+            ! it before growing further.                                                   !
+            !------------------------------------------------------------------------------!
+            cpatch%hite(ico) = dbh2h (ipft, dbh_aim)
+          end if
       end if
       !------------------------------------------------------------------------------------!
 
@@ -205,7 +219,7 @@ module update_derived_utils
 
    !=======================================================================================!
    !=======================================================================================!
-   ! SUBROUTINE UPDATE_COHORT_PLASTIC_TRAIT 
+   ! SUBROUTINE UPDATE_COHORT_PLASTIC_TRAIT
    !< \brief This subroutine will assign values for plastic functional traits driven by
    !< local light environment and thus depending on vertical structure of the canopy.
    !< \warning This function should be called after update_derived_cohort_props
@@ -294,14 +308,14 @@ module update_derived_utils
       !------------------------------------------------------------------------------------!
       select case (trait_plasticity_scheme)
       case (3)
-        !--------------------------------------------------------------------------------------------!  
+        !--------------------------------------------------------------------------------------------!
         ! use leaf longevity to determine how much trait can change with the assumption that trait
         ! can only change after leaf replacement
-        !--------------------------------------------------------------------------------------------!  
+        !--------------------------------------------------------------------------------------------!
         lnexp              = max(lnexp_min,kplastic_vm0(ipft) * max_cum_lai)
         trait_change_frac  = vm_bar_toc * exp(lnexp) / cpatch%vm_bar(ico) - 1.
-        
-        !--------------------------------------------------------------------------------------------!  
+
+        !--------------------------------------------------------------------------------------------!
         ! modify the trait_change_frac based on how much leaf has turned over within a month (i.e.
         ! the update frequency). Meanwhile, two special cases are considered here. (1) when the
         ! total frac_change is smaller than 5%, we just allow for the change. Otherwise, the trait
@@ -391,7 +405,7 @@ module update_derived_utils
       cpatch%psi_open  (ico) = cpatch%psi_open  (ico) * sla_scaler
       cpatch%psi_closed(ico) = cpatch%psi_closed(ico) * sla_scaler
 
-      ! Since SLA is changed, we might need to adjust leaf biomass if leaf area based 
+      ! Since SLA is changed, we might need to adjust leaf biomass if leaf area based
       ! allometry is used
       select case (iallom)
       case (4)
@@ -589,7 +603,7 @@ module update_derived_utils
    ! growth results from all patches.                                                      !
    !---------------------------------------------------------------------------------------!
    subroutine update_patch_derived_props(csite,ipa,update_zcaneff)
-     
+
       use ed_state_vars       , only : sitetype                   & ! structure
                                      , patchtype                  ! ! structure
       use allometry           , only : ed_biomass                 ! ! function
@@ -795,7 +809,7 @@ module update_derived_utils
    !      This subroutine will take care of some diagnostic thermodynamic properties.      !
    !---------------------------------------------------------------------------------------!
    subroutine update_patch_thermo_props(csite,ipaa,ipaz,mzg,mzs,ntext_soil)
-     
+
       use ed_state_vars, only : sitetype         ! ! structure
       use therm_lib    , only : idealdenssh      & ! function
                               , idealdmolsh      & ! function
@@ -891,7 +905,7 @@ module update_derived_utils
    ! above.                                                                                !
    !---------------------------------------------------------------------------------------!
    subroutine update_patch_thermo_fmean(csite,ipaa,ipaz,mzg,ntext_soil)
-     
+
       use ed_state_vars, only : sitetype           ! ! structure
       use therm_lib    , only : idealdenssh        & ! function
                               , idealdmolsh        & ! function
@@ -987,7 +1001,7 @@ module update_derived_utils
    !     This subroutine will update the derived properties at the site level.             !
    !---------------------------------------------------------------------------------------!
    subroutine update_site_derived_props(cpoly,census_flag,isi)
-     
+
       use ed_state_vars , only : polygontype  & ! structure
                                , sitetype     & ! structure
                                , patchtype    ! ! structure
@@ -1005,7 +1019,7 @@ module update_derived_utils
       integer                        :: ico
       integer                        :: ipft
       !------------------------------------------------------------------------------------!
-      
+
       !----- Initialise the variables before looping. -------------------------------------!
       cpoly%basal_area(:,:,isi) = 0.0
       cpoly%agb       (:,:,isi) = 0.0
@@ -1027,14 +1041,14 @@ module update_derived_utils
 
                cpoly%basal_area(ipft,bdbh,isi) = cpoly%basal_area(ipft, bdbh,isi)          &
                                                + cpatch%basarea(ico) * cpatch%nplant(ico)  &
-                                               * csite%area(ipa)   
+                                               * csite%area(ipa)
                cpoly%agb(ipft,bdbh,isi)        = cpoly%agb(ipft, bdbh,isi)                 &
                                                + cpatch%agb(ico)     * cpatch%nplant(ico)  &
                                                * csite%area(ipa)
             end if
          end do
       end do
-      
+
       return
    end subroutine update_site_derived_props
    !=======================================================================================!
@@ -1120,7 +1134,7 @@ module update_derived_utils
          ! variables here both the off-line model and the coupled runs will work, because  !
          ! this loop will be skipped when there is no polygon.                             !
          !---------------------------------------------------------------------------------!
-         ! cgrid%blah(ipy) = 0.0 ! <<- This way works for all cases. 
+         ! cgrid%blah(ipy) = 0.0 ! <<- This way works for all cases.
          !---------------------------------------------------------------------------------!
          cgrid%nplant              (:,:,ipy) = 0.0
          cgrid%agb                 (:,:,ipy) = 0.0
@@ -1616,8 +1630,8 @@ module update_derived_utils
       latloop: do ilatf = 1,nlat
 
          !----- Loop over longitude levels, from Greenwich Meridian then eastwards. -------!
-         lonloop: do ilonf = 1,nlon 
-    
+         lonloop: do ilonf = 1,nlon
+
             !------------------------------------------------------------------------------!
             !     Read in reanalysis: two temperatures and moistures, corresponding to     !
             ! different depths.                                                            !
@@ -1636,9 +1650,9 @@ module update_derived_utils
                   !----- Land point lat, lon. ---------------------------------------------!
                   glat = cgrid%lat(ipy)
                   glon = cgrid%lon(ipy)
-                  
+
                   if(glon < 0.0) glon = glon + 360.0
-                  
+
                   !----- Find reanalysis point corresponding to this land point. ----------!
                   if(glat >= 0.0)then
                      ilat = nint((90.0 - glat)/dlat) + 1
@@ -1646,7 +1660,7 @@ module update_derived_utils
                      ilat = nlat - nint((90.0 - abs(glat))/dlat)
                   end if
                   ilon = int(glon/dlon) + 1
-                  
+
                   !----- If we are at the right point, fill the array. --------------------!
                   if(ilat == ilatf .and. ilon == ilonf)then
 
@@ -1705,7 +1719,7 @@ module update_derived_utils
                               csite%soil_water(1:4,ipa)   =   0.41595e+0
                               csite%soil_fracliq(1:4,ipa) =   1.0
                            endif
-                           
+
                            !----- Compute the ground specific humidity. -------------------!
                            ntext = cpoly%ntext_soil(k,isi)
                            nls   = csite%nlev_sfcwater(ipa)
@@ -2118,7 +2132,7 @@ module update_derived_utils
       integer                             :: ico       ! Counters
       real(kind=4)                        :: lai_pot   ! Potential LAI
       real(kind=4)                        :: hgt_eff   ! Effective height
-      real(kind=4)                        :: sz_fact   ! Size correction factor 
+      real(kind=4)                        :: sz_fact   ! Size correction factor
       !------------------------------------------------------------------------------------!
 
 

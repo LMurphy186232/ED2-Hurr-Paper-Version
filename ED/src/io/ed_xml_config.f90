@@ -728,6 +728,9 @@ recursive subroutine read_ed_xml_config(filename)
            call getConfigREAL  ('dbh_bigleaf','pft',i,rval,texist)
            if(texist) dbh_bigleaf(myPFT) = sngloff(rval,tiny_offset)
 
+           call getConfigREAL  ('off_allom_tol','pft',i,rval,texist)
+           if(texist) off_allom_tol(myPFT) = sngloff(rval,tiny_offset)
+
      ! Leaf
            call getConfigREAL  ('b1Bl','pft',i,rval,texist)
            if (texist) b1Bl(myPFT) = sngloff(rval,tiny_offset)
@@ -2113,15 +2116,16 @@ subroutine write_ed_xml_config
         call putConfigREAL("leaf_shed_rate"    ,leaf_shed_rate    (i))
 
      !! HEIGHT
-        call putConfigREAL("b1Ht",       b1Ht(i))
-        call putConfigREAL("b2Ht",       b2Ht(i))
-        call putConfigREAL("hgt_ref",    hgt_ref(i))
-        call putConfigREAL("hgt_min",    hgt_min(i))
-        call putConfigREAL("hgt_max",    hgt_max(i))
-        call putConfigREAL("min_dbh",    min_dbh(i))
-        call putConfigREAL("max_dbh",    max_dbh(i))
-        call putConfigREAL("dbh_crit",   dbh_crit(i))
-        call putConfigREAL("dbh_bigleaf",dbh_bigleaf(i))
+        call putConfigREAL("b1Ht",         b1Ht(i))
+        call putConfigREAL("b2Ht",         b2Ht(i))
+        call putConfigREAL("hgt_ref",      hgt_ref(i))
+        call putConfigREAL("hgt_min",      hgt_min(i))
+        call putConfigREAL("hgt_max",      hgt_max(i))
+        call putConfigREAL("min_dbh",      min_dbh(i))
+        call putConfigREAL("max_dbh",      max_dbh(i))
+        call putConfigREAL("dbh_crit",     dbh_crit(i))
+        call putConfigREAL("dbh_bigleaf",  dbh_bigleaf(i))
+        call putConfigREAL("off_allom_tol",off_allom_tol(i))
 
      !! LEAF
         call putConfigREAL("b1Bl", b1Bl(i))
