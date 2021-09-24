@@ -11,7 +11,7 @@ module disturb_coms
                          , maxgrds      & ! intent(in)
                          , n_pft        & ! intent(in)
                          , n_dist_types & ! intent(in)
-                         , max_obstime  ! ! intent(in)
+                         , max_hurricanes  ! ! intent(in)
    implicit none
 
 
@@ -340,7 +340,7 @@ module disturb_coms
    character(len=str_len) :: hurricane_db
 
    !> List of scheduled hurricanes
-   type(hurrtime), dimension(max_obstime) :: hurricane_db_list
+   type(hurrtime), dimension(max_hurricanes) :: hurricane_db_list
 
    !> Total length of the hurricane schedule
    integer :: hurricane_db_list_len
