@@ -1541,6 +1541,22 @@ $ED_NL
 
 
    !---------------------------------------------------------------------------------------!
+   !      The following parameters control hurricanes in the model.                        !
+   ! INCLUDE_HURRICANES -- Whether to include hurricanes.                                  !
+   !                   0.  No hurricanes.                                                  !
+   !                   1.  Hurricanes will occur.                                          ! 
+   ! HURRICANE_DB       -- If hurricanes are to occur, this is the text file with the      !
+   !                       storm schedule; with header, space delimited, one line per      !
+   !                       storm, of the format year month severity (0-1).                 ! 
+   !---------------------------------------------------------------------------------------!
+   NL%INCLUDE_HURRICANES = 0
+   NL%HURRICANE_DB       = ''
+   !---------------------------------------------------------------------------------------!
+
+
+
+
+   !---------------------------------------------------------------------------------------!
    !  IANTH_DISTURB -- This flag controls whether to include anthropogenic disturbances    !
    !                   such as land clearing, abandonment, and logging.                    !
    !                   0.  No anthropogenic disturbance.                                   !

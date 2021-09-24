@@ -36,6 +36,8 @@ subroutine ed_driver()
    use hrzshade_utils       , only : init_cci_variables            ! ! subroutine
    use canopy_radiation_coms, only : ihrzrad                       ! ! intent(in)
    use random_utils         , only : init_random_seed              ! ! subroutine
+   use hurricane            , only : read_hurricane_db             ! ! subroutine
+   use disturb_coms         , only : include_hurricanes
    implicit none
    !----- Included variables. -------------------------------------------------------------!
 #if defined(RAMS_MPI)
@@ -135,8 +137,8 @@ subroutine ed_driver()
    !---------------------------------------------------------------------------------------!
 
    !-----Always write out a copy of model parameters in xml--------------------------!
-   if (mynum == nnodetot) then 
-       write (unit=*,fmt='(a)') ' [+] Write parameters to xml...'      
+   if (mynum == nnodetot) then
+       write (unit=*,fmt='(a)') ' [+] Write parameters to xml...'
        call write_ed_xml_config()
    endif
    !---------------------------------------------------------------------------------!
@@ -356,6 +358,25 @@ subroutine ed_driver()
     end if
    !---------------------------------------------------------------------------------------!
 
+   !---------------------------------------------------------------------------------------!
+   !      Read hurricane schedule if applicable.                                           !
+   !                                                                                       !
+   ! There may be a better place to do this.
+   !---------------------------------------------------------------------------------------!
+   if (include_hurricanes /= 0) then
+#if defined(RAMS_MPI)
+if (mynum /= 1) call MPI_Recv(ping,1,MPI_INTEGER,recvnum,62,MPI_COMM_WORLD         &
+                             ,MPI_STATUS_IGNORE,ierr)
+#endif
+    if (mynum == nnodetot) write(unit=*,fmt='(a)') ' [+] Load hurricane schedule...'
+    call read_hurricane_db()
+#if defined(RAMS_MPI)
+            if (mynum < nnodetot ) call MPI_Send(ping,1,MPI_INTEGER,sendnum,62,MPI_COMM_WORLD  &
+                                                ,ierr)
+#endif
+    end if
+   !---------------------------------------------------------------------------------------!
+
 
 
    !---------------------------------------------------------------------------------------!
@@ -417,7 +438,7 @@ subroutine find_frqsum()
                           , radfrq_o_frqsum ! ! intent(out)
    use consts_coms, only: day_sec
 
-   implicit none 
+   implicit none
    !----- Local variables. ----------------------------------------------------------------!
    logical :: fast_output
    logical :: no_fast_output
@@ -480,13 +501,13 @@ subroutine find_frqsum()
    !    Both are on and both outputs are in seconds or day scales. Choose the minimum      !
    ! between them and one day.                                                             !
    !---------------------------------------------------------------------------------------!
-   elseif (unitfast < 2 .and. unitstate < 2) then 
+   elseif (unitfast < 2 .and. unitstate < 2) then
       frqsum=min(min(frqstate,frqfast),day_sec)
    !---------------------------------------------------------------------------------------!
    !    Both are on but unitstate is in month or years. Choose the minimum between frqfast !
    ! and one day.                                                                          !
    !---------------------------------------------------------------------------------------!
-   elseif (unitfast < 2) then 
+   elseif (unitfast < 2) then
       frqsum=min(frqfast,day_sec)
    !---------------------------------------------------------------------------------------!
    !    Both are on but unitfast is in month or years. Choose the minimum between frqstate !
@@ -597,7 +618,7 @@ subroutine exterminate_patches_except(keeppa)
             case default
                !----- Keep a fixed patch number. ------------------------------------------!
                keepact = keeppa
-               
+
                if (keepact > csite%npatches) then
                   write(unit=*,fmt='(a)')       '-----------------------------------------'
                   write(unit=*,fmt='(a,1x,i6)') ' - IPY      = ',ipy

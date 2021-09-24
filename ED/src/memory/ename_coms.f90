@@ -1,7 +1,8 @@
 !==========================================================================================!
 !==========================================================================================!
-!     Module ename_coms.  This module contains the namelist structure, and it will be the  !
-! first place where the namelist variables will be stored before the variables are loaded. !
+!> \brief Module ename_coms.
+!> \details This module contains the namelist structure, and it will be the  first
+!> place where the namelist variables will be stored before the variables are loaded.
 !------------------------------------------------------------------------------------------!
 module ename_coms
 
@@ -15,13 +16,14 @@ module ename_coms
    implicit none
 
    !---------------------------------------------------------------------------------------!
-   !      This is the namelist structure.  Please assign the appropriate non-sense initial !
-   ! value at the subroutine below in case you add a new variable.  This is to make the    !
-   ! user aware that he or she needs to define a new variable.                             !
+   !> \brief This is the namelist structure.
+   !> \details This is the namelist structure. Please assign the appropriate non-sense
+   !> initial value at the subroutine below in case you add a new variable. This is to
+   !> make the user aware that he or she needs to define a new variable.                             !
    !---------------------------------------------------------------------------------------!
    type ename_vars
       !----- This is just to give some name to this simulation, otherwise not used. -------!
-      character(len=str_len)                            :: expnme 
+      character(len=str_len)                            :: expnme
 
       !----- Type of simulation (INITIAL or HISTORY). -------------------------------------!
       character(len=str_len)                            :: runtype
@@ -123,7 +125,7 @@ module ename_coms
       character(len=str_len), dimension(maxgrds)        :: lu_database
       character(len=str_len), dimension(maxgrds)        :: plantation_file
       character(len=str_len), dimension(maxgrds)        :: lu_rescale_file
-      character(len=str_len)                            :: thsums_database 
+      character(len=str_len)                            :: thsums_database
       character(len=str_len)                            :: soilstate_db
       character(len=str_len)                            :: soildepth_db
       character(len=str_len)                            :: ed_met_driver_db
@@ -141,7 +143,7 @@ module ename_coms
       real                  , dimension(max_ed_regions) :: ed_reg_latmax
       real                  , dimension(max_ed_regions) :: ed_reg_lonmin
       real                  , dimension(max_ed_regions) :: ed_reg_lonmax
-  
+
 
       !----- Options for model dynamics. --------------------------------------------------!
       integer                                           :: ivegt_dynamics
@@ -251,6 +253,12 @@ module ename_coms
       real                                              :: ribmax
       real                                              :: leaf_maxwhc
 
+      !------ Controls hurricanes ---------------------------------------------------------!
+      !< Whether to include hurricanes (1) or not (0)
+      integer                                           :: include_hurricanes
+      !< Name of file with hurricane schedule
+      character(len=str_len)                            :: hurricane_db
+
       !----- Options for printing polygon vectors/arrays to standard output. --------------!
       integer                                           :: iprintpolys
       integer                                           :: npvars
@@ -317,9 +325,10 @@ module ename_coms
 
    !=======================================================================================!
    !=======================================================================================!
-   !      The namelist structure will be read by the namelist, but we first assign         !
-   ! default values, which don't make any sense, so the user will know if he or she is not !
-   ! including all variables in his or her ED2IN.                                          !
+   !> \brief Assign nonsense values to initialize namelist.
+   !> \details The namelist structure will be read by the namelist, but we first assign
+   !> default values, which don't make any sense, so the user will know if he or she is not
+   !> including all variables in his or her ED2IN.
    !---------------------------------------------------------------------------------------!
    subroutine init_ename_vars(enl)
       use ed_max_dims, only : undef_real      & ! intent(in)
@@ -446,7 +455,7 @@ module ename_coms
       enl%ed_reg_latmax             = (/ (undef_real,i=1,max_ed_regions) /)
       enl%ed_reg_lonmin             = (/ (undef_real,i=1,max_ed_regions) /)
       enl%ed_reg_lonmax             = (/ (undef_real,i=1,max_ed_regions) /)
- 
+
 
       enl%ivegt_dynamics            = undef_integer
       enl%ibigleaf                  = undef_integer
@@ -523,9 +532,9 @@ module ename_coms
       enl%sl_scale                  = undef_integer
       enl%sl_yr_first               = undef_integer
       enl%sl_nyrs                   = undef_integer
-      enl%sl_pft                    = (/(undef_integer,i=1,n_pft)/) 
-      enl%sl_prob_harvest           = (/(undef_real   ,i=1,n_pft)/) 
-      enl%sl_mindbh_harvest         = (/(undef_real   ,i=1,n_pft)/) 
+      enl%sl_pft                    = (/(undef_integer,i=1,n_pft)/)
+      enl%sl_prob_harvest           = (/(undef_real   ,i=1,n_pft)/)
+      enl%sl_mindbh_harvest         = (/(undef_real   ,i=1,n_pft)/)
       enl%sl_biomass_harvest        = undef_real
       enl%sl_skid_rel_area          = undef_real
       enl%sl_skid_s_gtharv          = undef_real
@@ -538,7 +547,7 @@ module ename_coms
       enl%isfclyrm                  = undef_integer
       enl%ipercol                   = undef_integer
 
-      enl%include_these_pft         = (/(undef_integer,i=1,n_pft)/) 
+      enl%include_these_pft         = (/(undef_integer,i=1,n_pft)/)
       enl%pasture_stock             = undef_integer
       enl%agri_stock                = undef_integer
       enl%plantation_stock          = undef_integer
@@ -597,7 +606,10 @@ module ename_coms
       enl%min_patch_area            = undef_real
 
       enl%zrough                    = undef_real
-      enl%edres                     = undef_real 
+      enl%edres                     = undef_real
+
+      enl%include_hurricanes        = undef_integer
+      enl%hurricane_db              = undef_path
 
       return
    end subroutine init_ename_vars

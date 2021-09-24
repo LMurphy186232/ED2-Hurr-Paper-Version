@@ -10,7 +10,8 @@ module disturb_coms
    use ed_max_dims, only : str_len      & ! intent(in)
                          , maxgrds      & ! intent(in)
                          , n_pft        & ! intent(in)
-                         , n_dist_types ! ! intent(in)
+                         , n_dist_types & ! intent(in)
+                         , max_obstime  ! ! intent(in)
    implicit none
 
 
@@ -27,7 +28,7 @@ module disturb_coms
    ! runs longer than this, the missing years will be filled with zeroes.  The first and   !
    ! last year of each is checked in landuse_init.                                         !
    !---------------------------------------------------------------------------------------!
-   integer, parameter :: max_lu_years = 2500 
+   integer, parameter :: max_lu_years = 2500
 
    !=======================================================================================!
    !=======================================================================================!
@@ -59,7 +60,7 @@ module disturb_coms
 
    !----- Dimensionless parameter controlling speed of fire spread. -----------------------!
    real :: fire_parameter
-   
+
    !----- Fractions of fast and structural carbon and nitrogen lost through combustion. ---!
    real :: f_combusted_fast_c
    real :: f_combusted_struct_c
@@ -96,12 +97,12 @@ module disturb_coms
    !---------------------------------------------------------------------------------------!
 
    !----- Minimum relative area required for a patch to be created or maintained. ---------!
-   real :: min_patch_area 
+   real :: min_patch_area
    !---------------------------------------------------------------------------------------!
 
 
    !----- The prefix for land use disturbance rates. The path and prefix must be included. !
-   character(len=str_len), dimension(maxgrds) :: lu_database 
+   character(len=str_len), dimension(maxgrds) :: lu_database
    !----- File with plantation fraction.  If no file is available, leave it blank. --------!
    character(len=str_len), dimension(maxgrds) :: plantation_file
    !----- File with initial land use area scale.  If no file is available, leave it blank. !
@@ -238,7 +239,7 @@ module disturb_coms
    !     Fire may occur if total equivalent water depth (ground + underground) falls below !
    ! this threshold and include_fire is 1.  Units: meters.                                 !
    !---------------------------------------------------------------------------------------!
-   real :: fire_dryness_threshold 
+   real :: fire_dryness_threshold
 
    !---------------------------------------------------------------------------------------!
    ! SM_FIRE        -- This is used only when INCLUDE_FIRE = 2 or 3, and it has different  !
@@ -258,7 +259,7 @@ module disturb_coms
    !---------------------------------------------------------------------------------------!
    !     Depth to be compared with the soil average when include_fire is 2. Units: meters. !
    !---------------------------------------------------------------------------------------!
-   real :: fire_smoist_depth         
+   real :: fire_smoist_depth
 
    !----- k level of the deepest layer to be considered. ----------------------------------!
    integer :: k_fire_first
@@ -294,13 +295,13 @@ module disturb_coms
       ! 11 - Primary forest to secondary forest                            [         1/yr] !
       !  ====== Biomass to be harvested. ======                                            !
       ! 12 - Wood harvest on mature secondary forest land.                 [          kgC] !
-      ! 13 - Wood harvest on mature secondary forest land.                 [       kgC/m²] !
+      ! 13 - Wood harvest on mature secondary forest land.                 [       kgC/mï¿½] !
       ! 14 - Wood harvest on primary forested land.                        [          kgC] !
-      ! 15 - Wood harvest on primary forested land.                        [       kgC/m²] !
+      ! 15 - Wood harvest on primary forested land.                        [       kgC/mï¿½] !
       ! 16 - Wood harvest on young secondary forest land.                  [          kgC] !
-      ! 17 - Wood harvest on young secondary forest land.                  [       kgC/m²] !
+      ! 17 - Wood harvest on young secondary forest land.                  [       kgC/mï¿½] !
       ! 18 - Wood harvest on primary non-forested land.                    [          kgC] !
-      ! 19 - Wood harvest on primary non-forested land.                    [       kgC/m²] !
+      ! 19 - Wood harvest on primary non-forested land.                    [       kgC/mï¿½] !
       !  ====== Special flags. ======                                                      !
       ! 12 - Secondary forest is harvested using the probability of harvesting when the    !
       !      DBH is above the minimum DBH.                                                 !
@@ -311,6 +312,41 @@ module disturb_coms
    end type lutime
    !=======================================================================================!
    !=======================================================================================!
+
+
+
+   !=======================================================================================!
+   !=======================================================================================!
+   !     Variables related to hurricanes.                                                  !
+   ! Code to execute hurricanes present in hurricane.f90.                                  !
+   ! Author: Lora Murphy Sept 2021                                                         !
+   !---------------------------------------------------------------------------------------!
+
+   !> Whether to include hurricanes. 0 = no; 1 = yes. If hurricanes are included, the
+   !> storm schedule must be included in a text file.
+   integer :: include_hurricanes
+
+   !----- Hurricane specification list ----------------------------------------------------!
+   !> A structure for holding the info for a single hurricane
+   type hurrtime
+       !> Year hurricane occurs
+       integer :: year
+       !> Month hurricane occurs, 1-12
+       integer :: month
+       !> Between 0 and 1; 1 is a max severity storm
+       real    :: severity
+   end type hurrtime
+   !> Filename containing the hurricane list
+   character(len=str_len) :: hurricane_db
+
+   !> List of scheduled hurricanes
+   type(hurrtime), dimension(max_obstime) :: hurricane_db_list
+
+   !> Total length of the hurricane schedule
+   integer :: hurricane_db_list_len
+   !=======================================================================================!
+   !=======================================================================================!
+
 end module disturb_coms
 !==========================================================================================!
 !==========================================================================================!

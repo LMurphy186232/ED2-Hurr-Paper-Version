@@ -3,7 +3,7 @@
 subroutine read_nl(namelist_name)
    use ename_coms, only : nl              & ! intent(inout)
                         , init_ename_vars ! ! subroutine
-  
+
    implicit none
    !----- Arguments. ----------------------------------------------------------------------!
    character(len=*), intent(in) :: namelist_name
@@ -22,9 +22,9 @@ subroutine read_nl(namelist_name)
    !---------------------------------------------------------------------------------------!
 
    !----- Initialise the name list with absurd, undefined values. -------------------------!
-   call init_ename_vars(nl) 
+   call init_ename_vars(nl)
    !---------------------------------------------------------------------------------------!
-  
+
    !----- Read grid point and options information from the namelist. ----------------------!
    open (unit=10, status='old', file=namelist_name)
    read (unit=10, nml=ED_NL)
@@ -173,7 +173,9 @@ subroutine copy_nl(copy_type)
                                    , sl_felling_s_ltharv       & ! intent(out)
                                    , cl_fseeds_harvest         & ! intent(out)
                                    , cl_fstorage_harvest       & ! intent(out)
-                                   , cl_fleaf_harvest          ! ! intent(out)
+                                   , cl_fleaf_harvest          & ! intent(out)
+                                   , include_hurricanes        &
+                                   , hurricane_db
    use pft_coms             , only : include_these_pft         & ! intent(out)
                                    , pasture_stock             & ! intent(out)
                                    , agri_stock                & ! intent(out)
@@ -246,10 +248,10 @@ subroutine copy_nl(copy_type)
                                    , writing_mont              & ! intent(out)
                                    , writing_dcyc              & ! intent(out)
                                    , writing_year              & ! intent(out)
-                                   , writing_long              & ! intent(out) 
+                                   , writing_long              & ! intent(out)
                                    , writing_eorq              & ! intent(out)
-                                   , history_fast              & ! intent(out) 
-                                   , history_dail              & ! intent(out) 
+                                   , history_fast              & ! intent(out)
+                                   , history_dail              & ! intent(out)
                                    , history_eorq              & ! intent(out)
                                    , growth_resp_scheme        & ! intent(out)
                                    , storage_resp_scheme       & ! intent(out)
@@ -362,14 +364,14 @@ subroutine copy_nl(copy_type)
       frqstate                  = nl%frqstate
       outfast                   = nl%outfast
       outstate                  = nl%outstate
-      
+
       sfilin                    = nl%sfilin
 
       itimeh                    = nl%itimeh
       idateh                    = nl%idateh
       imonthh                   = nl%imonthh
       iyearh                    = nl%iyearh
-      
+
       ffilout                   = nl%ffilout
       sfilout                   = nl%sfilout
       ied_init_mode             = nl%ied_init_mode
@@ -520,16 +522,19 @@ subroutine copy_nl(copy_type)
       agri_stock                = nl%agri_stock
       plantation_stock          = nl%plantation_stock
       pft_1st_check             = nl%pft_1st_check
-      
+
       treefall_disturbance_rate = nl%treefall_disturbance_rate
       time2canopy               = nl%time2canopy
       runoff_time               = nl%runoff_time
       ubmin                     = nl%ubmin
       ugbmin                    = nl%ugbmin
       ustmin                    = nl%ustmin
-      
+
       growth_resp_scheme        = nl%growth_resp_scheme
       storage_resp_scheme       = nl%storage_resp_scheme
+
+      include_hurricanes        = nl%include_hurricanes
+      hurricane_db              = nl%hurricane_db
 
       !----- Print control parameters. ----------------------------------------------------!
       iprintpolys               = nl%iprintpolys
@@ -546,12 +551,12 @@ subroutine copy_nl(copy_type)
       imetavg                   = nl%imetavg
       imetrad                   = nl%imetrad
       initial_co2               = nl%initial_co2
-      
+
       iphenys1                  = nl%iphenys1
       iphenysf                  = nl%iphenysf
       iphenyf1                  = nl%iphenyf1
       iphenyff                  = nl%iphenyff
-      
+
       iedcnfgf                  = nl%iedcnfgf
       event_file                = nl%event_file
       phenpath                  = nl%phenpath
@@ -575,16 +580,16 @@ subroutine copy_nl(copy_type)
 
       deltax                    = nl%deltax
       deltay                    = nl%deltay
-      
+
       polelat                   = nl%polelat
       polelon                   = nl%polelon
-      
+
       centlat                   = nl%centlat
       centlon                   = nl%centlon
-      
+
       nstratx                   = nl%nstratx
       nstraty                   = nl%nstraty
-      
+
       edres                     = nl%edres
 
       !------------------------------------------------------------------------------------!
@@ -635,7 +640,7 @@ subroutine copy_nl(copy_type)
       nzs           = nl%nzs
 
       slz(1:nzgmax) = nl%slz(1:nzgmax)
-      
+
       !------------------------------------------------------------------------------------!
       !      Set current time to initial time here.  If this is a history run, then reset  !
       ! current time in subroutine history_start.                                          !
@@ -663,7 +668,7 @@ subroutine copy_nl(copy_type)
       nzs           = nl%nzs
 
       slz(1:nzgmax) = nl%slz(1:nzgmax)
-      
+
       !------------------------------------------------------------------------------------!
       !      Set current time to initial time here.  If this is a history run, reset       !
       ! current time in subroutine history_start.                             !
@@ -688,7 +693,7 @@ subroutine copy_nl(copy_type)
    ! invalid.                                                                              !
    !---------------------------------------------------------------------------------------!
    if (iqoutput == 0 .or. frqfast <= 0 .or. unitfast > 0) then
-      ndcycle = 1 
+      ndcycle = 1
    else
       ndcycle = max(1,int(day_sec / frqfast))
    end if
@@ -698,7 +703,7 @@ subroutine copy_nl(copy_type)
 
 
    !----- Sort up the chosen PFTs. --------------------------------------------------------!
-   where (include_these_pft < 1 .or. include_these_pft > n_pft) 
+   where (include_these_pft < 1 .or. include_these_pft > n_pft)
       include_these_pft = skip_integer
    end where
    call sort_up(include_these_pft,n_pft)
@@ -719,7 +724,7 @@ subroutine copy_nl(copy_type)
    sl_prob_harvest  (idx) = sl_prob_harvest(:)
    !---------------------------------------------------------------------------------------!
 
-      
+
    !----- Determine the length of simuation. ----------------------------------------------!
    call date_2_seconds (iyearz,imonthz,idatez,itimez*100,iyeara,imontha,idatea,itimea*100  &
                        ,timmax)

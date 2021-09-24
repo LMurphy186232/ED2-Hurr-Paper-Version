@@ -835,7 +835,9 @@ subroutine init_disturb_params
                            , f_combusted_struct_n      & ! intent(out)
                            , k_fire_first              & ! intent(out)
                            , min_plantation_frac       & ! intent(out)
-                           , max_plantation_dist       ! ! intent(out)
+                           , max_plantation_dist       & ! intent(out)
+                           , hurricane_db              &
+                           , include_hurricanes
    use consts_coms  , only : erad                      & ! intent(in)
                            , pio180                    & ! intent(in)
                            , tiny_num                  & ! intent(in)
@@ -936,6 +938,18 @@ subroutine init_disturb_params
    min_oldgrowth(2) = huge_num
    min_oldgrowth(8) = huge_num
    !---------------------------------------------------------------------------------------!
+
+
+   !---------------------------------------------------------------------------------------!
+   !     Initialize hurricane parameters                                                   !
+   !---------------------------------------------------------------------------------------!
+   select case (include_hurricanes)
+   case (1)
+
+   case default
+      hurricane_db         = ''
+
+   end select
 
    return
 

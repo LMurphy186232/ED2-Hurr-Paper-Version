@@ -337,7 +337,8 @@ subroutine ed_masterput_nl(par_run)
                                    , lu_rescale_file           & ! intent(in)
                                    , sm_fire                   & ! intent(in)
                                    , time2canopy               & ! intent(in)
-                                   , min_patch_area            ! ! intent(in)
+                                   , min_patch_area            & ! intent(in)
+                                   , include_hurricanes
    use canopy_layer_coms    , only : crown_mod                 ! ! intent(in)
    use canopy_radiation_coms, only : icanrad                   & ! intent(in)
                                    , ihrzrad                   & ! intent(in)
@@ -416,7 +417,7 @@ subroutine ed_masterput_nl(par_run)
    call MPI_Bcast(dtlsm,1,MPI_REAL,mainnum,MPI_COMM_WORLD,ierr)
    call MPI_Bcast(radfrq,1,MPI_REAL,mainnum,MPI_COMM_WORLD,ierr)
    call MPI_Bcast(month_yrstep,1,MPI_INTEGER,mainnum,MPI_COMM_WORLD,ierr)
-   
+
 
    call MPI_Bcast(ifoutput,1,MPI_INTEGER,mainnum,MPI_COMM_WORLD,ierr)
    call MPI_Bcast(idoutput,1,MPI_INTEGER,mainnum,MPI_COMM_WORLD,ierr)
@@ -577,6 +578,9 @@ subroutine ed_masterput_nl(par_run)
    call MPI_Bcast(fire_parameter,1,MPI_REAL,mainnum,MPI_COMM_WORLD,ierr)
    call MPI_Bcast(sm_fire,1,MPI_REAL,mainnum,MPI_COMM_WORLD,ierr)
    call MPI_Bcast(ianth_disturb,1,MPI_INTEGER,mainnum,MPI_COMM_WORLD,ierr)
+
+   call MPI_Bcast(include_hurricanes,1,MPI_INTEGER,mainnum,MPI_COMM_WORLD,ierr)
+
    call MPI_Bcast(sl_scale           ,    1,MPI_INTEGER,mainnum,MPI_COMM_WORLD,ierr)
    call MPI_Bcast(sl_yr_first        ,    1,MPI_INTEGER,mainnum,MPI_COMM_WORLD,ierr)
    call MPI_Bcast(sl_nyrs            ,    1,MPI_INTEGER,mainnum,MPI_COMM_WORLD,ierr)
@@ -2209,4 +2213,3 @@ subroutine ed_nodeget_worklist_info
 end subroutine ed_nodeget_worklist_info
 !==========================================================================================!
 !==========================================================================================!
-
