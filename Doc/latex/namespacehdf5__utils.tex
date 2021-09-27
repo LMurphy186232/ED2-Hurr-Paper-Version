@@ -1,0 +1,157 @@
+\hypertarget{namespacehdf5__utils}{}\doxysection{hdf5\+\_\+utils Module Reference}
+\label{namespacehdf5__utils}\index{hdf5\_utils@{hdf5\_utils}}
+
+
+Subroutines that handle the HDF5 input and output in ED2.  
+
+
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacehdf5__utils_a8324e53f06756f48c91f3735f9d26640}{shdf5\+\_\+open}} (locfn, access, idelete)
+\item 
+subroutine \mbox{\hyperlink{namespacehdf5__utils_a5dbfd8881a533f6a96e2fe24a26b41e7}{shdf5\+\_\+info}} (dsetname, ndims, dims)
+\item 
+subroutine \mbox{\hyperlink{namespacehdf5__utils_a58ff5ab2483e4daa0dbed83d77252b07}{shdf5\+\_\+orec}} (ndims, dims, dsetname, ivara, rvara, cvara, dvara, lvara, ivars, rvars, cvars, dvars, lvars)
+\item 
+subroutine \mbox{\hyperlink{namespacehdf5__utils_ab26ed9a2b6aaa85020cd040ea3b049fc}{shdf5\+\_\+irec}} (ndims, dims, dsetname, ivara, rvara, cvara, dvara, lvara, ivars, rvars, cvars, dvars, lvars)
+\item 
+subroutine \mbox{\hyperlink{namespacehdf5__utils_ac2a5ad4876fe382625c40cd9964ca3c1}{shdf5\+\_\+close}} ()
+\item 
+subroutine \mbox{\hyperlink{namespacehdf5__utils_a5149c551d73478f502b8660e3bdbd5b8}{shdf5\+\_\+info\+\_\+f}} (dsetname, ndims, dims)
+\item 
+subroutine \mbox{\hyperlink{namespacehdf5__utils_ab621eee22271edfd3bf37b44d5b657e6}{shdf5\+\_\+open\+\_\+f}} (locfn, access, idelete)
+\item 
+subroutine \mbox{\hyperlink{namespacehdf5__utils_a2ede1f04f554f0906040f2802b2ccbd3}{shdf5\+\_\+orec\+\_\+f}} (ndims, dims, dsetname, ivara, rvara, cvara, dvara, lvara, ivars, rvars, cvars, dvars, lvars)
+\item 
+subroutine \mbox{\hyperlink{namespacehdf5__utils_a84928db7f00b3aedc24a2c20281dddb1}{shdf5\+\_\+irec\+\_\+f}} (ndims, dims, dsetname, ivara, rvara, cvara, dvara, lvara, ivars, rvars, cvars, dvars, lvars)
+\item 
+subroutine \mbox{\hyperlink{namespacehdf5__utils_aced9a0b34d2b1e59a1867be622a7c8a4}{shdf5\+\_\+close\+\_\+f}} ()
+\begin{DoxyCompactList}\small\item\em Subroutine that closes HD5 file. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacehdf5__utils_a5149c551d73478f502b8660e3bdbd5b8}{shdf5\+\_\+info\+\_\+f}} (dsetname, ndims, dims)
+\begin{DoxyCompactList}\small\item\em This subroutine retrieves the HDF5 information. ~\newline
+ \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacehdf5__utils_ab621eee22271edfd3bf37b44d5b657e6}{shdf5\+\_\+open\+\_\+f}} (locfn, access, idelete)
+\begin{DoxyCompactList}\small\item\em This subroutine opens the HDF5 file. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacehdf5__utils_a2ede1f04f554f0906040f2802b2ccbd3}{shdf5\+\_\+orec\+\_\+f}} (ndims, dims, dsetname, ivara, rvara, cvara, dvara, lvara, ivars, rvars, cvars, dvars, lvars)
+\begin{DoxyCompactList}\small\item\em Subroutine for writing variables. It doesn\textquotesingle{}t seem to be used at all in the. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacehdf5__utils_a84928db7f00b3aedc24a2c20281dddb1}{shdf5\+\_\+irec\+\_\+f}} (ndims, dims, dsetname, ivara, rvara, cvara, dvara, lvara, ivars, rvars, cvars, dvars, lvars)
+\begin{DoxyCompactList}\small\item\em Subroutine for reading variables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Subroutines that handle the HDF5 input and output in ED2. 
+
+\begin{DoxyAuthor}{Author}
+Developed by Ryan Knox 
+
+23 May 2018. Deleted stop commands and replaced with fatal error, to make sure 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacehdf5__utils_ac2a5ad4876fe382625c40cd9964ca3c1}\label{namespacehdf5__utils_ac2a5ad4876fe382625c40cd9964ca3c1}} 
+\index{hdf5\_utils@{hdf5\_utils}!shdf5\_close@{shdf5\_close}}
+\index{shdf5\_close@{shdf5\_close}!hdf5\_utils@{hdf5\_utils}}
+\doxysubsubsection{\texorpdfstring{shdf5\_close()}{shdf5\_close()}}
+{\footnotesize\ttfamily subroutine hdf5\+\_\+utils\+::shdf5\+\_\+close}
+
+\mbox{\Hypertarget{namespacehdf5__utils_aced9a0b34d2b1e59a1867be622a7c8a4}\label{namespacehdf5__utils_aced9a0b34d2b1e59a1867be622a7c8a4}} 
+\index{hdf5\_utils@{hdf5\_utils}!shdf5\_close\_f@{shdf5\_close\_f}}
+\index{shdf5\_close\_f@{shdf5\_close\_f}!hdf5\_utils@{hdf5\_utils}}
+\doxysubsubsection{\texorpdfstring{shdf5\_close\_f()}{shdf5\_close\_f()}}
+{\footnotesize\ttfamily subroutine hdf5\+\_\+utils\+::shdf5\+\_\+close\+\_\+f}
+
+
+
+Subroutine that closes HD5 file. 
+
+\mbox{\Hypertarget{namespacehdf5__utils_a5dbfd8881a533f6a96e2fe24a26b41e7}\label{namespacehdf5__utils_a5dbfd8881a533f6a96e2fe24a26b41e7}} 
+\index{hdf5\_utils@{hdf5\_utils}!shdf5\_info@{shdf5\_info}}
+\index{shdf5\_info@{shdf5\_info}!hdf5\_utils@{hdf5\_utils}}
+\doxysubsubsection{\texorpdfstring{shdf5\_info()}{shdf5\_info()}}
+{\footnotesize\ttfamily subroutine hdf5\+\_\+utils\+::shdf5\+\_\+info (\begin{DoxyParamCaption}\item[{character(len=$\ast$)}]{dsetname,  }\item[{integer}]{ndims,  }\item[{integer, dimension($\ast$)}]{dims }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacehdf5__utils_a5149c551d73478f502b8660e3bdbd5b8}\label{namespacehdf5__utils_a5149c551d73478f502b8660e3bdbd5b8}} 
+\index{hdf5\_utils@{hdf5\_utils}!shdf5\_info\_f@{shdf5\_info\_f}}
+\index{shdf5\_info\_f@{shdf5\_info\_f}!hdf5\_utils@{hdf5\_utils}}
+\doxysubsubsection{\texorpdfstring{shdf5\_info\_f()}{shdf5\_info\_f()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily subroutine hdf5\+\_\+utils\+::shdf5\+\_\+info\+\_\+f (\begin{DoxyParamCaption}\item[{character(len=$\ast$)}]{dsetname,  }\item[{integer}]{ndims,  }\item[{integer, dimension($\ast$)}]{dims }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacehdf5__utils_a5149c551d73478f502b8660e3bdbd5b8}\label{namespacehdf5__utils_a5149c551d73478f502b8660e3bdbd5b8}} 
+\index{hdf5\_utils@{hdf5\_utils}!shdf5\_info\_f@{shdf5\_info\_f}}
+\index{shdf5\_info\_f@{shdf5\_info\_f}!hdf5\_utils@{hdf5\_utils}}
+\doxysubsubsection{\texorpdfstring{shdf5\_info\_f()}{shdf5\_info\_f()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily subroutine hdf5\+\_\+utils\+::shdf5\+\_\+info\+\_\+f (\begin{DoxyParamCaption}\item[{character(len=$\ast$), intent(in)}]{dsetname,  }\item[{integer, intent(inout)}]{ndims,  }\item[{integer, dimension($\ast$), intent(inout)}]{dims }\end{DoxyParamCaption})}
+
+
+
+This subroutine retrieves the HDF5 information. ~\newline
+ 
+
+\mbox{\Hypertarget{namespacehdf5__utils_ab26ed9a2b6aaa85020cd040ea3b049fc}\label{namespacehdf5__utils_ab26ed9a2b6aaa85020cd040ea3b049fc}} 
+\index{hdf5\_utils@{hdf5\_utils}!shdf5\_irec@{shdf5\_irec}}
+\index{shdf5\_irec@{shdf5\_irec}!hdf5\_utils@{hdf5\_utils}}
+\doxysubsubsection{\texorpdfstring{shdf5\_irec()}{shdf5\_irec()}}
+{\footnotesize\ttfamily subroutine hdf5\+\_\+utils\+::shdf5\+\_\+irec (\begin{DoxyParamCaption}\item[{integer}]{ndims,  }\item[{integer, dimension($\ast$)}]{dims,  }\item[{character(len=$\ast$)}]{dsetname,  }\item[{integer, dimension($\ast$), optional}]{ivara,  }\item[{real, dimension($\ast$), optional}]{rvara,  }\item[{character(len=$\ast$), dimension($\ast$), optional}]{cvara,  }\item[{real(kind=8), dimension($\ast$), optional}]{dvara,  }\item[{logical, dimension($\ast$), optional}]{lvara,  }\item[{integer, optional}]{ivars,  }\item[{real, optional}]{rvars,  }\item[{character(len=$\ast$), optional}]{cvars,  }\item[{real(kind=8), optional}]{dvars,  }\item[{logical, optional}]{lvars }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacehdf5__utils_a84928db7f00b3aedc24a2c20281dddb1}\label{namespacehdf5__utils_a84928db7f00b3aedc24a2c20281dddb1}} 
+\index{hdf5\_utils@{hdf5\_utils}!shdf5\_irec\_f@{shdf5\_irec\_f}}
+\index{shdf5\_irec\_f@{shdf5\_irec\_f}!hdf5\_utils@{hdf5\_utils}}
+\doxysubsubsection{\texorpdfstring{shdf5\_irec\_f()}{shdf5\_irec\_f()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily subroutine hdf5\+\_\+utils\+::shdf5\+\_\+irec\+\_\+f (\begin{DoxyParamCaption}\item[{integer}]{ndims,  }\item[{integer, dimension($\ast$)}]{dims,  }\item[{character(len=$\ast$)}]{dsetname,  }\item[{integer, dimension($\ast$), optional}]{ivara,  }\item[{real, dimension($\ast$), optional}]{rvara,  }\item[{character(len=$\ast$), dimension($\ast$), optional}]{cvara,  }\item[{real(kind=8), dimension($\ast$), optional}]{dvara,  }\item[{logical, dimension($\ast$), optional}]{lvara,  }\item[{integer, optional}]{ivars,  }\item[{real, optional}]{rvars,  }\item[{character(len=$\ast$), optional}]{cvars,  }\item[{real(kind=8), optional}]{dvars,  }\item[{logical, optional}]{lvars }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacehdf5__utils_a84928db7f00b3aedc24a2c20281dddb1}\label{namespacehdf5__utils_a84928db7f00b3aedc24a2c20281dddb1}} 
+\index{hdf5\_utils@{hdf5\_utils}!shdf5\_irec\_f@{shdf5\_irec\_f}}
+\index{shdf5\_irec\_f@{shdf5\_irec\_f}!hdf5\_utils@{hdf5\_utils}}
+\doxysubsubsection{\texorpdfstring{shdf5\_irec\_f()}{shdf5\_irec\_f()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily subroutine hdf5\+\_\+utils\+::shdf5\+\_\+irec\+\_\+f (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ndims,  }\item[{integer, dimension($\ast$), intent(in)}]{dims,  }\item[{character(len=$\ast$), intent(in)}]{dsetname,  }\item[{integer, dimension($\ast$), optional}]{ivara,  }\item[{real, dimension($\ast$), optional}]{rvara,  }\item[{character(len=$\ast$), dimension($\ast$), optional}]{cvara,  }\item[{real(kind=8), dimension($\ast$), optional}]{dvara,  }\item[{logical, dimension($\ast$), optional}]{lvara,  }\item[{integer, optional}]{ivars,  }\item[{real, optional}]{rvars,  }\item[{character(len=$\ast$), optional}]{cvars,  }\item[{real(kind=8), optional}]{dvars,  }\item[{logical, optional}]{lvars }\end{DoxyParamCaption})}
+
+
+
+Subroutine for reading variables. 
+
+\mbox{\Hypertarget{namespacehdf5__utils_a8324e53f06756f48c91f3735f9d26640}\label{namespacehdf5__utils_a8324e53f06756f48c91f3735f9d26640}} 
+\index{hdf5\_utils@{hdf5\_utils}!shdf5\_open@{shdf5\_open}}
+\index{shdf5\_open@{shdf5\_open}!hdf5\_utils@{hdf5\_utils}}
+\doxysubsubsection{\texorpdfstring{shdf5\_open()}{shdf5\_open()}}
+{\footnotesize\ttfamily subroutine hdf5\+\_\+utils\+::shdf5\+\_\+open (\begin{DoxyParamCaption}\item[{character(len=$\ast$)}]{locfn,  }\item[{character(len=$\ast$)}]{access,  }\item[{integer, optional}]{idelete }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacehdf5__utils_ab621eee22271edfd3bf37b44d5b657e6}\label{namespacehdf5__utils_ab621eee22271edfd3bf37b44d5b657e6}} 
+\index{hdf5\_utils@{hdf5\_utils}!shdf5\_open\_f@{shdf5\_open\_f}}
+\index{shdf5\_open\_f@{shdf5\_open\_f}!hdf5\_utils@{hdf5\_utils}}
+\doxysubsubsection{\texorpdfstring{shdf5\_open\_f()}{shdf5\_open\_f()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily subroutine hdf5\+\_\+utils\+::shdf5\+\_\+open\+\_\+f (\begin{DoxyParamCaption}\item[{character(len=$\ast$)}]{locfn,  }\item[{character(len=$\ast$)}]{access,  }\item[{integer, optional}]{idelete }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacehdf5__utils_ab621eee22271edfd3bf37b44d5b657e6}\label{namespacehdf5__utils_ab621eee22271edfd3bf37b44d5b657e6}} 
+\index{hdf5\_utils@{hdf5\_utils}!shdf5\_open\_f@{shdf5\_open\_f}}
+\index{shdf5\_open\_f@{shdf5\_open\_f}!hdf5\_utils@{hdf5\_utils}}
+\doxysubsubsection{\texorpdfstring{shdf5\_open\_f()}{shdf5\_open\_f()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily subroutine hdf5\+\_\+utils\+::shdf5\+\_\+open\+\_\+f (\begin{DoxyParamCaption}\item[{character(len=$\ast$), intent(in)}]{locfn,  }\item[{character(len=$\ast$), dimension (\textquotesingle{}r\textquotesingle{},\textquotesingle{}w\textquotesingle{},\textquotesingle{}rw\textquotesingle{}), intent(in)}]{access,  }\item[{logical, intent(in), optional}]{idelete }\end{DoxyParamCaption})}
+
+
+
+This subroutine opens the HDF5 file. 
+
+\mbox{\Hypertarget{namespacehdf5__utils_a58ff5ab2483e4daa0dbed83d77252b07}\label{namespacehdf5__utils_a58ff5ab2483e4daa0dbed83d77252b07}} 
+\index{hdf5\_utils@{hdf5\_utils}!shdf5\_orec@{shdf5\_orec}}
+\index{shdf5\_orec@{shdf5\_orec}!hdf5\_utils@{hdf5\_utils}}
+\doxysubsubsection{\texorpdfstring{shdf5\_orec()}{shdf5\_orec()}}
+{\footnotesize\ttfamily subroutine hdf5\+\_\+utils\+::shdf5\+\_\+orec (\begin{DoxyParamCaption}\item[{integer}]{ndims,  }\item[{integer, dimension($\ast$)}]{dims,  }\item[{character(len=$\ast$)}]{dsetname,  }\item[{integer, dimension($\ast$), optional}]{ivara,  }\item[{real, dimension($\ast$), optional}]{rvara,  }\item[{character(len=$\ast$), dimension($\ast$), optional}]{cvara,  }\item[{real(kind=8), dimension($\ast$), optional}]{dvara,  }\item[{logical, dimension($\ast$), optional}]{lvara,  }\item[{integer, optional}]{ivars,  }\item[{real, optional}]{rvars,  }\item[{character(len=$\ast$), optional}]{cvars,  }\item[{real(kind=8), optional}]{dvars,  }\item[{logical, optional}]{lvars }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacehdf5__utils_a2ede1f04f554f0906040f2802b2ccbd3}\label{namespacehdf5__utils_a2ede1f04f554f0906040f2802b2ccbd3}} 
+\index{hdf5\_utils@{hdf5\_utils}!shdf5\_orec\_f@{shdf5\_orec\_f}}
+\index{shdf5\_orec\_f@{shdf5\_orec\_f}!hdf5\_utils@{hdf5\_utils}}
+\doxysubsubsection{\texorpdfstring{shdf5\_orec\_f()}{shdf5\_orec\_f()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily subroutine hdf5\+\_\+utils\+::shdf5\+\_\+orec\+\_\+f (\begin{DoxyParamCaption}\item[{integer}]{ndims,  }\item[{integer, dimension($\ast$)}]{dims,  }\item[{character(len=$\ast$)}]{dsetname,  }\item[{integer, dimension($\ast$), optional}]{ivara,  }\item[{real, dimension($\ast$), optional}]{rvara,  }\item[{character(len=$\ast$), dimension($\ast$), optional}]{cvara,  }\item[{real(kind=8), dimension($\ast$), optional}]{dvara,  }\item[{logical, dimension($\ast$), optional}]{lvara,  }\item[{integer, optional}]{ivars,  }\item[{real, optional}]{rvars,  }\item[{character(len=$\ast$), optional}]{cvars,  }\item[{real(kind=8), optional}]{dvars,  }\item[{logical, optional}]{lvars }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacehdf5__utils_a2ede1f04f554f0906040f2802b2ccbd3}\label{namespacehdf5__utils_a2ede1f04f554f0906040f2802b2ccbd3}} 
+\index{hdf5\_utils@{hdf5\_utils}!shdf5\_orec\_f@{shdf5\_orec\_f}}
+\index{shdf5\_orec\_f@{shdf5\_orec\_f}!hdf5\_utils@{hdf5\_utils}}
+\doxysubsubsection{\texorpdfstring{shdf5\_orec\_f()}{shdf5\_orec\_f()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily subroutine hdf5\+\_\+utils\+::shdf5\+\_\+orec\+\_\+f (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ndims,  }\item[{integer, dimension($\ast$), intent(in)}]{dims,  }\item[{character(len=$\ast$), intent(in)}]{dsetname,  }\item[{integer, dimension($\ast$), optional}]{ivara,  }\item[{real, dimension($\ast$), optional}]{rvara,  }\item[{character(len=$\ast$), dimension($\ast$), optional}]{cvara,  }\item[{real(kind=8), dimension($\ast$), optional}]{dvara,  }\item[{logical, dimension($\ast$), optional}]{lvara,  }\item[{integer, optional}]{ivars,  }\item[{real, optional}]{rvars,  }\item[{character(len=$\ast$), optional}]{cvars,  }\item[{real(kind=8), optional}]{dvars,  }\item[{logical, optional}]{lvars }\end{DoxyParamCaption})}
+
+
+
+Subroutine for writing variables. It doesn\textquotesingle{}t seem to be used at all in the. 
+

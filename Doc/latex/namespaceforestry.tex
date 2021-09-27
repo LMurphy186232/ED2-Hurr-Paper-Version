@@ -1,0 +1,40 @@
+\hypertarget{namespaceforestry}{}\doxysection{forestry Module Reference}
+\label{namespaceforestry}\index{forestry@{forestry}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceforestry_a9b3256e9e2c491253767fefaa9e1f87b}{find\+\_\+lambda\+\_\+harvest}} (cpoly, isi, onsp, lambda\+\_\+harvest)
+\item 
+subroutine \mbox{\hyperlink{namespaceforestry_ac136a8e1e23fe3f009ef800e2e58c755}{inventory\+\_\+mature\+\_\+forests}} (cpoly, isi, onsp, pat\+\_\+hvmax\+\_\+btimber, pat\+\_\+hvpot\+\_\+btimber, area\+\_\+mature\+\_\+primary, hvmax\+\_\+mature\+\_\+primary, hvpot\+\_\+mature\+\_\+primary, area\+\_\+mature\+\_\+secondary, hvmax\+\_\+mature\+\_\+secondary, hvpot\+\_\+mature\+\_\+secondary, area\+\_\+mature\+\_\+plantation, hvmax\+\_\+mature\+\_\+plantation, hvpot\+\_\+mature\+\_\+plantation)
+\item 
+subroutine \mbox{\hyperlink{namespaceforestry_a01e4945aed4a59d551e86245008b18fd}{mature\+\_\+forest\+\_\+harvest}} (cpoly, isi, onsp, hvmax\+\_\+mature\+\_\+primary, hvpot\+\_\+mature\+\_\+primary, hvmax\+\_\+mature\+\_\+secondary, hvpot\+\_\+mature\+\_\+secondary, hvmax\+\_\+mature\+\_\+plantation, hvpot\+\_\+mature\+\_\+plantation, primary\+\_\+harvest\+\_\+target, secondary\+\_\+harvest\+\_\+target, pat\+\_\+hvmax\+\_\+btimber, lambda\+\_\+harvest, harvest\+\_\+deficit)
+\item 
+subroutine \mbox{\hyperlink{namespaceforestry_a7506bf2b381e561027e282269b3f03c5}{young\+\_\+forest\+\_\+harvest}} (cpoly, isi, onsp, pat\+\_\+hvmax\+\_\+btimber, pat\+\_\+hvpot\+\_\+btimber, lambda\+\_\+harvest, harvest\+\_\+deficit)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespaceforestry_a9b3256e9e2c491253767fefaa9e1f87b}\label{namespaceforestry_a9b3256e9e2c491253767fefaa9e1f87b}} 
+\index{forestry@{forestry}!find\_lambda\_harvest@{find\_lambda\_harvest}}
+\index{find\_lambda\_harvest@{find\_lambda\_harvest}!forestry@{forestry}}
+\doxysubsubsection{\texorpdfstring{find\_lambda\_harvest()}{find\_lambda\_harvest()}}
+{\footnotesize\ttfamily subroutine forestry\+::find\+\_\+lambda\+\_\+harvest (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1polygontype}{polygontype}}), target}]{cpoly,  }\item[{integer, intent(in)}]{isi,  }\item[{integer, intent(in)}]{onsp,  }\item[{real, dimension(onsp), intent(inout)}]{lambda\+\_\+harvest }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceforestry_ac136a8e1e23fe3f009ef800e2e58c755}\label{namespaceforestry_ac136a8e1e23fe3f009ef800e2e58c755}} 
+\index{forestry@{forestry}!inventory\_mature\_forests@{inventory\_mature\_forests}}
+\index{inventory\_mature\_forests@{inventory\_mature\_forests}!forestry@{forestry}}
+\doxysubsubsection{\texorpdfstring{inventory\_mature\_forests()}{inventory\_mature\_forests()}}
+{\footnotesize\ttfamily subroutine forestry\+::inventory\+\_\+mature\+\_\+forests (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1polygontype}{polygontype}}), target}]{cpoly,  }\item[{integer, intent(in)}]{isi,  }\item[{integer, intent(in)}]{onsp,  }\item[{real, dimension(onsp), intent(in)}]{pat\+\_\+hvmax\+\_\+btimber,  }\item[{real, dimension(onsp), intent(in)}]{pat\+\_\+hvpot\+\_\+btimber,  }\item[{real, intent(out)}]{area\+\_\+mature\+\_\+primary,  }\item[{real, intent(out)}]{hvmax\+\_\+mature\+\_\+primary,  }\item[{real, intent(out)}]{hvpot\+\_\+mature\+\_\+primary,  }\item[{real, intent(out)}]{area\+\_\+mature\+\_\+secondary,  }\item[{real, intent(out)}]{hvmax\+\_\+mature\+\_\+secondary,  }\item[{real, intent(out)}]{hvpot\+\_\+mature\+\_\+secondary,  }\item[{real, intent(out)}]{area\+\_\+mature\+\_\+plantation,  }\item[{real, intent(out)}]{hvmax\+\_\+mature\+\_\+plantation,  }\item[{real, intent(out)}]{hvpot\+\_\+mature\+\_\+plantation }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceforestry_a01e4945aed4a59d551e86245008b18fd}\label{namespaceforestry_a01e4945aed4a59d551e86245008b18fd}} 
+\index{forestry@{forestry}!mature\_forest\_harvest@{mature\_forest\_harvest}}
+\index{mature\_forest\_harvest@{mature\_forest\_harvest}!forestry@{forestry}}
+\doxysubsubsection{\texorpdfstring{mature\_forest\_harvest()}{mature\_forest\_harvest()}}
+{\footnotesize\ttfamily subroutine forestry\+::mature\+\_\+forest\+\_\+harvest (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1polygontype}{polygontype}}), target}]{cpoly,  }\item[{integer, intent(in)}]{isi,  }\item[{integer, intent(in)}]{onsp,  }\item[{real, intent(in)}]{hvmax\+\_\+mature\+\_\+primary,  }\item[{real, intent(in)}]{hvpot\+\_\+mature\+\_\+primary,  }\item[{real, intent(in)}]{hvmax\+\_\+mature\+\_\+secondary,  }\item[{real, intent(in)}]{hvpot\+\_\+mature\+\_\+secondary,  }\item[{real, intent(in)}]{hvmax\+\_\+mature\+\_\+plantation,  }\item[{real, intent(in)}]{hvpot\+\_\+mature\+\_\+plantation,  }\item[{real, intent(in)}]{primary\+\_\+harvest\+\_\+target,  }\item[{real, intent(inout)}]{secondary\+\_\+harvest\+\_\+target,  }\item[{real, dimension(onsp), intent(in)}]{pat\+\_\+hvmax\+\_\+btimber,  }\item[{real, dimension(onsp), intent(inout)}]{lambda\+\_\+harvest,  }\item[{real, intent(out)}]{harvest\+\_\+deficit }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceforestry_a7506bf2b381e561027e282269b3f03c5}\label{namespaceforestry_a7506bf2b381e561027e282269b3f03c5}} 
+\index{forestry@{forestry}!young\_forest\_harvest@{young\_forest\_harvest}}
+\index{young\_forest\_harvest@{young\_forest\_harvest}!forestry@{forestry}}
+\doxysubsubsection{\texorpdfstring{young\_forest\_harvest()}{young\_forest\_harvest()}}
+{\footnotesize\ttfamily subroutine forestry\+::young\+\_\+forest\+\_\+harvest (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1polygontype}{polygontype}}), target}]{cpoly,  }\item[{integer, intent(in)}]{isi,  }\item[{integer, intent(in)}]{onsp,  }\item[{real, dimension(onsp), intent(in)}]{pat\+\_\+hvmax\+\_\+btimber,  }\item[{real, dimension(onsp), intent(in)}]{pat\+\_\+hvpot\+\_\+btimber,  }\item[{real, dimension(onsp), intent(inout)}]{lambda\+\_\+harvest,  }\item[{real, intent(inout)}]{harvest\+\_\+deficit }\end{DoxyParamCaption})}
+

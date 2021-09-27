@@ -1,0 +1,52 @@
+\label{index_md__home_lora_ED22LEM_ED2_README}%
+\Hypertarget{index_md__home_lora_ED22LEM_ED2_README}%
+\hypertarget{index_autotoc_md0}{}\doxysubsection{Table of Contents}\label{index_autotoc_md0}
+
+\begin{DoxyEnumerate}
+\item \href{\#overview}{\texttt{ Model Overview }}
+\item \href{\#stable}{\texttt{ Current version and stable release versions}}
+\item \href{\#contents}{\texttt{ Repository Contents }}
+\item \href{\#implementation}{\texttt{ Implementation Notes }}
+\item \href{\#info}{\texttt{ Further Information }}
+\item \href{\#develop}{\texttt{ Code Development, Pull Requests, and Commits}}
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md1}{}\doxysubsection{$<$a name=\char`\"{}overview\char`\"{}$>$ Model Overview $<$/a$>$}\label{index_autotoc_md1}
+The Ecosystem Demography Biosphere Model (ED2) is an integrated terrestrial biosphere model incorporating hydrology, land-\/surface biophysics, vegetation dynamics, and soil carbon and nitrogen biogeochemistry (\href{https://dx.doi.org/10.5194/gmd-12-4309-2019}{\texttt{ Longo et al. 2019}};\href{https://dx.doi.org/10.1029/2008JG000812}{\texttt{ Medvigy et al., 2009}}). Like its predecessor, ED (\href{https://dx.doi.org/10.1890/0012-9615(2001)071[0557:AMFSVD]2.0.CO;2}{\texttt{ Moorcroft et al., 2001}}), ED2 uses a set of size-\/ and age-\/structured partial differential equations that track the changing structure and composition of the plant canopy. With the ED2 model, in contrast to conventional biosphere models in which ecosystems with climatological grid cells are represented in a highly aggregated manner, the state of the aboveground ecosystem is described by the density of trees of different sizes and how this varies across horizontal space for a series of plant functional types. This more detailed description of ecosystem composition and structure enables the ED2 model to make realistic projections of both the fast-\/timescale exchanges of carbon, water and energy between the land and atmosphere, and long-\/term vegetation dynamics incorporating effects of ecosystem heterogeneity, including disturbance history and recovery. ~\newline
+\hypertarget{index_autotoc_md2}{}\doxysubsection{$<$a name=\char`\"{}stable\char`\"{}$>$\+Current version and stable release versions$<$/a$>$}\label{index_autotoc_md2}
+
+\begin{DoxyItemize}
+\item This code available on Git\+Hub is the current version of the model, updated frequently.
+\item The latest stable version of the code (ED-\/2.\+2) can be found \href{https://github.com/EDmodel/ED2/releases}{\texttt{ here}}. ~\newline
+
+\item For former versions of ED or ED2, check the \href{http://www.oeb.harvard.edu/faculty/moorcroft/code_and_data/index.html}{\texttt{ Moorcroft Lab website}}.
+\item A summary of the main changes between stable releases is available \href{https://github.com/EDmodel/ED2/wiki/ED2-release-notes}{\texttt{ here}}.
+\end{DoxyItemize}\hypertarget{index_autotoc_md3}{}\doxysubsection{$<$a name=\char`\"{}contents\char`\"{}$>$ Repository Contents $<$/a$>$}\label{index_autotoc_md3}
+Copies of the ED2 repository should contain the following directories\+:
+\begin{DoxyItemize}
+\item {\bfseries{ ED\+: }} Contains the ED source code (src) and the directory for compilation (build). For further instructions on how to compile and use the model, we strongly suggest accessing the ED Wiki website\+: \href{https://github.com/EDmodel/ED2/wiki}{\texttt{ https\+://github.\+com/\+EDmodel/\+ED2/wiki}}
+\item {\bfseries{ EDR\+: }} Contains the source code (src), build (build), and basic run files (run) for a stripped-\/down version of the ED2 models radiative transfer scheme.
+\item {\bfseries{ EDTS\+: }} Contains the ED model test suite for evaluating the results of changes to the source code under a variety of run conditions.
+\item {\bfseries{ BRAMS\+: }} Contains a version of the Brazilian Developments on the Regional Atmospheric Model System (\href{https://dx.doi.org/10.5194/gmd-10-189-2017}{\texttt{ Freitas et al. 2017}}) that was modified to run coupled biosphere-\/atmosphere simulations (\href{https://dx.doi.org/10.5194/hess-19-241-2015}{\texttt{ Knox et al. 2015}}; \href{https://dx.doi.org/10.1016/j.agrformet.2015.07.006}{\texttt{ Swann et al. 2015}}). {\itshape Note}\+: This has not been tested in a while, so the code may need updates to work with the most recent version of ED2.
+\item {\bfseries{ Doc\+: }} Contains additional ED2 documentation automatically generated with Doxygen.
+\item {\bfseries{ Ramspost\+: }} The BRAMS post-\/processing program, which generates Gr\+ADS files. {\itshape Note}\+: This has not been tested in a while, so the code may need updates to work with the most recent version of ED2.
+\item {\bfseries{ RAPP\+: }} This directory contains the NCEP reanalysis pre-\/processor, that produces meteorological forcing in the ED-\/friendly format (HDF5) based on the NCEP/\+NCAR reanalysis (Kalnay et al 1996). The source code (src) and a build directory are included. The run directory contains the namelist and a shell script to help with the downloading process. A brief instruction can be found in the directory too.{\itshape Note}\+: This has not been tested in a while, and other users have developed scripts to convert more up-\/to-\/date reanalyses.
+\item {\bfseries{ R-\/utils\+: }} A collection of R scripts utilities for model pre-\/ and post-\/processing (mostly called by R scripts located in ED/\+Template).
+\end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysubsection{$<$a name=\char`\"{}implementation\char`\"{}$>$ Implementation Notes $<$/a$>$}\label{index_autotoc_md4}
+The primary data structure in ED, which can be found in \mbox{\hyperlink{ed__state__vars_8_f90}{ed\+\_\+state\+\_\+vars.\+F90}}, is a named, nested array of arrays. Each level of the heirarchy contains many fields of depth one, but the key large scale structure is as follows\+:
+\begin{DoxyItemize}
+\item {\bfseries{ grid\+: }} The most coarse data in the model. Basically just a simulation book-\/keeping linking of polygons.
+\item {\bfseries{ polygon\+: }} A collection of sites sharing a meteorology.
+\item {\bfseries{ site\+: }} A collection of patches sharing a common soil system and ground hydrology.
+\item {\bfseries{ patch\+: }} A collection of cohorts sharing a disturbance history and age.
+\item {\bfseries{ cohort\+: }} A collection of plants of identical PFT and height.
+\end{DoxyItemize}
+
+Note\+: height and age, being continuous variables, are \char`\"{}binned\char`\"{}. \char`\"{}\+Identical\char`\"{} in this context means sufficiently similar to be placed in the same bin. These bins are dynamically defined, based on the number of classes sought by the user and the similarity along the age and height axes.\hypertarget{index_autotoc_md5}{}\doxysubsection{$<$a name=\char`\"{}info\char`\"{}$>$ Further Information $<$/a$>$}\label{index_autotoc_md5}
+
+\begin{DoxyItemize}
+\item Most of the existing documentation on how to pre-\/process, compile, and run the ED2 model is available in our \href{https://github.com/EDmodel/ED2/wiki}{\texttt{ Wiki}}.
+\item For the technical description of the various ED2 model features, we suggest looking at this \href{https://github.com/EDmodel/ED2/wiki/References-for-technical-description-of-ED-2.2}{\texttt{ reference list}} ({\bfseries{Tip}}\+: do not skip the Supporting Information of these papers, they contain relevant details).
+\item For a partial list of studies that have used ED or ED2, check \href{https://github.com/EDmodel/ED2/wiki/Publications}{\texttt{ here}}.
+\end{DoxyItemize}\hypertarget{index_autotoc_md6}{}\doxysubsection{$<$a name=\char`\"{}develop\char`\"{}$>$ Code Development, Pull Requests, and Commits$<$/a$>$}\label{index_autotoc_md6}
+If you plan to develop the code, please refer to the Wiki entries on \href{https://github.com/EDmodel/ED2/wiki/Code-organization-and-design-philosophy}{\texttt{ code organization and design philosophy}}, to ensure your code developments are consistent with the existing model. Also, make sure that the code is thoroughly tested, and successfully passes the internal Git\+Hub tests.
+
+We strongly encourage that code developments are properly documented. Please refer to the \href{https://github.com/EDmodel/ED2/wiki/ED2-Documentation-with-Doxygen}{\texttt{ Doxygen}} instructions, and especially the \href{https://github.com/EDmodel/ED2/wiki/ED2-Documentation-with-Doxygen\#doxygit}{\texttt{ Doxygen and Git commits}} section, so additional documentation can be automatically generated from the source code comments. 

@@ -1,0 +1,1051 @@
+\hypertarget{namespacerk4__coms}{}\doxysection{rk4\+\_\+coms Module Reference}
+\label{namespacerk4__coms}\index{rk4\_coms@{rk4\_coms}}
+\doxysubsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{structrk4__coms_1_1bdf2patchtype}{bdf2patchtype}}
+\item 
+type \mbox{\hyperlink{structrk4__coms_1_1integration__vars}{integration\+\_\+vars}}
+\item 
+type \mbox{\hyperlink{structrk4__coms_1_1rk4auxtype}{rk4auxtype}}
+\item 
+type \mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}
+\item 
+type \mbox{\hyperlink{structrk4__coms_1_1rk4sitetype}{rk4sitetype}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__coms_a292fa2f7c65668f516015eff1a3b74e2}{allocate\+\_\+bdf2\+\_\+patch}} (y, maxcohort)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__coms_a52256ca0348235c95a467581d6067dac}{allocate\+\_\+rk4\+\_\+patch}} (y)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__coms_a22f63b46db00ae302b1ae688abecc22d}{nullify\+\_\+bdf2\+\_\+patch}} (y)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__coms_a34a6a346af3d032c14f416435801598a}{nullify\+\_\+rk4\+\_\+patch}} (y)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__coms_a4dc0257365f3ec4614c2e41451517e28}{zero\+\_\+bdf2\+\_\+patch}} (y)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__coms_a4206f404f555c50ee6570211356bd537}{zero\+\_\+rk4\+\_\+patch}} (y)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__coms_ac355c3cf81ffef1c269338cf8b07c4bc}{allocate\+\_\+rk4\+\_\+coh}} (maxcohort, y)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__coms_a38274254cb16401c20124f7620f64ab2}{deallocate\+\_\+bdf2\+\_\+patch}} (y)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__coms_afe54efd0ad9ab38983314ca0d2557e26}{nullify\+\_\+rk4\+\_\+cohort}} (y)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__coms_a1053434edb41147cb74257d6339eab8f}{zero\+\_\+rk4\+\_\+cohort}} (y)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__coms_a56a9eb1fd462e81374c5993b69d3d05c}{deallocate\+\_\+rk4\+\_\+coh}} (y)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__coms_a02aeb5f0e99479e6eef3029472a79781}{reset\+\_\+rk4\+\_\+fluxes}} (y)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__coms_ad9cf07917e6000f8f46e84428647b494}{norm\+\_\+rk4\+\_\+fluxes}} (y, hdid)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__coms_afe1de3958c4ca4c64d5fb2160fced95f}{allocate\+\_\+rk4\+\_\+aux}} (crk4aux, mzg, mzs, mcoh)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__coms_a306ba21ba388b2e51767aa9f5d76eda0}{nullify\+\_\+rk4\+\_\+aux}} (crk4aux)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__coms_a0af8d3f6d5452c98c81c5230f3b22343}{zero\+\_\+rk4\+\_\+aux}} (crk4aux)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__coms_a5af13b35af38a83aed0e367f7053ffc3}{deallocate\+\_\+rk4\+\_\+aux}} (crk4aux)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__coms_a8266a2612a37eea2fc3106633e25f954}{alloc\+\_\+integ\+\_\+err}} ()
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__coms_aa58f2e011f087e610d94022bed90be7a}{reset\+\_\+integ\+\_\+err}} ()
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__coms_ae49c70a18c8dfa81befa51bc5244ab8c}{assign\+\_\+err\+\_\+label}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+type(\mbox{\hyperlink{structrk4__coms_1_1integration__vars}{integration\+\_\+vars}}), dimension(\+:), pointer \mbox{\hyperlink{namespacerk4__coms_a3c62cf3b7294822d789a72c33ed42538}{integration\+\_\+buff}}
+\item 
+type(\mbox{\hyperlink{structrk4__coms_1_1rk4sitetype}{rk4sitetype}}) \mbox{\hyperlink{namespacerk4__coms_a3b1e8e5ff59d681b92bc9f477f91a111}{rk4site}}
+\item 
+type(\mbox{\hyperlink{structrk4__coms_1_1rk4auxtype}{rk4auxtype}}), dimension(\+:), pointer \mbox{\hyperlink{namespacerk4__coms_af06182f853d5a71c46e249e55fe5a678}{rk4aux}}
+\item 
+integer \mbox{\hyperlink{namespacerk4__coms_a33cf51cec0937e19a61030894187ddbc}{ibranch\+\_\+thermo}}
+\item 
+real \mbox{\hyperlink{namespacerk4__coms_ab839ff31cd3abc7dd1fd40e4d3983a31}{rk4\+\_\+tolerance}}
+\item 
+integer \mbox{\hyperlink{namespacerk4__coms_a49c5428026d0aece9bcf4f9a87c7b823}{ipercol}}
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_a3d0ca14edbf0ca895d40d7a9c49e75da}{tiny\+\_\+offset}} = 1.d-\/20
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_a09bb1518d1ed93891ef24fa73feb7cbe}{huge\+\_\+offset}} = 1.d30
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_aaccaa3d4ec955eecd38ce2c8c8813cf9}{rk4\+\_\+a2}} = 2.d-\/1
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_aaa2167ee06ad594c46793e7280b248f7}{rk4\+\_\+a3}} = 3.d-\/1
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_aaa712c298024351472a4f80d5020e7fc}{rk4\+\_\+a4}} = 6.d-\/1
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_ac364eca74fa5b87b0821f6e547e30368}{rk4\+\_\+a5}} = 1.d0
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_a572359022b68f636423b3dde68f9c34a}{rk4\+\_\+a6}} = 8.\+75d-\/1
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_a34abdb75b43eceb865d986e7874e03d7}{rk4\+\_\+b21}} = 2.d-\/1
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_a25fefbdc031aa0c923082df76e233542}{rk4\+\_\+b31}} = 3.d0/4.d1
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_aeadece49a8e779db69ab3c866d710851}{rk4\+\_\+b32}} = 9.d0/4.d1
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_a027909c6e9575ba7ea384f530f1fea8c}{rk4\+\_\+b41}} = 3.d-\/1
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_a8e97d0778db0718264f454af0d04e0da}{rk4\+\_\+b42}} = -\/9.d-\/1
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_a5c0f66631b902af266e04130bea41001}{rk4\+\_\+b43}} = 1.\+2d0
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_a0667d689a2690f395681dd54718dd9b0}{rk4\+\_\+b51}} = -\/1.\+1d1/5.\+4d1
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_a08136775ca79aa4cfb6e2bc844bfb689}{rk4\+\_\+b52}} = 2.\+5d0
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_adedd306e0a9a351610026b3a12d2e5ce}{rk4\+\_\+b53}} = -\/7.d1/2.\+7d1
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_a3d702309397c009b9a62c0900da4a7c5}{rk4\+\_\+b54}} = 3.\+5d1/2.\+7d1
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_a69b8b27ac5165b14e52efd1d57e3247d}{rk4\+\_\+b61}} = 1.\+631d3/5.\+52960d4
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_a1424e7b77cc58817b30146a6ed80c076}{rk4\+\_\+b62}} = 1.\+750d2/5.\+120d2
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_a2943f8989d0d72c6913d114141dcfe5d}{rk4\+\_\+b63}} = 5.\+750d2/1.\+38240d4
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_a6738b7b2098994211bfcafa79e4cc584}{rk4\+\_\+b64}} = 4.\+42750d4/1.\+105920d5
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_a5635aa326f6d3f256b21cb6aaf2d4ed0}{rk4\+\_\+b65}} = 2.\+530d2/4.\+0960d3
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_a1dd142bdfa35986937ac4396a759dda0}{rk4\+\_\+c1}} = 3.\+70d1/3.\+780d2
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_a94a604a5d0d271bf875f0fd3338fef3e}{rk4\+\_\+c3}} = 2.\+500d2/6.\+210d2
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_ae29e60a0912723f4124b219bb67135d8}{rk4\+\_\+c4}} = 1.\+250d2/5.\+940d2
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_a50aa680b806d041ad4b2d83b838ce6e4}{rk4\+\_\+c6}} = 5.\+120d2/1.\+7710d3
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_aa2ab2d5fa0e976ca56e10da08c4409a6}{rk4\+\_\+dc5}} = -\/2.\+770d2/1.\+43360d4
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_a8f2ecc1ddfd20579092c340f3cde39b4}{rk4\+\_\+dc1}} = \mbox{\hyperlink{namespacerk4__coms_a1dd142bdfa35986937ac4396a759dda0}{rk4\+\_\+c1}}-\/2.\+8250d3/2.\+76480d4
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_ad50fbfa221dd0da30f0c1f4bbc5d4f3e}{rk4\+\_\+dc3}} = \mbox{\hyperlink{namespacerk4__coms_a94a604a5d0d271bf875f0fd3338fef3e}{rk4\+\_\+c3}}-\/1.\+85750d4/4.\+83840d4
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_a1bb5b9bcaddfd294bf37a8ea838adf3f}{rk4\+\_\+dc4}} = \mbox{\hyperlink{namespacerk4__coms_ae29e60a0912723f4124b219bb67135d8}{rk4\+\_\+c4}}-\/1.\+35250d4/5.\+52960d4
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_abf3a30685db4e4c9f6cd9f903eb1a2fd}{rk4\+\_\+dc6}} = \mbox{\hyperlink{namespacerk4__coms_a50aa680b806d041ad4b2d83b838ce6e4}{rk4\+\_\+c6}}-\/2.\+5d-\/1
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_a87d69315c8ce5a8eece7631c044e56e5}{heun\+\_\+a2}} = 1.d0
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_ae8d76c010784094c3299f39f54d015c1}{heun\+\_\+b21}} = 1.d0
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_aacfe35ff98522754e71ad11a44b521b4}{heun\+\_\+c1}} = 5.d-\/1
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_afad602ec1632d28447fa784393dd4777}{heun\+\_\+c2}} = 5.d-\/1
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_aeea9fe3a451738a304eacef0dfa174a1}{heun\+\_\+dc1}} = \mbox{\hyperlink{namespacerk4__coms_aacfe35ff98522754e71ad11a44b521b4}{heun\+\_\+c1}} -\/ 1.d0
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_ad638286586253a3741b0fd05bd2456a3}{heun\+\_\+dc2}} = \mbox{\hyperlink{namespacerk4__coms_afad602ec1632d28447fa784393dd4777}{heun\+\_\+c2}} -\/ 0.d0
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_ab0aa0551adf0417c09a0a0e4f4bcb934}{safety}} = 9.d-\/1
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_a796865569153ec93dae2cc10d6dd7909}{pgrow}} = -\/2.d-\/1
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacerk4__coms_a83a7b5210aa05ed67147b0b6e4250f46}{pshrnk}} = -\/2.\+5d-\/1
+\item 
+integer \mbox{\hyperlink{namespacerk4__coms_a9fc78b38e070c62f9669f9db9d966784}{maxstp}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_aa154e17784b65f05a89af9b4f86bb879}{rk4eps}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_a2d6ae9880c44662592dc0e0d238c3229}{rk4epsi}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_a2b1484b3befa3c0d446279fa4001a56d}{rk4eps2}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_a5bf08e5e23fca150f09adc446272b7fb}{hmin}}
+\item 
+logical \mbox{\hyperlink{namespacerk4__coms_a45d06376c0007b5db575b229cc2d11b1}{print\+\_\+diags}}
+\item 
+logical \mbox{\hyperlink{namespacerk4__coms_a9b8354d59e352fedb78f49d2195a9d7a}{checkbudget}}
+\item 
+logical \mbox{\hyperlink{namespacerk4__coms_a8758ba5171a32f83e20dd93601fa21d6}{record\+\_\+err}}
+\item 
+logical \mbox{\hyperlink{namespacerk4__coms_a9b7ff048a348436a9163405f31d72e29}{print\+\_\+detailed}}
+\item 
+logical \mbox{\hyperlink{namespacerk4__coms_ad87029f758f9a6906b3aea2205873427}{print\+\_\+thbnd}}
+\item 
+logical \mbox{\hyperlink{namespacerk4__coms_a062e3f5a857cb1364f87fda6223f2259}{print\+\_\+budget}}
+\item 
+logical \mbox{\hyperlink{namespacerk4__coms_a304419c7dc18d710be779d2d1a1378e7}{supersat\+\_\+ok}}
+\item 
+logical \mbox{\hyperlink{namespacerk4__coms_ab6eb51e1fa8b861cc6fb6359631bdec3}{leaf\+\_\+intercept}}
+\item 
+logical \mbox{\hyperlink{namespacerk4__coms_a5abb49d2a6e86524f3c3bf3f67468c21}{debug}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_ac687fa7b7b3d3a5b1d3bd179e62c8052}{toocold}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_a759040e06196aa6e44844e731b1140ba}{toohot}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_a5af034bb3daf3fd270550fe26a843ced}{lai\+\_\+to\+\_\+cover}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_a5896e577e06a78e013f72e048e907250}{rk4min\+\_\+can\+\_\+temp}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_a6eed732a4c1930bb16dbe70b959bb270}{rk4max\+\_\+can\+\_\+temp}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_a0f723d7acf2f73c4f997825e4b79eb66}{rk4min\+\_\+can\+\_\+shv}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_a8f00e104965b6c83b49b597f34d8432a}{rk4max\+\_\+can\+\_\+shv}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_aea541e4460a2030f1873fb118b1b3341}{rk4min\+\_\+can\+\_\+rhv}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_addc14b5fd10ebce828e187eb2e0c8101}{rk4max\+\_\+can\+\_\+rhv}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_ab56f9190507acf74210f49d44165dd57}{rk4min\+\_\+can\+\_\+co2}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_ab0d46d8c6ddc6f99dd0a0800217b712e}{rk4max\+\_\+can\+\_\+co2}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_a4995d06d19518eaad240d240ce72ebf3}{rk4min\+\_\+soil\+\_\+temp}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_ae58a286e741a74a2ef97b1b9c1244efd}{rk4max\+\_\+soil\+\_\+temp}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_a47c8d9b57e934ed14af1cbf674ac8121}{rk4min\+\_\+veg\+\_\+temp}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_a98bd8400baa088828a1aef2e4ecb1c65}{rk4max\+\_\+veg\+\_\+temp}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_af9e3e44bc9f58496638933f7d9594172}{rk4min\+\_\+sfcw\+\_\+temp}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_ad4588558a29ea0d798ee7146b3d2d403}{rk4max\+\_\+sfcw\+\_\+temp}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_a72cb854b5fc4d3e198b318f596828d90}{rk4min\+\_\+veg\+\_\+lwater}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_a6a0da8f33fe6255b50d37269cc4c5696}{rk4min\+\_\+sfcw\+\_\+moist}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_a7de60af9cd3a8a43651da0ed30f0d878}{rk4min\+\_\+virt\+\_\+moist}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_a59856872bd14cf839fe440bfe839560f}{rk4min\+\_\+sfcw\+\_\+mass}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_a06cc5f6b7afaa313576b32bc56bf80d9}{rk4min\+\_\+virt\+\_\+water}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_a546ef5b5ec1d1def51dcae82893eb2bc}{rk4tiny\+\_\+sfcw\+\_\+mass}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_a9a7486e4755f548d744d266af9052d4f}{rk4water\+\_\+stab\+\_\+thresh}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_a8d12416210875d4e246328901524e941}{rk4snowmin}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_a3f7465768e9a9783cb2c7633da03acd6}{rk4leaf\+\_\+drywhc}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_ac35950b114c389050144c9293d9a4e8a}{rk4leaf\+\_\+maxwhc}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_a91e4907e16271a89cb5b965a061e20e2}{rk4tiny\+\_\+sfcw\+\_\+depth}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_a9b09c4fc7f09c642c1115df229cedb1e}{tbeg}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_a489d1f63edd639eb7a5c248163b59f9b}{tend}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_affa4e03ec127e7def8035b8b32bdb5b8}{dtrk4}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_a987c7ccf90cfcf40c2a925b2c1057404}{dtrk4i}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_af575cfc8fb0e2063e1d3a08be26aea3a}{effarea\+\_\+heat}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacerk4__coms_aae531dd6ba4cf10a03c3fad2b61071bb}{effarea\+\_\+evap}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacerk4__coms_aa9b9a7fcec09aad8a6d3423c30c3b1de}{effarea\+\_\+transp}}
+\item 
+integer, parameter \mbox{\hyperlink{namespacerk4__coms_a8f0596202fc6dc04e70e600a544ae155}{nerrfix}} = 22
+\item 
+integer \mbox{\hyperlink{namespacerk4__coms_a8e2fcadf9c0fe34be391e95bd3caa31c}{nerr}}
+\item 
+character(len=str\+\_\+len) \mbox{\hyperlink{namespacerk4__coms_af90527ec55879335bb58710234142b14}{errmax\+\_\+fout}}
+\item 
+character(len=str\+\_\+len) \mbox{\hyperlink{namespacerk4__coms_a673279a49daaa7f21ade0992c6fe0c0d}{sanity\+\_\+fout}}
+\item 
+character(len=str\+\_\+len) \mbox{\hyperlink{namespacerk4__coms_ab106d324ed571335ee763dd190e7430d}{thbnds\+\_\+fout}}
+\item 
+character(len=str\+\_\+len) \mbox{\hyperlink{namespacerk4__coms_acd58047348a9b1ff25ec1afda9163705}{detail\+\_\+pref}}
+\item 
+character(len=str\+\_\+len) \mbox{\hyperlink{namespacerk4__coms_a2da1f732b9648b485c93d62814060cf2}{budget\+\_\+pref}}
+\item 
+integer(kind=8), dimension(\+:,\+:), allocatable \mbox{\hyperlink{namespacerk4__coms_aecab6dfff0aaea0938b5c59d550860bc}{integ\+\_\+err}}
+\item 
+character(len=13), dimension(\+:), allocatable \mbox{\hyperlink{namespacerk4__coms_a4f5c8dc79c821a459a356f283b4831c8}{integ\+\_\+lab}}
+\item 
+integer \mbox{\hyperlink{namespacerk4__coms_ac28f34645e6cd2065bc8c458ae43f642}{osow}}
+\item 
+integer \mbox{\hyperlink{namespacerk4__coms_a62d65ed745bfd02b36c79be5861b7cee}{osoe}}
+\item 
+integer \mbox{\hyperlink{namespacerk4__coms_ae9733bb77416a4d137c65ddd1adc5c23}{oswe}}
+\item 
+integer \mbox{\hyperlink{namespacerk4__coms_a588b443c0107fd03a7642394a2df5cc9}{oswm}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacerk4__coms_a8266a2612a37eea2fc3106633e25f954}\label{namespacerk4__coms_a8266a2612a37eea2fc3106633e25f954}} 
+\index{rk4\_coms@{rk4\_coms}!alloc\_integ\_err@{alloc\_integ\_err}}
+\index{alloc\_integ\_err@{alloc\_integ\_err}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{alloc\_integ\_err()}{alloc\_integ\_err()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+coms\+::alloc\+\_\+integ\+\_\+err}
+
+\mbox{\Hypertarget{namespacerk4__coms_a292fa2f7c65668f516015eff1a3b74e2}\label{namespacerk4__coms_a292fa2f7c65668f516015eff1a3b74e2}} 
+\index{rk4\_coms@{rk4\_coms}!allocate\_bdf2\_patch@{allocate\_bdf2\_patch}}
+\index{allocate\_bdf2\_patch@{allocate\_bdf2\_patch}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{allocate\_bdf2\_patch()}{allocate\_bdf2\_patch()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+coms\+::allocate\+\_\+bdf2\+\_\+patch (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1bdf2patchtype}{bdf2patchtype}}), target}]{y,  }\item[{integer, intent(in)}]{maxcohort }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__coms_afe1de3958c4ca4c64d5fb2160fced95f}\label{namespacerk4__coms_afe1de3958c4ca4c64d5fb2160fced95f}} 
+\index{rk4\_coms@{rk4\_coms}!allocate\_rk4\_aux@{allocate\_rk4\_aux}}
+\index{allocate\_rk4\_aux@{allocate\_rk4\_aux}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{allocate\_rk4\_aux()}{allocate\_rk4\_aux()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+coms\+::allocate\+\_\+rk4\+\_\+aux (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4auxtype}{rk4auxtype}}), target}]{crk4aux,  }\item[{integer, intent(in)}]{mzg,  }\item[{integer, intent(in)}]{mzs,  }\item[{integer, intent(in)}]{mcoh }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__coms_ac355c3cf81ffef1c269338cf8b07c4bc}\label{namespacerk4__coms_ac355c3cf81ffef1c269338cf8b07c4bc}} 
+\index{rk4\_coms@{rk4\_coms}!allocate\_rk4\_coh@{allocate\_rk4\_coh}}
+\index{allocate\_rk4\_coh@{allocate\_rk4\_coh}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{allocate\_rk4\_coh()}{allocate\_rk4\_coh()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+coms\+::allocate\+\_\+rk4\+\_\+coh (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{maxcohort,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__coms_a52256ca0348235c95a467581d6067dac}\label{namespacerk4__coms_a52256ca0348235c95a467581d6067dac}} 
+\index{rk4\_coms@{rk4\_coms}!allocate\_rk4\_patch@{allocate\_rk4\_patch}}
+\index{allocate\_rk4\_patch@{allocate\_rk4\_patch}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{allocate\_rk4\_patch()}{allocate\_rk4\_patch()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+coms\+::allocate\+\_\+rk4\+\_\+patch (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__coms_ae49c70a18c8dfa81befa51bc5244ab8c}\label{namespacerk4__coms_ae49c70a18c8dfa81befa51bc5244ab8c}} 
+\index{rk4\_coms@{rk4\_coms}!assign\_err\_label@{assign\_err\_label}}
+\index{assign\_err\_label@{assign\_err\_label}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{assign\_err\_label()}{assign\_err\_label()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+coms\+::assign\+\_\+err\+\_\+label}
+
+\mbox{\Hypertarget{namespacerk4__coms_a38274254cb16401c20124f7620f64ab2}\label{namespacerk4__coms_a38274254cb16401c20124f7620f64ab2}} 
+\index{rk4\_coms@{rk4\_coms}!deallocate\_bdf2\_patch@{deallocate\_bdf2\_patch}}
+\index{deallocate\_bdf2\_patch@{deallocate\_bdf2\_patch}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{deallocate\_bdf2\_patch()}{deallocate\_bdf2\_patch()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+coms\+::deallocate\+\_\+bdf2\+\_\+patch (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1bdf2patchtype}{bdf2patchtype}}), target}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__coms_a5af13b35af38a83aed0e367f7053ffc3}\label{namespacerk4__coms_a5af13b35af38a83aed0e367f7053ffc3}} 
+\index{rk4\_coms@{rk4\_coms}!deallocate\_rk4\_aux@{deallocate\_rk4\_aux}}
+\index{deallocate\_rk4\_aux@{deallocate\_rk4\_aux}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{deallocate\_rk4\_aux()}{deallocate\_rk4\_aux()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+coms\+::deallocate\+\_\+rk4\+\_\+aux (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4auxtype}{rk4auxtype}}), target}]{crk4aux }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__coms_a56a9eb1fd462e81374c5993b69d3d05c}\label{namespacerk4__coms_a56a9eb1fd462e81374c5993b69d3d05c}} 
+\index{rk4\_coms@{rk4\_coms}!deallocate\_rk4\_coh@{deallocate\_rk4\_coh}}
+\index{deallocate\_rk4\_coh@{deallocate\_rk4\_coh}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{deallocate\_rk4\_coh()}{deallocate\_rk4\_coh()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+coms\+::deallocate\+\_\+rk4\+\_\+coh (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__coms_ad9cf07917e6000f8f46e84428647b494}\label{namespacerk4__coms_ad9cf07917e6000f8f46e84428647b494}} 
+\index{rk4\_coms@{rk4\_coms}!norm\_rk4\_fluxes@{norm\_rk4\_fluxes}}
+\index{norm\_rk4\_fluxes@{norm\_rk4\_fluxes}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{norm\_rk4\_fluxes()}{norm\_rk4\_fluxes()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+coms\+::norm\+\_\+rk4\+\_\+fluxes (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{y,  }\item[{real(kind=8), intent(in)}]{hdid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__coms_a22f63b46db00ae302b1ae688abecc22d}\label{namespacerk4__coms_a22f63b46db00ae302b1ae688abecc22d}} 
+\index{rk4\_coms@{rk4\_coms}!nullify\_bdf2\_patch@{nullify\_bdf2\_patch}}
+\index{nullify\_bdf2\_patch@{nullify\_bdf2\_patch}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{nullify\_bdf2\_patch()}{nullify\_bdf2\_patch()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+coms\+::nullify\+\_\+bdf2\+\_\+patch (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1bdf2patchtype}{bdf2patchtype}}), target}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__coms_a306ba21ba388b2e51767aa9f5d76eda0}\label{namespacerk4__coms_a306ba21ba388b2e51767aa9f5d76eda0}} 
+\index{rk4\_coms@{rk4\_coms}!nullify\_rk4\_aux@{nullify\_rk4\_aux}}
+\index{nullify\_rk4\_aux@{nullify\_rk4\_aux}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{nullify\_rk4\_aux()}{nullify\_rk4\_aux()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+coms\+::nullify\+\_\+rk4\+\_\+aux (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4auxtype}{rk4auxtype}}), target}]{crk4aux }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__coms_afe54efd0ad9ab38983314ca0d2557e26}\label{namespacerk4__coms_afe54efd0ad9ab38983314ca0d2557e26}} 
+\index{rk4\_coms@{rk4\_coms}!nullify\_rk4\_cohort@{nullify\_rk4\_cohort}}
+\index{nullify\_rk4\_cohort@{nullify\_rk4\_cohort}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{nullify\_rk4\_cohort()}{nullify\_rk4\_cohort()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+coms\+::nullify\+\_\+rk4\+\_\+cohort (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__coms_a34a6a346af3d032c14f416435801598a}\label{namespacerk4__coms_a34a6a346af3d032c14f416435801598a}} 
+\index{rk4\_coms@{rk4\_coms}!nullify\_rk4\_patch@{nullify\_rk4\_patch}}
+\index{nullify\_rk4\_patch@{nullify\_rk4\_patch}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{nullify\_rk4\_patch()}{nullify\_rk4\_patch()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+coms\+::nullify\+\_\+rk4\+\_\+patch (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__coms_aa58f2e011f087e610d94022bed90be7a}\label{namespacerk4__coms_aa58f2e011f087e610d94022bed90be7a}} 
+\index{rk4\_coms@{rk4\_coms}!reset\_integ\_err@{reset\_integ\_err}}
+\index{reset\_integ\_err@{reset\_integ\_err}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{reset\_integ\_err()}{reset\_integ\_err()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+coms\+::reset\+\_\+integ\+\_\+err}
+
+\mbox{\Hypertarget{namespacerk4__coms_a02aeb5f0e99479e6eef3029472a79781}\label{namespacerk4__coms_a02aeb5f0e99479e6eef3029472a79781}} 
+\index{rk4\_coms@{rk4\_coms}!reset\_rk4\_fluxes@{reset\_rk4\_fluxes}}
+\index{reset\_rk4\_fluxes@{reset\_rk4\_fluxes}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{reset\_rk4\_fluxes()}{reset\_rk4\_fluxes()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+coms\+::reset\+\_\+rk4\+\_\+fluxes (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__coms_a4dc0257365f3ec4614c2e41451517e28}\label{namespacerk4__coms_a4dc0257365f3ec4614c2e41451517e28}} 
+\index{rk4\_coms@{rk4\_coms}!zero\_bdf2\_patch@{zero\_bdf2\_patch}}
+\index{zero\_bdf2\_patch@{zero\_bdf2\_patch}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{zero\_bdf2\_patch()}{zero\_bdf2\_patch()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+coms\+::zero\+\_\+bdf2\+\_\+patch (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1bdf2patchtype}{bdf2patchtype}}), target}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__coms_a0af8d3f6d5452c98c81c5230f3b22343}\label{namespacerk4__coms_a0af8d3f6d5452c98c81c5230f3b22343}} 
+\index{rk4\_coms@{rk4\_coms}!zero\_rk4\_aux@{zero\_rk4\_aux}}
+\index{zero\_rk4\_aux@{zero\_rk4\_aux}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{zero\_rk4\_aux()}{zero\_rk4\_aux()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+coms\+::zero\+\_\+rk4\+\_\+aux (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4auxtype}{rk4auxtype}}), target}]{crk4aux }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__coms_a1053434edb41147cb74257d6339eab8f}\label{namespacerk4__coms_a1053434edb41147cb74257d6339eab8f}} 
+\index{rk4\_coms@{rk4\_coms}!zero\_rk4\_cohort@{zero\_rk4\_cohort}}
+\index{zero\_rk4\_cohort@{zero\_rk4\_cohort}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{zero\_rk4\_cohort()}{zero\_rk4\_cohort()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+coms\+::zero\+\_\+rk4\+\_\+cohort (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__coms_a4206f404f555c50ee6570211356bd537}\label{namespacerk4__coms_a4206f404f555c50ee6570211356bd537}} 
+\index{rk4\_coms@{rk4\_coms}!zero\_rk4\_patch@{zero\_rk4\_patch}}
+\index{zero\_rk4\_patch@{zero\_rk4\_patch}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{zero\_rk4\_patch()}{zero\_rk4\_patch()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+coms\+::zero\+\_\+rk4\+\_\+patch (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{y }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacerk4__coms_a2da1f732b9648b485c93d62814060cf2}\label{namespacerk4__coms_a2da1f732b9648b485c93d62814060cf2}} 
+\index{rk4\_coms@{rk4\_coms}!budget\_pref@{budget\_pref}}
+\index{budget\_pref@{budget\_pref}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{budget\_pref}{budget\_pref}}
+{\footnotesize\ttfamily character(len=str\+\_\+len) rk4\+\_\+coms\+::budget\+\_\+pref}
+
+\mbox{\Hypertarget{namespacerk4__coms_a9b8354d59e352fedb78f49d2195a9d7a}\label{namespacerk4__coms_a9b8354d59e352fedb78f49d2195a9d7a}} 
+\index{rk4\_coms@{rk4\_coms}!checkbudget@{checkbudget}}
+\index{checkbudget@{checkbudget}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{checkbudget}{checkbudget}}
+{\footnotesize\ttfamily logical rk4\+\_\+coms\+::checkbudget}
+
+\mbox{\Hypertarget{namespacerk4__coms_a5abb49d2a6e86524f3c3bf3f67468c21}\label{namespacerk4__coms_a5abb49d2a6e86524f3c3bf3f67468c21}} 
+\index{rk4\_coms@{rk4\_coms}!debug@{debug}}
+\index{debug@{debug}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{debug}{debug}}
+{\footnotesize\ttfamily logical rk4\+\_\+coms\+::debug}
+
+\mbox{\Hypertarget{namespacerk4__coms_acd58047348a9b1ff25ec1afda9163705}\label{namespacerk4__coms_acd58047348a9b1ff25ec1afda9163705}} 
+\index{rk4\_coms@{rk4\_coms}!detail\_pref@{detail\_pref}}
+\index{detail\_pref@{detail\_pref}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{detail\_pref}{detail\_pref}}
+{\footnotesize\ttfamily character(len=str\+\_\+len) rk4\+\_\+coms\+::detail\+\_\+pref}
+
+\mbox{\Hypertarget{namespacerk4__coms_affa4e03ec127e7def8035b8b32bdb5b8}\label{namespacerk4__coms_affa4e03ec127e7def8035b8b32bdb5b8}} 
+\index{rk4\_coms@{rk4\_coms}!dtrk4@{dtrk4}}
+\index{dtrk4@{dtrk4}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{dtrk4}{dtrk4}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::dtrk4}
+
+\mbox{\Hypertarget{namespacerk4__coms_a987c7ccf90cfcf40c2a925b2c1057404}\label{namespacerk4__coms_a987c7ccf90cfcf40c2a925b2c1057404}} 
+\index{rk4\_coms@{rk4\_coms}!dtrk4i@{dtrk4i}}
+\index{dtrk4i@{dtrk4i}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{dtrk4i}{dtrk4i}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::dtrk4i}
+
+\mbox{\Hypertarget{namespacerk4__coms_aae531dd6ba4cf10a03c3fad2b61071bb}\label{namespacerk4__coms_aae531dd6ba4cf10a03c3fad2b61071bb}} 
+\index{rk4\_coms@{rk4\_coms}!effarea\_evap@{effarea\_evap}}
+\index{effarea\_evap@{effarea\_evap}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{effarea\_evap}{effarea\_evap}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::effarea\+\_\+evap}
+
+\mbox{\Hypertarget{namespacerk4__coms_af575cfc8fb0e2063e1d3a08be26aea3a}\label{namespacerk4__coms_af575cfc8fb0e2063e1d3a08be26aea3a}} 
+\index{rk4\_coms@{rk4\_coms}!effarea\_heat@{effarea\_heat}}
+\index{effarea\_heat@{effarea\_heat}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{effarea\_heat}{effarea\_heat}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::effarea\+\_\+heat}
+
+\mbox{\Hypertarget{namespacerk4__coms_aa9b9a7fcec09aad8a6d3423c30c3b1de}\label{namespacerk4__coms_aa9b9a7fcec09aad8a6d3423c30c3b1de}} 
+\index{rk4\_coms@{rk4\_coms}!effarea\_transp@{effarea\_transp}}
+\index{effarea\_transp@{effarea\_transp}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{effarea\_transp}{effarea\_transp}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) rk4\+\_\+coms\+::effarea\+\_\+transp}
+
+\mbox{\Hypertarget{namespacerk4__coms_af90527ec55879335bb58710234142b14}\label{namespacerk4__coms_af90527ec55879335bb58710234142b14}} 
+\index{rk4\_coms@{rk4\_coms}!errmax\_fout@{errmax\_fout}}
+\index{errmax\_fout@{errmax\_fout}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{errmax\_fout}{errmax\_fout}}
+{\footnotesize\ttfamily character(len=str\+\_\+len) rk4\+\_\+coms\+::errmax\+\_\+fout}
+
+\mbox{\Hypertarget{namespacerk4__coms_a87d69315c8ce5a8eece7631c044e56e5}\label{namespacerk4__coms_a87d69315c8ce5a8eece7631c044e56e5}} 
+\index{rk4\_coms@{rk4\_coms}!heun\_a2@{heun\_a2}}
+\index{heun\_a2@{heun\_a2}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{heun\_a2}{heun\_a2}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::heun\+\_\+a2 = 1.d0}
+
+\mbox{\Hypertarget{namespacerk4__coms_ae8d76c010784094c3299f39f54d015c1}\label{namespacerk4__coms_ae8d76c010784094c3299f39f54d015c1}} 
+\index{rk4\_coms@{rk4\_coms}!heun\_b21@{heun\_b21}}
+\index{heun\_b21@{heun\_b21}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{heun\_b21}{heun\_b21}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::heun\+\_\+b21 = 1.d0}
+
+\mbox{\Hypertarget{namespacerk4__coms_aacfe35ff98522754e71ad11a44b521b4}\label{namespacerk4__coms_aacfe35ff98522754e71ad11a44b521b4}} 
+\index{rk4\_coms@{rk4\_coms}!heun\_c1@{heun\_c1}}
+\index{heun\_c1@{heun\_c1}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{heun\_c1}{heun\_c1}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::heun\+\_\+c1 = 5.d-\/1}
+
+\mbox{\Hypertarget{namespacerk4__coms_afad602ec1632d28447fa784393dd4777}\label{namespacerk4__coms_afad602ec1632d28447fa784393dd4777}} 
+\index{rk4\_coms@{rk4\_coms}!heun\_c2@{heun\_c2}}
+\index{heun\_c2@{heun\_c2}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{heun\_c2}{heun\_c2}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::heun\+\_\+c2 = 5.d-\/1}
+
+\mbox{\Hypertarget{namespacerk4__coms_aeea9fe3a451738a304eacef0dfa174a1}\label{namespacerk4__coms_aeea9fe3a451738a304eacef0dfa174a1}} 
+\index{rk4\_coms@{rk4\_coms}!heun\_dc1@{heun\_dc1}}
+\index{heun\_dc1@{heun\_dc1}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{heun\_dc1}{heun\_dc1}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::heun\+\_\+dc1 = \mbox{\hyperlink{namespacerk4__coms_aacfe35ff98522754e71ad11a44b521b4}{heun\+\_\+c1}} -\/ 1.d0}
+
+\mbox{\Hypertarget{namespacerk4__coms_ad638286586253a3741b0fd05bd2456a3}\label{namespacerk4__coms_ad638286586253a3741b0fd05bd2456a3}} 
+\index{rk4\_coms@{rk4\_coms}!heun\_dc2@{heun\_dc2}}
+\index{heun\_dc2@{heun\_dc2}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{heun\_dc2}{heun\_dc2}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::heun\+\_\+dc2 = \mbox{\hyperlink{namespacerk4__coms_afad602ec1632d28447fa784393dd4777}{heun\+\_\+c2}} -\/ 0.d0}
+
+\mbox{\Hypertarget{namespacerk4__coms_a5bf08e5e23fca150f09adc446272b7fb}\label{namespacerk4__coms_a5bf08e5e23fca150f09adc446272b7fb}} 
+\index{rk4\_coms@{rk4\_coms}!hmin@{hmin}}
+\index{hmin@{hmin}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{hmin}{hmin}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::hmin}
+
+\mbox{\Hypertarget{namespacerk4__coms_a09bb1518d1ed93891ef24fa73feb7cbe}\label{namespacerk4__coms_a09bb1518d1ed93891ef24fa73feb7cbe}} 
+\index{rk4\_coms@{rk4\_coms}!huge\_offset@{huge\_offset}}
+\index{huge\_offset@{huge\_offset}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{huge\_offset}{huge\_offset}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::huge\+\_\+offset = 1.d30}
+
+\mbox{\Hypertarget{namespacerk4__coms_a33cf51cec0937e19a61030894187ddbc}\label{namespacerk4__coms_a33cf51cec0937e19a61030894187ddbc}} 
+\index{rk4\_coms@{rk4\_coms}!ibranch\_thermo@{ibranch\_thermo}}
+\index{ibranch\_thermo@{ibranch\_thermo}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{ibranch\_thermo}{ibranch\_thermo}}
+{\footnotesize\ttfamily integer rk4\+\_\+coms\+::ibranch\+\_\+thermo}
+
+\mbox{\Hypertarget{namespacerk4__coms_aecab6dfff0aaea0938b5c59d550860bc}\label{namespacerk4__coms_aecab6dfff0aaea0938b5c59d550860bc}} 
+\index{rk4\_coms@{rk4\_coms}!integ\_err@{integ\_err}}
+\index{integ\_err@{integ\_err}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{integ\_err}{integ\_err}}
+{\footnotesize\ttfamily integer(kind=8), dimension(\+:,\+:), allocatable rk4\+\_\+coms\+::integ\+\_\+err}
+
+\mbox{\Hypertarget{namespacerk4__coms_a4f5c8dc79c821a459a356f283b4831c8}\label{namespacerk4__coms_a4f5c8dc79c821a459a356f283b4831c8}} 
+\index{rk4\_coms@{rk4\_coms}!integ\_lab@{integ\_lab}}
+\index{integ\_lab@{integ\_lab}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{integ\_lab}{integ\_lab}}
+{\footnotesize\ttfamily character(len=13), dimension(\+:), allocatable rk4\+\_\+coms\+::integ\+\_\+lab}
+
+\mbox{\Hypertarget{namespacerk4__coms_a3c62cf3b7294822d789a72c33ed42538}\label{namespacerk4__coms_a3c62cf3b7294822d789a72c33ed42538}} 
+\index{rk4\_coms@{rk4\_coms}!integration\_buff@{integration\_buff}}
+\index{integration\_buff@{integration\_buff}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{integration\_buff}{integration\_buff}}
+{\footnotesize\ttfamily type(\mbox{\hyperlink{structrk4__coms_1_1integration__vars}{integration\+\_\+vars}}), dimension(\+:), pointer rk4\+\_\+coms\+::integration\+\_\+buff}
+
+\mbox{\Hypertarget{namespacerk4__coms_a49c5428026d0aece9bcf4f9a87c7b823}\label{namespacerk4__coms_a49c5428026d0aece9bcf4f9a87c7b823}} 
+\index{rk4\_coms@{rk4\_coms}!ipercol@{ipercol}}
+\index{ipercol@{ipercol}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{ipercol}{ipercol}}
+{\footnotesize\ttfamily integer rk4\+\_\+coms\+::ipercol}
+
+\mbox{\Hypertarget{namespacerk4__coms_a5af034bb3daf3fd270550fe26a843ced}\label{namespacerk4__coms_a5af034bb3daf3fd270550fe26a843ced}} 
+\index{rk4\_coms@{rk4\_coms}!lai\_to\_cover@{lai\_to\_cover}}
+\index{lai\_to\_cover@{lai\_to\_cover}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{lai\_to\_cover}{lai\_to\_cover}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::lai\+\_\+to\+\_\+cover}
+
+\mbox{\Hypertarget{namespacerk4__coms_ab6eb51e1fa8b861cc6fb6359631bdec3}\label{namespacerk4__coms_ab6eb51e1fa8b861cc6fb6359631bdec3}} 
+\index{rk4\_coms@{rk4\_coms}!leaf\_intercept@{leaf\_intercept}}
+\index{leaf\_intercept@{leaf\_intercept}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{leaf\_intercept}{leaf\_intercept}}
+{\footnotesize\ttfamily logical rk4\+\_\+coms\+::leaf\+\_\+intercept}
+
+\mbox{\Hypertarget{namespacerk4__coms_a9fc78b38e070c62f9669f9db9d966784}\label{namespacerk4__coms_a9fc78b38e070c62f9669f9db9d966784}} 
+\index{rk4\_coms@{rk4\_coms}!maxstp@{maxstp}}
+\index{maxstp@{maxstp}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{maxstp}{maxstp}}
+{\footnotesize\ttfamily integer rk4\+\_\+coms\+::maxstp}
+
+\mbox{\Hypertarget{namespacerk4__coms_a8e2fcadf9c0fe34be391e95bd3caa31c}\label{namespacerk4__coms_a8e2fcadf9c0fe34be391e95bd3caa31c}} 
+\index{rk4\_coms@{rk4\_coms}!nerr@{nerr}}
+\index{nerr@{nerr}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{nerr}{nerr}}
+{\footnotesize\ttfamily integer rk4\+\_\+coms\+::nerr}
+
+\mbox{\Hypertarget{namespacerk4__coms_a8f0596202fc6dc04e70e600a544ae155}\label{namespacerk4__coms_a8f0596202fc6dc04e70e600a544ae155}} 
+\index{rk4\_coms@{rk4\_coms}!nerrfix@{nerrfix}}
+\index{nerrfix@{nerrfix}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{nerrfix}{nerrfix}}
+{\footnotesize\ttfamily integer, parameter rk4\+\_\+coms\+::nerrfix = 22}
+
+\mbox{\Hypertarget{namespacerk4__coms_a62d65ed745bfd02b36c79be5861b7cee}\label{namespacerk4__coms_a62d65ed745bfd02b36c79be5861b7cee}} 
+\index{rk4\_coms@{rk4\_coms}!osoe@{osoe}}
+\index{osoe@{osoe}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{osoe}{osoe}}
+{\footnotesize\ttfamily integer rk4\+\_\+coms\+::osoe}
+
+\mbox{\Hypertarget{namespacerk4__coms_ac28f34645e6cd2065bc8c458ae43f642}\label{namespacerk4__coms_ac28f34645e6cd2065bc8c458ae43f642}} 
+\index{rk4\_coms@{rk4\_coms}!osow@{osow}}
+\index{osow@{osow}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{osow}{osow}}
+{\footnotesize\ttfamily integer rk4\+\_\+coms\+::osow}
+
+\mbox{\Hypertarget{namespacerk4__coms_ae9733bb77416a4d137c65ddd1adc5c23}\label{namespacerk4__coms_ae9733bb77416a4d137c65ddd1adc5c23}} 
+\index{rk4\_coms@{rk4\_coms}!oswe@{oswe}}
+\index{oswe@{oswe}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{oswe}{oswe}}
+{\footnotesize\ttfamily integer rk4\+\_\+coms\+::oswe}
+
+\mbox{\Hypertarget{namespacerk4__coms_a588b443c0107fd03a7642394a2df5cc9}\label{namespacerk4__coms_a588b443c0107fd03a7642394a2df5cc9}} 
+\index{rk4\_coms@{rk4\_coms}!oswm@{oswm}}
+\index{oswm@{oswm}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{oswm}{oswm}}
+{\footnotesize\ttfamily integer rk4\+\_\+coms\+::oswm}
+
+\mbox{\Hypertarget{namespacerk4__coms_a796865569153ec93dae2cc10d6dd7909}\label{namespacerk4__coms_a796865569153ec93dae2cc10d6dd7909}} 
+\index{rk4\_coms@{rk4\_coms}!pgrow@{pgrow}}
+\index{pgrow@{pgrow}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{pgrow}{pgrow}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::pgrow = -\/2.d-\/1}
+
+\mbox{\Hypertarget{namespacerk4__coms_a062e3f5a857cb1364f87fda6223f2259}\label{namespacerk4__coms_a062e3f5a857cb1364f87fda6223f2259}} 
+\index{rk4\_coms@{rk4\_coms}!print\_budget@{print\_budget}}
+\index{print\_budget@{print\_budget}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{print\_budget}{print\_budget}}
+{\footnotesize\ttfamily logical rk4\+\_\+coms\+::print\+\_\+budget}
+
+\mbox{\Hypertarget{namespacerk4__coms_a9b7ff048a348436a9163405f31d72e29}\label{namespacerk4__coms_a9b7ff048a348436a9163405f31d72e29}} 
+\index{rk4\_coms@{rk4\_coms}!print\_detailed@{print\_detailed}}
+\index{print\_detailed@{print\_detailed}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{print\_detailed}{print\_detailed}}
+{\footnotesize\ttfamily logical rk4\+\_\+coms\+::print\+\_\+detailed}
+
+\mbox{\Hypertarget{namespacerk4__coms_a45d06376c0007b5db575b229cc2d11b1}\label{namespacerk4__coms_a45d06376c0007b5db575b229cc2d11b1}} 
+\index{rk4\_coms@{rk4\_coms}!print\_diags@{print\_diags}}
+\index{print\_diags@{print\_diags}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{print\_diags}{print\_diags}}
+{\footnotesize\ttfamily logical rk4\+\_\+coms\+::print\+\_\+diags}
+
+\mbox{\Hypertarget{namespacerk4__coms_ad87029f758f9a6906b3aea2205873427}\label{namespacerk4__coms_ad87029f758f9a6906b3aea2205873427}} 
+\index{rk4\_coms@{rk4\_coms}!print\_thbnd@{print\_thbnd}}
+\index{print\_thbnd@{print\_thbnd}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{print\_thbnd}{print\_thbnd}}
+{\footnotesize\ttfamily logical rk4\+\_\+coms\+::print\+\_\+thbnd}
+
+\mbox{\Hypertarget{namespacerk4__coms_a83a7b5210aa05ed67147b0b6e4250f46}\label{namespacerk4__coms_a83a7b5210aa05ed67147b0b6e4250f46}} 
+\index{rk4\_coms@{rk4\_coms}!pshrnk@{pshrnk}}
+\index{pshrnk@{pshrnk}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{pshrnk}{pshrnk}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::pshrnk = -\/2.\+5d-\/1}
+
+\mbox{\Hypertarget{namespacerk4__coms_a8758ba5171a32f83e20dd93601fa21d6}\label{namespacerk4__coms_a8758ba5171a32f83e20dd93601fa21d6}} 
+\index{rk4\_coms@{rk4\_coms}!record\_err@{record\_err}}
+\index{record\_err@{record\_err}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{record\_err}{record\_err}}
+{\footnotesize\ttfamily logical rk4\+\_\+coms\+::record\+\_\+err}
+
+\mbox{\Hypertarget{namespacerk4__coms_aaccaa3d4ec955eecd38ce2c8c8813cf9}\label{namespacerk4__coms_aaccaa3d4ec955eecd38ce2c8c8813cf9}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_a2@{rk4\_a2}}
+\index{rk4\_a2@{rk4\_a2}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_a2}{rk4\_a2}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+a2 = 2.d-\/1}
+
+\mbox{\Hypertarget{namespacerk4__coms_aaa2167ee06ad594c46793e7280b248f7}\label{namespacerk4__coms_aaa2167ee06ad594c46793e7280b248f7}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_a3@{rk4\_a3}}
+\index{rk4\_a3@{rk4\_a3}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_a3}{rk4\_a3}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+a3 = 3.d-\/1}
+
+\mbox{\Hypertarget{namespacerk4__coms_aaa712c298024351472a4f80d5020e7fc}\label{namespacerk4__coms_aaa712c298024351472a4f80d5020e7fc}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_a4@{rk4\_a4}}
+\index{rk4\_a4@{rk4\_a4}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_a4}{rk4\_a4}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+a4 = 6.d-\/1}
+
+\mbox{\Hypertarget{namespacerk4__coms_ac364eca74fa5b87b0821f6e547e30368}\label{namespacerk4__coms_ac364eca74fa5b87b0821f6e547e30368}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_a5@{rk4\_a5}}
+\index{rk4\_a5@{rk4\_a5}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_a5}{rk4\_a5}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+a5 = 1.d0}
+
+\mbox{\Hypertarget{namespacerk4__coms_a572359022b68f636423b3dde68f9c34a}\label{namespacerk4__coms_a572359022b68f636423b3dde68f9c34a}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_a6@{rk4\_a6}}
+\index{rk4\_a6@{rk4\_a6}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_a6}{rk4\_a6}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+a6 = 8.\+75d-\/1}
+
+\mbox{\Hypertarget{namespacerk4__coms_a34abdb75b43eceb865d986e7874e03d7}\label{namespacerk4__coms_a34abdb75b43eceb865d986e7874e03d7}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_b21@{rk4\_b21}}
+\index{rk4\_b21@{rk4\_b21}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_b21}{rk4\_b21}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+b21 = 2.d-\/1}
+
+\mbox{\Hypertarget{namespacerk4__coms_a25fefbdc031aa0c923082df76e233542}\label{namespacerk4__coms_a25fefbdc031aa0c923082df76e233542}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_b31@{rk4\_b31}}
+\index{rk4\_b31@{rk4\_b31}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_b31}{rk4\_b31}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+b31 = 3.d0/4.d1}
+
+\mbox{\Hypertarget{namespacerk4__coms_aeadece49a8e779db69ab3c866d710851}\label{namespacerk4__coms_aeadece49a8e779db69ab3c866d710851}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_b32@{rk4\_b32}}
+\index{rk4\_b32@{rk4\_b32}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_b32}{rk4\_b32}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+b32 = 9.d0/4.d1}
+
+\mbox{\Hypertarget{namespacerk4__coms_a027909c6e9575ba7ea384f530f1fea8c}\label{namespacerk4__coms_a027909c6e9575ba7ea384f530f1fea8c}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_b41@{rk4\_b41}}
+\index{rk4\_b41@{rk4\_b41}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_b41}{rk4\_b41}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+b41 = 3.d-\/1}
+
+\mbox{\Hypertarget{namespacerk4__coms_a8e97d0778db0718264f454af0d04e0da}\label{namespacerk4__coms_a8e97d0778db0718264f454af0d04e0da}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_b42@{rk4\_b42}}
+\index{rk4\_b42@{rk4\_b42}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_b42}{rk4\_b42}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+b42 = -\/9.d-\/1}
+
+\mbox{\Hypertarget{namespacerk4__coms_a5c0f66631b902af266e04130bea41001}\label{namespacerk4__coms_a5c0f66631b902af266e04130bea41001}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_b43@{rk4\_b43}}
+\index{rk4\_b43@{rk4\_b43}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_b43}{rk4\_b43}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+b43 = 1.\+2d0}
+
+\mbox{\Hypertarget{namespacerk4__coms_a0667d689a2690f395681dd54718dd9b0}\label{namespacerk4__coms_a0667d689a2690f395681dd54718dd9b0}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_b51@{rk4\_b51}}
+\index{rk4\_b51@{rk4\_b51}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_b51}{rk4\_b51}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+b51 = -\/1.\+1d1/5.\+4d1}
+
+\mbox{\Hypertarget{namespacerk4__coms_a08136775ca79aa4cfb6e2bc844bfb689}\label{namespacerk4__coms_a08136775ca79aa4cfb6e2bc844bfb689}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_b52@{rk4\_b52}}
+\index{rk4\_b52@{rk4\_b52}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_b52}{rk4\_b52}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+b52 = 2.\+5d0}
+
+\mbox{\Hypertarget{namespacerk4__coms_adedd306e0a9a351610026b3a12d2e5ce}\label{namespacerk4__coms_adedd306e0a9a351610026b3a12d2e5ce}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_b53@{rk4\_b53}}
+\index{rk4\_b53@{rk4\_b53}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_b53}{rk4\_b53}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+b53 = -\/7.d1/2.\+7d1}
+
+\mbox{\Hypertarget{namespacerk4__coms_a3d702309397c009b9a62c0900da4a7c5}\label{namespacerk4__coms_a3d702309397c009b9a62c0900da4a7c5}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_b54@{rk4\_b54}}
+\index{rk4\_b54@{rk4\_b54}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_b54}{rk4\_b54}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+b54 = 3.\+5d1/2.\+7d1}
+
+\mbox{\Hypertarget{namespacerk4__coms_a69b8b27ac5165b14e52efd1d57e3247d}\label{namespacerk4__coms_a69b8b27ac5165b14e52efd1d57e3247d}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_b61@{rk4\_b61}}
+\index{rk4\_b61@{rk4\_b61}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_b61}{rk4\_b61}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+b61 = 1.\+631d3/5.\+52960d4}
+
+\mbox{\Hypertarget{namespacerk4__coms_a1424e7b77cc58817b30146a6ed80c076}\label{namespacerk4__coms_a1424e7b77cc58817b30146a6ed80c076}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_b62@{rk4\_b62}}
+\index{rk4\_b62@{rk4\_b62}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_b62}{rk4\_b62}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+b62 = 1.\+750d2/5.\+120d2}
+
+\mbox{\Hypertarget{namespacerk4__coms_a2943f8989d0d72c6913d114141dcfe5d}\label{namespacerk4__coms_a2943f8989d0d72c6913d114141dcfe5d}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_b63@{rk4\_b63}}
+\index{rk4\_b63@{rk4\_b63}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_b63}{rk4\_b63}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+b63 = 5.\+750d2/1.\+38240d4}
+
+\mbox{\Hypertarget{namespacerk4__coms_a6738b7b2098994211bfcafa79e4cc584}\label{namespacerk4__coms_a6738b7b2098994211bfcafa79e4cc584}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_b64@{rk4\_b64}}
+\index{rk4\_b64@{rk4\_b64}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_b64}{rk4\_b64}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+b64 = 4.\+42750d4/1.\+105920d5}
+
+\mbox{\Hypertarget{namespacerk4__coms_a5635aa326f6d3f256b21cb6aaf2d4ed0}\label{namespacerk4__coms_a5635aa326f6d3f256b21cb6aaf2d4ed0}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_b65@{rk4\_b65}}
+\index{rk4\_b65@{rk4\_b65}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_b65}{rk4\_b65}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+b65 = 2.\+530d2/4.\+0960d3}
+
+\mbox{\Hypertarget{namespacerk4__coms_a1dd142bdfa35986937ac4396a759dda0}\label{namespacerk4__coms_a1dd142bdfa35986937ac4396a759dda0}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_c1@{rk4\_c1}}
+\index{rk4\_c1@{rk4\_c1}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_c1}{rk4\_c1}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+c1 = 3.\+70d1/3.\+780d2}
+
+\mbox{\Hypertarget{namespacerk4__coms_a94a604a5d0d271bf875f0fd3338fef3e}\label{namespacerk4__coms_a94a604a5d0d271bf875f0fd3338fef3e}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_c3@{rk4\_c3}}
+\index{rk4\_c3@{rk4\_c3}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_c3}{rk4\_c3}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+c3 = 2.\+500d2/6.\+210d2}
+
+\mbox{\Hypertarget{namespacerk4__coms_ae29e60a0912723f4124b219bb67135d8}\label{namespacerk4__coms_ae29e60a0912723f4124b219bb67135d8}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_c4@{rk4\_c4}}
+\index{rk4\_c4@{rk4\_c4}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_c4}{rk4\_c4}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+c4 = 1.\+250d2/5.\+940d2}
+
+\mbox{\Hypertarget{namespacerk4__coms_a50aa680b806d041ad4b2d83b838ce6e4}\label{namespacerk4__coms_a50aa680b806d041ad4b2d83b838ce6e4}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_c6@{rk4\_c6}}
+\index{rk4\_c6@{rk4\_c6}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_c6}{rk4\_c6}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+c6 = 5.\+120d2/1.\+7710d3}
+
+\mbox{\Hypertarget{namespacerk4__coms_a8f2ecc1ddfd20579092c340f3cde39b4}\label{namespacerk4__coms_a8f2ecc1ddfd20579092c340f3cde39b4}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_dc1@{rk4\_dc1}}
+\index{rk4\_dc1@{rk4\_dc1}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_dc1}{rk4\_dc1}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+dc1 = \mbox{\hyperlink{namespacerk4__coms_a1dd142bdfa35986937ac4396a759dda0}{rk4\+\_\+c1}}-\/2.\+8250d3/2.\+76480d4}
+
+\mbox{\Hypertarget{namespacerk4__coms_ad50fbfa221dd0da30f0c1f4bbc5d4f3e}\label{namespacerk4__coms_ad50fbfa221dd0da30f0c1f4bbc5d4f3e}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_dc3@{rk4\_dc3}}
+\index{rk4\_dc3@{rk4\_dc3}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_dc3}{rk4\_dc3}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+dc3 = \mbox{\hyperlink{namespacerk4__coms_a94a604a5d0d271bf875f0fd3338fef3e}{rk4\+\_\+c3}}-\/1.\+85750d4/4.\+83840d4}
+
+\mbox{\Hypertarget{namespacerk4__coms_a1bb5b9bcaddfd294bf37a8ea838adf3f}\label{namespacerk4__coms_a1bb5b9bcaddfd294bf37a8ea838adf3f}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_dc4@{rk4\_dc4}}
+\index{rk4\_dc4@{rk4\_dc4}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_dc4}{rk4\_dc4}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+dc4 = \mbox{\hyperlink{namespacerk4__coms_ae29e60a0912723f4124b219bb67135d8}{rk4\+\_\+c4}}-\/1.\+35250d4/5.\+52960d4}
+
+\mbox{\Hypertarget{namespacerk4__coms_aa2ab2d5fa0e976ca56e10da08c4409a6}\label{namespacerk4__coms_aa2ab2d5fa0e976ca56e10da08c4409a6}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_dc5@{rk4\_dc5}}
+\index{rk4\_dc5@{rk4\_dc5}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_dc5}{rk4\_dc5}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+dc5 = -\/2.\+770d2/1.\+43360d4}
+
+\mbox{\Hypertarget{namespacerk4__coms_abf3a30685db4e4c9f6cd9f903eb1a2fd}\label{namespacerk4__coms_abf3a30685db4e4c9f6cd9f903eb1a2fd}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_dc6@{rk4\_dc6}}
+\index{rk4\_dc6@{rk4\_dc6}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_dc6}{rk4\_dc6}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::rk4\+\_\+dc6 = \mbox{\hyperlink{namespacerk4__coms_a50aa680b806d041ad4b2d83b838ce6e4}{rk4\+\_\+c6}}-\/2.\+5d-\/1}
+
+\mbox{\Hypertarget{namespacerk4__coms_ab839ff31cd3abc7dd1fd40e4d3983a31}\label{namespacerk4__coms_ab839ff31cd3abc7dd1fd40e4d3983a31}} 
+\index{rk4\_coms@{rk4\_coms}!rk4\_tolerance@{rk4\_tolerance}}
+\index{rk4\_tolerance@{rk4\_tolerance}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4\_tolerance}{rk4\_tolerance}}
+{\footnotesize\ttfamily real rk4\+\_\+coms\+::rk4\+\_\+tolerance}
+
+\mbox{\Hypertarget{namespacerk4__coms_af06182f853d5a71c46e249e55fe5a678}\label{namespacerk4__coms_af06182f853d5a71c46e249e55fe5a678}} 
+\index{rk4\_coms@{rk4\_coms}!rk4aux@{rk4aux}}
+\index{rk4aux@{rk4aux}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4aux}{rk4aux}}
+{\footnotesize\ttfamily type(\mbox{\hyperlink{structrk4__coms_1_1rk4auxtype}{rk4auxtype}}), dimension(\+:), pointer rk4\+\_\+coms\+::rk4aux}
+
+\mbox{\Hypertarget{namespacerk4__coms_aa154e17784b65f05a89af9b4f86bb879}\label{namespacerk4__coms_aa154e17784b65f05a89af9b4f86bb879}} 
+\index{rk4\_coms@{rk4\_coms}!rk4eps@{rk4eps}}
+\index{rk4eps@{rk4eps}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4eps}{rk4eps}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4eps}
+
+\mbox{\Hypertarget{namespacerk4__coms_a2b1484b3befa3c0d446279fa4001a56d}\label{namespacerk4__coms_a2b1484b3befa3c0d446279fa4001a56d}} 
+\index{rk4\_coms@{rk4\_coms}!rk4eps2@{rk4eps2}}
+\index{rk4eps2@{rk4eps2}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4eps2}{rk4eps2}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4eps2}
+
+\mbox{\Hypertarget{namespacerk4__coms_a2d6ae9880c44662592dc0e0d238c3229}\label{namespacerk4__coms_a2d6ae9880c44662592dc0e0d238c3229}} 
+\index{rk4\_coms@{rk4\_coms}!rk4epsi@{rk4epsi}}
+\index{rk4epsi@{rk4epsi}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4epsi}{rk4epsi}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4epsi}
+
+\mbox{\Hypertarget{namespacerk4__coms_a3f7465768e9a9783cb2c7633da03acd6}\label{namespacerk4__coms_a3f7465768e9a9783cb2c7633da03acd6}} 
+\index{rk4\_coms@{rk4\_coms}!rk4leaf\_drywhc@{rk4leaf\_drywhc}}
+\index{rk4leaf\_drywhc@{rk4leaf\_drywhc}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4leaf\_drywhc}{rk4leaf\_drywhc}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4leaf\+\_\+drywhc}
+
+\mbox{\Hypertarget{namespacerk4__coms_ac35950b114c389050144c9293d9a4e8a}\label{namespacerk4__coms_ac35950b114c389050144c9293d9a4e8a}} 
+\index{rk4\_coms@{rk4\_coms}!rk4leaf\_maxwhc@{rk4leaf\_maxwhc}}
+\index{rk4leaf\_maxwhc@{rk4leaf\_maxwhc}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4leaf\_maxwhc}{rk4leaf\_maxwhc}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4leaf\+\_\+maxwhc}
+
+\mbox{\Hypertarget{namespacerk4__coms_ab0d46d8c6ddc6f99dd0a0800217b712e}\label{namespacerk4__coms_ab0d46d8c6ddc6f99dd0a0800217b712e}} 
+\index{rk4\_coms@{rk4\_coms}!rk4max\_can\_co2@{rk4max\_can\_co2}}
+\index{rk4max\_can\_co2@{rk4max\_can\_co2}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4max\_can\_co2}{rk4max\_can\_co2}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4max\+\_\+can\+\_\+co2}
+
+\mbox{\Hypertarget{namespacerk4__coms_addc14b5fd10ebce828e187eb2e0c8101}\label{namespacerk4__coms_addc14b5fd10ebce828e187eb2e0c8101}} 
+\index{rk4\_coms@{rk4\_coms}!rk4max\_can\_rhv@{rk4max\_can\_rhv}}
+\index{rk4max\_can\_rhv@{rk4max\_can\_rhv}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4max\_can\_rhv}{rk4max\_can\_rhv}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4max\+\_\+can\+\_\+rhv}
+
+\mbox{\Hypertarget{namespacerk4__coms_a8f00e104965b6c83b49b597f34d8432a}\label{namespacerk4__coms_a8f00e104965b6c83b49b597f34d8432a}} 
+\index{rk4\_coms@{rk4\_coms}!rk4max\_can\_shv@{rk4max\_can\_shv}}
+\index{rk4max\_can\_shv@{rk4max\_can\_shv}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4max\_can\_shv}{rk4max\_can\_shv}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4max\+\_\+can\+\_\+shv}
+
+\mbox{\Hypertarget{namespacerk4__coms_a6eed732a4c1930bb16dbe70b959bb270}\label{namespacerk4__coms_a6eed732a4c1930bb16dbe70b959bb270}} 
+\index{rk4\_coms@{rk4\_coms}!rk4max\_can\_temp@{rk4max\_can\_temp}}
+\index{rk4max\_can\_temp@{rk4max\_can\_temp}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4max\_can\_temp}{rk4max\_can\_temp}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4max\+\_\+can\+\_\+temp}
+
+\mbox{\Hypertarget{namespacerk4__coms_ad4588558a29ea0d798ee7146b3d2d403}\label{namespacerk4__coms_ad4588558a29ea0d798ee7146b3d2d403}} 
+\index{rk4\_coms@{rk4\_coms}!rk4max\_sfcw\_temp@{rk4max\_sfcw\_temp}}
+\index{rk4max\_sfcw\_temp@{rk4max\_sfcw\_temp}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4max\_sfcw\_temp}{rk4max\_sfcw\_temp}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4max\+\_\+sfcw\+\_\+temp}
+
+\mbox{\Hypertarget{namespacerk4__coms_ae58a286e741a74a2ef97b1b9c1244efd}\label{namespacerk4__coms_ae58a286e741a74a2ef97b1b9c1244efd}} 
+\index{rk4\_coms@{rk4\_coms}!rk4max\_soil\_temp@{rk4max\_soil\_temp}}
+\index{rk4max\_soil\_temp@{rk4max\_soil\_temp}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4max\_soil\_temp}{rk4max\_soil\_temp}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4max\+\_\+soil\+\_\+temp}
+
+\mbox{\Hypertarget{namespacerk4__coms_a98bd8400baa088828a1aef2e4ecb1c65}\label{namespacerk4__coms_a98bd8400baa088828a1aef2e4ecb1c65}} 
+\index{rk4\_coms@{rk4\_coms}!rk4max\_veg\_temp@{rk4max\_veg\_temp}}
+\index{rk4max\_veg\_temp@{rk4max\_veg\_temp}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4max\_veg\_temp}{rk4max\_veg\_temp}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4max\+\_\+veg\+\_\+temp}
+
+\mbox{\Hypertarget{namespacerk4__coms_ab56f9190507acf74210f49d44165dd57}\label{namespacerk4__coms_ab56f9190507acf74210f49d44165dd57}} 
+\index{rk4\_coms@{rk4\_coms}!rk4min\_can\_co2@{rk4min\_can\_co2}}
+\index{rk4min\_can\_co2@{rk4min\_can\_co2}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4min\_can\_co2}{rk4min\_can\_co2}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4min\+\_\+can\+\_\+co2}
+
+\mbox{\Hypertarget{namespacerk4__coms_aea541e4460a2030f1873fb118b1b3341}\label{namespacerk4__coms_aea541e4460a2030f1873fb118b1b3341}} 
+\index{rk4\_coms@{rk4\_coms}!rk4min\_can\_rhv@{rk4min\_can\_rhv}}
+\index{rk4min\_can\_rhv@{rk4min\_can\_rhv}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4min\_can\_rhv}{rk4min\_can\_rhv}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4min\+\_\+can\+\_\+rhv}
+
+\mbox{\Hypertarget{namespacerk4__coms_a0f723d7acf2f73c4f997825e4b79eb66}\label{namespacerk4__coms_a0f723d7acf2f73c4f997825e4b79eb66}} 
+\index{rk4\_coms@{rk4\_coms}!rk4min\_can\_shv@{rk4min\_can\_shv}}
+\index{rk4min\_can\_shv@{rk4min\_can\_shv}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4min\_can\_shv}{rk4min\_can\_shv}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4min\+\_\+can\+\_\+shv}
+
+\mbox{\Hypertarget{namespacerk4__coms_a5896e577e06a78e013f72e048e907250}\label{namespacerk4__coms_a5896e577e06a78e013f72e048e907250}} 
+\index{rk4\_coms@{rk4\_coms}!rk4min\_can\_temp@{rk4min\_can\_temp}}
+\index{rk4min\_can\_temp@{rk4min\_can\_temp}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4min\_can\_temp}{rk4min\_can\_temp}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4min\+\_\+can\+\_\+temp}
+
+\mbox{\Hypertarget{namespacerk4__coms_a59856872bd14cf839fe440bfe839560f}\label{namespacerk4__coms_a59856872bd14cf839fe440bfe839560f}} 
+\index{rk4\_coms@{rk4\_coms}!rk4min\_sfcw\_mass@{rk4min\_sfcw\_mass}}
+\index{rk4min\_sfcw\_mass@{rk4min\_sfcw\_mass}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4min\_sfcw\_mass}{rk4min\_sfcw\_mass}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4min\+\_\+sfcw\+\_\+mass}
+
+\mbox{\Hypertarget{namespacerk4__coms_a6a0da8f33fe6255b50d37269cc4c5696}\label{namespacerk4__coms_a6a0da8f33fe6255b50d37269cc4c5696}} 
+\index{rk4\_coms@{rk4\_coms}!rk4min\_sfcw\_moist@{rk4min\_sfcw\_moist}}
+\index{rk4min\_sfcw\_moist@{rk4min\_sfcw\_moist}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4min\_sfcw\_moist}{rk4min\_sfcw\_moist}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4min\+\_\+sfcw\+\_\+moist}
+
+\mbox{\Hypertarget{namespacerk4__coms_af9e3e44bc9f58496638933f7d9594172}\label{namespacerk4__coms_af9e3e44bc9f58496638933f7d9594172}} 
+\index{rk4\_coms@{rk4\_coms}!rk4min\_sfcw\_temp@{rk4min\_sfcw\_temp}}
+\index{rk4min\_sfcw\_temp@{rk4min\_sfcw\_temp}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4min\_sfcw\_temp}{rk4min\_sfcw\_temp}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4min\+\_\+sfcw\+\_\+temp}
+
+\mbox{\Hypertarget{namespacerk4__coms_a4995d06d19518eaad240d240ce72ebf3}\label{namespacerk4__coms_a4995d06d19518eaad240d240ce72ebf3}} 
+\index{rk4\_coms@{rk4\_coms}!rk4min\_soil\_temp@{rk4min\_soil\_temp}}
+\index{rk4min\_soil\_temp@{rk4min\_soil\_temp}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4min\_soil\_temp}{rk4min\_soil\_temp}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4min\+\_\+soil\+\_\+temp}
+
+\mbox{\Hypertarget{namespacerk4__coms_a72cb854b5fc4d3e198b318f596828d90}\label{namespacerk4__coms_a72cb854b5fc4d3e198b318f596828d90}} 
+\index{rk4\_coms@{rk4\_coms}!rk4min\_veg\_lwater@{rk4min\_veg\_lwater}}
+\index{rk4min\_veg\_lwater@{rk4min\_veg\_lwater}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4min\_veg\_lwater}{rk4min\_veg\_lwater}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4min\+\_\+veg\+\_\+lwater}
+
+\mbox{\Hypertarget{namespacerk4__coms_a47c8d9b57e934ed14af1cbf674ac8121}\label{namespacerk4__coms_a47c8d9b57e934ed14af1cbf674ac8121}} 
+\index{rk4\_coms@{rk4\_coms}!rk4min\_veg\_temp@{rk4min\_veg\_temp}}
+\index{rk4min\_veg\_temp@{rk4min\_veg\_temp}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4min\_veg\_temp}{rk4min\_veg\_temp}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4min\+\_\+veg\+\_\+temp}
+
+\mbox{\Hypertarget{namespacerk4__coms_a7de60af9cd3a8a43651da0ed30f0d878}\label{namespacerk4__coms_a7de60af9cd3a8a43651da0ed30f0d878}} 
+\index{rk4\_coms@{rk4\_coms}!rk4min\_virt\_moist@{rk4min\_virt\_moist}}
+\index{rk4min\_virt\_moist@{rk4min\_virt\_moist}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4min\_virt\_moist}{rk4min\_virt\_moist}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4min\+\_\+virt\+\_\+moist}
+
+\mbox{\Hypertarget{namespacerk4__coms_a06cc5f6b7afaa313576b32bc56bf80d9}\label{namespacerk4__coms_a06cc5f6b7afaa313576b32bc56bf80d9}} 
+\index{rk4\_coms@{rk4\_coms}!rk4min\_virt\_water@{rk4min\_virt\_water}}
+\index{rk4min\_virt\_water@{rk4min\_virt\_water}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4min\_virt\_water}{rk4min\_virt\_water}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4min\+\_\+virt\+\_\+water}
+
+\mbox{\Hypertarget{namespacerk4__coms_a3b1e8e5ff59d681b92bc9f477f91a111}\label{namespacerk4__coms_a3b1e8e5ff59d681b92bc9f477f91a111}} 
+\index{rk4\_coms@{rk4\_coms}!rk4site@{rk4site}}
+\index{rk4site@{rk4site}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4site}{rk4site}}
+{\footnotesize\ttfamily type(\mbox{\hyperlink{structrk4__coms_1_1rk4sitetype}{rk4sitetype}}) rk4\+\_\+coms\+::rk4site}
+
+\mbox{\Hypertarget{namespacerk4__coms_a8d12416210875d4e246328901524e941}\label{namespacerk4__coms_a8d12416210875d4e246328901524e941}} 
+\index{rk4\_coms@{rk4\_coms}!rk4snowmin@{rk4snowmin}}
+\index{rk4snowmin@{rk4snowmin}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4snowmin}{rk4snowmin}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4snowmin}
+
+\mbox{\Hypertarget{namespacerk4__coms_a91e4907e16271a89cb5b965a061e20e2}\label{namespacerk4__coms_a91e4907e16271a89cb5b965a061e20e2}} 
+\index{rk4\_coms@{rk4\_coms}!rk4tiny\_sfcw\_depth@{rk4tiny\_sfcw\_depth}}
+\index{rk4tiny\_sfcw\_depth@{rk4tiny\_sfcw\_depth}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4tiny\_sfcw\_depth}{rk4tiny\_sfcw\_depth}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4tiny\+\_\+sfcw\+\_\+depth}
+
+\mbox{\Hypertarget{namespacerk4__coms_a546ef5b5ec1d1def51dcae82893eb2bc}\label{namespacerk4__coms_a546ef5b5ec1d1def51dcae82893eb2bc}} 
+\index{rk4\_coms@{rk4\_coms}!rk4tiny\_sfcw\_mass@{rk4tiny\_sfcw\_mass}}
+\index{rk4tiny\_sfcw\_mass@{rk4tiny\_sfcw\_mass}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4tiny\_sfcw\_mass}{rk4tiny\_sfcw\_mass}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4tiny\+\_\+sfcw\+\_\+mass}
+
+\mbox{\Hypertarget{namespacerk4__coms_a9a7486e4755f548d744d266af9052d4f}\label{namespacerk4__coms_a9a7486e4755f548d744d266af9052d4f}} 
+\index{rk4\_coms@{rk4\_coms}!rk4water\_stab\_thresh@{rk4water\_stab\_thresh}}
+\index{rk4water\_stab\_thresh@{rk4water\_stab\_thresh}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{rk4water\_stab\_thresh}{rk4water\_stab\_thresh}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::rk4water\+\_\+stab\+\_\+thresh}
+
+\mbox{\Hypertarget{namespacerk4__coms_ab0aa0551adf0417c09a0a0e4f4bcb934}\label{namespacerk4__coms_ab0aa0551adf0417c09a0a0e4f4bcb934}} 
+\index{rk4\_coms@{rk4\_coms}!safety@{safety}}
+\index{safety@{safety}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{safety}{safety}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::safety = 9.d-\/1}
+
+\mbox{\Hypertarget{namespacerk4__coms_a673279a49daaa7f21ade0992c6fe0c0d}\label{namespacerk4__coms_a673279a49daaa7f21ade0992c6fe0c0d}} 
+\index{rk4\_coms@{rk4\_coms}!sanity\_fout@{sanity\_fout}}
+\index{sanity\_fout@{sanity\_fout}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{sanity\_fout}{sanity\_fout}}
+{\footnotesize\ttfamily character(len=str\+\_\+len) rk4\+\_\+coms\+::sanity\+\_\+fout}
+
+\mbox{\Hypertarget{namespacerk4__coms_a304419c7dc18d710be779d2d1a1378e7}\label{namespacerk4__coms_a304419c7dc18d710be779d2d1a1378e7}} 
+\index{rk4\_coms@{rk4\_coms}!supersat\_ok@{supersat\_ok}}
+\index{supersat\_ok@{supersat\_ok}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{supersat\_ok}{supersat\_ok}}
+{\footnotesize\ttfamily logical rk4\+\_\+coms\+::supersat\+\_\+ok}
+
+\mbox{\Hypertarget{namespacerk4__coms_a9b09c4fc7f09c642c1115df229cedb1e}\label{namespacerk4__coms_a9b09c4fc7f09c642c1115df229cedb1e}} 
+\index{rk4\_coms@{rk4\_coms}!tbeg@{tbeg}}
+\index{tbeg@{tbeg}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{tbeg}{tbeg}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::tbeg}
+
+\mbox{\Hypertarget{namespacerk4__coms_a489d1f63edd639eb7a5c248163b59f9b}\label{namespacerk4__coms_a489d1f63edd639eb7a5c248163b59f9b}} 
+\index{rk4\_coms@{rk4\_coms}!tend@{tend}}
+\index{tend@{tend}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{tend}{tend}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::tend}
+
+\mbox{\Hypertarget{namespacerk4__coms_ab106d324ed571335ee763dd190e7430d}\label{namespacerk4__coms_ab106d324ed571335ee763dd190e7430d}} 
+\index{rk4\_coms@{rk4\_coms}!thbnds\_fout@{thbnds\_fout}}
+\index{thbnds\_fout@{thbnds\_fout}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{thbnds\_fout}{thbnds\_fout}}
+{\footnotesize\ttfamily character(len=str\+\_\+len) rk4\+\_\+coms\+::thbnds\+\_\+fout}
+
+\mbox{\Hypertarget{namespacerk4__coms_a3d0ca14edbf0ca895d40d7a9c49e75da}\label{namespacerk4__coms_a3d0ca14edbf0ca895d40d7a9c49e75da}} 
+\index{rk4\_coms@{rk4\_coms}!tiny\_offset@{tiny\_offset}}
+\index{tiny\_offset@{tiny\_offset}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{tiny\_offset}{tiny\_offset}}
+{\footnotesize\ttfamily real(kind=8), parameter rk4\+\_\+coms\+::tiny\+\_\+offset = 1.d-\/20}
+
+\mbox{\Hypertarget{namespacerk4__coms_ac687fa7b7b3d3a5b1d3bd179e62c8052}\label{namespacerk4__coms_ac687fa7b7b3d3a5b1d3bd179e62c8052}} 
+\index{rk4\_coms@{rk4\_coms}!toocold@{toocold}}
+\index{toocold@{toocold}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{toocold}{toocold}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::toocold}
+
+\mbox{\Hypertarget{namespacerk4__coms_a759040e06196aa6e44844e731b1140ba}\label{namespacerk4__coms_a759040e06196aa6e44844e731b1140ba}} 
+\index{rk4\_coms@{rk4\_coms}!toohot@{toohot}}
+\index{toohot@{toohot}!rk4\_coms@{rk4\_coms}}
+\doxysubsubsection{\texorpdfstring{toohot}{toohot}}
+{\footnotesize\ttfamily real(kind=8) rk4\+\_\+coms\+::toohot}
+

@@ -1,0 +1,28 @@
+digraph "ed_type_init::init_ed_cohort_vars"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ed_type_init::init\l_ed_cohort_vars",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="plant_hydro::psi2rwc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceplant__hydro.html#ae27d78c83f41d9d6fdd38ad2052b32af",tooltip="\\breif Convert water potential of leaf and wood to relative water content"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="plant_hydro::rwc2psi",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceplant__hydro.html#a7cc35f0ea4e11517e3bc7eb75fd19e36",tooltip="Convert relative water content to water potential."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="plant_hydro::rwc2tw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceplant__hydro.html#af7799ce8ba25fef66ade9730bc9f6c77",tooltip="Convert relative water content to total water for both leaf and wood."];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="allometry::dbh2sf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceallometry.html#aded2a9492711f07e5c157c17e9029c10",tooltip=" "];
+  Node5 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="allometry::size2krdepth",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceallometry.html#a91ab563e850c9a9486fadbb0227f6567",tooltip=" "];
+  Node6 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="allometry::size2prd",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceallometry.html#aa96d4524c2ac20b6604bb171bbf3559f",tooltip=" "];
+  Node7 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="sngloff",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$numutils_8f90.html#a97ff3973394dba1b9534e055e358de97",tooltip=" "];
+  Node8 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="plant_hydro::twi2twe",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceplant__hydro.html#ac96b04cb776694987ccefd7c37aab829",tooltip="Intensive to extensive internal water converter."];
+}

@@ -1,0 +1,80 @@
+\hypertarget{namespaceed__met__driver}{}\doxysection{ed\+\_\+met\+\_\+driver Module Reference}
+\label{namespaceed__met__driver}\index{ed\_met\_driver@{ed\_met\_driver}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceed__met__driver_a0965b93e1a1d978fdadf4a72863ded51}{read\+\_\+met\+\_\+driver\+\_\+head}} ()
+\item 
+subroutine \mbox{\hyperlink{namespaceed__met__driver_a7804f50ae19e84e6e8e63f84bbe9606f}{init\+\_\+met\+\_\+drivers}}
+\item 
+subroutine \mbox{\hyperlink{namespaceed__met__driver_a74d852fbf8bace115f878f9eab8eff9f}{read\+\_\+met\+\_\+drivers\+\_\+init}}
+\item 
+subroutine \mbox{\hyperlink{namespaceed__met__driver_a3e78531a4abbaae7886333940f13ea3f}{read\+\_\+met\+\_\+drivers}}
+\item 
+subroutine \mbox{\hyperlink{namespaceed__met__driver_a5f35a6891b5eb05b93fef63398446519}{update\+\_\+met\+\_\+drivers}} (cgrid)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__met__driver_ad21db672783de8f18b956464e83a7143}{read\+\_\+ol\+\_\+file}} (infile, iformat, iv, mname, year, offset, cgrid)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__met__driver_afcd48149ca56209591b1e342819b6b35}{transfer\+\_\+ol\+\_\+month}} (vname, frq, cgrid)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__met__driver_a2ac626ece32ab7870b12c0f1fc19f770}{match\+\_\+poly\+\_\+grid}} (cgrid, nlon, nlat, lon, lat, land)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__met__driver_a7f403410ad7fe4661c882a5898f11882}{get\+\_\+lonlat\+\_\+land}} (cgrid, iformat)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespaceed__met__driver_a7f403410ad7fe4661c882a5898f11882}\label{namespaceed__met__driver_a7f403410ad7fe4661c882a5898f11882}} 
+\index{ed\_met\_driver@{ed\_met\_driver}!get\_lonlat\_land@{get\_lonlat\_land}}
+\index{get\_lonlat\_land@{get\_lonlat\_land}!ed\_met\_driver@{ed\_met\_driver}}
+\doxysubsubsection{\texorpdfstring{get\_lonlat\_land()}{get\_lonlat\_land()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+met\+\_\+driver\+::get\+\_\+lonlat\+\_\+land (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{integer, intent(in)}]{iformat }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__met__driver_a7804f50ae19e84e6e8e63f84bbe9606f}\label{namespaceed__met__driver_a7804f50ae19e84e6e8e63f84bbe9606f}} 
+\index{ed\_met\_driver@{ed\_met\_driver}!init\_met\_drivers@{init\_met\_drivers}}
+\index{init\_met\_drivers@{init\_met\_drivers}!ed\_met\_driver@{ed\_met\_driver}}
+\doxysubsubsection{\texorpdfstring{init\_met\_drivers()}{init\_met\_drivers()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+met\+\_\+driver\+::init\+\_\+met\+\_\+drivers}
+
+\mbox{\Hypertarget{namespaceed__met__driver_a2ac626ece32ab7870b12c0f1fc19f770}\label{namespaceed__met__driver_a2ac626ece32ab7870b12c0f1fc19f770}} 
+\index{ed\_met\_driver@{ed\_met\_driver}!match\_poly\_grid@{match\_poly\_grid}}
+\index{match\_poly\_grid@{match\_poly\_grid}!ed\_met\_driver@{ed\_met\_driver}}
+\doxysubsubsection{\texorpdfstring{match\_poly\_grid()}{match\_poly\_grid()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+met\+\_\+driver\+::match\+\_\+poly\+\_\+grid (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{integer, intent(in)}]{nlon,  }\item[{integer, intent(in)}]{nlat,  }\item[{real, dimension(nlon,nlat), intent(inout)}]{lon,  }\item[{real, dimension(nlon,nlat), intent(inout)}]{lat,  }\item[{real, dimension(nlon,nlat), intent(inout)}]{land }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__met__driver_a0965b93e1a1d978fdadf4a72863ded51}\label{namespaceed__met__driver_a0965b93e1a1d978fdadf4a72863ded51}} 
+\index{ed\_met\_driver@{ed\_met\_driver}!read\_met\_driver\_head@{read\_met\_driver\_head}}
+\index{read\_met\_driver\_head@{read\_met\_driver\_head}!ed\_met\_driver@{ed\_met\_driver}}
+\doxysubsubsection{\texorpdfstring{read\_met\_driver\_head()}{read\_met\_driver\_head()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+met\+\_\+driver\+::read\+\_\+met\+\_\+driver\+\_\+head}
+
+\mbox{\Hypertarget{namespaceed__met__driver_a3e78531a4abbaae7886333940f13ea3f}\label{namespaceed__met__driver_a3e78531a4abbaae7886333940f13ea3f}} 
+\index{ed\_met\_driver@{ed\_met\_driver}!read\_met\_drivers@{read\_met\_drivers}}
+\index{read\_met\_drivers@{read\_met\_drivers}!ed\_met\_driver@{ed\_met\_driver}}
+\doxysubsubsection{\texorpdfstring{read\_met\_drivers()}{read\_met\_drivers()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+met\+\_\+driver\+::read\+\_\+met\+\_\+drivers}
+
+\mbox{\Hypertarget{namespaceed__met__driver_a74d852fbf8bace115f878f9eab8eff9f}\label{namespaceed__met__driver_a74d852fbf8bace115f878f9eab8eff9f}} 
+\index{ed\_met\_driver@{ed\_met\_driver}!read\_met\_drivers\_init@{read\_met\_drivers\_init}}
+\index{read\_met\_drivers\_init@{read\_met\_drivers\_init}!ed\_met\_driver@{ed\_met\_driver}}
+\doxysubsubsection{\texorpdfstring{read\_met\_drivers\_init()}{read\_met\_drivers\_init()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+met\+\_\+driver\+::read\+\_\+met\+\_\+drivers\+\_\+init}
+
+\mbox{\Hypertarget{namespaceed__met__driver_ad21db672783de8f18b956464e83a7143}\label{namespaceed__met__driver_ad21db672783de8f18b956464e83a7143}} 
+\index{ed\_met\_driver@{ed\_met\_driver}!read\_ol\_file@{read\_ol\_file}}
+\index{read\_ol\_file@{read\_ol\_file}!ed\_met\_driver@{ed\_met\_driver}}
+\doxysubsubsection{\texorpdfstring{read\_ol\_file()}{read\_ol\_file()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+met\+\_\+driver\+::read\+\_\+ol\+\_\+file (\begin{DoxyParamCaption}\item[{character(len=str\+\_\+len), intent(in)}]{infile,  }\item[{integer, intent(in)}]{iformat,  }\item[{integer, intent(in)}]{iv,  }\item[{character(len=3), intent(in)}]{mname,  }\item[{integer, intent(in)}]{year,  }\item[{integer, intent(in)}]{offset,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__met__driver_afcd48149ca56209591b1e342819b6b35}\label{namespaceed__met__driver_afcd48149ca56209591b1e342819b6b35}} 
+\index{ed\_met\_driver@{ed\_met\_driver}!transfer\_ol\_month@{transfer\_ol\_month}}
+\index{transfer\_ol\_month@{transfer\_ol\_month}!ed\_met\_driver@{ed\_met\_driver}}
+\doxysubsubsection{\texorpdfstring{transfer\_ol\_month()}{transfer\_ol\_month()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+met\+\_\+driver\+::transfer\+\_\+ol\+\_\+month (\begin{DoxyParamCaption}\item[{character(len=$\ast$), intent(in)}]{vname,  }\item[{real, intent(in)}]{frq,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__met__driver_a5f35a6891b5eb05b93fef63398446519}\label{namespaceed__met__driver_a5f35a6891b5eb05b93fef63398446519}} 
+\index{ed\_met\_driver@{ed\_met\_driver}!update\_met\_drivers@{update\_met\_drivers}}
+\index{update\_met\_drivers@{update\_met\_drivers}!ed\_met\_driver@{ed\_met\_driver}}
+\doxysubsubsection{\texorpdfstring{update\_met\_drivers()}{update\_met\_drivers()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+met\+\_\+driver\+::update\+\_\+met\+\_\+drivers (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid }\end{DoxyParamCaption})}
+

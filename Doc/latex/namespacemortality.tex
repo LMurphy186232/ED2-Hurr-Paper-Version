@@ -1,0 +1,32 @@
+\hypertarget{namespacemortality}{}\doxysection{mortality Module Reference}
+\label{namespacemortality}\index{mortality@{mortality}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacemortality_aae0bd188d031e86e522db34f874081db}{mortality\+\_\+rates}} (cpatch, ico, avg\+\_\+daily\+\_\+temp, patch\+\_\+age, dist\+\_\+type)
+\item 
+subroutine \mbox{\hyperlink{namespacemortality_a7454e09282570c5300efb68eaf958031}{disturbance\+\_\+mortality}} (csite, ipa, area\+\_\+loss, mindbh\+\_\+harvest)
+\item 
+real function \mbox{\hyperlink{namespacemortality_ac9f747e1d8a610623b544a4976375c41}{survivorship}} (new\+\_\+lu, old\+\_\+lu, mindbh\+\_\+harvest, cpatch, ico)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacemortality_a7454e09282570c5300efb68eaf958031}\label{namespacemortality_a7454e09282570c5300efb68eaf958031}} 
+\index{mortality@{mortality}!disturbance\_mortality@{disturbance\_mortality}}
+\index{disturbance\_mortality@{disturbance\_mortality}!mortality@{mortality}}
+\doxysubsubsection{\texorpdfstring{disturbance\_mortality()}{disturbance\_mortality()}}
+{\footnotesize\ttfamily subroutine mortality\+::disturbance\+\_\+mortality (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{real, dimension(n\+\_\+dist\+\_\+types), intent(in)}]{area\+\_\+loss,  }\item[{real, dimension(n\+\_\+pft), intent(in)}]{mindbh\+\_\+harvest }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemortality_aae0bd188d031e86e522db34f874081db}\label{namespacemortality_aae0bd188d031e86e522db34f874081db}} 
+\index{mortality@{mortality}!mortality\_rates@{mortality\_rates}}
+\index{mortality\_rates@{mortality\_rates}!mortality@{mortality}}
+\doxysubsubsection{\texorpdfstring{mortality\_rates()}{mortality\_rates()}}
+{\footnotesize\ttfamily subroutine mortality\+::mortality\+\_\+rates (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{ico,  }\item[{real, intent(in)}]{avg\+\_\+daily\+\_\+temp,  }\item[{real, intent(in)}]{patch\+\_\+age,  }\item[{integer, intent(in)}]{dist\+\_\+type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemortality_ac9f747e1d8a610623b544a4976375c41}\label{namespacemortality_ac9f747e1d8a610623b544a4976375c41}} 
+\index{mortality@{mortality}!survivorship@{survivorship}}
+\index{survivorship@{survivorship}!mortality@{mortality}}
+\doxysubsubsection{\texorpdfstring{survivorship()}{survivorship()}}
+{\footnotesize\ttfamily real function mortality\+::survivorship (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{new\+\_\+lu,  }\item[{integer, intent(in)}]{old\+\_\+lu,  }\item[{real, dimension(n\+\_\+pft), intent(in)}]{mindbh\+\_\+harvest,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{ico }\end{DoxyParamCaption})}
+

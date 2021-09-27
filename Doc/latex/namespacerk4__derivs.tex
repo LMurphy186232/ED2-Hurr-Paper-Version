@@ -1,0 +1,47 @@
+\hypertarget{namespacerk4__derivs}{}\doxysection{rk4\+\_\+derivs Module Reference}
+\label{namespacerk4__derivs}\index{rk4\_derivs@{rk4\_derivs}}
+
+
+This module contains the derivatives of most short-\/term fluxes.  
+
+
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__derivs_a442a8d66ccac279ead18986735cf5a07}{leaf\+\_\+derivs}} (initp, dinitp, csite, ipa, ibuff, dt, is\+\_\+hybrid)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__derivs_a9d842f7ffa1b755cb2e94fe1e5a2b65d}{leaftw\+\_\+derivs}} (mzg, mzs, initp, dinitp, csite, ipa, ibuff, dt, is\+\_\+hybrid)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__derivs_ad2856182582c44c3aacf61bb38aa5fd4}{canopy\+\_\+derivs\+\_\+two}} (mzg, initp, dinitp, csite, ipa, ibuff, hflxsc, wflxsc, qwflxsc, hflxgc, wflxgc, qwflxgc, dewgndflx, qdewgndflx, ddewgndflx, throughfall\+\_\+tot, qthroughfall\+\_\+tot, dthroughfall\+\_\+tot, wshed\+\_\+tot, qwshed\+\_\+tot, dwshed\+\_\+tot, dt, is\+\_\+hybrid)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This module contains the derivatives of most short-\/term fluxes. 
+
+Three subroutines live in this module. leaf\+\_\+derivs is a wrapper; leaftw\+\_\+derivs solves mostly the ground derivatives (soils and temporary surface water), and canopy\+\_\+derivs\+\_\+two solves derivatives at the cohort scale and the canopy air space at patch level. These routines are largely based on BRAMS LEAF-\/2/\+LEAF-\/3 model. \begin{DoxyAuthor}{Author}
+Adapted from LEAF-\/2 by David Medvigy. Further updates to make it compatible with LEAF-\/3 and to conserve energy and water by Ryan Knox and Marcos Longo. 
+
+Converted to module to eliminate interfaces by Marcos Longo 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacerk4__derivs_ad2856182582c44c3aacf61bb38aa5fd4}\label{namespacerk4__derivs_ad2856182582c44c3aacf61bb38aa5fd4}} 
+\index{rk4\_derivs@{rk4\_derivs}!canopy\_derivs\_two@{canopy\_derivs\_two}}
+\index{canopy\_derivs\_two@{canopy\_derivs\_two}!rk4\_derivs@{rk4\_derivs}}
+\doxysubsubsection{\texorpdfstring{canopy\_derivs\_two()}{canopy\_derivs\_two()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+derivs\+::canopy\+\_\+derivs\+\_\+two (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{mzg,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{initp,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{dinitp,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{ibuff,  }\item[{real(kind=8), intent(out)}]{hflxsc,  }\item[{real(kind=8), intent(out)}]{wflxsc,  }\item[{real(kind=8), intent(out)}]{qwflxsc,  }\item[{real(kind=8), intent(out)}]{hflxgc,  }\item[{real(kind=8), intent(out)}]{wflxgc,  }\item[{real(kind=8), intent(out)}]{qwflxgc,  }\item[{real(kind=8), intent(out)}]{dewgndflx,  }\item[{real(kind=8), intent(out)}]{qdewgndflx,  }\item[{real(kind=8), intent(out)}]{ddewgndflx,  }\item[{real(kind=8), intent(out)}]{throughfall\+\_\+tot,  }\item[{real(kind=8), intent(out)}]{qthroughfall\+\_\+tot,  }\item[{real(kind=8), intent(out)}]{dthroughfall\+\_\+tot,  }\item[{real(kind=8), intent(out)}]{wshed\+\_\+tot,  }\item[{real(kind=8), intent(out)}]{qwshed\+\_\+tot,  }\item[{real(kind=8), intent(out)}]{dwshed\+\_\+tot,  }\item[{real(kind=8), intent(in)}]{dt,  }\item[{logical, intent(in)}]{is\+\_\+hybrid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__derivs_a442a8d66ccac279ead18986735cf5a07}\label{namespacerk4__derivs_a442a8d66ccac279ead18986735cf5a07}} 
+\index{rk4\_derivs@{rk4\_derivs}!leaf\_derivs@{leaf\_derivs}}
+\index{leaf\_derivs@{leaf\_derivs}!rk4\_derivs@{rk4\_derivs}}
+\doxysubsubsection{\texorpdfstring{leaf\_derivs()}{leaf\_derivs()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+derivs\+::leaf\+\_\+derivs (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{initp,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{dinitp,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{ibuff,  }\item[{real(kind=8), intent(in)}]{dt,  }\item[{logical, intent(in)}]{is\+\_\+hybrid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__derivs_a9d842f7ffa1b755cb2e94fe1e5a2b65d}\label{namespacerk4__derivs_a9d842f7ffa1b755cb2e94fe1e5a2b65d}} 
+\index{rk4\_derivs@{rk4\_derivs}!leaftw\_derivs@{leaftw\_derivs}}
+\index{leaftw\_derivs@{leaftw\_derivs}!rk4\_derivs@{rk4\_derivs}}
+\doxysubsubsection{\texorpdfstring{leaftw\_derivs()}{leaftw\_derivs()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+derivs\+::leaftw\+\_\+derivs (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{mzg,  }\item[{integer, intent(in)}]{mzs,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{initp,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{dinitp,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{ibuff,  }\item[{real(kind=8), intent(in)}]{dt,  }\item[{logical, intent(in)}]{is\+\_\+hybrid }\end{DoxyParamCaption})}
+

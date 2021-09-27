@@ -1,0 +1,40 @@
+\hypertarget{namespaceed__therm__lib}{}\doxysection{ed\+\_\+therm\+\_\+lib Module Reference}
+\label{namespaceed__therm__lib}\index{ed\_therm\_lib@{ed\_therm\_lib}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceed__therm__lib_a62aa3e655f926d54d065649263acbc8c}{calc\+\_\+veg\+\_\+hcap}} (bleaf, bdeada, bsapwooda, bbarka, nplant, pft, leaf\+\_\+hcap, wood\+\_\+hcap)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__therm__lib_a88a38ec1cbe16c398a9f91b96afbea25}{update\+\_\+veg\+\_\+energy\+\_\+cweh}} (csite, ipa, ico, old\+\_\+leaf\+\_\+hcap, old\+\_\+wood\+\_\+hcap, old\+\_\+leaf\+\_\+water, old\+\_\+wood\+\_\+water, old\+\_\+leaf\+\_\+water\+\_\+im2, old\+\_\+wood\+\_\+water\+\_\+im2, check\+\_\+leaks, is\+\_\+initial)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__therm__lib_aa6561183a4fc06ca1c9430914a5b6032}{ed\+\_\+grndvap}} (ksn, nsoil, topsoil\+\_\+water, topsoil\+\_\+temp, topsoil\+\_\+fliq, sfcwater\+\_\+temp, sfcwater\+\_\+frac, can\+\_\+prss, can\+\_\+shv, ground\+\_\+shv, ground\+\_\+ssh, ground\+\_\+temp, ground\+\_\+fliq, ggsoil)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__therm__lib_a746a2bb61d932fd3cb928a3b5e5e832e}{ed\+\_\+grndvap8}} (ksn, topsoil\+\_\+water, topsoil\+\_\+temp, topsoil\+\_\+fliq, sfcwater\+\_\+temp, sfcwater\+\_\+frac, can\+\_\+prss, can\+\_\+shv, ground\+\_\+shv, ground\+\_\+ssh, ground\+\_\+temp, ground\+\_\+fliq, ggsoil)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespaceed__therm__lib_a62aa3e655f926d54d065649263acbc8c}\label{namespaceed__therm__lib_a62aa3e655f926d54d065649263acbc8c}} 
+\index{ed\_therm\_lib@{ed\_therm\_lib}!calc\_veg\_hcap@{calc\_veg\_hcap}}
+\index{calc\_veg\_hcap@{calc\_veg\_hcap}!ed\_therm\_lib@{ed\_therm\_lib}}
+\doxysubsubsection{\texorpdfstring{calc\_veg\_hcap()}{calc\_veg\_hcap()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+therm\+\_\+lib\+::calc\+\_\+veg\+\_\+hcap (\begin{DoxyParamCaption}\item[{real, intent(in)}]{bleaf,  }\item[{real, intent(in)}]{bdeada,  }\item[{real, intent(in)}]{bsapwooda,  }\item[{real, intent(in)}]{bbarka,  }\item[{real, intent(in)}]{nplant,  }\item[{integer, intent(in)}]{pft,  }\item[{real, intent(out)}]{leaf\+\_\+hcap,  }\item[{real, intent(out)}]{wood\+\_\+hcap }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__therm__lib_aa6561183a4fc06ca1c9430914a5b6032}\label{namespaceed__therm__lib_aa6561183a4fc06ca1c9430914a5b6032}} 
+\index{ed\_therm\_lib@{ed\_therm\_lib}!ed\_grndvap@{ed\_grndvap}}
+\index{ed\_grndvap@{ed\_grndvap}!ed\_therm\_lib@{ed\_therm\_lib}}
+\doxysubsubsection{\texorpdfstring{ed\_grndvap()}{ed\_grndvap()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+therm\+\_\+lib\+::ed\+\_\+grndvap (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ksn,  }\item[{integer, intent(in)}]{nsoil,  }\item[{real(kind=4), intent(in)}]{topsoil\+\_\+water,  }\item[{real(kind=4), intent(in)}]{topsoil\+\_\+temp,  }\item[{real(kind=4), intent(in)}]{topsoil\+\_\+fliq,  }\item[{real(kind=4), intent(in)}]{sfcwater\+\_\+temp,  }\item[{real(kind=4), intent(in)}]{sfcwater\+\_\+frac,  }\item[{real(kind=4), intent(in)}]{can\+\_\+prss,  }\item[{real(kind=4), intent(in)}]{can\+\_\+shv,  }\item[{real(kind=4), intent(out)}]{ground\+\_\+shv,  }\item[{real(kind=4), intent(out)}]{ground\+\_\+ssh,  }\item[{real(kind=4), intent(out)}]{ground\+\_\+temp,  }\item[{real(kind=4), intent(out)}]{ground\+\_\+fliq,  }\item[{real(kind=4), intent(out)}]{ggsoil }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__therm__lib_a746a2bb61d932fd3cb928a3b5e5e832e}\label{namespaceed__therm__lib_a746a2bb61d932fd3cb928a3b5e5e832e}} 
+\index{ed\_therm\_lib@{ed\_therm\_lib}!ed\_grndvap8@{ed\_grndvap8}}
+\index{ed\_grndvap8@{ed\_grndvap8}!ed\_therm\_lib@{ed\_therm\_lib}}
+\doxysubsubsection{\texorpdfstring{ed\_grndvap8()}{ed\_grndvap8()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+therm\+\_\+lib\+::ed\+\_\+grndvap8 (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ksn,  }\item[{real(kind=8), intent(in)}]{topsoil\+\_\+water,  }\item[{real(kind=8), intent(in)}]{topsoil\+\_\+temp,  }\item[{real(kind=8), intent(in)}]{topsoil\+\_\+fliq,  }\item[{real(kind=8), intent(in)}]{sfcwater\+\_\+temp,  }\item[{real(kind=8), intent(in)}]{sfcwater\+\_\+frac,  }\item[{real(kind=8), intent(in)}]{can\+\_\+prss,  }\item[{real(kind=8), intent(in)}]{can\+\_\+shv,  }\item[{real(kind=8), intent(out)}]{ground\+\_\+shv,  }\item[{real(kind=8), intent(out)}]{ground\+\_\+ssh,  }\item[{real(kind=8), intent(out)}]{ground\+\_\+temp,  }\item[{real(kind=8), intent(out)}]{ground\+\_\+fliq,  }\item[{real(kind=8), intent(out)}]{ggsoil }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__therm__lib_a88a38ec1cbe16c398a9f91b96afbea25}\label{namespaceed__therm__lib_a88a38ec1cbe16c398a9f91b96afbea25}} 
+\index{ed\_therm\_lib@{ed\_therm\_lib}!update\_veg\_energy\_cweh@{update\_veg\_energy\_cweh}}
+\index{update\_veg\_energy\_cweh@{update\_veg\_energy\_cweh}!ed\_therm\_lib@{ed\_therm\_lib}}
+\doxysubsubsection{\texorpdfstring{update\_veg\_energy\_cweh()}{update\_veg\_energy\_cweh()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+therm\+\_\+lib\+::update\+\_\+veg\+\_\+energy\+\_\+cweh (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{ico,  }\item[{real, intent(in)}]{old\+\_\+leaf\+\_\+hcap,  }\item[{real, intent(in)}]{old\+\_\+wood\+\_\+hcap,  }\item[{real, intent(in)}]{old\+\_\+leaf\+\_\+water,  }\item[{real, intent(in)}]{old\+\_\+wood\+\_\+water,  }\item[{real, intent(in)}]{old\+\_\+leaf\+\_\+water\+\_\+im2,  }\item[{real, intent(in)}]{old\+\_\+wood\+\_\+water\+\_\+im2,  }\item[{logical, intent(in)}]{check\+\_\+leaks,  }\item[{logical, intent(in)}]{is\+\_\+initial }\end{DoxyParamCaption})}
+

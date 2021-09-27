@@ -1,0 +1,39 @@
+\hypertarget{namespaceed__print}{}\doxysection{ed\+\_\+print Module Reference}
+\label{namespaceed__print}\index{ed\_print@{ed\_print}}
+
+
+Subroutines that print information on screen.  
+
+
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceed__print_ac30d3f7a12d8cfef959ebe002aa21aff}{print\+\_\+fields}} (ifm, cgrid)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__print_aa2f964d1c803ee641391d98c2933de10}{fillvar\+\_\+l}} (pvar\+\_\+l, vt\+\_\+ptr, npts\+\_\+out, npts\+\_\+in, out1, in1, in2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Subroutines that print information on screen. 
+
+These subroutines print patch, cohort, site, or polygon-\/level data on screen. These can be used to quickly check the simulations as they go. \begin{DoxyAuthor}{Author}
+Ryan Knox 
+
+10 Jan 2018. Turned into module because ifort 17 complained (Marcos Longo). 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespaceed__print_aa2f964d1c803ee641391d98c2933de10}\label{namespaceed__print_aa2f964d1c803ee641391d98c2933de10}} 
+\index{ed\_print@{ed\_print}!fillvar\_l@{fillvar\_l}}
+\index{fillvar\_l@{fillvar\_l}!ed\_print@{ed\_print}}
+\doxysubsubsection{\texorpdfstring{fillvar\_l()}{fillvar\_l()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+print\+::fillvar\+\_\+l (\begin{DoxyParamCaption}\item[{real, dimension(npts\+\_\+out), intent(inout)}]{pvar\+\_\+l,  }\item[{real, dimension(npts\+\_\+in), intent(in)}]{vt\+\_\+ptr,  }\item[{integer, intent(in)}]{npts\+\_\+out,  }\item[{integer, intent(in)}]{npts\+\_\+in,  }\item[{integer, intent(in)}]{out1,  }\item[{integer, intent(in)}]{in1,  }\item[{integer, intent(in)}]{in2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__print_ac30d3f7a12d8cfef959ebe002aa21aff}\label{namespaceed__print_ac30d3f7a12d8cfef959ebe002aa21aff}} 
+\index{ed\_print@{ed\_print}!print\_fields@{print\_fields}}
+\index{print\_fields@{print\_fields}!ed\_print@{ed\_print}}
+\doxysubsubsection{\texorpdfstring{print\_fields()}{print\_fields()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+print\+::print\+\_\+fields (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ifm,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid }\end{DoxyParamCaption})}
+

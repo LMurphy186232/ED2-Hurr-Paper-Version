@@ -1,0 +1,16 @@
+\hypertarget{farq__katul_8f90}{}\doxysection{farq\+\_\+katul.\+f90 File Reference}
+\label{farq__katul_8f90}\index{farq\_katul.f90@{farq\_katul.f90}}
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacefarq__katul}{farq\+\_\+katul}}
+\begin{DoxyCompactList}\small\item\em Solve Farquhar Photosynthesis model together with Katul optimization-\/based stomata conductance model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacefarq__katul_aca5faf9bb74a3aec28ae4439e5a41fb8}{farq\+\_\+katul\+::katul\+\_\+lphys}} (ib, can\+\_\+prss, can\+\_\+rhos, can\+\_\+shv, can\+\_\+co2, ipft, leaf\+\_\+par, leaf\+\_\+temp, lint\+\_\+shv, green\+\_\+leaf\+\_\+factor, leaf\+\_\+aging\+\_\+factor, vm\+\_\+bar, rd\+\_\+bar, leaf\+\_\+gbw, leaf\+\_\+psi, dmax\+\_\+leaf\+\_\+psi, A\+\_\+open, A\+\_\+closed, A\+\_\+light, A\+\_\+rubp, A\+\_\+co2, gsw\+\_\+open, gsw\+\_\+closed, lsfc\+\_\+shv\+\_\+open, lsfc\+\_\+shv\+\_\+closed, lsfc\+\_\+co2\+\_\+open, lsfc\+\_\+co2\+\_\+closed, lint\+\_\+co2\+\_\+open, lint\+\_\+co2\+\_\+closed, leaf\+\_\+resp, vmout, jmout, tpmout, jactout, comppout, limit\+\_\+flag)
+\begin{DoxyCompactList}\small\item\em Main driver to calculate Farquhar-\/\+Katul photosynthesis system. Alternative to lphysio\+\_\+full in \mbox{\hyperlink{namespacefarq__leuning}{farq\+\_\+leuning}}. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefarq__katul_a7030dba05096822953f39808a0be934c}{farq\+\_\+katul\+::optimization\+\_\+solver8}} (ib, ipft, lambda, opt\+\_\+ci, opt\+\_\+fc, opt\+\_\+gsc, opt\+\_\+ci\+\_\+closed, opt\+\_\+fc\+\_\+closed, opt\+\_\+gsc\+\_\+closed, opt\+\_\+fc\+\_\+rubp, opt\+\_\+fc\+\_\+light, opt\+\_\+fc\+\_\+3rd, limit\+\_\+flag)
+\begin{DoxyCompactList}\small\item\em Solver for the stomatal optimization problem. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefarq__katul_a0be2fbc25a068c35a85fafc9af998817}{farq\+\_\+katul\+::photosynthesis\+\_\+stomata\+\_\+solver8}} (ib, gsc, limit\+\_\+case, ci, fc, fe, dcidg, dfcdg, dfedg)
+\begin{DoxyCompactList}\small\item\em Solver for photosynthesis and its derivatives wrt. gsc. \end{DoxyCompactList}\end{DoxyCompactItemize}

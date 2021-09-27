@@ -1,0 +1,885 @@
+\hypertarget{namespacephysiology__coms}{}\doxysection{physiology\+\_\+coms Module Reference}
+\label{namespacephysiology__coms}\index{physiology\_coms@{physiology\_coms}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer \mbox{\hyperlink{namespacephysiology__coms_ae3ae55cb0b3b3e4ac3fad3829d422940}{iphysiol}}
+\begin{DoxyCompactList}\small\item\em IPHYSIOL -- This variable will determine the functional form that will control how ~\newline
+ the various parameters will vary with temperature, and how the CO2 ~\newline
+ compensation point for gross photosynthesis (Gamma$\ast$) will be found. ~\newline
+ Options are\+: ~\newline
+ \end{DoxyCompactList}\item 
+integer \mbox{\hyperlink{namespacephysiology__coms_ae25a0a523887f680c687728a8b285400}{n\+\_\+plant\+\_\+lim}}
+\item 
+integer \mbox{\hyperlink{namespacephysiology__coms_a9762f60703c45a15a967cb86431ffff3}{h2o\+\_\+plant\+\_\+lim}}
+\begin{DoxyCompactList}\small\item\em H2\+O\+\_\+\+PLANT\+\_\+\+LIM -- this determines whether plant photosynthesis can be limited by ~\newline
+ soil moisture, the FSW, defined as FSW = Supply / (Demand + Supply). \end{DoxyCompactList}\item 
+integer \mbox{\hyperlink{namespacephysiology__coms_a55daf72daa3608725dd9a1576a2246a5}{istruct\+\_\+growth\+\_\+scheme}}
+\begin{DoxyCompactList}\small\item\em ISTRUCT\+\_\+\+GROWTH\+\_\+\+SCHEME -- Different methods to perform structural growth.~\newline
+ 0. Use all bstorage (default by ED2.\+2 and before) ~\newline
+. \end{DoxyCompactList}\item 
+integer \mbox{\hyperlink{namespacephysiology__coms_a18ff85a9b0655ac2cdbf226050b783f4}{istem\+\_\+respiration\+\_\+scheme}}
+\begin{DoxyCompactList}\small\item\em ISTEM\+\_\+\+RESPIRATION\+\_\+\+SCHEME -- Different methods to calculate respiration from stem metabolism.~\newline
+ 0. No explicit stem respiration (default by ED2.\+2 and before) ~\newline
+. \end{DoxyCompactList}\item 
+integer \mbox{\hyperlink{namespacephysiology__coms_ad45486bb4918af2c77101e7e0ae34b2c}{istomata\+\_\+scheme}}
+\begin{DoxyCompactList}\small\item\em ISTOMATA\+\_\+\+SCHEME -- Which stomatal conductance model to use.~\newline
+ 0. Leuning (default by ED2.\+2 and before) ~\newline
+. \end{DoxyCompactList}\item 
+integer \mbox{\hyperlink{namespacephysiology__coms_ae7891eae4f9e7730e330d165ff8f8ffd}{plant\+\_\+hydro\+\_\+scheme}}
+\begin{DoxyCompactList}\small\item\em PLANT\+\_\+\+HYDRO\+\_\+\+SCHEME -- Whether to track plant hydrodynamics.~\newline
+ 0. No hydraulics (leaf and wood are always saturated)~\newline
+. \end{DoxyCompactList}\item 
+integer \mbox{\hyperlink{namespacephysiology__coms_acc61e41035635dc2e85a5b77be2a4bb6}{trait\+\_\+plasticity\+\_\+scheme}}
+\begin{DoxyCompactList}\small\item\em TRAIT\+\_\+\+PLASTICITY\+\_\+\+SCHEME -- Whether/\+How plant traits vary with local environment.~\newline
+ 0. No trait plasticity. Trait parameters for each PFT is fixed. (ED2.\+2 and before).~\newline
+. \end{DoxyCompactList}\item 
+integer \mbox{\hyperlink{namespacephysiology__coms_a2933521a1d1ea3626c77432b305b9f16}{iddmort\+\_\+scheme}}
+\item 
+real \mbox{\hyperlink{namespacephysiology__coms_a4f1ff928c4e75edf5caea5bf68deecf6}{ddmort\+\_\+const}}
+\item 
+integer \mbox{\hyperlink{namespacephysiology__coms_a95059b30f39e01aae14790e04a2bee65}{cbr\+\_\+scheme}}
+\item 
+integer \mbox{\hyperlink{namespacephysiology__coms_a37ee1786fdfa7d602fe891007b4c67c6}{carbon\+\_\+mortality\+\_\+scheme}}
+\begin{DoxyCompactList}\small\item\em CARBON\+\_\+\+MORTALITY\+\_\+\+SCHEME -\/ Different methods to calculate negative carbon balance mortality.~\newline
+ 0. (ED-\/2.\+2 default) ED-\/1 original formulation (Moorcroft et al. 2001)~\newline
+. \end{DoxyCompactList}\item 
+integer \mbox{\hyperlink{namespacephysiology__coms_a0a3e8c1c637e6927016467bd4ce9a8cd}{hydraulic\+\_\+mortality\+\_\+scheme}}
+\begin{DoxyCompactList}\small\item\em HYDRAULIC\+\_\+\+MORTALITY\+\_\+\+SCHEME -\/ Different methods to calculate hydraulic failure mortality.~\newline
+ 0. (ED-\/2.\+2 default) No hydraulic failure mortality (Moorcroft et al. 2001)~\newline
+. \end{DoxyCompactList}\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a07128356874806c751549ba416793e1f}{vmfact\+\_\+c3}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_aee570c0398d070cf6c07ee3146b77c05}{vmfact\+\_\+c4}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a3dfbe191e81a908c50c593e9a147469a}{mphoto\+\_\+trc3}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a10f9a3f8b0759641e8f9997d77f01fa8}{mphoto\+\_\+tec3}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a08c8e567e9ac2f38e5386c00b1069335}{mphoto\+\_\+c4}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_af223ea7d50d62345508e6ab92ee4dafc}{bphoto\+\_\+blc3}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a08a6a0d248f95a16dd7a7206ec807fd4}{bphoto\+\_\+nlc3}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a4f00e884edf8cdf98d03e6384afed7f4}{bphoto\+\_\+c4}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a5851785d443262ca4a05d4a8ba0668c9}{kw\+\_\+grass}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a840f4a14063bfd729e0882aa41a6196b}{kw\+\_\+tree}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a1047d70553211a06c4db8b3b91ac9a5a}{gamma\+\_\+c3}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a0fb188e6eb592e66650e7469f3526a2e}{gamma\+\_\+c4}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a8bb7a49b5a368f444b440a6878908c54}{d0\+\_\+grass}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_af966fde8e82305bfc1939ab7548ba424}{d0\+\_\+tree}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a3fa7397dce5d85afa000532d34a4f7e1}{alpha\+\_\+c3}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a5b916ce98d80dbff5597fd7e218d35f7}{alpha\+\_\+c4}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_ae6137ce76e93cc9c6986bd1641276b83}{klowco2in}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a0cce0fce32e96abbe4ab367ae4fd4578}{rrffact}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a5575f4930196b79858fdc164b6d0bd21}{growthresp}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_aebfbdd7137fa93ba69de3a2ea7936c50}{q10\+\_\+c3}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a58329d760ae671f7fa6b1b1854bd3bce}{q10\+\_\+c4}}
+\item 
+integer \mbox{\hyperlink{namespacephysiology__coms_acc7c98056c927d22975df63295e7d8eb}{quantum\+\_\+efficiency\+\_\+t}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_aff3389c10c3252e32b514150d2d601ee}{c34smin\+\_\+lint\+\_\+co2}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a62fb9fb182c231b4376b0b879ff34699}{c34smax\+\_\+lint\+\_\+co2}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_af33f3bc89a2177f836b4ae9013e35bef}{c34smax\+\_\+gsw}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a0b1b17f8f80b4f359f778e432b937756}{par\+\_\+lightcompp\+\_\+max}}
+\item 
+logical \mbox{\hyperlink{namespacephysiology__coms_afdf6c3084ba85f92a6ac66ac88ec7591}{print\+\_\+photo\+\_\+debug}}
+\item 
+character(len=str\+\_\+len) \mbox{\hyperlink{namespacephysiology__coms_a2c980690ad445a3f111aded7d288008c}{photo\+\_\+prefix}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_aa4949b861f6e1bce2fc1e5967a92724f}{gbh\+\_\+2\+\_\+gbw}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_adfbb266baf2d2adc77509b82f4271ac8}{gbw\+\_\+2\+\_\+gbc}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_adf37725d15d69bf28dee128f9712dd62}{gsw\+\_\+2\+\_\+gsc}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a2d716763934e1b78fb7be2d3080663c6}{gsc\+\_\+2\+\_\+gsw}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a141a8141098b73d902febd2617e1eb35}{kookc}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a1ddecfcd801722fae0a28e4495a8b58f}{tphysref}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a2ab9832e0895c53fecec95dd004f9a6c}{tphysrefi}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a27a1df432bb5efa255a5dc1eb52539ec}{fcoll}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a040ae8708ee3f595e037d5ecd862b9cb}{compp\+\_\+refval}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a95a3966dda3b047ea282410207b0fd19}{compp\+\_\+hor}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_aae7373d82d49b0ce76e9a3261df920ea}{compp\+\_\+q10}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_ae8c6d3c5ceb1841e173110fb665913f3}{kco2\+\_\+refval}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_ab83efab85c46032bd663e0c7432b289a}{kco2\+\_\+hor}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_ac829c2e631b34d9949024fb1bdf3bcb9}{kco2\+\_\+q10}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a373b2932120fa360997d160b021af1f5}{ko2\+\_\+refval}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a108de5f1d1e5553e2bb64cb194edb76a}{ko2\+\_\+hor}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a76dd69909f43d9ff11fab25a03dc5492}{ko2\+\_\+q10}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_abd19969f43ab2ed5e943e0f26da846cd}{klowco2}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a9d23c454c914eb013dcb434bc476a11f}{o2\+\_\+ref}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_ab7e24ce5122fda9b17878fb18470092a}{qyield0}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a47d2f31280dea551cf4c2cd53aff5fc2}{qyield1}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a5c1b8d75f0dfc7666093dded3d7ea12a}{qyield2}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacephysiology__coms_a95034e71d1d9e03d7872fbe31293a312}{ehleringer\+\_\+alpha0c}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_a3eacccacc558754ca9fd092a3f19c4f7}{c34smin\+\_\+lint\+\_\+co28}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_a5737cc18585ebecb1f7ece2f7ec958b8}{c34smax\+\_\+lint\+\_\+co28}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_a0b21762b30a4dd9c6ca8216a7715c201}{c34smax\+\_\+gsw8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_a8033820f67ad5288fa97726389f23458}{gbh\+\_\+2\+\_\+gbw8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_a77738c2bf4d08792c7282d50bcc53e3b}{gbw\+\_\+2\+\_\+gbc8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_a2771271aa4821d7ed40fc8f23355493f}{gsw\+\_\+2\+\_\+gsc8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_af804dfc5ca14c4ad970da65bbca13da1}{gsc\+\_\+2\+\_\+gsw8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_a284346103ccac25fdc1838c75b54b8e9}{kookc8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_aa0924691938da817d9f145194aee16df}{tphysref8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_aedf008fa411936b174aa5146e5191596}{tphysrefi8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_a2a54f0b36ae44053e7e2d10471c8d70e}{fcoll8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_aa9a6bcd403111bab8c6e39fa15502d08}{compp\+\_\+refval8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_a557bf385ff4d0c1e66bbfe91c48d61a9}{compp\+\_\+hor8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_ad3ea019b7bf4d9cc4e80e993726b56dc}{compp\+\_\+q108}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_a58bf1152a5e8f0a3a8943f94d9fdb462}{kco2\+\_\+refval8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_a14104de29446380b41c6de1e3960e1b1}{kco2\+\_\+hor8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_a23fd1186e97b29a505ccd16242869515}{kco2\+\_\+q108}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_ad58b3f543afd8c67c4166bf4475103de}{ko2\+\_\+refval8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_adc6797a0fabd4a5c58f32153b03c1840}{ko2\+\_\+hor8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_ae76b821edd73bb3355c6bbf4b22788c3}{ko2\+\_\+q108}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_a7ff06f574deb37ab9eff43f9be9da49d}{klowco28}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_a1fe37aaa4eb29c2c01baa8e8c6c4668d}{par\+\_\+lightcompp\+\_\+max8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_a9f53be8313be66d3616cf393d3efc2de}{o2\+\_\+ref8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_afb47d1e2c5bcf37ef401c8a6f3fd1bdf}{qyield08}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_ae8f2c4b5c0c426c0cda6a7fcfaed4fe2}{qyield18}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_ade005515e6099db96931eefbd5b36657}{qyield28}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacephysiology__coms_ac1a3c756943ad554e5a63c0f4ed23b07}{ehleringer\+\_\+alpha0c8}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacephysiology__coms_a3fa7397dce5d85afa000532d34a4f7e1}\label{namespacephysiology__coms_a3fa7397dce5d85afa000532d34a4f7e1}} 
+\index{physiology\_coms@{physiology\_coms}!alpha\_c3@{alpha\_c3}}
+\index{alpha\_c3@{alpha\_c3}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{alpha\_c3}{alpha\_c3}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::alpha\+\_\+c3}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a5b916ce98d80dbff5597fd7e218d35f7}\label{namespacephysiology__coms_a5b916ce98d80dbff5597fd7e218d35f7}} 
+\index{physiology\_coms@{physiology\_coms}!alpha\_c4@{alpha\_c4}}
+\index{alpha\_c4@{alpha\_c4}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{alpha\_c4}{alpha\_c4}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::alpha\+\_\+c4}
+
+\mbox{\Hypertarget{namespacephysiology__coms_af223ea7d50d62345508e6ab92ee4dafc}\label{namespacephysiology__coms_af223ea7d50d62345508e6ab92ee4dafc}} 
+\index{physiology\_coms@{physiology\_coms}!bphoto\_blc3@{bphoto\_blc3}}
+\index{bphoto\_blc3@{bphoto\_blc3}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{bphoto\_blc3}{bphoto\_blc3}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::bphoto\+\_\+blc3}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a4f00e884edf8cdf98d03e6384afed7f4}\label{namespacephysiology__coms_a4f00e884edf8cdf98d03e6384afed7f4}} 
+\index{physiology\_coms@{physiology\_coms}!bphoto\_c4@{bphoto\_c4}}
+\index{bphoto\_c4@{bphoto\_c4}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{bphoto\_c4}{bphoto\_c4}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::bphoto\+\_\+c4}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a08a6a0d248f95a16dd7a7206ec807fd4}\label{namespacephysiology__coms_a08a6a0d248f95a16dd7a7206ec807fd4}} 
+\index{physiology\_coms@{physiology\_coms}!bphoto\_nlc3@{bphoto\_nlc3}}
+\index{bphoto\_nlc3@{bphoto\_nlc3}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{bphoto\_nlc3}{bphoto\_nlc3}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::bphoto\+\_\+nlc3}
+
+\mbox{\Hypertarget{namespacephysiology__coms_af33f3bc89a2177f836b4ae9013e35bef}\label{namespacephysiology__coms_af33f3bc89a2177f836b4ae9013e35bef}} 
+\index{physiology\_coms@{physiology\_coms}!c34smax\_gsw@{c34smax\_gsw}}
+\index{c34smax\_gsw@{c34smax\_gsw}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{c34smax\_gsw}{c34smax\_gsw}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::c34smax\+\_\+gsw}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a0b21762b30a4dd9c6ca8216a7715c201}\label{namespacephysiology__coms_a0b21762b30a4dd9c6ca8216a7715c201}} 
+\index{physiology\_coms@{physiology\_coms}!c34smax\_gsw8@{c34smax\_gsw8}}
+\index{c34smax\_gsw8@{c34smax\_gsw8}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{c34smax\_gsw8}{c34smax\_gsw8}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::c34smax\+\_\+gsw8}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a62fb9fb182c231b4376b0b879ff34699}\label{namespacephysiology__coms_a62fb9fb182c231b4376b0b879ff34699}} 
+\index{physiology\_coms@{physiology\_coms}!c34smax\_lint\_co2@{c34smax\_lint\_co2}}
+\index{c34smax\_lint\_co2@{c34smax\_lint\_co2}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{c34smax\_lint\_co2}{c34smax\_lint\_co2}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::c34smax\+\_\+lint\+\_\+co2}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a5737cc18585ebecb1f7ece2f7ec958b8}\label{namespacephysiology__coms_a5737cc18585ebecb1f7ece2f7ec958b8}} 
+\index{physiology\_coms@{physiology\_coms}!c34smax\_lint\_co28@{c34smax\_lint\_co28}}
+\index{c34smax\_lint\_co28@{c34smax\_lint\_co28}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{c34smax\_lint\_co28}{c34smax\_lint\_co28}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::c34smax\+\_\+lint\+\_\+co28}
+
+\mbox{\Hypertarget{namespacephysiology__coms_aff3389c10c3252e32b514150d2d601ee}\label{namespacephysiology__coms_aff3389c10c3252e32b514150d2d601ee}} 
+\index{physiology\_coms@{physiology\_coms}!c34smin\_lint\_co2@{c34smin\_lint\_co2}}
+\index{c34smin\_lint\_co2@{c34smin\_lint\_co2}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{c34smin\_lint\_co2}{c34smin\_lint\_co2}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::c34smin\+\_\+lint\+\_\+co2}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a3eacccacc558754ca9fd092a3f19c4f7}\label{namespacephysiology__coms_a3eacccacc558754ca9fd092a3f19c4f7}} 
+\index{physiology\_coms@{physiology\_coms}!c34smin\_lint\_co28@{c34smin\_lint\_co28}}
+\index{c34smin\_lint\_co28@{c34smin\_lint\_co28}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{c34smin\_lint\_co28}{c34smin\_lint\_co28}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::c34smin\+\_\+lint\+\_\+co28}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a37ee1786fdfa7d602fe891007b4c67c6}\label{namespacephysiology__coms_a37ee1786fdfa7d602fe891007b4c67c6}} 
+\index{physiology\_coms@{physiology\_coms}!carbon\_mortality\_scheme@{carbon\_mortality\_scheme}}
+\index{carbon\_mortality\_scheme@{carbon\_mortality\_scheme}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{carbon\_mortality\_scheme}{carbon\_mortality\_scheme}}
+{\footnotesize\ttfamily integer physiology\+\_\+coms\+::carbon\+\_\+mortality\+\_\+scheme}
+
+
+
+CARBON\+\_\+\+MORTALITY\+\_\+\+SCHEME -\/ Different methods to calculate negative carbon balance mortality.~\newline
+ 0. (ED-\/2.\+2 default) ED-\/1 original formulation (Moorcroft et al. 2001)~\newline
+. 
+
+
+\begin{DoxyEnumerate}
+\item (ED-\/2.\+2 Alternative) trait-\/dependent exponential model by Camac et al. 2018 but uses CB instead of growth
+\item (ED-\/2.\+2 Alternative) trait-\/dependent exponential model by Camac et al. 2018 and use actual growth rates 
+\end{DoxyEnumerate}\mbox{\Hypertarget{namespacephysiology__coms_a95059b30f39e01aae14790e04a2bee65}\label{namespacephysiology__coms_a95059b30f39e01aae14790e04a2bee65}} 
+\index{physiology\_coms@{physiology\_coms}!cbr\_scheme@{cbr\_scheme}}
+\index{cbr\_scheme@{cbr\_scheme}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{cbr\_scheme}{cbr\_scheme}}
+{\footnotesize\ttfamily integer physiology\+\_\+coms\+::cbr\+\_\+scheme}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a95a3966dda3b047ea282410207b0fd19}\label{namespacephysiology__coms_a95a3966dda3b047ea282410207b0fd19}} 
+\index{physiology\_coms@{physiology\_coms}!compp\_hor@{compp\_hor}}
+\index{compp\_hor@{compp\_hor}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{compp\_hor}{compp\_hor}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::compp\+\_\+hor}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a557bf385ff4d0c1e66bbfe91c48d61a9}\label{namespacephysiology__coms_a557bf385ff4d0c1e66bbfe91c48d61a9}} 
+\index{physiology\_coms@{physiology\_coms}!compp\_hor8@{compp\_hor8}}
+\index{compp\_hor8@{compp\_hor8}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{compp\_hor8}{compp\_hor8}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::compp\+\_\+hor8}
+
+\mbox{\Hypertarget{namespacephysiology__coms_aae7373d82d49b0ce76e9a3261df920ea}\label{namespacephysiology__coms_aae7373d82d49b0ce76e9a3261df920ea}} 
+\index{physiology\_coms@{physiology\_coms}!compp\_q10@{compp\_q10}}
+\index{compp\_q10@{compp\_q10}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{compp\_q10}{compp\_q10}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::compp\+\_\+q10}
+
+\mbox{\Hypertarget{namespacephysiology__coms_ad3ea019b7bf4d9cc4e80e993726b56dc}\label{namespacephysiology__coms_ad3ea019b7bf4d9cc4e80e993726b56dc}} 
+\index{physiology\_coms@{physiology\_coms}!compp\_q108@{compp\_q108}}
+\index{compp\_q108@{compp\_q108}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{compp\_q108}{compp\_q108}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::compp\+\_\+q108}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a040ae8708ee3f595e037d5ecd862b9cb}\label{namespacephysiology__coms_a040ae8708ee3f595e037d5ecd862b9cb}} 
+\index{physiology\_coms@{physiology\_coms}!compp\_refval@{compp\_refval}}
+\index{compp\_refval@{compp\_refval}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{compp\_refval}{compp\_refval}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::compp\+\_\+refval}
+
+\mbox{\Hypertarget{namespacephysiology__coms_aa9a6bcd403111bab8c6e39fa15502d08}\label{namespacephysiology__coms_aa9a6bcd403111bab8c6e39fa15502d08}} 
+\index{physiology\_coms@{physiology\_coms}!compp\_refval8@{compp\_refval8}}
+\index{compp\_refval8@{compp\_refval8}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{compp\_refval8}{compp\_refval8}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::compp\+\_\+refval8}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a8bb7a49b5a368f444b440a6878908c54}\label{namespacephysiology__coms_a8bb7a49b5a368f444b440a6878908c54}} 
+\index{physiology\_coms@{physiology\_coms}!d0\_grass@{d0\_grass}}
+\index{d0\_grass@{d0\_grass}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{d0\_grass}{d0\_grass}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::d0\+\_\+grass}
+
+\mbox{\Hypertarget{namespacephysiology__coms_af966fde8e82305bfc1939ab7548ba424}\label{namespacephysiology__coms_af966fde8e82305bfc1939ab7548ba424}} 
+\index{physiology\_coms@{physiology\_coms}!d0\_tree@{d0\_tree}}
+\index{d0\_tree@{d0\_tree}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{d0\_tree}{d0\_tree}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::d0\+\_\+tree}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a4f1ff928c4e75edf5caea5bf68deecf6}\label{namespacephysiology__coms_a4f1ff928c4e75edf5caea5bf68deecf6}} 
+\index{physiology\_coms@{physiology\_coms}!ddmort\_const@{ddmort\_const}}
+\index{ddmort\_const@{ddmort\_const}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{ddmort\_const}{ddmort\_const}}
+{\footnotesize\ttfamily real physiology\+\_\+coms\+::ddmort\+\_\+const}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a95034e71d1d9e03d7872fbe31293a312}\label{namespacephysiology__coms_a95034e71d1d9e03d7872fbe31293a312}} 
+\index{physiology\_coms@{physiology\_coms}!ehleringer\_alpha0c@{ehleringer\_alpha0c}}
+\index{ehleringer\_alpha0c@{ehleringer\_alpha0c}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{ehleringer\_alpha0c}{ehleringer\_alpha0c}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::ehleringer\+\_\+alpha0c}
+
+\mbox{\Hypertarget{namespacephysiology__coms_ac1a3c756943ad554e5a63c0f4ed23b07}\label{namespacephysiology__coms_ac1a3c756943ad554e5a63c0f4ed23b07}} 
+\index{physiology\_coms@{physiology\_coms}!ehleringer\_alpha0c8@{ehleringer\_alpha0c8}}
+\index{ehleringer\_alpha0c8@{ehleringer\_alpha0c8}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{ehleringer\_alpha0c8}{ehleringer\_alpha0c8}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::ehleringer\+\_\+alpha0c8}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a27a1df432bb5efa255a5dc1eb52539ec}\label{namespacephysiology__coms_a27a1df432bb5efa255a5dc1eb52539ec}} 
+\index{physiology\_coms@{physiology\_coms}!fcoll@{fcoll}}
+\index{fcoll@{fcoll}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{fcoll}{fcoll}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::fcoll}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a2a54f0b36ae44053e7e2d10471c8d70e}\label{namespacephysiology__coms_a2a54f0b36ae44053e7e2d10471c8d70e}} 
+\index{physiology\_coms@{physiology\_coms}!fcoll8@{fcoll8}}
+\index{fcoll8@{fcoll8}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{fcoll8}{fcoll8}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::fcoll8}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a1047d70553211a06c4db8b3b91ac9a5a}\label{namespacephysiology__coms_a1047d70553211a06c4db8b3b91ac9a5a}} 
+\index{physiology\_coms@{physiology\_coms}!gamma\_c3@{gamma\_c3}}
+\index{gamma\_c3@{gamma\_c3}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{gamma\_c3}{gamma\_c3}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::gamma\+\_\+c3}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a0fb188e6eb592e66650e7469f3526a2e}\label{namespacephysiology__coms_a0fb188e6eb592e66650e7469f3526a2e}} 
+\index{physiology\_coms@{physiology\_coms}!gamma\_c4@{gamma\_c4}}
+\index{gamma\_c4@{gamma\_c4}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{gamma\_c4}{gamma\_c4}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::gamma\+\_\+c4}
+
+\mbox{\Hypertarget{namespacephysiology__coms_aa4949b861f6e1bce2fc1e5967a92724f}\label{namespacephysiology__coms_aa4949b861f6e1bce2fc1e5967a92724f}} 
+\index{physiology\_coms@{physiology\_coms}!gbh\_2\_gbw@{gbh\_2\_gbw}}
+\index{gbh\_2\_gbw@{gbh\_2\_gbw}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{gbh\_2\_gbw}{gbh\_2\_gbw}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::gbh\+\_\+2\+\_\+gbw}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a8033820f67ad5288fa97726389f23458}\label{namespacephysiology__coms_a8033820f67ad5288fa97726389f23458}} 
+\index{physiology\_coms@{physiology\_coms}!gbh\_2\_gbw8@{gbh\_2\_gbw8}}
+\index{gbh\_2\_gbw8@{gbh\_2\_gbw8}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{gbh\_2\_gbw8}{gbh\_2\_gbw8}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::gbh\+\_\+2\+\_\+gbw8}
+
+\mbox{\Hypertarget{namespacephysiology__coms_adfbb266baf2d2adc77509b82f4271ac8}\label{namespacephysiology__coms_adfbb266baf2d2adc77509b82f4271ac8}} 
+\index{physiology\_coms@{physiology\_coms}!gbw\_2\_gbc@{gbw\_2\_gbc}}
+\index{gbw\_2\_gbc@{gbw\_2\_gbc}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{gbw\_2\_gbc}{gbw\_2\_gbc}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::gbw\+\_\+2\+\_\+gbc}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a77738c2bf4d08792c7282d50bcc53e3b}\label{namespacephysiology__coms_a77738c2bf4d08792c7282d50bcc53e3b}} 
+\index{physiology\_coms@{physiology\_coms}!gbw\_2\_gbc8@{gbw\_2\_gbc8}}
+\index{gbw\_2\_gbc8@{gbw\_2\_gbc8}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{gbw\_2\_gbc8}{gbw\_2\_gbc8}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::gbw\+\_\+2\+\_\+gbc8}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a5575f4930196b79858fdc164b6d0bd21}\label{namespacephysiology__coms_a5575f4930196b79858fdc164b6d0bd21}} 
+\index{physiology\_coms@{physiology\_coms}!growthresp@{growthresp}}
+\index{growthresp@{growthresp}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{growthresp}{growthresp}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::growthresp}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a2d716763934e1b78fb7be2d3080663c6}\label{namespacephysiology__coms_a2d716763934e1b78fb7be2d3080663c6}} 
+\index{physiology\_coms@{physiology\_coms}!gsc\_2\_gsw@{gsc\_2\_gsw}}
+\index{gsc\_2\_gsw@{gsc\_2\_gsw}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{gsc\_2\_gsw}{gsc\_2\_gsw}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::gsc\+\_\+2\+\_\+gsw}
+
+\mbox{\Hypertarget{namespacephysiology__coms_af804dfc5ca14c4ad970da65bbca13da1}\label{namespacephysiology__coms_af804dfc5ca14c4ad970da65bbca13da1}} 
+\index{physiology\_coms@{physiology\_coms}!gsc\_2\_gsw8@{gsc\_2\_gsw8}}
+\index{gsc\_2\_gsw8@{gsc\_2\_gsw8}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{gsc\_2\_gsw8}{gsc\_2\_gsw8}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::gsc\+\_\+2\+\_\+gsw8}
+
+\mbox{\Hypertarget{namespacephysiology__coms_adf37725d15d69bf28dee128f9712dd62}\label{namespacephysiology__coms_adf37725d15d69bf28dee128f9712dd62}} 
+\index{physiology\_coms@{physiology\_coms}!gsw\_2\_gsc@{gsw\_2\_gsc}}
+\index{gsw\_2\_gsc@{gsw\_2\_gsc}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{gsw\_2\_gsc}{gsw\_2\_gsc}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::gsw\+\_\+2\+\_\+gsc}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a2771271aa4821d7ed40fc8f23355493f}\label{namespacephysiology__coms_a2771271aa4821d7ed40fc8f23355493f}} 
+\index{physiology\_coms@{physiology\_coms}!gsw\_2\_gsc8@{gsw\_2\_gsc8}}
+\index{gsw\_2\_gsc8@{gsw\_2\_gsc8}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{gsw\_2\_gsc8}{gsw\_2\_gsc8}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::gsw\+\_\+2\+\_\+gsc8}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a9762f60703c45a15a967cb86431ffff3}\label{namespacephysiology__coms_a9762f60703c45a15a967cb86431ffff3}} 
+\index{physiology\_coms@{physiology\_coms}!h2o\_plant\_lim@{h2o\_plant\_lim}}
+\index{h2o\_plant\_lim@{h2o\_plant\_lim}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{h2o\_plant\_lim}{h2o\_plant\_lim}}
+{\footnotesize\ttfamily integer physiology\+\_\+coms\+::h2o\+\_\+plant\+\_\+lim}
+
+
+
+H2\+O\+\_\+\+PLANT\+\_\+\+LIM -- this determines whether plant photosynthesis can be limited by ~\newline
+ soil moisture, the FSW, defined as FSW = Supply / (Demand + Supply). 
+
+Demand is always the transpiration rates in case soil moisture is not limiting (the ~\newline
+ psi\+\_\+0 term times LAI). The supply is determined by ~\newline
+
+
+Kw $\ast$ nplant $\ast$ Broot $\ast$ Available\+\_\+\+Water, ~\newline
+
+
+and the definition of available water changes depending on H2\+O\+\_\+\+PLANT\+\_\+\+LIM\+: ~\newline
+ 0. Force FSW = 1 (effectively available water is infinity). ~\newline
+
+\begin{DoxyEnumerate}
+\item (Legacy) Available water is the total soil water above wilting point, integrated across all layers within the rooting zone. ~\newline
+
+\item (ED-\/2.\+2 default) Available water is the soil water at field capacity minus wilt-\/ ing point, scaled by the so-\/called wilting factor\+: ~\newline
+ \begin{DoxyVerb} (psi(k) - (H - z(k)) - psi_wp) / (psi_fc - psi_wp)                          
+\end{DoxyVerb}
+ where psi is the matric potentital at layer k, z is the layer depth, H it the ~\newline
+ crown height and psi\+\_\+fc and psi\+\_\+wp are the matric potentials at wilting point ~\newline
+ and field capacity. ~\newline
+
+\item (Beta) Use leaf water potential to modify fsw following Powell et al. (2017). ~\newline
+ This setting requires PLANT\+\_\+\+HYDRO\+\_\+\+SCHEME to be non-\/zero. ~\newline
+
+\item (Beta) Use leaf water potential to modify the optimization-\/based stomatal model ~\newline
+ following Xu et al. (2016). This setting requires PLANT\+\_\+\+HYDRO\+\_\+\+SCHEME to be ~\newline
+ non-\/zero values and set ISTOMATA\+\_\+\+SCHEME to 1. ~\newline
+
+\item (Beta) Similar to 2, but the water supply directly affects gsw, as opposed to ~\newline
+ fsw. This is done by making D0 a function of soil moisture. Note that this ~\newline
+ still uses Kw but Kw must be significantly lower, at least for tropical trees ~\newline
+ (1/15 -\/ 1/10 of the original). ~\newline
+ 
+\end{DoxyEnumerate}\mbox{\Hypertarget{namespacephysiology__coms_a0a3e8c1c637e6927016467bd4ce9a8cd}\label{namespacephysiology__coms_a0a3e8c1c637e6927016467bd4ce9a8cd}} 
+\index{physiology\_coms@{physiology\_coms}!hydraulic\_mortality\_scheme@{hydraulic\_mortality\_scheme}}
+\index{hydraulic\_mortality\_scheme@{hydraulic\_mortality\_scheme}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{hydraulic\_mortality\_scheme}{hydraulic\_mortality\_scheme}}
+{\footnotesize\ttfamily integer physiology\+\_\+coms\+::hydraulic\+\_\+mortality\+\_\+scheme}
+
+
+
+HYDRAULIC\+\_\+\+MORTALITY\+\_\+\+SCHEME -\/ Different methods to calculate hydraulic failure mortality.~\newline
+ 0. (ED-\/2.\+2 default) No hydraulic failure mortality (Moorcroft et al. 2001)~\newline
+. 
+
+
+\begin{DoxyEnumerate}
+\item (Beta) hydraulic failure mortality based on monthly mean xylem percentage loss of conductance (PLC) 
+\end{DoxyEnumerate}\mbox{\Hypertarget{namespacephysiology__coms_a2933521a1d1ea3626c77432b305b9f16}\label{namespacephysiology__coms_a2933521a1d1ea3626c77432b305b9f16}} 
+\index{physiology\_coms@{physiology\_coms}!iddmort\_scheme@{iddmort\_scheme}}
+\index{iddmort\_scheme@{iddmort\_scheme}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{iddmort\_scheme}{iddmort\_scheme}}
+{\footnotesize\ttfamily integer physiology\+\_\+coms\+::iddmort\+\_\+scheme}
+
+\mbox{\Hypertarget{namespacephysiology__coms_ae3ae55cb0b3b3e4ac3fad3829d422940}\label{namespacephysiology__coms_ae3ae55cb0b3b3e4ac3fad3829d422940}} 
+\index{physiology\_coms@{physiology\_coms}!iphysiol@{iphysiol}}
+\index{iphysiol@{iphysiol}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{iphysiol}{iphysiol}}
+{\footnotesize\ttfamily integer physiology\+\_\+coms\+::iphysiol}
+
+
+
+IPHYSIOL -- This variable will determine the functional form that will control how ~\newline
+ the various parameters will vary with temperature, and how the CO2 ~\newline
+ compensation point for gross photosynthesis (Gamma$\ast$) will be found. ~\newline
+ Options are\+: ~\newline
+ 
+
+0 -- Original ED-\/2.\+1, we use the \char`\"{}\+Arrhenius\char`\"{} function as in Foley et al. (1996) and ~\newline
+ Moorcroft et al. (2001). Gamma$\ast$ is found using the parameters for tau as in ~\newline
+ Foley et al. (1996). ~\newline
+ 1 -- Similar to case 0, but we use Jmax to determine the Rub\+P-\/regeneration (aka ~\newline
+ light) limitation case, account for the triose phosphate utilisation limitation case (C3), and use the Michaelis-\/\+Mentel coefficients along with other parameters from von Caemmerer (2000). ~\newline
+ 2 -- Collatz et al. (1991). We use the power (Q10) equations, with Collatz et al. ~\newline
+ parameters for compensation point, and the Michaelis-\/\+Mentel coefficients. The ~\newline
+ correction for high and low temperatures are the same as in Moorcroft et al. ~\newline
+ (2001). ~\newline
+ 3 -- Similar to case 2, but we use Jmax to determine the Rub\+P-\/regeneration (aka ~\newline
+ light) limitation case, account for the triose phosphate utilisation limitation case (C3), and use the Michaelis-\/\+Mentel coefficients along with other parameters from von Caemmerer (2000). ~\newline
+ 4 -- Use \char`\"{}\+Arrhenius\char`\"{} function as in Harley et al. (1991). This has to be run with ~\newline
+ ISTOMATA\+\_\+\+SCHEME = 1 \mbox{\Hypertarget{namespacephysiology__coms_a18ff85a9b0655ac2cdbf226050b783f4}\label{namespacephysiology__coms_a18ff85a9b0655ac2cdbf226050b783f4}} 
+\index{physiology\_coms@{physiology\_coms}!istem\_respiration\_scheme@{istem\_respiration\_scheme}}
+\index{istem\_respiration\_scheme@{istem\_respiration\_scheme}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{istem\_respiration\_scheme}{istem\_respiration\_scheme}}
+{\footnotesize\ttfamily integer physiology\+\_\+coms\+::istem\+\_\+respiration\+\_\+scheme}
+
+
+
+ISTEM\+\_\+\+RESPIRATION\+\_\+\+SCHEME -- Different methods to calculate respiration from stem metabolism.~\newline
+ 0. No explicit stem respiration (default by ED2.\+2 and before) ~\newline
+. 
+
+
+\begin{DoxyEnumerate}
+\item Calculate stem respiration with stem surface area and per area respiration rate, which is a function of temperature and tree size based on measurements on tropical trees by Chambers et al. (2004). Note that the calculation of surface area uses WAI. So if IBRANCH\+\_\+\+THERMO is set to 0. All branch surface areas will be ignored. 
+\end{DoxyEnumerate}\mbox{\Hypertarget{namespacephysiology__coms_ad45486bb4918af2c77101e7e0ae34b2c}\label{namespacephysiology__coms_ad45486bb4918af2c77101e7e0ae34b2c}} 
+\index{physiology\_coms@{physiology\_coms}!istomata\_scheme@{istomata\_scheme}}
+\index{istomata\_scheme@{istomata\_scheme}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{istomata\_scheme}{istomata\_scheme}}
+{\footnotesize\ttfamily integer physiology\+\_\+coms\+::istomata\+\_\+scheme}
+
+
+
+ISTOMATA\+\_\+\+SCHEME -- Which stomatal conductance model to use.~\newline
+ 0. Leuning (default by ED2.\+2 and before) ~\newline
+. 
+
+
+\begin{DoxyEnumerate}
+\item Katul\textquotesingle{}s optimization based (see Xu et al. 2016)~\newline
+
+\end{DoxyEnumerate}\mbox{\Hypertarget{namespacephysiology__coms_a55daf72daa3608725dd9a1576a2246a5}\label{namespacephysiology__coms_a55daf72daa3608725dd9a1576a2246a5}} 
+\index{physiology\_coms@{physiology\_coms}!istruct\_growth\_scheme@{istruct\_growth\_scheme}}
+\index{istruct\_growth\_scheme@{istruct\_growth\_scheme}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{istruct\_growth\_scheme}{istruct\_growth\_scheme}}
+{\footnotesize\ttfamily integer physiology\+\_\+coms\+::istruct\+\_\+growth\+\_\+scheme}
+
+
+
+ISTRUCT\+\_\+\+GROWTH\+\_\+\+SCHEME -- Different methods to perform structural growth.~\newline
+ 0. Use all bstorage (default by ED2.\+2 and before) ~\newline
+. 
+
+
+\begin{DoxyEnumerate}
+\item Reserve bstorage to reflush the whole canopy and fine roots once before calculating structural growth. This helps to give deciduous PFTs enough carbon to flush new leaves when growing season comes 
+\end{DoxyEnumerate}\mbox{\Hypertarget{namespacephysiology__coms_ab83efab85c46032bd663e0c7432b289a}\label{namespacephysiology__coms_ab83efab85c46032bd663e0c7432b289a}} 
+\index{physiology\_coms@{physiology\_coms}!kco2\_hor@{kco2\_hor}}
+\index{kco2\_hor@{kco2\_hor}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{kco2\_hor}{kco2\_hor}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::kco2\+\_\+hor}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a14104de29446380b41c6de1e3960e1b1}\label{namespacephysiology__coms_a14104de29446380b41c6de1e3960e1b1}} 
+\index{physiology\_coms@{physiology\_coms}!kco2\_hor8@{kco2\_hor8}}
+\index{kco2\_hor8@{kco2\_hor8}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{kco2\_hor8}{kco2\_hor8}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::kco2\+\_\+hor8}
+
+\mbox{\Hypertarget{namespacephysiology__coms_ac829c2e631b34d9949024fb1bdf3bcb9}\label{namespacephysiology__coms_ac829c2e631b34d9949024fb1bdf3bcb9}} 
+\index{physiology\_coms@{physiology\_coms}!kco2\_q10@{kco2\_q10}}
+\index{kco2\_q10@{kco2\_q10}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{kco2\_q10}{kco2\_q10}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::kco2\+\_\+q10}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a23fd1186e97b29a505ccd16242869515}\label{namespacephysiology__coms_a23fd1186e97b29a505ccd16242869515}} 
+\index{physiology\_coms@{physiology\_coms}!kco2\_q108@{kco2\_q108}}
+\index{kco2\_q108@{kco2\_q108}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{kco2\_q108}{kco2\_q108}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::kco2\+\_\+q108}
+
+\mbox{\Hypertarget{namespacephysiology__coms_ae8c6d3c5ceb1841e173110fb665913f3}\label{namespacephysiology__coms_ae8c6d3c5ceb1841e173110fb665913f3}} 
+\index{physiology\_coms@{physiology\_coms}!kco2\_refval@{kco2\_refval}}
+\index{kco2\_refval@{kco2\_refval}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{kco2\_refval}{kco2\_refval}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::kco2\+\_\+refval}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a58bf1152a5e8f0a3a8943f94d9fdb462}\label{namespacephysiology__coms_a58bf1152a5e8f0a3a8943f94d9fdb462}} 
+\index{physiology\_coms@{physiology\_coms}!kco2\_refval8@{kco2\_refval8}}
+\index{kco2\_refval8@{kco2\_refval8}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{kco2\_refval8}{kco2\_refval8}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::kco2\+\_\+refval8}
+
+\mbox{\Hypertarget{namespacephysiology__coms_abd19969f43ab2ed5e943e0f26da846cd}\label{namespacephysiology__coms_abd19969f43ab2ed5e943e0f26da846cd}} 
+\index{physiology\_coms@{physiology\_coms}!klowco2@{klowco2}}
+\index{klowco2@{klowco2}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{klowco2}{klowco2}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::klowco2}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a7ff06f574deb37ab9eff43f9be9da49d}\label{namespacephysiology__coms_a7ff06f574deb37ab9eff43f9be9da49d}} 
+\index{physiology\_coms@{physiology\_coms}!klowco28@{klowco28}}
+\index{klowco28@{klowco28}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{klowco28}{klowco28}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::klowco28}
+
+\mbox{\Hypertarget{namespacephysiology__coms_ae6137ce76e93cc9c6986bd1641276b83}\label{namespacephysiology__coms_ae6137ce76e93cc9c6986bd1641276b83}} 
+\index{physiology\_coms@{physiology\_coms}!klowco2in@{klowco2in}}
+\index{klowco2in@{klowco2in}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{klowco2in}{klowco2in}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::klowco2in}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a108de5f1d1e5553e2bb64cb194edb76a}\label{namespacephysiology__coms_a108de5f1d1e5553e2bb64cb194edb76a}} 
+\index{physiology\_coms@{physiology\_coms}!ko2\_hor@{ko2\_hor}}
+\index{ko2\_hor@{ko2\_hor}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{ko2\_hor}{ko2\_hor}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::ko2\+\_\+hor}
+
+\mbox{\Hypertarget{namespacephysiology__coms_adc6797a0fabd4a5c58f32153b03c1840}\label{namespacephysiology__coms_adc6797a0fabd4a5c58f32153b03c1840}} 
+\index{physiology\_coms@{physiology\_coms}!ko2\_hor8@{ko2\_hor8}}
+\index{ko2\_hor8@{ko2\_hor8}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{ko2\_hor8}{ko2\_hor8}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::ko2\+\_\+hor8}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a76dd69909f43d9ff11fab25a03dc5492}\label{namespacephysiology__coms_a76dd69909f43d9ff11fab25a03dc5492}} 
+\index{physiology\_coms@{physiology\_coms}!ko2\_q10@{ko2\_q10}}
+\index{ko2\_q10@{ko2\_q10}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{ko2\_q10}{ko2\_q10}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::ko2\+\_\+q10}
+
+\mbox{\Hypertarget{namespacephysiology__coms_ae76b821edd73bb3355c6bbf4b22788c3}\label{namespacephysiology__coms_ae76b821edd73bb3355c6bbf4b22788c3}} 
+\index{physiology\_coms@{physiology\_coms}!ko2\_q108@{ko2\_q108}}
+\index{ko2\_q108@{ko2\_q108}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{ko2\_q108}{ko2\_q108}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::ko2\+\_\+q108}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a373b2932120fa360997d160b021af1f5}\label{namespacephysiology__coms_a373b2932120fa360997d160b021af1f5}} 
+\index{physiology\_coms@{physiology\_coms}!ko2\_refval@{ko2\_refval}}
+\index{ko2\_refval@{ko2\_refval}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{ko2\_refval}{ko2\_refval}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::ko2\+\_\+refval}
+
+\mbox{\Hypertarget{namespacephysiology__coms_ad58b3f543afd8c67c4166bf4475103de}\label{namespacephysiology__coms_ad58b3f543afd8c67c4166bf4475103de}} 
+\index{physiology\_coms@{physiology\_coms}!ko2\_refval8@{ko2\_refval8}}
+\index{ko2\_refval8@{ko2\_refval8}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{ko2\_refval8}{ko2\_refval8}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::ko2\+\_\+refval8}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a141a8141098b73d902febd2617e1eb35}\label{namespacephysiology__coms_a141a8141098b73d902febd2617e1eb35}} 
+\index{physiology\_coms@{physiology\_coms}!kookc@{kookc}}
+\index{kookc@{kookc}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{kookc}{kookc}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::kookc}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a284346103ccac25fdc1838c75b54b8e9}\label{namespacephysiology__coms_a284346103ccac25fdc1838c75b54b8e9}} 
+\index{physiology\_coms@{physiology\_coms}!kookc8@{kookc8}}
+\index{kookc8@{kookc8}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{kookc8}{kookc8}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::kookc8}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a5851785d443262ca4a05d4a8ba0668c9}\label{namespacephysiology__coms_a5851785d443262ca4a05d4a8ba0668c9}} 
+\index{physiology\_coms@{physiology\_coms}!kw\_grass@{kw\_grass}}
+\index{kw\_grass@{kw\_grass}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{kw\_grass}{kw\_grass}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::kw\+\_\+grass}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a840f4a14063bfd729e0882aa41a6196b}\label{namespacephysiology__coms_a840f4a14063bfd729e0882aa41a6196b}} 
+\index{physiology\_coms@{physiology\_coms}!kw\_tree@{kw\_tree}}
+\index{kw\_tree@{kw\_tree}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{kw\_tree}{kw\_tree}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::kw\+\_\+tree}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a08c8e567e9ac2f38e5386c00b1069335}\label{namespacephysiology__coms_a08c8e567e9ac2f38e5386c00b1069335}} 
+\index{physiology\_coms@{physiology\_coms}!mphoto\_c4@{mphoto\_c4}}
+\index{mphoto\_c4@{mphoto\_c4}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{mphoto\_c4}{mphoto\_c4}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::mphoto\+\_\+c4}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a10f9a3f8b0759641e8f9997d77f01fa8}\label{namespacephysiology__coms_a10f9a3f8b0759641e8f9997d77f01fa8}} 
+\index{physiology\_coms@{physiology\_coms}!mphoto\_tec3@{mphoto\_tec3}}
+\index{mphoto\_tec3@{mphoto\_tec3}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{mphoto\_tec3}{mphoto\_tec3}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::mphoto\+\_\+tec3}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a3dfbe191e81a908c50c593e9a147469a}\label{namespacephysiology__coms_a3dfbe191e81a908c50c593e9a147469a}} 
+\index{physiology\_coms@{physiology\_coms}!mphoto\_trc3@{mphoto\_trc3}}
+\index{mphoto\_trc3@{mphoto\_trc3}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{mphoto\_trc3}{mphoto\_trc3}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::mphoto\+\_\+trc3}
+
+\mbox{\Hypertarget{namespacephysiology__coms_ae25a0a523887f680c687728a8b285400}\label{namespacephysiology__coms_ae25a0a523887f680c687728a8b285400}} 
+\index{physiology\_coms@{physiology\_coms}!n\_plant\_lim@{n\_plant\_lim}}
+\index{n\_plant\_lim@{n\_plant\_lim}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{n\_plant\_lim}{n\_plant\_lim}}
+{\footnotesize\ttfamily integer physiology\+\_\+coms\+::n\+\_\+plant\+\_\+lim}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a9d23c454c914eb013dcb434bc476a11f}\label{namespacephysiology__coms_a9d23c454c914eb013dcb434bc476a11f}} 
+\index{physiology\_coms@{physiology\_coms}!o2\_ref@{o2\_ref}}
+\index{o2\_ref@{o2\_ref}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{o2\_ref}{o2\_ref}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::o2\+\_\+ref}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a9f53be8313be66d3616cf393d3efc2de}\label{namespacephysiology__coms_a9f53be8313be66d3616cf393d3efc2de}} 
+\index{physiology\_coms@{physiology\_coms}!o2\_ref8@{o2\_ref8}}
+\index{o2\_ref8@{o2\_ref8}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{o2\_ref8}{o2\_ref8}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::o2\+\_\+ref8}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a0b1b17f8f80b4f359f778e432b937756}\label{namespacephysiology__coms_a0b1b17f8f80b4f359f778e432b937756}} 
+\index{physiology\_coms@{physiology\_coms}!par\_lightcompp\_max@{par\_lightcompp\_max}}
+\index{par\_lightcompp\_max@{par\_lightcompp\_max}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{par\_lightcompp\_max}{par\_lightcompp\_max}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::par\+\_\+lightcompp\+\_\+max}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a1fe37aaa4eb29c2c01baa8e8c6c4668d}\label{namespacephysiology__coms_a1fe37aaa4eb29c2c01baa8e8c6c4668d}} 
+\index{physiology\_coms@{physiology\_coms}!par\_lightcompp\_max8@{par\_lightcompp\_max8}}
+\index{par\_lightcompp\_max8@{par\_lightcompp\_max8}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{par\_lightcompp\_max8}{par\_lightcompp\_max8}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::par\+\_\+lightcompp\+\_\+max8}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a2c980690ad445a3f111aded7d288008c}\label{namespacephysiology__coms_a2c980690ad445a3f111aded7d288008c}} 
+\index{physiology\_coms@{physiology\_coms}!photo\_prefix@{photo\_prefix}}
+\index{photo\_prefix@{photo\_prefix}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{photo\_prefix}{photo\_prefix}}
+{\footnotesize\ttfamily character(len=str\+\_\+len) physiology\+\_\+coms\+::photo\+\_\+prefix}
+
+\mbox{\Hypertarget{namespacephysiology__coms_ae7891eae4f9e7730e330d165ff8f8ffd}\label{namespacephysiology__coms_ae7891eae4f9e7730e330d165ff8f8ffd}} 
+\index{physiology\_coms@{physiology\_coms}!plant\_hydro\_scheme@{plant\_hydro\_scheme}}
+\index{plant\_hydro\_scheme@{plant\_hydro\_scheme}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{plant\_hydro\_scheme}{plant\_hydro\_scheme}}
+{\footnotesize\ttfamily integer physiology\+\_\+coms\+::plant\+\_\+hydro\+\_\+scheme}
+
+
+
+PLANT\+\_\+\+HYDRO\+\_\+\+SCHEME -- Whether to track plant hydrodynamics.~\newline
+ 0. No hydraulics (leaf and wood are always saturated)~\newline
+. 
+
+
+\begin{DoxyEnumerate}
+\item Track plant hydrodynamics using parameters from Christofferson et al. 2016 GMD~\newline
+
+\item Track plant hydrodynamics using parameters from Xu et al. 2016 New Phytologist~\newline
+
+\end{DoxyEnumerate}\mbox{\Hypertarget{namespacephysiology__coms_afdf6c3084ba85f92a6ac66ac88ec7591}\label{namespacephysiology__coms_afdf6c3084ba85f92a6ac66ac88ec7591}} 
+\index{physiology\_coms@{physiology\_coms}!print\_photo\_debug@{print\_photo\_debug}}
+\index{print\_photo\_debug@{print\_photo\_debug}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{print\_photo\_debug}{print\_photo\_debug}}
+{\footnotesize\ttfamily logical physiology\+\_\+coms\+::print\+\_\+photo\+\_\+debug}
+
+\mbox{\Hypertarget{namespacephysiology__coms_aebfbdd7137fa93ba69de3a2ea7936c50}\label{namespacephysiology__coms_aebfbdd7137fa93ba69de3a2ea7936c50}} 
+\index{physiology\_coms@{physiology\_coms}!q10\_c3@{q10\_c3}}
+\index{q10\_c3@{q10\_c3}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{q10\_c3}{q10\_c3}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::q10\+\_\+c3}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a58329d760ae671f7fa6b1b1854bd3bce}\label{namespacephysiology__coms_a58329d760ae671f7fa6b1b1854bd3bce}} 
+\index{physiology\_coms@{physiology\_coms}!q10\_c4@{q10\_c4}}
+\index{q10\_c4@{q10\_c4}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{q10\_c4}{q10\_c4}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::q10\+\_\+c4}
+
+\mbox{\Hypertarget{namespacephysiology__coms_acc7c98056c927d22975df63295e7d8eb}\label{namespacephysiology__coms_acc7c98056c927d22975df63295e7d8eb}} 
+\index{physiology\_coms@{physiology\_coms}!quantum\_efficiency\_t@{quantum\_efficiency\_t}}
+\index{quantum\_efficiency\_t@{quantum\_efficiency\_t}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{quantum\_efficiency\_t}{quantum\_efficiency\_t}}
+{\footnotesize\ttfamily integer physiology\+\_\+coms\+::quantum\+\_\+efficiency\+\_\+t}
+
+\mbox{\Hypertarget{namespacephysiology__coms_ab7e24ce5122fda9b17878fb18470092a}\label{namespacephysiology__coms_ab7e24ce5122fda9b17878fb18470092a}} 
+\index{physiology\_coms@{physiology\_coms}!qyield0@{qyield0}}
+\index{qyield0@{qyield0}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{qyield0}{qyield0}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::qyield0}
+
+\mbox{\Hypertarget{namespacephysiology__coms_afb47d1e2c5bcf37ef401c8a6f3fd1bdf}\label{namespacephysiology__coms_afb47d1e2c5bcf37ef401c8a6f3fd1bdf}} 
+\index{physiology\_coms@{physiology\_coms}!qyield08@{qyield08}}
+\index{qyield08@{qyield08}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{qyield08}{qyield08}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::qyield08}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a47d2f31280dea551cf4c2cd53aff5fc2}\label{namespacephysiology__coms_a47d2f31280dea551cf4c2cd53aff5fc2}} 
+\index{physiology\_coms@{physiology\_coms}!qyield1@{qyield1}}
+\index{qyield1@{qyield1}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{qyield1}{qyield1}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::qyield1}
+
+\mbox{\Hypertarget{namespacephysiology__coms_ae8f2c4b5c0c426c0cda6a7fcfaed4fe2}\label{namespacephysiology__coms_ae8f2c4b5c0c426c0cda6a7fcfaed4fe2}} 
+\index{physiology\_coms@{physiology\_coms}!qyield18@{qyield18}}
+\index{qyield18@{qyield18}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{qyield18}{qyield18}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::qyield18}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a5c1b8d75f0dfc7666093dded3d7ea12a}\label{namespacephysiology__coms_a5c1b8d75f0dfc7666093dded3d7ea12a}} 
+\index{physiology\_coms@{physiology\_coms}!qyield2@{qyield2}}
+\index{qyield2@{qyield2}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{qyield2}{qyield2}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::qyield2}
+
+\mbox{\Hypertarget{namespacephysiology__coms_ade005515e6099db96931eefbd5b36657}\label{namespacephysiology__coms_ade005515e6099db96931eefbd5b36657}} 
+\index{physiology\_coms@{physiology\_coms}!qyield28@{qyield28}}
+\index{qyield28@{qyield28}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{qyield28}{qyield28}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::qyield28}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a0cce0fce32e96abbe4ab367ae4fd4578}\label{namespacephysiology__coms_a0cce0fce32e96abbe4ab367ae4fd4578}} 
+\index{physiology\_coms@{physiology\_coms}!rrffact@{rrffact}}
+\index{rrffact@{rrffact}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{rrffact}{rrffact}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::rrffact}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a1ddecfcd801722fae0a28e4495a8b58f}\label{namespacephysiology__coms_a1ddecfcd801722fae0a28e4495a8b58f}} 
+\index{physiology\_coms@{physiology\_coms}!tphysref@{tphysref}}
+\index{tphysref@{tphysref}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{tphysref}{tphysref}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::tphysref}
+
+\mbox{\Hypertarget{namespacephysiology__coms_aa0924691938da817d9f145194aee16df}\label{namespacephysiology__coms_aa0924691938da817d9f145194aee16df}} 
+\index{physiology\_coms@{physiology\_coms}!tphysref8@{tphysref8}}
+\index{tphysref8@{tphysref8}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{tphysref8}{tphysref8}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::tphysref8}
+
+\mbox{\Hypertarget{namespacephysiology__coms_a2ab9832e0895c53fecec95dd004f9a6c}\label{namespacephysiology__coms_a2ab9832e0895c53fecec95dd004f9a6c}} 
+\index{physiology\_coms@{physiology\_coms}!tphysrefi@{tphysrefi}}
+\index{tphysrefi@{tphysrefi}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{tphysrefi}{tphysrefi}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::tphysrefi}
+
+\mbox{\Hypertarget{namespacephysiology__coms_aedf008fa411936b174aa5146e5191596}\label{namespacephysiology__coms_aedf008fa411936b174aa5146e5191596}} 
+\index{physiology\_coms@{physiology\_coms}!tphysrefi8@{tphysrefi8}}
+\index{tphysrefi8@{tphysrefi8}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{tphysrefi8}{tphysrefi8}}
+{\footnotesize\ttfamily real(kind=8) physiology\+\_\+coms\+::tphysrefi8}
+
+\mbox{\Hypertarget{namespacephysiology__coms_acc61e41035635dc2e85a5b77be2a4bb6}\label{namespacephysiology__coms_acc61e41035635dc2e85a5b77be2a4bb6}} 
+\index{physiology\_coms@{physiology\_coms}!trait\_plasticity\_scheme@{trait\_plasticity\_scheme}}
+\index{trait\_plasticity\_scheme@{trait\_plasticity\_scheme}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{trait\_plasticity\_scheme}{trait\_plasticity\_scheme}}
+{\footnotesize\ttfamily integer physiology\+\_\+coms\+::trait\+\_\+plasticity\+\_\+scheme}
+
+
+
+TRAIT\+\_\+\+PLASTICITY\+\_\+\+SCHEME -- Whether/\+How plant traits vary with local environment.~\newline
+ 0. No trait plasticity. Trait parameters for each PFT is fixed. (ED2.\+2 and before).~\newline
+. 
+
+
+\begin{DoxyEnumerate}
+\item Vm0 and SLA change with cohort light environment based on Lloyld et al. 2010 Biogeosciences. For each cohort, Vm0 decreases and SLA increases under shading. The magnitude of changes is calcualted using overtopping LAI and corresponding extinction facotrs for each trait. The traits for each cohort are updated every year.~\newline
+
+\item Same as 1 but the traits are updated every month.~\newline
+ -\/1. Same as 1 but use height to adjust SLA~\newline
+ -\/2. Same as 2 but use height to adjust SLA~\newline
+
+\end{DoxyEnumerate}\mbox{\Hypertarget{namespacephysiology__coms_a07128356874806c751549ba416793e1f}\label{namespacephysiology__coms_a07128356874806c751549ba416793e1f}} 
+\index{physiology\_coms@{physiology\_coms}!vmfact\_c3@{vmfact\_c3}}
+\index{vmfact\_c3@{vmfact\_c3}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{vmfact\_c3}{vmfact\_c3}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::vmfact\+\_\+c3}
+
+\mbox{\Hypertarget{namespacephysiology__coms_aee570c0398d070cf6c07ee3146b77c05}\label{namespacephysiology__coms_aee570c0398d070cf6c07ee3146b77c05}} 
+\index{physiology\_coms@{physiology\_coms}!vmfact\_c4@{vmfact\_c4}}
+\index{vmfact\_c4@{vmfact\_c4}!physiology\_coms@{physiology\_coms}}
+\doxysubsubsection{\texorpdfstring{vmfact\_c4}{vmfact\_c4}}
+{\footnotesize\ttfamily real(kind=4) physiology\+\_\+coms\+::vmfact\+\_\+c4}
+

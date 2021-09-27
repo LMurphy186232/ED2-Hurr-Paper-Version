@@ -1,0 +1,22 @@
+digraph "update_derived_utils::update_patch_derived_props"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="update_derived_utils\l::update_patch_derived_props",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="allometry::ed_biomass",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceallometry.html#ab6a3d3302db0096b21354babe768677b",tooltip=" "];
+  Node2 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="update_derived_utils\l::patch_pft_size_profile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceupdate__derived__utils.html#a9b732fc650e42658e5e31b19e0915610",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="allometry::size2bl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceallometry.html#a10c3f179ffa5bee4c98a338aa18067ee",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="allometry::h2dbh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceallometry.html#a31aa8db06e86ec74efb5e692417399df",tooltip=" "];
+  Node5 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="therm_lib::tq2enthalpy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacetherm__lib.html#addd05382298a8487d09d7f6e2664dd62",tooltip=" "];
+  Node6 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+}

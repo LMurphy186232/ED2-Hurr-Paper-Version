@@ -1,0 +1,55 @@
+\hypertarget{namespaceheun__driver}{}\doxysection{heun\+\_\+driver Module Reference}
+\label{namespaceheun__driver}\index{heun\_driver@{heun\_driver}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceheun__driver_afef0343ba81822423a4a5ebfa053686a}{heun\+\_\+timestep}} (cgrid)
+\item 
+subroutine \mbox{\hyperlink{namespaceheun__driver_abb1bb84ab9ad1d5dc5aec57b996752f8}{integrate\+\_\+patch\+\_\+heun}} (csite, ipa, isi, ibuff, nighttime, wcurr\+\_\+loss2atm, ecurr\+\_\+netrad, ecurr\+\_\+loss2atm, co2curr\+\_\+loss2atm, wcurr\+\_\+loss2drainage, ecurr\+\_\+loss2drainage, wcurr\+\_\+loss2runoff, ecurr\+\_\+loss2runoff, co2curr\+\_\+denseffect, ecurr\+\_\+denseffect, wcurr\+\_\+denseffect, nsteps)
+\item 
+subroutine \mbox{\hyperlink{namespaceheun__driver_af9332131a749001cd8a8e0e010a2ad53}{heun\+\_\+integ}} (h1, csite, ipa, isi, ibuff, nsteps)
+\item 
+subroutine \mbox{\hyperlink{namespaceheun__driver_a4c0c7b15d52471a427c0833e1d6e1918}{heun\+\_\+stepper}} (h, csite, ipa, ibuff, reject\+\_\+step, reject\+\_\+result)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespaceheun__driver_af9332131a749001cd8a8e0e010a2ad53}\label{namespaceheun__driver_af9332131a749001cd8a8e0e010a2ad53}} 
+\index{heun\_driver@{heun\_driver}!heun\_integ@{heun\_integ}}
+\index{heun\_integ@{heun\_integ}!heun\_driver@{heun\_driver}}
+\doxysubsubsection{\texorpdfstring{heun\_integ()}{heun\_integ()}}
+{\footnotesize\ttfamily subroutine heun\+\_\+driver\+::heun\+\_\+integ (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{h1,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{isi,  }\item[{integer, intent(in)}]{ibuff,  }\item[{integer, intent(out)}]{nsteps }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em csite} & Current site\\
+\hline
+\mbox{\texttt{ in}}  & {\em ipa} & Current patch ID\\
+\hline
+\mbox{\texttt{ in}}  & {\em isi} & Current site ID\\
+\hline
+\mbox{\texttt{ in}}  & {\em ibuff} & Current thread\\
+\hline
+\mbox{\texttt{ in}}  & {\em h1} & First guess of delta-\/t\\
+\hline
+\mbox{\texttt{ out}}  & {\em nsteps} & Number of steps taken. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceheun__driver_a4c0c7b15d52471a427c0833e1d6e1918}\label{namespaceheun__driver_a4c0c7b15d52471a427c0833e1d6e1918}} 
+\index{heun\_driver@{heun\_driver}!heun\_stepper@{heun\_stepper}}
+\index{heun\_stepper@{heun\_stepper}!heun\_driver@{heun\_driver}}
+\doxysubsubsection{\texorpdfstring{heun\_stepper()}{heun\_stepper()}}
+{\footnotesize\ttfamily subroutine heun\+\_\+driver\+::heun\+\_\+stepper (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{h,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{ibuff,  }\item[{logical, intent(out)}]{reject\+\_\+step,  }\item[{logical, intent(out)}]{reject\+\_\+result }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceheun__driver_afef0343ba81822423a4a5ebfa053686a}\label{namespaceheun__driver_afef0343ba81822423a4a5ebfa053686a}} 
+\index{heun\_driver@{heun\_driver}!heun\_timestep@{heun\_timestep}}
+\index{heun\_timestep@{heun\_timestep}!heun\_driver@{heun\_driver}}
+\doxysubsubsection{\texorpdfstring{heun\_timestep()}{heun\_timestep()}}
+{\footnotesize\ttfamily subroutine heun\+\_\+driver\+::heun\+\_\+timestep (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceheun__driver_abb1bb84ab9ad1d5dc5aec57b996752f8}\label{namespaceheun__driver_abb1bb84ab9ad1d5dc5aec57b996752f8}} 
+\index{heun\_driver@{heun\_driver}!integrate\_patch\_heun@{integrate\_patch\_heun}}
+\index{integrate\_patch\_heun@{integrate\_patch\_heun}!heun\_driver@{heun\_driver}}
+\doxysubsubsection{\texorpdfstring{integrate\_patch\_heun()}{integrate\_patch\_heun()}}
+{\footnotesize\ttfamily subroutine heun\+\_\+driver\+::integrate\+\_\+patch\+\_\+heun (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{isi,  }\item[{integer, intent(in)}]{ibuff,  }\item[{logical, intent(in)}]{nighttime,  }\item[{real, intent(out)}]{wcurr\+\_\+loss2atm,  }\item[{real, intent(out)}]{ecurr\+\_\+netrad,  }\item[{real, intent(out)}]{ecurr\+\_\+loss2atm,  }\item[{real, intent(out)}]{co2curr\+\_\+loss2atm,  }\item[{real, intent(out)}]{wcurr\+\_\+loss2drainage,  }\item[{real, intent(out)}]{ecurr\+\_\+loss2drainage,  }\item[{real, intent(out)}]{wcurr\+\_\+loss2runoff,  }\item[{real, intent(out)}]{ecurr\+\_\+loss2runoff,  }\item[{real, intent(out)}]{co2curr\+\_\+denseffect,  }\item[{real, intent(out)}]{ecurr\+\_\+denseffect,  }\item[{real, intent(out)}]{wcurr\+\_\+denseffect,  }\item[{integer, intent(out)}]{nsteps }\end{DoxyParamCaption})}
+

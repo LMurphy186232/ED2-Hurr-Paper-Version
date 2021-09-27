@@ -1,0 +1,699 @@
+\hypertarget{namespacecanopy__radiation__coms}{}\doxysection{canopy\+\_\+radiation\+\_\+coms Module Reference}
+\label{namespacecanopy__radiation__coms}\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{structcanopy__radiation__coms_1_1radscrtype}{radscrtype}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacecanopy__radiation__coms_abf436863eec6f51fbcad29f1a0ad8833}{alloc\+\_\+radscratch}} (cradscr, maxcohort)
+\item 
+subroutine \mbox{\hyperlink{namespacecanopy__radiation__coms_abbcda361926e277937b84aa18b779d72}{dealloc\+\_\+radscratch}} (cradscr)
+\item 
+subroutine \mbox{\hyperlink{namespacecanopy__radiation__coms_a5d6cfa703bca9703874fe55efaf4f05d}{nullify\+\_\+radscratch}} (cradscr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer \mbox{\hyperlink{namespacecanopy__radiation__coms_a14fc38d8fcab4e07489c6a98d0fa1ec0}{icanrad}}
+\item 
+integer \mbox{\hyperlink{namespacecanopy__radiation__coms_a97a2428c053f2ecaf938ac8f280b9f56}{ihrzrad}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__radiation__coms_a87104ccbd0550f1c136fa52e924b4757}{ltrans\+\_\+vis}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__radiation__coms_af7cd19c8b528f9ad44a71f0a35c6ce1d}{ltrans\+\_\+nir}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__radiation__coms_a93d73e57e54635c41e0ccffe6025ef2f}{lreflect\+\_\+vis}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__radiation__coms_a10712ab8a7b1bfada454fdfaa9e4a919}{lreflect\+\_\+nir}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__radiation__coms_a02f343f29bc50bd43ad7a47feca0aeb9}{orient\+\_\+tree}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__radiation__coms_a9a05bcd1d22939f34bc3b6d2f4464f02}{orient\+\_\+grass}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__radiation__coms_a56f3277cb77422d513a00732dec93b73}{clump\+\_\+tree}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__radiation__coms_a4ab5b29df445f0f0c4e230192ad288ba}{clump\+\_\+grass}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__radiation__coms_ac004366e46d368e0959443f710484ae0}{fvis\+\_\+beam\+\_\+def}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__radiation__coms_a4b2b1be923f4d3c9c9a60e315391af77}{fvis\+\_\+diff\+\_\+def}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__radiation__coms_a9cf9456a8e225d5d5cbeeb3c0a3c1d9f}{fnir\+\_\+beam\+\_\+def}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__radiation__coms_a1d50899df57055efdbfa121479ac3710}{fnir\+\_\+diff\+\_\+def}}
+\item 
+type(\mbox{\hyperlink{structcanopy__radiation__coms_1_1radscrtype}{radscrtype}}), dimension(\+:), pointer \mbox{\hyperlink{namespacecanopy__radiation__coms_a77faeb46000116eff7d27da31a4ddfde}{radscr}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacecanopy__radiation__coms_a2fa961375137b621f360e2de7d57a2a9}{clumping\+\_\+factor}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacecanopy__radiation__coms_a15026d6621180461dc537b2a9ea8e012}{orient\+\_\+factor}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacecanopy__radiation__coms_a03002619fd623b8e11ded7e257d4579f}{phi1}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacecanopy__radiation__coms_a84f81efa08280199991186a9f501c053}{phi2}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacecanopy__radiation__coms_ad267188bb42ff06c3f69554fbe4c595e}{mu\+\_\+bar}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacecanopy__radiation__coms_a155b16acb09a1de77430d943c332d850}{leaf\+\_\+reflect\+\_\+vis}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacecanopy__radiation__coms_ae24039da794ebfb5ff7eb9db190a9a1e}{wood\+\_\+reflect\+\_\+vis}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacecanopy__radiation__coms_a4e4cdd2fcb0cf93d9c9521bde9362a30}{leaf\+\_\+reflect\+\_\+nir}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacecanopy__radiation__coms_af020f9ae454b2719750aca108226147e}{wood\+\_\+reflect\+\_\+nir}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacecanopy__radiation__coms_ab5495eba323c2fab375464eddc773362}{leaf\+\_\+trans\+\_\+vis}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacecanopy__radiation__coms_add3e4a271e770993c7867304bd138bf2}{wood\+\_\+trans\+\_\+vis}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacecanopy__radiation__coms_a83636a1072454a72163dea005f6695bf}{leaf\+\_\+trans\+\_\+nir}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacecanopy__radiation__coms_ac71bbd6b94c73251f3181441d9930d48}{wood\+\_\+trans\+\_\+nir}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacecanopy__radiation__coms_a248ba8c24adc6d99c25edf3176685c63}{leaf\+\_\+emiss\+\_\+tir}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacecanopy__radiation__coms_a0c1f3270236f47702572f6378dc5c27d}{wood\+\_\+emiss\+\_\+tir}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacecanopy__radiation__coms_abe59c68932814e1ebaf8c30137eec9bc}{leaf\+\_\+scatter\+\_\+vis}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacecanopy__radiation__coms_a9d7ea3e034dbcde978fae2353feae644}{wood\+\_\+scatter\+\_\+vis}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacecanopy__radiation__coms_a7f239d8adc86bab8014bb6f96dac2eb7}{leaf\+\_\+scatter\+\_\+nir}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacecanopy__radiation__coms_ab34f58c9789b2913a92e5c2d17b7fd6c}{wood\+\_\+scatter\+\_\+nir}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacecanopy__radiation__coms_a8cd51ee75d68dd0a955f06421a558c5d}{leaf\+\_\+backscatter\+\_\+vis}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacecanopy__radiation__coms_a8fa916f5cdac8472a33b13b73dfc2745}{wood\+\_\+backscatter\+\_\+vis}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacecanopy__radiation__coms_a75268e30022c7434bebd2e83c785e0ee}{leaf\+\_\+backscatter\+\_\+nir}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacecanopy__radiation__coms_af78ebf7d715955c43ea9bdf6dd48dd1d}{wood\+\_\+backscatter\+\_\+nir}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacecanopy__radiation__coms_a04c8cd0c8fb5db0488f313482b6f532d}{leaf\+\_\+backscatter\+\_\+tir}}
+\item 
+real(kind=8), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacecanopy__radiation__coms_abd52ebed6eef6a200b0f0635d02910fe}{wood\+\_\+backscatter\+\_\+tir}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__radiation__coms_a1cc8ec955321a89af09a5000f559027a}{snow\+\_\+albedo\+\_\+vis}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__radiation__coms_a6e9ba20bb9e4cdec42f508154e237a0d}{snow\+\_\+albedo\+\_\+nir}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__radiation__coms_ad1a9ec223aca622a0fd93fe20cf980d5}{snow\+\_\+emiss\+\_\+tir}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__radiation__coms_a3a226b3cec6a97cda6b397806da31988}{rshort\+\_\+twilight\+\_\+min}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__radiation__coms_a7bcf7a71dd9f42a8d1516a4dc0588317}{cosz\+\_\+min}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__radiation__coms_ae2a63ff3c4f0ba6dfdb7efd1a865e63a}{cosz\+\_\+min8}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__radiation__coms_aed04252b66b88381b173f94f24f011a1}{cci\+\_\+radius}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__radiation__coms_aea386b91010148b240cbe00104ba30ce}{cci\+\_\+pixres}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__radiation__coms_accd2e58e58d8e0d7634d7972f8ffed00}{cci\+\_\+gapsize}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__radiation__coms_acb542e55887316b6e19757d775e26453}{cci\+\_\+gapmin}}
+\item 
+integer \mbox{\hyperlink{namespacecanopy__radiation__coms_aebb21b251598dd85a46a349214ea5636}{cci\+\_\+nretn}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__radiation__coms_a220270730f5a190fd9d3c6de4d9c87fa}{cci\+\_\+hmax}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__radiation__coms_a8305381043fbbb4f390ffd195d75d12d}{cci\+\_\+gaparea}}
+\item 
+integer \mbox{\hyperlink{namespacecanopy__radiation__coms_a03b17dc096cdb284692e46aba3460c10}{rls\+\_\+nxy}}
+\item 
+integer \mbox{\hyperlink{namespacecanopy__radiation__coms_a746b0303b349133a5e84d3253c61b524}{rls\+\_\+npixel}}
+\item 
+integer \mbox{\hyperlink{namespacecanopy__radiation__coms_a2cbb1997ca81d6dd1146e2eac610f6a6}{rls\+\_\+ngap}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__radiation__coms_abf56756d0b5d7784d39c984fb365d81e}{rls\+\_\+length}}
+\item 
+integer \mbox{\hyperlink{namespacecanopy__radiation__coms_abbe90f04cea7f968fb914fe059835334}{gap\+\_\+npixel}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__radiation__coms_a6f3818125f6dcd18426835dc290ba5ad}{rls\+\_\+area}}
+\item 
+logical \mbox{\hyperlink{namespacecanopy__radiation__coms_a59bbfe6fbf60a12ddab6570d161d9de1}{fixed\+\_\+hrz\+\_\+classes}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__radiation__coms_a2d523bb5b7cd3a5cf446cd1a979bee9a}{at\+\_\+bright\+\_\+def}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__radiation__coms_a321bc49da9fb0f6cb14f4af65da495e0}{at\+\_\+dark\+\_\+def}}
+\item 
+real(kind=4), dimension(\+:,\+:), allocatable \mbox{\hyperlink{namespacecanopy__radiation__coms_ad842954c2b0b1581105e4fa8444666a0}{rls\+\_\+x}}
+\item 
+real(kind=4), dimension(\+:,\+:), allocatable \mbox{\hyperlink{namespacecanopy__radiation__coms_adb11ffbeb4601d28adef12829912f5b8}{rls\+\_\+y}}
+\item 
+real(kind=4), dimension(\+:,\+:), allocatable \mbox{\hyperlink{namespacecanopy__radiation__coms_a42de34b9b91043b14ac0068485280fb7}{rls\+\_\+ztch}}
+\item 
+real(kind=4), dimension(\+:,\+:), allocatable \mbox{\hyperlink{namespacecanopy__radiation__coms_a3bc3a6cecb0206b6bddff1c30641a993}{rls\+\_\+cci}}
+\item 
+real(kind=4), dimension(\+:,\+:), allocatable \mbox{\hyperlink{namespacecanopy__radiation__coms_abcdcf93c252d1317191e9f6319ae1fd4}{rls\+\_\+fbeam}}
+\item 
+integer, dimension(\+:,\+:), allocatable \mbox{\hyperlink{namespacecanopy__radiation__coms_a6bfe79d4c7f0ecdb1354fb86ef94d5a4}{rls\+\_\+igp0}}
+\item 
+integer, dimension(\+:,\+:), allocatable \mbox{\hyperlink{namespacecanopy__radiation__coms_a8a9c246b3703c54c063688a3f31299bb}{rls\+\_\+igp}}
+\item 
+integer, dimension(\+:,\+:), allocatable \mbox{\hyperlink{namespacecanopy__radiation__coms_a677289231a074feca68e07f8ba8f13b5}{rls\+\_\+ipa}}
+\item 
+logical, dimension(\+:,\+:), allocatable \mbox{\hyperlink{namespacecanopy__radiation__coms_a32ac5546c8bc04a1965df8c5f8ee2c3f}{rls\+\_\+mask}}
+\item 
+real(kind=4), dimension(\+:), allocatable \mbox{\hyperlink{namespacecanopy__radiation__coms_a7f04a06218ca4419653503567518447a}{gap\+\_\+x0}}
+\item 
+real(kind=4), dimension(\+:), allocatable \mbox{\hyperlink{namespacecanopy__radiation__coms_aa57605e5d3069b43e2e76708f0007807}{gap\+\_\+y0}}
+\item 
+real(kind=4), dimension(\+:), allocatable \mbox{\hyperlink{namespacecanopy__radiation__coms_a94f6f2984596e462f5aac09499e596d3}{gap\+\_\+fbeam}}
+\item 
+integer, dimension(\+:), allocatable \mbox{\hyperlink{namespacecanopy__radiation__coms_a2f7dac4506781c90f01dd7972d3823b7}{gap\+\_\+nuse}}
+\item 
+integer, dimension(\+:), allocatable \mbox{\hyperlink{namespacecanopy__radiation__coms_ae5b5ab13b6e6a1d16c1d4d48528995e0}{gap\+\_\+ipa}}
+\item 
+integer, dimension(\+:), allocatable \mbox{\hyperlink{namespacecanopy__radiation__coms_abcde785d3a49624634641d7dc8c80a29}{gap\+\_\+idx}}
+\item 
+logical, dimension(\+:), allocatable \mbox{\hyperlink{namespacecanopy__radiation__coms_a454595f56cc9a3d31f89d01d31745bc8}{gap\+\_\+mask}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__radiation__coms_a7062572c94ba4e3c69f1e5b2f36534c2}{at0}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__radiation__coms_a6e2bd522dcccaafd7ac62a6e1ee60b50}{at1}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__radiation__coms_a7135873c09bb7b37a906d1f00f5b5c70}{at08}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__radiation__coms_a9d3bb6bfbffeca6b5250ad9dfa4b5466}{at18}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_abf436863eec6f51fbcad29f1a0ad8833}\label{namespacecanopy__radiation__coms_abf436863eec6f51fbcad29f1a0ad8833}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!alloc\_radscratch@{alloc\_radscratch}}
+\index{alloc\_radscratch@{alloc\_radscratch}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{alloc\_radscratch()}{alloc\_radscratch()}}
+{\footnotesize\ttfamily subroutine canopy\+\_\+radiation\+\_\+coms\+::alloc\+\_\+radscratch (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structcanopy__radiation__coms_1_1radscrtype}{radscrtype}}), target}]{cradscr,  }\item[{integer, intent(in)}]{maxcohort }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_abbcda361926e277937b84aa18b779d72}\label{namespacecanopy__radiation__coms_abbcda361926e277937b84aa18b779d72}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!dealloc\_radscratch@{dealloc\_radscratch}}
+\index{dealloc\_radscratch@{dealloc\_radscratch}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{dealloc\_radscratch()}{dealloc\_radscratch()}}
+{\footnotesize\ttfamily subroutine canopy\+\_\+radiation\+\_\+coms\+::dealloc\+\_\+radscratch (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structcanopy__radiation__coms_1_1radscrtype}{radscrtype}}), target}]{cradscr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a5d6cfa703bca9703874fe55efaf4f05d}\label{namespacecanopy__radiation__coms_a5d6cfa703bca9703874fe55efaf4f05d}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!nullify\_radscratch@{nullify\_radscratch}}
+\index{nullify\_radscratch@{nullify\_radscratch}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{nullify\_radscratch()}{nullify\_radscratch()}}
+{\footnotesize\ttfamily subroutine canopy\+\_\+radiation\+\_\+coms\+::nullify\+\_\+radscratch (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structcanopy__radiation__coms_1_1radscrtype}{radscrtype}}), target}]{cradscr }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a7062572c94ba4e3c69f1e5b2f36534c2}\label{namespacecanopy__radiation__coms_a7062572c94ba4e3c69f1e5b2f36534c2}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!at0@{at0}}
+\index{at0@{at0}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{at0}{at0}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+radiation\+\_\+coms\+::at0}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a7135873c09bb7b37a906d1f00f5b5c70}\label{namespacecanopy__radiation__coms_a7135873c09bb7b37a906d1f00f5b5c70}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!at08@{at08}}
+\index{at08@{at08}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{at08}{at08}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+radiation\+\_\+coms\+::at08}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a6e2bd522dcccaafd7ac62a6e1ee60b50}\label{namespacecanopy__radiation__coms_a6e2bd522dcccaafd7ac62a6e1ee60b50}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!at1@{at1}}
+\index{at1@{at1}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{at1}{at1}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+radiation\+\_\+coms\+::at1}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a9d3bb6bfbffeca6b5250ad9dfa4b5466}\label{namespacecanopy__radiation__coms_a9d3bb6bfbffeca6b5250ad9dfa4b5466}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!at18@{at18}}
+\index{at18@{at18}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{at18}{at18}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+radiation\+\_\+coms\+::at18}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a2d523bb5b7cd3a5cf446cd1a979bee9a}\label{namespacecanopy__radiation__coms_a2d523bb5b7cd3a5cf446cd1a979bee9a}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!at\_bright\_def@{at\_bright\_def}}
+\index{at\_bright\_def@{at\_bright\_def}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{at\_bright\_def}{at\_bright\_def}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+radiation\+\_\+coms\+::at\+\_\+bright\+\_\+def}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a321bc49da9fb0f6cb14f4af65da495e0}\label{namespacecanopy__radiation__coms_a321bc49da9fb0f6cb14f4af65da495e0}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!at\_dark\_def@{at\_dark\_def}}
+\index{at\_dark\_def@{at\_dark\_def}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{at\_dark\_def}{at\_dark\_def}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+radiation\+\_\+coms\+::at\+\_\+dark\+\_\+def}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a8305381043fbbb4f390ffd195d75d12d}\label{namespacecanopy__radiation__coms_a8305381043fbbb4f390ffd195d75d12d}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!cci\_gaparea@{cci\_gaparea}}
+\index{cci\_gaparea@{cci\_gaparea}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{cci\_gaparea}{cci\_gaparea}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+radiation\+\_\+coms\+::cci\+\_\+gaparea}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_acb542e55887316b6e19757d775e26453}\label{namespacecanopy__radiation__coms_acb542e55887316b6e19757d775e26453}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!cci\_gapmin@{cci\_gapmin}}
+\index{cci\_gapmin@{cci\_gapmin}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{cci\_gapmin}{cci\_gapmin}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+radiation\+\_\+coms\+::cci\+\_\+gapmin}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_accd2e58e58d8e0d7634d7972f8ffed00}\label{namespacecanopy__radiation__coms_accd2e58e58d8e0d7634d7972f8ffed00}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!cci\_gapsize@{cci\_gapsize}}
+\index{cci\_gapsize@{cci\_gapsize}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{cci\_gapsize}{cci\_gapsize}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+radiation\+\_\+coms\+::cci\+\_\+gapsize}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a220270730f5a190fd9d3c6de4d9c87fa}\label{namespacecanopy__radiation__coms_a220270730f5a190fd9d3c6de4d9c87fa}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!cci\_hmax@{cci\_hmax}}
+\index{cci\_hmax@{cci\_hmax}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{cci\_hmax}{cci\_hmax}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+radiation\+\_\+coms\+::cci\+\_\+hmax}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_aebb21b251598dd85a46a349214ea5636}\label{namespacecanopy__radiation__coms_aebb21b251598dd85a46a349214ea5636}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!cci\_nretn@{cci\_nretn}}
+\index{cci\_nretn@{cci\_nretn}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{cci\_nretn}{cci\_nretn}}
+{\footnotesize\ttfamily integer canopy\+\_\+radiation\+\_\+coms\+::cci\+\_\+nretn}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_aea386b91010148b240cbe00104ba30ce}\label{namespacecanopy__radiation__coms_aea386b91010148b240cbe00104ba30ce}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!cci\_pixres@{cci\_pixres}}
+\index{cci\_pixres@{cci\_pixres}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{cci\_pixres}{cci\_pixres}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+radiation\+\_\+coms\+::cci\+\_\+pixres}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_aed04252b66b88381b173f94f24f011a1}\label{namespacecanopy__radiation__coms_aed04252b66b88381b173f94f24f011a1}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!cci\_radius@{cci\_radius}}
+\index{cci\_radius@{cci\_radius}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{cci\_radius}{cci\_radius}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+radiation\+\_\+coms\+::cci\+\_\+radius}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a4ab5b29df445f0f0c4e230192ad288ba}\label{namespacecanopy__radiation__coms_a4ab5b29df445f0f0c4e230192ad288ba}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!clump\_grass@{clump\_grass}}
+\index{clump\_grass@{clump\_grass}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{clump\_grass}{clump\_grass}}
+{\footnotesize\ttfamily real canopy\+\_\+radiation\+\_\+coms\+::clump\+\_\+grass}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a56f3277cb77422d513a00732dec93b73}\label{namespacecanopy__radiation__coms_a56f3277cb77422d513a00732dec93b73}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!clump\_tree@{clump\_tree}}
+\index{clump\_tree@{clump\_tree}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{clump\_tree}{clump\_tree}}
+{\footnotesize\ttfamily real canopy\+\_\+radiation\+\_\+coms\+::clump\+\_\+tree}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a2fa961375137b621f360e2de7d57a2a9}\label{namespacecanopy__radiation__coms_a2fa961375137b621f360e2de7d57a2a9}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!clumping\_factor@{clumping\_factor}}
+\index{clumping\_factor@{clumping\_factor}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{clumping\_factor}{clumping\_factor}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) canopy\+\_\+radiation\+\_\+coms\+::clumping\+\_\+factor}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a7bcf7a71dd9f42a8d1516a4dc0588317}\label{namespacecanopy__radiation__coms_a7bcf7a71dd9f42a8d1516a4dc0588317}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!cosz\_min@{cosz\_min}}
+\index{cosz\_min@{cosz\_min}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{cosz\_min}{cosz\_min}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+radiation\+\_\+coms\+::cosz\+\_\+min}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_ae2a63ff3c4f0ba6dfdb7efd1a865e63a}\label{namespacecanopy__radiation__coms_ae2a63ff3c4f0ba6dfdb7efd1a865e63a}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!cosz\_min8@{cosz\_min8}}
+\index{cosz\_min8@{cosz\_min8}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{cosz\_min8}{cosz\_min8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+radiation\+\_\+coms\+::cosz\+\_\+min8}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a59bbfe6fbf60a12ddab6570d161d9de1}\label{namespacecanopy__radiation__coms_a59bbfe6fbf60a12ddab6570d161d9de1}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!fixed\_hrz\_classes@{fixed\_hrz\_classes}}
+\index{fixed\_hrz\_classes@{fixed\_hrz\_classes}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{fixed\_hrz\_classes}{fixed\_hrz\_classes}}
+{\footnotesize\ttfamily logical canopy\+\_\+radiation\+\_\+coms\+::fixed\+\_\+hrz\+\_\+classes}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a9cf9456a8e225d5d5cbeeb3c0a3c1d9f}\label{namespacecanopy__radiation__coms_a9cf9456a8e225d5d5cbeeb3c0a3c1d9f}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!fnir\_beam\_def@{fnir\_beam\_def}}
+\index{fnir\_beam\_def@{fnir\_beam\_def}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{fnir\_beam\_def}{fnir\_beam\_def}}
+{\footnotesize\ttfamily real canopy\+\_\+radiation\+\_\+coms\+::fnir\+\_\+beam\+\_\+def}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a1d50899df57055efdbfa121479ac3710}\label{namespacecanopy__radiation__coms_a1d50899df57055efdbfa121479ac3710}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!fnir\_diff\_def@{fnir\_diff\_def}}
+\index{fnir\_diff\_def@{fnir\_diff\_def}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{fnir\_diff\_def}{fnir\_diff\_def}}
+{\footnotesize\ttfamily real canopy\+\_\+radiation\+\_\+coms\+::fnir\+\_\+diff\+\_\+def}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_ac004366e46d368e0959443f710484ae0}\label{namespacecanopy__radiation__coms_ac004366e46d368e0959443f710484ae0}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!fvis\_beam\_def@{fvis\_beam\_def}}
+\index{fvis\_beam\_def@{fvis\_beam\_def}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{fvis\_beam\_def}{fvis\_beam\_def}}
+{\footnotesize\ttfamily real canopy\+\_\+radiation\+\_\+coms\+::fvis\+\_\+beam\+\_\+def}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a4b2b1be923f4d3c9c9a60e315391af77}\label{namespacecanopy__radiation__coms_a4b2b1be923f4d3c9c9a60e315391af77}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!fvis\_diff\_def@{fvis\_diff\_def}}
+\index{fvis\_diff\_def@{fvis\_diff\_def}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{fvis\_diff\_def}{fvis\_diff\_def}}
+{\footnotesize\ttfamily real canopy\+\_\+radiation\+\_\+coms\+::fvis\+\_\+diff\+\_\+def}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a94f6f2984596e462f5aac09499e596d3}\label{namespacecanopy__radiation__coms_a94f6f2984596e462f5aac09499e596d3}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!gap\_fbeam@{gap\_fbeam}}
+\index{gap\_fbeam@{gap\_fbeam}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{gap\_fbeam}{gap\_fbeam}}
+{\footnotesize\ttfamily real(kind=4), dimension(\+:), allocatable canopy\+\_\+radiation\+\_\+coms\+::gap\+\_\+fbeam}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_abcde785d3a49624634641d7dc8c80a29}\label{namespacecanopy__radiation__coms_abcde785d3a49624634641d7dc8c80a29}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!gap\_idx@{gap\_idx}}
+\index{gap\_idx@{gap\_idx}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{gap\_idx}{gap\_idx}}
+{\footnotesize\ttfamily integer, dimension(\+:), allocatable canopy\+\_\+radiation\+\_\+coms\+::gap\+\_\+idx}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_ae5b5ab13b6e6a1d16c1d4d48528995e0}\label{namespacecanopy__radiation__coms_ae5b5ab13b6e6a1d16c1d4d48528995e0}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!gap\_ipa@{gap\_ipa}}
+\index{gap\_ipa@{gap\_ipa}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{gap\_ipa}{gap\_ipa}}
+{\footnotesize\ttfamily integer, dimension(\+:), allocatable canopy\+\_\+radiation\+\_\+coms\+::gap\+\_\+ipa}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a454595f56cc9a3d31f89d01d31745bc8}\label{namespacecanopy__radiation__coms_a454595f56cc9a3d31f89d01d31745bc8}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!gap\_mask@{gap\_mask}}
+\index{gap\_mask@{gap\_mask}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{gap\_mask}{gap\_mask}}
+{\footnotesize\ttfamily logical, dimension(\+:), allocatable canopy\+\_\+radiation\+\_\+coms\+::gap\+\_\+mask}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_abbe90f04cea7f968fb914fe059835334}\label{namespacecanopy__radiation__coms_abbe90f04cea7f968fb914fe059835334}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!gap\_npixel@{gap\_npixel}}
+\index{gap\_npixel@{gap\_npixel}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{gap\_npixel}{gap\_npixel}}
+{\footnotesize\ttfamily integer canopy\+\_\+radiation\+\_\+coms\+::gap\+\_\+npixel}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a2f7dac4506781c90f01dd7972d3823b7}\label{namespacecanopy__radiation__coms_a2f7dac4506781c90f01dd7972d3823b7}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!gap\_nuse@{gap\_nuse}}
+\index{gap\_nuse@{gap\_nuse}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{gap\_nuse}{gap\_nuse}}
+{\footnotesize\ttfamily integer, dimension(\+:), allocatable canopy\+\_\+radiation\+\_\+coms\+::gap\+\_\+nuse}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a7f04a06218ca4419653503567518447a}\label{namespacecanopy__radiation__coms_a7f04a06218ca4419653503567518447a}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!gap\_x0@{gap\_x0}}
+\index{gap\_x0@{gap\_x0}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{gap\_x0}{gap\_x0}}
+{\footnotesize\ttfamily real(kind=4), dimension(\+:), allocatable canopy\+\_\+radiation\+\_\+coms\+::gap\+\_\+x0}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_aa57605e5d3069b43e2e76708f0007807}\label{namespacecanopy__radiation__coms_aa57605e5d3069b43e2e76708f0007807}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!gap\_y0@{gap\_y0}}
+\index{gap\_y0@{gap\_y0}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{gap\_y0}{gap\_y0}}
+{\footnotesize\ttfamily real(kind=4), dimension(\+:), allocatable canopy\+\_\+radiation\+\_\+coms\+::gap\+\_\+y0}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a14fc38d8fcab4e07489c6a98d0fa1ec0}\label{namespacecanopy__radiation__coms_a14fc38d8fcab4e07489c6a98d0fa1ec0}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!icanrad@{icanrad}}
+\index{icanrad@{icanrad}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{icanrad}{icanrad}}
+{\footnotesize\ttfamily integer canopy\+\_\+radiation\+\_\+coms\+::icanrad}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a97a2428c053f2ecaf938ac8f280b9f56}\label{namespacecanopy__radiation__coms_a97a2428c053f2ecaf938ac8f280b9f56}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!ihrzrad@{ihrzrad}}
+\index{ihrzrad@{ihrzrad}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{ihrzrad}{ihrzrad}}
+{\footnotesize\ttfamily integer canopy\+\_\+radiation\+\_\+coms\+::ihrzrad}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a75268e30022c7434bebd2e83c785e0ee}\label{namespacecanopy__radiation__coms_a75268e30022c7434bebd2e83c785e0ee}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!leaf\_backscatter\_nir@{leaf\_backscatter\_nir}}
+\index{leaf\_backscatter\_nir@{leaf\_backscatter\_nir}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{leaf\_backscatter\_nir}{leaf\_backscatter\_nir}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) canopy\+\_\+radiation\+\_\+coms\+::leaf\+\_\+backscatter\+\_\+nir}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a04c8cd0c8fb5db0488f313482b6f532d}\label{namespacecanopy__radiation__coms_a04c8cd0c8fb5db0488f313482b6f532d}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!leaf\_backscatter\_tir@{leaf\_backscatter\_tir}}
+\index{leaf\_backscatter\_tir@{leaf\_backscatter\_tir}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{leaf\_backscatter\_tir}{leaf\_backscatter\_tir}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) canopy\+\_\+radiation\+\_\+coms\+::leaf\+\_\+backscatter\+\_\+tir}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a8cd51ee75d68dd0a955f06421a558c5d}\label{namespacecanopy__radiation__coms_a8cd51ee75d68dd0a955f06421a558c5d}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!leaf\_backscatter\_vis@{leaf\_backscatter\_vis}}
+\index{leaf\_backscatter\_vis@{leaf\_backscatter\_vis}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{leaf\_backscatter\_vis}{leaf\_backscatter\_vis}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) canopy\+\_\+radiation\+\_\+coms\+::leaf\+\_\+backscatter\+\_\+vis}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a248ba8c24adc6d99c25edf3176685c63}\label{namespacecanopy__radiation__coms_a248ba8c24adc6d99c25edf3176685c63}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!leaf\_emiss\_tir@{leaf\_emiss\_tir}}
+\index{leaf\_emiss\_tir@{leaf\_emiss\_tir}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{leaf\_emiss\_tir}{leaf\_emiss\_tir}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) canopy\+\_\+radiation\+\_\+coms\+::leaf\+\_\+emiss\+\_\+tir}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a4e4cdd2fcb0cf93d9c9521bde9362a30}\label{namespacecanopy__radiation__coms_a4e4cdd2fcb0cf93d9c9521bde9362a30}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!leaf\_reflect\_nir@{leaf\_reflect\_nir}}
+\index{leaf\_reflect\_nir@{leaf\_reflect\_nir}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{leaf\_reflect\_nir}{leaf\_reflect\_nir}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) canopy\+\_\+radiation\+\_\+coms\+::leaf\+\_\+reflect\+\_\+nir}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a155b16acb09a1de77430d943c332d850}\label{namespacecanopy__radiation__coms_a155b16acb09a1de77430d943c332d850}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!leaf\_reflect\_vis@{leaf\_reflect\_vis}}
+\index{leaf\_reflect\_vis@{leaf\_reflect\_vis}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{leaf\_reflect\_vis}{leaf\_reflect\_vis}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) canopy\+\_\+radiation\+\_\+coms\+::leaf\+\_\+reflect\+\_\+vis}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a7f239d8adc86bab8014bb6f96dac2eb7}\label{namespacecanopy__radiation__coms_a7f239d8adc86bab8014bb6f96dac2eb7}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!leaf\_scatter\_nir@{leaf\_scatter\_nir}}
+\index{leaf\_scatter\_nir@{leaf\_scatter\_nir}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{leaf\_scatter\_nir}{leaf\_scatter\_nir}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) canopy\+\_\+radiation\+\_\+coms\+::leaf\+\_\+scatter\+\_\+nir}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_abe59c68932814e1ebaf8c30137eec9bc}\label{namespacecanopy__radiation__coms_abe59c68932814e1ebaf8c30137eec9bc}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!leaf\_scatter\_vis@{leaf\_scatter\_vis}}
+\index{leaf\_scatter\_vis@{leaf\_scatter\_vis}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{leaf\_scatter\_vis}{leaf\_scatter\_vis}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) canopy\+\_\+radiation\+\_\+coms\+::leaf\+\_\+scatter\+\_\+vis}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a83636a1072454a72163dea005f6695bf}\label{namespacecanopy__radiation__coms_a83636a1072454a72163dea005f6695bf}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!leaf\_trans\_nir@{leaf\_trans\_nir}}
+\index{leaf\_trans\_nir@{leaf\_trans\_nir}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{leaf\_trans\_nir}{leaf\_trans\_nir}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) canopy\+\_\+radiation\+\_\+coms\+::leaf\+\_\+trans\+\_\+nir}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_ab5495eba323c2fab375464eddc773362}\label{namespacecanopy__radiation__coms_ab5495eba323c2fab375464eddc773362}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!leaf\_trans\_vis@{leaf\_trans\_vis}}
+\index{leaf\_trans\_vis@{leaf\_trans\_vis}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{leaf\_trans\_vis}{leaf\_trans\_vis}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) canopy\+\_\+radiation\+\_\+coms\+::leaf\+\_\+trans\+\_\+vis}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a10712ab8a7b1bfada454fdfaa9e4a919}\label{namespacecanopy__radiation__coms_a10712ab8a7b1bfada454fdfaa9e4a919}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!lreflect\_nir@{lreflect\_nir}}
+\index{lreflect\_nir@{lreflect\_nir}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{lreflect\_nir}{lreflect\_nir}}
+{\footnotesize\ttfamily real canopy\+\_\+radiation\+\_\+coms\+::lreflect\+\_\+nir}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a93d73e57e54635c41e0ccffe6025ef2f}\label{namespacecanopy__radiation__coms_a93d73e57e54635c41e0ccffe6025ef2f}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!lreflect\_vis@{lreflect\_vis}}
+\index{lreflect\_vis@{lreflect\_vis}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{lreflect\_vis}{lreflect\_vis}}
+{\footnotesize\ttfamily real canopy\+\_\+radiation\+\_\+coms\+::lreflect\+\_\+vis}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_af7cd19c8b528f9ad44a71f0a35c6ce1d}\label{namespacecanopy__radiation__coms_af7cd19c8b528f9ad44a71f0a35c6ce1d}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!ltrans\_nir@{ltrans\_nir}}
+\index{ltrans\_nir@{ltrans\_nir}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{ltrans\_nir}{ltrans\_nir}}
+{\footnotesize\ttfamily real canopy\+\_\+radiation\+\_\+coms\+::ltrans\+\_\+nir}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a87104ccbd0550f1c136fa52e924b4757}\label{namespacecanopy__radiation__coms_a87104ccbd0550f1c136fa52e924b4757}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!ltrans\_vis@{ltrans\_vis}}
+\index{ltrans\_vis@{ltrans\_vis}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{ltrans\_vis}{ltrans\_vis}}
+{\footnotesize\ttfamily real canopy\+\_\+radiation\+\_\+coms\+::ltrans\+\_\+vis}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_ad267188bb42ff06c3f69554fbe4c595e}\label{namespacecanopy__radiation__coms_ad267188bb42ff06c3f69554fbe4c595e}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!mu\_bar@{mu\_bar}}
+\index{mu\_bar@{mu\_bar}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{mu\_bar}{mu\_bar}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) canopy\+\_\+radiation\+\_\+coms\+::mu\+\_\+bar}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a15026d6621180461dc537b2a9ea8e012}\label{namespacecanopy__radiation__coms_a15026d6621180461dc537b2a9ea8e012}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!orient\_factor@{orient\_factor}}
+\index{orient\_factor@{orient\_factor}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{orient\_factor}{orient\_factor}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) canopy\+\_\+radiation\+\_\+coms\+::orient\+\_\+factor}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a9a05bcd1d22939f34bc3b6d2f4464f02}\label{namespacecanopy__radiation__coms_a9a05bcd1d22939f34bc3b6d2f4464f02}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!orient\_grass@{orient\_grass}}
+\index{orient\_grass@{orient\_grass}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{orient\_grass}{orient\_grass}}
+{\footnotesize\ttfamily real canopy\+\_\+radiation\+\_\+coms\+::orient\+\_\+grass}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a02f343f29bc50bd43ad7a47feca0aeb9}\label{namespacecanopy__radiation__coms_a02f343f29bc50bd43ad7a47feca0aeb9}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!orient\_tree@{orient\_tree}}
+\index{orient\_tree@{orient\_tree}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{orient\_tree}{orient\_tree}}
+{\footnotesize\ttfamily real canopy\+\_\+radiation\+\_\+coms\+::orient\+\_\+tree}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a03002619fd623b8e11ded7e257d4579f}\label{namespacecanopy__radiation__coms_a03002619fd623b8e11ded7e257d4579f}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!phi1@{phi1}}
+\index{phi1@{phi1}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{phi1}{phi1}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) canopy\+\_\+radiation\+\_\+coms\+::phi1}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a84f81efa08280199991186a9f501c053}\label{namespacecanopy__radiation__coms_a84f81efa08280199991186a9f501c053}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!phi2@{phi2}}
+\index{phi2@{phi2}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{phi2}{phi2}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) canopy\+\_\+radiation\+\_\+coms\+::phi2}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a77faeb46000116eff7d27da31a4ddfde}\label{namespacecanopy__radiation__coms_a77faeb46000116eff7d27da31a4ddfde}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!radscr@{radscr}}
+\index{radscr@{radscr}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{radscr}{radscr}}
+{\footnotesize\ttfamily type(\mbox{\hyperlink{structcanopy__radiation__coms_1_1radscrtype}{radscrtype}}), dimension(\+:), pointer canopy\+\_\+radiation\+\_\+coms\+::radscr}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a6f3818125f6dcd18426835dc290ba5ad}\label{namespacecanopy__radiation__coms_a6f3818125f6dcd18426835dc290ba5ad}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!rls\_area@{rls\_area}}
+\index{rls\_area@{rls\_area}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{rls\_area}{rls\_area}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+radiation\+\_\+coms\+::rls\+\_\+area}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a3bc3a6cecb0206b6bddff1c30641a993}\label{namespacecanopy__radiation__coms_a3bc3a6cecb0206b6bddff1c30641a993}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!rls\_cci@{rls\_cci}}
+\index{rls\_cci@{rls\_cci}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{rls\_cci}{rls\_cci}}
+{\footnotesize\ttfamily real(kind=4), dimension(\+:,\+:), allocatable canopy\+\_\+radiation\+\_\+coms\+::rls\+\_\+cci}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_abcdcf93c252d1317191e9f6319ae1fd4}\label{namespacecanopy__radiation__coms_abcdcf93c252d1317191e9f6319ae1fd4}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!rls\_fbeam@{rls\_fbeam}}
+\index{rls\_fbeam@{rls\_fbeam}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{rls\_fbeam}{rls\_fbeam}}
+{\footnotesize\ttfamily real(kind=4), dimension(\+:,\+:), allocatable canopy\+\_\+radiation\+\_\+coms\+::rls\+\_\+fbeam}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a8a9c246b3703c54c063688a3f31299bb}\label{namespacecanopy__radiation__coms_a8a9c246b3703c54c063688a3f31299bb}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!rls\_igp@{rls\_igp}}
+\index{rls\_igp@{rls\_igp}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{rls\_igp}{rls\_igp}}
+{\footnotesize\ttfamily integer, dimension(\+:,\+:), allocatable canopy\+\_\+radiation\+\_\+coms\+::rls\+\_\+igp}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a6bfe79d4c7f0ecdb1354fb86ef94d5a4}\label{namespacecanopy__radiation__coms_a6bfe79d4c7f0ecdb1354fb86ef94d5a4}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!rls\_igp0@{rls\_igp0}}
+\index{rls\_igp0@{rls\_igp0}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{rls\_igp0}{rls\_igp0}}
+{\footnotesize\ttfamily integer, dimension(\+:,\+:), allocatable canopy\+\_\+radiation\+\_\+coms\+::rls\+\_\+igp0}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a677289231a074feca68e07f8ba8f13b5}\label{namespacecanopy__radiation__coms_a677289231a074feca68e07f8ba8f13b5}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!rls\_ipa@{rls\_ipa}}
+\index{rls\_ipa@{rls\_ipa}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{rls\_ipa}{rls\_ipa}}
+{\footnotesize\ttfamily integer, dimension(\+:,\+:), allocatable canopy\+\_\+radiation\+\_\+coms\+::rls\+\_\+ipa}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_abf56756d0b5d7784d39c984fb365d81e}\label{namespacecanopy__radiation__coms_abf56756d0b5d7784d39c984fb365d81e}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!rls\_length@{rls\_length}}
+\index{rls\_length@{rls\_length}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{rls\_length}{rls\_length}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+radiation\+\_\+coms\+::rls\+\_\+length}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a32ac5546c8bc04a1965df8c5f8ee2c3f}\label{namespacecanopy__radiation__coms_a32ac5546c8bc04a1965df8c5f8ee2c3f}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!rls\_mask@{rls\_mask}}
+\index{rls\_mask@{rls\_mask}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{rls\_mask}{rls\_mask}}
+{\footnotesize\ttfamily logical, dimension(\+:,\+:), allocatable canopy\+\_\+radiation\+\_\+coms\+::rls\+\_\+mask}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a2cbb1997ca81d6dd1146e2eac610f6a6}\label{namespacecanopy__radiation__coms_a2cbb1997ca81d6dd1146e2eac610f6a6}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!rls\_ngap@{rls\_ngap}}
+\index{rls\_ngap@{rls\_ngap}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{rls\_ngap}{rls\_ngap}}
+{\footnotesize\ttfamily integer canopy\+\_\+radiation\+\_\+coms\+::rls\+\_\+ngap}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a746b0303b349133a5e84d3253c61b524}\label{namespacecanopy__radiation__coms_a746b0303b349133a5e84d3253c61b524}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!rls\_npixel@{rls\_npixel}}
+\index{rls\_npixel@{rls\_npixel}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{rls\_npixel}{rls\_npixel}}
+{\footnotesize\ttfamily integer canopy\+\_\+radiation\+\_\+coms\+::rls\+\_\+npixel}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a03b17dc096cdb284692e46aba3460c10}\label{namespacecanopy__radiation__coms_a03b17dc096cdb284692e46aba3460c10}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!rls\_nxy@{rls\_nxy}}
+\index{rls\_nxy@{rls\_nxy}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{rls\_nxy}{rls\_nxy}}
+{\footnotesize\ttfamily integer canopy\+\_\+radiation\+\_\+coms\+::rls\+\_\+nxy}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_ad842954c2b0b1581105e4fa8444666a0}\label{namespacecanopy__radiation__coms_ad842954c2b0b1581105e4fa8444666a0}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!rls\_x@{rls\_x}}
+\index{rls\_x@{rls\_x}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{rls\_x}{rls\_x}}
+{\footnotesize\ttfamily real(kind=4), dimension(\+:,\+:), allocatable canopy\+\_\+radiation\+\_\+coms\+::rls\+\_\+x}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_adb11ffbeb4601d28adef12829912f5b8}\label{namespacecanopy__radiation__coms_adb11ffbeb4601d28adef12829912f5b8}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!rls\_y@{rls\_y}}
+\index{rls\_y@{rls\_y}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{rls\_y}{rls\_y}}
+{\footnotesize\ttfamily real(kind=4), dimension(\+:,\+:), allocatable canopy\+\_\+radiation\+\_\+coms\+::rls\+\_\+y}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a42de34b9b91043b14ac0068485280fb7}\label{namespacecanopy__radiation__coms_a42de34b9b91043b14ac0068485280fb7}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!rls\_ztch@{rls\_ztch}}
+\index{rls\_ztch@{rls\_ztch}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{rls\_ztch}{rls\_ztch}}
+{\footnotesize\ttfamily real(kind=4), dimension(\+:,\+:), allocatable canopy\+\_\+radiation\+\_\+coms\+::rls\+\_\+ztch}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a3a226b3cec6a97cda6b397806da31988}\label{namespacecanopy__radiation__coms_a3a226b3cec6a97cda6b397806da31988}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!rshort\_twilight\_min@{rshort\_twilight\_min}}
+\index{rshort\_twilight\_min@{rshort\_twilight\_min}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{rshort\_twilight\_min}{rshort\_twilight\_min}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+radiation\+\_\+coms\+::rshort\+\_\+twilight\+\_\+min}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a6e9ba20bb9e4cdec42f508154e237a0d}\label{namespacecanopy__radiation__coms_a6e9ba20bb9e4cdec42f508154e237a0d}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!snow\_albedo\_nir@{snow\_albedo\_nir}}
+\index{snow\_albedo\_nir@{snow\_albedo\_nir}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{snow\_albedo\_nir}{snow\_albedo\_nir}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+radiation\+\_\+coms\+::snow\+\_\+albedo\+\_\+nir}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a1cc8ec955321a89af09a5000f559027a}\label{namespacecanopy__radiation__coms_a1cc8ec955321a89af09a5000f559027a}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!snow\_albedo\_vis@{snow\_albedo\_vis}}
+\index{snow\_albedo\_vis@{snow\_albedo\_vis}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{snow\_albedo\_vis}{snow\_albedo\_vis}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+radiation\+\_\+coms\+::snow\+\_\+albedo\+\_\+vis}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_ad1a9ec223aca622a0fd93fe20cf980d5}\label{namespacecanopy__radiation__coms_ad1a9ec223aca622a0fd93fe20cf980d5}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!snow\_emiss\_tir@{snow\_emiss\_tir}}
+\index{snow\_emiss\_tir@{snow\_emiss\_tir}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{snow\_emiss\_tir}{snow\_emiss\_tir}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+radiation\+\_\+coms\+::snow\+\_\+emiss\+\_\+tir}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_af78ebf7d715955c43ea9bdf6dd48dd1d}\label{namespacecanopy__radiation__coms_af78ebf7d715955c43ea9bdf6dd48dd1d}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!wood\_backscatter\_nir@{wood\_backscatter\_nir}}
+\index{wood\_backscatter\_nir@{wood\_backscatter\_nir}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{wood\_backscatter\_nir}{wood\_backscatter\_nir}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) canopy\+\_\+radiation\+\_\+coms\+::wood\+\_\+backscatter\+\_\+nir}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_abd52ebed6eef6a200b0f0635d02910fe}\label{namespacecanopy__radiation__coms_abd52ebed6eef6a200b0f0635d02910fe}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!wood\_backscatter\_tir@{wood\_backscatter\_tir}}
+\index{wood\_backscatter\_tir@{wood\_backscatter\_tir}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{wood\_backscatter\_tir}{wood\_backscatter\_tir}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) canopy\+\_\+radiation\+\_\+coms\+::wood\+\_\+backscatter\+\_\+tir}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a8fa916f5cdac8472a33b13b73dfc2745}\label{namespacecanopy__radiation__coms_a8fa916f5cdac8472a33b13b73dfc2745}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!wood\_backscatter\_vis@{wood\_backscatter\_vis}}
+\index{wood\_backscatter\_vis@{wood\_backscatter\_vis}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{wood\_backscatter\_vis}{wood\_backscatter\_vis}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) canopy\+\_\+radiation\+\_\+coms\+::wood\+\_\+backscatter\+\_\+vis}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a0c1f3270236f47702572f6378dc5c27d}\label{namespacecanopy__radiation__coms_a0c1f3270236f47702572f6378dc5c27d}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!wood\_emiss\_tir@{wood\_emiss\_tir}}
+\index{wood\_emiss\_tir@{wood\_emiss\_tir}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{wood\_emiss\_tir}{wood\_emiss\_tir}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) canopy\+\_\+radiation\+\_\+coms\+::wood\+\_\+emiss\+\_\+tir}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_af020f9ae454b2719750aca108226147e}\label{namespacecanopy__radiation__coms_af020f9ae454b2719750aca108226147e}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!wood\_reflect\_nir@{wood\_reflect\_nir}}
+\index{wood\_reflect\_nir@{wood\_reflect\_nir}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{wood\_reflect\_nir}{wood\_reflect\_nir}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) canopy\+\_\+radiation\+\_\+coms\+::wood\+\_\+reflect\+\_\+nir}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_ae24039da794ebfb5ff7eb9db190a9a1e}\label{namespacecanopy__radiation__coms_ae24039da794ebfb5ff7eb9db190a9a1e}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!wood\_reflect\_vis@{wood\_reflect\_vis}}
+\index{wood\_reflect\_vis@{wood\_reflect\_vis}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{wood\_reflect\_vis}{wood\_reflect\_vis}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) canopy\+\_\+radiation\+\_\+coms\+::wood\+\_\+reflect\+\_\+vis}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_ab34f58c9789b2913a92e5c2d17b7fd6c}\label{namespacecanopy__radiation__coms_ab34f58c9789b2913a92e5c2d17b7fd6c}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!wood\_scatter\_nir@{wood\_scatter\_nir}}
+\index{wood\_scatter\_nir@{wood\_scatter\_nir}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{wood\_scatter\_nir}{wood\_scatter\_nir}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) canopy\+\_\+radiation\+\_\+coms\+::wood\+\_\+scatter\+\_\+nir}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_a9d7ea3e034dbcde978fae2353feae644}\label{namespacecanopy__radiation__coms_a9d7ea3e034dbcde978fae2353feae644}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!wood\_scatter\_vis@{wood\_scatter\_vis}}
+\index{wood\_scatter\_vis@{wood\_scatter\_vis}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{wood\_scatter\_vis}{wood\_scatter\_vis}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) canopy\+\_\+radiation\+\_\+coms\+::wood\+\_\+scatter\+\_\+vis}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_ac71bbd6b94c73251f3181441d9930d48}\label{namespacecanopy__radiation__coms_ac71bbd6b94c73251f3181441d9930d48}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!wood\_trans\_nir@{wood\_trans\_nir}}
+\index{wood\_trans\_nir@{wood\_trans\_nir}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{wood\_trans\_nir}{wood\_trans\_nir}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) canopy\+\_\+radiation\+\_\+coms\+::wood\+\_\+trans\+\_\+nir}
+
+\mbox{\Hypertarget{namespacecanopy__radiation__coms_add3e4a271e770993c7867304bd138bf2}\label{namespacecanopy__radiation__coms_add3e4a271e770993c7867304bd138bf2}} 
+\index{canopy\_radiation\_coms@{canopy\_radiation\_coms}!wood\_trans\_vis@{wood\_trans\_vis}}
+\index{wood\_trans\_vis@{wood\_trans\_vis}!canopy\_radiation\_coms@{canopy\_radiation\_coms}}
+\doxysubsubsection{\texorpdfstring{wood\_trans\_vis}{wood\_trans\_vis}}
+{\footnotesize\ttfamily real(kind=8), dimension(n\+\_\+pft) canopy\+\_\+radiation\+\_\+coms\+::wood\+\_\+trans\+\_\+vis}
+

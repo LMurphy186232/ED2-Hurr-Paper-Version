@@ -1,0 +1,18 @@
+digraph "libxml2f90_tostringa"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="libxml2f90_tostringa",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="libxml2f90_ll_getstring",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libxml2f90_8f90__pp_8f90.html#adbc34014dab0a252a634da0e15d1ae7d",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="libxml2f90__ll_getpstring",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libxml2f90_8f90__pp_8f90.html#a956943680a07e3d0179b205f6209d9cb",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="libxml2f90__ll_getpstring_",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libxml2f90_8f90__pp_8f90.html#ae6434bdc3ab4de456efd90e496483891",tooltip=" "];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="libxml2f90__ll_getstring",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libxml2f90_8f90__pp_8f90.html#ab60330c194bfbef4790a34db8f896d24",tooltip=" "];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="libxml2f90__ll_getstring_",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libxml2f90_8f90__pp_8f90.html#a5a0b5cda999773856f04bc2047a3a95e",tooltip=" "];
+}

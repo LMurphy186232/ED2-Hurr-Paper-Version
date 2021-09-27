@@ -1,0 +1,56 @@
+\hypertarget{namespacehybrid__driver}{}\doxysection{hybrid\+\_\+driver Module Reference}
+\label{namespacehybrid__driver}\index{hybrid\_driver@{hybrid\_driver}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacehybrid__driver_a579b44c8008742b4e1728108d2c7b0d3}{hybrid\+\_\+timestep}} (cgrid)
+\item 
+subroutine \mbox{\hyperlink{namespacehybrid__driver_ad5f85fbe933837294251a604c869f7bb}{hybrid\+\_\+integ}} (h1, csite, yprev, initp, dinitp, ytemp, ipa, isi, ibuff, nsteps)
+\item 
+subroutine \mbox{\hyperlink{namespacehybrid__driver_a72470c753a3eb027c7d2d29d7054526e}{copy\+\_\+initp2prev}} (initp, yprev, cpatch)
+\item 
+subroutine \mbox{\hyperlink{namespacehybrid__driver_a28bce00da4b9cf70f7eb94256a861a86}{copy\+\_\+prev2patch}} (yprev, csite, ipa)
+\item 
+subroutine \mbox{\hyperlink{namespacehybrid__driver_a192e08c05054785887dc5a7eb89ecee6}{copy\+\_\+bdf2\+\_\+prev}} (csite, ipa, yprev)
+\item 
+subroutine \mbox{\hyperlink{namespacehybrid__driver_a29a929e62def349b62862aba5c8a2acc}{fb\+\_\+dy\+\_\+step\+\_\+trunc}} (y, restart\+\_\+step, dydx, h, hmin)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacehybrid__driver_a192e08c05054785887dc5a7eb89ecee6}\label{namespacehybrid__driver_a192e08c05054785887dc5a7eb89ecee6}} 
+\index{hybrid\_driver@{hybrid\_driver}!copy\_bdf2\_prev@{copy\_bdf2\_prev}}
+\index{copy\_bdf2\_prev@{copy\_bdf2\_prev}!hybrid\_driver@{hybrid\_driver}}
+\doxysubsubsection{\texorpdfstring{copy\_bdf2\_prev()}{copy\_bdf2\_prev()}}
+{\footnotesize\ttfamily subroutine hybrid\+\_\+driver\+::copy\+\_\+bdf2\+\_\+prev (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer}]{ipa,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1bdf2patchtype}{bdf2patchtype}}), target}]{yprev }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacehybrid__driver_a72470c753a3eb027c7d2d29d7054526e}\label{namespacehybrid__driver_a72470c753a3eb027c7d2d29d7054526e}} 
+\index{hybrid\_driver@{hybrid\_driver}!copy\_initp2prev@{copy\_initp2prev}}
+\index{copy\_initp2prev@{copy\_initp2prev}!hybrid\_driver@{hybrid\_driver}}
+\doxysubsubsection{\texorpdfstring{copy\_initp2prev()}{copy\_initp2prev()}}
+{\footnotesize\ttfamily subroutine hybrid\+\_\+driver\+::copy\+\_\+initp2prev (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{initp,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1bdf2patchtype}{bdf2patchtype}}), target}]{yprev,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacehybrid__driver_a28bce00da4b9cf70f7eb94256a861a86}\label{namespacehybrid__driver_a28bce00da4b9cf70f7eb94256a861a86}} 
+\index{hybrid\_driver@{hybrid\_driver}!copy\_prev2patch@{copy\_prev2patch}}
+\index{copy\_prev2patch@{copy\_prev2patch}!hybrid\_driver@{hybrid\_driver}}
+\doxysubsubsection{\texorpdfstring{copy\_prev2patch()}{copy\_prev2patch()}}
+{\footnotesize\ttfamily subroutine hybrid\+\_\+driver\+::copy\+\_\+prev2patch (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1bdf2patchtype}{bdf2patchtype}}), target}]{yprev,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer}]{ipa }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacehybrid__driver_a29a929e62def349b62862aba5c8a2acc}\label{namespacehybrid__driver_a29a929e62def349b62862aba5c8a2acc}} 
+\index{hybrid\_driver@{hybrid\_driver}!fb\_dy\_step\_trunc@{fb\_dy\_step\_trunc}}
+\index{fb\_dy\_step\_trunc@{fb\_dy\_step\_trunc}!hybrid\_driver@{hybrid\_driver}}
+\doxysubsubsection{\texorpdfstring{fb\_dy\_step\_trunc()}{fb\_dy\_step\_trunc()}}
+{\footnotesize\ttfamily subroutine hybrid\+\_\+driver\+::fb\+\_\+dy\+\_\+step\+\_\+trunc (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{y,  }\item[{logical}]{restart\+\_\+step,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{dydx,  }\item[{real(kind=8), intent(in)}]{h,  }\item[{real(kind=8), intent(out)}]{hmin }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacehybrid__driver_ad5f85fbe933837294251a604c869f7bb}\label{namespacehybrid__driver_ad5f85fbe933837294251a604c869f7bb}} 
+\index{hybrid\_driver@{hybrid\_driver}!hybrid\_integ@{hybrid\_integ}}
+\index{hybrid\_integ@{hybrid\_integ}!hybrid\_driver@{hybrid\_driver}}
+\doxysubsubsection{\texorpdfstring{hybrid\_integ()}{hybrid\_integ()}}
+{\footnotesize\ttfamily subroutine hybrid\+\_\+driver\+::hybrid\+\_\+integ (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{h1,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1bdf2patchtype}{bdf2patchtype}}), target}]{yprev,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{initp,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{dinitp,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{ytemp,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{isi,  }\item[{integer, intent(in)}]{ibuff,  }\item[{integer, intent(out)}]{nsteps }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacehybrid__driver_a579b44c8008742b4e1728108d2c7b0d3}\label{namespacehybrid__driver_a579b44c8008742b4e1728108d2c7b0d3}} 
+\index{hybrid\_driver@{hybrid\_driver}!hybrid\_timestep@{hybrid\_timestep}}
+\index{hybrid\_timestep@{hybrid\_timestep}!hybrid\_driver@{hybrid\_driver}}
+\doxysubsubsection{\texorpdfstring{hybrid\_timestep()}{hybrid\_timestep()}}
+{\footnotesize\ttfamily subroutine hybrid\+\_\+driver\+::hybrid\+\_\+timestep (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid }\end{DoxyParamCaption})}
+

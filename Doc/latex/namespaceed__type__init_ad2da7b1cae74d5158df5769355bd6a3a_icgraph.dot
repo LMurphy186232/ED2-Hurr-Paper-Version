@@ -1,0 +1,49 @@
+digraph "ed_type_init::init_ed_patch_vars"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="ed_type_init::init\l_ed_patch_vars",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="ed_nbg_init::init_cohorts\l_by_layers",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__nbg__init.html#a57af8a94c755492a5083839151520657",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="ed_nbg_init::near_bare\l_ground_init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__nbg__init.html#a301dee8c90b4ea9c4c259ac7bd6b97eb",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="ed_init::load_ecosystem\l_state",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__init.html#a8181c9f2a37fc0800a7579090f3b3ed0",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="ed_driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__driver_8_f90.html#a5706bd8bee60960fe8166de1870e47da",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$edmain_8_f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="ed_nbg_init::init_nbg\l_cohorts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__nbg__init.html#af7ee94ea15e1a02af41c3e57a2946387",tooltip=" "];
+  Node7 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="disturbance::initialize\l_disturbed_patch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacedisturbance.html#afcbe52e3d9dad6032e95f57f9f9b7664",tooltip=" "];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="disturbance::apply\l_disturbances",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacedisturbance.html#a033dedd1b8c920bd36b6fd04911c4e94",tooltip=" "];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="vegetation_dynamics\l::veg_dynamics_driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacevegetation__dynamics.html#ac0aac7ba29275bab000373bd850a36e6",tooltip=" "];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="ed_model",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__model_8_f90.html#a9804b9ca3fcb1b4e17171d786d50c32c",tooltip="Begins, updates, and outputs results from ecosystem simulation."];
+  Node11 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="ed_nbg_init::near_bare\l_ground_big_leaf_init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__nbg__init.html#a9146f3e54e931abfb8c91e57df8958bc",tooltip=" "];
+  Node12 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="read_ed10_ed20_history_file",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__read__ed10__20__history_8f90.html#ae4e49e107b22c0bb119ee87348e513b8",tooltip=" "];
+  Node13 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="read_ed21_history_file",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__read__ed21__history_8f90.html#ab0faf0a20947c74801841975108b59ba",tooltip=" "];
+  Node14 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="read_ed21_history_unstruct",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__read__ed21__history_8f90.html#a7853e92e8b5f8ed0d9ad31f5259b3b8a",tooltip=" "];
+  Node15 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="read_ed21_polyclone",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__read__ed21__history_8f90.html#a1e9d28328ec655a6bcac03ee1618759a",tooltip=" "];
+  Node16 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node17 [label="ed_bigleaf_init::sas\l_to_bigleaf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__bigleaf__init.html#a45c8aa14d759e66b8b9f2bbe5f240005",tooltip=" "];
+  Node17 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+}

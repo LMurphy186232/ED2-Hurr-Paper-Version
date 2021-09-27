@@ -1,0 +1,35 @@
+digraph "fuse_fiss_utils::split_cohorts"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="fuse_fiss_utils::split\l_cohorts",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="This subroutine will split two cohorts if its LAI has become too large."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="disturbance::apply\l_disturbances",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacedisturbance.html#a033dedd1b8c920bd36b6fd04911c4e94",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="vegetation_dynamics\l::veg_dynamics_driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacevegetation__dynamics.html#ac0aac7ba29275bab000373bd850a36e6",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="ed_model",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__model_8_f90.html#a9804b9ca3fcb1b4e17171d786d50c32c",tooltip="Begins, updates, and outputs results from ecosystem simulation."];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="ed_driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__driver_8_f90.html#a5706bd8bee60960fe8166de1870e47da",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$edmain_8_f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="ed_init_atm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__init__atm_8_f90.html#a67ae59514caf7fea8936bca72628f5ca",tooltip=" "];
+  Node7 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="fuse_fiss_utils::fuse\l_2_patches",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacefuse__fiss__utils.html#a9d06bb3b18a9c6bf45b3cc30b01cb4be",tooltip="This subroutine will merge two patches into 1."];
+  Node8 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="fuse_fiss_utils::new\l_fuse_patches",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacefuse__fiss__utils.html#ab15ffcdcb79ee2bcb69f5a9954ca14ea",tooltip=" "];
+  Node9 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="fuse_fiss_utils::old\l_fuse_patches",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacefuse__fiss__utils.html#a6776a45b5a81e01186fbac86854c6741",tooltip="This subroutine will perform patch fusion based on some similarity criteria to determine whether they..."];
+  Node10 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="reproduction::reproduction\l_driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacereproduction.html#ad090bf9d44a1ad3c3a31ab425e2bfa1f",tooltip=" "];
+  Node11 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+}

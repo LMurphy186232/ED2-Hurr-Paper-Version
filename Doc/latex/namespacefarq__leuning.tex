@@ -1,0 +1,158 @@
+\hypertarget{namespacefarq__leuning}{}\doxysection{farq\+\_\+leuning Module Reference}
+\label{namespacefarq__leuning}\index{farq\_leuning@{farq\_leuning}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacefarq__leuning_a89e869a787663ccf1ad028aa9fecd082}{lphysiol\+\_\+full}} (ib, can\+\_\+prss, can\+\_\+rhos, can\+\_\+shv, can\+\_\+co2, ipft, leaf\+\_\+par, leaf\+\_\+temp, lint\+\_\+shv, green\+\_\+leaf\+\_\+factor, leaf\+\_\+aging\+\_\+factor, vm\+\_\+bar, rd\+\_\+bar, leaf\+\_\+gbw, leaf\+\_\+\+D0, A\+\_\+open, A\+\_\+closed, A\+\_\+light, A\+\_\+rubp, A\+\_\+co2, gsw\+\_\+open, gsw\+\_\+closed, lsfc\+\_\+shv\+\_\+open, lsfc\+\_\+shv\+\_\+closed, lsfc\+\_\+co2\+\_\+open, lsfc\+\_\+co2\+\_\+closed, lint\+\_\+co2\+\_\+open, lint\+\_\+co2\+\_\+closed, leaf\+\_\+resp, vmout, jmout, tpmout, jactout, comppout, limit\+\_\+flag)
+\item 
+subroutine \mbox{\hyperlink{namespacefarq__leuning_ac0af16f48d8d13964a846372ab439de3}{comp\+\_\+photo\+\_\+tempfun}} (ib, leaf\+\_\+aging\+\_\+factor, green\+\_\+leaf\+\_\+factor)
+\item 
+subroutine \mbox{\hyperlink{namespacefarq__leuning_aebae06db9fbb608fd49ae513894b255d}{photosynthesis\+\_\+exact\+\_\+solver}} (ib, limit\+\_\+flag)
+\item 
+subroutine \mbox{\hyperlink{namespacefarq__leuning_a5484de17d595cd019e6d5e927cbbb8a5}{solve\+\_\+aofixed\+\_\+case}} (ib, answer)
+\item 
+subroutine \mbox{\hyperlink{namespacefarq__leuning_a9036a0b26836ca849077cb1bcbb4e95f}{solve\+\_\+iterative\+\_\+case}} (ib, answer)
+\item 
+subroutine \mbox{\hyperlink{namespacefarq__leuning_a20f46f23b3addc63a47019bd81332efe}{set\+\_\+co2\+\_\+demand\+\_\+params}} (ib, whichlim)
+\item 
+subroutine \mbox{\hyperlink{namespacefarq__leuning_af68e8bca4f7bd60cd83ab72744a6720e}{iter\+\_\+solver\+\_\+step}} (ib, newton, lint\+\_\+co2, fun, deriv)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacefarq__leuning_a352557ea036ca11f584af33a1f696474}{calc\+\_\+co2\+\_\+demand}} (ib, lint\+\_\+co2)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacefarq__leuning_a3912662328b4cfc338771dd528ff6689}{calc\+\_\+co2\+\_\+demand\+\_\+prime}} (ib, lint\+\_\+co2, co2\+\_\+demand)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacefarq__leuning_a6cd77053366cf0fc61e79404a5b87470}{calc\+\_\+stom\+\_\+cond\+\_\+h2o}} (ib, lint\+\_\+co2, co2\+\_\+demand)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacefarq__leuning_a055f789b8be750739cb8a2c0a8e2b299}{calc\+\_\+stom\+\_\+cond\+\_\+h2o\+\_\+prime}} (ib, lint\+\_\+co2, stom\+\_\+cond\+\_\+h2o, co2\+\_\+demand, co2\+\_\+demand\+\_\+prime)
+\item 
+subroutine \mbox{\hyperlink{namespacefarq__leuning_a6007b3b48ab79881236b51f00f4ff871}{find\+\_\+lint\+\_\+co2\+\_\+bounds}} (ib, cimin, cimax, bounded)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacefarq__leuning_a6d031c781aa0a5b3a55dd340813a2c33}{arrhenius}} (temp, refval, hor)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacefarq__leuning_ab284bec4bd11bda7c190c6ae2de979fb}{collatz}} (temp, refval, q10)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacefarq__leuning_aefbf45f078479166e415cfd195ef9ddb}{find\+\_\+twilight\+\_\+min}} (ib)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacefarq__leuning_a31a2c362c8646a0912470a61a19135b2}{discard}} = huge(1.d0)
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacefarq__leuning_a544a9b3986d12bf60c748eff03f49665}{tolerfl8}} = toler8
+\item 
+integer, parameter \mbox{\hyperlink{namespacefarq__leuning_ae18ccfcc4ad61a2d80f126c65258fffd}{maxfpofl}} = 320
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacefarq__leuning_a6d031c781aa0a5b3a55dd340813a2c33}\label{namespacefarq__leuning_a6d031c781aa0a5b3a55dd340813a2c33}} 
+\index{farq\_leuning@{farq\_leuning}!arrhenius@{arrhenius}}
+\index{arrhenius@{arrhenius}!farq\_leuning@{farq\_leuning}}
+\doxysubsubsection{\texorpdfstring{arrhenius()}{arrhenius()}}
+{\footnotesize\ttfamily real(kind=8) function farq\+\_\+leuning\+::arrhenius (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{temp,  }\item[{real(kind=8), intent(in)}]{refval,  }\item[{real(kind=8), intent(in)}]{hor }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacefarq__leuning_a352557ea036ca11f584af33a1f696474}\label{namespacefarq__leuning_a352557ea036ca11f584af33a1f696474}} 
+\index{farq\_leuning@{farq\_leuning}!calc\_co2\_demand@{calc\_co2\_demand}}
+\index{calc\_co2\_demand@{calc\_co2\_demand}!farq\_leuning@{farq\_leuning}}
+\doxysubsubsection{\texorpdfstring{calc\_co2\_demand()}{calc\_co2\_demand()}}
+{\footnotesize\ttfamily real(kind=8) function farq\+\_\+leuning\+::calc\+\_\+co2\+\_\+demand (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ib,  }\item[{real(kind=8), intent(in)}]{lint\+\_\+co2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacefarq__leuning_a3912662328b4cfc338771dd528ff6689}\label{namespacefarq__leuning_a3912662328b4cfc338771dd528ff6689}} 
+\index{farq\_leuning@{farq\_leuning}!calc\_co2\_demand\_prime@{calc\_co2\_demand\_prime}}
+\index{calc\_co2\_demand\_prime@{calc\_co2\_demand\_prime}!farq\_leuning@{farq\_leuning}}
+\doxysubsubsection{\texorpdfstring{calc\_co2\_demand\_prime()}{calc\_co2\_demand\_prime()}}
+{\footnotesize\ttfamily real(kind=8) function farq\+\_\+leuning\+::calc\+\_\+co2\+\_\+demand\+\_\+prime (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ib,  }\item[{real(kind=8), intent(in)}]{lint\+\_\+co2,  }\item[{real(kind=8), intent(in)}]{co2\+\_\+demand }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacefarq__leuning_a6cd77053366cf0fc61e79404a5b87470}\label{namespacefarq__leuning_a6cd77053366cf0fc61e79404a5b87470}} 
+\index{farq\_leuning@{farq\_leuning}!calc\_stom\_cond\_h2o@{calc\_stom\_cond\_h2o}}
+\index{calc\_stom\_cond\_h2o@{calc\_stom\_cond\_h2o}!farq\_leuning@{farq\_leuning}}
+\doxysubsubsection{\texorpdfstring{calc\_stom\_cond\_h2o()}{calc\_stom\_cond\_h2o()}}
+{\footnotesize\ttfamily real(kind=8) function farq\+\_\+leuning\+::calc\+\_\+stom\+\_\+cond\+\_\+h2o (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ib,  }\item[{real(kind=8), intent(in)}]{lint\+\_\+co2,  }\item[{real(kind=8), intent(in)}]{co2\+\_\+demand }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacefarq__leuning_a055f789b8be750739cb8a2c0a8e2b299}\label{namespacefarq__leuning_a055f789b8be750739cb8a2c0a8e2b299}} 
+\index{farq\_leuning@{farq\_leuning}!calc\_stom\_cond\_h2o\_prime@{calc\_stom\_cond\_h2o\_prime}}
+\index{calc\_stom\_cond\_h2o\_prime@{calc\_stom\_cond\_h2o\_prime}!farq\_leuning@{farq\_leuning}}
+\doxysubsubsection{\texorpdfstring{calc\_stom\_cond\_h2o\_prime()}{calc\_stom\_cond\_h2o\_prime()}}
+{\footnotesize\ttfamily real(kind=8) function farq\+\_\+leuning\+::calc\+\_\+stom\+\_\+cond\+\_\+h2o\+\_\+prime (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ib,  }\item[{real(kind=8), intent(in)}]{lint\+\_\+co2,  }\item[{real(kind=8), intent(in)}]{stom\+\_\+cond\+\_\+h2o,  }\item[{real(kind=8), intent(in)}]{co2\+\_\+demand,  }\item[{real(kind=8), intent(in)}]{co2\+\_\+demand\+\_\+prime }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacefarq__leuning_ab284bec4bd11bda7c190c6ae2de979fb}\label{namespacefarq__leuning_ab284bec4bd11bda7c190c6ae2de979fb}} 
+\index{farq\_leuning@{farq\_leuning}!collatz@{collatz}}
+\index{collatz@{collatz}!farq\_leuning@{farq\_leuning}}
+\doxysubsubsection{\texorpdfstring{collatz()}{collatz()}}
+{\footnotesize\ttfamily real(kind=8) function farq\+\_\+leuning\+::collatz (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{temp,  }\item[{real(kind=8), intent(in)}]{refval,  }\item[{real(kind=8), intent(in)}]{q10 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacefarq__leuning_ac0af16f48d8d13964a846372ab439de3}\label{namespacefarq__leuning_ac0af16f48d8d13964a846372ab439de3}} 
+\index{farq\_leuning@{farq\_leuning}!comp\_photo\_tempfun@{comp\_photo\_tempfun}}
+\index{comp\_photo\_tempfun@{comp\_photo\_tempfun}!farq\_leuning@{farq\_leuning}}
+\doxysubsubsection{\texorpdfstring{comp\_photo\_tempfun()}{comp\_photo\_tempfun()}}
+{\footnotesize\ttfamily subroutine farq\+\_\+leuning\+::comp\+\_\+photo\+\_\+tempfun (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ib,  }\item[{real(kind=4), intent(in)}]{leaf\+\_\+aging\+\_\+factor,  }\item[{real(kind=4), intent(in)}]{green\+\_\+leaf\+\_\+factor }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacefarq__leuning_a6007b3b48ab79881236b51f00f4ff871}\label{namespacefarq__leuning_a6007b3b48ab79881236b51f00f4ff871}} 
+\index{farq\_leuning@{farq\_leuning}!find\_lint\_co2\_bounds@{find\_lint\_co2\_bounds}}
+\index{find\_lint\_co2\_bounds@{find\_lint\_co2\_bounds}!farq\_leuning@{farq\_leuning}}
+\doxysubsubsection{\texorpdfstring{find\_lint\_co2\_bounds()}{find\_lint\_co2\_bounds()}}
+{\footnotesize\ttfamily subroutine farq\+\_\+leuning\+::find\+\_\+lint\+\_\+co2\+\_\+bounds (\begin{DoxyParamCaption}\item[{integer}]{ib,  }\item[{real(kind=8), intent(out)}]{cimin,  }\item[{real(kind=8), intent(out)}]{cimax,  }\item[{logical, intent(out)}]{bounded }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacefarq__leuning_aefbf45f078479166e415cfd195ef9ddb}\label{namespacefarq__leuning_aefbf45f078479166e415cfd195ef9ddb}} 
+\index{farq\_leuning@{farq\_leuning}!find\_twilight\_min@{find\_twilight\_min}}
+\index{find\_twilight\_min@{find\_twilight\_min}!farq\_leuning@{farq\_leuning}}
+\doxysubsubsection{\texorpdfstring{find\_twilight\_min()}{find\_twilight\_min()}}
+{\footnotesize\ttfamily real(kind=8) function farq\+\_\+leuning\+::find\+\_\+twilight\+\_\+min (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ib }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacefarq__leuning_af68e8bca4f7bd60cd83ab72744a6720e}\label{namespacefarq__leuning_af68e8bca4f7bd60cd83ab72744a6720e}} 
+\index{farq\_leuning@{farq\_leuning}!iter\_solver\_step@{iter\_solver\_step}}
+\index{iter\_solver\_step@{iter\_solver\_step}!farq\_leuning@{farq\_leuning}}
+\doxysubsubsection{\texorpdfstring{iter\_solver\_step()}{iter\_solver\_step()}}
+{\footnotesize\ttfamily subroutine farq\+\_\+leuning\+::iter\+\_\+solver\+\_\+step (\begin{DoxyParamCaption}\item[{integer}]{ib,  }\item[{logical, intent(in)}]{newton,  }\item[{real(kind=8), intent(in)}]{lint\+\_\+co2,  }\item[{real(kind=8), intent(out)}]{fun,  }\item[{real(kind=8), intent(out)}]{deriv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacefarq__leuning_a89e869a787663ccf1ad028aa9fecd082}\label{namespacefarq__leuning_a89e869a787663ccf1ad028aa9fecd082}} 
+\index{farq\_leuning@{farq\_leuning}!lphysiol\_full@{lphysiol\_full}}
+\index{lphysiol\_full@{lphysiol\_full}!farq\_leuning@{farq\_leuning}}
+\doxysubsubsection{\texorpdfstring{lphysiol\_full()}{lphysiol\_full()}}
+{\footnotesize\ttfamily subroutine farq\+\_\+leuning\+::lphysiol\+\_\+full (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ib,  }\item[{real(kind=4), intent(in)}]{can\+\_\+prss,  }\item[{real(kind=4), intent(in)}]{can\+\_\+rhos,  }\item[{real(kind=4), intent(in)}]{can\+\_\+shv,  }\item[{real(kind=4), intent(in)}]{can\+\_\+co2,  }\item[{integer, intent(in)}]{ipft,  }\item[{real(kind=4), intent(in)}]{leaf\+\_\+par,  }\item[{real(kind=4), intent(in)}]{leaf\+\_\+temp,  }\item[{real(kind=4), intent(in)}]{lint\+\_\+shv,  }\item[{real(kind=4), intent(in)}]{green\+\_\+leaf\+\_\+factor,  }\item[{real(kind=4), intent(in)}]{leaf\+\_\+aging\+\_\+factor,  }\item[{real(kind=4), intent(in)}]{vm\+\_\+bar,  }\item[{real(kind=4), intent(in)}]{rd\+\_\+bar,  }\item[{real(kind=4), intent(in)}]{leaf\+\_\+gbw,  }\item[{real(kind=4), intent(in)}]{leaf\+\_\+\+D0,  }\item[{real(kind=4), intent(out)}]{A\+\_\+open,  }\item[{real(kind=4), intent(out)}]{A\+\_\+closed,  }\item[{real(kind=4), intent(out)}]{A\+\_\+light,  }\item[{real(kind=4), intent(out)}]{A\+\_\+rubp,  }\item[{real(kind=4), intent(out)}]{A\+\_\+co2,  }\item[{real(kind=4), intent(out)}]{gsw\+\_\+open,  }\item[{real(kind=4), intent(out)}]{gsw\+\_\+closed,  }\item[{real(kind=4), intent(out)}]{lsfc\+\_\+shv\+\_\+open,  }\item[{real(kind=4), intent(out)}]{lsfc\+\_\+shv\+\_\+closed,  }\item[{real(kind=4), intent(out)}]{lsfc\+\_\+co2\+\_\+open,  }\item[{real(kind=4), intent(out)}]{lsfc\+\_\+co2\+\_\+closed,  }\item[{real(kind=4), intent(out)}]{lint\+\_\+co2\+\_\+open,  }\item[{real(kind=4), intent(out)}]{lint\+\_\+co2\+\_\+closed,  }\item[{real(kind=4), intent(out)}]{leaf\+\_\+resp,  }\item[{real(kind=4), intent(out)}]{vmout,  }\item[{real(kind=4), intent(out)}]{jmout,  }\item[{real(kind=4), intent(out)}]{tpmout,  }\item[{real(kind=4), intent(out)}]{jactout,  }\item[{real(kind=4), intent(out)}]{comppout,  }\item[{integer, intent(out)}]{limit\+\_\+flag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacefarq__leuning_aebae06db9fbb608fd49ae513894b255d}\label{namespacefarq__leuning_aebae06db9fbb608fd49ae513894b255d}} 
+\index{farq\_leuning@{farq\_leuning}!photosynthesis\_exact\_solver@{photosynthesis\_exact\_solver}}
+\index{photosynthesis\_exact\_solver@{photosynthesis\_exact\_solver}!farq\_leuning@{farq\_leuning}}
+\doxysubsubsection{\texorpdfstring{photosynthesis\_exact\_solver()}{photosynthesis\_exact\_solver()}}
+{\footnotesize\ttfamily subroutine farq\+\_\+leuning\+::photosynthesis\+\_\+exact\+\_\+solver (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ib,  }\item[{integer, intent(out)}]{limit\+\_\+flag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacefarq__leuning_a20f46f23b3addc63a47019bd81332efe}\label{namespacefarq__leuning_a20f46f23b3addc63a47019bd81332efe}} 
+\index{farq\_leuning@{farq\_leuning}!set\_co2\_demand\_params@{set\_co2\_demand\_params}}
+\index{set\_co2\_demand\_params@{set\_co2\_demand\_params}!farq\_leuning@{farq\_leuning}}
+\doxysubsubsection{\texorpdfstring{set\_co2\_demand\_params()}{set\_co2\_demand\_params()}}
+{\footnotesize\ttfamily subroutine farq\+\_\+leuning\+::set\+\_\+co2\+\_\+demand\+\_\+params (\begin{DoxyParamCaption}\item[{integer}]{ib,  }\item[{character(len=$\ast$), intent(in)}]{whichlim }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacefarq__leuning_a5484de17d595cd019e6d5e927cbbb8a5}\label{namespacefarq__leuning_a5484de17d595cd019e6d5e927cbbb8a5}} 
+\index{farq\_leuning@{farq\_leuning}!solve\_aofixed\_case@{solve\_aofixed\_case}}
+\index{solve\_aofixed\_case@{solve\_aofixed\_case}!farq\_leuning@{farq\_leuning}}
+\doxysubsubsection{\texorpdfstring{solve\_aofixed\_case()}{solve\_aofixed\_case()}}
+{\footnotesize\ttfamily subroutine farq\+\_\+leuning\+::solve\+\_\+aofixed\+\_\+case (\begin{DoxyParamCaption}\item[{integer}]{ib,  }\item[{type(\mbox{\hyperlink{structc34constants_1_1solution__vars}{solution\+\_\+vars}}), intent(out)}]{answer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacefarq__leuning_a9036a0b26836ca849077cb1bcbb4e95f}\label{namespacefarq__leuning_a9036a0b26836ca849077cb1bcbb4e95f}} 
+\index{farq\_leuning@{farq\_leuning}!solve\_iterative\_case@{solve\_iterative\_case}}
+\index{solve\_iterative\_case@{solve\_iterative\_case}!farq\_leuning@{farq\_leuning}}
+\doxysubsubsection{\texorpdfstring{solve\_iterative\_case()}{solve\_iterative\_case()}}
+{\footnotesize\ttfamily subroutine farq\+\_\+leuning\+::solve\+\_\+iterative\+\_\+case (\begin{DoxyParamCaption}\item[{integer}]{ib,  }\item[{type(\mbox{\hyperlink{structc34constants_1_1solution__vars}{solution\+\_\+vars}}), intent(out)}]{answer }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacefarq__leuning_a31a2c362c8646a0912470a61a19135b2}\label{namespacefarq__leuning_a31a2c362c8646a0912470a61a19135b2}} 
+\index{farq\_leuning@{farq\_leuning}!discard@{discard}}
+\index{discard@{discard}!farq\_leuning@{farq\_leuning}}
+\doxysubsubsection{\texorpdfstring{discard}{discard}}
+{\footnotesize\ttfamily real(kind=8), parameter farq\+\_\+leuning\+::discard = huge(1.d0)}
+
+\mbox{\Hypertarget{namespacefarq__leuning_ae18ccfcc4ad61a2d80f126c65258fffd}\label{namespacefarq__leuning_ae18ccfcc4ad61a2d80f126c65258fffd}} 
+\index{farq\_leuning@{farq\_leuning}!maxfpofl@{maxfpofl}}
+\index{maxfpofl@{maxfpofl}!farq\_leuning@{farq\_leuning}}
+\doxysubsubsection{\texorpdfstring{maxfpofl}{maxfpofl}}
+{\footnotesize\ttfamily integer, parameter farq\+\_\+leuning\+::maxfpofl = 320}
+
+\mbox{\Hypertarget{namespacefarq__leuning_a544a9b3986d12bf60c748eff03f49665}\label{namespacefarq__leuning_a544a9b3986d12bf60c748eff03f49665}} 
+\index{farq\_leuning@{farq\_leuning}!tolerfl8@{tolerfl8}}
+\index{tolerfl8@{tolerfl8}!farq\_leuning@{farq\_leuning}}
+\doxysubsubsection{\texorpdfstring{tolerfl8}{tolerfl8}}
+{\footnotesize\ttfamily real(kind=8), parameter farq\+\_\+leuning\+::tolerfl8 = toler8}
+

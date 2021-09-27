@@ -1,0 +1,27 @@
+digraph "fuse_fiss_utils::check_bfusion_patch"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="fuse_fiss_utils::check\l_bfusion_patch",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="budget_utils::compute\l_carbon_storage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacebudget__utils.html#aae1acee2098d96865b520dcbc6ada434",tooltip=" "];
+  Node2 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="budget_utils::compute\l_co2_storage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacebudget__utils.html#aa1c4f8466010b1673f2914f1bfe9b6ee",tooltip=" "];
+  Node3 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="budget_utils::compute\l_enthalpy_storage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacebudget__utils.html#a4bf8fb1787cd267703fc7b8f6ab3a260",tooltip=" "];
+  Node4 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="therm_lib::tq2enthalpy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacetherm__lib.html#addd05382298a8487d09d7f6e2664dd62",tooltip=" "];
+  Node5 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="budget_utils::compute\l_water_storage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacebudget__utils.html#a6910e7531481831c25b2ce9f543b8e8b",tooltip=" "];
+  Node6 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="fatal_error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fatal__error_8_f90.html#a2a2bff228716ab48a81c795b348d1665",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

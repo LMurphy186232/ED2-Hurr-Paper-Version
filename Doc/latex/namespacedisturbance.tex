@@ -1,0 +1,80 @@
+\hypertarget{namespacedisturbance}{}\doxysection{disturbance Module Reference}
+\label{namespacedisturbance}\index{disturbance@{disturbance}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacedisturbance_a033dedd1b8c920bd36b6fd04911c4e94}{apply\+\_\+disturbances}} (cgrid)
+\item 
+subroutine \mbox{\hyperlink{namespacedisturbance_a4da16dafd0f3facecf3291339434ef85}{site\+\_\+disturbance\+\_\+rates}} (year, cgrid)
+\item 
+subroutine \mbox{\hyperlink{namespacedisturbance_afcbe52e3d9dad6032e95f57f9f9b7664}{initialize\+\_\+disturbed\+\_\+patch}} (csite, np, lsl)
+\item 
+subroutine \mbox{\hyperlink{namespacedisturbance_ab33ac0d51075802826da5aea14a1f041}{increment\+\_\+patch\+\_\+vars}} (csite, np, cp, area\+\_\+fac, cb\+\_\+enthalpy, can\+\_\+exner, cb\+\_\+mass, cb\+\_\+molar, cb\+\_\+water, cb\+\_\+co2)
+\item 
+subroutine \mbox{\hyperlink{namespacedisturbance_a0f0f927fe7a75b128bea9a15d726d8cf}{norm\+\_\+canopy\+\_\+air\+\_\+props}} (csite, ipa, cb\+\_\+enthalpy, can\+\_\+exner, cb\+\_\+mass, cb\+\_\+molar, cb\+\_\+water, cb\+\_\+co2)
+\item 
+subroutine \mbox{\hyperlink{namespacedisturbance_ad9601a2559ba648f252932de2f588499}{insert\+\_\+survivors}} (csite, np, cp, new\+\_\+lu, area\+\_\+fac, mindbh\+\_\+harvest)
+\item 
+subroutine \mbox{\hyperlink{namespacedisturbance_a44269a58cefbf3d36c9a59d092540c04}{accum\+\_\+dist\+\_\+harv\+\_\+litt}} (cpoly, isi, census\+\_\+flag, np, cp, new\+\_\+lu, area\+\_\+fac, mindbh\+\_\+harvest)
+\item 
+subroutine \mbox{\hyperlink{namespacedisturbance_ab9582ce139b127edbddc824c2d9f1df3}{plant\+\_\+patch}} (csite, np, mzg, pft, density, ntext\+\_\+soil, height\+\_\+factor, lsl)
+\item 
+subroutine \mbox{\hyperlink{namespacedisturbance_a1999d953face6c955cc832c0c9e4f223}{prune\+\_\+lianas}} (csite, np, lsl)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacedisturbance_a44269a58cefbf3d36c9a59d092540c04}\label{namespacedisturbance_a44269a58cefbf3d36c9a59d092540c04}} 
+\index{disturbance@{disturbance}!accum\_dist\_harv\_litt@{accum\_dist\_harv\_litt}}
+\index{accum\_dist\_harv\_litt@{accum\_dist\_harv\_litt}!disturbance@{disturbance}}
+\doxysubsubsection{\texorpdfstring{accum\_dist\_harv\_litt()}{accum\_dist\_harv\_litt()}}
+{\footnotesize\ttfamily subroutine disturbance\+::accum\+\_\+dist\+\_\+harv\+\_\+litt (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1polygontype}{polygontype}}), target}]{cpoly,  }\item[{integer, intent(in)}]{isi,  }\item[{integer, intent(in)}]{census\+\_\+flag,  }\item[{integer, intent(in)}]{np,  }\item[{integer, intent(in)}]{cp,  }\item[{integer, intent(in)}]{new\+\_\+lu,  }\item[{real, intent(in)}]{area\+\_\+fac,  }\item[{real, dimension(n\+\_\+pft), intent(in)}]{mindbh\+\_\+harvest }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedisturbance_a033dedd1b8c920bd36b6fd04911c4e94}\label{namespacedisturbance_a033dedd1b8c920bd36b6fd04911c4e94}} 
+\index{disturbance@{disturbance}!apply\_disturbances@{apply\_disturbances}}
+\index{apply\_disturbances@{apply\_disturbances}!disturbance@{disturbance}}
+\doxysubsubsection{\texorpdfstring{apply\_disturbances()}{apply\_disturbances()}}
+{\footnotesize\ttfamily subroutine disturbance\+::apply\+\_\+disturbances (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedisturbance_ab33ac0d51075802826da5aea14a1f041}\label{namespacedisturbance_ab33ac0d51075802826da5aea14a1f041}} 
+\index{disturbance@{disturbance}!increment\_patch\_vars@{increment\_patch\_vars}}
+\index{increment\_patch\_vars@{increment\_patch\_vars}!disturbance@{disturbance}}
+\doxysubsubsection{\texorpdfstring{increment\_patch\_vars()}{increment\_patch\_vars()}}
+{\footnotesize\ttfamily subroutine disturbance\+::increment\+\_\+patch\+\_\+vars (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{np,  }\item[{integer, intent(in)}]{cp,  }\item[{real, intent(in)}]{area\+\_\+fac,  }\item[{real, intent(inout)}]{cb\+\_\+enthalpy,  }\item[{real, intent(inout)}]{can\+\_\+exner,  }\item[{real, intent(inout)}]{cb\+\_\+mass,  }\item[{real, intent(inout)}]{cb\+\_\+molar,  }\item[{real, intent(inout)}]{cb\+\_\+water,  }\item[{real, intent(inout)}]{cb\+\_\+co2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedisturbance_afcbe52e3d9dad6032e95f57f9f9b7664}\label{namespacedisturbance_afcbe52e3d9dad6032e95f57f9f9b7664}} 
+\index{disturbance@{disturbance}!initialize\_disturbed\_patch@{initialize\_disturbed\_patch}}
+\index{initialize\_disturbed\_patch@{initialize\_disturbed\_patch}!disturbance@{disturbance}}
+\doxysubsubsection{\texorpdfstring{initialize\_disturbed\_patch()}{initialize\_disturbed\_patch()}}
+{\footnotesize\ttfamily subroutine disturbance\+::initialize\+\_\+disturbed\+\_\+patch (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{np,  }\item[{integer, intent(in)}]{lsl }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedisturbance_ad9601a2559ba648f252932de2f588499}\label{namespacedisturbance_ad9601a2559ba648f252932de2f588499}} 
+\index{disturbance@{disturbance}!insert\_survivors@{insert\_survivors}}
+\index{insert\_survivors@{insert\_survivors}!disturbance@{disturbance}}
+\doxysubsubsection{\texorpdfstring{insert\_survivors()}{insert\_survivors()}}
+{\footnotesize\ttfamily subroutine disturbance\+::insert\+\_\+survivors (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{np,  }\item[{integer, intent(in)}]{cp,  }\item[{integer, intent(in)}]{new\+\_\+lu,  }\item[{real, intent(in)}]{area\+\_\+fac,  }\item[{real, dimension(n\+\_\+pft), intent(in)}]{mindbh\+\_\+harvest }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedisturbance_a0f0f927fe7a75b128bea9a15d726d8cf}\label{namespacedisturbance_a0f0f927fe7a75b128bea9a15d726d8cf}} 
+\index{disturbance@{disturbance}!norm\_canopy\_air\_props@{norm\_canopy\_air\_props}}
+\index{norm\_canopy\_air\_props@{norm\_canopy\_air\_props}!disturbance@{disturbance}}
+\doxysubsubsection{\texorpdfstring{norm\_canopy\_air\_props()}{norm\_canopy\_air\_props()}}
+{\footnotesize\ttfamily subroutine disturbance\+::norm\+\_\+canopy\+\_\+air\+\_\+props (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{real, intent(in)}]{cb\+\_\+enthalpy,  }\item[{real, intent(in)}]{can\+\_\+exner,  }\item[{real, intent(in)}]{cb\+\_\+mass,  }\item[{real, intent(in)}]{cb\+\_\+molar,  }\item[{real, intent(in)}]{cb\+\_\+water,  }\item[{real, intent(in)}]{cb\+\_\+co2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedisturbance_ab9582ce139b127edbddc824c2d9f1df3}\label{namespacedisturbance_ab9582ce139b127edbddc824c2d9f1df3}} 
+\index{disturbance@{disturbance}!plant\_patch@{plant\_patch}}
+\index{plant\_patch@{plant\_patch}!disturbance@{disturbance}}
+\doxysubsubsection{\texorpdfstring{plant\_patch()}{plant\_patch()}}
+{\footnotesize\ttfamily subroutine disturbance\+::plant\+\_\+patch (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{np,  }\item[{integer, intent(in)}]{mzg,  }\item[{integer, intent(in)}]{pft,  }\item[{real, intent(in)}]{density,  }\item[{integer, dimension(mzg), intent(in)}]{ntext\+\_\+soil,  }\item[{real, intent(in)}]{height\+\_\+factor,  }\item[{integer, intent(in)}]{lsl }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedisturbance_a1999d953face6c955cc832c0c9e4f223}\label{namespacedisturbance_a1999d953face6c955cc832c0c9e4f223}} 
+\index{disturbance@{disturbance}!prune\_lianas@{prune\_lianas}}
+\index{prune\_lianas@{prune\_lianas}!disturbance@{disturbance}}
+\doxysubsubsection{\texorpdfstring{prune\_lianas()}{prune\_lianas()}}
+{\footnotesize\ttfamily subroutine disturbance\+::prune\+\_\+lianas (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{np,  }\item[{integer, intent(in)}]{lsl }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedisturbance_a4da16dafd0f3facecf3291339434ef85}\label{namespacedisturbance_a4da16dafd0f3facecf3291339434ef85}} 
+\index{disturbance@{disturbance}!site\_disturbance\_rates@{site\_disturbance\_rates}}
+\index{site\_disturbance\_rates@{site\_disturbance\_rates}!disturbance@{disturbance}}
+\doxysubsubsection{\texorpdfstring{site\_disturbance\_rates()}{site\_disturbance\_rates()}}
+{\footnotesize\ttfamily subroutine disturbance\+::site\+\_\+disturbance\+\_\+rates (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{year,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid }\end{DoxyParamCaption})}
+

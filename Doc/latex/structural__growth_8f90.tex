@@ -1,0 +1,20 @@
+\hypertarget{structural__growth_8f90}{}\doxysection{structural\+\_\+growth.\+f90 File Reference}
+\label{structural__growth_8f90}\index{structural\_growth.f90@{structural\_growth.f90}}
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacestructural__growth}{structural\+\_\+growth}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacestructural__growth_a469170de4bcc0161752017f5904a1939}{structural\+\_\+growth\+::dbstruct\+\_\+dt}} (cgrid, veget\+\_\+dyn\+\_\+on, new\+\_\+year)
+\item 
+subroutine \mbox{\hyperlink{namespacestructural__growth_ac374f41078648b979846d72bb20c078e}{structural\+\_\+growth\+::plant\+\_\+structural\+\_\+allocation}} (ipft, hite, dbh, lat, phen\+\_\+status, elongf, bdeada, bdeadb, bstorage, bstorage\+\_\+reserve, maxh, f\+\_\+bseeds, f\+\_\+growth, f\+\_\+bstorage)
+\begin{DoxyCompactList}\small\item\em This subroutine will decide the partition of storage biomass into seeds and dead (structural) biomass. Modified by Lora Murphy to take into account the possibility that a cohort will be off allometry (height is less than expected for DBH). If this is the case, all storage carbon will go to restoring height first, before other structural growth or reproduction. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacestructural__growth_acd0090ed3f15ad8b8f09e52ae37bbb3a}{structural\+\_\+growth\+::bdead\+\_\+structural\+\_\+allocation}} (ipft, bstorage\+\_\+in, bleaf\+\_\+in, broot\+\_\+in, bsapwooda\+\_\+in, bsapwoodb\+\_\+in, bbarka\+\_\+in, bbarkb\+\_\+in, bdeada\+\_\+in, bdeadb\+\_\+in, bevery\+\_\+in, f\+\_\+bstorage, f\+\_\+growth, f\+\_\+bdeada, f\+\_\+bdeadb)
+\item 
+subroutine \mbox{\hyperlink{namespacestructural__growth_a6dd3c456d57f7d8963141637a24a58ad}{structural\+\_\+growth\+::check\+\_\+bstruct\+\_\+cohort}} (csite, ipa, ico, bleaf\+\_\+in, broot\+\_\+in, bsapwooda\+\_\+in, bsapwoodb\+\_\+in, bbarka\+\_\+in, bbarkb\+\_\+in, balive\+\_\+in, bstorage\+\_\+in, bdeada\+\_\+in, bdeadb\+\_\+in, f\+\_\+bseeds, f\+\_\+growth, f\+\_\+bdeada, f\+\_\+bdeadb, f\+\_\+bstorage, carbon\+\_\+miss)
+\item 
+subroutine \mbox{\hyperlink{namespacestructural__growth_a0490eb046aa6a8de8c11e3563d88e50e}{structural\+\_\+growth\+::check\+\_\+bstruct\+\_\+patch}} (csite, ipa, fgc\+\_\+in\+\_\+in, fsc\+\_\+in\+\_\+in, stgc\+\_\+in\+\_\+in, stsc\+\_\+in\+\_\+in, pat\+\_\+balive\+\_\+in, pat\+\_\+bdead\+\_\+in, pat\+\_\+bstorage\+\_\+in, pat\+\_\+carbon\+\_\+miss, pat\+\_\+mortality)
+\end{DoxyCompactItemize}

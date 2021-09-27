@@ -1,0 +1,20 @@
+digraph "ed_state_vars::copy_patchtype_mask"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ed_state_vars::copy\l_patchtype_mask",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Copies part of cohorts from one place to another. (only the ones where mask is .true...."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="ed_state_vars::copy\l_patchtype_mask_dmean",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__state__vars.html#a411d90a5fd9b3a25fdb7d149637db7e2",tooltip="Copies the cohort-level variables that are dmean."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="ed_state_vars::copy\l_patchtype_mask_fmean",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__state__vars.html#a2db3f30821599bfbbc83fb91bd0b00b5",tooltip="Copies the cohort-level variables that are fmean."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="ed_state_vars::copy\l_patchtype_mask_inst",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__state__vars.html#a33fc63e73e6503b7c1dd90af0d954c8f",tooltip="Copies the cohort-level variables that are not fmean, dmean, mmean, mmsqu, qmean, and qmsqu."];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="ed_state_vars::copy\l_patchtype_mask_mmean",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__state__vars.html#a2be9e087d841d6e931fa8fb6648a2a56",tooltip="Copies the cohort-level variables that are mmean or mmsqu."];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="ed_state_vars::copy\l_patchtype_mask_qmean",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__state__vars.html#aa8cec33a472499c3e80bc1a281c9eba0",tooltip="Copies the cohort-level variables that are qmean or qmsqu."];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="fatal_error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fatal__error_8_f90.html#a2a2bff228716ab48a81c795b348d1665",tooltip=" "];
+}

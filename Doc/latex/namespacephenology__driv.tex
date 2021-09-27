@@ -1,0 +1,56 @@
+\hypertarget{namespacephenology__driv}{}\doxysection{phenology\+\_\+driv Module Reference}
+\label{namespacephenology__driv}\index{phenology\_driv@{phenology\_driv}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacephenology__driv_a263e9113f254ff58fb5aebe03ee8e777}{phenology\+\_\+driver}} (cgrid, doy, month, tfact, veget\+\_\+dyn\+\_\+on)
+\item 
+subroutine \mbox{\hyperlink{namespacephenology__driv_ab69220ca184edd9fea298b5906e139a9}{update\+\_\+phenology}} (doy, cpoly, isi, lat, veget\+\_\+dyn\+\_\+on)
+\item 
+subroutine \mbox{\hyperlink{namespacephenology__driv_a3b7effaca821bcbe2bf027b0032355aa}{phenology\+\_\+thresholds}} (daylight, soil\+\_\+temp, sum\+\_\+chd, sum\+\_\+dgd, drop\+\_\+cold, leaf\+\_\+out\+\_\+cold)
+\item 
+subroutine \mbox{\hyperlink{namespacephenology__driv_a01df3005229f609d3f5ef4e306d6ceb9}{assign\+\_\+prescribed\+\_\+phen}} (green\+\_\+leaf\+\_\+factor, leaf\+\_\+aging\+\_\+factor, dbh, height, sla, pft, drop\+\_\+cold, leaf\+\_\+out\+\_\+cold, bl\+\_\+max)
+\item 
+subroutine \mbox{\hyperlink{namespacephenology__driv_ae839ab531c7d48a8d05f70e709f4cc95}{check\+\_\+bphen\+\_\+cohort}} (csite, ipa, ico, bleaf\+\_\+in, broot\+\_\+in, bstorage\+\_\+in, green\+\_\+leaf\+\_\+factor, carbon\+\_\+miss)
+\item 
+subroutine \mbox{\hyperlink{namespacephenology__driv_a33c0bcb5be196d4b84bb95e2f5a4894e}{check\+\_\+bphen\+\_\+patch}} (csite, ipa, fgc\+\_\+in\+\_\+in, stgc\+\_\+in\+\_\+in, fsc\+\_\+in\+\_\+in, stsc\+\_\+in\+\_\+in, pat\+\_\+bleaf\+\_\+in, pat\+\_\+broot\+\_\+in, pat\+\_\+bstorage\+\_\+in, pat\+\_\+carbon\+\_\+miss)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacephenology__driv_a01df3005229f609d3f5ef4e306d6ceb9}\label{namespacephenology__driv_a01df3005229f609d3f5ef4e306d6ceb9}} 
+\index{phenology\_driv@{phenology\_driv}!assign\_prescribed\_phen@{assign\_prescribed\_phen}}
+\index{assign\_prescribed\_phen@{assign\_prescribed\_phen}!phenology\_driv@{phenology\_driv}}
+\doxysubsubsection{\texorpdfstring{assign\_prescribed\_phen()}{assign\_prescribed\_phen()}}
+{\footnotesize\ttfamily subroutine phenology\+\_\+driv\+::assign\+\_\+prescribed\+\_\+phen (\begin{DoxyParamCaption}\item[{real, intent(in)}]{green\+\_\+leaf\+\_\+factor,  }\item[{real, intent(in)}]{leaf\+\_\+aging\+\_\+factor,  }\item[{real, intent(in)}]{dbh,  }\item[{real, intent(in)}]{height,  }\item[{real, intent(in)}]{sla,  }\item[{integer, intent(in)}]{pft,  }\item[{logical, intent(out)}]{drop\+\_\+cold,  }\item[{logical, intent(out)}]{leaf\+\_\+out\+\_\+cold,  }\item[{real, intent(out)}]{bl\+\_\+max }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacephenology__driv_ae839ab531c7d48a8d05f70e709f4cc95}\label{namespacephenology__driv_ae839ab531c7d48a8d05f70e709f4cc95}} 
+\index{phenology\_driv@{phenology\_driv}!check\_bphen\_cohort@{check\_bphen\_cohort}}
+\index{check\_bphen\_cohort@{check\_bphen\_cohort}!phenology\_driv@{phenology\_driv}}
+\doxysubsubsection{\texorpdfstring{check\_bphen\_cohort()}{check\_bphen\_cohort()}}
+{\footnotesize\ttfamily subroutine phenology\+\_\+driv\+::check\+\_\+bphen\+\_\+cohort (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{ico,  }\item[{real, intent(in)}]{bleaf\+\_\+in,  }\item[{real, intent(in)}]{broot\+\_\+in,  }\item[{real, intent(in)}]{bstorage\+\_\+in,  }\item[{real, intent(in)}]{green\+\_\+leaf\+\_\+factor,  }\item[{real, intent(out)}]{carbon\+\_\+miss }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacephenology__driv_a33c0bcb5be196d4b84bb95e2f5a4894e}\label{namespacephenology__driv_a33c0bcb5be196d4b84bb95e2f5a4894e}} 
+\index{phenology\_driv@{phenology\_driv}!check\_bphen\_patch@{check\_bphen\_patch}}
+\index{check\_bphen\_patch@{check\_bphen\_patch}!phenology\_driv@{phenology\_driv}}
+\doxysubsubsection{\texorpdfstring{check\_bphen\_patch()}{check\_bphen\_patch()}}
+{\footnotesize\ttfamily subroutine phenology\+\_\+driv\+::check\+\_\+bphen\+\_\+patch (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{real, intent(in)}]{fgc\+\_\+in\+\_\+in,  }\item[{real, intent(in)}]{stgc\+\_\+in\+\_\+in,  }\item[{real, intent(in)}]{fsc\+\_\+in\+\_\+in,  }\item[{real, intent(in)}]{stsc\+\_\+in\+\_\+in,  }\item[{real, intent(in)}]{pat\+\_\+bleaf\+\_\+in,  }\item[{real, intent(in)}]{pat\+\_\+broot\+\_\+in,  }\item[{real, intent(in)}]{pat\+\_\+bstorage\+\_\+in,  }\item[{real, intent(in)}]{pat\+\_\+carbon\+\_\+miss }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacephenology__driv_a263e9113f254ff58fb5aebe03ee8e777}\label{namespacephenology__driv_a263e9113f254ff58fb5aebe03ee8e777}} 
+\index{phenology\_driv@{phenology\_driv}!phenology\_driver@{phenology\_driver}}
+\index{phenology\_driver@{phenology\_driver}!phenology\_driv@{phenology\_driv}}
+\doxysubsubsection{\texorpdfstring{phenology\_driver()}{phenology\_driver()}}
+{\footnotesize\ttfamily subroutine phenology\+\_\+driv\+::phenology\+\_\+driver (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{integer, intent(in)}]{doy,  }\item[{integer, intent(in)}]{month,  }\item[{real, intent(in)}]{tfact,  }\item[{logical, intent(in)}]{veget\+\_\+dyn\+\_\+on }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacephenology__driv_a3b7effaca821bcbe2bf027b0032355aa}\label{namespacephenology__driv_a3b7effaca821bcbe2bf027b0032355aa}} 
+\index{phenology\_driv@{phenology\_driv}!phenology\_thresholds@{phenology\_thresholds}}
+\index{phenology\_thresholds@{phenology\_thresholds}!phenology\_driv@{phenology\_driv}}
+\doxysubsubsection{\texorpdfstring{phenology\_thresholds()}{phenology\_thresholds()}}
+{\footnotesize\ttfamily subroutine phenology\+\_\+driv\+::phenology\+\_\+thresholds (\begin{DoxyParamCaption}\item[{real, intent(in)}]{daylight,  }\item[{real, intent(in)}]{soil\+\_\+temp,  }\item[{real, intent(inout)}]{sum\+\_\+chd,  }\item[{real, intent(inout)}]{sum\+\_\+dgd,  }\item[{logical, intent(out)}]{drop\+\_\+cold,  }\item[{logical, intent(out)}]{leaf\+\_\+out\+\_\+cold }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacephenology__driv_ab69220ca184edd9fea298b5906e139a9}\label{namespacephenology__driv_ab69220ca184edd9fea298b5906e139a9}} 
+\index{phenology\_driv@{phenology\_driv}!update\_phenology@{update\_phenology}}
+\index{update\_phenology@{update\_phenology}!phenology\_driv@{phenology\_driv}}
+\doxysubsubsection{\texorpdfstring{update\_phenology()}{update\_phenology()}}
+{\footnotesize\ttfamily subroutine phenology\+\_\+driv\+::update\+\_\+phenology (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{doy,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1polygontype}{polygontype}}), target}]{cpoly,  }\item[{integer, intent(in)}]{isi,  }\item[{real, intent(in)}]{lat,  }\item[{logical, intent(in)}]{veget\+\_\+dyn\+\_\+on }\end{DoxyParamCaption})}
+

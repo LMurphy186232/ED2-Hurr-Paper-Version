@@ -1,0 +1,55 @@
+\hypertarget{namespaceed__nbg__init}{}\doxysection{ed\+\_\+nbg\+\_\+init Module Reference}
+\label{namespaceed__nbg__init}\index{ed\_nbg\_init@{ed\_nbg\_init}}
+
+
+Sub-\/routines that will initialise ED-\/2 with near-\/bare ground conditions.  
+
+
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceed__nbg__init_a301dee8c90b4ea9c4c259ac7bd6b97eb}{near\+\_\+bare\+\_\+ground\+\_\+init}} (cgrid)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__nbg__init_af7ee94ea15e1a02af41c3e57a2946387}{init\+\_\+nbg\+\_\+cohorts}} (csite, lsl, ipa\+\_\+a, ipa\+\_\+z, mzg, ntext\+\_\+soil)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__nbg__init_a57af8a94c755492a5083839151520657}{init\+\_\+cohorts\+\_\+by\+\_\+layers}} (csite, lsl, ipa\+\_\+a, ipa\+\_\+z, mzg, ntext\+\_\+soil)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__nbg__init_a9146f3e54e931abfb8c91e57df8958bc}{near\+\_\+bare\+\_\+ground\+\_\+big\+\_\+leaf\+\_\+init}} (cgrid)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sub-\/routines that will initialise ED-\/2 with near-\/bare ground conditions. 
+
+A group of sub-\/routines that provide initial near-\/bare ground conditions for three cases\+: standard ED simulation, \char`\"{}big-\/leaf\char`\"{} ED, and test with fixed layers (for code testing only). \begin{DoxyAuthor}{Author}
+11 Oct 2017 Turned file into a module, Manfredo di Porcia e Brugnera 
+
+18 Oct 2017 Minor changes to include bark as an active tissue, and to 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespaceed__nbg__init_a57af8a94c755492a5083839151520657}\label{namespaceed__nbg__init_a57af8a94c755492a5083839151520657}} 
+\index{ed\_nbg\_init@{ed\_nbg\_init}!init\_cohorts\_by\_layers@{init\_cohorts\_by\_layers}}
+\index{init\_cohorts\_by\_layers@{init\_cohorts\_by\_layers}!ed\_nbg\_init@{ed\_nbg\_init}}
+\doxysubsubsection{\texorpdfstring{init\_cohorts\_by\_layers()}{init\_cohorts\_by\_layers()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+nbg\+\_\+init\+::init\+\_\+cohorts\+\_\+by\+\_\+layers (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{lsl,  }\item[{integer, intent(in)}]{ipa\+\_\+a,  }\item[{integer, intent(in)}]{ipa\+\_\+z,  }\item[{integer, intent(in)}]{mzg,  }\item[{integer, dimension(mzg), intent(in)}]{ntext\+\_\+soil }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__nbg__init_af7ee94ea15e1a02af41c3e57a2946387}\label{namespaceed__nbg__init_af7ee94ea15e1a02af41c3e57a2946387}} 
+\index{ed\_nbg\_init@{ed\_nbg\_init}!init\_nbg\_cohorts@{init\_nbg\_cohorts}}
+\index{init\_nbg\_cohorts@{init\_nbg\_cohorts}!ed\_nbg\_init@{ed\_nbg\_init}}
+\doxysubsubsection{\texorpdfstring{init\_nbg\_cohorts()}{init\_nbg\_cohorts()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+nbg\+\_\+init\+::init\+\_\+nbg\+\_\+cohorts (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{lsl,  }\item[{integer, intent(in)}]{ipa\+\_\+a,  }\item[{integer, intent(in)}]{ipa\+\_\+z,  }\item[{integer, intent(in)}]{mzg,  }\item[{integer, dimension(mzg), intent(in)}]{ntext\+\_\+soil }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__nbg__init_a9146f3e54e931abfb8c91e57df8958bc}\label{namespaceed__nbg__init_a9146f3e54e931abfb8c91e57df8958bc}} 
+\index{ed\_nbg\_init@{ed\_nbg\_init}!near\_bare\_ground\_big\_leaf\_init@{near\_bare\_ground\_big\_leaf\_init}}
+\index{near\_bare\_ground\_big\_leaf\_init@{near\_bare\_ground\_big\_leaf\_init}!ed\_nbg\_init@{ed\_nbg\_init}}
+\doxysubsubsection{\texorpdfstring{near\_bare\_ground\_big\_leaf\_init()}{near\_bare\_ground\_big\_leaf\_init()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+nbg\+\_\+init\+::near\+\_\+bare\+\_\+ground\+\_\+big\+\_\+leaf\+\_\+init (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__nbg__init_a301dee8c90b4ea9c4c259ac7bd6b97eb}\label{namespaceed__nbg__init_a301dee8c90b4ea9c4c259ac7bd6b97eb}} 
+\index{ed\_nbg\_init@{ed\_nbg\_init}!near\_bare\_ground\_init@{near\_bare\_ground\_init}}
+\index{near\_bare\_ground\_init@{near\_bare\_ground\_init}!ed\_nbg\_init@{ed\_nbg\_init}}
+\doxysubsubsection{\texorpdfstring{near\_bare\_ground\_init()}{near\_bare\_ground\_init()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+nbg\+\_\+init\+::near\+\_\+bare\+\_\+ground\+\_\+init (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid }\end{DoxyParamCaption})}
+

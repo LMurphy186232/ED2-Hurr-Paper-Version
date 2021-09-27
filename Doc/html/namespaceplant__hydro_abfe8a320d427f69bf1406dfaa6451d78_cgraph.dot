@@ -1,0 +1,30 @@
+digraph "plant_hydro::plant_hydro_driver"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="plant_hydro::plant\l_hydro_driver",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Main driver to calculate plant hydrodynamics within a site."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="plant_hydro::calc_plant\l_water_flux",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceplant__hydro.html#ae182f350bc482ea1c98058bdd24a7c15",tooltip="Calculate water flow within plants driven by hydraulic laws."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="fatal_error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fatal__error_8_f90.html#a2a2bff228716ab48a81c795b348d1665",tooltip=" "];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="sngloff",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$numutils_8f90.html#a97ff3973394dba1b9534e055e358de97",tooltip=" "];
+  Node4 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="allometry::dbh2sf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceallometry.html#aded2a9492711f07e5c157c17e9029c10",tooltip=" "];
+  Node5 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="soil_coms::hydr_conduct",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacesoil__coms.html#ae42b26a9c0fbd402c8010bdf957fceea",tooltip=" "];
+  Node6 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="isnan_real",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$rsys_8_f90.html#aa072fa5eea105854631129e686d5e71c",tooltip=" "];
+  Node7 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="soil_coms::matric_potential",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacesoil__coms.html#a73e12fe029c8b3eb5afe2c2c000efc19",tooltip=" "];
+  Node8 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="plant_hydro::rwc2psi",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceplant__hydro.html#a7cc35f0ea4e11517e3bc7eb75fd19e36",tooltip="Convert relative water content to water potential."];
+}

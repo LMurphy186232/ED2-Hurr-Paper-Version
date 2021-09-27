@@ -1,0 +1,160 @@
+\hypertarget{numutils_8f90}{}\doxysection{numutils.\+f90 File Reference}
+\label{numutils_8f90}\index{numutils.f90@{numutils.f90}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{numutils_8f90_ad99541497f02a7efb987c5b45e675857}{atob}} (n, a, b)
+\item 
+subroutine \mbox{\hyperlink{numutils_8f90_a0ce70697995bdbb28ca0f7de92ba5210}{sort\+\_\+up}} (a, n)
+\item 
+subroutine \mbox{\hyperlink{numutils_8f90_a5b33967115f0c167703ae10299a79774}{sort\+\_\+down}} (a, n)
+\item 
+subroutine \mbox{\hyperlink{numutils_8f90_a05cbe809c49cbfaed521fb20ab5e8092}{rank\+\_\+up\+\_\+r}} (nmax, variable, ranking)
+\item 
+subroutine \mbox{\hyperlink{numutils_8f90_ae58db9bd6b6945031e4fe2ebfd3301ee}{rank\+\_\+down\+\_\+r}} (nmax, variable, ranking)
+\item 
+subroutine \mbox{\hyperlink{numutils_8f90_a25fe5d376caaaaf2c1cd08920a9f7b5b}{rank\+\_\+up\+\_\+i}} (nmax, variable, ranking)
+\item 
+subroutine \mbox{\hyperlink{numutils_8f90_a47f83776257935865b570ad5157a8d3d}{rank\+\_\+down\+\_\+i}} (nmax, variable, ranking)
+\item 
+integer function \mbox{\hyperlink{numutils_8f90_a732ad4008d82d16d53c093bf1cecccc3}{find\+\_\+rank}} (ranking, nmax, rankarray)
+\item 
+subroutine \mbox{\hyperlink{numutils_8f90_ab2d1781468d6b06d9082287371ae6dcd}{order\+\_\+real}} (nmax, variable, idx)
+\item 
+subroutine \mbox{\hyperlink{numutils_8f90_a64a8f0ec56651836204fb67b4d36c86e}{order\+\_\+integer}} (nmax, variable, idx)
+\item 
+real function \mbox{\hyperlink{numutils_8f90_abee471b10b1564285b25aa1b7b6f1577}{cbrt}} (x)
+\item 
+real(kind=8) function \mbox{\hyperlink{numutils_8f90_ad4b910be4531c088be1d1e83197aa36e}{cbrt8}} (x)
+\item 
+real function \mbox{\hyperlink{numutils_8f90_a97ff3973394dba1b9534e055e358de97}{sngloff}} (x, off)
+\item 
+subroutine \mbox{\hyperlink{numutils_8f90_a4c6620f6e7e0c517c0680ce839de1a3e}{cumsum}} (nsiz, vec)
+\item 
+subroutine \mbox{\hyperlink{numutils_8f90_a4a474fb2edbafe34d84319dd1ffe33b3}{lisys\+\_\+solver8}} (nsiz, AA, Y, X, sing)
+\item 
+real(kind=8) function \mbox{\hyperlink{numutils_8f90_a87009269fa8aecf49be15f20599f3052}{eifun8}} (x)
+\item 
+subroutine \mbox{\hyperlink{numutils_8f90_af35fe9f0019893598dbf82d6a72a983d}{heapsort}} (nx, xi, increase, xo)
+\item 
+real function \mbox{\hyperlink{numutils_8f90_a144d7adc0be56426f9ebc014d94ac2b9}{fquant}} (nx, x, prob)
+\item 
+real function \mbox{\hyperlink{numutils_8f90_a0da5adf37bc25d16d7fe0cd4a8128899}{fquant\+\_\+mask}} (nx, x, mask, prob)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{numutils_8f90_ad99541497f02a7efb987c5b45e675857}\label{numutils_8f90_ad99541497f02a7efb987c5b45e675857}} 
+\index{numutils.f90@{numutils.f90}!atob@{atob}}
+\index{atob@{atob}!numutils.f90@{numutils.f90}}
+\doxysubsubsection{\texorpdfstring{atob()}{atob()}}
+{\footnotesize\ttfamily subroutine atob (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{n,  }\item[{real, dimension(n), intent(in)}]{a,  }\item[{real, dimension(n), intent(out)}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{numutils_8f90_abee471b10b1564285b25aa1b7b6f1577}\label{numutils_8f90_abee471b10b1564285b25aa1b7b6f1577}} 
+\index{numutils.f90@{numutils.f90}!cbrt@{cbrt}}
+\index{cbrt@{cbrt}!numutils.f90@{numutils.f90}}
+\doxysubsubsection{\texorpdfstring{cbrt()}{cbrt()}}
+{\footnotesize\ttfamily real function cbrt (\begin{DoxyParamCaption}\item[{real, intent(in)}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{numutils_8f90_ad4b910be4531c088be1d1e83197aa36e}\label{numutils_8f90_ad4b910be4531c088be1d1e83197aa36e}} 
+\index{numutils.f90@{numutils.f90}!cbrt8@{cbrt8}}
+\index{cbrt8@{cbrt8}!numutils.f90@{numutils.f90}}
+\doxysubsubsection{\texorpdfstring{cbrt8()}{cbrt8()}}
+{\footnotesize\ttfamily real(kind=8) function cbrt8 (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{numutils_8f90_a4c6620f6e7e0c517c0680ce839de1a3e}\label{numutils_8f90_a4c6620f6e7e0c517c0680ce839de1a3e}} 
+\index{numutils.f90@{numutils.f90}!cumsum@{cumsum}}
+\index{cumsum@{cumsum}!numutils.f90@{numutils.f90}}
+\doxysubsubsection{\texorpdfstring{cumsum()}{cumsum()}}
+{\footnotesize\ttfamily subroutine cumsum (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nsiz,  }\item[{real, dimension(nsiz), intent(inout)}]{vec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{numutils_8f90_a87009269fa8aecf49be15f20599f3052}\label{numutils_8f90_a87009269fa8aecf49be15f20599f3052}} 
+\index{numutils.f90@{numutils.f90}!eifun8@{eifun8}}
+\index{eifun8@{eifun8}!numutils.f90@{numutils.f90}}
+\doxysubsubsection{\texorpdfstring{eifun8()}{eifun8()}}
+{\footnotesize\ttfamily real(kind=8) function eifun8 (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{numutils_8f90_a732ad4008d82d16d53c093bf1cecccc3}\label{numutils_8f90_a732ad4008d82d16d53c093bf1cecccc3}} 
+\index{numutils.f90@{numutils.f90}!find\_rank@{find\_rank}}
+\index{find\_rank@{find\_rank}!numutils.f90@{numutils.f90}}
+\doxysubsubsection{\texorpdfstring{find\_rank()}{find\_rank()}}
+{\footnotesize\ttfamily integer function find\+\_\+rank (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ranking,  }\item[{integer, intent(in)}]{nmax,  }\item[{integer, dimension(nmax), intent(in)}]{rankarray }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{numutils_8f90_a144d7adc0be56426f9ebc014d94ac2b9}\label{numutils_8f90_a144d7adc0be56426f9ebc014d94ac2b9}} 
+\index{numutils.f90@{numutils.f90}!fquant@{fquant}}
+\index{fquant@{fquant}!numutils.f90@{numutils.f90}}
+\doxysubsubsection{\texorpdfstring{fquant()}{fquant()}}
+{\footnotesize\ttfamily real function fquant (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nx,  }\item[{real, dimension(nx), intent(in)}]{x,  }\item[{real, intent(in)}]{prob }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{numutils_8f90_a0da5adf37bc25d16d7fe0cd4a8128899}\label{numutils_8f90_a0da5adf37bc25d16d7fe0cd4a8128899}} 
+\index{numutils.f90@{numutils.f90}!fquant\_mask@{fquant\_mask}}
+\index{fquant\_mask@{fquant\_mask}!numutils.f90@{numutils.f90}}
+\doxysubsubsection{\texorpdfstring{fquant\_mask()}{fquant\_mask()}}
+{\footnotesize\ttfamily real function fquant\+\_\+mask (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nx,  }\item[{real, dimension(nx), intent(in)}]{x,  }\item[{logical, dimension(nx), intent(in)}]{mask,  }\item[{real, intent(in)}]{prob }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{numutils_8f90_af35fe9f0019893598dbf82d6a72a983d}\label{numutils_8f90_af35fe9f0019893598dbf82d6a72a983d}} 
+\index{numutils.f90@{numutils.f90}!heapsort@{heapsort}}
+\index{heapsort@{heapsort}!numutils.f90@{numutils.f90}}
+\doxysubsubsection{\texorpdfstring{heapsort()}{heapsort()}}
+{\footnotesize\ttfamily subroutine heapsort (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nx,  }\item[{real, dimension(nx), intent(in)}]{xi,  }\item[{logical, intent(in)}]{increase,  }\item[{real, dimension(nx), intent(out)}]{xo }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{numutils_8f90_a4a474fb2edbafe34d84319dd1ffe33b3}\label{numutils_8f90_a4a474fb2edbafe34d84319dd1ffe33b3}} 
+\index{numutils.f90@{numutils.f90}!lisys\_solver8@{lisys\_solver8}}
+\index{lisys\_solver8@{lisys\_solver8}!numutils.f90@{numutils.f90}}
+\doxysubsubsection{\texorpdfstring{lisys\_solver8()}{lisys\_solver8()}}
+{\footnotesize\ttfamily subroutine lisys\+\_\+solver8 (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nsiz,  }\item[{real(kind=8), dimension(nsiz,nsiz), intent(in)}]{AA,  }\item[{real(kind=8), dimension(nsiz), intent(in)}]{Y,  }\item[{real(kind=8), dimension(nsiz), intent(out)}]{X,  }\item[{logical, intent(out)}]{sing }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{numutils_8f90_a64a8f0ec56651836204fb67b4d36c86e}\label{numutils_8f90_a64a8f0ec56651836204fb67b4d36c86e}} 
+\index{numutils.f90@{numutils.f90}!order\_integer@{order\_integer}}
+\index{order\_integer@{order\_integer}!numutils.f90@{numutils.f90}}
+\doxysubsubsection{\texorpdfstring{order\_integer()}{order\_integer()}}
+{\footnotesize\ttfamily subroutine order\+\_\+integer (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nmax,  }\item[{integer, dimension(nmax), intent(inout)}]{variable,  }\item[{integer, dimension(nmax), intent(in)}]{idx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{numutils_8f90_ab2d1781468d6b06d9082287371ae6dcd}\label{numutils_8f90_ab2d1781468d6b06d9082287371ae6dcd}} 
+\index{numutils.f90@{numutils.f90}!order\_real@{order\_real}}
+\index{order\_real@{order\_real}!numutils.f90@{numutils.f90}}
+\doxysubsubsection{\texorpdfstring{order\_real()}{order\_real()}}
+{\footnotesize\ttfamily subroutine order\+\_\+real (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nmax,  }\item[{real, dimension(nmax), intent(inout)}]{variable,  }\item[{integer, dimension(nmax), intent(in)}]{idx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{numutils_8f90_a47f83776257935865b570ad5157a8d3d}\label{numutils_8f90_a47f83776257935865b570ad5157a8d3d}} 
+\index{numutils.f90@{numutils.f90}!rank\_down\_i@{rank\_down\_i}}
+\index{rank\_down\_i@{rank\_down\_i}!numutils.f90@{numutils.f90}}
+\doxysubsubsection{\texorpdfstring{rank\_down\_i()}{rank\_down\_i()}}
+{\footnotesize\ttfamily subroutine rank\+\_\+down\+\_\+i (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nmax,  }\item[{integer, dimension(nmax), intent(in)}]{variable,  }\item[{integer, dimension(nmax), intent(out)}]{ranking }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{numutils_8f90_ae58db9bd6b6945031e4fe2ebfd3301ee}\label{numutils_8f90_ae58db9bd6b6945031e4fe2ebfd3301ee}} 
+\index{numutils.f90@{numutils.f90}!rank\_down\_r@{rank\_down\_r}}
+\index{rank\_down\_r@{rank\_down\_r}!numutils.f90@{numutils.f90}}
+\doxysubsubsection{\texorpdfstring{rank\_down\_r()}{rank\_down\_r()}}
+{\footnotesize\ttfamily subroutine rank\+\_\+down\+\_\+r (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nmax,  }\item[{real, dimension(nmax), intent(in)}]{variable,  }\item[{integer, dimension(nmax), intent(out)}]{ranking }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{numutils_8f90_a25fe5d376caaaaf2c1cd08920a9f7b5b}\label{numutils_8f90_a25fe5d376caaaaf2c1cd08920a9f7b5b}} 
+\index{numutils.f90@{numutils.f90}!rank\_up\_i@{rank\_up\_i}}
+\index{rank\_up\_i@{rank\_up\_i}!numutils.f90@{numutils.f90}}
+\doxysubsubsection{\texorpdfstring{rank\_up\_i()}{rank\_up\_i()}}
+{\footnotesize\ttfamily subroutine rank\+\_\+up\+\_\+i (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nmax,  }\item[{integer, dimension(nmax), intent(in)}]{variable,  }\item[{integer, dimension(nmax), intent(out)}]{ranking }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{numutils_8f90_a05cbe809c49cbfaed521fb20ab5e8092}\label{numutils_8f90_a05cbe809c49cbfaed521fb20ab5e8092}} 
+\index{numutils.f90@{numutils.f90}!rank\_up\_r@{rank\_up\_r}}
+\index{rank\_up\_r@{rank\_up\_r}!numutils.f90@{numutils.f90}}
+\doxysubsubsection{\texorpdfstring{rank\_up\_r()}{rank\_up\_r()}}
+{\footnotesize\ttfamily subroutine rank\+\_\+up\+\_\+r (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nmax,  }\item[{real, dimension(nmax), intent(in)}]{variable,  }\item[{integer, dimension(nmax), intent(out)}]{ranking }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{numutils_8f90_a97ff3973394dba1b9534e055e358de97}\label{numutils_8f90_a97ff3973394dba1b9534e055e358de97}} 
+\index{numutils.f90@{numutils.f90}!sngloff@{sngloff}}
+\index{sngloff@{sngloff}!numutils.f90@{numutils.f90}}
+\doxysubsubsection{\texorpdfstring{sngloff()}{sngloff()}}
+{\footnotesize\ttfamily real function sngloff (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{x,  }\item[{real(kind=8), intent(in)}]{off }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{numutils_8f90_a5b33967115f0c167703ae10299a79774}\label{numutils_8f90_a5b33967115f0c167703ae10299a79774}} 
+\index{numutils.f90@{numutils.f90}!sort\_down@{sort\_down}}
+\index{sort\_down@{sort\_down}!numutils.f90@{numutils.f90}}
+\doxysubsubsection{\texorpdfstring{sort\_down()}{sort\_down()}}
+{\footnotesize\ttfamily subroutine sort\+\_\+down (\begin{DoxyParamCaption}\item[{integer, dimension(n), intent(inout)}]{a,  }\item[{integer, intent(in)}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{numutils_8f90_a0ce70697995bdbb28ca0f7de92ba5210}\label{numutils_8f90_a0ce70697995bdbb28ca0f7de92ba5210}} 
+\index{numutils.f90@{numutils.f90}!sort\_up@{sort\_up}}
+\index{sort\_up@{sort\_up}!numutils.f90@{numutils.f90}}
+\doxysubsubsection{\texorpdfstring{sort\_up()}{sort\_up()}}
+{\footnotesize\ttfamily subroutine sort\+\_\+up (\begin{DoxyParamCaption}\item[{integer, dimension(n), intent(inout)}]{a,  }\item[{integer, intent(in)}]{n }\end{DoxyParamCaption})}
+

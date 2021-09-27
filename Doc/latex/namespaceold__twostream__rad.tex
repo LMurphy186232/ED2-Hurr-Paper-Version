@@ -1,0 +1,48 @@
+\hypertarget{namespaceold__twostream__rad}{}\doxysection{old\+\_\+twostream\+\_\+rad Module Reference}
+\label{namespaceold__twostream__rad}\index{old\_twostream\_rad@{old\_twostream\_rad}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceold__twostream__rad_afa4d0d8dac114379a6e2633cb4fb6693}{old\+\_\+sw\+\_\+two\+\_\+stream}} (salbedo\+\_\+par, salbedo\+\_\+nir, scosaoi, nir\+\_\+beam\+\_\+norm, nir\+\_\+diff\+\_\+norm, par\+\_\+beam\+\_\+norm, par\+\_\+diff\+\_\+norm, ncoh, pft, lai, wai, canopy\+\_\+area, radprof\+\_\+flip, par\+\_\+beam\+\_\+flip, par\+\_\+diff\+\_\+flip, sw\+\_\+abs\+\_\+beam\+\_\+flip, sw\+\_\+abs\+\_\+diff\+\_\+flip, dw\+\_\+parlo\+\_\+beam, dw\+\_\+parlo\+\_\+diff, uw\+\_\+parhi\+\_\+diff, dw\+\_\+nirlo\+\_\+beam, dw\+\_\+nirlo\+\_\+diff, uw\+\_\+nirhi\+\_\+diff, par\+\_\+level\+\_\+beam, par\+\_\+level\+\_\+diffd, par\+\_\+level\+\_\+diffu, light\+\_\+level, light\+\_\+beam\+\_\+level, light\+\_\+diff\+\_\+level)
+\item 
+subroutine \mbox{\hyperlink{namespaceold__twostream__rad_a6215c4cc4d88118d1290b065e38e4565}{bandec}} (a, ntot, nuse, m1, m2, al, indx, d)
+\item 
+subroutine \mbox{\hyperlink{namespaceold__twostream__rad_aab9dcdfc54e299b2e0547795db2b9373}{banbks}} (a, ntot, nuse, m1, m2, al, indx, b)
+\item 
+subroutine \mbox{\hyperlink{namespaceold__twostream__rad_a71b6d9880907325d836e43dbcef240c2}{mprove}} (a, alud, matal, ntot, nuse, np, npp, indx, b, x)
+\item 
+subroutine \mbox{\hyperlink{namespaceold__twostream__rad_a744d278973d1bf010dd3f7dbe1931644}{old\+\_\+lw\+\_\+two\+\_\+stream}} (semgs, s\+T\+\_\+grnd, rlong\+\_\+top4, ncoh, pft, lai, wai, leaf\+\_\+temp, wood\+\_\+temp, radprof\+\_\+flip, tir\+\_\+flip, dw\+\_\+tirlo, uw\+\_\+tirlo, uw\+\_\+tirhi)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespaceold__twostream__rad_aab9dcdfc54e299b2e0547795db2b9373}\label{namespaceold__twostream__rad_aab9dcdfc54e299b2e0547795db2b9373}} 
+\index{old\_twostream\_rad@{old\_twostream\_rad}!banbks@{banbks}}
+\index{banbks@{banbks}!old\_twostream\_rad@{old\_twostream\_rad}}
+\doxysubsubsection{\texorpdfstring{banbks()}{banbks()}}
+{\footnotesize\ttfamily subroutine old\+\_\+twostream\+\_\+rad\+::banbks (\begin{DoxyParamCaption}\item[{real(kind=8), dimension(ntot,m1+m2+1), intent(in)}]{a,  }\item[{integer, intent(in)}]{ntot,  }\item[{integer, intent(in)}]{nuse,  }\item[{integer, intent(in)}]{m1,  }\item[{integer, intent(in)}]{m2,  }\item[{real(kind=8), dimension(ntot,m1), intent(in)}]{al,  }\item[{integer, dimension(ntot), intent(in)}]{indx,  }\item[{real(kind=8), dimension(ntot), intent(inout)}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceold__twostream__rad_a6215c4cc4d88118d1290b065e38e4565}\label{namespaceold__twostream__rad_a6215c4cc4d88118d1290b065e38e4565}} 
+\index{old\_twostream\_rad@{old\_twostream\_rad}!bandec@{bandec}}
+\index{bandec@{bandec}!old\_twostream\_rad@{old\_twostream\_rad}}
+\doxysubsubsection{\texorpdfstring{bandec()}{bandec()}}
+{\footnotesize\ttfamily subroutine old\+\_\+twostream\+\_\+rad\+::bandec (\begin{DoxyParamCaption}\item[{real(kind=8), dimension(ntot,m1+m2+1), intent(inout)}]{a,  }\item[{integer, intent(in)}]{ntot,  }\item[{integer, intent(in)}]{nuse,  }\item[{integer, intent(in)}]{m1,  }\item[{integer, intent(in)}]{m2,  }\item[{real(kind=8), dimension(ntot,m1), intent(inout)}]{al,  }\item[{integer, dimension(ntot), intent(inout)}]{indx,  }\item[{real(kind=8), intent(out)}]{d }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceold__twostream__rad_a71b6d9880907325d836e43dbcef240c2}\label{namespaceold__twostream__rad_a71b6d9880907325d836e43dbcef240c2}} 
+\index{old\_twostream\_rad@{old\_twostream\_rad}!mprove@{mprove}}
+\index{mprove@{mprove}!old\_twostream\_rad@{old\_twostream\_rad}}
+\doxysubsubsection{\texorpdfstring{mprove()}{mprove()}}
+{\footnotesize\ttfamily subroutine old\+\_\+twostream\+\_\+rad\+::mprove (\begin{DoxyParamCaption}\item[{real(kind=8), dimension(ntot,ntot), intent(in)}]{a,  }\item[{real(kind=8), dimension(ntot,np), intent(in)}]{alud,  }\item[{real(kind=8), dimension(ntot,npp), intent(in)}]{matal,  }\item[{integer, intent(in)}]{ntot,  }\item[{integer, intent(in)}]{nuse,  }\item[{integer, intent(in)}]{np,  }\item[{integer, intent(in)}]{npp,  }\item[{integer, dimension(ntot), intent(in)}]{indx,  }\item[{real(kind=8), dimension(ntot), intent(in)}]{b,  }\item[{real(kind=8), dimension(ntot), intent(inout)}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceold__twostream__rad_a744d278973d1bf010dd3f7dbe1931644}\label{namespaceold__twostream__rad_a744d278973d1bf010dd3f7dbe1931644}} 
+\index{old\_twostream\_rad@{old\_twostream\_rad}!old\_lw\_two\_stream@{old\_lw\_two\_stream}}
+\index{old\_lw\_two\_stream@{old\_lw\_two\_stream}!old\_twostream\_rad@{old\_twostream\_rad}}
+\doxysubsubsection{\texorpdfstring{old\_lw\_two\_stream()}{old\_lw\_two\_stream()}}
+{\footnotesize\ttfamily subroutine old\+\_\+twostream\+\_\+rad\+::old\+\_\+lw\+\_\+two\+\_\+stream (\begin{DoxyParamCaption}\item[{real, intent(in)}]{semgs,  }\item[{real, intent(in)}]{s\+T\+\_\+grnd,  }\item[{real(kind=4), intent(in)}]{rlong\+\_\+top4,  }\item[{integer, intent(in)}]{ncoh,  }\item[{integer, dimension(ncoh), intent(in)}]{pft,  }\item[{real(kind=8), dimension(ncoh), intent(in)}]{lai,  }\item[{real(kind=8), dimension(ncoh), intent(in)}]{wai,  }\item[{real(kind=8), dimension(ncoh), intent(in)}]{leaf\+\_\+temp,  }\item[{real(kind=8), dimension(ncoh), intent(in)}]{wood\+\_\+temp,  }\item[{real(kind=4), dimension(n\+\_\+radprof,ncoh), intent(inout)}]{radprof\+\_\+flip,  }\item[{real(kind=4), dimension(ncoh), intent(out)}]{tir\+\_\+flip,  }\item[{real(kind=4), intent(out)}]{dw\+\_\+tirlo,  }\item[{real(kind=4), intent(out)}]{uw\+\_\+tirlo,  }\item[{real(kind=4), intent(out)}]{uw\+\_\+tirhi }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceold__twostream__rad_afa4d0d8dac114379a6e2633cb4fb6693}\label{namespaceold__twostream__rad_afa4d0d8dac114379a6e2633cb4fb6693}} 
+\index{old\_twostream\_rad@{old\_twostream\_rad}!old\_sw\_two\_stream@{old\_sw\_two\_stream}}
+\index{old\_sw\_two\_stream@{old\_sw\_two\_stream}!old\_twostream\_rad@{old\_twostream\_rad}}
+\doxysubsubsection{\texorpdfstring{old\_sw\_two\_stream()}{old\_sw\_two\_stream()}}
+{\footnotesize\ttfamily subroutine old\+\_\+twostream\+\_\+rad\+::old\+\_\+sw\+\_\+two\+\_\+stream (\begin{DoxyParamCaption}\item[{real, intent(in)}]{salbedo\+\_\+par,  }\item[{real, intent(in)}]{salbedo\+\_\+nir,  }\item[{real, intent(in)}]{scosaoi,  }\item[{real(kind=8), intent(in)}]{nir\+\_\+beam\+\_\+norm,  }\item[{real(kind=8), intent(in)}]{nir\+\_\+diff\+\_\+norm,  }\item[{real(kind=8), intent(in)}]{par\+\_\+beam\+\_\+norm,  }\item[{real(kind=8), intent(in)}]{par\+\_\+diff\+\_\+norm,  }\item[{integer, intent(in)}]{ncoh,  }\item[{integer, dimension(ncoh), intent(in)}]{pft,  }\item[{real(kind=8), dimension(ncoh), intent(in)}]{lai,  }\item[{real(kind=8), dimension(ncoh), intent(in)}]{wai,  }\item[{real(kind=8), dimension(ncoh), intent(in)}]{canopy\+\_\+area,  }\item[{real, dimension(n\+\_\+radprof,ncoh), intent(inout)}]{radprof\+\_\+flip,  }\item[{real, dimension(ncoh), intent(out)}]{par\+\_\+beam\+\_\+flip,  }\item[{real, dimension(ncoh), intent(out)}]{par\+\_\+diff\+\_\+flip,  }\item[{real, dimension(ncoh), intent(out)}]{sw\+\_\+abs\+\_\+beam\+\_\+flip,  }\item[{real, dimension(ncoh), intent(out)}]{sw\+\_\+abs\+\_\+diff\+\_\+flip,  }\item[{real, intent(out)}]{dw\+\_\+parlo\+\_\+beam,  }\item[{real, intent(out)}]{dw\+\_\+parlo\+\_\+diff,  }\item[{real, intent(out)}]{uw\+\_\+parhi\+\_\+diff,  }\item[{real, intent(out)}]{dw\+\_\+nirlo\+\_\+beam,  }\item[{real, intent(out)}]{dw\+\_\+nirlo\+\_\+diff,  }\item[{real, intent(out)}]{uw\+\_\+nirhi\+\_\+diff,  }\item[{real(kind=8), dimension(ncoh), intent(out)}]{par\+\_\+level\+\_\+beam,  }\item[{real(kind=8), dimension(ncoh), intent(out)}]{par\+\_\+level\+\_\+diffd,  }\item[{real(kind=8), dimension(ncoh), intent(out)}]{par\+\_\+level\+\_\+diffu,  }\item[{real(kind=8), dimension(ncoh), intent(out)}]{light\+\_\+level,  }\item[{real(kind=8), dimension(ncoh), intent(out)}]{light\+\_\+beam\+\_\+level,  }\item[{real(kind=8), dimension(ncoh), intent(out)}]{light\+\_\+diff\+\_\+level }\end{DoxyParamCaption})}
+

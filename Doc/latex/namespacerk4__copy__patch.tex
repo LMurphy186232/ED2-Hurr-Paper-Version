@@ -1,0 +1,43 @@
+\hypertarget{namespacerk4__copy__patch}{}\doxysection{rk4\+\_\+copy\+\_\+patch Module Reference}
+\label{namespacerk4__copy__patch}\index{rk4\_copy\_patch@{rk4\_copy\_patch}}
+
+
+Routines that copy contents from, to or between rk4 structures.  
+
+
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__copy__patch_a9b90a5a895f33880852251c4cb994ecb}{copy\+\_\+rk4patch\+\_\+init}} (sourcesite, ipa, ibuff, targetp, vels, old\+\_\+can\+\_\+enthalpy, old\+\_\+can\+\_\+rhos, old\+\_\+can\+\_\+dmol, ebudget\+\_\+prsseffect)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__copy__patch_a0a4e12314b4876462e80f56d7535da4c}{copy\+\_\+rk4\+\_\+patch}} (sourcep, targetp, cpatch)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__copy__patch_a5c62a7572c0981a019c41feb3d93fa80}{initp2modelp}} (hdid, initp, csite, ipa, nighttime, wbudget\+\_\+loss2atm, ebudget\+\_\+netrad, ebudget\+\_\+loss2atm, co2budget\+\_\+loss2atm, wbudget\+\_\+loss2drainage, ebudget\+\_\+loss2drainage, wbudget\+\_\+loss2runoff, ebudget\+\_\+loss2runoff, co2budget\+\_\+denseffect, ebudget\+\_\+denseffect, wbudget\+\_\+denseffect)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Routines that copy contents from, to or between rk4 structures. 
+
+These subroutines copy the content either from csite to rk4patch or between two rk4patch objects, or from rk4patch objects back to csite. Sub-\/routine copy\+\_\+rk4\+\_\+patch had been moved to a separate module to avoid circularities. ~\newline
+ The module was expanded to include the other routines that copy variables, to organise the code. 
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacerk4__copy__patch_a0a4e12314b4876462e80f56d7535da4c}\label{namespacerk4__copy__patch_a0a4e12314b4876462e80f56d7535da4c}} 
+\index{rk4\_copy\_patch@{rk4\_copy\_patch}!copy\_rk4\_patch@{copy\_rk4\_patch}}
+\index{copy\_rk4\_patch@{copy\_rk4\_patch}!rk4\_copy\_patch@{rk4\_copy\_patch}}
+\doxysubsubsection{\texorpdfstring{copy\_rk4\_patch()}{copy\_rk4\_patch()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+copy\+\_\+patch\+::copy\+\_\+rk4\+\_\+patch (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{sourcep,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{targetp,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__copy__patch_a9b90a5a895f33880852251c4cb994ecb}\label{namespacerk4__copy__patch_a9b90a5a895f33880852251c4cb994ecb}} 
+\index{rk4\_copy\_patch@{rk4\_copy\_patch}!copy\_rk4patch\_init@{copy\_rk4patch\_init}}
+\index{copy\_rk4patch\_init@{copy\_rk4patch\_init}!rk4\_copy\_patch@{rk4\_copy\_patch}}
+\doxysubsubsection{\texorpdfstring{copy\_rk4patch\_init()}{copy\_rk4patch\_init()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+copy\+\_\+patch\+::copy\+\_\+rk4patch\+\_\+init (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{sourcesite,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{ibuff,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{targetp,  }\item[{real, intent(in)}]{vels,  }\item[{real, intent(in)}]{old\+\_\+can\+\_\+enthalpy,  }\item[{real, intent(in)}]{old\+\_\+can\+\_\+rhos,  }\item[{real, intent(in)}]{old\+\_\+can\+\_\+dmol,  }\item[{real, intent(out)}]{ebudget\+\_\+prsseffect }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__copy__patch_a5c62a7572c0981a019c41feb3d93fa80}\label{namespacerk4__copy__patch_a5c62a7572c0981a019c41feb3d93fa80}} 
+\index{rk4\_copy\_patch@{rk4\_copy\_patch}!initp2modelp@{initp2modelp}}
+\index{initp2modelp@{initp2modelp}!rk4\_copy\_patch@{rk4\_copy\_patch}}
+\doxysubsubsection{\texorpdfstring{initp2modelp()}{initp2modelp()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+copy\+\_\+patch\+::initp2modelp (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{hdid,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{initp,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{logical, intent(in)}]{nighttime,  }\item[{real, intent(out)}]{wbudget\+\_\+loss2atm,  }\item[{real, intent(out)}]{ebudget\+\_\+netrad,  }\item[{real, intent(out)}]{ebudget\+\_\+loss2atm,  }\item[{real, intent(out)}]{co2budget\+\_\+loss2atm,  }\item[{real, intent(out)}]{wbudget\+\_\+loss2drainage,  }\item[{real, intent(out)}]{ebudget\+\_\+loss2drainage,  }\item[{real, intent(out)}]{wbudget\+\_\+loss2runoff,  }\item[{real, intent(out)}]{ebudget\+\_\+loss2runoff,  }\item[{real, intent(out)}]{co2budget\+\_\+denseffect,  }\item[{real, intent(out)}]{ebudget\+\_\+denseffect,  }\item[{real, intent(out)}]{wbudget\+\_\+denseffect }\end{DoxyParamCaption})}
+

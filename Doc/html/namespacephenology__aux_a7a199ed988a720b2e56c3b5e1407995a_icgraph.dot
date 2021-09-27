@@ -1,0 +1,18 @@
+digraph "phenology_aux::update_turnover"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="phenology_aux::update\l_turnover",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="phenology_driv::phenology\l_driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacephenology__driv.html#a263e9113f254ff58fb5aebe03ee8e777",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="vegetation_dynamics\l::veg_dynamics_driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacevegetation__dynamics.html#ac0aac7ba29275bab000373bd850a36e6",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ed_model",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__model_8_f90.html#a9804b9ca3fcb1b4e17171d786d50c32c",tooltip="Begins, updates, and outputs results from ecosystem simulation."];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ed_driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__driver_8_f90.html#a5706bd8bee60960fe8166de1870e47da",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$edmain_8_f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d",tooltip=" "];
+}

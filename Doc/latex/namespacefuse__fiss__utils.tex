@@ -1,0 +1,178 @@
+\hypertarget{namespacefuse__fiss__utils}{}\doxysection{fuse\+\_\+fiss\+\_\+utils Module Reference}
+\label{namespacefuse__fiss__utils}\index{fuse\_fiss\_utils@{fuse\_fiss\_utils}}
+
+
+Routines to terminate and fuse patches, and to terminate, fuse and split cohorts.  
+
+
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_a31e4835d2465d1400c7cbbb51976b341}{sort\+\_\+cohorts}} (cpatch)
+\begin{DoxyCompactList}\small\item\em This subroutine will sort the cohorts by size (1st = tallest, last = shortest.) \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_a8afe150340753f32f88a5033afb66ff1}{terminate\+\_\+cohorts}} (csite, ipa, cmet, is\+\_\+initial, elim\+\_\+nplant, elim\+\_\+lai)
+\begin{DoxyCompactList}\small\item\em This subroutine will eliminate cohorts based on their sizes. This is intended to eliminate cohorts that have little contribution and thus we can speed up the run. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_ac687a950d92b23661a3d3ef73b723201}{terminate\+\_\+patches}} (csite, lai\+\_\+criterion)
+\begin{DoxyCompactList}\small\item\em This subroutine will eliminate tiny or empty patches. This is intended to eliminate patches that have little contribution and thus we can speed up the run. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_ab3b0eeed8a63cc2f4b866ac243e25ec6}{rescale\+\_\+patches}} (csite)
+\begin{DoxyCompactList}\small\item\em This subroutine will rescale the area of the patches. This is almost the same as the terminate\+\_\+patches subroutine, except that no patch is removed. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_a58e649bf27d8b87ff164e16ba0c3bccb}{new\+\_\+fuse\+\_\+cohorts}} (csite, ipa, lsl, fuse\+\_\+initial)
+\begin{DoxyCompactList}\small\item\em This subroutine will perform cohort fusion based on various similarity criteria to determine whether they can be fused with no significant loss of information. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_a331f78834118341c99058f69325c95fc}{old\+\_\+fuse\+\_\+cohorts}} (csite, ipa, lsl, fuse\+\_\+initial)
+\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_acca6c05e04827c45b18ddb564c537de9}{split\+\_\+cohorts}} (csite, ipa, green\+\_\+leaf\+\_\+factor, is\+\_\+initial)
+\begin{DoxyCompactList}\small\item\em This subroutine will split two cohorts if its LAI has become too large. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_a2fc600375d38f7ddcf60ebf5da725971}{fuse\+\_\+2\+\_\+cohorts}} (cpatch, donc, recc, can\+\_\+prss, can\+\_\+shv, lsl, fuse\+\_\+initial)
+\begin{DoxyCompactList}\small\item\em This subroutine will merge two cohorts into 1. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_a546d7beff2f991a07c8fbba91921ce5f}{sort\+\_\+patches}} (csite)
+\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_ab15ffcdcb79ee2bcb69f5a9954ca14ea}{new\+\_\+fuse\+\_\+patches}} (cgrid, ifm, fuse\+\_\+initial)
+\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_a6776a45b5a81e01186fbac86854c6741}{old\+\_\+fuse\+\_\+patches}} (cgrid, ifm, fuse\+\_\+initial)
+\begin{DoxyCompactList}\small\item\em This subroutine will perform patch fusion based on some similarity criteria to determine whether they can be fused with no significant loss of information. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_a9d06bb3b18a9c6bf45b3cc30b01cb4be}{fuse\+\_\+2\+\_\+patches}} (csite, donp, recp, mzg, mzs, cmet, lsl, ntext\+\_\+soil, green\+\_\+leaf\+\_\+factor, fuse\+\_\+initial, elim\+\_\+nplant, elim\+\_\+lai)
+\begin{DoxyCompactList}\small\item\em This subroutine will merge two patches into 1. \end{DoxyCompactList}\item 
+real(kind=4) function \mbox{\hyperlink{namespacefuse__fiss__utils_aae52213c98fe3ffb3ecde24d8ffc6e03}{fuse\+\_\+msqu}} (xmean, xmsqu, xwght, ymean, ymsqu, ywght, r\+\_\+xy, extensive)
+\begin{DoxyCompactList}\small\item\em This subroutine combines the mean sum of squares of two quantities (x and y). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_ace5e880797709c6be154c2ce38803f08}{check\+\_\+bfusion\+\_\+patch}} (csite, osite, lsl, ipa)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Routines to terminate and fuse patches, and to terminate, fuse and split cohorts. 
+
+\begin{DoxyAuthor}{Author}
+Translated from ED1 by David Medivgy, Ryan Knox and Marcos Longo 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacefuse__fiss__utils_ace5e880797709c6be154c2ce38803f08}\label{namespacefuse__fiss__utils_ace5e880797709c6be154c2ce38803f08}} 
+\index{fuse\_fiss\_utils@{fuse\_fiss\_utils}!check\_bfusion\_patch@{check\_bfusion\_patch}}
+\index{check\_bfusion\_patch@{check\_bfusion\_patch}!fuse\_fiss\_utils@{fuse\_fiss\_utils}}
+\doxysubsubsection{\texorpdfstring{check\_bfusion\_patch()}{check\_bfusion\_patch()}}
+{\footnotesize\ttfamily subroutine fuse\+\_\+fiss\+\_\+utils\+::check\+\_\+bfusion\+\_\+patch (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{osite,  }\item[{integer, intent(in)}]{lsl,  }\item[{integer, intent(in)}]{ipa }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacefuse__fiss__utils_a2fc600375d38f7ddcf60ebf5da725971}\label{namespacefuse__fiss__utils_a2fc600375d38f7ddcf60ebf5da725971}} 
+\index{fuse\_fiss\_utils@{fuse\_fiss\_utils}!fuse\_2\_cohorts@{fuse\_2\_cohorts}}
+\index{fuse\_2\_cohorts@{fuse\_2\_cohorts}!fuse\_fiss\_utils@{fuse\_fiss\_utils}}
+\doxysubsubsection{\texorpdfstring{fuse\_2\_cohorts()}{fuse\_2\_cohorts()}}
+{\footnotesize\ttfamily subroutine fuse\+\_\+fiss\+\_\+utils\+::fuse\+\_\+2\+\_\+cohorts (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer}]{donc,  }\item[{integer}]{recc,  }\item[{real, intent(in)}]{can\+\_\+prss,  }\item[{real, intent(in)}]{can\+\_\+shv,  }\item[{integer, intent(in)}]{lsl,  }\item[{logical, intent(in)}]{fuse\+\_\+initial }\end{DoxyParamCaption})}
+
+
+
+This subroutine will merge two cohorts into 1. 
+
+The donating cohort (donc) is the one that will be deallocated, while the receptor cohort (recc) will contain the information from both cohorts. \mbox{\Hypertarget{namespacefuse__fiss__utils_a9d06bb3b18a9c6bf45b3cc30b01cb4be}\label{namespacefuse__fiss__utils_a9d06bb3b18a9c6bf45b3cc30b01cb4be}} 
+\index{fuse\_fiss\_utils@{fuse\_fiss\_utils}!fuse\_2\_patches@{fuse\_2\_patches}}
+\index{fuse\_2\_patches@{fuse\_2\_patches}!fuse\_fiss\_utils@{fuse\_fiss\_utils}}
+\doxysubsubsection{\texorpdfstring{fuse\_2\_patches()}{fuse\_2\_patches()}}
+{\footnotesize\ttfamily subroutine fuse\+\_\+fiss\+\_\+utils\+::fuse\+\_\+2\+\_\+patches (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{donp,  }\item[{integer, intent(in)}]{recp,  }\item[{integer, intent(in)}]{mzg,  }\item[{integer, intent(in)}]{mzs,  }\item[{type(\mbox{\hyperlink{structmet__driver__coms_1_1met__driv__state}{met\+\_\+driv\+\_\+state}}), target}]{cmet,  }\item[{integer, intent(in)}]{lsl,  }\item[{integer, dimension(mzg), intent(in)}]{ntext\+\_\+soil,  }\item[{real, dimension(n\+\_\+pft), intent(in)}]{green\+\_\+leaf\+\_\+factor,  }\item[{logical, intent(in)}]{fuse\+\_\+initial,  }\item[{real, intent(out)}]{elim\+\_\+nplant,  }\item[{real, intent(out)}]{elim\+\_\+lai }\end{DoxyParamCaption})}
+
+
+
+This subroutine will merge two patches into 1. 
+
+\mbox{\Hypertarget{namespacefuse__fiss__utils_aae52213c98fe3ffb3ecde24d8ffc6e03}\label{namespacefuse__fiss__utils_aae52213c98fe3ffb3ecde24d8ffc6e03}} 
+\index{fuse\_fiss\_utils@{fuse\_fiss\_utils}!fuse\_msqu@{fuse\_msqu}}
+\index{fuse\_msqu@{fuse\_msqu}!fuse\_fiss\_utils@{fuse\_fiss\_utils}}
+\doxysubsubsection{\texorpdfstring{fuse\_msqu()}{fuse\_msqu()}}
+{\footnotesize\ttfamily real(kind=4) function fuse\+\_\+fiss\+\_\+utils\+::fuse\+\_\+msqu (\begin{DoxyParamCaption}\item[{real(kind=4), intent(in)}]{xmean,  }\item[{real(kind=4), intent(in)}]{xmsqu,  }\item[{real(kind=4), intent(in)}]{xwght,  }\item[{real(kind=4), intent(in)}]{ymean,  }\item[{real(kind=4), intent(in)}]{ymsqu,  }\item[{real(kind=4), intent(in)}]{ywght,  }\item[{real(kind=4), intent(in)}]{r\+\_\+xy,  }\item[{logical, intent(in)}]{extensive }\end{DoxyParamCaption})}
+
+
+
+This subroutine combines the mean sum of squares of two quantities (x and y). 
+
+\mbox{\Hypertarget{namespacefuse__fiss__utils_a58e649bf27d8b87ff164e16ba0c3bccb}\label{namespacefuse__fiss__utils_a58e649bf27d8b87ff164e16ba0c3bccb}} 
+\index{fuse\_fiss\_utils@{fuse\_fiss\_utils}!new\_fuse\_cohorts@{new\_fuse\_cohorts}}
+\index{new\_fuse\_cohorts@{new\_fuse\_cohorts}!fuse\_fiss\_utils@{fuse\_fiss\_utils}}
+\doxysubsubsection{\texorpdfstring{new\_fuse\_cohorts()}{new\_fuse\_cohorts()}}
+{\footnotesize\ttfamily subroutine fuse\+\_\+fiss\+\_\+utils\+::new\+\_\+fuse\+\_\+cohorts (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{lsl,  }\item[{logical, intent(in)}]{fuse\+\_\+initial }\end{DoxyParamCaption})}
+
+
+
+This subroutine will perform cohort fusion based on various similarity criteria to determine whether they can be fused with no significant loss of information. 
+
+The user is welcome to set up a benchmark, but should be aware that no miracles will happen here. If there are more very distinct cohorts than maxcohort, then the user will need to live with that and accept life is not always fair with those with limited computational resources. ~\newline
+ \mbox{\Hypertarget{namespacefuse__fiss__utils_ab15ffcdcb79ee2bcb69f5a9954ca14ea}\label{namespacefuse__fiss__utils_ab15ffcdcb79ee2bcb69f5a9954ca14ea}} 
+\index{fuse\_fiss\_utils@{fuse\_fiss\_utils}!new\_fuse\_patches@{new\_fuse\_patches}}
+\index{new\_fuse\_patches@{new\_fuse\_patches}!fuse\_fiss\_utils@{fuse\_fiss\_utils}}
+\doxysubsubsection{\texorpdfstring{new\_fuse\_patches()}{new\_fuse\_patches()}}
+{\footnotesize\ttfamily subroutine fuse\+\_\+fiss\+\_\+utils\+::new\+\_\+fuse\+\_\+patches (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{integer, intent(in)}]{ifm,  }\item[{logical, intent(in)}]{fuse\+\_\+initial }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacefuse__fiss__utils_a331f78834118341c99058f69325c95fc}\label{namespacefuse__fiss__utils_a331f78834118341c99058f69325c95fc}} 
+\index{fuse\_fiss\_utils@{fuse\_fiss\_utils}!old\_fuse\_cohorts@{old\_fuse\_cohorts}}
+\index{old\_fuse\_cohorts@{old\_fuse\_cohorts}!fuse\_fiss\_utils@{fuse\_fiss\_utils}}
+\doxysubsubsection{\texorpdfstring{old\_fuse\_cohorts()}{old\_fuse\_cohorts()}}
+{\footnotesize\ttfamily subroutine fuse\+\_\+fiss\+\_\+utils\+::old\+\_\+fuse\+\_\+cohorts (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{lsl,  }\item[{logical, intent(in)}]{fuse\+\_\+initial }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacefuse__fiss__utils_a6776a45b5a81e01186fbac86854c6741}\label{namespacefuse__fiss__utils_a6776a45b5a81e01186fbac86854c6741}} 
+\index{fuse\_fiss\_utils@{fuse\_fiss\_utils}!old\_fuse\_patches@{old\_fuse\_patches}}
+\index{old\_fuse\_patches@{old\_fuse\_patches}!fuse\_fiss\_utils@{fuse\_fiss\_utils}}
+\doxysubsubsection{\texorpdfstring{old\_fuse\_patches()}{old\_fuse\_patches()}}
+{\footnotesize\ttfamily subroutine fuse\+\_\+fiss\+\_\+utils\+::old\+\_\+fuse\+\_\+patches (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{integer, intent(in)}]{ifm,  }\item[{logical, intent(in)}]{fuse\+\_\+initial }\end{DoxyParamCaption})}
+
+
+
+This subroutine will perform patch fusion based on some similarity criteria to determine whether they can be fused with no significant loss of information. 
+
+The user is welcome to set up a benchmark, but they should be aware that no miracles will happen here. If there are more very distinct patches than maxpatch, then the user will need to live with that and accept life is not always fair with those with limited computational resources. \begin{DoxyWarning}{Warning}
+Cohort fusion may significantly affect the runs, so I am keeping both the old and new routines, but I think we should probably phase out this and stick with the new one. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{namespacefuse__fiss__utils_ab3b0eeed8a63cc2f4b866ac243e25ec6}\label{namespacefuse__fiss__utils_ab3b0eeed8a63cc2f4b866ac243e25ec6}} 
+\index{fuse\_fiss\_utils@{fuse\_fiss\_utils}!rescale\_patches@{rescale\_patches}}
+\index{rescale\_patches@{rescale\_patches}!fuse\_fiss\_utils@{fuse\_fiss\_utils}}
+\doxysubsubsection{\texorpdfstring{rescale\_patches()}{rescale\_patches()}}
+{\footnotesize\ttfamily subroutine fuse\+\_\+fiss\+\_\+utils\+::rescale\+\_\+patches (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite }\end{DoxyParamCaption})}
+
+
+
+This subroutine will rescale the area of the patches. This is almost the same as the terminate\+\_\+patches subroutine, except that no patch is removed. 
+
+\mbox{\Hypertarget{namespacefuse__fiss__utils_a31e4835d2465d1400c7cbbb51976b341}\label{namespacefuse__fiss__utils_a31e4835d2465d1400c7cbbb51976b341}} 
+\index{fuse\_fiss\_utils@{fuse\_fiss\_utils}!sort\_cohorts@{sort\_cohorts}}
+\index{sort\_cohorts@{sort\_cohorts}!fuse\_fiss\_utils@{fuse\_fiss\_utils}}
+\doxysubsubsection{\texorpdfstring{sort\_cohorts()}{sort\_cohorts()}}
+{\footnotesize\ttfamily subroutine fuse\+\_\+fiss\+\_\+utils\+::sort\+\_\+cohorts (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch }\end{DoxyParamCaption})}
+
+
+
+This subroutine will sort the cohorts by size (1st = tallest, last = shortest.) 
+
+In case there is a tie (for example, when 2 cohorts have reached the maximum possible height, then we use DBH for tie breaking, and if they have the exact same DBH, then we simply pick the lowest index (as they are exactly the same). This could cause some problems when the new grass allometry is implemented, though. ~\newline
+ \mbox{\Hypertarget{namespacefuse__fiss__utils_a546d7beff2f991a07c8fbba91921ce5f}\label{namespacefuse__fiss__utils_a546d7beff2f991a07c8fbba91921ce5f}} 
+\index{fuse\_fiss\_utils@{fuse\_fiss\_utils}!sort\_patches@{sort\_patches}}
+\index{sort\_patches@{sort\_patches}!fuse\_fiss\_utils@{fuse\_fiss\_utils}}
+\doxysubsubsection{\texorpdfstring{sort\_patches()}{sort\_patches()}}
+{\footnotesize\ttfamily subroutine fuse\+\_\+fiss\+\_\+utils\+::sort\+\_\+patches (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacefuse__fiss__utils_acca6c05e04827c45b18ddb564c537de9}\label{namespacefuse__fiss__utils_acca6c05e04827c45b18ddb564c537de9}} 
+\index{fuse\_fiss\_utils@{fuse\_fiss\_utils}!split\_cohorts@{split\_cohorts}}
+\index{split\_cohorts@{split\_cohorts}!fuse\_fiss\_utils@{fuse\_fiss\_utils}}
+\doxysubsubsection{\texorpdfstring{split\_cohorts()}{split\_cohorts()}}
+{\footnotesize\ttfamily subroutine fuse\+\_\+fiss\+\_\+utils\+::split\+\_\+cohorts (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{real, dimension(n\+\_\+pft), intent(in)}]{green\+\_\+leaf\+\_\+factor,  }\item[{logical, intent(in)}]{is\+\_\+initial }\end{DoxyParamCaption})}
+
+
+
+This subroutine will split two cohorts if its LAI has become too large. 
+
+This is only necessary when we solve radiation cohort by cohort rather than layer by layer. \mbox{\Hypertarget{namespacefuse__fiss__utils_a8afe150340753f32f88a5033afb66ff1}\label{namespacefuse__fiss__utils_a8afe150340753f32f88a5033afb66ff1}} 
+\index{fuse\_fiss\_utils@{fuse\_fiss\_utils}!terminate\_cohorts@{terminate\_cohorts}}
+\index{terminate\_cohorts@{terminate\_cohorts}!fuse\_fiss\_utils@{fuse\_fiss\_utils}}
+\doxysubsubsection{\texorpdfstring{terminate\_cohorts()}{terminate\_cohorts()}}
+{\footnotesize\ttfamily subroutine fuse\+\_\+fiss\+\_\+utils\+::terminate\+\_\+cohorts (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{type(\mbox{\hyperlink{structmet__driver__coms_1_1met__driv__state}{met\+\_\+driv\+\_\+state}}), target}]{cmet,  }\item[{logical, intent(in)}]{is\+\_\+initial,  }\item[{real, intent(out)}]{elim\+\_\+nplant,  }\item[{real, intent(out)}]{elim\+\_\+lai }\end{DoxyParamCaption})}
+
+
+
+This subroutine will eliminate cohorts based on their sizes. This is intended to eliminate cohorts that have little contribution and thus we can speed up the run. 
+
+\mbox{\Hypertarget{namespacefuse__fiss__utils_ac687a950d92b23661a3d3ef73b723201}\label{namespacefuse__fiss__utils_ac687a950d92b23661a3d3ef73b723201}} 
+\index{fuse\_fiss\_utils@{fuse\_fiss\_utils}!terminate\_patches@{terminate\_patches}}
+\index{terminate\_patches@{terminate\_patches}!fuse\_fiss\_utils@{fuse\_fiss\_utils}}
+\doxysubsubsection{\texorpdfstring{terminate\_patches()}{terminate\_patches()}}
+{\footnotesize\ttfamily subroutine fuse\+\_\+fiss\+\_\+utils\+::terminate\+\_\+patches (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{logical, optional}]{lai\+\_\+criterion }\end{DoxyParamCaption})}
+
+
+
+This subroutine will eliminate tiny or empty patches. This is intended to eliminate patches that have little contribution and thus we can speed up the run. 
+

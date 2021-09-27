@@ -1,0 +1,41 @@
+digraph "stable_cohorts::flag_stable_cohorts"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="stable_cohorts::flag\l_stable_cohorts",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="stable_cohorts::is\l_resolvable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestable__cohorts.html#a00b7ade90014855bc382264976df8d53",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="allometry::dbh2sf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceallometry.html#aded2a9492711f07e5c157c17e9029c10",tooltip=" "];
+  Node3 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="plant_hydro::rwc2psi",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceplant__hydro.html#a7cc35f0ea4e11517e3bc7eb75fd19e36",tooltip="Convert relative water content to water potential."];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="plant_hydro::rwc2tw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceplant__hydro.html#af7799ce8ba25fef66ade9730bc9f6c77",tooltip="Convert relative water content to total water for both leaf and wood."];
+  Node5 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="allometry::size2bd",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceallometry.html#a08a0764bc1887e71051914ed5b30c72c",tooltip=" "];
+  Node6 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="allometry::size2bl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceallometry.html#a10c3f179ffa5bee4c98a338aa18067ee",tooltip=" "];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="allometry::h2dbh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceallometry.html#a31aa8db06e86ec74efb5e692417399df",tooltip=" "];
+  Node8 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="plant_hydro::twi2twe",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceplant__hydro.html#ac96b04cb776694987ccefd7c37aab829",tooltip="Intensive to extensive internal water converter."];
+  Node2 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="ed_therm_lib::update\l_veg_energy_cweh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__therm__lib.html#a88a38ec1cbe16c398a9f91b96afbea25",tooltip=" "];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="therm_lib::cmtl2uext",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacetherm__lib.html#a2db60e1f300fadcd09ef451059aa571b",tooltip=" "];
+  Node11 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="fatal_error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fatal__error_8_f90.html#a2a2bff228716ab48a81c795b348d1665",tooltip=" "];
+  Node10 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="therm_lib::tl2uint",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacetherm__lib.html#a3ad59a4037ed8ed57532b8ea630a7df1",tooltip=" "];
+  Node13 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="therm_lib::uextcm2tl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacetherm__lib.html#ac588ab0dc1c0c52c4c41b847be134ee9",tooltip=" "];
+}

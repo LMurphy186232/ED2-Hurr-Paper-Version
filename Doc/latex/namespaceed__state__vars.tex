@@ -1,0 +1,1409 @@
+\hypertarget{namespaceed__state__vars}{}\doxysection{ed\+\_\+state\+\_\+vars Module Reference}
+\label{namespaceed__state__vars}\index{ed\_state\_vars@{ed\_state\_vars}}
+
+
+Definitions of the main variable structures in ED.  
+
+
+\doxysubsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}
+\begin{DoxyCompactList}\small\item\em Contains arrays of polygons that populate the current grid. This is the most averaged and least nested dimension. \end{DoxyCompactList}\item 
+type \mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}
+\begin{DoxyCompactList}\small\item\em Contains arrays of cohorts that populate the current patch. ~\newline
+ This is the lowest (most nested) part of the memory structure. ~\newline
+ \end{DoxyCompactList}\item 
+type \mbox{\hyperlink{structed__state__vars_1_1polygontype}{polygontype}}
+\begin{DoxyCompactList}\small\item\em Contains arrays of sites that populate the current polygon. ~\newline
+ \end{DoxyCompactList}\item 
+type \mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}
+\begin{DoxyCompactList}\small\item\em Contains arrays of patches that populate the current site. ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a01c02fd632892eb11eaac0daacc106d2}{allocate\+\_\+edglobals}} (ngrids)
+\begin{DoxyCompactList}\small\item\em Allocates the global dimensions (outside the structure). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_aa47dd5e1964efcbfa0844f75d1763ce5}{allocate\+\_\+edtype}} (cgrid, npolygons)
+\begin{DoxyCompactList}\small\item\em Allocates the polygon-\/level variables. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_ad14e882e6c902118f0e369dd846eeedf}{allocate\+\_\+polygontype}} (cpoly, nsites)
+\begin{DoxyCompactList}\small\item\em Allocates the site-\/level variables. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_ac3b987ebbdc7c8cd956eb2634010edb9}{allocate\+\_\+sitetype}} (csite, npatches)
+\begin{DoxyCompactList}\small\item\em Allocates the patch-\/level variables. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a4837fc010e19721a127c9a8b04874594}{allocate\+\_\+patchtype}} (cpatch, ncohorts)
+\begin{DoxyCompactList}\small\item\em Allocates the cohort-\/level variables. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a0df5f674bdb76d915f34b1c6987f6815}{nullify\+\_\+edtype}} (cgrid)
+\begin{DoxyCompactList}\small\item\em Nullifies all polygon pointers. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_ade6f2776a02bd9a26ee31fe75cda6170}{nullify\+\_\+polygontype}} (cpoly)
+\begin{DoxyCompactList}\small\item\em Nullifies all site pointers. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_aa13b6faa5a0031bd5df50581ac0db0ff}{nullify\+\_\+sitetype}} (csite)
+\begin{DoxyCompactList}\small\item\em Nullifies all patch pointers. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_af1a07724c13a8dceb6ba2d3dab21b899}{nullify\+\_\+patchtype}} (cpatch)
+\begin{DoxyCompactList}\small\item\em Nullifies all cohort pointers. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a29881891f67226b191026267f094beb9}{deallocate\+\_\+sitetype}} (csite)
+\begin{DoxyCompactList}\small\item\em De-\/allocates all patch pointers. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a2845fb7d7264ed3c00651e9e46a16ed8}{deallocate\+\_\+patchtype}} (cpatch)
+\begin{DoxyCompactList}\small\item\em De-\/allocates all cohort pointers. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a3bf78091394d79aec34dd97e18ff16db}{copy\+\_\+sitetype}} (isite, osite, ipaa, ipaz, opaa, opaz)
+\begin{DoxyCompactList}\small\item\em Copies a continuous chunk of patches from one place to another. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_abd0a1c636db86530367e9d24e386ec22}{copy\+\_\+sitetype\+\_\+mask}} (isite, osite, lmask, isize, osize)
+\begin{DoxyCompactList}\small\item\em Copies part of one site from one place to another (only the ones where mask is .true.) \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_abef71303542156f0c150c4568b4828aa}{copy\+\_\+sitetype\+\_\+mask\+\_\+inst}} (isite, osite, z, lmask, isize)
+\begin{DoxyCompactList}\small\item\em Copies the variables that are not fmean, dmean, mmean, mmsqu, qmean, and qmsqu. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a6f38243f52095e9ee7da38e2b2ce81ab}{copy\+\_\+sitetype\+\_\+mask\+\_\+fmean}} (isite, osite, z, lmask, isize)
+\begin{DoxyCompactList}\small\item\em Copies the variables that are fmean. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_ac319365c7defa57422526b06b56bd61c}{copy\+\_\+sitetype\+\_\+mask\+\_\+dmean}} (isite, osite, z, lmask, isize)
+\begin{DoxyCompactList}\small\item\em Copies the variables that are dmean. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a31ce6a86f04b6fb292bdf3a41dd3a66e}{copy\+\_\+sitetype\+\_\+mask\+\_\+mmean}} (isite, osite, z, lmask, isize)
+\begin{DoxyCompactList}\small\item\em Copies the variables that are mmean. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a2630aeadf5d56b1b603e8eb6c95b68eb}{copy\+\_\+sitetype\+\_\+mask\+\_\+qmean}} (isite, osite, z, lmask, isize)
+\begin{DoxyCompactList}\small\item\em Copies the variables that are qmean. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_accd794e0e8d71ba375c3669097ae5c8d}{copy\+\_\+patchtype}} (ipatch, opatch, icoa, icoz, ocoa, ocoz)
+\begin{DoxyCompactList}\small\item\em Copies a continuous chunk of cohorts from one place to another. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a8d1f42b1112652da9f1e05929cdb29a1}{copy\+\_\+patchtype\+\_\+mask}} (ipatch, opatch, lmask, isize, osize)
+\begin{DoxyCompactList}\small\item\em Copies part of cohorts from one place to another. (only the ones where mask is .true.) \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a33fc63e73e6503b7c1dd90af0d954c8f}{copy\+\_\+patchtype\+\_\+mask\+\_\+inst}} (ipatch, opatch, z, lmask, isize)
+\begin{DoxyCompactList}\small\item\em Copies the cohort-\/level variables that are not fmean, dmean, mmean, mmsqu, qmean, and qmsqu. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a2db3f30821599bfbbc83fb91bd0b00b5}{copy\+\_\+patchtype\+\_\+mask\+\_\+fmean}} (ipatch, opatch, z, lmask, isize)
+\begin{DoxyCompactList}\small\item\em Copies the cohort-\/level variables that are fmean. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a411d90a5fd9b3a25fdb7d149637db7e2}{copy\+\_\+patchtype\+\_\+mask\+\_\+dmean}} (ipatch, opatch, z, lmask, isize)
+\begin{DoxyCompactList}\small\item\em Copies the cohort-\/level variables that are dmean. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a2be9e087d841d6e931fa8fb6648a2a56}{copy\+\_\+patchtype\+\_\+mask\+\_\+mmean}} (ipatch, opatch, z, lmask, isize)
+\begin{DoxyCompactList}\small\item\em Copies the cohort-\/level variables that are mmean or mmsqu. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_aa8cec33a472499c3e80bc1a281c9eba0}{copy\+\_\+patchtype\+\_\+mask\+\_\+qmean}} (ipatch, opatch, z, lmask, isize)
+\begin{DoxyCompactList}\small\item\em Copies the cohort-\/level variables that are qmean or qmsqu. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_afdc01451213108f52d4c3ac14a804f74}{filltab\+\_\+alltypes}}
+\begin{DoxyCompactList}\small\item\em This subroutine is the main driver for filling the variable table (var\+\_\+table) of ED variables. ~\newline
+ \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_ac479c3704655d44e4b6b87b703c488a1}{filltab\+\_\+globtype}} (igr)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a31b9d7889efe4b92ff8dc064eb655d4e}{filltab\+\_\+edtype}} (igr, init)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the polygon-\/level variables ~\newline
+ (edtype). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_abb260c56b27f849e311a4ff12439a2d6}{filltab\+\_\+edtype\+\_\+p10}} (cgrid, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the polygon-\/level variables (edtype) that have one dimension and are integer (type 10). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a256581db31438ac1eab6658d8eed7e6d}{filltab\+\_\+edtype\+\_\+p11inst}} (cgrid, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the polygon-\/level variables (edtype) that have one dimension and are real (type 11), and are instantaneous. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a6d7159b5099487f658877739e29f3f40}{filltab\+\_\+edtype\+\_\+p11fmean}} (cgrid, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the polygon-\/level variables (edtype) that have one dimension and are real (type 11), and are fast mean variables. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a7ed69aec83eaa248927d38ddd7a67daa}{filltab\+\_\+edtype\+\_\+p11dmean}} (cgrid, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the polygon-\/level variables (edtype) that have one dimension and are real (type 11), and are daily mean variables. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a714397c35a6eb326065670c98745d2ee}{filltab\+\_\+edtype\+\_\+p11mmean}} (cgrid, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the polygon-\/level variables (edtype) that have one dimension and are real (type 11), and are monthly mean variables. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_ab9eaf06f12f8739d511341e99dad51eb}{filltab\+\_\+edtype\+\_\+m11}} (cgrid, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the polygon-\/level variables (edtype) that have two dimensions (ndcycle,npolygons) and are real (type -\/11). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a78f2d3db9b379cbde2178f6366ebdd06}{filltab\+\_\+edtype\+\_\+p12}} (cgrid, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the polygon-\/level variables (edtype) that have two dimensions (ndcycle,npolygons) and are real (type 12). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a4834dc1fa685230019880cc6c9cf4ed0}{filltab\+\_\+edtype\+\_\+m12}} (cgrid, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the polygon-\/level variables (edtype) that have three dimensions (nzg,ndcycle,npolygons) and are real (type -\/12). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a6265fcb655ce420fb53d9d9a70a676c7}{filltab\+\_\+edtype\+\_\+p19}} (cgrid, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the polygon-\/level variables (edtype) that have two dimensions (12 months,npolygons) and are real (type 19). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_ac8c4001066687856580431bcfa5c49ff}{filltab\+\_\+edtype\+\_\+p191}} (cgrid, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the polygon-\/level variables (edtype) that have two dimensions (13 months,npolygons) and are real (type 19). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a973191c14021cf533e4643205c6623d8}{filltab\+\_\+edtype\+\_\+p146}} (cgrid, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the polygon-\/level variables (edtype) that have three dimensions (n\+\_\+dbh,n\+\_\+pft,npolygons) and are real (type 146). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a241cb06b937cbad37050f035e6305788}{filltab\+\_\+edtype\+\_\+p199}} (cgrid, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the polygon-\/level variables (edtype) that have three dimensions (3,4,npolygons) and are real (type 199). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a5059d40682c2653017de524077b8dae5}{filltab\+\_\+polygontype}} (igr, ipy, init)
+\begin{DoxyCompactList}\small\item\em This sub-\/routine fills in the variable table with site-\/level variables. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a246e5298a265c587bd0f78db320e29c5}{filltab\+\_\+polygontype\+\_\+p20}} (cpoly, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the site-\/level variables (polygontype) that have one dimension and are integer (type 20). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a05b5b3790eeabf7f1ebc386315be33ff}{filltab\+\_\+polygontype\+\_\+p21inst}} (cpoly, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the site-\/level variables (polygontype) that have one dimension and are real (type 21), and are not averaged variable (fmean, dmean, mmean, mmsqu, qmean, qmsqu). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_afa85ef8f0f340a3c70f4070afe429661}{filltab\+\_\+polygontype\+\_\+p21fmean}} (cpoly, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the site-\/level variables (polygontype) that have one dimension and are real (type 21), and are sub-\/daily averages (fmean). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a813592d2753b4e952803f077a7d9270b}{filltab\+\_\+polygontype\+\_\+p21dmean}} (cpoly, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the site-\/level variables (polygontype) that have one dimension and are real (type 21), and are daily averages (dmean). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_ac62932511eae57da5b7d3fedd818ccb6}{filltab\+\_\+polygontype\+\_\+p21mmean}} (cpoly, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the site-\/level variables (polygontype) that have one dimension and are real (type 21), and are monthly averages (mmean or mmsqu). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a7d921b75e21a0601c4dac488c4d1aa01}{filltab\+\_\+polygontype\+\_\+p220}} (cpoly, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the site-\/level variables (polygontype) that have two dimensions (nzg,nsites) and are integer (type 220). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_afabb5f55cd27b2d47fc19be14314ee61}{filltab\+\_\+polygontype\+\_\+p24}} (cpoly, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the site-\/level variables (polygontype) that have two dimensions (n\+\_\+pft,nsites) and are real (type 24). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_ada572b0a43655456a132bf574b33ed7f}{filltab\+\_\+polygontype\+\_\+m21}} (cpoly, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the site-\/level variables (polygontype) that have two dimensions (ndcycle,nsites) and are real (type -\/21). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a63083121712f3f902667c53218987e46}{filltab\+\_\+polygontype\+\_\+p29}} (cpoly, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the site-\/level variables (polygontype) that have two dimensions (12 months,nsites) and are real (type 29). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a767e7b3c2632bb5bae2c57b3d5671780}{filltab\+\_\+polygontype\+\_\+p246}} (cpoly, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the site-\/level variables (polygontype) that have three dimensions (n\+\_\+pft,n\+\_\+dbh,nsites) and are real (type 246). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_af1a7d7f50a0d28613072bb4a1832c3e3}{filltab\+\_\+polygontype\+\_\+p255}} (cpoly, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the site-\/level variables (polygontype) that have three dimensions (n\+\_\+dist\+\_\+types,n\+\_\+dist\+\_\+types,nsites) and are real (type 255). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_adfda51c18d9eb4eab6a5f2d479eccd29}{filltab\+\_\+sitetype}} (igr, ipy, isi, init)
+\begin{DoxyCompactList}\small\item\em This sub-\/routine will fill the variable table with the sitetype variables (patch-\/level). Because of the sheer number of variables, we must split the subroutines into smaller routines. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a556ff3dcf4b87ae8fe4e3319e1196d27}{filltab\+\_\+sitetype\+\_\+p30}} (csite, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the patch-\/level variables (sitetype) that have one dimension and are integer (type 30). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a8bc8b68929a7a916f6b7935bb29a633a}{filltab\+\_\+sitetype\+\_\+p31inst}} (csite, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the patch-\/level variables (sitetype) that have one dimension and are real (type 31). Because of the sheer amount of variables with type 31, we do the budget, today, fmean, dmean, mmean, and mmsqu variables in separate sub-\/routines. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a2f41d321145c1fc85e33055ee0d4a78c}{filltab\+\_\+sitetype\+\_\+p31budget}} (csite, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the patch-\/level variables (sitetype) that have one dimension are real (type 31), and are budget variables (co2budget, cbudget, ebudget, wbudget). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a242eaeffb4268408922368bfe527904f}{filltab\+\_\+sitetype\+\_\+p31today}} (csite, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the patch-\/level variables (sitetype) that have one dimension are real (type 31), and are daily integrals (today). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a195c33fe08578b92692e488eb565861d}{filltab\+\_\+sitetype\+\_\+p31fmean}} (csite, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the patch-\/level variables (sitetype) that have one dimension, are real (type 31), and are sub-\/daily averages. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_ab7a9ec8185269ed2dda4bf9538a21416}{filltab\+\_\+sitetype\+\_\+p31dmean}} (csite, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the patch-\/level variables (sitetype) that have one dimension, are real (type 31), and are daily averages. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a89840a7049b8ec0e90010deda231bcdc}{filltab\+\_\+sitetype\+\_\+p31mmean}} (csite, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the patch-\/level variables (sitetype) that have one dimension, are real (type 31), and are monthly means or mean sum of squares. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_aeda801ceb00e5700d0dc3175a0937d16}{filltab\+\_\+sitetype\+\_\+m31}} (csite, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the patch-\/level variables (sitetype) that have two dimensions (ndcycle,npatches), and are of type -\/31 (qmean and qmsqu). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a42452cec3810c62dd8c72e2d58476bcd}{filltab\+\_\+sitetype\+\_\+p32}} (csite, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the patch-\/level variables (sitetype) that have two dimensions (nzg,npatches). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a6f5ed492902141d24d2bd008dd7b68c1}{filltab\+\_\+sitetype\+\_\+m32}} (csite, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the patch-\/level variables (sitetype) that have three dimensions (nzg,ndcycle,npatches). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_ae53d37359e4395c526fd65a95f76c428}{filltab\+\_\+sitetype\+\_\+p33}} (csite, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the patch-\/level variables (sitetype) that have two dimensions (nzs,npatches). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_acf64db19aff9106beb2c20eecbe6afa9}{filltab\+\_\+sitetype\+\_\+p34}} (csite, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the patch-\/level variables (sitetype) that have two dimensions (n\+\_\+pft,npatches). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_ad66c156887d39c17d4cb4b0895e5fe24}{filltab\+\_\+sitetype\+\_\+p346}} (csite, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the patch-\/level variables (sitetype) that have three dimensions (n\+\_\+pft,ff\+\_\+nhgt,npatches). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_ac37a860383b752e5263aa945c99824a9}{filltab\+\_\+patchtype}} (igr, ipy, isi, ipa, init)
+\begin{DoxyCompactList}\small\item\em This sub-\/routine fills in the variable table for cohort-\/level variables. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a83c0921d462c47a37c8d6f97dbdb9d72}{filltab\+\_\+patchtype\+\_\+p40}} (cpatch, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the cohort-\/level variables (patchtype) that have one dimension and are integer (type 40). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_ae15afcbcec31f2654c618be42e1b978d}{filltab\+\_\+patchtype\+\_\+p41inst}} (cpatch, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the cohort-\/level variables (patchtype) that have one dimension and are real (type 41) and not fmean, dmean, mmean, mmsqu, qmean, or qmsqu. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a045ab8a54e0630e26b2fbdf1754efacd}{filltab\+\_\+patchtype\+\_\+p41today}} (cpatch, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the cohort-\/level variables (patchtype) that have one dimension and are real (type 41) and daily integrals (today). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_ab1a02c808c212a939e3a4f5cfae22bb1}{filltab\+\_\+patchtype\+\_\+p41fmean}} (cpatch, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the cohort-\/level variables (patchtype) that have one dimension and are real (type 41) and fmean. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a80a0217d902dbecc06271e51aebabd66}{filltab\+\_\+patchtype\+\_\+p41dmean}} (cpatch, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the cohort-\/level variables (patchtype) that have one dimension and are real (type 41) and dmean. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a292baeb41c4a8aa98c5cd2a67b3679a3}{filltab\+\_\+patchtype\+\_\+p41mmean}} (cpatch, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the cohort-\/level variables (patchtype) that have one dimension and are real (type 41) and mmean. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a326b7df2068b9faa5fc1ea535c86efe2}{filltab\+\_\+patchtype\+\_\+m41}} (cpatch, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the cohort-\/level variables (patchtype) that have two dimensions (ndcycle,ncohorts) and are real (type -\/41). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_aff6b5234ab2ac9af7010aebc192f0c88}{filltab\+\_\+patchtype\+\_\+p42}} (cpatch, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the cohort-\/level variables (patchtype) that have two dimensions (nzg,ncohorts). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_a5d63e58eeaff5d95d688b551f909aff4}{filltab\+\_\+patchtype\+\_\+p48}} (cpatch, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the cohort-\/level variables (patchtype) that have two dimensions (n\+\_\+mort,ncohorts) and are real (type 48). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_afe586106358ae73ee7436e42a0eab679}{filltab\+\_\+patchtype\+\_\+p491}} (cpatch, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the cohort-\/level variables (patchtype) that have two dimensions (13 months,ncohorts) and are real (type 491). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_afa3fe02474e668980d731221824ae0ab}{filltab\+\_\+patchtype\+\_\+p411}} (cpatch, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the cohort-\/level variables (patchtype) that have two dimensions (n\+\_\+radprof,ncohorts) and are real (type 411). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__state__vars_ad37021d612198bd02a104790ed58446c}{filltab\+\_\+patchtype\+\_\+m411}} (cpatch, igr, init, var\+\_\+len, var\+\_\+len\+\_\+global, max\+\_\+ptrs, nvar)
+\begin{DoxyCompactList}\small\item\em This routine will fill the pointer table with the cohort-\/level variables (patchtype) that have three dimensions (n\+\_\+radprof,ndcycle,ncohorts) and are real (type -\/411). \end{DoxyCompactList}\item 
+integer function \mbox{\hyperlink{namespaceed__state__vars_a71180ecf4c468babd534e14d280a688b}{get\+\_\+nsites}} (cgrid)
+\begin{DoxyCompactList}\small\item\em This function gets the total number of sites. \end{DoxyCompactList}\item 
+integer function \mbox{\hyperlink{namespaceed__state__vars_a87bcc335f1f8acbb6c87d33101c60e61}{get\+\_\+npatches}} (cgrid)
+\begin{DoxyCompactList}\small\item\em This function gets the total number of patches. \end{DoxyCompactList}\item 
+integer function \mbox{\hyperlink{namespaceed__state__vars_a3bec61b0abda2eb04c29f131b1130f37}{get\+\_\+ncohorts}} (cgrid)
+\begin{DoxyCompactList}\small\item\em This function gets the total number of ncohorts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, dimension(maxmach, maxgrds) \mbox{\hyperlink{namespaceed__state__vars_aac712f975ee36c66ad91c4b4687cdf71}{gdpy}}
+\begin{DoxyCompactList}\small\item\em Number of polygons in each grid, for each machine. so this has a ngrids size. \end{DoxyCompactList}\item 
+integer, dimension(maxmach, maxgrds) \mbox{\hyperlink{namespaceed__state__vars_a77208cdb17b6a08bcdd07c476d5c6139}{gdsi}}
+\begin{DoxyCompactList}\small\item\em Number of sites in each grid, for each machine. \end{DoxyCompactList}\item 
+integer, dimension(maxmach, maxgrds) \mbox{\hyperlink{namespaceed__state__vars_ad2a53bb636997523d8bdacfaa6f1b9b9}{gdpa}}
+\begin{DoxyCompactList}\small\item\em Number of patches in each grid, for each machine. \end{DoxyCompactList}\item 
+integer, dimension(maxmach, maxgrds) \mbox{\hyperlink{namespaceed__state__vars_a4fc7c00baa15ee35e1703f12faa7fae2}{gdco}}
+\begin{DoxyCompactList}\small\item\em Number of cohorts in each grid, for each machine. \end{DoxyCompactList}\item 
+integer, dimension(maxmach, maxgrds) \mbox{\hyperlink{namespaceed__state__vars_a7ebd94319455148e1487107c339113ca}{py\+\_\+off}}
+\begin{DoxyCompactList}\small\item\em Offset for each machine, so this has a nmachs size. \end{DoxyCompactList}\item 
+integer, dimension(maxmach, maxgrds) \mbox{\hyperlink{namespaceed__state__vars_a40e5ef082020264b3ac022cbf41351e1}{si\+\_\+off}}
+\begin{DoxyCompactList}\small\item\em Offset for each machine, so this has a nmachs size. \end{DoxyCompactList}\item 
+integer, dimension(maxmach, maxgrds) \mbox{\hyperlink{namespaceed__state__vars_a5d1fee7506efe5c3d326478d44f97e42}{pa\+\_\+off}}
+\begin{DoxyCompactList}\small\item\em Offset for each machine, so this has a nmachs size. \end{DoxyCompactList}\item 
+integer, dimension(maxmach, maxgrds) \mbox{\hyperlink{namespaceed__state__vars_abb0498b9e5f1a7195d6260a97973b89f}{co\+\_\+off}}
+\begin{DoxyCompactList}\small\item\em Offset for each machine, so this has a nmachs size. \end{DoxyCompactList}\item 
+type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), dimension(\+:), pointer \mbox{\hyperlink{namespaceed__state__vars_a1ad47f9c446f02cad8b7a7a2bce06c8a}{edgrid\+\_\+g}}
+\item 
+type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}) \mbox{\hyperlink{namespaceed__state__vars_a42ec67e3b97c2e4abb244b7ec1e7f4c2}{edswap\+\_\+g}}
+\item 
+type(\mbox{\hyperlink{structed__state__vars_1_1polygontype}{polygontype}}) \mbox{\hyperlink{namespaceed__state__vars_ae193a761d3f04f8bb0bf11c6e624f7b7}{polyswap\+\_\+g}}
+\item 
+type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}) \mbox{\hyperlink{namespaceed__state__vars_ae55643d7022454835dc2a4b11c4a2b04}{siteswap\+\_\+g}}
+\item 
+type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}) \mbox{\hyperlink{namespaceed__state__vars_ad11390031b4401ce635598920fc0523a}{patchswap\+\_\+g}}
+\item 
+integer \mbox{\hyperlink{namespaceed__state__vars_ad27fcaec6a546cf46df5c40ddbf1bde1}{nioglobal}}
+\item 
+integer \mbox{\hyperlink{namespaceed__state__vars_ad3c5095a2e6e68fda8c698372a614a6e}{niogrid}}
+\item 
+integer \mbox{\hyperlink{namespaceed__state__vars_acc17e1323f7365a8a43c74ceb839eb10}{niopoly}}
+\item 
+integer \mbox{\hyperlink{namespaceed__state__vars_ad692c1e699708ecf209c08544c730efd}{niosite}}
+\item 
+logical \mbox{\hyperlink{namespaceed__state__vars_a5f3e4a557e76387c621a3dddd988ff01}{filltables}}
+\begin{DoxyCompactList}\small\item\em Logical switch that decides if the pointer tables for IO need to be updated The number and allocation of cohorts and patches dictates this, and they change at a monthly frequency typically. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definitions of the main variable structures in ED. 
+
+The definitions of patchtype, sitetype, polygontype, and ed-\/ type, which stores the key state variables and all diagnostic variables of ED.
+
+Important subroutines handling allocation, de-\/allocation, copying of the state/diagnostic variables.
+
+Subroutines filling variable tables, defining the output option for each variable \begin{DoxyAuthor}{Author}
+Translated from ED1 by David Medivgy, Ryan Knox and Marcos Longo 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespaceed__state__vars_a01c02fd632892eb11eaac0daacc106d2}\label{namespaceed__state__vars_a01c02fd632892eb11eaac0daacc106d2}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!allocate\_edglobals@{allocate\_edglobals}}
+\index{allocate\_edglobals@{allocate\_edglobals}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{allocate\_edglobals()}{allocate\_edglobals()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::allocate\+\_\+edglobals (\begin{DoxyParamCaption}\item[{integer}]{ngrids }\end{DoxyParamCaption})}
+
+
+
+Allocates the global dimensions (outside the structure). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_aa47dd5e1964efcbfa0844f75d1763ce5}\label{namespaceed__state__vars_aa47dd5e1964efcbfa0844f75d1763ce5}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!allocate\_edtype@{allocate\_edtype}}
+\index{allocate\_edtype@{allocate\_edtype}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{allocate\_edtype()}{allocate\_edtype()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::allocate\+\_\+edtype (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{integer, intent(in)}]{npolygons }\end{DoxyParamCaption})}
+
+
+
+Allocates the polygon-\/level variables. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a4837fc010e19721a127c9a8b04874594}\label{namespaceed__state__vars_a4837fc010e19721a127c9a8b04874594}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!allocate\_patchtype@{allocate\_patchtype}}
+\index{allocate\_patchtype@{allocate\_patchtype}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{allocate\_patchtype()}{allocate\_patchtype()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::allocate\+\_\+patchtype (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{ncohorts }\end{DoxyParamCaption})}
+
+
+
+Allocates the cohort-\/level variables. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_ad14e882e6c902118f0e369dd846eeedf}\label{namespaceed__state__vars_ad14e882e6c902118f0e369dd846eeedf}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!allocate\_polygontype@{allocate\_polygontype}}
+\index{allocate\_polygontype@{allocate\_polygontype}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{allocate\_polygontype()}{allocate\_polygontype()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::allocate\+\_\+polygontype (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1polygontype}{polygontype}}), target}]{cpoly,  }\item[{integer, intent(in)}]{nsites }\end{DoxyParamCaption})}
+
+
+
+Allocates the site-\/level variables. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_ac3b987ebbdc7c8cd956eb2634010edb9}\label{namespaceed__state__vars_ac3b987ebbdc7c8cd956eb2634010edb9}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!allocate\_sitetype@{allocate\_sitetype}}
+\index{allocate\_sitetype@{allocate\_sitetype}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{allocate\_sitetype()}{allocate\_sitetype()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::allocate\+\_\+sitetype (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{npatches }\end{DoxyParamCaption})}
+
+
+
+Allocates the patch-\/level variables. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_accd794e0e8d71ba375c3669097ae5c8d}\label{namespaceed__state__vars_accd794e0e8d71ba375c3669097ae5c8d}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!copy\_patchtype@{copy\_patchtype}}
+\index{copy\_patchtype@{copy\_patchtype}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{copy\_patchtype()}{copy\_patchtype()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::copy\+\_\+patchtype (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{ipatch,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{opatch,  }\item[{integer, intent(in)}]{icoa,  }\item[{integer, intent(in)}]{icoz,  }\item[{integer, intent(in)}]{ocoa,  }\item[{integer, intent(in)}]{ocoz }\end{DoxyParamCaption})}
+
+
+
+Copies a continuous chunk of cohorts from one place to another. 
+
+The number of cohorts to be copied must match between the input and output, and every single variable, including the cohorts, will be copied. \begin{DoxyWarning}{Warning}
+This subroutine assumes that the output patches still don\textquotesingle{}t have cohorts allocated, so this should be never used in a previously allocated patch. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{namespaceed__state__vars_a8d1f42b1112652da9f1e05929cdb29a1}\label{namespaceed__state__vars_a8d1f42b1112652da9f1e05929cdb29a1}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!copy\_patchtype\_mask@{copy\_patchtype\_mask}}
+\index{copy\_patchtype\_mask@{copy\_patchtype\_mask}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{copy\_patchtype\_mask()}{copy\_patchtype\_mask()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::copy\+\_\+patchtype\+\_\+mask (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{ipatch,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{opatch,  }\item[{logical, dimension(isize), intent(in)}]{lmask,  }\item[{integer, intent(in)}]{isize,  }\item[{integer, intent(in)}]{osize }\end{DoxyParamCaption})}
+
+
+
+Copies part of cohorts from one place to another. (only the ones where mask is .true.) 
+
+Please notice~\newline
+
+\begin{DoxyEnumerate}
+\item IPATCH and LMASK must have dimension MASKSZ~\newline
+
+\item OPATCH must have dimension NEWSZ~\newline
+
+\item The number of .true. elements of LMASK must be NEWSZ~\newline
+ In case these conditions aren\textquotesingle{}t met, then the code will crash due to segmentat on violation. \begin{DoxyWarning}{Warning}
+NEVER use this sub-\/routine for a pre-\/allocated OPATCH. This will try to allocate cohorts and you may experience horrible memory leaks. 
+\end{DoxyWarning}
+
+\end{DoxyEnumerate}\mbox{\Hypertarget{namespaceed__state__vars_a411d90a5fd9b3a25fdb7d149637db7e2}\label{namespaceed__state__vars_a411d90a5fd9b3a25fdb7d149637db7e2}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!copy\_patchtype\_mask\_dmean@{copy\_patchtype\_mask\_dmean}}
+\index{copy\_patchtype\_mask\_dmean@{copy\_patchtype\_mask\_dmean}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{copy\_patchtype\_mask\_dmean()}{copy\_patchtype\_mask\_dmean()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::copy\+\_\+patchtype\+\_\+mask\+\_\+dmean (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{ipatch,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{opatch,  }\item[{integer, intent(in)}]{z,  }\item[{logical, dimension(isize), intent(in)}]{lmask,  }\item[{integer, intent(in)}]{isize }\end{DoxyParamCaption})}
+
+
+
+Copies the cohort-\/level variables that are dmean. 
+
+\begin{DoxyWarning}{Warning}
+This sub-\/routine should be called only from copy\+\_\+patchtype\+\_\+mask!! 
+\end{DoxyWarning}
+\mbox{\Hypertarget{namespaceed__state__vars_a2db3f30821599bfbbc83fb91bd0b00b5}\label{namespaceed__state__vars_a2db3f30821599bfbbc83fb91bd0b00b5}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!copy\_patchtype\_mask\_fmean@{copy\_patchtype\_mask\_fmean}}
+\index{copy\_patchtype\_mask\_fmean@{copy\_patchtype\_mask\_fmean}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{copy\_patchtype\_mask\_fmean()}{copy\_patchtype\_mask\_fmean()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::copy\+\_\+patchtype\+\_\+mask\+\_\+fmean (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{ipatch,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{opatch,  }\item[{integer, intent(in)}]{z,  }\item[{logical, dimension(isize), intent(in)}]{lmask,  }\item[{integer, intent(in)}]{isize }\end{DoxyParamCaption})}
+
+
+
+Copies the cohort-\/level variables that are fmean. 
+
+\begin{DoxyWarning}{Warning}
+This sub-\/routine should be called only from copy\+\_\+patchtype\+\_\+mask!! 
+\end{DoxyWarning}
+\mbox{\Hypertarget{namespaceed__state__vars_a33fc63e73e6503b7c1dd90af0d954c8f}\label{namespaceed__state__vars_a33fc63e73e6503b7c1dd90af0d954c8f}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!copy\_patchtype\_mask\_inst@{copy\_patchtype\_mask\_inst}}
+\index{copy\_patchtype\_mask\_inst@{copy\_patchtype\_mask\_inst}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{copy\_patchtype\_mask\_inst()}{copy\_patchtype\_mask\_inst()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::copy\+\_\+patchtype\+\_\+mask\+\_\+inst (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{ipatch,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{opatch,  }\item[{integer, intent(in)}]{z,  }\item[{logical, dimension(isize), intent(in)}]{lmask,  }\item[{integer, intent(in)}]{isize }\end{DoxyParamCaption})}
+
+
+
+Copies the cohort-\/level variables that are not fmean, dmean, mmean, mmsqu, qmean, and qmsqu. 
+
+\begin{DoxyWarning}{Warning}
+This sub-\/routine should be called only from copy\+\_\+patchtype\+\_\+mask!! 
+\end{DoxyWarning}
+\mbox{\Hypertarget{namespaceed__state__vars_a2be9e087d841d6e931fa8fb6648a2a56}\label{namespaceed__state__vars_a2be9e087d841d6e931fa8fb6648a2a56}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!copy\_patchtype\_mask\_mmean@{copy\_patchtype\_mask\_mmean}}
+\index{copy\_patchtype\_mask\_mmean@{copy\_patchtype\_mask\_mmean}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{copy\_patchtype\_mask\_mmean()}{copy\_patchtype\_mask\_mmean()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::copy\+\_\+patchtype\+\_\+mask\+\_\+mmean (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{ipatch,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{opatch,  }\item[{integer, intent(in)}]{z,  }\item[{logical, dimension(isize), intent(in)}]{lmask,  }\item[{integer, intent(in)}]{isize }\end{DoxyParamCaption})}
+
+
+
+Copies the cohort-\/level variables that are mmean or mmsqu. 
+
+\begin{DoxyWarning}{Warning}
+This sub-\/routine should be called only from copy\+\_\+patchtype\+\_\+mask!! 
+\end{DoxyWarning}
+\mbox{\Hypertarget{namespaceed__state__vars_aa8cec33a472499c3e80bc1a281c9eba0}\label{namespaceed__state__vars_aa8cec33a472499c3e80bc1a281c9eba0}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!copy\_patchtype\_mask\_qmean@{copy\_patchtype\_mask\_qmean}}
+\index{copy\_patchtype\_mask\_qmean@{copy\_patchtype\_mask\_qmean}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{copy\_patchtype\_mask\_qmean()}{copy\_patchtype\_mask\_qmean()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::copy\+\_\+patchtype\+\_\+mask\+\_\+qmean (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{ipatch,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{opatch,  }\item[{integer, intent(in)}]{z,  }\item[{logical, dimension(isize), intent(in)}]{lmask,  }\item[{integer, intent(in)}]{isize }\end{DoxyParamCaption})}
+
+
+
+Copies the cohort-\/level variables that are qmean or qmsqu. 
+
+\begin{DoxyWarning}{Warning}
+This sub-\/routine should be called only from copy\+\_\+patchtype\+\_\+mask!! 
+\end{DoxyWarning}
+\mbox{\Hypertarget{namespaceed__state__vars_a3bf78091394d79aec34dd97e18ff16db}\label{namespaceed__state__vars_a3bf78091394d79aec34dd97e18ff16db}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!copy\_sitetype@{copy\_sitetype}}
+\index{copy\_sitetype@{copy\_sitetype}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{copy\_sitetype()}{copy\_sitetype()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::copy\+\_\+sitetype (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{isite,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{osite,  }\item[{integer, intent(in)}]{ipaa,  }\item[{integer, intent(in)}]{ipaz,  }\item[{integer, intent(in)}]{opaa,  }\item[{integer, intent(in)}]{opaz }\end{DoxyParamCaption})}
+
+
+
+Copies a continuous chunk of patches from one place to another. 
+
+The number of patches to be copied must match between the input and output, and every single variable, including the cohorts, will be copied.~\newline
+ \begin{DoxyWarning}{Warning}
+IMPORTANT. ~\newline
+ This subroutine assumes that the output patches still don\textquotesingle{}t have cohorts allocated, so this should be never used in a previously allocated patch. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{namespaceed__state__vars_abd0a1c636db86530367e9d24e386ec22}\label{namespaceed__state__vars_abd0a1c636db86530367e9d24e386ec22}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!copy\_sitetype\_mask@{copy\_sitetype\_mask}}
+\index{copy\_sitetype\_mask@{copy\_sitetype\_mask}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{copy\_sitetype\_mask()}{copy\_sitetype\_mask()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::copy\+\_\+sitetype\+\_\+mask (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{isite,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{osite,  }\item[{logical, dimension(isize), intent(in)}]{lmask,  }\item[{integer, intent(in)}]{isize,  }\item[{integer, intent(in)}]{osize }\end{DoxyParamCaption})}
+
+
+
+Copies part of one site from one place to another (only the ones where mask is .true.) 
+
+
+\begin{DoxyEnumerate}
+\item ISITE and LMASK must have dimension MASKSZ~\newline
+
+\begin{DoxyEnumerate}
+\item OSITE must have dimension NEWSZ~\newline
+
+\item The number of .true. elements of LMASK must be NEWSZ~\newline
+ This subroutine assumes that the size of vectors in osite is the number of true elements in mask, whilst the size of the vectors in isite must be the size of the mask itself. \begin{DoxyWarning}{Warning}
+IMPORTANT.~\newline
+ This routine currently assumes that the output site has not allocated any cohort yet, because the length of these nested vectors depend on the donor patch vector sizes. Never call this sub-\/routine if osite has been allocated before. 
+\end{DoxyWarning}
+
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}\mbox{\Hypertarget{namespaceed__state__vars_ac319365c7defa57422526b06b56bd61c}\label{namespaceed__state__vars_ac319365c7defa57422526b06b56bd61c}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!copy\_sitetype\_mask\_dmean@{copy\_sitetype\_mask\_dmean}}
+\index{copy\_sitetype\_mask\_dmean@{copy\_sitetype\_mask\_dmean}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{copy\_sitetype\_mask\_dmean()}{copy\_sitetype\_mask\_dmean()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::copy\+\_\+sitetype\+\_\+mask\+\_\+dmean (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{isite,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{osite,  }\item[{integer, intent(in)}]{z,  }\item[{logical, dimension(isize), intent(in)}]{lmask,  }\item[{integer, intent(in)}]{isize }\end{DoxyParamCaption})}
+
+
+
+Copies the variables that are dmean. 
+
+\begin{DoxyWarning}{Warning}
+This subroutine should be called only from copy\+\_\+sitetype\+\_\+mask!! 
+\end{DoxyWarning}
+\mbox{\Hypertarget{namespaceed__state__vars_a6f38243f52095e9ee7da38e2b2ce81ab}\label{namespaceed__state__vars_a6f38243f52095e9ee7da38e2b2ce81ab}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!copy\_sitetype\_mask\_fmean@{copy\_sitetype\_mask\_fmean}}
+\index{copy\_sitetype\_mask\_fmean@{copy\_sitetype\_mask\_fmean}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{copy\_sitetype\_mask\_fmean()}{copy\_sitetype\_mask\_fmean()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::copy\+\_\+sitetype\+\_\+mask\+\_\+fmean (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{isite,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{osite,  }\item[{integer, intent(in)}]{z,  }\item[{logical, dimension(isize), intent(in)}]{lmask,  }\item[{integer, intent(in)}]{isize }\end{DoxyParamCaption})}
+
+
+
+Copies the variables that are fmean. 
+
+\begin{DoxyWarning}{Warning}
+This subroutine should be called only from copy\+\_\+sitetype\+\_\+mask!! 
+\end{DoxyWarning}
+\mbox{\Hypertarget{namespaceed__state__vars_abef71303542156f0c150c4568b4828aa}\label{namespaceed__state__vars_abef71303542156f0c150c4568b4828aa}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!copy\_sitetype\_mask\_inst@{copy\_sitetype\_mask\_inst}}
+\index{copy\_sitetype\_mask\_inst@{copy\_sitetype\_mask\_inst}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{copy\_sitetype\_mask\_inst()}{copy\_sitetype\_mask\_inst()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::copy\+\_\+sitetype\+\_\+mask\+\_\+inst (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{isite,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{osite,  }\item[{integer, intent(in)}]{z,  }\item[{logical, dimension(isize), intent(in)}]{lmask,  }\item[{integer, intent(in)}]{isize }\end{DoxyParamCaption})}
+
+
+
+Copies the variables that are not fmean, dmean, mmean, mmsqu, qmean, and qmsqu. 
+
+\begin{DoxyWarning}{Warning}
+This sub-\/routine should be called only from copy\+\_\+sitetype\+\_\+mask!! 
+\end{DoxyWarning}
+\mbox{\Hypertarget{namespaceed__state__vars_a31ce6a86f04b6fb292bdf3a41dd3a66e}\label{namespaceed__state__vars_a31ce6a86f04b6fb292bdf3a41dd3a66e}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!copy\_sitetype\_mask\_mmean@{copy\_sitetype\_mask\_mmean}}
+\index{copy\_sitetype\_mask\_mmean@{copy\_sitetype\_mask\_mmean}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{copy\_sitetype\_mask\_mmean()}{copy\_sitetype\_mask\_mmean()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::copy\+\_\+sitetype\+\_\+mask\+\_\+mmean (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{isite,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{osite,  }\item[{integer, intent(in)}]{z,  }\item[{logical, dimension(isize), intent(in)}]{lmask,  }\item[{integer, intent(in)}]{isize }\end{DoxyParamCaption})}
+
+
+
+Copies the variables that are mmean. 
+
+\begin{DoxyWarning}{Warning}
+This subroutine should be called only from copy\+\_\+sitetype\+\_\+mask!! 
+\end{DoxyWarning}
+\mbox{\Hypertarget{namespaceed__state__vars_a2630aeadf5d56b1b603e8eb6c95b68eb}\label{namespaceed__state__vars_a2630aeadf5d56b1b603e8eb6c95b68eb}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!copy\_sitetype\_mask\_qmean@{copy\_sitetype\_mask\_qmean}}
+\index{copy\_sitetype\_mask\_qmean@{copy\_sitetype\_mask\_qmean}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{copy\_sitetype\_mask\_qmean()}{copy\_sitetype\_mask\_qmean()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::copy\+\_\+sitetype\+\_\+mask\+\_\+qmean (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{isite,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{osite,  }\item[{integer, intent(in)}]{z,  }\item[{logical, dimension(isize), intent(in)}]{lmask,  }\item[{integer, intent(in)}]{isize }\end{DoxyParamCaption})}
+
+
+
+Copies the variables that are qmean. 
+
+\begin{DoxyWarning}{Warning}
+This subroutine should be called only from copy\+\_\+sitetype\+\_\+mask!! 
+\end{DoxyWarning}
+\mbox{\Hypertarget{namespaceed__state__vars_a2845fb7d7264ed3c00651e9e46a16ed8}\label{namespaceed__state__vars_a2845fb7d7264ed3c00651e9e46a16ed8}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!deallocate\_patchtype@{deallocate\_patchtype}}
+\index{deallocate\_patchtype@{deallocate\_patchtype}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{deallocate\_patchtype()}{deallocate\_patchtype()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::deallocate\+\_\+patchtype (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch }\end{DoxyParamCaption})}
+
+
+
+De-\/allocates all cohort pointers. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a29881891f67226b191026267f094beb9}\label{namespaceed__state__vars_a29881891f67226b191026267f094beb9}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!deallocate\_sitetype@{deallocate\_sitetype}}
+\index{deallocate\_sitetype@{deallocate\_sitetype}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{deallocate\_sitetype()}{deallocate\_sitetype()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::deallocate\+\_\+sitetype (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite }\end{DoxyParamCaption})}
+
+
+
+De-\/allocates all patch pointers. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_afdc01451213108f52d4c3ac14a804f74}\label{namespaceed__state__vars_afdc01451213108f52d4c3ac14a804f74}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_alltypes@{filltab\_alltypes}}
+\index{filltab\_alltypes@{filltab\_alltypes}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_alltypes()}{filltab\_alltypes()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+alltypes}
+
+
+
+This subroutine is the main driver for filling the variable table (var\+\_\+table) of ED variables. ~\newline
+ 
+
+On a serial computing environment, this routine should be called near ~\newline
+ the end of the initialization process after the hierarchical tree structure has been ~\newline
+ trimmed via fusion/splitting/termination. Similiarly, this routine should be called ~\newline
+ after any fusion/splitting/termination process, assuming that the major vtable ~\newline
+ structures have been deallocated prior to reallocation. ~\newline
+ \begin{DoxyVerb} In a parallel environment, this routine should operate in a similiar fashion on  
+\end{DoxyVerb}
+ each of the compute nodes. It is designed such that the compute nodes will write ~\newline
+ hyperslabs of data in parallel to a joining HDF5 dataset as \char`\"{}collective-\/chunked\char`\"{} ~\newline
+ data. The modifications that must be made after running this subroutine, are that ~\newline
+ the indexes should account for the offset of the current compute node. ~\newline
+ \begin{DoxyVerb}The various state scalars, vectors and arrays are now populate the vtable.  The   
+\end{DoxyVerb}
+ vtable indexes the array gives it a name, records its dimensions, when it is to be ~\newline
+ used as output and how (averaging and such) and most importantly saves a pointer to ~\newline
+ its starting position. If this routine is being called as a compute node in ~\newline
+ parallel, the first position is not necessarily the first position of the whole ~\newline
+ datavector, but will only be the first position of that nodes hyperslab chunk ~\newline
+ within the given continuous dataset. ~\newline
+
+
+The first number correspond to the data level\+: ~\newline
+
+\begin{DoxyEnumerate}
+\item Gridtype (polygon level) ~\newline
+
+\item Polygontype (site level) ~\newline
+
+\item Sitetype (patch level) ~\newline
+
+\item Patchtype (cohort level) ~\newline
+
+\item Scalar ~\newline
+
+\end{DoxyEnumerate}
+
+The other numbers correspond to the kind of dimension and variable. ~\newline
+ 0. Main vector ordinate only, integer. ~\newline
+
+\begin{DoxyEnumerate}
+\item Main vector ordinate only, real. ~\newline
+
+\item Soil layer ~\newline
+
+\item Surface water layer ~\newline
+
+\item PFT ~\newline
+
+\item Disturbance Type ~\newline
+
+\item DBH class ~\newline
+
+\item FF\+\_\+\+DBH class ~\newline
+
+\item Mortality ~\newline
+
+\item Month ~\newline
+
+\item 13 months ~\newline
+
+\end{DoxyEnumerate}
+
+The negative sign means that the variable has an extra dimension, for the diurnal ~\newline
+ cycle output. ~\newline
+
+
+Of these possible dimensions (2-\/9), they may be used concurrently to partition the ~\newline
+ data into multi-\/dimensional spaces, but all seven will not be used simultaneously. Currently the highest ranks in use is 3, and you should think twice before making new types with higher dimensionality\+: these arrays may become huge. ~\newline
+
+
+Each unique combination will have a call number associated with it. ~\newline
+
+
+10 \+: rank 1 \+: polygon, integer ~\newline
+ 11 \+: rank 1 \+: polygon ~\newline
+ -\/11 \+: rank 2 \+: polygon, diurnal cycle ~\newline
+ 12 \+: rank 2 \+: polygon, s-\/layer ~\newline
+ 120 \+: rank 2 \+: polygon, s-\/layer, integer ~\newline
+ -\/12 \+: rank 3 \+: polygon, diurnal cycle, s-\/layer ~\newline
+ 13 \+: rank 2 \+: polygon, w-\/layer ~\newline
+ 14 \+: rank 2 \+: polygon, pft ~\newline
+ 146 \+: rank 3 \+: polygon, pft, dbh ~\newline
+ 15 \+: rank 2 \+: polygon, disturbance ~\newline
+ 155 \+: rank 3 \+: polygon, disturbance, disturbance ~\newline
+ 157 \+: rank 3 \+: polygon, disturbance, age ~\newline
+ 16 \+: rank 2 \+: polygon, dbh ~\newline
+ 17 \+: rank 2 \+: polygon, age ~\newline
+ 18 \+: rank 2 \+: polygon, mort ~\newline
+ 19 \+: rank 2 \+: polygon, month ~\newline
+ 191 \+: rank 2 \+: polygon, month+1 ~\newline
+
+
+20 \+: rank 1 \+: site, integer ~\newline
+ 21 \+: rank 1 \+: site ~\newline
+ 22 \+: rank 2 \+: site, s-\/layer ~\newline
+ 23 \+: rank 2 \+: site, w-\/layer ~\newline
+ 24 \+: rank 2 \+: site, pft ~\newline
+ 246 \+: rank 3 \+: site, pft, dbh ~\newline
+ 25 \+: rank 2 \+: site, disturbance ~\newline
+ 255 \+: rank 3 \+: site, disturbance, disturbance ~\newline
+ 26 \+: rank 2 \+: site, dbh ~\newline
+ 27 \+: rank 2 \+: site, age ~\newline
+ 28 \+: rank 2 \+: site, mort ~\newline
+ 29 \+: rank 2 \+: site, month ~\newline
+ 291 \+: rank 2 \+: site, month+1 ~\newline
+
+
+30 \+: rank 1 \+: patch, integer ~\newline
+ 31 \+: rank 1 \+: patch ~\newline
+ -\/31 \+: rank 2 \+: patch, diurnal cycle ~\newline
+ 32 \+: rank 2 \+: patch, s-\/layer ~\newline
+ 33 \+: rank 2 \+: patch, w-\/layer ~\newline
+ 34 \+: rank 2 \+: patch, pft ~\newline
+ 346 \+: rank 3 \+: patch, pft, ff\+\_\+dbh ~\newline
+ 35 \+: rank 2 \+: patch, disturbance ~\newline
+ 36 \+: rank 2 \+: patch, dbh ~\newline
+ 37 \+: rank 2 \+: patch, age ~\newline
+ 38 \+: rank 2 \+: patch, mort ~\newline
+
+
+40 \+: rank 1 \+: cohort, integer ~\newline
+ 41 \+: rank 1 \+: cohort ~\newline
+ -\/41 \+: rank 2 \+: cohort, diurnal cycle ~\newline
+ 42 \+: rank 2 \+: cohort, s-\/layer ~\newline
+ 44 \+: rank 2 \+: cohort, pft ~\newline
+ 46 \+: rank 2 \+: cohort, dbh ~\newline
+ 47 \+: rank 2 \+: cohort, age ~\newline
+ 48 \+: rank 2 \+: cohort, mort ~\newline
+ 491 \+: rank 2 \+: cohort, month+1 ~\newline
+ 411 \+: rank 2 \+: cohort, radiation ~\newline
+ -\/411 \+: rank 2 \+: cohort, diurnal cycle , radiation ~\newline
+
+
+90 \+: rank 0 \+: integer scalar ~\newline
+ 92 \+: rank 1 \+: s-\/layer ~\newline
+ \mbox{\Hypertarget{namespaceed__state__vars_a31b9d7889efe4b92ff8dc064eb655d4e}\label{namespaceed__state__vars_a31b9d7889efe4b92ff8dc064eb655d4e}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_edtype@{filltab\_edtype}}
+\index{filltab\_edtype@{filltab\_edtype}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_edtype()}{filltab\_edtype()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+edtype (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the polygon-\/level variables ~\newline
+ (edtype). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_ab9eaf06f12f8739d511341e99dad51eb}\label{namespaceed__state__vars_ab9eaf06f12f8739d511341e99dad51eb}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_edtype\_m11@{filltab\_edtype\_m11}}
+\index{filltab\_edtype\_m11@{filltab\_edtype\_m11}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_edtype\_m11()}{filltab\_edtype\_m11()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+edtype\+\_\+m11 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the polygon-\/level variables (edtype) that have two dimensions (ndcycle,npolygons) and are real (type -\/11). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a4834dc1fa685230019880cc6c9cf4ed0}\label{namespaceed__state__vars_a4834dc1fa685230019880cc6c9cf4ed0}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_edtype\_m12@{filltab\_edtype\_m12}}
+\index{filltab\_edtype\_m12@{filltab\_edtype\_m12}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_edtype\_m12()}{filltab\_edtype\_m12()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+edtype\+\_\+m12 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the polygon-\/level variables (edtype) that have three dimensions (nzg,ndcycle,npolygons) and are real (type -\/12). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_abb260c56b27f849e311a4ff12439a2d6}\label{namespaceed__state__vars_abb260c56b27f849e311a4ff12439a2d6}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_edtype\_p10@{filltab\_edtype\_p10}}
+\index{filltab\_edtype\_p10@{filltab\_edtype\_p10}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_edtype\_p10()}{filltab\_edtype\_p10()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+edtype\+\_\+p10 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the polygon-\/level variables (edtype) that have one dimension and are integer (type 10). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a7ed69aec83eaa248927d38ddd7a67daa}\label{namespaceed__state__vars_a7ed69aec83eaa248927d38ddd7a67daa}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_edtype\_p11dmean@{filltab\_edtype\_p11dmean}}
+\index{filltab\_edtype\_p11dmean@{filltab\_edtype\_p11dmean}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_edtype\_p11dmean()}{filltab\_edtype\_p11dmean()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+edtype\+\_\+p11dmean (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the polygon-\/level variables (edtype) that have one dimension and are real (type 11), and are daily mean variables. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a6d7159b5099487f658877739e29f3f40}\label{namespaceed__state__vars_a6d7159b5099487f658877739e29f3f40}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_edtype\_p11fmean@{filltab\_edtype\_p11fmean}}
+\index{filltab\_edtype\_p11fmean@{filltab\_edtype\_p11fmean}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_edtype\_p11fmean()}{filltab\_edtype\_p11fmean()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+edtype\+\_\+p11fmean (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the polygon-\/level variables (edtype) that have one dimension and are real (type 11), and are fast mean variables. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a256581db31438ac1eab6658d8eed7e6d}\label{namespaceed__state__vars_a256581db31438ac1eab6658d8eed7e6d}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_edtype\_p11inst@{filltab\_edtype\_p11inst}}
+\index{filltab\_edtype\_p11inst@{filltab\_edtype\_p11inst}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_edtype\_p11inst()}{filltab\_edtype\_p11inst()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+edtype\+\_\+p11inst (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the polygon-\/level variables (edtype) that have one dimension and are real (type 11), and are instantaneous. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a714397c35a6eb326065670c98745d2ee}\label{namespaceed__state__vars_a714397c35a6eb326065670c98745d2ee}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_edtype\_p11mmean@{filltab\_edtype\_p11mmean}}
+\index{filltab\_edtype\_p11mmean@{filltab\_edtype\_p11mmean}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_edtype\_p11mmean()}{filltab\_edtype\_p11mmean()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+edtype\+\_\+p11mmean (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the polygon-\/level variables (edtype) that have one dimension and are real (type 11), and are monthly mean variables. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a78f2d3db9b379cbde2178f6366ebdd06}\label{namespaceed__state__vars_a78f2d3db9b379cbde2178f6366ebdd06}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_edtype\_p12@{filltab\_edtype\_p12}}
+\index{filltab\_edtype\_p12@{filltab\_edtype\_p12}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_edtype\_p12()}{filltab\_edtype\_p12()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+edtype\+\_\+p12 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the polygon-\/level variables (edtype) that have two dimensions (ndcycle,npolygons) and are real (type 12). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a973191c14021cf533e4643205c6623d8}\label{namespaceed__state__vars_a973191c14021cf533e4643205c6623d8}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_edtype\_p146@{filltab\_edtype\_p146}}
+\index{filltab\_edtype\_p146@{filltab\_edtype\_p146}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_edtype\_p146()}{filltab\_edtype\_p146()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+edtype\+\_\+p146 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the polygon-\/level variables (edtype) that have three dimensions (n\+\_\+dbh,n\+\_\+pft,npolygons) and are real (type 146). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a6265fcb655ce420fb53d9d9a70a676c7}\label{namespaceed__state__vars_a6265fcb655ce420fb53d9d9a70a676c7}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_edtype\_p19@{filltab\_edtype\_p19}}
+\index{filltab\_edtype\_p19@{filltab\_edtype\_p19}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_edtype\_p19()}{filltab\_edtype\_p19()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+edtype\+\_\+p19 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the polygon-\/level variables (edtype) that have two dimensions (12 months,npolygons) and are real (type 19). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_ac8c4001066687856580431bcfa5c49ff}\label{namespaceed__state__vars_ac8c4001066687856580431bcfa5c49ff}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_edtype\_p191@{filltab\_edtype\_p191}}
+\index{filltab\_edtype\_p191@{filltab\_edtype\_p191}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_edtype\_p191()}{filltab\_edtype\_p191()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+edtype\+\_\+p191 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the polygon-\/level variables (edtype) that have two dimensions (13 months,npolygons) and are real (type 19). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a241cb06b937cbad37050f035e6305788}\label{namespaceed__state__vars_a241cb06b937cbad37050f035e6305788}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_edtype\_p199@{filltab\_edtype\_p199}}
+\index{filltab\_edtype\_p199@{filltab\_edtype\_p199}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_edtype\_p199()}{filltab\_edtype\_p199()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+edtype\+\_\+p199 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the polygon-\/level variables (edtype) that have three dimensions (3,4,npolygons) and are real (type 199). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_ac479c3704655d44e4b6b87b703c488a1}\label{namespaceed__state__vars_ac479c3704655d44e4b6b87b703c488a1}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_globtype@{filltab\_globtype}}
+\index{filltab\_globtype@{filltab\_globtype}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_globtype()}{filltab\_globtype()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+globtype (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{igr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__state__vars_ac37a860383b752e5263aa945c99824a9}\label{namespaceed__state__vars_ac37a860383b752e5263aa945c99824a9}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_patchtype@{filltab\_patchtype}}
+\index{filltab\_patchtype@{filltab\_patchtype}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_patchtype()}{filltab\_patchtype()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+patchtype (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{ipy,  }\item[{integer, intent(in)}]{isi,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{init }\end{DoxyParamCaption})}
+
+
+
+This sub-\/routine fills in the variable table for cohort-\/level variables. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a326b7df2068b9faa5fc1ea535c86efe2}\label{namespaceed__state__vars_a326b7df2068b9faa5fc1ea535c86efe2}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_patchtype\_m41@{filltab\_patchtype\_m41}}
+\index{filltab\_patchtype\_m41@{filltab\_patchtype\_m41}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_patchtype\_m41()}{filltab\_patchtype\_m41()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+patchtype\+\_\+m41 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the cohort-\/level variables (patchtype) that have two dimensions (ndcycle,ncohorts) and are real (type -\/41). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_ad37021d612198bd02a104790ed58446c}\label{namespaceed__state__vars_ad37021d612198bd02a104790ed58446c}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_patchtype\_m411@{filltab\_patchtype\_m411}}
+\index{filltab\_patchtype\_m411@{filltab\_patchtype\_m411}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_patchtype\_m411()}{filltab\_patchtype\_m411()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+patchtype\+\_\+m411 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the cohort-\/level variables (patchtype) that have three dimensions (n\+\_\+radprof,ndcycle,ncohorts) and are real (type -\/411). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a83c0921d462c47a37c8d6f97dbdb9d72}\label{namespaceed__state__vars_a83c0921d462c47a37c8d6f97dbdb9d72}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_patchtype\_p40@{filltab\_patchtype\_p40}}
+\index{filltab\_patchtype\_p40@{filltab\_patchtype\_p40}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_patchtype\_p40()}{filltab\_patchtype\_p40()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+patchtype\+\_\+p40 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the cohort-\/level variables (patchtype) that have one dimension and are integer (type 40). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_afa3fe02474e668980d731221824ae0ab}\label{namespaceed__state__vars_afa3fe02474e668980d731221824ae0ab}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_patchtype\_p411@{filltab\_patchtype\_p411}}
+\index{filltab\_patchtype\_p411@{filltab\_patchtype\_p411}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_patchtype\_p411()}{filltab\_patchtype\_p411()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+patchtype\+\_\+p411 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the cohort-\/level variables (patchtype) that have two dimensions (n\+\_\+radprof,ncohorts) and are real (type 411). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a80a0217d902dbecc06271e51aebabd66}\label{namespaceed__state__vars_a80a0217d902dbecc06271e51aebabd66}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_patchtype\_p41dmean@{filltab\_patchtype\_p41dmean}}
+\index{filltab\_patchtype\_p41dmean@{filltab\_patchtype\_p41dmean}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_patchtype\_p41dmean()}{filltab\_patchtype\_p41dmean()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+patchtype\+\_\+p41dmean (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the cohort-\/level variables (patchtype) that have one dimension and are real (type 41) and dmean. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_ab1a02c808c212a939e3a4f5cfae22bb1}\label{namespaceed__state__vars_ab1a02c808c212a939e3a4f5cfae22bb1}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_patchtype\_p41fmean@{filltab\_patchtype\_p41fmean}}
+\index{filltab\_patchtype\_p41fmean@{filltab\_patchtype\_p41fmean}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_patchtype\_p41fmean()}{filltab\_patchtype\_p41fmean()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+patchtype\+\_\+p41fmean (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the cohort-\/level variables (patchtype) that have one dimension and are real (type 41) and fmean. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_ae15afcbcec31f2654c618be42e1b978d}\label{namespaceed__state__vars_ae15afcbcec31f2654c618be42e1b978d}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_patchtype\_p41inst@{filltab\_patchtype\_p41inst}}
+\index{filltab\_patchtype\_p41inst@{filltab\_patchtype\_p41inst}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_patchtype\_p41inst()}{filltab\_patchtype\_p41inst()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+patchtype\+\_\+p41inst (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the cohort-\/level variables (patchtype) that have one dimension and are real (type 41) and not fmean, dmean, mmean, mmsqu, qmean, or qmsqu. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a292baeb41c4a8aa98c5cd2a67b3679a3}\label{namespaceed__state__vars_a292baeb41c4a8aa98c5cd2a67b3679a3}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_patchtype\_p41mmean@{filltab\_patchtype\_p41mmean}}
+\index{filltab\_patchtype\_p41mmean@{filltab\_patchtype\_p41mmean}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_patchtype\_p41mmean()}{filltab\_patchtype\_p41mmean()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+patchtype\+\_\+p41mmean (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the cohort-\/level variables (patchtype) that have one dimension and are real (type 41) and mmean. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a045ab8a54e0630e26b2fbdf1754efacd}\label{namespaceed__state__vars_a045ab8a54e0630e26b2fbdf1754efacd}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_patchtype\_p41today@{filltab\_patchtype\_p41today}}
+\index{filltab\_patchtype\_p41today@{filltab\_patchtype\_p41today}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_patchtype\_p41today()}{filltab\_patchtype\_p41today()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+patchtype\+\_\+p41today (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the cohort-\/level variables (patchtype) that have one dimension and are real (type 41) and daily integrals (today). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_aff6b5234ab2ac9af7010aebc192f0c88}\label{namespaceed__state__vars_aff6b5234ab2ac9af7010aebc192f0c88}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_patchtype\_p42@{filltab\_patchtype\_p42}}
+\index{filltab\_patchtype\_p42@{filltab\_patchtype\_p42}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_patchtype\_p42()}{filltab\_patchtype\_p42()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+patchtype\+\_\+p42 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the cohort-\/level variables (patchtype) that have two dimensions (nzg,ncohorts). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a5d63e58eeaff5d95d688b551f909aff4}\label{namespaceed__state__vars_a5d63e58eeaff5d95d688b551f909aff4}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_patchtype\_p48@{filltab\_patchtype\_p48}}
+\index{filltab\_patchtype\_p48@{filltab\_patchtype\_p48}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_patchtype\_p48()}{filltab\_patchtype\_p48()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+patchtype\+\_\+p48 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the cohort-\/level variables (patchtype) that have two dimensions (n\+\_\+mort,ncohorts) and are real (type 48). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_afe586106358ae73ee7436e42a0eab679}\label{namespaceed__state__vars_afe586106358ae73ee7436e42a0eab679}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_patchtype\_p491@{filltab\_patchtype\_p491}}
+\index{filltab\_patchtype\_p491@{filltab\_patchtype\_p491}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_patchtype\_p491()}{filltab\_patchtype\_p491()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+patchtype\+\_\+p491 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the cohort-\/level variables (patchtype) that have two dimensions (13 months,ncohorts) and are real (type 491). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a5059d40682c2653017de524077b8dae5}\label{namespaceed__state__vars_a5059d40682c2653017de524077b8dae5}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_polygontype@{filltab\_polygontype}}
+\index{filltab\_polygontype@{filltab\_polygontype}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_polygontype()}{filltab\_polygontype()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+polygontype (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{ipy,  }\item[{integer, intent(in)}]{init }\end{DoxyParamCaption})}
+
+
+
+This sub-\/routine fills in the variable table with site-\/level variables. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_ada572b0a43655456a132bf574b33ed7f}\label{namespaceed__state__vars_ada572b0a43655456a132bf574b33ed7f}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_polygontype\_m21@{filltab\_polygontype\_m21}}
+\index{filltab\_polygontype\_m21@{filltab\_polygontype\_m21}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_polygontype\_m21()}{filltab\_polygontype\_m21()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+polygontype\+\_\+m21 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1polygontype}{polygontype}}), target}]{cpoly,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the site-\/level variables (polygontype) that have two dimensions (ndcycle,nsites) and are real (type -\/21). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a246e5298a265c587bd0f78db320e29c5}\label{namespaceed__state__vars_a246e5298a265c587bd0f78db320e29c5}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_polygontype\_p20@{filltab\_polygontype\_p20}}
+\index{filltab\_polygontype\_p20@{filltab\_polygontype\_p20}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_polygontype\_p20()}{filltab\_polygontype\_p20()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+polygontype\+\_\+p20 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1polygontype}{polygontype}}), target}]{cpoly,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the site-\/level variables (polygontype) that have one dimension and are integer (type 20). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a813592d2753b4e952803f077a7d9270b}\label{namespaceed__state__vars_a813592d2753b4e952803f077a7d9270b}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_polygontype\_p21dmean@{filltab\_polygontype\_p21dmean}}
+\index{filltab\_polygontype\_p21dmean@{filltab\_polygontype\_p21dmean}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_polygontype\_p21dmean()}{filltab\_polygontype\_p21dmean()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+polygontype\+\_\+p21dmean (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1polygontype}{polygontype}}), target}]{cpoly,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the site-\/level variables (polygontype) that have one dimension and are real (type 21), and are daily averages (dmean). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_afa85ef8f0f340a3c70f4070afe429661}\label{namespaceed__state__vars_afa85ef8f0f340a3c70f4070afe429661}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_polygontype\_p21fmean@{filltab\_polygontype\_p21fmean}}
+\index{filltab\_polygontype\_p21fmean@{filltab\_polygontype\_p21fmean}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_polygontype\_p21fmean()}{filltab\_polygontype\_p21fmean()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+polygontype\+\_\+p21fmean (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1polygontype}{polygontype}}), target}]{cpoly,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the site-\/level variables (polygontype) that have one dimension and are real (type 21), and are sub-\/daily averages (fmean). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a05b5b3790eeabf7f1ebc386315be33ff}\label{namespaceed__state__vars_a05b5b3790eeabf7f1ebc386315be33ff}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_polygontype\_p21inst@{filltab\_polygontype\_p21inst}}
+\index{filltab\_polygontype\_p21inst@{filltab\_polygontype\_p21inst}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_polygontype\_p21inst()}{filltab\_polygontype\_p21inst()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+polygontype\+\_\+p21inst (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1polygontype}{polygontype}}), target}]{cpoly,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the site-\/level variables (polygontype) that have one dimension and are real (type 21), and are not averaged variable (fmean, dmean, mmean, mmsqu, qmean, qmsqu). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_ac62932511eae57da5b7d3fedd818ccb6}\label{namespaceed__state__vars_ac62932511eae57da5b7d3fedd818ccb6}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_polygontype\_p21mmean@{filltab\_polygontype\_p21mmean}}
+\index{filltab\_polygontype\_p21mmean@{filltab\_polygontype\_p21mmean}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_polygontype\_p21mmean()}{filltab\_polygontype\_p21mmean()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+polygontype\+\_\+p21mmean (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1polygontype}{polygontype}}), target}]{cpoly,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the site-\/level variables (polygontype) that have one dimension and are real (type 21), and are monthly averages (mmean or mmsqu). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a7d921b75e21a0601c4dac488c4d1aa01}\label{namespaceed__state__vars_a7d921b75e21a0601c4dac488c4d1aa01}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_polygontype\_p220@{filltab\_polygontype\_p220}}
+\index{filltab\_polygontype\_p220@{filltab\_polygontype\_p220}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_polygontype\_p220()}{filltab\_polygontype\_p220()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+polygontype\+\_\+p220 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1polygontype}{polygontype}}), target}]{cpoly,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the site-\/level variables (polygontype) that have two dimensions (nzg,nsites) and are integer (type 220). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_afabb5f55cd27b2d47fc19be14314ee61}\label{namespaceed__state__vars_afabb5f55cd27b2d47fc19be14314ee61}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_polygontype\_p24@{filltab\_polygontype\_p24}}
+\index{filltab\_polygontype\_p24@{filltab\_polygontype\_p24}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_polygontype\_p24()}{filltab\_polygontype\_p24()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+polygontype\+\_\+p24 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1polygontype}{polygontype}}), target}]{cpoly,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the site-\/level variables (polygontype) that have two dimensions (n\+\_\+pft,nsites) and are real (type 24). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a767e7b3c2632bb5bae2c57b3d5671780}\label{namespaceed__state__vars_a767e7b3c2632bb5bae2c57b3d5671780}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_polygontype\_p246@{filltab\_polygontype\_p246}}
+\index{filltab\_polygontype\_p246@{filltab\_polygontype\_p246}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_polygontype\_p246()}{filltab\_polygontype\_p246()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+polygontype\+\_\+p246 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1polygontype}{polygontype}}), target}]{cpoly,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the site-\/level variables (polygontype) that have three dimensions (n\+\_\+pft,n\+\_\+dbh,nsites) and are real (type 246). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_af1a7d7f50a0d28613072bb4a1832c3e3}\label{namespaceed__state__vars_af1a7d7f50a0d28613072bb4a1832c3e3}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_polygontype\_p255@{filltab\_polygontype\_p255}}
+\index{filltab\_polygontype\_p255@{filltab\_polygontype\_p255}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_polygontype\_p255()}{filltab\_polygontype\_p255()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+polygontype\+\_\+p255 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1polygontype}{polygontype}}), target}]{cpoly,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the site-\/level variables (polygontype) that have three dimensions (n\+\_\+dist\+\_\+types,n\+\_\+dist\+\_\+types,nsites) and are real (type 255). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a63083121712f3f902667c53218987e46}\label{namespaceed__state__vars_a63083121712f3f902667c53218987e46}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_polygontype\_p29@{filltab\_polygontype\_p29}}
+\index{filltab\_polygontype\_p29@{filltab\_polygontype\_p29}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_polygontype\_p29()}{filltab\_polygontype\_p29()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+polygontype\+\_\+p29 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1polygontype}{polygontype}}), target}]{cpoly,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the site-\/level variables (polygontype) that have two dimensions (12 months,nsites) and are real (type 29). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_adfda51c18d9eb4eab6a5f2d479eccd29}\label{namespaceed__state__vars_adfda51c18d9eb4eab6a5f2d479eccd29}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_sitetype@{filltab\_sitetype}}
+\index{filltab\_sitetype@{filltab\_sitetype}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_sitetype()}{filltab\_sitetype()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+sitetype (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{ipy,  }\item[{integer, intent(in)}]{isi,  }\item[{integer, intent(in)}]{init }\end{DoxyParamCaption})}
+
+
+
+This sub-\/routine will fill the variable table with the sitetype variables (patch-\/level). Because of the sheer number of variables, we must split the subroutines into smaller routines. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_aeda801ceb00e5700d0dc3175a0937d16}\label{namespaceed__state__vars_aeda801ceb00e5700d0dc3175a0937d16}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_sitetype\_m31@{filltab\_sitetype\_m31}}
+\index{filltab\_sitetype\_m31@{filltab\_sitetype\_m31}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_sitetype\_m31()}{filltab\_sitetype\_m31()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+sitetype\+\_\+m31 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the patch-\/level variables (sitetype) that have two dimensions (ndcycle,npatches), and are of type -\/31 (qmean and qmsqu). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a6f5ed492902141d24d2bd008dd7b68c1}\label{namespaceed__state__vars_a6f5ed492902141d24d2bd008dd7b68c1}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_sitetype\_m32@{filltab\_sitetype\_m32}}
+\index{filltab\_sitetype\_m32@{filltab\_sitetype\_m32}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_sitetype\_m32()}{filltab\_sitetype\_m32()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+sitetype\+\_\+m32 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the patch-\/level variables (sitetype) that have three dimensions (nzg,ndcycle,npatches). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a556ff3dcf4b87ae8fe4e3319e1196d27}\label{namespaceed__state__vars_a556ff3dcf4b87ae8fe4e3319e1196d27}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_sitetype\_p30@{filltab\_sitetype\_p30}}
+\index{filltab\_sitetype\_p30@{filltab\_sitetype\_p30}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_sitetype\_p30()}{filltab\_sitetype\_p30()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+sitetype\+\_\+p30 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the patch-\/level variables (sitetype) that have one dimension and are integer (type 30). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a2f41d321145c1fc85e33055ee0d4a78c}\label{namespaceed__state__vars_a2f41d321145c1fc85e33055ee0d4a78c}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_sitetype\_p31budget@{filltab\_sitetype\_p31budget}}
+\index{filltab\_sitetype\_p31budget@{filltab\_sitetype\_p31budget}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_sitetype\_p31budget()}{filltab\_sitetype\_p31budget()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+sitetype\+\_\+p31budget (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the patch-\/level variables (sitetype) that have one dimension are real (type 31), and are budget variables (co2budget, cbudget, ebudget, wbudget). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_ab7a9ec8185269ed2dda4bf9538a21416}\label{namespaceed__state__vars_ab7a9ec8185269ed2dda4bf9538a21416}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_sitetype\_p31dmean@{filltab\_sitetype\_p31dmean}}
+\index{filltab\_sitetype\_p31dmean@{filltab\_sitetype\_p31dmean}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_sitetype\_p31dmean()}{filltab\_sitetype\_p31dmean()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+sitetype\+\_\+p31dmean (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the patch-\/level variables (sitetype) that have one dimension, are real (type 31), and are daily averages. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a195c33fe08578b92692e488eb565861d}\label{namespaceed__state__vars_a195c33fe08578b92692e488eb565861d}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_sitetype\_p31fmean@{filltab\_sitetype\_p31fmean}}
+\index{filltab\_sitetype\_p31fmean@{filltab\_sitetype\_p31fmean}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_sitetype\_p31fmean()}{filltab\_sitetype\_p31fmean()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+sitetype\+\_\+p31fmean (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the patch-\/level variables (sitetype) that have one dimension, are real (type 31), and are sub-\/daily averages. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a8bc8b68929a7a916f6b7935bb29a633a}\label{namespaceed__state__vars_a8bc8b68929a7a916f6b7935bb29a633a}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_sitetype\_p31inst@{filltab\_sitetype\_p31inst}}
+\index{filltab\_sitetype\_p31inst@{filltab\_sitetype\_p31inst}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_sitetype\_p31inst()}{filltab\_sitetype\_p31inst()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+sitetype\+\_\+p31inst (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the patch-\/level variables (sitetype) that have one dimension and are real (type 31). Because of the sheer amount of variables with type 31, we do the budget, today, fmean, dmean, mmean, and mmsqu variables in separate sub-\/routines. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a89840a7049b8ec0e90010deda231bcdc}\label{namespaceed__state__vars_a89840a7049b8ec0e90010deda231bcdc}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_sitetype\_p31mmean@{filltab\_sitetype\_p31mmean}}
+\index{filltab\_sitetype\_p31mmean@{filltab\_sitetype\_p31mmean}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_sitetype\_p31mmean()}{filltab\_sitetype\_p31mmean()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+sitetype\+\_\+p31mmean (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the patch-\/level variables (sitetype) that have one dimension, are real (type 31), and are monthly means or mean sum of squares. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a242eaeffb4268408922368bfe527904f}\label{namespaceed__state__vars_a242eaeffb4268408922368bfe527904f}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_sitetype\_p31today@{filltab\_sitetype\_p31today}}
+\index{filltab\_sitetype\_p31today@{filltab\_sitetype\_p31today}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_sitetype\_p31today()}{filltab\_sitetype\_p31today()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+sitetype\+\_\+p31today (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the patch-\/level variables (sitetype) that have one dimension are real (type 31), and are daily integrals (today). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a42452cec3810c62dd8c72e2d58476bcd}\label{namespaceed__state__vars_a42452cec3810c62dd8c72e2d58476bcd}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_sitetype\_p32@{filltab\_sitetype\_p32}}
+\index{filltab\_sitetype\_p32@{filltab\_sitetype\_p32}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_sitetype\_p32()}{filltab\_sitetype\_p32()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+sitetype\+\_\+p32 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the patch-\/level variables (sitetype) that have two dimensions (nzg,npatches). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_ae53d37359e4395c526fd65a95f76c428}\label{namespaceed__state__vars_ae53d37359e4395c526fd65a95f76c428}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_sitetype\_p33@{filltab\_sitetype\_p33}}
+\index{filltab\_sitetype\_p33@{filltab\_sitetype\_p33}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_sitetype\_p33()}{filltab\_sitetype\_p33()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+sitetype\+\_\+p33 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the patch-\/level variables (sitetype) that have two dimensions (nzs,npatches). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_acf64db19aff9106beb2c20eecbe6afa9}\label{namespaceed__state__vars_acf64db19aff9106beb2c20eecbe6afa9}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_sitetype\_p34@{filltab\_sitetype\_p34}}
+\index{filltab\_sitetype\_p34@{filltab\_sitetype\_p34}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_sitetype\_p34()}{filltab\_sitetype\_p34()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+sitetype\+\_\+p34 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the patch-\/level variables (sitetype) that have two dimensions (n\+\_\+pft,npatches). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_ad66c156887d39c17d4cb4b0895e5fe24}\label{namespaceed__state__vars_ad66c156887d39c17d4cb4b0895e5fe24}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltab\_sitetype\_p346@{filltab\_sitetype\_p346}}
+\index{filltab\_sitetype\_p346@{filltab\_sitetype\_p346}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltab\_sitetype\_p346()}{filltab\_sitetype\_p346()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::filltab\+\_\+sitetype\+\_\+p346 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{igr,  }\item[{integer, intent(in)}]{init,  }\item[{integer, intent(in)}]{var\+\_\+len,  }\item[{integer, intent(in)}]{var\+\_\+len\+\_\+global,  }\item[{integer, intent(in)}]{max\+\_\+ptrs,  }\item[{integer, intent(inout)}]{nvar }\end{DoxyParamCaption})}
+
+
+
+This routine will fill the pointer table with the patch-\/level variables (sitetype) that have three dimensions (n\+\_\+pft,ff\+\_\+nhgt,npatches). 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a3bec61b0abda2eb04c29f131b1130f37}\label{namespaceed__state__vars_a3bec61b0abda2eb04c29f131b1130f37}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!get\_ncohorts@{get\_ncohorts}}
+\index{get\_ncohorts@{get\_ncohorts}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{get\_ncohorts()}{get\_ncohorts()}}
+{\footnotesize\ttfamily integer function ed\+\_\+state\+\_\+vars\+::get\+\_\+ncohorts (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid }\end{DoxyParamCaption})}
+
+
+
+This function gets the total number of ncohorts. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a87bcc335f1f8acbb6c87d33101c60e61}\label{namespaceed__state__vars_a87bcc335f1f8acbb6c87d33101c60e61}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!get\_npatches@{get\_npatches}}
+\index{get\_npatches@{get\_npatches}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{get\_npatches()}{get\_npatches()}}
+{\footnotesize\ttfamily integer function ed\+\_\+state\+\_\+vars\+::get\+\_\+npatches (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid }\end{DoxyParamCaption})}
+
+
+
+This function gets the total number of patches. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a71180ecf4c468babd534e14d280a688b}\label{namespaceed__state__vars_a71180ecf4c468babd534e14d280a688b}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!get\_nsites@{get\_nsites}}
+\index{get\_nsites@{get\_nsites}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{get\_nsites()}{get\_nsites()}}
+{\footnotesize\ttfamily integer function ed\+\_\+state\+\_\+vars\+::get\+\_\+nsites (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid }\end{DoxyParamCaption})}
+
+
+
+This function gets the total number of sites. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a0df5f674bdb76d915f34b1c6987f6815}\label{namespaceed__state__vars_a0df5f674bdb76d915f34b1c6987f6815}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!nullify\_edtype@{nullify\_edtype}}
+\index{nullify\_edtype@{nullify\_edtype}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{nullify\_edtype()}{nullify\_edtype()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::nullify\+\_\+edtype (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid }\end{DoxyParamCaption})}
+
+
+
+Nullifies all polygon pointers. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_af1a07724c13a8dceb6ba2d3dab21b899}\label{namespaceed__state__vars_af1a07724c13a8dceb6ba2d3dab21b899}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!nullify\_patchtype@{nullify\_patchtype}}
+\index{nullify\_patchtype@{nullify\_patchtype}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{nullify\_patchtype()}{nullify\_patchtype()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::nullify\+\_\+patchtype (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch }\end{DoxyParamCaption})}
+
+
+
+Nullifies all cohort pointers. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_ade6f2776a02bd9a26ee31fe75cda6170}\label{namespaceed__state__vars_ade6f2776a02bd9a26ee31fe75cda6170}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!nullify\_polygontype@{nullify\_polygontype}}
+\index{nullify\_polygontype@{nullify\_polygontype}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{nullify\_polygontype()}{nullify\_polygontype()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::nullify\+\_\+polygontype (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1polygontype}{polygontype}}), target}]{cpoly }\end{DoxyParamCaption})}
+
+
+
+Nullifies all site pointers. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_aa13b6faa5a0031bd5df50581ac0db0ff}\label{namespaceed__state__vars_aa13b6faa5a0031bd5df50581ac0db0ff}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!nullify\_sitetype@{nullify\_sitetype}}
+\index{nullify\_sitetype@{nullify\_sitetype}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{nullify\_sitetype()}{nullify\_sitetype()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+state\+\_\+vars\+::nullify\+\_\+sitetype (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite }\end{DoxyParamCaption})}
+
+
+
+Nullifies all patch pointers. 
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceed__state__vars_abb0498b9e5f1a7195d6260a97973b89f}\label{namespaceed__state__vars_abb0498b9e5f1a7195d6260a97973b89f}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!co\_off@{co\_off}}
+\index{co\_off@{co\_off}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{co\_off}{co\_off}}
+{\footnotesize\ttfamily integer, dimension(maxmach,maxgrds) ed\+\_\+state\+\_\+vars\+::co\+\_\+off}
+
+
+
+Offset for each machine, so this has a nmachs size. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a1ad47f9c446f02cad8b7a7a2bce06c8a}\label{namespaceed__state__vars_a1ad47f9c446f02cad8b7a7a2bce06c8a}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!edgrid\_g@{edgrid\_g}}
+\index{edgrid\_g@{edgrid\_g}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{edgrid\_g}{edgrid\_g}}
+{\footnotesize\ttfamily type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), dimension(\+:), pointer ed\+\_\+state\+\_\+vars\+::edgrid\+\_\+g}
+
+\mbox{\Hypertarget{namespaceed__state__vars_a42ec67e3b97c2e4abb244b7ec1e7f4c2}\label{namespaceed__state__vars_a42ec67e3b97c2e4abb244b7ec1e7f4c2}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!edswap\_g@{edswap\_g}}
+\index{edswap\_g@{edswap\_g}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{edswap\_g}{edswap\_g}}
+{\footnotesize\ttfamily type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}) ed\+\_\+state\+\_\+vars\+::edswap\+\_\+g}
+
+\mbox{\Hypertarget{namespaceed__state__vars_a5f3e4a557e76387c621a3dddd988ff01}\label{namespaceed__state__vars_a5f3e4a557e76387c621a3dddd988ff01}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!filltables@{filltables}}
+\index{filltables@{filltables}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{filltables}{filltables}}
+{\footnotesize\ttfamily logical ed\+\_\+state\+\_\+vars\+::filltables}
+
+
+
+Logical switch that decides if the pointer tables for IO need to be updated The number and allocation of cohorts and patches dictates this, and they change at a monthly frequency typically. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a4fc7c00baa15ee35e1703f12faa7fae2}\label{namespaceed__state__vars_a4fc7c00baa15ee35e1703f12faa7fae2}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!gdco@{gdco}}
+\index{gdco@{gdco}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{gdco}{gdco}}
+{\footnotesize\ttfamily integer, dimension(maxmach,maxgrds) ed\+\_\+state\+\_\+vars\+::gdco}
+
+
+
+Number of cohorts in each grid, for each machine. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_ad2a53bb636997523d8bdacfaa6f1b9b9}\label{namespaceed__state__vars_ad2a53bb636997523d8bdacfaa6f1b9b9}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!gdpa@{gdpa}}
+\index{gdpa@{gdpa}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{gdpa}{gdpa}}
+{\footnotesize\ttfamily integer, dimension(maxmach,maxgrds) ed\+\_\+state\+\_\+vars\+::gdpa}
+
+
+
+Number of patches in each grid, for each machine. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_aac712f975ee36c66ad91c4b4687cdf71}\label{namespaceed__state__vars_aac712f975ee36c66ad91c4b4687cdf71}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!gdpy@{gdpy}}
+\index{gdpy@{gdpy}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{gdpy}{gdpy}}
+{\footnotesize\ttfamily integer, dimension(maxmach,maxgrds) ed\+\_\+state\+\_\+vars\+::gdpy}
+
+
+
+Number of polygons in each grid, for each machine. so this has a ngrids size. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a77208cdb17b6a08bcdd07c476d5c6139}\label{namespaceed__state__vars_a77208cdb17b6a08bcdd07c476d5c6139}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!gdsi@{gdsi}}
+\index{gdsi@{gdsi}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{gdsi}{gdsi}}
+{\footnotesize\ttfamily integer, dimension(maxmach,maxgrds) ed\+\_\+state\+\_\+vars\+::gdsi}
+
+
+
+Number of sites in each grid, for each machine. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_ad27fcaec6a546cf46df5c40ddbf1bde1}\label{namespaceed__state__vars_ad27fcaec6a546cf46df5c40ddbf1bde1}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!nioglobal@{nioglobal}}
+\index{nioglobal@{nioglobal}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{nioglobal}{nioglobal}}
+{\footnotesize\ttfamily integer ed\+\_\+state\+\_\+vars\+::nioglobal}
+
+\mbox{\Hypertarget{namespaceed__state__vars_ad3c5095a2e6e68fda8c698372a614a6e}\label{namespaceed__state__vars_ad3c5095a2e6e68fda8c698372a614a6e}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!niogrid@{niogrid}}
+\index{niogrid@{niogrid}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{niogrid}{niogrid}}
+{\footnotesize\ttfamily integer ed\+\_\+state\+\_\+vars\+::niogrid}
+
+\mbox{\Hypertarget{namespaceed__state__vars_acc17e1323f7365a8a43c74ceb839eb10}\label{namespaceed__state__vars_acc17e1323f7365a8a43c74ceb839eb10}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!niopoly@{niopoly}}
+\index{niopoly@{niopoly}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{niopoly}{niopoly}}
+{\footnotesize\ttfamily integer ed\+\_\+state\+\_\+vars\+::niopoly}
+
+\mbox{\Hypertarget{namespaceed__state__vars_ad692c1e699708ecf209c08544c730efd}\label{namespaceed__state__vars_ad692c1e699708ecf209c08544c730efd}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!niosite@{niosite}}
+\index{niosite@{niosite}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{niosite}{niosite}}
+{\footnotesize\ttfamily integer ed\+\_\+state\+\_\+vars\+::niosite}
+
+\mbox{\Hypertarget{namespaceed__state__vars_a5d1fee7506efe5c3d326478d44f97e42}\label{namespaceed__state__vars_a5d1fee7506efe5c3d326478d44f97e42}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!pa\_off@{pa\_off}}
+\index{pa\_off@{pa\_off}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{pa\_off}{pa\_off}}
+{\footnotesize\ttfamily integer, dimension(maxmach,maxgrds) ed\+\_\+state\+\_\+vars\+::pa\+\_\+off}
+
+
+
+Offset for each machine, so this has a nmachs size. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_ad11390031b4401ce635598920fc0523a}\label{namespaceed__state__vars_ad11390031b4401ce635598920fc0523a}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!patchswap\_g@{patchswap\_g}}
+\index{patchswap\_g@{patchswap\_g}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{patchswap\_g}{patchswap\_g}}
+{\footnotesize\ttfamily type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}) ed\+\_\+state\+\_\+vars\+::patchswap\+\_\+g}
+
+\mbox{\Hypertarget{namespaceed__state__vars_ae193a761d3f04f8bb0bf11c6e624f7b7}\label{namespaceed__state__vars_ae193a761d3f04f8bb0bf11c6e624f7b7}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!polyswap\_g@{polyswap\_g}}
+\index{polyswap\_g@{polyswap\_g}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{polyswap\_g}{polyswap\_g}}
+{\footnotesize\ttfamily type(\mbox{\hyperlink{structed__state__vars_1_1polygontype}{polygontype}}) ed\+\_\+state\+\_\+vars\+::polyswap\+\_\+g}
+
+\mbox{\Hypertarget{namespaceed__state__vars_a7ebd94319455148e1487107c339113ca}\label{namespaceed__state__vars_a7ebd94319455148e1487107c339113ca}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!py\_off@{py\_off}}
+\index{py\_off@{py\_off}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{py\_off}{py\_off}}
+{\footnotesize\ttfamily integer, dimension(maxmach,maxgrds) ed\+\_\+state\+\_\+vars\+::py\+\_\+off}
+
+
+
+Offset for each machine, so this has a nmachs size. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_a40e5ef082020264b3ac022cbf41351e1}\label{namespaceed__state__vars_a40e5ef082020264b3ac022cbf41351e1}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!si\_off@{si\_off}}
+\index{si\_off@{si\_off}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{si\_off}{si\_off}}
+{\footnotesize\ttfamily integer, dimension(maxmach,maxgrds) ed\+\_\+state\+\_\+vars\+::si\+\_\+off}
+
+
+
+Offset for each machine, so this has a nmachs size. 
+
+\mbox{\Hypertarget{namespaceed__state__vars_ae55643d7022454835dc2a4b11c4a2b04}\label{namespaceed__state__vars_ae55643d7022454835dc2a4b11c4a2b04}} 
+\index{ed\_state\_vars@{ed\_state\_vars}!siteswap\_g@{siteswap\_g}}
+\index{siteswap\_g@{siteswap\_g}!ed\_state\_vars@{ed\_state\_vars}}
+\doxysubsubsection{\texorpdfstring{siteswap\_g}{siteswap\_g}}
+{\footnotesize\ttfamily type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}) ed\+\_\+state\+\_\+vars\+::siteswap\+\_\+g}
+

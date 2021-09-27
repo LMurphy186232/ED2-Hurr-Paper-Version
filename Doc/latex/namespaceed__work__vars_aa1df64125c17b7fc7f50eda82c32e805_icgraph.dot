@@ -1,0 +1,22 @@
+digraph "ed_work_vars::ed_nullify_work"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="ed_work_vars::ed_nullify_work",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="ed_mem_alloc::ed_memory\l_allocation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__mem__alloc.html#a410d759cf4e13ea20ace04982d91d9bb",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="ed_1st_node",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__1st_8_f90.html#a88c7eafef7545a0e8343dd5a148f8320",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$edmain_8_f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d",tooltip=" "];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="ed_masterput_worklist_info",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__mpass__init_8_f90.html#a92ea90e711dba589f46d6e84f21526c8",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="ed_1st_master",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__1st_8_f90.html#a210220ea32a2360ac21ce627205a9316",tooltip=" "];
+  Node6 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="ed_node_decomp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__para__init_8f90.html#a7e154783bfabc64af7dcc857db4dffbb",tooltip=" "];
+  Node7 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+}

@@ -1,0 +1,39 @@
+\hypertarget{namespacevegetation__dynamics}{}\doxysection{vegetation\+\_\+dynamics Module Reference}
+\label{namespacevegetation__dynamics}\index{vegetation\_dynamics@{vegetation\_dynamics}}
+
+
+Handles vegetation growth, phenology, reproduction, and disturbance.  
+
+
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacevegetation__dynamics_ac0aac7ba29275bab000373bd850a36e6}{veg\+\_\+dynamics\+\_\+driver}} (new\+\_\+month, new\+\_\+year, gr\+\_\+tfact0, veget\+\_\+dyn\+\_\+on)
+\item 
+subroutine \mbox{\hyperlink{namespacevegetation__dynamics_a776650d60712d46f8ec16af2c7186af2}{update\+\_\+patch\+\_\+ages}} (cgrid)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles vegetation growth, phenology, reproduction, and disturbance. 
+
+This subroutine first handles any prescribed events, then moves on to phenology, biomass growth, structural growth, reproduction, then disturbance. \begin{DoxyAuthor}{Author}
+Translated from ED1 by David Medvigy, Ryan Knox and Marcos Longo 
+
+18 Oct 2017. Turned into a module for safer interfaces (Marcos Longo) 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacevegetation__dynamics_a776650d60712d46f8ec16af2c7186af2}\label{namespacevegetation__dynamics_a776650d60712d46f8ec16af2c7186af2}} 
+\index{vegetation\_dynamics@{vegetation\_dynamics}!update\_patch\_ages@{update\_patch\_ages}}
+\index{update\_patch\_ages@{update\_patch\_ages}!vegetation\_dynamics@{vegetation\_dynamics}}
+\doxysubsubsection{\texorpdfstring{update\_patch\_ages()}{update\_patch\_ages()}}
+{\footnotesize\ttfamily subroutine vegetation\+\_\+dynamics\+::update\+\_\+patch\+\_\+ages (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacevegetation__dynamics_ac0aac7ba29275bab000373bd850a36e6}\label{namespacevegetation__dynamics_ac0aac7ba29275bab000373bd850a36e6}} 
+\index{vegetation\_dynamics@{vegetation\_dynamics}!veg\_dynamics\_driver@{veg\_dynamics\_driver}}
+\index{veg\_dynamics\_driver@{veg\_dynamics\_driver}!vegetation\_dynamics@{vegetation\_dynamics}}
+\doxysubsubsection{\texorpdfstring{veg\_dynamics\_driver()}{veg\_dynamics\_driver()}}
+{\footnotesize\ttfamily subroutine vegetation\+\_\+dynamics\+::veg\+\_\+dynamics\+\_\+driver (\begin{DoxyParamCaption}\item[{logical, intent(in)}]{new\+\_\+month,  }\item[{logical, intent(in)}]{new\+\_\+year,  }\item[{real, intent(in)}]{gr\+\_\+tfact0,  }\item[{logical, intent(in)}]{veget\+\_\+dyn\+\_\+on }\end{DoxyParamCaption})}
+

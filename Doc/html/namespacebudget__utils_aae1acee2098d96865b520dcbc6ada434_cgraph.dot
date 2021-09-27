@@ -1,0 +1,12 @@
+digraph "budget_utils::compute_carbon_storage"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="budget_utils::compute\l_carbon_storage",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="budget_utils::compute\l_co2_storage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacebudget__utils.html#aa1c4f8466010b1673f2914f1bfe9b6ee",tooltip=" "];
+  Node2 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

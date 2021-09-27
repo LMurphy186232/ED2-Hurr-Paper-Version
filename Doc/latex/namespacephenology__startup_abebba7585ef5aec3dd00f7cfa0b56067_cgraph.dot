@@ -1,0 +1,30 @@
+digraph "phenology_startup::phenology_init"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="phenology_startup::\lphenology_init",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="phenology_startup::\lread_prescribed_phenology",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacephenology__startup.html#aa83586e75a022d6fcb5816972361282d",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="dist_gc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$great__circle_8f90.html#abff00715b3227e38afe4c1a67416e4d2",tooltip=" "];
+  Node3 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="fatal_error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fatal__error_8_f90.html#a2a2bff228716ab48a81c795b348d1665",tooltip=" "];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="julday",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dateutils_8f90.html#ab4306c1f20ef02cf582fb1050fa0c5d9",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="isleap",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dateutils_8f90.html#acbfdb1c78beb593447108203011b380c",tooltip=" "];
+  Node6 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="phenology_aux::prescribed\l_leaf_state",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacephenology__aux.html#aac80b26fc41e788ad7669441222543ff",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="phenology_startup::\lread_thermal_sums",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacephenology__startup.html#aca2b4422c059ad87aee0f7aa7f7c8964",tooltip=" "];
+  Node8 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="phenology_startup::\lfill_thermal_sums",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacephenology__startup.html#a7e3ac783d1459d2f3ac41c2af6d761c9",tooltip=" "];
+  Node8 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+}

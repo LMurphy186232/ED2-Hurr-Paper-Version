@@ -1,0 +1,93 @@
+\hypertarget{namespaceed__work__vars}{}\doxysection{ed\+\_\+work\+\_\+vars Module Reference}
+\label{namespaceed__work__vars}\index{ed\_work\_vars@{ed\_work\_vars}}
+\doxysubsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{structed__work__vars_1_1work__vars}{work\+\_\+vars}}
+\item 
+type \mbox{\hyperlink{structed__work__vars_1_1work__vecs}{work\+\_\+vecs}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceed__work__vars_a01ba1ac60fb7fc6120b2caa0044b3c21}{ed\+\_\+alloc\+\_\+work}} (worke, n2, n3, nsite)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__work__vars_aa1df64125c17b7fc7f50eda82c32e805}{ed\+\_\+nullify\+\_\+work}} (worke)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__work__vars_afa61eb802d72e14002f44379afceea9d}{ed\+\_\+dealloc\+\_\+work}} (worke)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__work__vars_a5df6efe6c5b192d365161ad999858f25}{ed\+\_\+alloc\+\_\+work\+\_\+vec}} (workv, npolys, nsite)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__work__vars_a328d5a0e766e58bd6e2b015fa91ad8db}{ed\+\_\+nullify\+\_\+work\+\_\+vec}} (workv)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__work__vars_a61bfa6695e1a8ac94e02b917a83aabea}{ed\+\_\+dealloc\+\_\+work\+\_\+vec}} (workv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+type(\mbox{\hyperlink{structed__work__vars_1_1work__vars}{work\+\_\+vars}}), dimension(\+:), allocatable \mbox{\hyperlink{namespaceed__work__vars_a9587eaf2a297aea9337288fbd4697cde}{work\+\_\+e}}
+\item 
+type(\mbox{\hyperlink{structed__work__vars_1_1work__vecs}{work\+\_\+vecs}}), dimension(\+:), allocatable \mbox{\hyperlink{namespaceed__work__vars_aad831dc3295b5ee4dbd0b01c0fe47e37}{work\+\_\+v}}
+\item 
+integer, dimension(maxgrds) \mbox{\hyperlink{namespaceed__work__vars_aeed3989f9c97cab11bdf68227df4b75d}{npolys\+\_\+run}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespaceed__work__vars_a01ba1ac60fb7fc6120b2caa0044b3c21}\label{namespaceed__work__vars_a01ba1ac60fb7fc6120b2caa0044b3c21}} 
+\index{ed\_work\_vars@{ed\_work\_vars}!ed\_alloc\_work@{ed\_alloc\_work}}
+\index{ed\_alloc\_work@{ed\_alloc\_work}!ed\_work\_vars@{ed\_work\_vars}}
+\doxysubsubsection{\texorpdfstring{ed\_alloc\_work()}{ed\_alloc\_work()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+work\+\_\+vars\+::ed\+\_\+alloc\+\_\+work (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{structed__work__vars_1_1work__vars}{work\+\_\+vars}}), intent(inout)}]{worke,  }\item[{integer, intent(in)}]{n2,  }\item[{integer, intent(in)}]{n3,  }\item[{integer, intent(in)}]{nsite }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__work__vars_a5df6efe6c5b192d365161ad999858f25}\label{namespaceed__work__vars_a5df6efe6c5b192d365161ad999858f25}} 
+\index{ed\_work\_vars@{ed\_work\_vars}!ed\_alloc\_work\_vec@{ed\_alloc\_work\_vec}}
+\index{ed\_alloc\_work\_vec@{ed\_alloc\_work\_vec}!ed\_work\_vars@{ed\_work\_vars}}
+\doxysubsubsection{\texorpdfstring{ed\_alloc\_work\_vec()}{ed\_alloc\_work\_vec()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+work\+\_\+vars\+::ed\+\_\+alloc\+\_\+work\+\_\+vec (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{structed__work__vars_1_1work__vecs}{work\+\_\+vecs}}), intent(inout)}]{workv,  }\item[{integer, intent(in)}]{npolys,  }\item[{integer, intent(in)}]{nsite }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__work__vars_afa61eb802d72e14002f44379afceea9d}\label{namespaceed__work__vars_afa61eb802d72e14002f44379afceea9d}} 
+\index{ed\_work\_vars@{ed\_work\_vars}!ed\_dealloc\_work@{ed\_dealloc\_work}}
+\index{ed\_dealloc\_work@{ed\_dealloc\_work}!ed\_work\_vars@{ed\_work\_vars}}
+\doxysubsubsection{\texorpdfstring{ed\_dealloc\_work()}{ed\_dealloc\_work()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+work\+\_\+vars\+::ed\+\_\+dealloc\+\_\+work (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{structed__work__vars_1_1work__vars}{work\+\_\+vars}})}]{worke }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__work__vars_a61bfa6695e1a8ac94e02b917a83aabea}\label{namespaceed__work__vars_a61bfa6695e1a8ac94e02b917a83aabea}} 
+\index{ed\_work\_vars@{ed\_work\_vars}!ed\_dealloc\_work\_vec@{ed\_dealloc\_work\_vec}}
+\index{ed\_dealloc\_work\_vec@{ed\_dealloc\_work\_vec}!ed\_work\_vars@{ed\_work\_vars}}
+\doxysubsubsection{\texorpdfstring{ed\_dealloc\_work\_vec()}{ed\_dealloc\_work\_vec()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+work\+\_\+vars\+::ed\+\_\+dealloc\+\_\+work\+\_\+vec (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{structed__work__vars_1_1work__vecs}{work\+\_\+vecs}})}]{workv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__work__vars_aa1df64125c17b7fc7f50eda82c32e805}\label{namespaceed__work__vars_aa1df64125c17b7fc7f50eda82c32e805}} 
+\index{ed\_work\_vars@{ed\_work\_vars}!ed\_nullify\_work@{ed\_nullify\_work}}
+\index{ed\_nullify\_work@{ed\_nullify\_work}!ed\_work\_vars@{ed\_work\_vars}}
+\doxysubsubsection{\texorpdfstring{ed\_nullify\_work()}{ed\_nullify\_work()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+work\+\_\+vars\+::ed\+\_\+nullify\+\_\+work (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{structed__work__vars_1_1work__vars}{work\+\_\+vars}})}]{worke }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__work__vars_a328d5a0e766e58bd6e2b015fa91ad8db}\label{namespaceed__work__vars_a328d5a0e766e58bd6e2b015fa91ad8db}} 
+\index{ed\_work\_vars@{ed\_work\_vars}!ed\_nullify\_work\_vec@{ed\_nullify\_work\_vec}}
+\index{ed\_nullify\_work\_vec@{ed\_nullify\_work\_vec}!ed\_work\_vars@{ed\_work\_vars}}
+\doxysubsubsection{\texorpdfstring{ed\_nullify\_work\_vec()}{ed\_nullify\_work\_vec()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+work\+\_\+vars\+::ed\+\_\+nullify\+\_\+work\+\_\+vec (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{structed__work__vars_1_1work__vecs}{work\+\_\+vecs}})}]{workv }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceed__work__vars_aeed3989f9c97cab11bdf68227df4b75d}\label{namespaceed__work__vars_aeed3989f9c97cab11bdf68227df4b75d}} 
+\index{ed\_work\_vars@{ed\_work\_vars}!npolys\_run@{npolys\_run}}
+\index{npolys\_run@{npolys\_run}!ed\_work\_vars@{ed\_work\_vars}}
+\doxysubsubsection{\texorpdfstring{npolys\_run}{npolys\_run}}
+{\footnotesize\ttfamily integer, dimension(maxgrds) ed\+\_\+work\+\_\+vars\+::npolys\+\_\+run}
+
+\mbox{\Hypertarget{namespaceed__work__vars_a9587eaf2a297aea9337288fbd4697cde}\label{namespaceed__work__vars_a9587eaf2a297aea9337288fbd4697cde}} 
+\index{ed\_work\_vars@{ed\_work\_vars}!work\_e@{work\_e}}
+\index{work\_e@{work\_e}!ed\_work\_vars@{ed\_work\_vars}}
+\doxysubsubsection{\texorpdfstring{work\_e}{work\_e}}
+{\footnotesize\ttfamily type (\mbox{\hyperlink{structed__work__vars_1_1work__vars}{work\+\_\+vars}}), dimension(\+:), allocatable ed\+\_\+work\+\_\+vars\+::work\+\_\+e}
+
+\mbox{\Hypertarget{namespaceed__work__vars_aad831dc3295b5ee4dbd0b01c0fe47e37}\label{namespaceed__work__vars_aad831dc3295b5ee4dbd0b01c0fe47e37}} 
+\index{ed\_work\_vars@{ed\_work\_vars}!work\_v@{work\_v}}
+\index{work\_v@{work\_v}!ed\_work\_vars@{ed\_work\_vars}}
+\doxysubsubsection{\texorpdfstring{work\_v}{work\_v}}
+{\footnotesize\ttfamily type (\mbox{\hyperlink{structed__work__vars_1_1work__vecs}{work\+\_\+vecs}}), dimension(\+:), allocatable ed\+\_\+work\+\_\+vars\+::work\+\_\+v}
+

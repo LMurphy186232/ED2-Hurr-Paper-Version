@@ -1,0 +1,56 @@
+\hypertarget{namespacebdf2__solver}{}\doxysection{bdf2\+\_\+solver Module Reference}
+\label{namespacebdf2__solver}\index{bdf2\_solver@{bdf2\_solver}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacebdf2__solver_aef1590be55738925ec0caf4281a4fd37}{bdf2\+\_\+integ}} (cpatch, yprev, ycurr, ynext, dydt, dtf, dtb)
+\item 
+subroutine \mbox{\hyperlink{namespacebdf2__solver_a1e0d29cb13d891b28f64860743be2e29}{selective\+\_\+gaussian\+\_\+2body}} (ad, yd, xd, np)
+\item 
+subroutine \mbox{\hyperlink{namespacebdf2__solver_acacfd5b11b68df1772b60a8b95d19c64}{ludcmp\+\_\+dble}} (ad, n, np, indx, d)
+\item 
+subroutine \mbox{\hyperlink{namespacebdf2__solver_a345cae5ddba56dea6083d89ad706627d}{lubksb\+\_\+dble}} (ad, n, np, indx, bd)
+\item 
+subroutine \mbox{\hyperlink{namespacebdf2__solver_aac027589964dea49afc7497e94373dc9}{migs}} (A, N, X, INDX)
+\item 
+subroutine \mbox{\hyperlink{namespacebdf2__solver_ad70de6639eac24db05d72da0a2e8012d}{elgs}} (A, N, INDX)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacebdf2__solver_aef1590be55738925ec0caf4281a4fd37}\label{namespacebdf2__solver_aef1590be55738925ec0caf4281a4fd37}} 
+\index{bdf2\_solver@{bdf2\_solver}!bdf2\_integ@{bdf2\_integ}}
+\index{bdf2\_integ@{bdf2\_integ}!bdf2\_solver@{bdf2\_solver}}
+\doxysubsubsection{\texorpdfstring{bdf2\_integ()}{bdf2\_integ()}}
+{\footnotesize\ttfamily subroutine bdf2\+\_\+solver\+::bdf2\+\_\+integ (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1bdf2patchtype}{bdf2patchtype}}), target}]{yprev,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{ycurr,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{ynext,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{dydt,  }\item[{real(kind=8), intent(in)}]{dtf,  }\item[{real(kind=8), intent(in)}]{dtb }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebdf2__solver_ad70de6639eac24db05d72da0a2e8012d}\label{namespacebdf2__solver_ad70de6639eac24db05d72da0a2e8012d}} 
+\index{bdf2\_solver@{bdf2\_solver}!elgs@{elgs}}
+\index{elgs@{elgs}!bdf2\_solver@{bdf2\_solver}}
+\doxysubsubsection{\texorpdfstring{elgs()}{elgs()}}
+{\footnotesize\ttfamily subroutine bdf2\+\_\+solver\+::elgs (\begin{DoxyParamCaption}\item[{real, dimension (n,n), intent(inout)}]{A,  }\item[{integer, intent(in)}]{N,  }\item[{integer, dimension (n), intent(out)}]{INDX }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebdf2__solver_a345cae5ddba56dea6083d89ad706627d}\label{namespacebdf2__solver_a345cae5ddba56dea6083d89ad706627d}} 
+\index{bdf2\_solver@{bdf2\_solver}!lubksb\_dble@{lubksb\_dble}}
+\index{lubksb\_dble@{lubksb\_dble}!bdf2\_solver@{bdf2\_solver}}
+\doxysubsubsection{\texorpdfstring{lubksb\_dble()}{lubksb\_dble()}}
+{\footnotesize\ttfamily subroutine bdf2\+\_\+solver\+::lubksb\+\_\+dble (\begin{DoxyParamCaption}\item[{real(kind=8), dimension(np,np), intent(in)}]{ad,  }\item[{integer, intent(in)}]{n,  }\item[{integer, intent(in)}]{np,  }\item[{integer, dimension(n), intent(in)}]{indx,  }\item[{real(kind=8), dimension(n), intent(inout)}]{bd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebdf2__solver_acacfd5b11b68df1772b60a8b95d19c64}\label{namespacebdf2__solver_acacfd5b11b68df1772b60a8b95d19c64}} 
+\index{bdf2\_solver@{bdf2\_solver}!ludcmp\_dble@{ludcmp\_dble}}
+\index{ludcmp\_dble@{ludcmp\_dble}!bdf2\_solver@{bdf2\_solver}}
+\doxysubsubsection{\texorpdfstring{ludcmp\_dble()}{ludcmp\_dble()}}
+{\footnotesize\ttfamily subroutine bdf2\+\_\+solver\+::ludcmp\+\_\+dble (\begin{DoxyParamCaption}\item[{real(kind=8), dimension(np,np), intent(inout)}]{ad,  }\item[{integer, intent(in)}]{n,  }\item[{integer, intent(in)}]{np,  }\item[{integer, dimension(n), intent(out)}]{indx,  }\item[{real, intent(out)}]{d }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebdf2__solver_aac027589964dea49afc7497e94373dc9}\label{namespacebdf2__solver_aac027589964dea49afc7497e94373dc9}} 
+\index{bdf2\_solver@{bdf2\_solver}!migs@{migs}}
+\index{migs@{migs}!bdf2\_solver@{bdf2\_solver}}
+\doxysubsubsection{\texorpdfstring{migs()}{migs()}}
+{\footnotesize\ttfamily subroutine bdf2\+\_\+solver\+::migs (\begin{DoxyParamCaption}\item[{real, dimension (n,n), intent(inout)}]{A,  }\item[{integer, intent(in)}]{N,  }\item[{real, dimension (n,n), intent(out)}]{X,  }\item[{integer, dimension (n), intent(out)}]{INDX }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebdf2__solver_a1e0d29cb13d891b28f64860743be2e29}\label{namespacebdf2__solver_a1e0d29cb13d891b28f64860743be2e29}} 
+\index{bdf2\_solver@{bdf2\_solver}!selective\_gaussian\_2body@{selective\_gaussian\_2body}}
+\index{selective\_gaussian\_2body@{selective\_gaussian\_2body}!bdf2\_solver@{bdf2\_solver}}
+\doxysubsubsection{\texorpdfstring{selective\_gaussian\_2body()}{selective\_gaussian\_2body()}}
+{\footnotesize\ttfamily subroutine bdf2\+\_\+solver\+::selective\+\_\+gaussian\+\_\+2body (\begin{DoxyParamCaption}\item[{real(kind=8), dimension(np,np), intent(in)}]{ad,  }\item[{real(kind=8), dimension(np), intent(out)}]{yd,  }\item[{real(kind=8), dimension(np), intent(in)}]{xd,  }\item[{integer, intent(in)}]{np }\end{DoxyParamCaption})}
+

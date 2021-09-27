@@ -1,0 +1,32 @@
+\hypertarget{namespaceeuler__driver}{}\doxysection{euler\+\_\+driver Module Reference}
+\label{namespaceeuler__driver}\index{euler\_driver@{euler\_driver}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceeuler__driver_a55664cda4554324c478d426edcc090ba}{euler\+\_\+timestep}} (cgrid)
+\item 
+subroutine \mbox{\hyperlink{namespaceeuler__driver_a22c3b83ca15e3a80e0c05371c83cedab}{integrate\+\_\+patch\+\_\+euler}} (csite, initp, dinitp, ytemp, yscal, dydx, ipa, isi, ibuff, nighttime, wcurr\+\_\+loss2atm, ecurr\+\_\+netrad, ecurr\+\_\+loss2atm, co2curr\+\_\+loss2atm, wcurr\+\_\+loss2drainage, ecurr\+\_\+loss2drainage, wcurr\+\_\+loss2runoff, ecurr\+\_\+loss2runoff, co2curr\+\_\+denseffect, ecurr\+\_\+denseffect, wcurr\+\_\+denseffect, nsteps)
+\item 
+subroutine \mbox{\hyperlink{namespaceeuler__driver_aebf9f5fedece6cef3feb10e627f4e527}{euler\+\_\+integ}} (h1, csite, initp, dinitp, ytemp, yscal, dydx, ipa, isi, ibuff, nsteps)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespaceeuler__driver_aebf9f5fedece6cef3feb10e627f4e527}\label{namespaceeuler__driver_aebf9f5fedece6cef3feb10e627f4e527}} 
+\index{euler\_driver@{euler\_driver}!euler\_integ@{euler\_integ}}
+\index{euler\_integ@{euler\_integ}!euler\_driver@{euler\_driver}}
+\doxysubsubsection{\texorpdfstring{euler\_integ()}{euler\_integ()}}
+{\footnotesize\ttfamily subroutine euler\+\_\+driver\+::euler\+\_\+integ (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{h1,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{initp,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{dinitp,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{ytemp,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{yscal,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{dydx,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{isi,  }\item[{integer, intent(in)}]{ibuff,  }\item[{integer, intent(out)}]{nsteps }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceeuler__driver_a55664cda4554324c478d426edcc090ba}\label{namespaceeuler__driver_a55664cda4554324c478d426edcc090ba}} 
+\index{euler\_driver@{euler\_driver}!euler\_timestep@{euler\_timestep}}
+\index{euler\_timestep@{euler\_timestep}!euler\_driver@{euler\_driver}}
+\doxysubsubsection{\texorpdfstring{euler\_timestep()}{euler\_timestep()}}
+{\footnotesize\ttfamily subroutine euler\+\_\+driver\+::euler\+\_\+timestep (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceeuler__driver_a22c3b83ca15e3a80e0c05371c83cedab}\label{namespaceeuler__driver_a22c3b83ca15e3a80e0c05371c83cedab}} 
+\index{euler\_driver@{euler\_driver}!integrate\_patch\_euler@{integrate\_patch\_euler}}
+\index{integrate\_patch\_euler@{integrate\_patch\_euler}!euler\_driver@{euler\_driver}}
+\doxysubsubsection{\texorpdfstring{integrate\_patch\_euler()}{integrate\_patch\_euler()}}
+{\footnotesize\ttfamily subroutine euler\+\_\+driver\+::integrate\+\_\+patch\+\_\+euler (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{initp,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{dinitp,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{ytemp,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{yscal,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{dydx,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{isi,  }\item[{integer, intent(in)}]{ibuff,  }\item[{logical, intent(in)}]{nighttime,  }\item[{real, intent(out)}]{wcurr\+\_\+loss2atm,  }\item[{real, intent(out)}]{ecurr\+\_\+netrad,  }\item[{real, intent(out)}]{ecurr\+\_\+loss2atm,  }\item[{real, intent(out)}]{co2curr\+\_\+loss2atm,  }\item[{real, intent(out)}]{wcurr\+\_\+loss2drainage,  }\item[{real, intent(out)}]{ecurr\+\_\+loss2drainage,  }\item[{real, intent(out)}]{wcurr\+\_\+loss2runoff,  }\item[{real, intent(out)}]{ecurr\+\_\+loss2runoff,  }\item[{real, intent(out)}]{co2curr\+\_\+denseffect,  }\item[{real, intent(out)}]{ecurr\+\_\+denseffect,  }\item[{real, intent(out)}]{wcurr\+\_\+denseffect,  }\item[{integer, intent(out)}]{nsteps }\end{DoxyParamCaption})}
+

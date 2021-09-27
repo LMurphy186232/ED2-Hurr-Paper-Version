@@ -1,0 +1,45 @@
+digraph "rk4_integ_utils::initialize_rk4patches"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="rk4_integ_utils::initialize\l_rk4patches",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="canopy_radiation_coms\l::alloc_radscratch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacecanopy__radiation__coms.html#abf436863eec6f51fbcad29f1a0ad8833",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="canopy_radiation_coms\l::nullify_radscratch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacecanopy__radiation__coms.html#a5d6cfa703bca9703874fe55efaf4f05d",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="rk4_coms::allocate\l_bdf2_patch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacerk4__coms.html#a292fa2f7c65668f516015eff1a3b74e2",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="rk4_coms::nullify_bdf2\l_patch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacerk4__coms.html#a22f63b46db00ae302b1ae688abecc22d",tooltip=" "];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="rk4_coms::zero_bdf2\l_patch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacerk4__coms.html#a4dc0257365f3ec4614c2e41451517e28",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="rk4_coms::allocate\l_rk4_aux",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacerk4__coms.html#afe1de3958c4ca4c64d5fb2160fced95f",tooltip=" "];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="rk4_coms::nullify_rk4_aux",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacerk4__coms.html#a306ba21ba388b2e51767aa9f5d76eda0",tooltip=" "];
+  Node7 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="rk4_coms::zero_rk4_aux",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacerk4__coms.html#a0af8d3f6d5452c98c81c5230f3b22343",tooltip=" "];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="rk4_coms::allocate\l_rk4_coh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacerk4__coms.html#ac355c3cf81ffef1c269338cf8b07c4bc",tooltip=" "];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="rk4_coms::nullify_rk4\l_cohort",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacerk4__coms.html#afe54efd0ad9ab38983314ca0d2557e26",tooltip=" "];
+  Node10 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="rk4_coms::zero_rk4\l_cohort",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacerk4__coms.html#a1053434edb41147cb74257d6339eab8f",tooltip=" "];
+  Node1 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="rk4_coms::allocate\l_rk4_patch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacerk4__coms.html#a52256ca0348235c95a467581d6067dac",tooltip=" "];
+  Node13 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="rk4_coms::nullify_rk4\l_patch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacerk4__coms.html#a34a6a346af3d032c14f416435801598a",tooltip=" "];
+  Node13 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="rk4_coms::zero_rk4\l_patch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacerk4__coms.html#a4206f404f555c50ee6570211356bd537",tooltip=" "];
+  Node1 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="canopy_radiation_coms\l::dealloc_radscratch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacecanopy__radiation__coms.html#abbcda361926e277937b84aa18b779d72",tooltip=" "];
+  Node1 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="rk4_coms::deallocate\l_bdf2_patch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacerk4__coms.html#a38274254cb16401c20124f7620f64ab2",tooltip=" "];
+  Node1 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="rk4_coms::deallocate\l_rk4_aux",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacerk4__coms.html#a5af13b35af38a83aed0e367f7053ffc3",tooltip=" "];
+  Node1 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="rk4_coms::deallocate\l_rk4_coh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacerk4__coms.html#a56a9eb1fd462e81374c5993b69d3d05c",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

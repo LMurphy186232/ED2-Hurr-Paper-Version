@@ -1,0 +1,198 @@
+\hypertarget{namespacegrowth__balive}{}\doxysection{growth\+\_\+balive Module Reference}
+\label{namespacegrowth__balive}\index{growth\_balive@{growth\_balive}}
+
+
+Various routines handling plant C and N use given size and allometry.  
+
+
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_a2711ed86cca4027a15a5a8de2bc9873a}{dbalive\+\_\+dt}} (cgrid, gr\+\_\+tfact0, year\+\_\+o\+\_\+day, veget\+\_\+dyn\+\_\+on)
+\begin{DoxyCompactList}\small\item\em Updates living biomass. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_a8755e8a40fed1f4342f338b76073b962}{update\+\_\+maintenance}} (cpatch, ico, year\+\_\+o\+\_\+day, tempk, tissue\+\_\+maintenance, storage\+\_\+maintenance)
+\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_a9b00d88a6c204e75778651c3143dffb7}{get\+\_\+metabolic\+\_\+npp}} (cpatch, ico, metnpp\+\_\+actual, metnpp\+\_\+pot, metnpp\+\_\+lightmax, metnpp\+\_\+moistmax, metnpp\+\_\+mlmax)
+\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_aca3956ef7564c2f63eef8324d4b7c576}{get\+\_\+growth\+\_\+respiration}} (cpatch, ico, metnpp\+\_\+actual, metnpp\+\_\+pot, metnpp\+\_\+lightmax, metnpp\+\_\+moistmax, metnpp\+\_\+mlmax, growresp\+\_\+actual, growresp\+\_\+pot, growresp\+\_\+lightmax, growresp\+\_\+moistmax, growresp\+\_\+mlmax, pat\+\_\+growth\+\_\+resp)
+\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_ab967f3e22fdd9ac551a3f39165f07fcf}{update\+\_\+carbon\+\_\+balances}} (cpatch, ipa, ico, metnpp\+\_\+actual, metnpp\+\_\+pot, metnpp\+\_\+lightmax, metnpp\+\_\+moistmax, metnpp\+\_\+mlmax, growresp\+\_\+actual, growresp\+\_\+pot, growresp\+\_\+lightmax, growresp\+\_\+moistmax, growresp\+\_\+mlmax, tissue\+\_\+maintenance, storage\+\_\+maintenance, npp\+\_\+actual, npp\+\_\+pot)
+\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_aa8ab1a92ea4f2e1e42e4c948ce88b52a}{get\+\_\+c\+\_\+xfers}} (csite, ipa, ico, npp\+\_\+actual, green\+\_\+leaf\+\_\+factor, gr\+\_\+tfact0, tr\+\_\+bleaf, tr\+\_\+broot, tr\+\_\+bsapwooda, tr\+\_\+bsapwoodb, tr\+\_\+bbarka, tr\+\_\+bbarkb, tr\+\_\+bstorage, carbon\+\_\+debt, flushing, balive\+\_\+aim, carbon\+\_\+miss, xfer\+\_\+case)
+\begin{DoxyCompactList}\small\item\em Calculates plant-\/internal C transfers for growth and maintainance. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_a8dcf6f4255838da8cbc73b34930ea40a}{apply\+\_\+c\+\_\+xfers}} (cpatch, ico, tr\+\_\+bleaf, tr\+\_\+broot, tr\+\_\+bsapwooda, tr\+\_\+bsapwoodb, tr\+\_\+bbarka, tr\+\_\+bbarkb, tr\+\_\+bstorage)
+\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_a57cedd650867822f04066d9ed8925449}{update\+\_\+today\+\_\+npp\+\_\+vars}} (cpatch, ico, tr\+\_\+bleaf, tr\+\_\+broot, tr\+\_\+bsapwooda, tr\+\_\+bsapwoodb, tr\+\_\+bbarka, tr\+\_\+bbarkb, npp\+\_\+actual)
+\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_a828be2c6929cf4bbbd40502e08b78082}{update\+\_\+nitrogen}} (flushing, ipft, npp\+\_\+actual, nplant, tr\+\_\+bleaf, tr\+\_\+broot, tr\+\_\+bsapwooda, tr\+\_\+bsapwoodb, tr\+\_\+bbarka, tr\+\_\+bbarkb, tr\+\_\+bstorage, nitrogen\+\_\+uptake, fgn\+\_\+in, fsn\+\_\+in)
+\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_abc7dc486c5530d19d42b5e8e826da9f8}{potential\+\_\+n\+\_\+uptake}} (cpatch, ico, npp\+\_\+pot, N\+\_\+uptake\+\_\+pot, green\+\_\+leaf\+\_\+factor)
+\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_a58c485c5b34cdfc309233daecb116e4b}{update\+\_\+litter\+\_\+inputs}} (csite, ipa)
+\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_ae3ea5c807059e149b415cb529db3fe75}{check\+\_\+balive\+\_\+cohort}} (csite, ipa, ico, bleaf\+\_\+in, broot\+\_\+in, bsapwooda\+\_\+in, bsapwoodb\+\_\+in, bbarka\+\_\+in, bbarkb\+\_\+in, balive\+\_\+in, bstorage\+\_\+in, bdeada\+\_\+in, bdeadb\+\_\+in, phenstatus\+\_\+in, metnpp\+\_\+actual, npp\+\_\+actual, growresp\+\_\+actual, tissue\+\_\+maintenance, storage\+\_\+maintenance, carbon\+\_\+miss, xfer\+\_\+case)
+\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_a1dd979be3f927d1318918d53cbeff8ab}{check\+\_\+balive\+\_\+patch}} (csite, ipa, fgc\+\_\+in\+\_\+in, fsc\+\_\+in\+\_\+in, stgc\+\_\+in\+\_\+in, stsc\+\_\+in\+\_\+in, pat\+\_\+balive\+\_\+in, pat\+\_\+bdead\+\_\+in, pat\+\_\+bstorage\+\_\+in, pat\+\_\+metnpp\+\_\+actual, pat\+\_\+npp\+\_\+actual, pat\+\_\+tissue\+\_\+maintenance, pat\+\_\+carbon\+\_\+miss)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Various routines handling plant C and N use given size and allometry. 
+
+Essentially, this file contains dbalive\+\_\+dt and their libraries of fns. \begin{DoxyAuthor}{Author}
+Translated from ED1 by Ryan Knox and Marcos Longo 
+
+31 Aug 2015 -\/ Big refactoring in commit b8fb585, Daniel Scott 
+
+6 Oct 2017 -\/ Included bark as an \char`\"{}active\char`\"{} tissue, Marcos Longo 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacegrowth__balive_a8dcf6f4255838da8cbc73b34930ea40a}\label{namespacegrowth__balive_a8dcf6f4255838da8cbc73b34930ea40a}} 
+\index{growth\_balive@{growth\_balive}!apply\_c\_xfers@{apply\_c\_xfers}}
+\index{apply\_c\_xfers@{apply\_c\_xfers}!growth\_balive@{growth\_balive}}
+\doxysubsubsection{\texorpdfstring{apply\_c\_xfers()}{apply\_c\_xfers()}}
+{\footnotesize\ttfamily subroutine growth\+\_\+balive\+::apply\+\_\+c\+\_\+xfers (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{ico,  }\item[{real, intent(in)}]{tr\+\_\+bleaf,  }\item[{real, intent(in)}]{tr\+\_\+broot,  }\item[{real, intent(in)}]{tr\+\_\+bsapwooda,  }\item[{real, intent(in)}]{tr\+\_\+bsapwoodb,  }\item[{real, intent(in)}]{tr\+\_\+bbarka,  }\item[{real, intent(in)}]{tr\+\_\+bbarkb,  }\item[{real, intent(in)}]{tr\+\_\+bstorage }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacegrowth__balive_ae3ea5c807059e149b415cb529db3fe75}\label{namespacegrowth__balive_ae3ea5c807059e149b415cb529db3fe75}} 
+\index{growth\_balive@{growth\_balive}!check\_balive\_cohort@{check\_balive\_cohort}}
+\index{check\_balive\_cohort@{check\_balive\_cohort}!growth\_balive@{growth\_balive}}
+\doxysubsubsection{\texorpdfstring{check\_balive\_cohort()}{check\_balive\_cohort()}}
+{\footnotesize\ttfamily subroutine growth\+\_\+balive\+::check\+\_\+balive\+\_\+cohort (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{ico,  }\item[{real, intent(in)}]{bleaf\+\_\+in,  }\item[{real, intent(in)}]{broot\+\_\+in,  }\item[{real, intent(in)}]{bsapwooda\+\_\+in,  }\item[{real, intent(in)}]{bsapwoodb\+\_\+in,  }\item[{real, intent(in)}]{bbarka\+\_\+in,  }\item[{real, intent(in)}]{bbarkb\+\_\+in,  }\item[{real, intent(in)}]{balive\+\_\+in,  }\item[{real, intent(in)}]{bstorage\+\_\+in,  }\item[{real, intent(in)}]{bdeada\+\_\+in,  }\item[{real, intent(in)}]{bdeadb\+\_\+in,  }\item[{integer, intent(in)}]{phenstatus\+\_\+in,  }\item[{real, intent(in)}]{metnpp\+\_\+actual,  }\item[{real, intent(in)}]{npp\+\_\+actual,  }\item[{real, intent(in)}]{growresp\+\_\+actual,  }\item[{real, intent(in)}]{tissue\+\_\+maintenance,  }\item[{real, intent(in)}]{storage\+\_\+maintenance,  }\item[{real, intent(inout)}]{carbon\+\_\+miss,  }\item[{integer, intent(in)}]{xfer\+\_\+case }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacegrowth__balive_a1dd979be3f927d1318918d53cbeff8ab}\label{namespacegrowth__balive_a1dd979be3f927d1318918d53cbeff8ab}} 
+\index{growth\_balive@{growth\_balive}!check\_balive\_patch@{check\_balive\_patch}}
+\index{check\_balive\_patch@{check\_balive\_patch}!growth\_balive@{growth\_balive}}
+\doxysubsubsection{\texorpdfstring{check\_balive\_patch()}{check\_balive\_patch()}}
+{\footnotesize\ttfamily subroutine growth\+\_\+balive\+::check\+\_\+balive\+\_\+patch (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{real, intent(in)}]{fgc\+\_\+in\+\_\+in,  }\item[{real, intent(in)}]{fsc\+\_\+in\+\_\+in,  }\item[{real, intent(in)}]{stgc\+\_\+in\+\_\+in,  }\item[{real, intent(in)}]{stsc\+\_\+in\+\_\+in,  }\item[{real, intent(in)}]{pat\+\_\+balive\+\_\+in,  }\item[{real, intent(in)}]{pat\+\_\+bdead\+\_\+in,  }\item[{real, intent(in)}]{pat\+\_\+bstorage\+\_\+in,  }\item[{real, intent(in)}]{pat\+\_\+metnpp\+\_\+actual,  }\item[{real, intent(in)}]{pat\+\_\+npp\+\_\+actual,  }\item[{real, intent(in)}]{pat\+\_\+tissue\+\_\+maintenance,  }\item[{real, intent(in)}]{pat\+\_\+carbon\+\_\+miss }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacegrowth__balive_a2711ed86cca4027a15a5a8de2bc9873a}\label{namespacegrowth__balive_a2711ed86cca4027a15a5a8de2bc9873a}} 
+\index{growth\_balive@{growth\_balive}!dbalive\_dt@{dbalive\_dt}}
+\index{dbalive\_dt@{dbalive\_dt}!growth\_balive@{growth\_balive}}
+\doxysubsubsection{\texorpdfstring{dbalive\_dt()}{dbalive\_dt()}}
+{\footnotesize\ttfamily subroutine growth\+\_\+balive\+::dbalive\+\_\+dt (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{real, intent(in)}]{gr\+\_\+tfact0,  }\item[{real, intent(in)}]{year\+\_\+o\+\_\+day,  }\item[{logical, intent(in)}]{veget\+\_\+dyn\+\_\+on }\end{DoxyParamCaption})}
+
+
+
+Updates living biomass. 
+
+Calls a variety of subroutines controlling plant carbon balances, C and N xfers among plant pools, updating of storage and growth respiration, leaf maintenance,and update mortality rates. \begin{DoxyAuthor}{Author}
+Translated from ED1 by Ryan Knox and Marcos Longo 
+
+31 Aug 2015 -\/ Big refactoring in commit b8fb585, Daniel Scott 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+The order of the operations here affect the C/N budgets, so don\textquotesingle{}t change it unless you really know what you are doing. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em cgrid} & the ed grid \\
+\hline
+\mbox{\texttt{ in}}  & {\em gr\+\_\+tfact0} & Corr. factor for steady growth \\
+\hline
+\mbox{\texttt{ in}}  & {\em year\+\_\+o\+\_\+day} & \char`\"{}time factor\char`\"{} i.\+e. call frequency \\
+\hline
+\mbox{\texttt{ in}}  & {\em veget\+\_\+dyn\+\_\+on} & Is vegetation dynamics on? \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacegrowth__balive_aa8ab1a92ea4f2e1e42e4c948ce88b52a}\label{namespacegrowth__balive_aa8ab1a92ea4f2e1e42e4c948ce88b52a}} 
+\index{growth\_balive@{growth\_balive}!get\_c\_xfers@{get\_c\_xfers}}
+\index{get\_c\_xfers@{get\_c\_xfers}!growth\_balive@{growth\_balive}}
+\doxysubsubsection{\texorpdfstring{get\_c\_xfers()}{get\_c\_xfers()}}
+{\footnotesize\ttfamily subroutine growth\+\_\+balive\+::get\+\_\+c\+\_\+xfers (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{ico,  }\item[{real, intent(in)}]{npp\+\_\+actual,  }\item[{real, intent(in)}]{green\+\_\+leaf\+\_\+factor,  }\item[{real, intent(in)}]{gr\+\_\+tfact0,  }\item[{real, intent(out)}]{tr\+\_\+bleaf,  }\item[{real, intent(out)}]{tr\+\_\+broot,  }\item[{real, intent(out)}]{tr\+\_\+bsapwooda,  }\item[{real, intent(out)}]{tr\+\_\+bsapwoodb,  }\item[{real, intent(out)}]{tr\+\_\+bbarka,  }\item[{real, intent(out)}]{tr\+\_\+bbarkb,  }\item[{real, intent(out)}]{tr\+\_\+bstorage,  }\item[{real, intent(out)}]{carbon\+\_\+debt,  }\item[{logical, intent(out)}]{flushing,  }\item[{real, intent(out)}]{balive\+\_\+aim,  }\item[{real, intent(inout)}]{carbon\+\_\+miss,  }\item[{integer, intent(out)}]{xfer\+\_\+case }\end{DoxyParamCaption})}
+
+
+
+Calculates plant-\/internal C transfers for growth and maintainance. 
+
+Uses phenology, allometry, carbon balance, and current C pool sizes to determine (signed) transfers to leaf, root, sapwooda, sapwoodb, bark, and storage. \begin{DoxyWarning}{Warning}
+The order of the operations here affect the C/N budgets, so don\textquotesingle{}t change it unless you really know what you are doing. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em csite} & Current Site \\
+\hline
+\mbox{\texttt{ in}}  & {\em ipa} & Loop-\/\+Current Patch \\
+\hline
+\mbox{\texttt{ in}}  & {\em ico} & Loop-\/\+Current Cohort \\
+\hline
+\mbox{\texttt{ in}}  & {\em npp\+\_\+actual} & Plant net carbon uptake \\
+\hline
+\mbox{\texttt{ in}}  & {\em green\+\_\+leaf\+\_\+factor} & Cohort leaf-\/age param. \\
+\hline
+\mbox{\texttt{ in}}  & {\em gr\+\_\+tfact0} & Corr. factor for steady growth \\
+\hline
+\mbox{\texttt{ out}}  & {\em tr\+\_\+bleaf} & Transfer to leaf C pool \\
+\hline
+\mbox{\texttt{ out}}  & {\em tr\+\_\+broot} & Transfer to root C pool \\
+\hline
+\mbox{\texttt{ out}}  & {\em tr\+\_\+bsapwooda} & Transfer to sapwooda C pool \\
+\hline
+\mbox{\texttt{ out}}  & {\em tr\+\_\+bsapwoodb} & Transfer to sapwoodb C pool \\
+\hline
+\mbox{\texttt{ out}}  & {\em tr\+\_\+bbarka} & Transfer to barka C pool \\
+\hline
+\mbox{\texttt{ out}}  & {\em tr\+\_\+bbarkb} & Transfer to barkb C pool \\
+\hline
+\mbox{\texttt{ out}}  & {\em tr\+\_\+bstorage} & Transfer to storage C pool \\
+\hline
+\mbox{\texttt{ out}}  & {\em carbon\+\_\+debt} & Net cohort carbon uptake \\
+\hline
+\mbox{\texttt{ out}}  & {\em flushing} & Flag for leaf flush \\
+\hline
+\mbox{\texttt{ out}}  & {\em balive\+\_\+aim} & Desired cohort balive value \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em carbon\+\_\+miss} & Carbon from unaccounted source \\
+\hline
+\mbox{\texttt{ out}}  & {\em xfer\+\_\+case} & Transfer case (for debugging) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacegrowth__balive_aca3956ef7564c2f63eef8324d4b7c576}\label{namespacegrowth__balive_aca3956ef7564c2f63eef8324d4b7c576}} 
+\index{growth\_balive@{growth\_balive}!get\_growth\_respiration@{get\_growth\_respiration}}
+\index{get\_growth\_respiration@{get\_growth\_respiration}!growth\_balive@{growth\_balive}}
+\doxysubsubsection{\texorpdfstring{get\_growth\_respiration()}{get\_growth\_respiration()}}
+{\footnotesize\ttfamily subroutine growth\+\_\+balive\+::get\+\_\+growth\+\_\+respiration (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{ico,  }\item[{real, intent(in)}]{metnpp\+\_\+actual,  }\item[{real, intent(in)}]{metnpp\+\_\+pot,  }\item[{real, intent(in)}]{metnpp\+\_\+lightmax,  }\item[{real, intent(in)}]{metnpp\+\_\+moistmax,  }\item[{real, intent(in)}]{metnpp\+\_\+mlmax,  }\item[{real, intent(out)}]{growresp\+\_\+actual,  }\item[{real, intent(out)}]{growresp\+\_\+pot,  }\item[{real, intent(out)}]{growresp\+\_\+lightmax,  }\item[{real, intent(out)}]{growresp\+\_\+moistmax,  }\item[{real, intent(out)}]{growresp\+\_\+mlmax,  }\item[{real, intent(inout)}]{pat\+\_\+growth\+\_\+resp }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacegrowth__balive_a9b00d88a6c204e75778651c3143dffb7}\label{namespacegrowth__balive_a9b00d88a6c204e75778651c3143dffb7}} 
+\index{growth\_balive@{growth\_balive}!get\_metabolic\_npp@{get\_metabolic\_npp}}
+\index{get\_metabolic\_npp@{get\_metabolic\_npp}!growth\_balive@{growth\_balive}}
+\doxysubsubsection{\texorpdfstring{get\_metabolic\_npp()}{get\_metabolic\_npp()}}
+{\footnotesize\ttfamily subroutine growth\+\_\+balive\+::get\+\_\+metabolic\+\_\+npp (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{ico,  }\item[{real, intent(out)}]{metnpp\+\_\+actual,  }\item[{real, intent(out)}]{metnpp\+\_\+pot,  }\item[{real, intent(out)}]{metnpp\+\_\+lightmax,  }\item[{real, intent(out)}]{metnpp\+\_\+moistmax,  }\item[{real, intent(out)}]{metnpp\+\_\+mlmax }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacegrowth__balive_abc7dc486c5530d19d42b5e8e826da9f8}\label{namespacegrowth__balive_abc7dc486c5530d19d42b5e8e826da9f8}} 
+\index{growth\_balive@{growth\_balive}!potential\_n\_uptake@{potential\_n\_uptake}}
+\index{potential\_n\_uptake@{potential\_n\_uptake}!growth\_balive@{growth\_balive}}
+\doxysubsubsection{\texorpdfstring{potential\_n\_uptake()}{potential\_n\_uptake()}}
+{\footnotesize\ttfamily subroutine growth\+\_\+balive\+::potential\+\_\+n\+\_\+uptake (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{ico,  }\item[{real, intent(in)}]{npp\+\_\+pot,  }\item[{real, intent(inout)}]{N\+\_\+uptake\+\_\+pot,  }\item[{real, intent(in)}]{green\+\_\+leaf\+\_\+factor }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacegrowth__balive_ab967f3e22fdd9ac551a3f39165f07fcf}\label{namespacegrowth__balive_ab967f3e22fdd9ac551a3f39165f07fcf}} 
+\index{growth\_balive@{growth\_balive}!update\_carbon\_balances@{update\_carbon\_balances}}
+\index{update\_carbon\_balances@{update\_carbon\_balances}!growth\_balive@{growth\_balive}}
+\doxysubsubsection{\texorpdfstring{update\_carbon\_balances()}{update\_carbon\_balances()}}
+{\footnotesize\ttfamily subroutine growth\+\_\+balive\+::update\+\_\+carbon\+\_\+balances (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{ico,  }\item[{real, intent(in)}]{metnpp\+\_\+actual,  }\item[{real, intent(in)}]{metnpp\+\_\+pot,  }\item[{real, intent(in)}]{metnpp\+\_\+lightmax,  }\item[{real, intent(in)}]{metnpp\+\_\+moistmax,  }\item[{real, intent(in)}]{metnpp\+\_\+mlmax,  }\item[{real, intent(in)}]{growresp\+\_\+actual,  }\item[{real, intent(in)}]{growresp\+\_\+pot,  }\item[{real, intent(in)}]{growresp\+\_\+lightmax,  }\item[{real, intent(in)}]{growresp\+\_\+moistmax,  }\item[{real, intent(in)}]{growresp\+\_\+mlmax,  }\item[{real, intent(in)}]{tissue\+\_\+maintenance,  }\item[{real, intent(in)}]{storage\+\_\+maintenance,  }\item[{real, intent(out)}]{npp\+\_\+actual,  }\item[{real, intent(out)}]{npp\+\_\+pot }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacegrowth__balive_a58c485c5b34cdfc309233daecb116e4b}\label{namespacegrowth__balive_a58c485c5b34cdfc309233daecb116e4b}} 
+\index{growth\_balive@{growth\_balive}!update\_litter\_inputs@{update\_litter\_inputs}}
+\index{update\_litter\_inputs@{update\_litter\_inputs}!growth\_balive@{growth\_balive}}
+\doxysubsubsection{\texorpdfstring{update\_litter\_inputs()}{update\_litter\_inputs()}}
+{\footnotesize\ttfamily subroutine growth\+\_\+balive\+::update\+\_\+litter\+\_\+inputs (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacegrowth__balive_a8755e8a40fed1f4342f338b76073b962}\label{namespacegrowth__balive_a8755e8a40fed1f4342f338b76073b962}} 
+\index{growth\_balive@{growth\_balive}!update\_maintenance@{update\_maintenance}}
+\index{update\_maintenance@{update\_maintenance}!growth\_balive@{growth\_balive}}
+\doxysubsubsection{\texorpdfstring{update\_maintenance()}{update\_maintenance()}}
+{\footnotesize\ttfamily subroutine growth\+\_\+balive\+::update\+\_\+maintenance (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{ico,  }\item[{real, intent(in)}]{year\+\_\+o\+\_\+day,  }\item[{real, intent(in)}]{tempk,  }\item[{real, intent(out)}]{tissue\+\_\+maintenance,  }\item[{real, intent(out)}]{storage\+\_\+maintenance }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacegrowth__balive_a828be2c6929cf4bbbd40502e08b78082}\label{namespacegrowth__balive_a828be2c6929cf4bbbd40502e08b78082}} 
+\index{growth\_balive@{growth\_balive}!update\_nitrogen@{update\_nitrogen}}
+\index{update\_nitrogen@{update\_nitrogen}!growth\_balive@{growth\_balive}}
+\doxysubsubsection{\texorpdfstring{update\_nitrogen()}{update\_nitrogen()}}
+{\footnotesize\ttfamily subroutine growth\+\_\+balive\+::update\+\_\+nitrogen (\begin{DoxyParamCaption}\item[{logical, intent(in)}]{flushing,  }\item[{integer, intent(in)}]{ipft,  }\item[{real, intent(in)}]{npp\+\_\+actual,  }\item[{real, intent(in)}]{nplant,  }\item[{real, intent(in)}]{tr\+\_\+bleaf,  }\item[{real, intent(in)}]{tr\+\_\+broot,  }\item[{real, intent(in)}]{tr\+\_\+bsapwooda,  }\item[{real, intent(in)}]{tr\+\_\+bsapwoodb,  }\item[{real, intent(in)}]{tr\+\_\+bbarka,  }\item[{real, intent(in)}]{tr\+\_\+bbarkb,  }\item[{real, intent(in)}]{tr\+\_\+bstorage,  }\item[{real, intent(inout)}]{nitrogen\+\_\+uptake,  }\item[{real, intent(inout)}]{fgn\+\_\+in,  }\item[{real, intent(inout)}]{fsn\+\_\+in }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacegrowth__balive_a57cedd650867822f04066d9ed8925449}\label{namespacegrowth__balive_a57cedd650867822f04066d9ed8925449}} 
+\index{growth\_balive@{growth\_balive}!update\_today\_npp\_vars@{update\_today\_npp\_vars}}
+\index{update\_today\_npp\_vars@{update\_today\_npp\_vars}!growth\_balive@{growth\_balive}}
+\doxysubsubsection{\texorpdfstring{update\_today\_npp\_vars()}{update\_today\_npp\_vars()}}
+{\footnotesize\ttfamily subroutine growth\+\_\+balive\+::update\+\_\+today\+\_\+npp\+\_\+vars (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{ico,  }\item[{real, intent(in)}]{tr\+\_\+bleaf,  }\item[{real, intent(in)}]{tr\+\_\+broot,  }\item[{real, intent(in)}]{tr\+\_\+bsapwooda,  }\item[{real, intent(in)}]{tr\+\_\+bsapwoodb,  }\item[{real, intent(in)}]{tr\+\_\+bbarka,  }\item[{real, intent(in)}]{tr\+\_\+bbarkb,  }\item[{real, intent(in)}]{npp\+\_\+actual }\end{DoxyParamCaption})}
+

@@ -1,0 +1,423 @@
+\hypertarget{namespacedisturb__coms}{}\doxysection{disturb\+\_\+coms Module Reference}
+\label{namespacedisturb__coms}\index{disturb\_coms@{disturb\_coms}}
+\doxysubsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{structdisturb__coms_1_1hurrtime}{hurrtime}}
+\begin{DoxyCompactList}\small\item\em A structure for holding the info for a single hurricane. \end{DoxyCompactList}\item 
+type \mbox{\hyperlink{structdisturb__coms_1_1lutime}{lutime}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter \mbox{\hyperlink{namespacedisturb__coms_ac39535da2e75c569a86d8f91379d75d9}{num\+\_\+lu\+\_\+trans}} = 19
+\item 
+integer, parameter \mbox{\hyperlink{namespacedisturb__coms_af76000b5f155f76ed0e8fd62ef9873e5}{max\+\_\+lu\+\_\+years}} = 2500
+\item 
+integer \mbox{\hyperlink{namespacedisturb__coms_a06107f7321a3d53a2c6c5d5accffdb86}{include\+\_\+fire}}
+\item 
+real \mbox{\hyperlink{namespacedisturb__coms_a2c64507b16785f128382bbaedda43397}{fire\+\_\+parameter}}
+\item 
+real \mbox{\hyperlink{namespacedisturb__coms_a7a00495607588b7a6477cf26a41f18b3}{f\+\_\+combusted\+\_\+fast\+\_\+c}}
+\item 
+real \mbox{\hyperlink{namespacedisturb__coms_abca05c316c88c47432a0627f4beb965e}{f\+\_\+combusted\+\_\+struct\+\_\+c}}
+\item 
+real \mbox{\hyperlink{namespacedisturb__coms_af4113bf9ae4a99b49f3cd11b7231767e}{f\+\_\+combusted\+\_\+fast\+\_\+n}}
+\item 
+real \mbox{\hyperlink{namespacedisturb__coms_acda7c77fc8632a6baa11cb3da5a33177}{f\+\_\+combusted\+\_\+struct\+\_\+n}}
+\item 
+real \mbox{\hyperlink{namespacedisturb__coms_a744995c0ca55f1924e261a9782e9c7d9}{fuel\+\_\+height\+\_\+max}}
+\item 
+integer \mbox{\hyperlink{namespacedisturb__coms_af07d8f3335cce355394feb232ad87468}{ianth\+\_\+disturb}}
+\item 
+real \mbox{\hyperlink{namespacedisturb__coms_ab4604255008b23efcdf5edc4d3fbdabe}{treefall\+\_\+disturbance\+\_\+rate}}
+\item 
+real \mbox{\hyperlink{namespacedisturb__coms_abbe69bdb8568232491820307dfa0e8a2}{time2canopy}}
+\item 
+real \mbox{\hyperlink{namespacedisturb__coms_aae4a074357ca036d5e9c30996499aef1}{min\+\_\+patch\+\_\+area}}
+\item 
+character(len=str\+\_\+len), dimension(maxgrds) \mbox{\hyperlink{namespacedisturb__coms_accab313ae8921e27e72f8b4b78f9fc2b}{lu\+\_\+database}}
+\item 
+character(len=str\+\_\+len), dimension(maxgrds) \mbox{\hyperlink{namespacedisturb__coms_ac1b7ac7c81566618705267bc595476bf}{plantation\+\_\+file}}
+\item 
+character(len=str\+\_\+len), dimension(maxgrds) \mbox{\hyperlink{namespacedisturb__coms_ae23e33ce9008eba7d28598e7609b1ecd}{lu\+\_\+rescale\+\_\+file}}
+\item 
+integer \mbox{\hyperlink{namespacedisturb__coms_a59951e338abb8312be67e3182089b888}{sl\+\_\+scale}}
+\item 
+integer \mbox{\hyperlink{namespacedisturb__coms_a336cb1eb13960514e9580ecc2ae58316}{sl\+\_\+yr\+\_\+first}}
+\item 
+integer \mbox{\hyperlink{namespacedisturb__coms_a8fa771445f986f3044793e048e7eb893}{sl\+\_\+nyrs}}
+\item 
+integer, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacedisturb__coms_af31bea9ec4fe58ccb949fa4a257c5dc8}{sl\+\_\+pft}}
+\item 
+real(kind=4), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacedisturb__coms_a4bc480d93a113da766d9ab1fec954271}{sl\+\_\+prob\+\_\+harvest}}
+\item 
+real(kind=4), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacedisturb__coms_a47438ec04ef5f3d8c54a2387215d44d5}{sl\+\_\+mindbh\+\_\+harvest}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacedisturb__coms_a7653706a69e38f1770198aa72ccb5af8}{sl\+\_\+biomass\+\_\+harvest}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacedisturb__coms_ab67173953c32e7d9d1885cdb7902403b}{sl\+\_\+skid\+\_\+rel\+\_\+area}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacedisturb__coms_a8ab0a86fdb7ad8f0dcb8d5ce6d6de8ab}{sl\+\_\+skid\+\_\+s\+\_\+gtharv}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacedisturb__coms_a06594e619e163ff0c883ce97eeedfc42}{sl\+\_\+skid\+\_\+s\+\_\+ltharv}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacedisturb__coms_a307bf6f176d7e2966ea83a57c7e08708}{sl\+\_\+felling\+\_\+s\+\_\+ltharv}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacedisturb__coms_a8e681f8ff42281ee3591194078123820}{cl\+\_\+fseeds\+\_\+harvest}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacedisturb__coms_a1015cb1b5bf5d48dbd708f902cb1c457}{cl\+\_\+fstorage\+\_\+harvest}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacedisturb__coms_a3f6067e918ec59385993f5f26e19f13f}{cl\+\_\+fleaf\+\_\+harvest}}
+\item 
+real \mbox{\hyperlink{namespacedisturb__coms_a5073d33199400f190150b8f2d364bf72}{treefall\+\_\+hite\+\_\+threshold}}
+\item 
+logical \mbox{\hyperlink{namespacedisturb__coms_a4ffd09f5ec5d821fef8b7e38619c4eb5}{does\+\_\+hite\+\_\+limit\+\_\+tfpatch}}
+\item 
+real, dimension(n\+\_\+dist\+\_\+types) \mbox{\hyperlink{namespacedisturb__coms_a6be23ebea80623cf688f9c058a00497f}{min\+\_\+oldgrowth}}
+\item 
+integer \mbox{\hyperlink{namespacedisturb__coms_ad62faf6cb6e68427671e51537fb9ef1f}{forestry\+\_\+on}}
+\item 
+integer \mbox{\hyperlink{namespacedisturb__coms_a42942f09e1f80adbb629f5bc82d36127}{agriculture\+\_\+on}}
+\item 
+integer \mbox{\hyperlink{namespacedisturb__coms_af5965ee4c60a64646fdce9039c4e8aa8}{plantation\+\_\+year}}
+\item 
+real \mbox{\hyperlink{namespacedisturb__coms_a376a3a991d013bb7fc01f11392b85e71}{plantation\+\_\+rotation}}
+\item 
+real \mbox{\hyperlink{namespacedisturb__coms_af53cc051638d63f8646b4e46eef9366a}{mature\+\_\+harvest\+\_\+age}}
+\item 
+real \mbox{\hyperlink{namespacedisturb__coms_a05d657ee432105896bdb7fce6388217a}{min\+\_\+plantation\+\_\+frac}}
+\item 
+real \mbox{\hyperlink{namespacedisturb__coms_ab882a91f3ed60ed6a1532793d166e34d}{min\+\_\+harvest\+\_\+biomass}}
+\item 
+real \mbox{\hyperlink{namespacedisturb__coms_a0591e026b4cc3e583767cc06fe811531}{max\+\_\+plantation\+\_\+dist}}
+\item 
+real \mbox{\hyperlink{namespacedisturb__coms_ac6b6e373955307b8433f33253ca71d3d}{fire\+\_\+dryness\+\_\+threshold}}
+\item 
+real \mbox{\hyperlink{namespacedisturb__coms_a78e160b31b155e0e0dbddbe1c6614c1c}{sm\+\_\+fire}}
+\item 
+real \mbox{\hyperlink{namespacedisturb__coms_a62195251813b8226366eb5ae407dd196}{fire\+\_\+smoist\+\_\+depth}}
+\item 
+integer \mbox{\hyperlink{namespacedisturb__coms_a867cc15822253a03763c6890d6bdabc9}{k\+\_\+fire\+\_\+first}}
+\item 
+integer \mbox{\hyperlink{namespacedisturb__coms_a2c6b06614e89040eabac55d3146f2bd8}{include\+\_\+hurricanes}}
+\begin{DoxyCompactList}\small\item\em Whether to include hurricanes. 0 = no; 1 = yes. If hurricanes are included, the storm schedule must be included in a text file. \end{DoxyCompactList}\item 
+character(len=str\+\_\+len) \mbox{\hyperlink{namespacedisturb__coms_a70fb4629c92c67ab106c4076c4da4407}{hurricane\+\_\+db}}
+\begin{DoxyCompactList}\small\item\em Filename containing the hurricane list. \end{DoxyCompactList}\item 
+type(\mbox{\hyperlink{structdisturb__coms_1_1hurrtime}{hurrtime}}), dimension(max\+\_\+obstime) \mbox{\hyperlink{namespacedisturb__coms_a15b5d5228db5b5e12bd51b7a2af99ab8}{hurricane\+\_\+db\+\_\+list}}
+\begin{DoxyCompactList}\small\item\em List of scheduled hurricanes. \end{DoxyCompactList}\item 
+integer \mbox{\hyperlink{namespacedisturb__coms_a53b72fde1f4dbd81873bb0204468a3c3}{hurricane\+\_\+db\+\_\+list\+\_\+len}}
+\begin{DoxyCompactList}\small\item\em Total length of the hurricane schedule. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacedisturb__coms_a42942f09e1f80adbb629f5bc82d36127}\label{namespacedisturb__coms_a42942f09e1f80adbb629f5bc82d36127}} 
+\index{disturb\_coms@{disturb\_coms}!agriculture\_on@{agriculture\_on}}
+\index{agriculture\_on@{agriculture\_on}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{agriculture\_on}{agriculture\_on}}
+{\footnotesize\ttfamily integer disturb\+\_\+coms\+::agriculture\+\_\+on}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a3f6067e918ec59385993f5f26e19f13f}\label{namespacedisturb__coms_a3f6067e918ec59385993f5f26e19f13f}} 
+\index{disturb\_coms@{disturb\_coms}!cl\_fleaf\_harvest@{cl\_fleaf\_harvest}}
+\index{cl\_fleaf\_harvest@{cl\_fleaf\_harvest}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{cl\_fleaf\_harvest}{cl\_fleaf\_harvest}}
+{\footnotesize\ttfamily real(kind=4) disturb\+\_\+coms\+::cl\+\_\+fleaf\+\_\+harvest}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a8e681f8ff42281ee3591194078123820}\label{namespacedisturb__coms_a8e681f8ff42281ee3591194078123820}} 
+\index{disturb\_coms@{disturb\_coms}!cl\_fseeds\_harvest@{cl\_fseeds\_harvest}}
+\index{cl\_fseeds\_harvest@{cl\_fseeds\_harvest}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{cl\_fseeds\_harvest}{cl\_fseeds\_harvest}}
+{\footnotesize\ttfamily real(kind=4) disturb\+\_\+coms\+::cl\+\_\+fseeds\+\_\+harvest}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a1015cb1b5bf5d48dbd708f902cb1c457}\label{namespacedisturb__coms_a1015cb1b5bf5d48dbd708f902cb1c457}} 
+\index{disturb\_coms@{disturb\_coms}!cl\_fstorage\_harvest@{cl\_fstorage\_harvest}}
+\index{cl\_fstorage\_harvest@{cl\_fstorage\_harvest}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{cl\_fstorage\_harvest}{cl\_fstorage\_harvest}}
+{\footnotesize\ttfamily real(kind=4) disturb\+\_\+coms\+::cl\+\_\+fstorage\+\_\+harvest}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a4ffd09f5ec5d821fef8b7e38619c4eb5}\label{namespacedisturb__coms_a4ffd09f5ec5d821fef8b7e38619c4eb5}} 
+\index{disturb\_coms@{disturb\_coms}!does\_hite\_limit\_tfpatch@{does\_hite\_limit\_tfpatch}}
+\index{does\_hite\_limit\_tfpatch@{does\_hite\_limit\_tfpatch}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{does\_hite\_limit\_tfpatch}{does\_hite\_limit\_tfpatch}}
+{\footnotesize\ttfamily logical disturb\+\_\+coms\+::does\+\_\+hite\+\_\+limit\+\_\+tfpatch}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a7a00495607588b7a6477cf26a41f18b3}\label{namespacedisturb__coms_a7a00495607588b7a6477cf26a41f18b3}} 
+\index{disturb\_coms@{disturb\_coms}!f\_combusted\_fast\_c@{f\_combusted\_fast\_c}}
+\index{f\_combusted\_fast\_c@{f\_combusted\_fast\_c}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{f\_combusted\_fast\_c}{f\_combusted\_fast\_c}}
+{\footnotesize\ttfamily real disturb\+\_\+coms\+::f\+\_\+combusted\+\_\+fast\+\_\+c}
+
+\mbox{\Hypertarget{namespacedisturb__coms_af4113bf9ae4a99b49f3cd11b7231767e}\label{namespacedisturb__coms_af4113bf9ae4a99b49f3cd11b7231767e}} 
+\index{disturb\_coms@{disturb\_coms}!f\_combusted\_fast\_n@{f\_combusted\_fast\_n}}
+\index{f\_combusted\_fast\_n@{f\_combusted\_fast\_n}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{f\_combusted\_fast\_n}{f\_combusted\_fast\_n}}
+{\footnotesize\ttfamily real disturb\+\_\+coms\+::f\+\_\+combusted\+\_\+fast\+\_\+n}
+
+\mbox{\Hypertarget{namespacedisturb__coms_abca05c316c88c47432a0627f4beb965e}\label{namespacedisturb__coms_abca05c316c88c47432a0627f4beb965e}} 
+\index{disturb\_coms@{disturb\_coms}!f\_combusted\_struct\_c@{f\_combusted\_struct\_c}}
+\index{f\_combusted\_struct\_c@{f\_combusted\_struct\_c}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{f\_combusted\_struct\_c}{f\_combusted\_struct\_c}}
+{\footnotesize\ttfamily real disturb\+\_\+coms\+::f\+\_\+combusted\+\_\+struct\+\_\+c}
+
+\mbox{\Hypertarget{namespacedisturb__coms_acda7c77fc8632a6baa11cb3da5a33177}\label{namespacedisturb__coms_acda7c77fc8632a6baa11cb3da5a33177}} 
+\index{disturb\_coms@{disturb\_coms}!f\_combusted\_struct\_n@{f\_combusted\_struct\_n}}
+\index{f\_combusted\_struct\_n@{f\_combusted\_struct\_n}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{f\_combusted\_struct\_n}{f\_combusted\_struct\_n}}
+{\footnotesize\ttfamily real disturb\+\_\+coms\+::f\+\_\+combusted\+\_\+struct\+\_\+n}
+
+\mbox{\Hypertarget{namespacedisturb__coms_ac6b6e373955307b8433f33253ca71d3d}\label{namespacedisturb__coms_ac6b6e373955307b8433f33253ca71d3d}} 
+\index{disturb\_coms@{disturb\_coms}!fire\_dryness\_threshold@{fire\_dryness\_threshold}}
+\index{fire\_dryness\_threshold@{fire\_dryness\_threshold}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{fire\_dryness\_threshold}{fire\_dryness\_threshold}}
+{\footnotesize\ttfamily real disturb\+\_\+coms\+::fire\+\_\+dryness\+\_\+threshold}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a2c64507b16785f128382bbaedda43397}\label{namespacedisturb__coms_a2c64507b16785f128382bbaedda43397}} 
+\index{disturb\_coms@{disturb\_coms}!fire\_parameter@{fire\_parameter}}
+\index{fire\_parameter@{fire\_parameter}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{fire\_parameter}{fire\_parameter}}
+{\footnotesize\ttfamily real disturb\+\_\+coms\+::fire\+\_\+parameter}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a62195251813b8226366eb5ae407dd196}\label{namespacedisturb__coms_a62195251813b8226366eb5ae407dd196}} 
+\index{disturb\_coms@{disturb\_coms}!fire\_smoist\_depth@{fire\_smoist\_depth}}
+\index{fire\_smoist\_depth@{fire\_smoist\_depth}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{fire\_smoist\_depth}{fire\_smoist\_depth}}
+{\footnotesize\ttfamily real disturb\+\_\+coms\+::fire\+\_\+smoist\+\_\+depth}
+
+\mbox{\Hypertarget{namespacedisturb__coms_ad62faf6cb6e68427671e51537fb9ef1f}\label{namespacedisturb__coms_ad62faf6cb6e68427671e51537fb9ef1f}} 
+\index{disturb\_coms@{disturb\_coms}!forestry\_on@{forestry\_on}}
+\index{forestry\_on@{forestry\_on}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{forestry\_on}{forestry\_on}}
+{\footnotesize\ttfamily integer disturb\+\_\+coms\+::forestry\+\_\+on}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a744995c0ca55f1924e261a9782e9c7d9}\label{namespacedisturb__coms_a744995c0ca55f1924e261a9782e9c7d9}} 
+\index{disturb\_coms@{disturb\_coms}!fuel\_height\_max@{fuel\_height\_max}}
+\index{fuel\_height\_max@{fuel\_height\_max}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{fuel\_height\_max}{fuel\_height\_max}}
+{\footnotesize\ttfamily real disturb\+\_\+coms\+::fuel\+\_\+height\+\_\+max}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a70fb4629c92c67ab106c4076c4da4407}\label{namespacedisturb__coms_a70fb4629c92c67ab106c4076c4da4407}} 
+\index{disturb\_coms@{disturb\_coms}!hurricane\_db@{hurricane\_db}}
+\index{hurricane\_db@{hurricane\_db}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{hurricane\_db}{hurricane\_db}}
+{\footnotesize\ttfamily character(len=str\+\_\+len) disturb\+\_\+coms\+::hurricane\+\_\+db}
+
+
+
+Filename containing the hurricane list. 
+
+\mbox{\Hypertarget{namespacedisturb__coms_a15b5d5228db5b5e12bd51b7a2af99ab8}\label{namespacedisturb__coms_a15b5d5228db5b5e12bd51b7a2af99ab8}} 
+\index{disturb\_coms@{disturb\_coms}!hurricane\_db\_list@{hurricane\_db\_list}}
+\index{hurricane\_db\_list@{hurricane\_db\_list}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{hurricane\_db\_list}{hurricane\_db\_list}}
+{\footnotesize\ttfamily type(\mbox{\hyperlink{structdisturb__coms_1_1hurrtime}{hurrtime}}), dimension(max\+\_\+obstime) disturb\+\_\+coms\+::hurricane\+\_\+db\+\_\+list}
+
+
+
+List of scheduled hurricanes. 
+
+\mbox{\Hypertarget{namespacedisturb__coms_a53b72fde1f4dbd81873bb0204468a3c3}\label{namespacedisturb__coms_a53b72fde1f4dbd81873bb0204468a3c3}} 
+\index{disturb\_coms@{disturb\_coms}!hurricane\_db\_list\_len@{hurricane\_db\_list\_len}}
+\index{hurricane\_db\_list\_len@{hurricane\_db\_list\_len}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{hurricane\_db\_list\_len}{hurricane\_db\_list\_len}}
+{\footnotesize\ttfamily integer disturb\+\_\+coms\+::hurricane\+\_\+db\+\_\+list\+\_\+len}
+
+
+
+Total length of the hurricane schedule. 
+
+\mbox{\Hypertarget{namespacedisturb__coms_af07d8f3335cce355394feb232ad87468}\label{namespacedisturb__coms_af07d8f3335cce355394feb232ad87468}} 
+\index{disturb\_coms@{disturb\_coms}!ianth\_disturb@{ianth\_disturb}}
+\index{ianth\_disturb@{ianth\_disturb}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{ianth\_disturb}{ianth\_disturb}}
+{\footnotesize\ttfamily integer disturb\+\_\+coms\+::ianth\+\_\+disturb}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a06107f7321a3d53a2c6c5d5accffdb86}\label{namespacedisturb__coms_a06107f7321a3d53a2c6c5d5accffdb86}} 
+\index{disturb\_coms@{disturb\_coms}!include\_fire@{include\_fire}}
+\index{include\_fire@{include\_fire}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{include\_fire}{include\_fire}}
+{\footnotesize\ttfamily integer disturb\+\_\+coms\+::include\+\_\+fire}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a2c6b06614e89040eabac55d3146f2bd8}\label{namespacedisturb__coms_a2c6b06614e89040eabac55d3146f2bd8}} 
+\index{disturb\_coms@{disturb\_coms}!include\_hurricanes@{include\_hurricanes}}
+\index{include\_hurricanes@{include\_hurricanes}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{include\_hurricanes}{include\_hurricanes}}
+{\footnotesize\ttfamily integer disturb\+\_\+coms\+::include\+\_\+hurricanes}
+
+
+
+Whether to include hurricanes. 0 = no; 1 = yes. If hurricanes are included, the storm schedule must be included in a text file. 
+
+\mbox{\Hypertarget{namespacedisturb__coms_a867cc15822253a03763c6890d6bdabc9}\label{namespacedisturb__coms_a867cc15822253a03763c6890d6bdabc9}} 
+\index{disturb\_coms@{disturb\_coms}!k\_fire\_first@{k\_fire\_first}}
+\index{k\_fire\_first@{k\_fire\_first}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{k\_fire\_first}{k\_fire\_first}}
+{\footnotesize\ttfamily integer disturb\+\_\+coms\+::k\+\_\+fire\+\_\+first}
+
+\mbox{\Hypertarget{namespacedisturb__coms_accab313ae8921e27e72f8b4b78f9fc2b}\label{namespacedisturb__coms_accab313ae8921e27e72f8b4b78f9fc2b}} 
+\index{disturb\_coms@{disturb\_coms}!lu\_database@{lu\_database}}
+\index{lu\_database@{lu\_database}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{lu\_database}{lu\_database}}
+{\footnotesize\ttfamily character(len=str\+\_\+len), dimension(maxgrds) disturb\+\_\+coms\+::lu\+\_\+database}
+
+\mbox{\Hypertarget{namespacedisturb__coms_ae23e33ce9008eba7d28598e7609b1ecd}\label{namespacedisturb__coms_ae23e33ce9008eba7d28598e7609b1ecd}} 
+\index{disturb\_coms@{disturb\_coms}!lu\_rescale\_file@{lu\_rescale\_file}}
+\index{lu\_rescale\_file@{lu\_rescale\_file}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{lu\_rescale\_file}{lu\_rescale\_file}}
+{\footnotesize\ttfamily character(len=str\+\_\+len), dimension(maxgrds) disturb\+\_\+coms\+::lu\+\_\+rescale\+\_\+file}
+
+\mbox{\Hypertarget{namespacedisturb__coms_af53cc051638d63f8646b4e46eef9366a}\label{namespacedisturb__coms_af53cc051638d63f8646b4e46eef9366a}} 
+\index{disturb\_coms@{disturb\_coms}!mature\_harvest\_age@{mature\_harvest\_age}}
+\index{mature\_harvest\_age@{mature\_harvest\_age}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{mature\_harvest\_age}{mature\_harvest\_age}}
+{\footnotesize\ttfamily real disturb\+\_\+coms\+::mature\+\_\+harvest\+\_\+age}
+
+\mbox{\Hypertarget{namespacedisturb__coms_af76000b5f155f76ed0e8fd62ef9873e5}\label{namespacedisturb__coms_af76000b5f155f76ed0e8fd62ef9873e5}} 
+\index{disturb\_coms@{disturb\_coms}!max\_lu\_years@{max\_lu\_years}}
+\index{max\_lu\_years@{max\_lu\_years}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{max\_lu\_years}{max\_lu\_years}}
+{\footnotesize\ttfamily integer, parameter disturb\+\_\+coms\+::max\+\_\+lu\+\_\+years = 2500}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a0591e026b4cc3e583767cc06fe811531}\label{namespacedisturb__coms_a0591e026b4cc3e583767cc06fe811531}} 
+\index{disturb\_coms@{disturb\_coms}!max\_plantation\_dist@{max\_plantation\_dist}}
+\index{max\_plantation\_dist@{max\_plantation\_dist}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{max\_plantation\_dist}{max\_plantation\_dist}}
+{\footnotesize\ttfamily real disturb\+\_\+coms\+::max\+\_\+plantation\+\_\+dist}
+
+\mbox{\Hypertarget{namespacedisturb__coms_ab882a91f3ed60ed6a1532793d166e34d}\label{namespacedisturb__coms_ab882a91f3ed60ed6a1532793d166e34d}} 
+\index{disturb\_coms@{disturb\_coms}!min\_harvest\_biomass@{min\_harvest\_biomass}}
+\index{min\_harvest\_biomass@{min\_harvest\_biomass}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{min\_harvest\_biomass}{min\_harvest\_biomass}}
+{\footnotesize\ttfamily real disturb\+\_\+coms\+::min\+\_\+harvest\+\_\+biomass}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a6be23ebea80623cf688f9c058a00497f}\label{namespacedisturb__coms_a6be23ebea80623cf688f9c058a00497f}} 
+\index{disturb\_coms@{disturb\_coms}!min\_oldgrowth@{min\_oldgrowth}}
+\index{min\_oldgrowth@{min\_oldgrowth}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{min\_oldgrowth}{min\_oldgrowth}}
+{\footnotesize\ttfamily real, dimension(n\+\_\+dist\+\_\+types) disturb\+\_\+coms\+::min\+\_\+oldgrowth}
+
+\mbox{\Hypertarget{namespacedisturb__coms_aae4a074357ca036d5e9c30996499aef1}\label{namespacedisturb__coms_aae4a074357ca036d5e9c30996499aef1}} 
+\index{disturb\_coms@{disturb\_coms}!min\_patch\_area@{min\_patch\_area}}
+\index{min\_patch\_area@{min\_patch\_area}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{min\_patch\_area}{min\_patch\_area}}
+{\footnotesize\ttfamily real disturb\+\_\+coms\+::min\+\_\+patch\+\_\+area}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a05d657ee432105896bdb7fce6388217a}\label{namespacedisturb__coms_a05d657ee432105896bdb7fce6388217a}} 
+\index{disturb\_coms@{disturb\_coms}!min\_plantation\_frac@{min\_plantation\_frac}}
+\index{min\_plantation\_frac@{min\_plantation\_frac}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{min\_plantation\_frac}{min\_plantation\_frac}}
+{\footnotesize\ttfamily real disturb\+\_\+coms\+::min\+\_\+plantation\+\_\+frac}
+
+\mbox{\Hypertarget{namespacedisturb__coms_ac39535da2e75c569a86d8f91379d75d9}\label{namespacedisturb__coms_ac39535da2e75c569a86d8f91379d75d9}} 
+\index{disturb\_coms@{disturb\_coms}!num\_lu\_trans@{num\_lu\_trans}}
+\index{num\_lu\_trans@{num\_lu\_trans}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{num\_lu\_trans}{num\_lu\_trans}}
+{\footnotesize\ttfamily integer, parameter disturb\+\_\+coms\+::num\+\_\+lu\+\_\+trans = 19}
+
+\mbox{\Hypertarget{namespacedisturb__coms_ac1b7ac7c81566618705267bc595476bf}\label{namespacedisturb__coms_ac1b7ac7c81566618705267bc595476bf}} 
+\index{disturb\_coms@{disturb\_coms}!plantation\_file@{plantation\_file}}
+\index{plantation\_file@{plantation\_file}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{plantation\_file}{plantation\_file}}
+{\footnotesize\ttfamily character(len=str\+\_\+len), dimension(maxgrds) disturb\+\_\+coms\+::plantation\+\_\+file}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a376a3a991d013bb7fc01f11392b85e71}\label{namespacedisturb__coms_a376a3a991d013bb7fc01f11392b85e71}} 
+\index{disturb\_coms@{disturb\_coms}!plantation\_rotation@{plantation\_rotation}}
+\index{plantation\_rotation@{plantation\_rotation}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{plantation\_rotation}{plantation\_rotation}}
+{\footnotesize\ttfamily real disturb\+\_\+coms\+::plantation\+\_\+rotation}
+
+\mbox{\Hypertarget{namespacedisturb__coms_af5965ee4c60a64646fdce9039c4e8aa8}\label{namespacedisturb__coms_af5965ee4c60a64646fdce9039c4e8aa8}} 
+\index{disturb\_coms@{disturb\_coms}!plantation\_year@{plantation\_year}}
+\index{plantation\_year@{plantation\_year}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{plantation\_year}{plantation\_year}}
+{\footnotesize\ttfamily integer disturb\+\_\+coms\+::plantation\+\_\+year}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a7653706a69e38f1770198aa72ccb5af8}\label{namespacedisturb__coms_a7653706a69e38f1770198aa72ccb5af8}} 
+\index{disturb\_coms@{disturb\_coms}!sl\_biomass\_harvest@{sl\_biomass\_harvest}}
+\index{sl\_biomass\_harvest@{sl\_biomass\_harvest}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{sl\_biomass\_harvest}{sl\_biomass\_harvest}}
+{\footnotesize\ttfamily real(kind=4) disturb\+\_\+coms\+::sl\+\_\+biomass\+\_\+harvest}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a307bf6f176d7e2966ea83a57c7e08708}\label{namespacedisturb__coms_a307bf6f176d7e2966ea83a57c7e08708}} 
+\index{disturb\_coms@{disturb\_coms}!sl\_felling\_s\_ltharv@{sl\_felling\_s\_ltharv}}
+\index{sl\_felling\_s\_ltharv@{sl\_felling\_s\_ltharv}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{sl\_felling\_s\_ltharv}{sl\_felling\_s\_ltharv}}
+{\footnotesize\ttfamily real(kind=4) disturb\+\_\+coms\+::sl\+\_\+felling\+\_\+s\+\_\+ltharv}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a47438ec04ef5f3d8c54a2387215d44d5}\label{namespacedisturb__coms_a47438ec04ef5f3d8c54a2387215d44d5}} 
+\index{disturb\_coms@{disturb\_coms}!sl\_mindbh\_harvest@{sl\_mindbh\_harvest}}
+\index{sl\_mindbh\_harvest@{sl\_mindbh\_harvest}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{sl\_mindbh\_harvest}{sl\_mindbh\_harvest}}
+{\footnotesize\ttfamily real(kind=4), dimension(n\+\_\+pft) disturb\+\_\+coms\+::sl\+\_\+mindbh\+\_\+harvest}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a8fa771445f986f3044793e048e7eb893}\label{namespacedisturb__coms_a8fa771445f986f3044793e048e7eb893}} 
+\index{disturb\_coms@{disturb\_coms}!sl\_nyrs@{sl\_nyrs}}
+\index{sl\_nyrs@{sl\_nyrs}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{sl\_nyrs}{sl\_nyrs}}
+{\footnotesize\ttfamily integer disturb\+\_\+coms\+::sl\+\_\+nyrs}
+
+\mbox{\Hypertarget{namespacedisturb__coms_af31bea9ec4fe58ccb949fa4a257c5dc8}\label{namespacedisturb__coms_af31bea9ec4fe58ccb949fa4a257c5dc8}} 
+\index{disturb\_coms@{disturb\_coms}!sl\_pft@{sl\_pft}}
+\index{sl\_pft@{sl\_pft}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{sl\_pft}{sl\_pft}}
+{\footnotesize\ttfamily integer, dimension(n\+\_\+pft) disturb\+\_\+coms\+::sl\+\_\+pft}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a4bc480d93a113da766d9ab1fec954271}\label{namespacedisturb__coms_a4bc480d93a113da766d9ab1fec954271}} 
+\index{disturb\_coms@{disturb\_coms}!sl\_prob\_harvest@{sl\_prob\_harvest}}
+\index{sl\_prob\_harvest@{sl\_prob\_harvest}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{sl\_prob\_harvest}{sl\_prob\_harvest}}
+{\footnotesize\ttfamily real(kind=4), dimension(n\+\_\+pft) disturb\+\_\+coms\+::sl\+\_\+prob\+\_\+harvest}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a59951e338abb8312be67e3182089b888}\label{namespacedisturb__coms_a59951e338abb8312be67e3182089b888}} 
+\index{disturb\_coms@{disturb\_coms}!sl\_scale@{sl\_scale}}
+\index{sl\_scale@{sl\_scale}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{sl\_scale}{sl\_scale}}
+{\footnotesize\ttfamily integer disturb\+\_\+coms\+::sl\+\_\+scale}
+
+\mbox{\Hypertarget{namespacedisturb__coms_ab67173953c32e7d9d1885cdb7902403b}\label{namespacedisturb__coms_ab67173953c32e7d9d1885cdb7902403b}} 
+\index{disturb\_coms@{disturb\_coms}!sl\_skid\_rel\_area@{sl\_skid\_rel\_area}}
+\index{sl\_skid\_rel\_area@{sl\_skid\_rel\_area}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{sl\_skid\_rel\_area}{sl\_skid\_rel\_area}}
+{\footnotesize\ttfamily real(kind=4) disturb\+\_\+coms\+::sl\+\_\+skid\+\_\+rel\+\_\+area}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a8ab0a86fdb7ad8f0dcb8d5ce6d6de8ab}\label{namespacedisturb__coms_a8ab0a86fdb7ad8f0dcb8d5ce6d6de8ab}} 
+\index{disturb\_coms@{disturb\_coms}!sl\_skid\_s\_gtharv@{sl\_skid\_s\_gtharv}}
+\index{sl\_skid\_s\_gtharv@{sl\_skid\_s\_gtharv}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{sl\_skid\_s\_gtharv}{sl\_skid\_s\_gtharv}}
+{\footnotesize\ttfamily real(kind=4) disturb\+\_\+coms\+::sl\+\_\+skid\+\_\+s\+\_\+gtharv}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a06594e619e163ff0c883ce97eeedfc42}\label{namespacedisturb__coms_a06594e619e163ff0c883ce97eeedfc42}} 
+\index{disturb\_coms@{disturb\_coms}!sl\_skid\_s\_ltharv@{sl\_skid\_s\_ltharv}}
+\index{sl\_skid\_s\_ltharv@{sl\_skid\_s\_ltharv}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{sl\_skid\_s\_ltharv}{sl\_skid\_s\_ltharv}}
+{\footnotesize\ttfamily real(kind=4) disturb\+\_\+coms\+::sl\+\_\+skid\+\_\+s\+\_\+ltharv}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a336cb1eb13960514e9580ecc2ae58316}\label{namespacedisturb__coms_a336cb1eb13960514e9580ecc2ae58316}} 
+\index{disturb\_coms@{disturb\_coms}!sl\_yr\_first@{sl\_yr\_first}}
+\index{sl\_yr\_first@{sl\_yr\_first}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{sl\_yr\_first}{sl\_yr\_first}}
+{\footnotesize\ttfamily integer disturb\+\_\+coms\+::sl\+\_\+yr\+\_\+first}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a78e160b31b155e0e0dbddbe1c6614c1c}\label{namespacedisturb__coms_a78e160b31b155e0e0dbddbe1c6614c1c}} 
+\index{disturb\_coms@{disturb\_coms}!sm\_fire@{sm\_fire}}
+\index{sm\_fire@{sm\_fire}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{sm\_fire}{sm\_fire}}
+{\footnotesize\ttfamily real disturb\+\_\+coms\+::sm\+\_\+fire}
+
+\mbox{\Hypertarget{namespacedisturb__coms_abbe69bdb8568232491820307dfa0e8a2}\label{namespacedisturb__coms_abbe69bdb8568232491820307dfa0e8a2}} 
+\index{disturb\_coms@{disturb\_coms}!time2canopy@{time2canopy}}
+\index{time2canopy@{time2canopy}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{time2canopy}{time2canopy}}
+{\footnotesize\ttfamily real disturb\+\_\+coms\+::time2canopy}
+
+\mbox{\Hypertarget{namespacedisturb__coms_ab4604255008b23efcdf5edc4d3fbdabe}\label{namespacedisturb__coms_ab4604255008b23efcdf5edc4d3fbdabe}} 
+\index{disturb\_coms@{disturb\_coms}!treefall\_disturbance\_rate@{treefall\_disturbance\_rate}}
+\index{treefall\_disturbance\_rate@{treefall\_disturbance\_rate}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{treefall\_disturbance\_rate}{treefall\_disturbance\_rate}}
+{\footnotesize\ttfamily real disturb\+\_\+coms\+::treefall\+\_\+disturbance\+\_\+rate}
+
+\mbox{\Hypertarget{namespacedisturb__coms_a5073d33199400f190150b8f2d364bf72}\label{namespacedisturb__coms_a5073d33199400f190150b8f2d364bf72}} 
+\index{disturb\_coms@{disturb\_coms}!treefall\_hite\_threshold@{treefall\_hite\_threshold}}
+\index{treefall\_hite\_threshold@{treefall\_hite\_threshold}!disturb\_coms@{disturb\_coms}}
+\doxysubsubsection{\texorpdfstring{treefall\_hite\_threshold}{treefall\_hite\_threshold}}
+{\footnotesize\ttfamily real disturb\+\_\+coms\+::treefall\+\_\+hite\+\_\+threshold}
+

@@ -1,0 +1,72 @@
+\hypertarget{namespacecanopy__struct__dynamics}{}\doxysection{canopy\+\_\+struct\+\_\+dynamics Module Reference}
+\label{namespacecanopy__struct__dynamics}\index{canopy\_struct\_dynamics@{canopy\_struct\_dynamics}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacecanopy__struct__dynamics_aaa7edb8b49349950f012f33bf1d0ad25}{canopy\+\_\+turbulence\+\_\+init}} (cpoly, isi, ipa)
+\item 
+subroutine \mbox{\hyperlink{namespacecanopy__struct__dynamics_a1cdbc02d1009ee6ff32a3c234f549a9a}{canopy\+\_\+turbulence8}} (csite, initp, ipa, ibuff)
+\item 
+subroutine \mbox{\hyperlink{namespacecanopy__struct__dynamics_af6b2f4221f3eb91585a6baafc373bb88}{ed\+\_\+stars8}} (theta\+\_\+atm, enthalpy\+\_\+atm, shv\+\_\+atm, co2\+\_\+atm, theta\+\_\+can, enthalpy\+\_\+can, shv\+\_\+can, co2\+\_\+can, temp\+\_\+can, zref, dheight, atm\+\_\+ustar, uref, rough, ustar, tstar, estar, qstar, cstar, zeta, rib, ggbare)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacecanopy__struct__dynamics_a4bfef6570fcebda5f22600fd0660ee0c}{reduced\+\_\+wind8}} (ustar, zeta, rib, zref, dheight, height, rough)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacecanopy__struct__dynamics_a2d40fd080c1c03b7c112ff3861e89458}{vertical\+\_\+vel\+\_\+flux8}} (zeta, ustar)
+\item 
+subroutine \mbox{\hyperlink{namespacecanopy__struct__dynamics_a747cc515e0b23595bd0718242a0c4614}{can\+\_\+whccap8}} (can\+\_\+rhos, can\+\_\+dmol, can\+\_\+depth, wcapcan, hcapcan, ccapcan, wcapcani, hcapcani, ccapcani)
+\item 
+subroutine \mbox{\hyperlink{namespacecanopy__struct__dynamics_a603f1234645bf9624c578131440e8555}{leaf\+\_\+aerodynamic\+\_\+conductances8}} (ipft, veg\+\_\+wind, leaf\+\_\+temp, can\+\_\+temp, can\+\_\+rhos, can\+\_\+cp, leaf\+\_\+gbh, leaf\+\_\+gbw, reynolds, grashof, nusselt\+\_\+free, nusselt\+\_\+forced)
+\item 
+subroutine \mbox{\hyperlink{namespacecanopy__struct__dynamics_ab3558ff33f85ef3ffe4b58bc41a6c04f}{wood\+\_\+aerodynamic\+\_\+conductances8}} (ipft, veg\+\_\+wind, wood\+\_\+temp, can\+\_\+temp, can\+\_\+rhos, can\+\_\+cp, wood\+\_\+gbh, wood\+\_\+gbw, reynolds, grashof, nusselt\+\_\+free, nusselt\+\_\+forced)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacecanopy__struct__dynamics_a747cc515e0b23595bd0718242a0c4614}\label{namespacecanopy__struct__dynamics_a747cc515e0b23595bd0718242a0c4614}} 
+\index{canopy\_struct\_dynamics@{canopy\_struct\_dynamics}!can\_whccap8@{can\_whccap8}}
+\index{can\_whccap8@{can\_whccap8}!canopy\_struct\_dynamics@{canopy\_struct\_dynamics}}
+\doxysubsubsection{\texorpdfstring{can\_whccap8()}{can\_whccap8()}}
+{\footnotesize\ttfamily subroutine canopy\+\_\+struct\+\_\+dynamics\+::can\+\_\+whccap8 (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{can\+\_\+rhos,  }\item[{real(kind=8), intent(in)}]{can\+\_\+dmol,  }\item[{real(kind=8), intent(in)}]{can\+\_\+depth,  }\item[{real(kind=8), intent(out)}]{wcapcan,  }\item[{real(kind=8), intent(out)}]{hcapcan,  }\item[{real(kind=8), intent(out)}]{ccapcan,  }\item[{real(kind=8), intent(out)}]{wcapcani,  }\item[{real(kind=8), intent(out)}]{hcapcani,  }\item[{real(kind=8), intent(out)}]{ccapcani }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacecanopy__struct__dynamics_a1cdbc02d1009ee6ff32a3c234f549a9a}\label{namespacecanopy__struct__dynamics_a1cdbc02d1009ee6ff32a3c234f549a9a}} 
+\index{canopy\_struct\_dynamics@{canopy\_struct\_dynamics}!canopy\_turbulence8@{canopy\_turbulence8}}
+\index{canopy\_turbulence8@{canopy\_turbulence8}!canopy\_struct\_dynamics@{canopy\_struct\_dynamics}}
+\doxysubsubsection{\texorpdfstring{canopy\_turbulence8()}{canopy\_turbulence8()}}
+{\footnotesize\ttfamily subroutine canopy\+\_\+struct\+\_\+dynamics\+::canopy\+\_\+turbulence8 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{initp,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{ibuff }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacecanopy__struct__dynamics_aaa7edb8b49349950f012f33bf1d0ad25}\label{namespacecanopy__struct__dynamics_aaa7edb8b49349950f012f33bf1d0ad25}} 
+\index{canopy\_struct\_dynamics@{canopy\_struct\_dynamics}!canopy\_turbulence\_init@{canopy\_turbulence\_init}}
+\index{canopy\_turbulence\_init@{canopy\_turbulence\_init}!canopy\_struct\_dynamics@{canopy\_struct\_dynamics}}
+\doxysubsubsection{\texorpdfstring{canopy\_turbulence\_init()}{canopy\_turbulence\_init()}}
+{\footnotesize\ttfamily subroutine canopy\+\_\+struct\+\_\+dynamics\+::canopy\+\_\+turbulence\+\_\+init (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1polygontype}{polygontype}}), target}]{cpoly,  }\item[{integer, intent(in)}]{isi,  }\item[{integer, intent(in)}]{ipa }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacecanopy__struct__dynamics_af6b2f4221f3eb91585a6baafc373bb88}\label{namespacecanopy__struct__dynamics_af6b2f4221f3eb91585a6baafc373bb88}} 
+\index{canopy\_struct\_dynamics@{canopy\_struct\_dynamics}!ed\_stars8@{ed\_stars8}}
+\index{ed\_stars8@{ed\_stars8}!canopy\_struct\_dynamics@{canopy\_struct\_dynamics}}
+\doxysubsubsection{\texorpdfstring{ed\_stars8()}{ed\_stars8()}}
+{\footnotesize\ttfamily subroutine canopy\+\_\+struct\+\_\+dynamics\+::ed\+\_\+stars8 (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{theta\+\_\+atm,  }\item[{real(kind=8), intent(in)}]{enthalpy\+\_\+atm,  }\item[{real(kind=8), intent(in)}]{shv\+\_\+atm,  }\item[{real(kind=8), intent(in)}]{co2\+\_\+atm,  }\item[{real(kind=8), intent(in)}]{theta\+\_\+can,  }\item[{real(kind=8), intent(in)}]{enthalpy\+\_\+can,  }\item[{real(kind=8), intent(in)}]{shv\+\_\+can,  }\item[{real(kind=8), intent(in)}]{co2\+\_\+can,  }\item[{real(kind=8), intent(in)}]{temp\+\_\+can,  }\item[{real(kind=8), intent(in)}]{zref,  }\item[{real(kind=8), intent(in)}]{dheight,  }\item[{real(kind=8), intent(in)}]{atm\+\_\+ustar,  }\item[{real(kind=8), intent(in)}]{uref,  }\item[{real(kind=8), intent(in)}]{rough,  }\item[{real(kind=8), intent(inout)}]{ustar,  }\item[{real(kind=8), intent(out)}]{tstar,  }\item[{real(kind=8), intent(out)}]{estar,  }\item[{real(kind=8), intent(out)}]{qstar,  }\item[{real(kind=8), intent(out)}]{cstar,  }\item[{real(kind=8), intent(out)}]{zeta,  }\item[{real(kind=8), intent(out)}]{rib,  }\item[{real(kind=8), intent(out)}]{ggbare }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacecanopy__struct__dynamics_a603f1234645bf9624c578131440e8555}\label{namespacecanopy__struct__dynamics_a603f1234645bf9624c578131440e8555}} 
+\index{canopy\_struct\_dynamics@{canopy\_struct\_dynamics}!leaf\_aerodynamic\_conductances8@{leaf\_aerodynamic\_conductances8}}
+\index{leaf\_aerodynamic\_conductances8@{leaf\_aerodynamic\_conductances8}!canopy\_struct\_dynamics@{canopy\_struct\_dynamics}}
+\doxysubsubsection{\texorpdfstring{leaf\_aerodynamic\_conductances8()}{leaf\_aerodynamic\_conductances8()}}
+{\footnotesize\ttfamily subroutine canopy\+\_\+struct\+\_\+dynamics\+::leaf\+\_\+aerodynamic\+\_\+conductances8 (\begin{DoxyParamCaption}\item[{integer}]{ipft,  }\item[{real(kind=8), intent(in)}]{veg\+\_\+wind,  }\item[{real(kind=8), intent(in)}]{leaf\+\_\+temp,  }\item[{real(kind=8), intent(in)}]{can\+\_\+temp,  }\item[{real(kind=8), intent(in)}]{can\+\_\+rhos,  }\item[{real(kind=8), intent(in)}]{can\+\_\+cp,  }\item[{real(kind=8), intent(out)}]{leaf\+\_\+gbh,  }\item[{real(kind=8), intent(out)}]{leaf\+\_\+gbw,  }\item[{real(kind=8), intent(out)}]{reynolds,  }\item[{real(kind=8), intent(out)}]{grashof,  }\item[{real(kind=8), intent(out)}]{nusselt\+\_\+free,  }\item[{real(kind=8), intent(out)}]{nusselt\+\_\+forced }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacecanopy__struct__dynamics_a4bfef6570fcebda5f22600fd0660ee0c}\label{namespacecanopy__struct__dynamics_a4bfef6570fcebda5f22600fd0660ee0c}} 
+\index{canopy\_struct\_dynamics@{canopy\_struct\_dynamics}!reduced\_wind8@{reduced\_wind8}}
+\index{reduced\_wind8@{reduced\_wind8}!canopy\_struct\_dynamics@{canopy\_struct\_dynamics}}
+\doxysubsubsection{\texorpdfstring{reduced\_wind8()}{reduced\_wind8()}}
+{\footnotesize\ttfamily real(kind=8) function canopy\+\_\+struct\+\_\+dynamics\+::reduced\+\_\+wind8 (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{ustar,  }\item[{real(kind=8), intent(in)}]{zeta,  }\item[{real(kind=8), intent(in)}]{rib,  }\item[{real(kind=8), intent(in)}]{zref,  }\item[{real(kind=8), intent(in)}]{dheight,  }\item[{real(kind=8), intent(in)}]{height,  }\item[{real(kind=8), intent(in)}]{rough }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacecanopy__struct__dynamics_a2d40fd080c1c03b7c112ff3861e89458}\label{namespacecanopy__struct__dynamics_a2d40fd080c1c03b7c112ff3861e89458}} 
+\index{canopy\_struct\_dynamics@{canopy\_struct\_dynamics}!vertical\_vel\_flux8@{vertical\_vel\_flux8}}
+\index{vertical\_vel\_flux8@{vertical\_vel\_flux8}!canopy\_struct\_dynamics@{canopy\_struct\_dynamics}}
+\doxysubsubsection{\texorpdfstring{vertical\_vel\_flux8()}{vertical\_vel\_flux8()}}
+{\footnotesize\ttfamily real(kind=8) function canopy\+\_\+struct\+\_\+dynamics\+::vertical\+\_\+vel\+\_\+flux8 (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{zeta,  }\item[{real(kind=8), intent(in)}]{ustar }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacecanopy__struct__dynamics_ab3558ff33f85ef3ffe4b58bc41a6c04f}\label{namespacecanopy__struct__dynamics_ab3558ff33f85ef3ffe4b58bc41a6c04f}} 
+\index{canopy\_struct\_dynamics@{canopy\_struct\_dynamics}!wood\_aerodynamic\_conductances8@{wood\_aerodynamic\_conductances8}}
+\index{wood\_aerodynamic\_conductances8@{wood\_aerodynamic\_conductances8}!canopy\_struct\_dynamics@{canopy\_struct\_dynamics}}
+\doxysubsubsection{\texorpdfstring{wood\_aerodynamic\_conductances8()}{wood\_aerodynamic\_conductances8()}}
+{\footnotesize\ttfamily subroutine canopy\+\_\+struct\+\_\+dynamics\+::wood\+\_\+aerodynamic\+\_\+conductances8 (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ipft,  }\item[{real(kind=8), intent(in)}]{veg\+\_\+wind,  }\item[{real(kind=8), intent(in)}]{wood\+\_\+temp,  }\item[{real(kind=8), intent(in)}]{can\+\_\+temp,  }\item[{real(kind=8), intent(in)}]{can\+\_\+rhos,  }\item[{real(kind=8), intent(in)}]{can\+\_\+cp,  }\item[{real(kind=8), intent(out)}]{wood\+\_\+gbh,  }\item[{real(kind=8), intent(out)}]{wood\+\_\+gbw,  }\item[{real(kind=8), intent(out)}]{reynolds,  }\item[{real(kind=8), intent(out)}]{grashof,  }\item[{real(kind=8), intent(out)}]{nusselt\+\_\+free,  }\item[{real(kind=8), intent(out)}]{nusselt\+\_\+forced }\end{DoxyParamCaption})}
+

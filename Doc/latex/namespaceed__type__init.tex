@@ -1,0 +1,69 @@
+\hypertarget{namespaceed__type__init}{}\doxysection{ed\+\_\+type\+\_\+init Module Reference}
+\label{namespaceed__type__init}\index{ed\_type\_init@{ed\_type\_init}}
+
+
+Sub-\/routines that initialise most global variables in ED-\/2.  
+
+
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceed__type__init_ab30c622196bad8ad50484812a3fe1868}{init\+\_\+ed\+\_\+cohort\+\_\+vars}} (cpatch, ico, lsl, mzg, ntext\+\_\+soil)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__type__init_ad2da7b1cae74d5158df5769355bd6a3a}{init\+\_\+ed\+\_\+patch\+\_\+vars}} (csite, ipaa, ipaz, lsl)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__type__init_aae079926f1dba6ac360b91687a954316}{init\+\_\+ed\+\_\+site\+\_\+vars}} (cpoly)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__type__init_a879e730b8ecac6d59a4eb88986af9139}{init\+\_\+ed\+\_\+poly\+\_\+vars}} (cgrid)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__type__init_a580609d92a0bb3edd1f381c76c833ad8}{new\+\_\+patch\+\_\+sfc\+\_\+props}} (csite, ipa, mzg, mzs, ntext\+\_\+soil)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__type__init_ac567a030d873ffdb915cf47587c7d576}{ed\+\_\+init\+\_\+viable}} (cgrid)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sub-\/routines that initialise most global variables in ED-\/2. 
+
+These sub-\/routines assign initial values for most global variables in ED-\/2. Every variable must be assigned an initial value before it is used in the right-\/hand side of another assignment, or in any logical test. \begin{DoxyAuthor}{Author}
+19 Oct 2017 Turned the file into a module, Marcos Longo. 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespaceed__type__init_ac567a030d873ffdb915cf47587c7d576}\label{namespaceed__type__init_ac567a030d873ffdb915cf47587c7d576}} 
+\index{ed\_type\_init@{ed\_type\_init}!ed\_init\_viable@{ed\_init\_viable}}
+\index{ed\_init\_viable@{ed\_init\_viable}!ed\_type\_init@{ed\_type\_init}}
+\doxysubsubsection{\texorpdfstring{ed\_init\_viable()}{ed\_init\_viable()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+type\+\_\+init\+::ed\+\_\+init\+\_\+viable (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__type__init_ab30c622196bad8ad50484812a3fe1868}\label{namespaceed__type__init_ab30c622196bad8ad50484812a3fe1868}} 
+\index{ed\_type\_init@{ed\_type\_init}!init\_ed\_cohort\_vars@{init\_ed\_cohort\_vars}}
+\index{init\_ed\_cohort\_vars@{init\_ed\_cohort\_vars}!ed\_type\_init@{ed\_type\_init}}
+\doxysubsubsection{\texorpdfstring{init\_ed\_cohort\_vars()}{init\_ed\_cohort\_vars()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+type\+\_\+init\+::init\+\_\+ed\+\_\+cohort\+\_\+vars (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{ico,  }\item[{integer, intent(in)}]{lsl,  }\item[{integer, intent(in)}]{mzg,  }\item[{integer, dimension(mzg), intent(in)}]{ntext\+\_\+soil }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__type__init_ad2da7b1cae74d5158df5769355bd6a3a}\label{namespaceed__type__init_ad2da7b1cae74d5158df5769355bd6a3a}} 
+\index{ed\_type\_init@{ed\_type\_init}!init\_ed\_patch\_vars@{init\_ed\_patch\_vars}}
+\index{init\_ed\_patch\_vars@{init\_ed\_patch\_vars}!ed\_type\_init@{ed\_type\_init}}
+\doxysubsubsection{\texorpdfstring{init\_ed\_patch\_vars()}{init\_ed\_patch\_vars()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+type\+\_\+init\+::init\+\_\+ed\+\_\+patch\+\_\+vars (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipaa,  }\item[{integer, intent(in)}]{ipaz,  }\item[{integer, intent(in)}]{lsl }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__type__init_a879e730b8ecac6d59a4eb88986af9139}\label{namespaceed__type__init_a879e730b8ecac6d59a4eb88986af9139}} 
+\index{ed\_type\_init@{ed\_type\_init}!init\_ed\_poly\_vars@{init\_ed\_poly\_vars}}
+\index{init\_ed\_poly\_vars@{init\_ed\_poly\_vars}!ed\_type\_init@{ed\_type\_init}}
+\doxysubsubsection{\texorpdfstring{init\_ed\_poly\_vars()}{init\_ed\_poly\_vars()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+type\+\_\+init\+::init\+\_\+ed\+\_\+poly\+\_\+vars (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__type__init_aae079926f1dba6ac360b91687a954316}\label{namespaceed__type__init_aae079926f1dba6ac360b91687a954316}} 
+\index{ed\_type\_init@{ed\_type\_init}!init\_ed\_site\_vars@{init\_ed\_site\_vars}}
+\index{init\_ed\_site\_vars@{init\_ed\_site\_vars}!ed\_type\_init@{ed\_type\_init}}
+\doxysubsubsection{\texorpdfstring{init\_ed\_site\_vars()}{init\_ed\_site\_vars()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+type\+\_\+init\+::init\+\_\+ed\+\_\+site\+\_\+vars (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1polygontype}{polygontype}}), target}]{cpoly }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__type__init_a580609d92a0bb3edd1f381c76c833ad8}\label{namespaceed__type__init_a580609d92a0bb3edd1f381c76c833ad8}} 
+\index{ed\_type\_init@{ed\_type\_init}!new\_patch\_sfc\_props@{new\_patch\_sfc\_props}}
+\index{new\_patch\_sfc\_props@{new\_patch\_sfc\_props}!ed\_type\_init@{ed\_type\_init}}
+\doxysubsubsection{\texorpdfstring{new\_patch\_sfc\_props()}{new\_patch\_sfc\_props()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+type\+\_\+init\+::new\+\_\+patch\+\_\+sfc\+\_\+props (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{mzg,  }\item[{integer, intent(in)}]{mzs,  }\item[{integer, dimension(mzg), intent(in)}]{ntext\+\_\+soil }\end{DoxyParamCaption})}
+

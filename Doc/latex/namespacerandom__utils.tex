@@ -1,0 +1,72 @@
+\hypertarget{namespacerandom__utils}{}\doxysection{random\+\_\+utils Module Reference}
+\label{namespacerandom__utils}\index{random\_utils@{random\_utils}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacerandom__utils_ae17be79dc864c9dfe90b5dbf0fa9a227}{init\+\_\+random\+\_\+seed}} ()
+\item 
+integer function \mbox{\hyperlink{namespacerandom__utils_a2d0bc687888e41daa692f9b35047e5c8}{lcg}} (s)
+\item 
+subroutine \mbox{\hyperlink{namespacerandom__utils_a748b2159e94b5cfc0b3ed38fa70cf5a6}{fsample}} (nxi, xi, nxo, xo, replacement, mask)
+\item 
+subroutine \mbox{\hyperlink{namespacerandom__utils_af1a9830664b10481a69133f559eb86f3}{isample}} (nxi, xi, nxo, xo, replacement, mask)
+\item 
+real(kind=4) function \mbox{\hyperlink{namespacerandom__utils_a7fd44a494eb2c05ae8cedff7ca3d23c5}{fpickone}} (nxi, xi)
+\item 
+integer function \mbox{\hyperlink{namespacerandom__utils_a459dd57414576f1e91eb5d8bab96280a}{ipickone}} (nxi, xi)
+\item 
+subroutine \mbox{\hyperlink{namespacerandom__utils_a78c5087165e2e97c15f0102547d58340}{runif}} (nx, xlwr, xupr, x)
+\item 
+real(kind=4) function \mbox{\hyperlink{namespacerandom__utils_a1c6ad0925303e3ba16c7d4583138c19e}{runif\+\_\+sca}} (xlwr, xupr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacerandom__utils_a7fd44a494eb2c05ae8cedff7ca3d23c5}\label{namespacerandom__utils_a7fd44a494eb2c05ae8cedff7ca3d23c5}} 
+\index{random\_utils@{random\_utils}!fpickone@{fpickone}}
+\index{fpickone@{fpickone}!random\_utils@{random\_utils}}
+\doxysubsubsection{\texorpdfstring{fpickone()}{fpickone()}}
+{\footnotesize\ttfamily real(kind=4) function random\+\_\+utils\+::fpickone (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nxi,  }\item[{real(kind=4), dimension(nxi), intent(in)}]{xi }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerandom__utils_a748b2159e94b5cfc0b3ed38fa70cf5a6}\label{namespacerandom__utils_a748b2159e94b5cfc0b3ed38fa70cf5a6}} 
+\index{random\_utils@{random\_utils}!fsample@{fsample}}
+\index{fsample@{fsample}!random\_utils@{random\_utils}}
+\doxysubsubsection{\texorpdfstring{fsample()}{fsample()}}
+{\footnotesize\ttfamily subroutine random\+\_\+utils\+::fsample (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nxi,  }\item[{real(kind=4), dimension(nxi), intent(in)}]{xi,  }\item[{integer, intent(in)}]{nxo,  }\item[{real(kind=4), dimension(nxo), intent(out)}]{xo,  }\item[{logical, intent(in)}]{replacement,  }\item[{logical, dimension(nxi), intent(in), optional}]{mask }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerandom__utils_ae17be79dc864c9dfe90b5dbf0fa9a227}\label{namespacerandom__utils_ae17be79dc864c9dfe90b5dbf0fa9a227}} 
+\index{random\_utils@{random\_utils}!init\_random\_seed@{init\_random\_seed}}
+\index{init\_random\_seed@{init\_random\_seed}!random\_utils@{random\_utils}}
+\doxysubsubsection{\texorpdfstring{init\_random\_seed()}{init\_random\_seed()}}
+{\footnotesize\ttfamily subroutine random\+\_\+utils\+::init\+\_\+random\+\_\+seed}
+
+\mbox{\Hypertarget{namespacerandom__utils_a459dd57414576f1e91eb5d8bab96280a}\label{namespacerandom__utils_a459dd57414576f1e91eb5d8bab96280a}} 
+\index{random\_utils@{random\_utils}!ipickone@{ipickone}}
+\index{ipickone@{ipickone}!random\_utils@{random\_utils}}
+\doxysubsubsection{\texorpdfstring{ipickone()}{ipickone()}}
+{\footnotesize\ttfamily integer function random\+\_\+utils\+::ipickone (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nxi,  }\item[{integer, dimension(nxi), intent(in)}]{xi }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerandom__utils_af1a9830664b10481a69133f559eb86f3}\label{namespacerandom__utils_af1a9830664b10481a69133f559eb86f3}} 
+\index{random\_utils@{random\_utils}!isample@{isample}}
+\index{isample@{isample}!random\_utils@{random\_utils}}
+\doxysubsubsection{\texorpdfstring{isample()}{isample()}}
+{\footnotesize\ttfamily subroutine random\+\_\+utils\+::isample (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nxi,  }\item[{integer, dimension(nxi), intent(in)}]{xi,  }\item[{integer, intent(in)}]{nxo,  }\item[{integer, dimension(nxo), intent(out)}]{xo,  }\item[{logical, intent(in)}]{replacement,  }\item[{logical, dimension(nxi), intent(in), optional}]{mask }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerandom__utils_a2d0bc687888e41daa692f9b35047e5c8}\label{namespacerandom__utils_a2d0bc687888e41daa692f9b35047e5c8}} 
+\index{random\_utils@{random\_utils}!lcg@{lcg}}
+\index{lcg@{lcg}!random\_utils@{random\_utils}}
+\doxysubsubsection{\texorpdfstring{lcg()}{lcg()}}
+{\footnotesize\ttfamily integer function random\+\_\+utils\+::lcg (\begin{DoxyParamCaption}\item[{integer(kind=8), intent(in)}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerandom__utils_a78c5087165e2e97c15f0102547d58340}\label{namespacerandom__utils_a78c5087165e2e97c15f0102547d58340}} 
+\index{random\_utils@{random\_utils}!runif@{runif}}
+\index{runif@{runif}!random\_utils@{random\_utils}}
+\doxysubsubsection{\texorpdfstring{runif()}{runif()}}
+{\footnotesize\ttfamily subroutine random\+\_\+utils\+::runif (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nx,  }\item[{real(kind=4), intent(in)}]{xlwr,  }\item[{real(kind=4), intent(in)}]{xupr,  }\item[{real(kind=4), dimension(nx), intent(out)}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerandom__utils_a1c6ad0925303e3ba16c7d4583138c19e}\label{namespacerandom__utils_a1c6ad0925303e3ba16c7d4583138c19e}} 
+\index{random\_utils@{random\_utils}!runif\_sca@{runif\_sca}}
+\index{runif\_sca@{runif\_sca}!random\_utils@{random\_utils}}
+\doxysubsubsection{\texorpdfstring{runif\_sca()}{runif\_sca()}}
+{\footnotesize\ttfamily real(kind=4) function random\+\_\+utils\+::runif\+\_\+sca (\begin{DoxyParamCaption}\item[{real(kind=4), intent(in)}]{xlwr,  }\item[{real(kind=4), intent(in)}]{xupr }\end{DoxyParamCaption})}
+

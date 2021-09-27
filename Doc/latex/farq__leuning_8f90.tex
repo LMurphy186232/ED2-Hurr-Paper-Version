@@ -1,0 +1,49 @@
+\hypertarget{farq__leuning_8f90}{}\doxysection{farq\+\_\+leuning.\+f90 File Reference}
+\label{farq__leuning_8f90}\index{farq\_leuning.f90@{farq\_leuning.f90}}
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacefarq__leuning}{farq\+\_\+leuning}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacefarq__leuning_a89e869a787663ccf1ad028aa9fecd082}{farq\+\_\+leuning\+::lphysiol\+\_\+full}} (ib, can\+\_\+prss, can\+\_\+rhos, can\+\_\+shv, can\+\_\+co2, ipft, leaf\+\_\+par, leaf\+\_\+temp, lint\+\_\+shv, green\+\_\+leaf\+\_\+factor, leaf\+\_\+aging\+\_\+factor, vm\+\_\+bar, rd\+\_\+bar, leaf\+\_\+gbw, leaf\+\_\+\+D0, A\+\_\+open, A\+\_\+closed, A\+\_\+light, A\+\_\+rubp, A\+\_\+co2, gsw\+\_\+open, gsw\+\_\+closed, lsfc\+\_\+shv\+\_\+open, lsfc\+\_\+shv\+\_\+closed, lsfc\+\_\+co2\+\_\+open, lsfc\+\_\+co2\+\_\+closed, lint\+\_\+co2\+\_\+open, lint\+\_\+co2\+\_\+closed, leaf\+\_\+resp, vmout, jmout, tpmout, jactout, comppout, limit\+\_\+flag)
+\item 
+subroutine \mbox{\hyperlink{namespacefarq__leuning_ac0af16f48d8d13964a846372ab439de3}{farq\+\_\+leuning\+::comp\+\_\+photo\+\_\+tempfun}} (ib, leaf\+\_\+aging\+\_\+factor, green\+\_\+leaf\+\_\+factor)
+\item 
+subroutine \mbox{\hyperlink{namespacefarq__leuning_aebae06db9fbb608fd49ae513894b255d}{farq\+\_\+leuning\+::photosynthesis\+\_\+exact\+\_\+solver}} (ib, limit\+\_\+flag)
+\item 
+subroutine \mbox{\hyperlink{namespacefarq__leuning_a5484de17d595cd019e6d5e927cbbb8a5}{farq\+\_\+leuning\+::solve\+\_\+aofixed\+\_\+case}} (ib, answer)
+\item 
+subroutine \mbox{\hyperlink{namespacefarq__leuning_a9036a0b26836ca849077cb1bcbb4e95f}{farq\+\_\+leuning\+::solve\+\_\+iterative\+\_\+case}} (ib, answer)
+\item 
+subroutine \mbox{\hyperlink{namespacefarq__leuning_a20f46f23b3addc63a47019bd81332efe}{farq\+\_\+leuning\+::set\+\_\+co2\+\_\+demand\+\_\+params}} (ib, whichlim)
+\item 
+subroutine \mbox{\hyperlink{namespacefarq__leuning_af68e8bca4f7bd60cd83ab72744a6720e}{farq\+\_\+leuning\+::iter\+\_\+solver\+\_\+step}} (ib, newton, lint\+\_\+co2, fun, deriv)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacefarq__leuning_a352557ea036ca11f584af33a1f696474}{farq\+\_\+leuning\+::calc\+\_\+co2\+\_\+demand}} (ib, lint\+\_\+co2)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacefarq__leuning_a3912662328b4cfc338771dd528ff6689}{farq\+\_\+leuning\+::calc\+\_\+co2\+\_\+demand\+\_\+prime}} (ib, lint\+\_\+co2, co2\+\_\+demand)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacefarq__leuning_a6cd77053366cf0fc61e79404a5b87470}{farq\+\_\+leuning\+::calc\+\_\+stom\+\_\+cond\+\_\+h2o}} (ib, lint\+\_\+co2, co2\+\_\+demand)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacefarq__leuning_a055f789b8be750739cb8a2c0a8e2b299}{farq\+\_\+leuning\+::calc\+\_\+stom\+\_\+cond\+\_\+h2o\+\_\+prime}} (ib, lint\+\_\+co2, stom\+\_\+cond\+\_\+h2o, co2\+\_\+demand, co2\+\_\+demand\+\_\+prime)
+\item 
+subroutine \mbox{\hyperlink{namespacefarq__leuning_a6007b3b48ab79881236b51f00f4ff871}{farq\+\_\+leuning\+::find\+\_\+lint\+\_\+co2\+\_\+bounds}} (ib, cimin, cimax, bounded)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacefarq__leuning_a6d031c781aa0a5b3a55dd340813a2c33}{farq\+\_\+leuning\+::arrhenius}} (temp, refval, hor)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacefarq__leuning_ab284bec4bd11bda7c190c6ae2de979fb}{farq\+\_\+leuning\+::collatz}} (temp, refval, q10)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacefarq__leuning_aefbf45f078479166e415cfd195ef9ddb}{farq\+\_\+leuning\+::find\+\_\+twilight\+\_\+min}} (ib)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacefarq__leuning_a31a2c362c8646a0912470a61a19135b2}{farq\+\_\+leuning\+::discard}} = huge(1.d0)
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespacefarq__leuning_a544a9b3986d12bf60c748eff03f49665}{farq\+\_\+leuning\+::tolerfl8}} = toler8
+\item 
+integer, parameter \mbox{\hyperlink{namespacefarq__leuning_ae18ccfcc4ad61a2d80f126c65258fffd}{farq\+\_\+leuning\+::maxfpofl}} = 320
+\end{DoxyCompactItemize}

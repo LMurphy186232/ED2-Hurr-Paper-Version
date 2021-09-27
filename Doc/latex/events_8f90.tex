@@ -1,0 +1,72 @@
+\hypertarget{events_8f90}{}\doxysection{events.\+f90 File Reference}
+\label{events_8f90}\index{events.f90@{events.f90}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{events_8f90_a88f99ba09eb95b65d497f6bd8bddaa65}{read\+\_\+events\+\_\+xml}} (filename, success)
+\item 
+subroutine \mbox{\hyperlink{events_8f90_ad9f17e2da07d80a0734f81d8b2e27d25}{prescribed\+\_\+event}} (year, doy)
+\item 
+subroutine \mbox{\hyperlink{events_8f90_ad9cbf1522be96cc9af2fbf80b1402d5c}{event\+\_\+harvest}} (agb\+\_\+frac8, bgb\+\_\+frac8, fol\+\_\+frac8, stor\+\_\+frac8)
+\item 
+subroutine \mbox{\hyperlink{events_8f90_a3fcb64b4de4ae9408c3e365f6cbd1be6}{event\+\_\+planting}} (pft, density8)
+\item 
+subroutine \mbox{\hyperlink{events_8f90_a322bdb70cc0c534c9e30db1a3a4b58a0}{event\+\_\+fertilize}} (rval8)
+\item 
+subroutine \mbox{\hyperlink{events_8f90_a197a13ef9490ada81059c66e30c88b66}{event\+\_\+irrigate}} (rval8)
+\item 
+subroutine \mbox{\hyperlink{events_8f90_af7863095b0112267385c3f252218c678}{event\+\_\+fire}} ()
+\item 
+subroutine \mbox{\hyperlink{events_8f90_a344468d6236c4635f3bd01bc47acde4a}{event\+\_\+till}} (rval8)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{events_8f90_a322bdb70cc0c534c9e30db1a3a4b58a0}\label{events_8f90_a322bdb70cc0c534c9e30db1a3a4b58a0}} 
+\index{events.f90@{events.f90}!event\_fertilize@{event\_fertilize}}
+\index{event\_fertilize@{event\_fertilize}!events.f90@{events.f90}}
+\doxysubsubsection{\texorpdfstring{event\_fertilize()}{event\_fertilize()}}
+{\footnotesize\ttfamily subroutine event\+\_\+fertilize (\begin{DoxyParamCaption}\item[{real(kind=8), dimension(5), intent(in)}]{rval8 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{events_8f90_af7863095b0112267385c3f252218c678}\label{events_8f90_af7863095b0112267385c3f252218c678}} 
+\index{events.f90@{events.f90}!event\_fire@{event\_fire}}
+\index{event\_fire@{event\_fire}!events.f90@{events.f90}}
+\doxysubsubsection{\texorpdfstring{event\_fire()}{event\_fire()}}
+{\footnotesize\ttfamily subroutine event\+\_\+fire}
+
+\mbox{\Hypertarget{events_8f90_ad9cbf1522be96cc9af2fbf80b1402d5c}\label{events_8f90_ad9cbf1522be96cc9af2fbf80b1402d5c}} 
+\index{events.f90@{events.f90}!event\_harvest@{event\_harvest}}
+\index{event\_harvest@{event\_harvest}!events.f90@{events.f90}}
+\doxysubsubsection{\texorpdfstring{event\_harvest()}{event\_harvest()}}
+{\footnotesize\ttfamily subroutine event\+\_\+harvest (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{agb\+\_\+frac8,  }\item[{real(kind=8), intent(in)}]{bgb\+\_\+frac8,  }\item[{real(kind=8), intent(in)}]{fol\+\_\+frac8,  }\item[{real(kind=8), intent(in)}]{stor\+\_\+frac8 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{events_8f90_a197a13ef9490ada81059c66e30c88b66}\label{events_8f90_a197a13ef9490ada81059c66e30c88b66}} 
+\index{events.f90@{events.f90}!event\_irrigate@{event\_irrigate}}
+\index{event\_irrigate@{event\_irrigate}!events.f90@{events.f90}}
+\doxysubsubsection{\texorpdfstring{event\_irrigate()}{event\_irrigate()}}
+{\footnotesize\ttfamily subroutine event\+\_\+irrigate (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{rval8 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{events_8f90_a3fcb64b4de4ae9408c3e365f6cbd1be6}\label{events_8f90_a3fcb64b4de4ae9408c3e365f6cbd1be6}} 
+\index{events.f90@{events.f90}!event\_planting@{event\_planting}}
+\index{event\_planting@{event\_planting}!events.f90@{events.f90}}
+\doxysubsubsection{\texorpdfstring{event\_planting()}{event\_planting()}}
+{\footnotesize\ttfamily subroutine event\+\_\+planting (\begin{DoxyParamCaption}\item[{integer(kind=4), intent(in)}]{pft,  }\item[{real(kind=8), intent(in)}]{density8 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{events_8f90_a344468d6236c4635f3bd01bc47acde4a}\label{events_8f90_a344468d6236c4635f3bd01bc47acde4a}} 
+\index{events.f90@{events.f90}!event\_till@{event\_till}}
+\index{event\_till@{event\_till}!events.f90@{events.f90}}
+\doxysubsubsection{\texorpdfstring{event\_till()}{event\_till()}}
+{\footnotesize\ttfamily subroutine event\+\_\+till (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{rval8 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{events_8f90_ad9f17e2da07d80a0734f81d8b2e27d25}\label{events_8f90_ad9f17e2da07d80a0734f81d8b2e27d25}} 
+\index{events.f90@{events.f90}!prescribed\_event@{prescribed\_event}}
+\index{prescribed\_event@{prescribed\_event}!events.f90@{events.f90}}
+\doxysubsubsection{\texorpdfstring{prescribed\_event()}{prescribed\_event()}}
+{\footnotesize\ttfamily subroutine prescribed\+\_\+event (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{year,  }\item[{integer, intent(in)}]{doy }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{events_8f90_a88f99ba09eb95b65d497f6bd8bddaa65}\label{events_8f90_a88f99ba09eb95b65d497f6bd8bddaa65}} 
+\index{events.f90@{events.f90}!read\_events\_xml@{read\_events\_xml}}
+\index{read\_events\_xml@{read\_events\_xml}!events.f90@{events.f90}}
+\doxysubsubsection{\texorpdfstring{read\_events\_xml()}{read\_events\_xml()}}
+{\footnotesize\ttfamily subroutine read\+\_\+events\+\_\+xml (\begin{DoxyParamCaption}\item[{character$\ast$($\ast$), intent(in)}]{filename,  }\item[{logical, intent(out)}]{success }\end{DoxyParamCaption})}
+

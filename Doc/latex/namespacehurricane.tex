@@ -1,0 +1,61 @@
+\hypertarget{namespacehurricane}{}\doxysection{hurricane Module Reference}
+\label{namespacehurricane}\index{hurricane@{hurricane}}
+
+
+Implement scheduled hurricanes with the potential to damage and kill cohorts.  
+
+
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacehurricane_ad3ee6f09761aa907411bc5f0d58ee3d2}{apply\+\_\+hurricane}} (cgrid)
+\begin{DoxyCompactList}\small\item\em Main hurricane driver. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacehurricane_a59603948614eff727794ae219d863e9c}{read\+\_\+hurricane\+\_\+db}} ()
+\begin{DoxyCompactList}\small\item\em Reads in the file of scheduled hurricanes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implement scheduled hurricanes with the potential to damage and kill cohorts. 
+
+Hurricanes occur at pre-\/determined times, input by the user. Depending on their severity, they will remove some amount of biomass, and possibly kill some of the cohort as well. A mild storm might remove leaves only. A stronger storm would remove some branches, up to crown snap. To replicate this, the cohort will lose some degree of height. In conjunction with the tolerance for cohorts to be off allometry, this will simulate damage that a cohort must repair.
+
+This module checks monthly to see if a hurricane is scheduled. The hurricane schedule is in a separate file that is read in at start up, and whose name is passed in ED2\+IN. While it is certainly possible in the real world for two hurricanes to occur in the same month, in this module it is not allowed.
+
+Hurricanes cannot be used if ED2 is in bigleaf mode.
+
+Possible future work\+: randomly generate a storm regime. \begin{DoxyAuthor}{Author}
+Lora Murphy, September 2021 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacehurricane_ad3ee6f09761aa907411bc5f0d58ee3d2}\label{namespacehurricane_ad3ee6f09761aa907411bc5f0d58ee3d2}} 
+\index{hurricane@{hurricane}!apply\_hurricane@{apply\_hurricane}}
+\index{apply\_hurricane@{apply\_hurricane}!hurricane@{hurricane}}
+\doxysubsubsection{\texorpdfstring{apply\_hurricane()}{apply\_hurricane()}}
+{\footnotesize\ttfamily subroutine hurricane\+::apply\+\_\+hurricane (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid }\end{DoxyParamCaption})}
+
+
+
+Main hurricane driver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cgrid} & Main grid. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacehurricane_a59603948614eff727794ae219d863e9c}\label{namespacehurricane_a59603948614eff727794ae219d863e9c}} 
+\index{hurricane@{hurricane}!read\_hurricane\_db@{read\_hurricane\_db}}
+\index{read\_hurricane\_db@{read\_hurricane\_db}!hurricane@{hurricane}}
+\doxysubsubsection{\texorpdfstring{read\_hurricane\_db()}{read\_hurricane\_db()}}
+{\footnotesize\ttfamily subroutine hurricane\+::read\+\_\+hurricane\+\_\+db}
+
+
+
+Reads in the file of scheduled hurricanes. 
+
+The hurricane filename is specified in the ED2\+IN file as \char`\"{}\+HURRICANE\+\_\+\+DB\char`\"{}. The format is a space-\/delimited text file with a header and three columns\+: year, month, and severity. This throws a fatal error if the file is not found, or multiple hurricanes are supposed to take place at the same time. A warning is written if the file is longer than the maximum number of allowed records. 
+\begin{DoxyParams}{Parameters}
+{\em hurricane\+\_\+db} & Name of hurricane schedule. \\
+\hline
+\end{DoxyParams}

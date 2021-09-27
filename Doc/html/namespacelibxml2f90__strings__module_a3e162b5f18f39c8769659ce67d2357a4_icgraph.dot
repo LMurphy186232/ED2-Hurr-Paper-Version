@@ -1,0 +1,12 @@
+digraph "libxml2f90_strings_module::r_2_s"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="libxml2f90_strings\l_module::r_2_s",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="libxml2f90_interface\l_module::libxml2f90_\l_addid::libxml2f90_ll\l_addidr8",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interfacelibxml2f90__interface__module_1_1libxml2f90____addid.html#acecc86afe5b5de9df74cfb9d4baf129a",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="libxml2f90_interface\l_module::libxml2f90_\l_addid::libxml2f90_ll\l_addidr8a",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interfacelibxml2f90__interface__module_1_1libxml2f90____addid.html#abb6ee1f76f80fab72d6b6e6c9ed66a66",tooltip=" "];
+}

@@ -1,0 +1,24 @@
+\hypertarget{namespacerk4__driver}{}\doxysection{rk4\+\_\+driver Module Reference}
+\label{namespacerk4__driver}\index{rk4\_driver@{rk4\_driver}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__driver_abf8bd20405c7ed6a7bab3bdb18d8de87}{rk4\+\_\+timestep}} (cgrid)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__driver_a79d5c3b592f5f6ea9e9799a4f07e49a9}{integrate\+\_\+patch\+\_\+rk4}} (csite, initp, ipa, isi, ibuff, nighttime, wcurr\+\_\+loss2atm, ecurr\+\_\+netrad, ecurr\+\_\+loss2atm, co2curr\+\_\+loss2atm, wcurr\+\_\+loss2drainage, ecurr\+\_\+loss2drainage, wcurr\+\_\+loss2runoff, ecurr\+\_\+loss2runoff, co2curr\+\_\+denseffect, ecurr\+\_\+denseffect, wcurr\+\_\+denseffect, nsteps)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacerk4__driver_a79d5c3b592f5f6ea9e9799a4f07e49a9}\label{namespacerk4__driver_a79d5c3b592f5f6ea9e9799a4f07e49a9}} 
+\index{rk4\_driver@{rk4\_driver}!integrate\_patch\_rk4@{integrate\_patch\_rk4}}
+\index{integrate\_patch\_rk4@{integrate\_patch\_rk4}!rk4\_driver@{rk4\_driver}}
+\doxysubsubsection{\texorpdfstring{integrate\_patch\_rk4()}{integrate\_patch\_rk4()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+driver\+::integrate\+\_\+patch\+\_\+rk4 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{initp,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{isi,  }\item[{integer, intent(in)}]{ibuff,  }\item[{logical, intent(in)}]{nighttime,  }\item[{real, intent(out)}]{wcurr\+\_\+loss2atm,  }\item[{real, intent(out)}]{ecurr\+\_\+netrad,  }\item[{real, intent(out)}]{ecurr\+\_\+loss2atm,  }\item[{real, intent(out)}]{co2curr\+\_\+loss2atm,  }\item[{real, intent(out)}]{wcurr\+\_\+loss2drainage,  }\item[{real, intent(out)}]{ecurr\+\_\+loss2drainage,  }\item[{real, intent(out)}]{wcurr\+\_\+loss2runoff,  }\item[{real, intent(out)}]{ecurr\+\_\+loss2runoff,  }\item[{real, intent(out)}]{co2curr\+\_\+denseffect,  }\item[{real, intent(out)}]{ecurr\+\_\+denseffect,  }\item[{real, intent(out)}]{wcurr\+\_\+denseffect,  }\item[{integer, intent(out)}]{nsteps }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__driver_abf8bd20405c7ed6a7bab3bdb18d8de87}\label{namespacerk4__driver_abf8bd20405c7ed6a7bab3bdb18d8de87}} 
+\index{rk4\_driver@{rk4\_driver}!rk4\_timestep@{rk4\_timestep}}
+\index{rk4\_timestep@{rk4\_timestep}!rk4\_driver@{rk4\_driver}}
+\doxysubsubsection{\texorpdfstring{rk4\_timestep()}{rk4\_timestep()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+driver\+::rk4\+\_\+timestep (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid }\end{DoxyParamCaption})}
+

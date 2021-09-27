@@ -1,0 +1,38 @@
+digraph "lsm_hyd::calchydrosubsurface"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="lsm_hyd::calchydrosubsurface",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="lsm_hyd::calcwatertable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacelsm__hyd.html#af99b853c589deae2d04985febb8f7826",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="fatal_error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fatal__error_8_f90.html#a2a2bff228716ab48a81c795b348d1665",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="therm_lib::uextcm2tl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacetherm__lib.html#ac588ab0dc1c0c52c4c41b847be134ee9",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="therm_lib::uint2tl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacetherm__lib.html#a6ded17767672913967afa919fef33015",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="lsm_hyd::updatewatertableadd",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacelsm__hyd.html#a6d798708aacfb362bce030eb52f21cfd",tooltip=" "];
+  Node6 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="lsm_hyd::updatewatertablebaseflow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacelsm__hyd.html#a93557b4a451e68a404504c71916cec50",tooltip=" "];
+  Node7 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="soil_coms::hydr_conduct",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacesoil__coms.html#ae42b26a9c0fbd402c8010bdf957fceea",tooltip=" "];
+  Node8 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="soil_coms::matric_potential",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacesoil__coms.html#a73e12fe029c8b3eb5afe2c2c000efc19",tooltip=" "];
+  Node9 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="therm_lib::tl2uint",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacetherm__lib.html#a3ad59a4037ed8ed57532b8ea630a7df1",tooltip=" "];
+  Node10 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="lsm_hyd::updatewatertablesubtract",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacelsm__hyd.html#a3e2e069be31cd104298864a8fb6ff7bf",tooltip=" "];
+  Node11 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

@@ -1,0 +1,1566 @@
+\hypertarget{namespacecanopy__air__coms}{}\doxysection{canopy\+\_\+air\+\_\+coms Module Reference}
+\label{namespacecanopy__air__coms}\index{canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacecanopy__air__coms_aba7cbe776dbfa9815870ad3686949041}{psim8}} (zeta, stable)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacecanopy__air__coms_aef33f0eeea82151a8edb6dc38c4cc921}{psih8}} (zeta, stable)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacecanopy__air__coms_a51b006ac118f9549aee23ddb61a1bf19}{dpsimdzeta8}} (zeta, stable)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacecanopy__air__coms_aa5f9649efc40a05ddc13e1450f30fad3}{dpsihdzeta8}} (zeta, stable)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacecanopy__air__coms_a4e6140963de3534910dc5f0b8dffa30d}{zoobukhov8}} (rib, zstar, rough, z0moz0h, zoz0m, lnzoz0m, zoz0h, lnzoz0h, stable)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacecanopy__air__coms_a6ef582f46fded1355973730e6a2289f2}{zoobukhov\+\_\+ustar8}} (rib, zstar, rough, zoz0h, lnzoz0h, kuoustar, stable)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer \mbox{\hyperlink{namespacecanopy__air__coms_ad7c5174d5bc6bd090e9afff63a3428b4}{icanturb}}
+\item 
+integer \mbox{\hyperlink{namespacecanopy__air__coms_a25351371b3a5e30c3cabd058d1153399}{isfclyrm}}
+\item 
+integer \mbox{\hyperlink{namespacecanopy__air__coms_a1c11559607f1960e926e0e2adebdba1b}{ied\+\_\+grndvap}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_aaaf296c47691fcf3aaab5b8929b37368}{leaf\+\_\+maxwhc}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_ac8fd39daadba6dc58037eaf42f48700e}{ubmin}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a593e8ef887b3317fb55545892af84c50}{ugbmin}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a9a2322371ed4847814fa98174c092c12}{ustmin}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_abb236f0b21abecb4efde793fd6a1811d}{gamm}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_aec7b65c44519ebe9058cb6c4aa655e8c}{gamh}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_adafee179c1e8ba89437987bc4be9b781}{tprandtl}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a2ac951854c77e1df16229f0fee8a70a6}{vh2vr}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_ab7f6f46003b1ddabed2345c0ed33372d}{vh2dh}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a553bcc51d0af126ebd44094dae4cdeac}{ribmax}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_a75a75c573e43360c1a19166543c53eeb}{lwidth\+\_\+grass}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_ac2de80f4fe14367bebbb89435e41a9b9}{lwidth\+\_\+bltree}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_a1ea80d62f88e32afc85053e182f29d35}{lwidth\+\_\+nltree}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_a60855041a93acac662676f83f6b8b898}{f\+\_\+bndlyr\+\_\+init}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a7ec65e87cc2c74a4f55e05e67272a5c0}{exar}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a8aa4d4dbd59143c45ab4c52fb326ecd6}{covr}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a63a4c7242b97f72a903fa4c1213b37f0}{ez}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_ab6719dfbc2c9e8e2f9eddf3bf6f97237}{exar8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a4afb828f3fecdf23a54cd6276f714544}{ustmin8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a96ad2cd68341db7649720ebd90eab97f}{ugbmin8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a436ed31f3d8eafc708115bca8ee30d03}{ubmin8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a7899b1f4a3a40f367c48fbaa9b7f2ccd}{ez8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a5425e68f350bd521634e2dec3df419cc}{vh2vr8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_aee89a61c55f84edfb62d0b236dea93c8}{vh2dh8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a867a9672f31a44b6def8fc0bdf4eb440}{rasveg\+\_\+min8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a3cb44bad4430d800393ec76b7a22a782}{taumin8}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_a768765793f4c4b91a6ccca6d5263ad04}{cdrag0}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_a7b44abfd8d12fe84db70aab86954129c}{cdrag1}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_a1b94794c69c4e42537d77c51167c842f}{cdrag2}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_abaac76316a5a249db322fc990489d388}{cdrag3}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_a11e1c7b747cfb7033e3bf75fe4cdd0bc}{pm0}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_a1f414808e85114a30c83bdf9bbc35af6}{c1\+\_\+m97}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_a47dcf89394a1ea827c110b9ceb601b79}{c2\+\_\+m97}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_a40fc08a843524cc8b4e05ba8766cb930}{c3\+\_\+m97}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_a54402456387b824df174f09157236866}{kvwake}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_ac16bf823a6fc81f0d671fa06ca5de7e7}{alpha\+\_\+m97}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_aee71b7396b4019638189e8d16f29d5bc}{alpha\+\_\+mw99}}
+\item 
+real(kind=4), dimension(3) \mbox{\hyperlink{namespacecanopy__air__coms_a80914f4f0e8ab35603807486ea39940e}{gamma\+\_\+mw99}}
+\item 
+real(kind=4), dimension(3) \mbox{\hyperlink{namespacecanopy__air__coms_aa50afa7c99107797c84ed294a6215584}{nu\+\_\+mw99}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_aaf5736b1a385a45d4fb74b566c63c036}{infunc}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_aa5644ca796e2926f845d04ce805b9d9c}{cs\+\_\+dense0}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_a5488ab681543df43e05f68b3647184ec}{gamma\+\_\+clm4}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a651fd5632f3589ad9cd58b3f6eaf5bcc}{dz\+\_\+m978}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_af3d9254c2bae93060644975c43abb36c}{cdrag08}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_ac953582df4052a2a3539e145f2407c50}{cdrag18}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_ab8484a0111b4ddc92040d0c269e66f3a}{cdrag28}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_ab2603251a0323d37d22ea19a30371dbb}{cdrag38}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_aa4901dce15fa74bcece60c3ddfaf5a7e}{pm08}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a767d679f796e74175138a9b4fad052df}{c1\+\_\+m978}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a20b553578d5e2da23387a3c814f19229}{c2\+\_\+m978}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a9be4a0dac0272c3475840eede662688d}{c3\+\_\+m978}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_aea31639861943125d6b07627648637cf}{kvwake8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_aaca98abaf4f4ff986bd24a7e1ceea8a6}{alpha\+\_\+m97\+\_\+8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a0c11f06e8905d7442da34f32fd5a1f5d}{alpha\+\_\+mw99\+\_\+8}}
+\item 
+real(kind=8), dimension(3) \mbox{\hyperlink{namespacecanopy__air__coms_abfa660e21167dc9825089920687f3aae}{gamma\+\_\+mw99\+\_\+8}}
+\item 
+real(kind=8), dimension(3) \mbox{\hyperlink{namespacecanopy__air__coms_ae39097ce08183e89c3ed7ee9fba45cfb}{nu\+\_\+mw99\+\_\+8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a2b6e9200766e533bfa58ae0da840321e}{infunc\+\_\+8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a9f485b27a7dceff879db585b90660457}{cs\+\_\+dense08}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_ab14ce7f9e39fec25d950aa20ea6ca28b}{gamma\+\_\+clm48}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_a63aa3cee74a44dfccdad43b566c7149c}{aflat\+\_\+turb}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_a478fe27fc0f34c4b09208d0f99bae8e5}{aflat\+\_\+lami}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_a73459e396f65a6dd6e485d7ec6256a4c}{nflat\+\_\+turb}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_aebe2845272883354df889b85b1bad430}{nflat\+\_\+lami}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_a7af62fb9a2088fae5b7f939ead3b0d0f}{bflat\+\_\+turb}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_ac93abb13ce6ffe13f90e305450e3ae47}{bflat\+\_\+lami}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_ac97963c22db07629cd6f65bce4201a0b}{mflat\+\_\+turb}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_ae6457ac7f41cb8b0eead67da3f737a2e}{mflat\+\_\+lami}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_ad9c2e83605f784b3a5f68fc55b0d682d}{ocyli\+\_\+turb}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_aefa9b43396983e571ef5c4d1235b3884}{ocyli\+\_\+lami}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_a42c5385303996a52e2fce111d922eaf2}{acyli\+\_\+turb}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_a910e0e75420e6cd46075062c7da2b565}{acyli\+\_\+lami}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_a683ef393f66f3515c40cd7a3278eaff8}{ncyli\+\_\+turb}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_a4e37d8368e61b099d262a431a74acd3e}{ncyli\+\_\+lami}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_a3a47f10726cc2b08ff03868bcbbd4445}{bcyli\+\_\+turb}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_a5569cc0028fc90fc9c90e5148b2b6af3}{bcyli\+\_\+lami}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_acb919351d7e124fc10afbf6c0bd1e974}{mcyli\+\_\+turb}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_a9cef6c431c5209b9adb077d5cf7f3184}{mcyli\+\_\+lami}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a74069fab7440b8c4adf33de11779b980}{aflat\+\_\+turb8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_af642ae1aafe80d1c6e7fde278a2236df}{aflat\+\_\+lami8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_afd3231b755fb237410e1c5996483b57e}{nflat\+\_\+turb8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_af9e1b7d0da6156fb9ca9fc9ae5c8eadc}{nflat\+\_\+lami8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_acb451ffb0cf75be9e6269398d5404f07}{bflat\+\_\+turb8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a81f50c2e4f31633b624d8c3682751b7f}{bflat\+\_\+lami8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a68b2e1b18a4e08daa7ddf8aa42b9958d}{mflat\+\_\+turb8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a5deb3fac84d48b1bc1dcb105eb01722d}{mflat\+\_\+lami8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_ace22bf19aec35f5683446ad8de930257}{ocyli\+\_\+turb8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a6fe72df71f0ed3c59b06b99e7291d5f5}{ocyli\+\_\+lami8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a933920d4f406fd57c33f8cef1ca8bb83}{acyli\+\_\+turb8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a325f601d72eb729cc4301008156be76b}{acyli\+\_\+lami8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_ad86960a7895c92e10af6d10cae324f82}{ncyli\+\_\+turb8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a6f097ca1a4dda12b169f6686939871c0}{ncyli\+\_\+lami8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a2f1fda0ccc380bdd8526ea6e1fecb924}{bcyli\+\_\+turb8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_ad7c65a1b664eb04c6665e7d5a9fc5380}{bcyli\+\_\+lami8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_ad1cdd46134a9b31835e735884f28e3d0}{mcyli\+\_\+turb8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a2c460170035d9a0e3fd4458a165411f2}{mcyli\+\_\+lami8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a9493ec4099bf6cd11334e808cd169e72}{beta\+\_\+lami8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a42dff1bd5a176d0269c6456ecbd1be1d}{beta\+\_\+turb8}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_ac5812d4be4754c78cd9f1aad023660ba}{bl79}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a7f257392c2baec6b0f4fe27bd17f809d}{csm}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_aea71c9950d7caa44dcaae548a1d02058}{csh}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a74b9e27e0f352ab01d8e4aaa567ad2ce}{dl79}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a1b58671dba4d2fefd5790694e6563f7c}{beta\+\_\+s}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a8943107817bd72a2ecf2c8ac35516efc}{abh91}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a19448a094bac99003898bfd3170277e3}{bbh91}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_ae0cae45535d33e82cf2fe8547c1d8dc2}{cbh91}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a1b28513486b59cf5dc849476f8a8fb8b}{dbh91}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a3499170cfdc0dbef4966b323d442e71a}{ebh91}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_ac7b57b769f421b5bb07a3ec88e5c6883}{fbh91}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_adc430e44db14a933a4e8359ca834f454}{cod}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a6a1bee0c06adf9bb369d6f4be822b553}{bcod}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a41f3ccd2dbb2ccf460109a71a4f66d89}{fm1}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_ae25648cf7af6ad979525a213bc95b1b3}{ate}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a5fa870deca6638beca69104f25090cc6}{atetf}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_ad363ff87eeee7cb190ebe28e9b682f9a}{beta\+\_\+vs}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_ac8d65859576c96d4d161e975d040b083}{chim}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a3afe3afdcc5b2015a51b7072b67354d6}{chih}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a336486cace202aa0ccad3309337c68f5}{zetac\+\_\+um}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a22bb3e31261ca100bb41c7413b22c9bf}{zetac\+\_\+uh}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a72a86a5fffac73ad56991aa0ca9827d4}{zetac\+\_\+sm}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a11e1cdd8db228dc78ea7ddef9d6414d1}{zetac\+\_\+sh}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_abf9c0a3d2a8c55db802325a22226d5ad}{zetac\+\_\+umi}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a99110673906c4d2b492c4655450479ba}{zetac\+\_\+uhi}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_ab653a7e7d40e6ec2598a29d6e9a3a50e}{zetac\+\_\+smi}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a093aae0805de0a745265adb8868298c8}{zetac\+\_\+shi}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a764636db2f86a1adc1905d691bde4360}{zetac\+\_\+umi16}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a74f8e50cf094e01598a35c211c67b723}{zetac\+\_\+uhi13}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_abf26fb907b070d554b4addfe5435bc83}{psimc\+\_\+um}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a09727ee189e0154ebee372935fe46050}{psihc\+\_\+uh}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a87e502098293547dd8dd5244d9234692}{zd98\+\_\+a}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a953d826a0c27b166bca20ec91b015c11}{zd98\+\_\+b}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a59d27cf5d1ba0e1d705e9634f5cf25e8}{zd98\+\_\+emax}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a01333749038884ef7c92a4c7d8cd5624}{bl798}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_ad2e5b49ff61f88df7dc7407537e425ec}{csm8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_ab97ef4e59d76536ebab6373c5172a42a}{csh8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a2189f77c04ada55938a8fa86ae2e646b}{dl798}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_ac5096fb457a6903675b8a7f074324c9b}{beta\+\_\+s8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_ac396999ab6a5fba728faf7262e98e4a2}{gamm8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a613c632cb4cf3fc45475360ceb6209ed}{gamh8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a17599291264aab3f8153d5d83afe7d1f}{ribmax8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a16694a76d0a909ef9415fbcaee7b9742}{tprandtl8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a7bbc194838f911d2e8b0948159f4d62e}{abh918}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a9c6504ecba9e79e8a45ab651e4f333ac}{bbh918}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_af33e7b269902b3016162017330ae0669}{cbh918}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a63eef048a3bf4e6509c0f27b4fc0ca29}{dbh918}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a11043a7112de7f9908ed6b300f294de9}{ebh918}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a47de2ab0746525613b12c27bd8a16fda}{fbh918}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a552c0a665b038439b55822a43a5c15e2}{cod8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a7b5193455d7f0ba7668b3b2f1988f468}{bcod8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a544049d4f8f7a8a135df2f0d3105696a}{fm18}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a896b380af341c4fda227104ec855c42f}{ate8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_ac0a58110fa129fb929e126e046d2b6fd}{atetf8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_aa2905dc30dae25c206e6b6a8c0b9fdf8}{beta\+\_\+vs8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a3f2a651b7e88c7013170fd87353d321a}{chim8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_aa048cab087baff380bd240a8318ec8ea}{chih8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a0ca6faf34f131f616b83ef67fd4378f1}{zetac\+\_\+um8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_adbe00f7d7b35e9b9c8fd089a3f43af6e}{zetac\+\_\+uh8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_aa15239b3e11e62c0374d0baf2df69916}{zetac\+\_\+sm8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a7c5b672ade9a63cbf576713da8f3b93c}{zetac\+\_\+sh8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a0efff7cedb1c82920d87251dc41d2dbc}{zetac\+\_\+umi8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_ade38033808e0a14fe6c57c6c0bca3830}{zetac\+\_\+uhi8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a926668c3d037ecfbb2d02ddb129f52b2}{zetac\+\_\+smi8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a0ae69e97c7743ff690c6554c17acb8ec}{zetac\+\_\+shi8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a9a1facba0961e590128989d12b63d4e9}{zetac\+\_\+umi168}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_ae957bcd38952302b378ebffb27d0172b}{zetac\+\_\+uhi138}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a0c0c8fcefe0b43284cb9e1f33438460e}{psimc\+\_\+um8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a31831f12ac9b9a0c6c50fd454999572d}{psihc\+\_\+uh8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a9d652a2ca020ee359dcb88a887edc2e2}{zd98\+\_\+a8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_acb1ed523dfab91edb7cd1c5c0b76dd5b}{zd98\+\_\+b8}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_aaf9141f018df1eb48cf48be87bc1779c}{zd98\+\_\+emax8}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a325451bf2fb18b7f7ede855957b8a525}{leaf\+\_\+drywhc}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_abe79d14b93c9428f34d88610142bc148}{gbhmos\+\_\+min}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_af56b6b535e7f020cae8112c71a4f8a87}{gbhmos\+\_\+min8}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_ac23c06de9e56ff0ec7fe2ad917739b94}{veg\+\_\+height\+\_\+min}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a95554424abccff80dcf9ccc3a20b89bf}{veg\+\_\+height\+\_\+min8}}
+\item 
+real \mbox{\hyperlink{namespacecanopy__air__coms_a99c058d51064878e734347335a373bf0}{minimum\+\_\+canopy\+\_\+depth}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_ad5c4f0e54114b54fefc1ad1b9908459a}{minimum\+\_\+canopy\+\_\+depth8}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_ac69a764f05bd0350e81b9b0dc1906fe6}{ggsoil0}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacecanopy__air__coms_aafc2da976dc3ee14efea2a73b6218d88}{kksoil}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_ace11cb0bb5a5d94330e33907db547ab1}{ggsoil08}}
+\item 
+real(kind=8) \mbox{\hyperlink{namespacecanopy__air__coms_a05ce085ac25979fd0664f46be52b547d}{kksoil8}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacecanopy__air__coms_aa5f9649efc40a05ddc13e1450f30fad3}\label{namespacecanopy__air__coms_aa5f9649efc40a05ddc13e1450f30fad3}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!dpsihdzeta8@{dpsihdzeta8}}
+\index{dpsihdzeta8@{dpsihdzeta8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{dpsihdzeta8()}{dpsihdzeta8()}}
+{\footnotesize\ttfamily real(kind=8) function canopy\+\_\+air\+\_\+coms\+::dpsihdzeta8 (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{zeta,  }\item[{logical, intent(in)}]{stable }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a51b006ac118f9549aee23ddb61a1bf19}\label{namespacecanopy__air__coms_a51b006ac118f9549aee23ddb61a1bf19}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!dpsimdzeta8@{dpsimdzeta8}}
+\index{dpsimdzeta8@{dpsimdzeta8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{dpsimdzeta8()}{dpsimdzeta8()}}
+{\footnotesize\ttfamily real(kind=8) function canopy\+\_\+air\+\_\+coms\+::dpsimdzeta8 (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{zeta,  }\item[{logical, intent(in)}]{stable }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_aef33f0eeea82151a8edb6dc38c4cc921}\label{namespacecanopy__air__coms_aef33f0eeea82151a8edb6dc38c4cc921}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!psih8@{psih8}}
+\index{psih8@{psih8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{psih8()}{psih8()}}
+{\footnotesize\ttfamily real(kind=8) function canopy\+\_\+air\+\_\+coms\+::psih8 (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{zeta,  }\item[{logical, intent(in)}]{stable }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_aba7cbe776dbfa9815870ad3686949041}\label{namespacecanopy__air__coms_aba7cbe776dbfa9815870ad3686949041}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!psim8@{psim8}}
+\index{psim8@{psim8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{psim8()}{psim8()}}
+{\footnotesize\ttfamily real(kind=8) function canopy\+\_\+air\+\_\+coms\+::psim8 (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{zeta,  }\item[{logical, intent(in)}]{stable }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a4e6140963de3534910dc5f0b8dffa30d}\label{namespacecanopy__air__coms_a4e6140963de3534910dc5f0b8dffa30d}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zoobukhov8@{zoobukhov8}}
+\index{zoobukhov8@{zoobukhov8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zoobukhov8()}{zoobukhov8()}}
+{\footnotesize\ttfamily real(kind=8) function canopy\+\_\+air\+\_\+coms\+::zoobukhov8 (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{rib,  }\item[{real(kind=8), intent(in)}]{zstar,  }\item[{real(kind=8), intent(in)}]{rough,  }\item[{real(kind=8), intent(in)}]{z0moz0h,  }\item[{real(kind=8), intent(in)}]{zoz0m,  }\item[{real(kind=8), intent(in)}]{lnzoz0m,  }\item[{real(kind=8), intent(in)}]{zoz0h,  }\item[{real(kind=8), intent(in)}]{lnzoz0h,  }\item[{logical, intent(in)}]{stable }\end{DoxyParamCaption})}
+
+\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}!
+
+\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}!
+
+\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}!
+
+\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}!
+
+\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}!
+
+\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}!
+
+\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}!
+
+\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}!
+
+\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}!
+
+\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}!\mbox{\Hypertarget{namespacecanopy__air__coms_a6ef582f46fded1355973730e6a2289f2}\label{namespacecanopy__air__coms_a6ef582f46fded1355973730e6a2289f2}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zoobukhov\_ustar8@{zoobukhov\_ustar8}}
+\index{zoobukhov\_ustar8@{zoobukhov\_ustar8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zoobukhov\_ustar8()}{zoobukhov\_ustar8()}}
+{\footnotesize\ttfamily real(kind=8) function canopy\+\_\+air\+\_\+coms\+::zoobukhov\+\_\+ustar8 (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{rib,  }\item[{real(kind=8), intent(in)}]{zstar,  }\item[{real(kind=8), intent(in)}]{rough,  }\item[{real(kind=8), intent(in)}]{zoz0h,  }\item[{real(kind=8), intent(in)}]{lnzoz0h,  }\item[{real(kind=8), intent(in)}]{kuoustar,  }\item[{logical, intent(in)}]{stable }\end{DoxyParamCaption})}
+
+\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}!
+
+\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}!
+
+\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}!
+
+\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}!
+
+\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}!
+
+\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}!
+
+\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}!
+
+\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}!
+
+\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}!
+
+\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}!
+
+\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}!
+
+\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}!
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacecanopy__air__coms_a8943107817bd72a2ecf2c8ac35516efc}\label{namespacecanopy__air__coms_a8943107817bd72a2ecf2c8ac35516efc}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!abh91@{abh91}}
+\index{abh91@{abh91}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{abh91}{abh91}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::abh91}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a7bbc194838f911d2e8b0948159f4d62e}\label{namespacecanopy__air__coms_a7bbc194838f911d2e8b0948159f4d62e}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!abh918@{abh918}}
+\index{abh918@{abh918}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{abh918}{abh918}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::abh918}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a910e0e75420e6cd46075062c7da2b565}\label{namespacecanopy__air__coms_a910e0e75420e6cd46075062c7da2b565}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!acyli\_lami@{acyli\_lami}}
+\index{acyli\_lami@{acyli\_lami}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{acyli\_lami}{acyli\_lami}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::acyli\+\_\+lami}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a325f601d72eb729cc4301008156be76b}\label{namespacecanopy__air__coms_a325f601d72eb729cc4301008156be76b}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!acyli\_lami8@{acyli\_lami8}}
+\index{acyli\_lami8@{acyli\_lami8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{acyli\_lami8}{acyli\_lami8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::acyli\+\_\+lami8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a42c5385303996a52e2fce111d922eaf2}\label{namespacecanopy__air__coms_a42c5385303996a52e2fce111d922eaf2}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!acyli\_turb@{acyli\_turb}}
+\index{acyli\_turb@{acyli\_turb}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{acyli\_turb}{acyli\_turb}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::acyli\+\_\+turb}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a933920d4f406fd57c33f8cef1ca8bb83}\label{namespacecanopy__air__coms_a933920d4f406fd57c33f8cef1ca8bb83}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!acyli\_turb8@{acyli\_turb8}}
+\index{acyli\_turb8@{acyli\_turb8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{acyli\_turb8}{acyli\_turb8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::acyli\+\_\+turb8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a478fe27fc0f34c4b09208d0f99bae8e5}\label{namespacecanopy__air__coms_a478fe27fc0f34c4b09208d0f99bae8e5}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!aflat\_lami@{aflat\_lami}}
+\index{aflat\_lami@{aflat\_lami}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{aflat\_lami}{aflat\_lami}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::aflat\+\_\+lami}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_af642ae1aafe80d1c6e7fde278a2236df}\label{namespacecanopy__air__coms_af642ae1aafe80d1c6e7fde278a2236df}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!aflat\_lami8@{aflat\_lami8}}
+\index{aflat\_lami8@{aflat\_lami8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{aflat\_lami8}{aflat\_lami8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::aflat\+\_\+lami8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a63aa3cee74a44dfccdad43b566c7149c}\label{namespacecanopy__air__coms_a63aa3cee74a44dfccdad43b566c7149c}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!aflat\_turb@{aflat\_turb}}
+\index{aflat\_turb@{aflat\_turb}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{aflat\_turb}{aflat\_turb}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::aflat\+\_\+turb}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a74069fab7440b8c4adf33de11779b980}\label{namespacecanopy__air__coms_a74069fab7440b8c4adf33de11779b980}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!aflat\_turb8@{aflat\_turb8}}
+\index{aflat\_turb8@{aflat\_turb8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{aflat\_turb8}{aflat\_turb8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::aflat\+\_\+turb8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ac16bf823a6fc81f0d671fa06ca5de7e7}\label{namespacecanopy__air__coms_ac16bf823a6fc81f0d671fa06ca5de7e7}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!alpha\_m97@{alpha\_m97}}
+\index{alpha\_m97@{alpha\_m97}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{alpha\_m97}{alpha\_m97}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::alpha\+\_\+m97}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_aaca98abaf4f4ff986bd24a7e1ceea8a6}\label{namespacecanopy__air__coms_aaca98abaf4f4ff986bd24a7e1ceea8a6}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!alpha\_m97\_8@{alpha\_m97\_8}}
+\index{alpha\_m97\_8@{alpha\_m97\_8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{alpha\_m97\_8}{alpha\_m97\_8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::alpha\+\_\+m97\+\_\+8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_aee71b7396b4019638189e8d16f29d5bc}\label{namespacecanopy__air__coms_aee71b7396b4019638189e8d16f29d5bc}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!alpha\_mw99@{alpha\_mw99}}
+\index{alpha\_mw99@{alpha\_mw99}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{alpha\_mw99}{alpha\_mw99}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::alpha\+\_\+mw99}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a0c11f06e8905d7442da34f32fd5a1f5d}\label{namespacecanopy__air__coms_a0c11f06e8905d7442da34f32fd5a1f5d}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!alpha\_mw99\_8@{alpha\_mw99\_8}}
+\index{alpha\_mw99\_8@{alpha\_mw99\_8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{alpha\_mw99\_8}{alpha\_mw99\_8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::alpha\+\_\+mw99\+\_\+8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ae25648cf7af6ad979525a213bc95b1b3}\label{namespacecanopy__air__coms_ae25648cf7af6ad979525a213bc95b1b3}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!ate@{ate}}
+\index{ate@{ate}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{ate}{ate}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::ate}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a896b380af341c4fda227104ec855c42f}\label{namespacecanopy__air__coms_a896b380af341c4fda227104ec855c42f}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!ate8@{ate8}}
+\index{ate8@{ate8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{ate8}{ate8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::ate8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a5fa870deca6638beca69104f25090cc6}\label{namespacecanopy__air__coms_a5fa870deca6638beca69104f25090cc6}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!atetf@{atetf}}
+\index{atetf@{atetf}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{atetf}{atetf}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::atetf}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ac0a58110fa129fb929e126e046d2b6fd}\label{namespacecanopy__air__coms_ac0a58110fa129fb929e126e046d2b6fd}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!atetf8@{atetf8}}
+\index{atetf8@{atetf8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{atetf8}{atetf8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::atetf8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a19448a094bac99003898bfd3170277e3}\label{namespacecanopy__air__coms_a19448a094bac99003898bfd3170277e3}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!bbh91@{bbh91}}
+\index{bbh91@{bbh91}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{bbh91}{bbh91}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::bbh91}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a9c6504ecba9e79e8a45ab651e4f333ac}\label{namespacecanopy__air__coms_a9c6504ecba9e79e8a45ab651e4f333ac}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!bbh918@{bbh918}}
+\index{bbh918@{bbh918}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{bbh918}{bbh918}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::bbh918}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a6a1bee0c06adf9bb369d6f4be822b553}\label{namespacecanopy__air__coms_a6a1bee0c06adf9bb369d6f4be822b553}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!bcod@{bcod}}
+\index{bcod@{bcod}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{bcod}{bcod}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::bcod}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a7b5193455d7f0ba7668b3b2f1988f468}\label{namespacecanopy__air__coms_a7b5193455d7f0ba7668b3b2f1988f468}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!bcod8@{bcod8}}
+\index{bcod8@{bcod8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{bcod8}{bcod8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::bcod8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a5569cc0028fc90fc9c90e5148b2b6af3}\label{namespacecanopy__air__coms_a5569cc0028fc90fc9c90e5148b2b6af3}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!bcyli\_lami@{bcyli\_lami}}
+\index{bcyli\_lami@{bcyli\_lami}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{bcyli\_lami}{bcyli\_lami}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::bcyli\+\_\+lami}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ad7c65a1b664eb04c6665e7d5a9fc5380}\label{namespacecanopy__air__coms_ad7c65a1b664eb04c6665e7d5a9fc5380}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!bcyli\_lami8@{bcyli\_lami8}}
+\index{bcyli\_lami8@{bcyli\_lami8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{bcyli\_lami8}{bcyli\_lami8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::bcyli\+\_\+lami8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a3a47f10726cc2b08ff03868bcbbd4445}\label{namespacecanopy__air__coms_a3a47f10726cc2b08ff03868bcbbd4445}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!bcyli\_turb@{bcyli\_turb}}
+\index{bcyli\_turb@{bcyli\_turb}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{bcyli\_turb}{bcyli\_turb}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::bcyli\+\_\+turb}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a2f1fda0ccc380bdd8526ea6e1fecb924}\label{namespacecanopy__air__coms_a2f1fda0ccc380bdd8526ea6e1fecb924}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!bcyli\_turb8@{bcyli\_turb8}}
+\index{bcyli\_turb8@{bcyli\_turb8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{bcyli\_turb8}{bcyli\_turb8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::bcyli\+\_\+turb8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a9493ec4099bf6cd11334e808cd169e72}\label{namespacecanopy__air__coms_a9493ec4099bf6cd11334e808cd169e72}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!beta\_lami8@{beta\_lami8}}
+\index{beta\_lami8@{beta\_lami8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{beta\_lami8}{beta\_lami8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::beta\+\_\+lami8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a1b58671dba4d2fefd5790694e6563f7c}\label{namespacecanopy__air__coms_a1b58671dba4d2fefd5790694e6563f7c}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!beta\_s@{beta\_s}}
+\index{beta\_s@{beta\_s}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{beta\_s}{beta\_s}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::beta\+\_\+s}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ac5096fb457a6903675b8a7f074324c9b}\label{namespacecanopy__air__coms_ac5096fb457a6903675b8a7f074324c9b}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!beta\_s8@{beta\_s8}}
+\index{beta\_s8@{beta\_s8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{beta\_s8}{beta\_s8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::beta\+\_\+s8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a42dff1bd5a176d0269c6456ecbd1be1d}\label{namespacecanopy__air__coms_a42dff1bd5a176d0269c6456ecbd1be1d}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!beta\_turb8@{beta\_turb8}}
+\index{beta\_turb8@{beta\_turb8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{beta\_turb8}{beta\_turb8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::beta\+\_\+turb8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ad363ff87eeee7cb190ebe28e9b682f9a}\label{namespacecanopy__air__coms_ad363ff87eeee7cb190ebe28e9b682f9a}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!beta\_vs@{beta\_vs}}
+\index{beta\_vs@{beta\_vs}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{beta\_vs}{beta\_vs}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::beta\+\_\+vs}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_aa2905dc30dae25c206e6b6a8c0b9fdf8}\label{namespacecanopy__air__coms_aa2905dc30dae25c206e6b6a8c0b9fdf8}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!beta\_vs8@{beta\_vs8}}
+\index{beta\_vs8@{beta\_vs8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{beta\_vs8}{beta\_vs8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::beta\+\_\+vs8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ac93abb13ce6ffe13f90e305450e3ae47}\label{namespacecanopy__air__coms_ac93abb13ce6ffe13f90e305450e3ae47}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!bflat\_lami@{bflat\_lami}}
+\index{bflat\_lami@{bflat\_lami}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{bflat\_lami}{bflat\_lami}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::bflat\+\_\+lami}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a81f50c2e4f31633b624d8c3682751b7f}\label{namespacecanopy__air__coms_a81f50c2e4f31633b624d8c3682751b7f}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!bflat\_lami8@{bflat\_lami8}}
+\index{bflat\_lami8@{bflat\_lami8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{bflat\_lami8}{bflat\_lami8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::bflat\+\_\+lami8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a7af62fb9a2088fae5b7f939ead3b0d0f}\label{namespacecanopy__air__coms_a7af62fb9a2088fae5b7f939ead3b0d0f}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!bflat\_turb@{bflat\_turb}}
+\index{bflat\_turb@{bflat\_turb}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{bflat\_turb}{bflat\_turb}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::bflat\+\_\+turb}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_acb451ffb0cf75be9e6269398d5404f07}\label{namespacecanopy__air__coms_acb451ffb0cf75be9e6269398d5404f07}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!bflat\_turb8@{bflat\_turb8}}
+\index{bflat\_turb8@{bflat\_turb8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{bflat\_turb8}{bflat\_turb8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::bflat\+\_\+turb8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ac5812d4be4754c78cd9f1aad023660ba}\label{namespacecanopy__air__coms_ac5812d4be4754c78cd9f1aad023660ba}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!bl79@{bl79}}
+\index{bl79@{bl79}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{bl79}{bl79}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::bl79}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a01333749038884ef7c92a4c7d8cd5624}\label{namespacecanopy__air__coms_a01333749038884ef7c92a4c7d8cd5624}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!bl798@{bl798}}
+\index{bl798@{bl798}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{bl798}{bl798}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::bl798}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a1f414808e85114a30c83bdf9bbc35af6}\label{namespacecanopy__air__coms_a1f414808e85114a30c83bdf9bbc35af6}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!c1\_m97@{c1\_m97}}
+\index{c1\_m97@{c1\_m97}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{c1\_m97}{c1\_m97}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::c1\+\_\+m97}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a767d679f796e74175138a9b4fad052df}\label{namespacecanopy__air__coms_a767d679f796e74175138a9b4fad052df}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!c1\_m978@{c1\_m978}}
+\index{c1\_m978@{c1\_m978}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{c1\_m978}{c1\_m978}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::c1\+\_\+m978}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a47dcf89394a1ea827c110b9ceb601b79}\label{namespacecanopy__air__coms_a47dcf89394a1ea827c110b9ceb601b79}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!c2\_m97@{c2\_m97}}
+\index{c2\_m97@{c2\_m97}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{c2\_m97}{c2\_m97}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::c2\+\_\+m97}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a20b553578d5e2da23387a3c814f19229}\label{namespacecanopy__air__coms_a20b553578d5e2da23387a3c814f19229}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!c2\_m978@{c2\_m978}}
+\index{c2\_m978@{c2\_m978}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{c2\_m978}{c2\_m978}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::c2\+\_\+m978}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a40fc08a843524cc8b4e05ba8766cb930}\label{namespacecanopy__air__coms_a40fc08a843524cc8b4e05ba8766cb930}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!c3\_m97@{c3\_m97}}
+\index{c3\_m97@{c3\_m97}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{c3\_m97}{c3\_m97}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::c3\+\_\+m97}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a9be4a0dac0272c3475840eede662688d}\label{namespacecanopy__air__coms_a9be4a0dac0272c3475840eede662688d}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!c3\_m978@{c3\_m978}}
+\index{c3\_m978@{c3\_m978}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{c3\_m978}{c3\_m978}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::c3\+\_\+m978}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ae0cae45535d33e82cf2fe8547c1d8dc2}\label{namespacecanopy__air__coms_ae0cae45535d33e82cf2fe8547c1d8dc2}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!cbh91@{cbh91}}
+\index{cbh91@{cbh91}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{cbh91}{cbh91}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::cbh91}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_af33e7b269902b3016162017330ae0669}\label{namespacecanopy__air__coms_af33e7b269902b3016162017330ae0669}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!cbh918@{cbh918}}
+\index{cbh918@{cbh918}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{cbh918}{cbh918}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::cbh918}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a768765793f4c4b91a6ccca6d5263ad04}\label{namespacecanopy__air__coms_a768765793f4c4b91a6ccca6d5263ad04}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!cdrag0@{cdrag0}}
+\index{cdrag0@{cdrag0}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{cdrag0}{cdrag0}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::cdrag0}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_af3d9254c2bae93060644975c43abb36c}\label{namespacecanopy__air__coms_af3d9254c2bae93060644975c43abb36c}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!cdrag08@{cdrag08}}
+\index{cdrag08@{cdrag08}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{cdrag08}{cdrag08}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::cdrag08}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a7b44abfd8d12fe84db70aab86954129c}\label{namespacecanopy__air__coms_a7b44abfd8d12fe84db70aab86954129c}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!cdrag1@{cdrag1}}
+\index{cdrag1@{cdrag1}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{cdrag1}{cdrag1}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::cdrag1}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ac953582df4052a2a3539e145f2407c50}\label{namespacecanopy__air__coms_ac953582df4052a2a3539e145f2407c50}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!cdrag18@{cdrag18}}
+\index{cdrag18@{cdrag18}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{cdrag18}{cdrag18}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::cdrag18}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a1b94794c69c4e42537d77c51167c842f}\label{namespacecanopy__air__coms_a1b94794c69c4e42537d77c51167c842f}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!cdrag2@{cdrag2}}
+\index{cdrag2@{cdrag2}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{cdrag2}{cdrag2}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::cdrag2}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ab8484a0111b4ddc92040d0c269e66f3a}\label{namespacecanopy__air__coms_ab8484a0111b4ddc92040d0c269e66f3a}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!cdrag28@{cdrag28}}
+\index{cdrag28@{cdrag28}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{cdrag28}{cdrag28}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::cdrag28}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_abaac76316a5a249db322fc990489d388}\label{namespacecanopy__air__coms_abaac76316a5a249db322fc990489d388}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!cdrag3@{cdrag3}}
+\index{cdrag3@{cdrag3}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{cdrag3}{cdrag3}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::cdrag3}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ab2603251a0323d37d22ea19a30371dbb}\label{namespacecanopy__air__coms_ab2603251a0323d37d22ea19a30371dbb}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!cdrag38@{cdrag38}}
+\index{cdrag38@{cdrag38}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{cdrag38}{cdrag38}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::cdrag38}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a3afe3afdcc5b2015a51b7072b67354d6}\label{namespacecanopy__air__coms_a3afe3afdcc5b2015a51b7072b67354d6}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!chih@{chih}}
+\index{chih@{chih}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{chih}{chih}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::chih}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_aa048cab087baff380bd240a8318ec8ea}\label{namespacecanopy__air__coms_aa048cab087baff380bd240a8318ec8ea}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!chih8@{chih8}}
+\index{chih8@{chih8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{chih8}{chih8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::chih8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ac8d65859576c96d4d161e975d040b083}\label{namespacecanopy__air__coms_ac8d65859576c96d4d161e975d040b083}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!chim@{chim}}
+\index{chim@{chim}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{chim}{chim}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::chim}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a3f2a651b7e88c7013170fd87353d321a}\label{namespacecanopy__air__coms_a3f2a651b7e88c7013170fd87353d321a}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!chim8@{chim8}}
+\index{chim8@{chim8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{chim8}{chim8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::chim8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_adc430e44db14a933a4e8359ca834f454}\label{namespacecanopy__air__coms_adc430e44db14a933a4e8359ca834f454}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!cod@{cod}}
+\index{cod@{cod}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{cod}{cod}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::cod}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a552c0a665b038439b55822a43a5c15e2}\label{namespacecanopy__air__coms_a552c0a665b038439b55822a43a5c15e2}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!cod8@{cod8}}
+\index{cod8@{cod8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{cod8}{cod8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::cod8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a8aa4d4dbd59143c45ab4c52fb326ecd6}\label{namespacecanopy__air__coms_a8aa4d4dbd59143c45ab4c52fb326ecd6}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!covr@{covr}}
+\index{covr@{covr}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{covr}{covr}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::covr}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_aa5644ca796e2926f845d04ce805b9d9c}\label{namespacecanopy__air__coms_aa5644ca796e2926f845d04ce805b9d9c}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!cs\_dense0@{cs\_dense0}}
+\index{cs\_dense0@{cs\_dense0}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{cs\_dense0}{cs\_dense0}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::cs\+\_\+dense0}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a9f485b27a7dceff879db585b90660457}\label{namespacecanopy__air__coms_a9f485b27a7dceff879db585b90660457}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!cs\_dense08@{cs\_dense08}}
+\index{cs\_dense08@{cs\_dense08}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{cs\_dense08}{cs\_dense08}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::cs\+\_\+dense08}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_aea71c9950d7caa44dcaae548a1d02058}\label{namespacecanopy__air__coms_aea71c9950d7caa44dcaae548a1d02058}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!csh@{csh}}
+\index{csh@{csh}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{csh}{csh}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::csh}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ab97ef4e59d76536ebab6373c5172a42a}\label{namespacecanopy__air__coms_ab97ef4e59d76536ebab6373c5172a42a}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!csh8@{csh8}}
+\index{csh8@{csh8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{csh8}{csh8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::csh8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a7f257392c2baec6b0f4fe27bd17f809d}\label{namespacecanopy__air__coms_a7f257392c2baec6b0f4fe27bd17f809d}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!csm@{csm}}
+\index{csm@{csm}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{csm}{csm}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::csm}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ad2e5b49ff61f88df7dc7407537e425ec}\label{namespacecanopy__air__coms_ad2e5b49ff61f88df7dc7407537e425ec}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!csm8@{csm8}}
+\index{csm8@{csm8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{csm8}{csm8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::csm8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a1b28513486b59cf5dc849476f8a8fb8b}\label{namespacecanopy__air__coms_a1b28513486b59cf5dc849476f8a8fb8b}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!dbh91@{dbh91}}
+\index{dbh91@{dbh91}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{dbh91}{dbh91}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::dbh91}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a63eef048a3bf4e6509c0f27b4fc0ca29}\label{namespacecanopy__air__coms_a63eef048a3bf4e6509c0f27b4fc0ca29}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!dbh918@{dbh918}}
+\index{dbh918@{dbh918}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{dbh918}{dbh918}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::dbh918}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a74b9e27e0f352ab01d8e4aaa567ad2ce}\label{namespacecanopy__air__coms_a74b9e27e0f352ab01d8e4aaa567ad2ce}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!dl79@{dl79}}
+\index{dl79@{dl79}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{dl79}{dl79}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::dl79}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a2189f77c04ada55938a8fa86ae2e646b}\label{namespacecanopy__air__coms_a2189f77c04ada55938a8fa86ae2e646b}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!dl798@{dl798}}
+\index{dl798@{dl798}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{dl798}{dl798}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::dl798}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a651fd5632f3589ad9cd58b3f6eaf5bcc}\label{namespacecanopy__air__coms_a651fd5632f3589ad9cd58b3f6eaf5bcc}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!dz\_m978@{dz\_m978}}
+\index{dz\_m978@{dz\_m978}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{dz\_m978}{dz\_m978}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::dz\+\_\+m978}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a3499170cfdc0dbef4966b323d442e71a}\label{namespacecanopy__air__coms_a3499170cfdc0dbef4966b323d442e71a}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!ebh91@{ebh91}}
+\index{ebh91@{ebh91}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{ebh91}{ebh91}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::ebh91}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a11043a7112de7f9908ed6b300f294de9}\label{namespacecanopy__air__coms_a11043a7112de7f9908ed6b300f294de9}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!ebh918@{ebh918}}
+\index{ebh918@{ebh918}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{ebh918}{ebh918}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::ebh918}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a7ec65e87cc2c74a4f55e05e67272a5c0}\label{namespacecanopy__air__coms_a7ec65e87cc2c74a4f55e05e67272a5c0}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!exar@{exar}}
+\index{exar@{exar}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{exar}{exar}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::exar}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ab6719dfbc2c9e8e2f9eddf3bf6f97237}\label{namespacecanopy__air__coms_ab6719dfbc2c9e8e2f9eddf3bf6f97237}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!exar8@{exar8}}
+\index{exar8@{exar8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{exar8}{exar8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::exar8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a63a4c7242b97f72a903fa4c1213b37f0}\label{namespacecanopy__air__coms_a63a4c7242b97f72a903fa4c1213b37f0}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!ez@{ez}}
+\index{ez@{ez}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{ez}{ez}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::ez}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a7899b1f4a3a40f367c48fbaa9b7f2ccd}\label{namespacecanopy__air__coms_a7899b1f4a3a40f367c48fbaa9b7f2ccd}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!ez8@{ez8}}
+\index{ez8@{ez8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{ez8}{ez8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::ez8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a60855041a93acac662676f83f6b8b898}\label{namespacecanopy__air__coms_a60855041a93acac662676f83f6b8b898}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!f\_bndlyr\_init@{f\_bndlyr\_init}}
+\index{f\_bndlyr\_init@{f\_bndlyr\_init}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{f\_bndlyr\_init}{f\_bndlyr\_init}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::f\+\_\+bndlyr\+\_\+init}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ac7b57b769f421b5bb07a3ec88e5c6883}\label{namespacecanopy__air__coms_ac7b57b769f421b5bb07a3ec88e5c6883}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!fbh91@{fbh91}}
+\index{fbh91@{fbh91}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{fbh91}{fbh91}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::fbh91}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a47de2ab0746525613b12c27bd8a16fda}\label{namespacecanopy__air__coms_a47de2ab0746525613b12c27bd8a16fda}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!fbh918@{fbh918}}
+\index{fbh918@{fbh918}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{fbh918}{fbh918}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::fbh918}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a41f3ccd2dbb2ccf460109a71a4f66d89}\label{namespacecanopy__air__coms_a41f3ccd2dbb2ccf460109a71a4f66d89}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!fm1@{fm1}}
+\index{fm1@{fm1}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{fm1}{fm1}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::fm1}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a544049d4f8f7a8a135df2f0d3105696a}\label{namespacecanopy__air__coms_a544049d4f8f7a8a135df2f0d3105696a}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!fm18@{fm18}}
+\index{fm18@{fm18}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{fm18}{fm18}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::fm18}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_aec7b65c44519ebe9058cb6c4aa655e8c}\label{namespacecanopy__air__coms_aec7b65c44519ebe9058cb6c4aa655e8c}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!gamh@{gamh}}
+\index{gamh@{gamh}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{gamh}{gamh}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::gamh}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a613c632cb4cf3fc45475360ceb6209ed}\label{namespacecanopy__air__coms_a613c632cb4cf3fc45475360ceb6209ed}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!gamh8@{gamh8}}
+\index{gamh8@{gamh8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{gamh8}{gamh8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::gamh8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_abb236f0b21abecb4efde793fd6a1811d}\label{namespacecanopy__air__coms_abb236f0b21abecb4efde793fd6a1811d}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!gamm@{gamm}}
+\index{gamm@{gamm}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{gamm}{gamm}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::gamm}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ac396999ab6a5fba728faf7262e98e4a2}\label{namespacecanopy__air__coms_ac396999ab6a5fba728faf7262e98e4a2}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!gamm8@{gamm8}}
+\index{gamm8@{gamm8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{gamm8}{gamm8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::gamm8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a5488ab681543df43e05f68b3647184ec}\label{namespacecanopy__air__coms_a5488ab681543df43e05f68b3647184ec}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!gamma\_clm4@{gamma\_clm4}}
+\index{gamma\_clm4@{gamma\_clm4}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{gamma\_clm4}{gamma\_clm4}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::gamma\+\_\+clm4}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ab14ce7f9e39fec25d950aa20ea6ca28b}\label{namespacecanopy__air__coms_ab14ce7f9e39fec25d950aa20ea6ca28b}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!gamma\_clm48@{gamma\_clm48}}
+\index{gamma\_clm48@{gamma\_clm48}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{gamma\_clm48}{gamma\_clm48}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::gamma\+\_\+clm48}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a80914f4f0e8ab35603807486ea39940e}\label{namespacecanopy__air__coms_a80914f4f0e8ab35603807486ea39940e}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!gamma\_mw99@{gamma\_mw99}}
+\index{gamma\_mw99@{gamma\_mw99}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{gamma\_mw99}{gamma\_mw99}}
+{\footnotesize\ttfamily real(kind=4), dimension(3) canopy\+\_\+air\+\_\+coms\+::gamma\+\_\+mw99}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_abfa660e21167dc9825089920687f3aae}\label{namespacecanopy__air__coms_abfa660e21167dc9825089920687f3aae}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!gamma\_mw99\_8@{gamma\_mw99\_8}}
+\index{gamma\_mw99\_8@{gamma\_mw99\_8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{gamma\_mw99\_8}{gamma\_mw99\_8}}
+{\footnotesize\ttfamily real(kind=8), dimension(3) canopy\+\_\+air\+\_\+coms\+::gamma\+\_\+mw99\+\_\+8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_abe79d14b93c9428f34d88610142bc148}\label{namespacecanopy__air__coms_abe79d14b93c9428f34d88610142bc148}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!gbhmos\_min@{gbhmos\_min}}
+\index{gbhmos\_min@{gbhmos\_min}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{gbhmos\_min}{gbhmos\_min}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::gbhmos\+\_\+min}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_af56b6b535e7f020cae8112c71a4f8a87}\label{namespacecanopy__air__coms_af56b6b535e7f020cae8112c71a4f8a87}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!gbhmos\_min8@{gbhmos\_min8}}
+\index{gbhmos\_min8@{gbhmos\_min8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{gbhmos\_min8}{gbhmos\_min8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::gbhmos\+\_\+min8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ac69a764f05bd0350e81b9b0dc1906fe6}\label{namespacecanopy__air__coms_ac69a764f05bd0350e81b9b0dc1906fe6}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!ggsoil0@{ggsoil0}}
+\index{ggsoil0@{ggsoil0}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{ggsoil0}{ggsoil0}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::ggsoil0}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ace11cb0bb5a5d94330e33907db547ab1}\label{namespacecanopy__air__coms_ace11cb0bb5a5d94330e33907db547ab1}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!ggsoil08@{ggsoil08}}
+\index{ggsoil08@{ggsoil08}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{ggsoil08}{ggsoil08}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::ggsoil08}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ad7c5174d5bc6bd090e9afff63a3428b4}\label{namespacecanopy__air__coms_ad7c5174d5bc6bd090e9afff63a3428b4}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!icanturb@{icanturb}}
+\index{icanturb@{icanturb}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{icanturb}{icanturb}}
+{\footnotesize\ttfamily integer canopy\+\_\+air\+\_\+coms\+::icanturb}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a1c11559607f1960e926e0e2adebdba1b}\label{namespacecanopy__air__coms_a1c11559607f1960e926e0e2adebdba1b}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!ied\_grndvap@{ied\_grndvap}}
+\index{ied\_grndvap@{ied\_grndvap}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{ied\_grndvap}{ied\_grndvap}}
+{\footnotesize\ttfamily integer canopy\+\_\+air\+\_\+coms\+::ied\+\_\+grndvap}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_aaf5736b1a385a45d4fb74b566c63c036}\label{namespacecanopy__air__coms_aaf5736b1a385a45d4fb74b566c63c036}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!infunc@{infunc}}
+\index{infunc@{infunc}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{infunc}{infunc}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::infunc}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a2b6e9200766e533bfa58ae0da840321e}\label{namespacecanopy__air__coms_a2b6e9200766e533bfa58ae0da840321e}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!infunc\_8@{infunc\_8}}
+\index{infunc\_8@{infunc\_8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{infunc\_8}{infunc\_8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::infunc\+\_\+8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a25351371b3a5e30c3cabd058d1153399}\label{namespacecanopy__air__coms_a25351371b3a5e30c3cabd058d1153399}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!isfclyrm@{isfclyrm}}
+\index{isfclyrm@{isfclyrm}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{isfclyrm}{isfclyrm}}
+{\footnotesize\ttfamily integer canopy\+\_\+air\+\_\+coms\+::isfclyrm}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_aafc2da976dc3ee14efea2a73b6218d88}\label{namespacecanopy__air__coms_aafc2da976dc3ee14efea2a73b6218d88}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!kksoil@{kksoil}}
+\index{kksoil@{kksoil}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{kksoil}{kksoil}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::kksoil}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a05ce085ac25979fd0664f46be52b547d}\label{namespacecanopy__air__coms_a05ce085ac25979fd0664f46be52b547d}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!kksoil8@{kksoil8}}
+\index{kksoil8@{kksoil8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{kksoil8}{kksoil8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::kksoil8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a54402456387b824df174f09157236866}\label{namespacecanopy__air__coms_a54402456387b824df174f09157236866}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!kvwake@{kvwake}}
+\index{kvwake@{kvwake}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{kvwake}{kvwake}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::kvwake}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_aea31639861943125d6b07627648637cf}\label{namespacecanopy__air__coms_aea31639861943125d6b07627648637cf}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!kvwake8@{kvwake8}}
+\index{kvwake8@{kvwake8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{kvwake8}{kvwake8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::kvwake8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a325451bf2fb18b7f7ede855957b8a525}\label{namespacecanopy__air__coms_a325451bf2fb18b7f7ede855957b8a525}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!leaf\_drywhc@{leaf\_drywhc}}
+\index{leaf\_drywhc@{leaf\_drywhc}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{leaf\_drywhc}{leaf\_drywhc}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::leaf\+\_\+drywhc}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_aaaf296c47691fcf3aaab5b8929b37368}\label{namespacecanopy__air__coms_aaaf296c47691fcf3aaab5b8929b37368}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!leaf\_maxwhc@{leaf\_maxwhc}}
+\index{leaf\_maxwhc@{leaf\_maxwhc}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{leaf\_maxwhc}{leaf\_maxwhc}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::leaf\+\_\+maxwhc}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ac2de80f4fe14367bebbb89435e41a9b9}\label{namespacecanopy__air__coms_ac2de80f4fe14367bebbb89435e41a9b9}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!lwidth\_bltree@{lwidth\_bltree}}
+\index{lwidth\_bltree@{lwidth\_bltree}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{lwidth\_bltree}{lwidth\_bltree}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::lwidth\+\_\+bltree}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a75a75c573e43360c1a19166543c53eeb}\label{namespacecanopy__air__coms_a75a75c573e43360c1a19166543c53eeb}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!lwidth\_grass@{lwidth\_grass}}
+\index{lwidth\_grass@{lwidth\_grass}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{lwidth\_grass}{lwidth\_grass}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::lwidth\+\_\+grass}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a1ea80d62f88e32afc85053e182f29d35}\label{namespacecanopy__air__coms_a1ea80d62f88e32afc85053e182f29d35}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!lwidth\_nltree@{lwidth\_nltree}}
+\index{lwidth\_nltree@{lwidth\_nltree}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{lwidth\_nltree}{lwidth\_nltree}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::lwidth\+\_\+nltree}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a9cef6c431c5209b9adb077d5cf7f3184}\label{namespacecanopy__air__coms_a9cef6c431c5209b9adb077d5cf7f3184}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!mcyli\_lami@{mcyli\_lami}}
+\index{mcyli\_lami@{mcyli\_lami}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{mcyli\_lami}{mcyli\_lami}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::mcyli\+\_\+lami}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a2c460170035d9a0e3fd4458a165411f2}\label{namespacecanopy__air__coms_a2c460170035d9a0e3fd4458a165411f2}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!mcyli\_lami8@{mcyli\_lami8}}
+\index{mcyli\_lami8@{mcyli\_lami8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{mcyli\_lami8}{mcyli\_lami8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::mcyli\+\_\+lami8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_acb919351d7e124fc10afbf6c0bd1e974}\label{namespacecanopy__air__coms_acb919351d7e124fc10afbf6c0bd1e974}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!mcyli\_turb@{mcyli\_turb}}
+\index{mcyli\_turb@{mcyli\_turb}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{mcyli\_turb}{mcyli\_turb}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::mcyli\+\_\+turb}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ad1cdd46134a9b31835e735884f28e3d0}\label{namespacecanopy__air__coms_ad1cdd46134a9b31835e735884f28e3d0}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!mcyli\_turb8@{mcyli\_turb8}}
+\index{mcyli\_turb8@{mcyli\_turb8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{mcyli\_turb8}{mcyli\_turb8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::mcyli\+\_\+turb8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ae6457ac7f41cb8b0eead67da3f737a2e}\label{namespacecanopy__air__coms_ae6457ac7f41cb8b0eead67da3f737a2e}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!mflat\_lami@{mflat\_lami}}
+\index{mflat\_lami@{mflat\_lami}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{mflat\_lami}{mflat\_lami}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::mflat\+\_\+lami}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a5deb3fac84d48b1bc1dcb105eb01722d}\label{namespacecanopy__air__coms_a5deb3fac84d48b1bc1dcb105eb01722d}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!mflat\_lami8@{mflat\_lami8}}
+\index{mflat\_lami8@{mflat\_lami8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{mflat\_lami8}{mflat\_lami8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::mflat\+\_\+lami8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ac97963c22db07629cd6f65bce4201a0b}\label{namespacecanopy__air__coms_ac97963c22db07629cd6f65bce4201a0b}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!mflat\_turb@{mflat\_turb}}
+\index{mflat\_turb@{mflat\_turb}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{mflat\_turb}{mflat\_turb}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::mflat\+\_\+turb}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a68b2e1b18a4e08daa7ddf8aa42b9958d}\label{namespacecanopy__air__coms_a68b2e1b18a4e08daa7ddf8aa42b9958d}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!mflat\_turb8@{mflat\_turb8}}
+\index{mflat\_turb8@{mflat\_turb8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{mflat\_turb8}{mflat\_turb8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::mflat\+\_\+turb8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a99c058d51064878e734347335a373bf0}\label{namespacecanopy__air__coms_a99c058d51064878e734347335a373bf0}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!minimum\_canopy\_depth@{minimum\_canopy\_depth}}
+\index{minimum\_canopy\_depth@{minimum\_canopy\_depth}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{minimum\_canopy\_depth}{minimum\_canopy\_depth}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::minimum\+\_\+canopy\+\_\+depth}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ad5c4f0e54114b54fefc1ad1b9908459a}\label{namespacecanopy__air__coms_ad5c4f0e54114b54fefc1ad1b9908459a}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!minimum\_canopy\_depth8@{minimum\_canopy\_depth8}}
+\index{minimum\_canopy\_depth8@{minimum\_canopy\_depth8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{minimum\_canopy\_depth8}{minimum\_canopy\_depth8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::minimum\+\_\+canopy\+\_\+depth8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a4e37d8368e61b099d262a431a74acd3e}\label{namespacecanopy__air__coms_a4e37d8368e61b099d262a431a74acd3e}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!ncyli\_lami@{ncyli\_lami}}
+\index{ncyli\_lami@{ncyli\_lami}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{ncyli\_lami}{ncyli\_lami}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::ncyli\+\_\+lami}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a6f097ca1a4dda12b169f6686939871c0}\label{namespacecanopy__air__coms_a6f097ca1a4dda12b169f6686939871c0}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!ncyli\_lami8@{ncyli\_lami8}}
+\index{ncyli\_lami8@{ncyli\_lami8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{ncyli\_lami8}{ncyli\_lami8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::ncyli\+\_\+lami8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a683ef393f66f3515c40cd7a3278eaff8}\label{namespacecanopy__air__coms_a683ef393f66f3515c40cd7a3278eaff8}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!ncyli\_turb@{ncyli\_turb}}
+\index{ncyli\_turb@{ncyli\_turb}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{ncyli\_turb}{ncyli\_turb}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::ncyli\+\_\+turb}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ad86960a7895c92e10af6d10cae324f82}\label{namespacecanopy__air__coms_ad86960a7895c92e10af6d10cae324f82}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!ncyli\_turb8@{ncyli\_turb8}}
+\index{ncyli\_turb8@{ncyli\_turb8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{ncyli\_turb8}{ncyli\_turb8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::ncyli\+\_\+turb8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_aebe2845272883354df889b85b1bad430}\label{namespacecanopy__air__coms_aebe2845272883354df889b85b1bad430}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!nflat\_lami@{nflat\_lami}}
+\index{nflat\_lami@{nflat\_lami}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{nflat\_lami}{nflat\_lami}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::nflat\+\_\+lami}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_af9e1b7d0da6156fb9ca9fc9ae5c8eadc}\label{namespacecanopy__air__coms_af9e1b7d0da6156fb9ca9fc9ae5c8eadc}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!nflat\_lami8@{nflat\_lami8}}
+\index{nflat\_lami8@{nflat\_lami8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{nflat\_lami8}{nflat\_lami8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::nflat\+\_\+lami8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a73459e396f65a6dd6e485d7ec6256a4c}\label{namespacecanopy__air__coms_a73459e396f65a6dd6e485d7ec6256a4c}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!nflat\_turb@{nflat\_turb}}
+\index{nflat\_turb@{nflat\_turb}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{nflat\_turb}{nflat\_turb}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::nflat\+\_\+turb}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_afd3231b755fb237410e1c5996483b57e}\label{namespacecanopy__air__coms_afd3231b755fb237410e1c5996483b57e}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!nflat\_turb8@{nflat\_turb8}}
+\index{nflat\_turb8@{nflat\_turb8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{nflat\_turb8}{nflat\_turb8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::nflat\+\_\+turb8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_aa50afa7c99107797c84ed294a6215584}\label{namespacecanopy__air__coms_aa50afa7c99107797c84ed294a6215584}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!nu\_mw99@{nu\_mw99}}
+\index{nu\_mw99@{nu\_mw99}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{nu\_mw99}{nu\_mw99}}
+{\footnotesize\ttfamily real(kind=4), dimension(3) canopy\+\_\+air\+\_\+coms\+::nu\+\_\+mw99}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ae39097ce08183e89c3ed7ee9fba45cfb}\label{namespacecanopy__air__coms_ae39097ce08183e89c3ed7ee9fba45cfb}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!nu\_mw99\_8@{nu\_mw99\_8}}
+\index{nu\_mw99\_8@{nu\_mw99\_8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{nu\_mw99\_8}{nu\_mw99\_8}}
+{\footnotesize\ttfamily real(kind=8), dimension(3) canopy\+\_\+air\+\_\+coms\+::nu\+\_\+mw99\+\_\+8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_aefa9b43396983e571ef5c4d1235b3884}\label{namespacecanopy__air__coms_aefa9b43396983e571ef5c4d1235b3884}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!ocyli\_lami@{ocyli\_lami}}
+\index{ocyli\_lami@{ocyli\_lami}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{ocyli\_lami}{ocyli\_lami}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::ocyli\+\_\+lami}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a6fe72df71f0ed3c59b06b99e7291d5f5}\label{namespacecanopy__air__coms_a6fe72df71f0ed3c59b06b99e7291d5f5}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!ocyli\_lami8@{ocyli\_lami8}}
+\index{ocyli\_lami8@{ocyli\_lami8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{ocyli\_lami8}{ocyli\_lami8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::ocyli\+\_\+lami8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ad9c2e83605f784b3a5f68fc55b0d682d}\label{namespacecanopy__air__coms_ad9c2e83605f784b3a5f68fc55b0d682d}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!ocyli\_turb@{ocyli\_turb}}
+\index{ocyli\_turb@{ocyli\_turb}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{ocyli\_turb}{ocyli\_turb}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::ocyli\+\_\+turb}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ace22bf19aec35f5683446ad8de930257}\label{namespacecanopy__air__coms_ace22bf19aec35f5683446ad8de930257}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!ocyli\_turb8@{ocyli\_turb8}}
+\index{ocyli\_turb8@{ocyli\_turb8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{ocyli\_turb8}{ocyli\_turb8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::ocyli\+\_\+turb8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a11e1c7b747cfb7033e3bf75fe4cdd0bc}\label{namespacecanopy__air__coms_a11e1c7b747cfb7033e3bf75fe4cdd0bc}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!pm0@{pm0}}
+\index{pm0@{pm0}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{pm0}{pm0}}
+{\footnotesize\ttfamily real(kind=4) canopy\+\_\+air\+\_\+coms\+::pm0}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_aa4901dce15fa74bcece60c3ddfaf5a7e}\label{namespacecanopy__air__coms_aa4901dce15fa74bcece60c3ddfaf5a7e}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!pm08@{pm08}}
+\index{pm08@{pm08}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{pm08}{pm08}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::pm08}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a09727ee189e0154ebee372935fe46050}\label{namespacecanopy__air__coms_a09727ee189e0154ebee372935fe46050}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!psihc\_uh@{psihc\_uh}}
+\index{psihc\_uh@{psihc\_uh}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{psihc\_uh}{psihc\_uh}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::psihc\+\_\+uh}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a31831f12ac9b9a0c6c50fd454999572d}\label{namespacecanopy__air__coms_a31831f12ac9b9a0c6c50fd454999572d}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!psihc\_uh8@{psihc\_uh8}}
+\index{psihc\_uh8@{psihc\_uh8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{psihc\_uh8}{psihc\_uh8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::psihc\+\_\+uh8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_abf26fb907b070d554b4addfe5435bc83}\label{namespacecanopy__air__coms_abf26fb907b070d554b4addfe5435bc83}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!psimc\_um@{psimc\_um}}
+\index{psimc\_um@{psimc\_um}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{psimc\_um}{psimc\_um}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::psimc\+\_\+um}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a0c0c8fcefe0b43284cb9e1f33438460e}\label{namespacecanopy__air__coms_a0c0c8fcefe0b43284cb9e1f33438460e}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!psimc\_um8@{psimc\_um8}}
+\index{psimc\_um8@{psimc\_um8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{psimc\_um8}{psimc\_um8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::psimc\+\_\+um8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a867a9672f31a44b6def8fc0bdf4eb440}\label{namespacecanopy__air__coms_a867a9672f31a44b6def8fc0bdf4eb440}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!rasveg\_min8@{rasveg\_min8}}
+\index{rasveg\_min8@{rasveg\_min8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{rasveg\_min8}{rasveg\_min8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::rasveg\+\_\+min8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a553bcc51d0af126ebd44094dae4cdeac}\label{namespacecanopy__air__coms_a553bcc51d0af126ebd44094dae4cdeac}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!ribmax@{ribmax}}
+\index{ribmax@{ribmax}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{ribmax}{ribmax}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::ribmax}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a17599291264aab3f8153d5d83afe7d1f}\label{namespacecanopy__air__coms_a17599291264aab3f8153d5d83afe7d1f}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!ribmax8@{ribmax8}}
+\index{ribmax8@{ribmax8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{ribmax8}{ribmax8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::ribmax8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a3cb44bad4430d800393ec76b7a22a782}\label{namespacecanopy__air__coms_a3cb44bad4430d800393ec76b7a22a782}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!taumin8@{taumin8}}
+\index{taumin8@{taumin8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{taumin8}{taumin8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::taumin8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_adafee179c1e8ba89437987bc4be9b781}\label{namespacecanopy__air__coms_adafee179c1e8ba89437987bc4be9b781}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!tprandtl@{tprandtl}}
+\index{tprandtl@{tprandtl}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{tprandtl}{tprandtl}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::tprandtl}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a16694a76d0a909ef9415fbcaee7b9742}\label{namespacecanopy__air__coms_a16694a76d0a909ef9415fbcaee7b9742}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!tprandtl8@{tprandtl8}}
+\index{tprandtl8@{tprandtl8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{tprandtl8}{tprandtl8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::tprandtl8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ac8fd39daadba6dc58037eaf42f48700e}\label{namespacecanopy__air__coms_ac8fd39daadba6dc58037eaf42f48700e}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!ubmin@{ubmin}}
+\index{ubmin@{ubmin}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{ubmin}{ubmin}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::ubmin}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a436ed31f3d8eafc708115bca8ee30d03}\label{namespacecanopy__air__coms_a436ed31f3d8eafc708115bca8ee30d03}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!ubmin8@{ubmin8}}
+\index{ubmin8@{ubmin8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{ubmin8}{ubmin8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::ubmin8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a593e8ef887b3317fb55545892af84c50}\label{namespacecanopy__air__coms_a593e8ef887b3317fb55545892af84c50}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!ugbmin@{ugbmin}}
+\index{ugbmin@{ugbmin}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{ugbmin}{ugbmin}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::ugbmin}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a96ad2cd68341db7649720ebd90eab97f}\label{namespacecanopy__air__coms_a96ad2cd68341db7649720ebd90eab97f}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!ugbmin8@{ugbmin8}}
+\index{ugbmin8@{ugbmin8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{ugbmin8}{ugbmin8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::ugbmin8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a9a2322371ed4847814fa98174c092c12}\label{namespacecanopy__air__coms_a9a2322371ed4847814fa98174c092c12}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!ustmin@{ustmin}}
+\index{ustmin@{ustmin}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{ustmin}{ustmin}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::ustmin}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a4afb828f3fecdf23a54cd6276f714544}\label{namespacecanopy__air__coms_a4afb828f3fecdf23a54cd6276f714544}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!ustmin8@{ustmin8}}
+\index{ustmin8@{ustmin8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{ustmin8}{ustmin8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::ustmin8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ac23c06de9e56ff0ec7fe2ad917739b94}\label{namespacecanopy__air__coms_ac23c06de9e56ff0ec7fe2ad917739b94}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!veg\_height\_min@{veg\_height\_min}}
+\index{veg\_height\_min@{veg\_height\_min}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{veg\_height\_min}{veg\_height\_min}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::veg\+\_\+height\+\_\+min}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a95554424abccff80dcf9ccc3a20b89bf}\label{namespacecanopy__air__coms_a95554424abccff80dcf9ccc3a20b89bf}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!veg\_height\_min8@{veg\_height\_min8}}
+\index{veg\_height\_min8@{veg\_height\_min8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{veg\_height\_min8}{veg\_height\_min8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::veg\+\_\+height\+\_\+min8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ab7f6f46003b1ddabed2345c0ed33372d}\label{namespacecanopy__air__coms_ab7f6f46003b1ddabed2345c0ed33372d}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!vh2dh@{vh2dh}}
+\index{vh2dh@{vh2dh}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{vh2dh}{vh2dh}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::vh2dh}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_aee89a61c55f84edfb62d0b236dea93c8}\label{namespacecanopy__air__coms_aee89a61c55f84edfb62d0b236dea93c8}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!vh2dh8@{vh2dh8}}
+\index{vh2dh8@{vh2dh8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{vh2dh8}{vh2dh8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::vh2dh8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a2ac951854c77e1df16229f0fee8a70a6}\label{namespacecanopy__air__coms_a2ac951854c77e1df16229f0fee8a70a6}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!vh2vr@{vh2vr}}
+\index{vh2vr@{vh2vr}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{vh2vr}{vh2vr}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::vh2vr}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a5425e68f350bd521634e2dec3df419cc}\label{namespacecanopy__air__coms_a5425e68f350bd521634e2dec3df419cc}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!vh2vr8@{vh2vr8}}
+\index{vh2vr8@{vh2vr8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{vh2vr8}{vh2vr8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::vh2vr8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a87e502098293547dd8dd5244d9234692}\label{namespacecanopy__air__coms_a87e502098293547dd8dd5244d9234692}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zd98\_a@{zd98\_a}}
+\index{zd98\_a@{zd98\_a}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zd98\_a}{zd98\_a}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::zd98\+\_\+a}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a9d652a2ca020ee359dcb88a887edc2e2}\label{namespacecanopy__air__coms_a9d652a2ca020ee359dcb88a887edc2e2}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zd98\_a8@{zd98\_a8}}
+\index{zd98\_a8@{zd98\_a8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zd98\_a8}{zd98\_a8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::zd98\+\_\+a8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a953d826a0c27b166bca20ec91b015c11}\label{namespacecanopy__air__coms_a953d826a0c27b166bca20ec91b015c11}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zd98\_b@{zd98\_b}}
+\index{zd98\_b@{zd98\_b}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zd98\_b}{zd98\_b}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::zd98\+\_\+b}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_acb1ed523dfab91edb7cd1c5c0b76dd5b}\label{namespacecanopy__air__coms_acb1ed523dfab91edb7cd1c5c0b76dd5b}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zd98\_b8@{zd98\_b8}}
+\index{zd98\_b8@{zd98\_b8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zd98\_b8}{zd98\_b8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::zd98\+\_\+b8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a59d27cf5d1ba0e1d705e9634f5cf25e8}\label{namespacecanopy__air__coms_a59d27cf5d1ba0e1d705e9634f5cf25e8}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zd98\_emax@{zd98\_emax}}
+\index{zd98\_emax@{zd98\_emax}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zd98\_emax}{zd98\_emax}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::zd98\+\_\+emax}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_aaf9141f018df1eb48cf48be87bc1779c}\label{namespacecanopy__air__coms_aaf9141f018df1eb48cf48be87bc1779c}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zd98\_emax8@{zd98\_emax8}}
+\index{zd98\_emax8@{zd98\_emax8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zd98\_emax8}{zd98\_emax8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::zd98\+\_\+emax8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a11e1cdd8db228dc78ea7ddef9d6414d1}\label{namespacecanopy__air__coms_a11e1cdd8db228dc78ea7ddef9d6414d1}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zetac\_sh@{zetac\_sh}}
+\index{zetac\_sh@{zetac\_sh}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zetac\_sh}{zetac\_sh}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::zetac\+\_\+sh}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a7c5b672ade9a63cbf576713da8f3b93c}\label{namespacecanopy__air__coms_a7c5b672ade9a63cbf576713da8f3b93c}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zetac\_sh8@{zetac\_sh8}}
+\index{zetac\_sh8@{zetac\_sh8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zetac\_sh8}{zetac\_sh8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::zetac\+\_\+sh8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a093aae0805de0a745265adb8868298c8}\label{namespacecanopy__air__coms_a093aae0805de0a745265adb8868298c8}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zetac\_shi@{zetac\_shi}}
+\index{zetac\_shi@{zetac\_shi}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zetac\_shi}{zetac\_shi}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::zetac\+\_\+shi}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a0ae69e97c7743ff690c6554c17acb8ec}\label{namespacecanopy__air__coms_a0ae69e97c7743ff690c6554c17acb8ec}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zetac\_shi8@{zetac\_shi8}}
+\index{zetac\_shi8@{zetac\_shi8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zetac\_shi8}{zetac\_shi8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::zetac\+\_\+shi8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a72a86a5fffac73ad56991aa0ca9827d4}\label{namespacecanopy__air__coms_a72a86a5fffac73ad56991aa0ca9827d4}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zetac\_sm@{zetac\_sm}}
+\index{zetac\_sm@{zetac\_sm}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zetac\_sm}{zetac\_sm}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::zetac\+\_\+sm}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_aa15239b3e11e62c0374d0baf2df69916}\label{namespacecanopy__air__coms_aa15239b3e11e62c0374d0baf2df69916}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zetac\_sm8@{zetac\_sm8}}
+\index{zetac\_sm8@{zetac\_sm8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zetac\_sm8}{zetac\_sm8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::zetac\+\_\+sm8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ab653a7e7d40e6ec2598a29d6e9a3a50e}\label{namespacecanopy__air__coms_ab653a7e7d40e6ec2598a29d6e9a3a50e}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zetac\_smi@{zetac\_smi}}
+\index{zetac\_smi@{zetac\_smi}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zetac\_smi}{zetac\_smi}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::zetac\+\_\+smi}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a926668c3d037ecfbb2d02ddb129f52b2}\label{namespacecanopy__air__coms_a926668c3d037ecfbb2d02ddb129f52b2}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zetac\_smi8@{zetac\_smi8}}
+\index{zetac\_smi8@{zetac\_smi8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zetac\_smi8}{zetac\_smi8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::zetac\+\_\+smi8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a22bb3e31261ca100bb41c7413b22c9bf}\label{namespacecanopy__air__coms_a22bb3e31261ca100bb41c7413b22c9bf}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zetac\_uh@{zetac\_uh}}
+\index{zetac\_uh@{zetac\_uh}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zetac\_uh}{zetac\_uh}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::zetac\+\_\+uh}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_adbe00f7d7b35e9b9c8fd089a3f43af6e}\label{namespacecanopy__air__coms_adbe00f7d7b35e9b9c8fd089a3f43af6e}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zetac\_uh8@{zetac\_uh8}}
+\index{zetac\_uh8@{zetac\_uh8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zetac\_uh8}{zetac\_uh8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::zetac\+\_\+uh8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a99110673906c4d2b492c4655450479ba}\label{namespacecanopy__air__coms_a99110673906c4d2b492c4655450479ba}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zetac\_uhi@{zetac\_uhi}}
+\index{zetac\_uhi@{zetac\_uhi}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zetac\_uhi}{zetac\_uhi}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::zetac\+\_\+uhi}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a74f8e50cf094e01598a35c211c67b723}\label{namespacecanopy__air__coms_a74f8e50cf094e01598a35c211c67b723}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zetac\_uhi13@{zetac\_uhi13}}
+\index{zetac\_uhi13@{zetac\_uhi13}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zetac\_uhi13}{zetac\_uhi13}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::zetac\+\_\+uhi13}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ae957bcd38952302b378ebffb27d0172b}\label{namespacecanopy__air__coms_ae957bcd38952302b378ebffb27d0172b}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zetac\_uhi138@{zetac\_uhi138}}
+\index{zetac\_uhi138@{zetac\_uhi138}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zetac\_uhi138}{zetac\_uhi138}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::zetac\+\_\+uhi138}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_ade38033808e0a14fe6c57c6c0bca3830}\label{namespacecanopy__air__coms_ade38033808e0a14fe6c57c6c0bca3830}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zetac\_uhi8@{zetac\_uhi8}}
+\index{zetac\_uhi8@{zetac\_uhi8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zetac\_uhi8}{zetac\_uhi8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::zetac\+\_\+uhi8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a336486cace202aa0ccad3309337c68f5}\label{namespacecanopy__air__coms_a336486cace202aa0ccad3309337c68f5}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zetac\_um@{zetac\_um}}
+\index{zetac\_um@{zetac\_um}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zetac\_um}{zetac\_um}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::zetac\+\_\+um}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a0ca6faf34f131f616b83ef67fd4378f1}\label{namespacecanopy__air__coms_a0ca6faf34f131f616b83ef67fd4378f1}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zetac\_um8@{zetac\_um8}}
+\index{zetac\_um8@{zetac\_um8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zetac\_um8}{zetac\_um8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::zetac\+\_\+um8}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_abf9c0a3d2a8c55db802325a22226d5ad}\label{namespacecanopy__air__coms_abf9c0a3d2a8c55db802325a22226d5ad}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zetac\_umi@{zetac\_umi}}
+\index{zetac\_umi@{zetac\_umi}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zetac\_umi}{zetac\_umi}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::zetac\+\_\+umi}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a764636db2f86a1adc1905d691bde4360}\label{namespacecanopy__air__coms_a764636db2f86a1adc1905d691bde4360}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zetac\_umi16@{zetac\_umi16}}
+\index{zetac\_umi16@{zetac\_umi16}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zetac\_umi16}{zetac\_umi16}}
+{\footnotesize\ttfamily real canopy\+\_\+air\+\_\+coms\+::zetac\+\_\+umi16}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a9a1facba0961e590128989d12b63d4e9}\label{namespacecanopy__air__coms_a9a1facba0961e590128989d12b63d4e9}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zetac\_umi168@{zetac\_umi168}}
+\index{zetac\_umi168@{zetac\_umi168}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zetac\_umi168}{zetac\_umi168}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::zetac\+\_\+umi168}
+
+\mbox{\Hypertarget{namespacecanopy__air__coms_a0efff7cedb1c82920d87251dc41d2dbc}\label{namespacecanopy__air__coms_a0efff7cedb1c82920d87251dc41d2dbc}} 
+\index{canopy\_air\_coms@{canopy\_air\_coms}!zetac\_umi8@{zetac\_umi8}}
+\index{zetac\_umi8@{zetac\_umi8}!canopy\_air\_coms@{canopy\_air\_coms}}
+\doxysubsubsection{\texorpdfstring{zetac\_umi8}{zetac\_umi8}}
+{\footnotesize\ttfamily real(kind=8) canopy\+\_\+air\+\_\+coms\+::zetac\+\_\+umi8}
+

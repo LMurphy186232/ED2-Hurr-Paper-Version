@@ -1,0 +1,72 @@
+\hypertarget{namespacesoil__respiration}{}\doxysection{soil\+\_\+respiration Module Reference}
+\label{namespacesoil__respiration}\index{soil\_respiration@{soil\_respiration}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacesoil__respiration_a5cb8a973530e6271369890f2f44b81ec}{soil\+\_\+respiration\+\_\+driver}} (csite, ipa, mzg, ntext\+\_\+soil)
+\item 
+subroutine \mbox{\hyperlink{namespacesoil__respiration_a4e0961a63b431062e6b2da334f4f0345}{resp\+\_\+f\+\_\+decomp}} (csite, ipa)
+\item 
+subroutine \mbox{\hyperlink{namespacesoil__respiration_a87ea27d35050fa8556351f912cc96a88}{resp\+\_\+rh}} (csite, ipa, ntext)
+\item 
+subroutine \mbox{\hyperlink{namespacesoil__respiration_a25cfdb7defc35a7a058e69905845492f}{update\+\_\+c\+\_\+and\+\_\+n\+\_\+pools}} (cgrid)
+\item 
+subroutine \mbox{\hyperlink{namespacesoil__respiration_a899e14545985533b7c27d0f3960f2f85}{zero\+\_\+litter\+\_\+inputs}} (cgrid)
+\item 
+real function \mbox{\hyperlink{namespacesoil__respiration_a594496a115df4c5bed4c870771dc534f}{root\+\_\+resp\+\_\+norm}} (ipft, soil\+\_\+temp)
+\item 
+subroutine \mbox{\hyperlink{namespacesoil__respiration_a5b80f3483c45a1b420ba6e9f27c7314b}{het\+\_\+resp\+\_\+weight}} (soil\+\_\+tempk, rel\+\_\+soil\+\_\+moist, rel\+\_\+soil\+\_\+oxygen, temperature\+\_\+scale, water\+\_\+limitation, oxygen\+\_\+limitation, rh\+\_\+weight)
+\item 
+subroutine \mbox{\hyperlink{namespacesoil__respiration_a5aa792c28f6bb6ea75a65f067ef5ee8b}{check\+\_\+budget\+\_\+soilc}} (csite, ipa, fast\+\_\+grnd\+\_\+\+C\+\_\+in, fast\+\_\+soil\+\_\+\+C\+\_\+in, structural\+\_\+grnd\+\_\+\+C\+\_\+in, structural\+\_\+soil\+\_\+\+C\+\_\+in, microbial\+\_\+soil\+\_\+\+C\+\_\+in, slow\+\_\+soil\+\_\+\+C\+\_\+in, passive\+\_\+soil\+\_\+\+C\+\_\+in, er\+\_\+fsc, er\+\_\+stgc, er\+\_\+stsc, er\+\_\+msc, er\+\_\+ssc, er\+\_\+psc, ex\+\_\+fgc\+\_\+msc, ex\+\_\+fgc\+\_\+ssc, ex\+\_\+fgc\+\_\+psc, ex\+\_\+fsc\+\_\+msc, ex\+\_\+fsc\+\_\+ssc, ex\+\_\+fsc\+\_\+psc, ex\+\_\+stgc\+\_\+msc, ex\+\_\+stgc\+\_\+ssc, ex\+\_\+stgc\+\_\+psc, ex\+\_\+stsc\+\_\+msc, ex\+\_\+stsc\+\_\+ssc, ex\+\_\+stsc\+\_\+psc, ex\+\_\+msc\+\_\+ssc, ex\+\_\+msc\+\_\+psc, ex\+\_\+ssc\+\_\+msc, ex\+\_\+ssc\+\_\+psc, ex\+\_\+psc\+\_\+msc, ex\+\_\+psc\+\_\+ssc, fg\+\_\+\+C\+\_\+loss, fs\+\_\+\+C\+\_\+loss, stg\+\_\+\+C\+\_\+loss, sts\+\_\+\+C\+\_\+loss, ms\+\_\+\+C\+\_\+input, ms\+\_\+\+C\+\_\+loss, ss\+\_\+\+C\+\_\+input, ss\+\_\+\+C\+\_\+loss, ps\+\_\+\+C\+\_\+input, ps\+\_\+\+C\+\_\+loss)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacesoil__respiration_a5aa792c28f6bb6ea75a65f067ef5ee8b}\label{namespacesoil__respiration_a5aa792c28f6bb6ea75a65f067ef5ee8b}} 
+\index{soil\_respiration@{soil\_respiration}!check\_budget\_soilc@{check\_budget\_soilc}}
+\index{check\_budget\_soilc@{check\_budget\_soilc}!soil\_respiration@{soil\_respiration}}
+\doxysubsubsection{\texorpdfstring{check\_budget\_soilc()}{check\_budget\_soilc()}}
+{\footnotesize\ttfamily subroutine soil\+\_\+respiration\+::check\+\_\+budget\+\_\+soilc (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{real, intent(in)}]{fast\+\_\+grnd\+\_\+\+C\+\_\+in,  }\item[{real, intent(in)}]{fast\+\_\+soil\+\_\+\+C\+\_\+in,  }\item[{real, intent(in)}]{structural\+\_\+grnd\+\_\+\+C\+\_\+in,  }\item[{real, intent(in)}]{structural\+\_\+soil\+\_\+\+C\+\_\+in,  }\item[{real, intent(in)}]{microbial\+\_\+soil\+\_\+\+C\+\_\+in,  }\item[{real, intent(in)}]{slow\+\_\+soil\+\_\+\+C\+\_\+in,  }\item[{real, intent(in)}]{passive\+\_\+soil\+\_\+\+C\+\_\+in,  }\item[{real, intent(in)}]{er\+\_\+fsc,  }\item[{real, intent(in)}]{er\+\_\+stgc,  }\item[{real, intent(in)}]{er\+\_\+stsc,  }\item[{real, intent(in)}]{er\+\_\+msc,  }\item[{real, intent(in)}]{er\+\_\+ssc,  }\item[{real, intent(in)}]{er\+\_\+psc,  }\item[{real, intent(in)}]{ex\+\_\+fgc\+\_\+msc,  }\item[{real, intent(in)}]{ex\+\_\+fgc\+\_\+ssc,  }\item[{real, intent(in)}]{ex\+\_\+fgc\+\_\+psc,  }\item[{real, intent(in)}]{ex\+\_\+fsc\+\_\+msc,  }\item[{real, intent(in)}]{ex\+\_\+fsc\+\_\+ssc,  }\item[{real, intent(in)}]{ex\+\_\+fsc\+\_\+psc,  }\item[{real, intent(in)}]{ex\+\_\+stgc\+\_\+msc,  }\item[{real, intent(in)}]{ex\+\_\+stgc\+\_\+ssc,  }\item[{real, intent(in)}]{ex\+\_\+stgc\+\_\+psc,  }\item[{real, intent(in)}]{ex\+\_\+stsc\+\_\+msc,  }\item[{real, intent(in)}]{ex\+\_\+stsc\+\_\+ssc,  }\item[{real, intent(in)}]{ex\+\_\+stsc\+\_\+psc,  }\item[{real, intent(in)}]{ex\+\_\+msc\+\_\+ssc,  }\item[{real, intent(in)}]{ex\+\_\+msc\+\_\+psc,  }\item[{real, intent(in)}]{ex\+\_\+ssc\+\_\+msc,  }\item[{real, intent(in)}]{ex\+\_\+ssc\+\_\+psc,  }\item[{real, intent(in)}]{ex\+\_\+psc\+\_\+msc,  }\item[{real, intent(in)}]{ex\+\_\+psc\+\_\+ssc,  }\item[{real, intent(in)}]{fg\+\_\+\+C\+\_\+loss,  }\item[{real, intent(in)}]{fs\+\_\+\+C\+\_\+loss,  }\item[{real, intent(in)}]{stg\+\_\+\+C\+\_\+loss,  }\item[{real, intent(in)}]{sts\+\_\+\+C\+\_\+loss,  }\item[{real, intent(in)}]{ms\+\_\+\+C\+\_\+input,  }\item[{real, intent(in)}]{ms\+\_\+\+C\+\_\+loss,  }\item[{real, intent(in)}]{ss\+\_\+\+C\+\_\+input,  }\item[{real, intent(in)}]{ss\+\_\+\+C\+\_\+loss,  }\item[{real, intent(in)}]{ps\+\_\+\+C\+\_\+input,  }\item[{real, intent(in)}]{ps\+\_\+\+C\+\_\+loss }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacesoil__respiration_a5b80f3483c45a1b420ba6e9f27c7314b}\label{namespacesoil__respiration_a5b80f3483c45a1b420ba6e9f27c7314b}} 
+\index{soil\_respiration@{soil\_respiration}!het\_resp\_weight@{het\_resp\_weight}}
+\index{het\_resp\_weight@{het\_resp\_weight}!soil\_respiration@{soil\_respiration}}
+\doxysubsubsection{\texorpdfstring{het\_resp\_weight()}{het\_resp\_weight()}}
+{\footnotesize\ttfamily subroutine soil\+\_\+respiration\+::het\+\_\+resp\+\_\+weight (\begin{DoxyParamCaption}\item[{real(kind=4), intent(in)}]{soil\+\_\+tempk,  }\item[{real(kind=4), intent(in)}]{rel\+\_\+soil\+\_\+moist,  }\item[{real(kind=4), intent(in)}]{rel\+\_\+soil\+\_\+oxygen,  }\item[{real(kind=4), intent(out)}]{temperature\+\_\+scale,  }\item[{real(kind=4), intent(out)}]{water\+\_\+limitation,  }\item[{real(kind=4), intent(out)}]{oxygen\+\_\+limitation,  }\item[{real(kind=4), intent(out)}]{rh\+\_\+weight }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacesoil__respiration_a4e0961a63b431062e6b2da334f4f0345}\label{namespacesoil__respiration_a4e0961a63b431062e6b2da334f4f0345}} 
+\index{soil\_respiration@{soil\_respiration}!resp\_f\_decomp@{resp\_f\_decomp}}
+\index{resp\_f\_decomp@{resp\_f\_decomp}!soil\_respiration@{soil\_respiration}}
+\doxysubsubsection{\texorpdfstring{resp\_f\_decomp()}{resp\_f\_decomp()}}
+{\footnotesize\ttfamily subroutine soil\+\_\+respiration\+::resp\+\_\+f\+\_\+decomp (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacesoil__respiration_a87ea27d35050fa8556351f912cc96a88}\label{namespacesoil__respiration_a87ea27d35050fa8556351f912cc96a88}} 
+\index{soil\_respiration@{soil\_respiration}!resp\_rh@{resp\_rh}}
+\index{resp\_rh@{resp\_rh}!soil\_respiration@{soil\_respiration}}
+\doxysubsubsection{\texorpdfstring{resp\_rh()}{resp\_rh()}}
+{\footnotesize\ttfamily subroutine soil\+\_\+respiration\+::resp\+\_\+rh (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{ntext }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacesoil__respiration_a594496a115df4c5bed4c870771dc534f}\label{namespacesoil__respiration_a594496a115df4c5bed4c870771dc534f}} 
+\index{soil\_respiration@{soil\_respiration}!root\_resp\_norm@{root\_resp\_norm}}
+\index{root\_resp\_norm@{root\_resp\_norm}!soil\_respiration@{soil\_respiration}}
+\doxysubsubsection{\texorpdfstring{root\_resp\_norm()}{root\_resp\_norm()}}
+{\footnotesize\ttfamily real function soil\+\_\+respiration\+::root\+\_\+resp\+\_\+norm (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ipft,  }\item[{real(kind=4), intent(in)}]{soil\+\_\+temp }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacesoil__respiration_a5cb8a973530e6271369890f2f44b81ec}\label{namespacesoil__respiration_a5cb8a973530e6271369890f2f44b81ec}} 
+\index{soil\_respiration@{soil\_respiration}!soil\_respiration\_driver@{soil\_respiration\_driver}}
+\index{soil\_respiration\_driver@{soil\_respiration\_driver}!soil\_respiration@{soil\_respiration}}
+\doxysubsubsection{\texorpdfstring{soil\_respiration\_driver()}{soil\_respiration\_driver()}}
+{\footnotesize\ttfamily subroutine soil\+\_\+respiration\+::soil\+\_\+respiration\+\_\+driver (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{mzg,  }\item[{integer, dimension(mzg), intent(in)}]{ntext\+\_\+soil }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacesoil__respiration_a25cfdb7defc35a7a058e69905845492f}\label{namespacesoil__respiration_a25cfdb7defc35a7a058e69905845492f}} 
+\index{soil\_respiration@{soil\_respiration}!update\_c\_and\_n\_pools@{update\_c\_and\_n\_pools}}
+\index{update\_c\_and\_n\_pools@{update\_c\_and\_n\_pools}!soil\_respiration@{soil\_respiration}}
+\doxysubsubsection{\texorpdfstring{update\_c\_and\_n\_pools()}{update\_c\_and\_n\_pools()}}
+{\footnotesize\ttfamily subroutine soil\+\_\+respiration\+::update\+\_\+c\+\_\+and\+\_\+n\+\_\+pools (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacesoil__respiration_a899e14545985533b7c27d0f3960f2f85}\label{namespacesoil__respiration_a899e14545985533b7c27d0f3960f2f85}} 
+\index{soil\_respiration@{soil\_respiration}!zero\_litter\_inputs@{zero\_litter\_inputs}}
+\index{zero\_litter\_inputs@{zero\_litter\_inputs}!soil\_respiration@{soil\_respiration}}
+\doxysubsubsection{\texorpdfstring{zero\_litter\_inputs()}{zero\_litter\_inputs()}}
+{\footnotesize\ttfamily subroutine soil\+\_\+respiration\+::zero\+\_\+litter\+\_\+inputs (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid }\end{DoxyParamCaption})}
+

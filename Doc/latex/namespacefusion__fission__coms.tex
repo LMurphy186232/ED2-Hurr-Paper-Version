@@ -1,0 +1,292 @@
+\hypertarget{namespacefusion__fission__coms}{}\doxysection{fusion\+\_\+fission\+\_\+coms Module Reference}
+\label{namespacefusion__fission__coms}\index{fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer \mbox{\hyperlink{namespacefusion__fission__coms_a78c1c7721c7ee7618a074d7566b59912}{ifusion}}
+\begin{DoxyCompactList}\small\item\em IFUSION is a temporary flag for patch fusion. 0 -- Original (ED-\/2.\+1) patch/cohort fusion routines. 1 -- Updated (ED-\/2.\+2) patch/cohort fusion routines. (MLO) The old scheme had some issues, mostly the fact that it used relative differences in light levels, and had high rate of tolerance increase. This would eventually fuse patches with very different upper canopy. Also, the patch fusion scheme did not check for number of remaining patches that were so small that would be terminated. Both problems are much more likely to make a difference when initial conditions have a large number of patches (\texorpdfstring{$>$}{>} 1000), which is quite common when using airborne lidar. I am keeping the old scheme to avoid disrupting people\textquotesingle{}s work, but eventually I would prefer deleting the routines. \end{DoxyCompactList}\item 
+integer \mbox{\hyperlink{namespacefusion__fission__coms_a08e50e0002f567a0ba2065dcec007a5d}{niter\+\_\+patfus}}
+\item 
+real, dimension(\+:), allocatable \mbox{\hyperlink{namespacefusion__fission__coms_ae764a0782d428f619f8699436f781b6a}{hgt\+\_\+class}}
+\item 
+integer \mbox{\hyperlink{namespacefusion__fission__coms_a70870869c112cab58081fe3db61c9dc7}{ff\+\_\+nhgt}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_a8f814b477d6953f5b8f16e71d0014d64}{dark\+\_\+cumlai\+\_\+min}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_a750dd18910894531bd08cc5449849759}{dark\+\_\+cumlai\+\_\+max}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_af9d1927c4edb9281fb1ee94b3cf43820}{sunny\+\_\+cumlai\+\_\+min}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_a9eadfcde9b06a4ed1c36ffa027a98c80}{sunny\+\_\+cumlai\+\_\+max}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_a858c59d63500c90bf2d5aa0d9304597f}{dark\+\_\+cumlai\+\_\+mult}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_a75dd3af0dafb1c866f6b29f647227a79}{sunny\+\_\+cumlai\+\_\+mult}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_a18de7d0363e629bf717866e1be6d6784}{light\+\_\+toler\+\_\+min}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_a35ae334e26d06d11e6d7373a538694b9}{light\+\_\+toler\+\_\+max}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_aa0ffb9883c43635481ab9abb79b66de3}{light\+\_\+toler\+\_\+mult}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_ab21fc53bfafeb048e8f02a26cd204b02}{fusetol}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_a19463812b3be234c086b50080c6431cf}{fusetol\+\_\+h}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_ab1cef63eced987708359ace3d7c8405d}{lai\+\_\+fuse\+\_\+tol}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_a26b067f4070a314e0e5d2c52088aa6d9}{coh\+\_\+tolerance\+\_\+max}}
+\item 
+logical \mbox{\hyperlink{namespacefusion__fission__coms_ae3996cd91b27f9b130517df7870d5869}{fuse\+\_\+relax}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_adc5b88f096f2a868081bcf6694437abf}{pat\+\_\+light\+\_\+ext}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_af8a3d10210eee70144d32ad1f5ecf2a7}{pat\+\_\+light\+\_\+tol\+\_\+min}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_af27e175638058e76d9773b9f1cc3686d}{pat\+\_\+light\+\_\+tol\+\_\+max}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_acdca356e5a4cdc3a471e23542a0d3ef2}{pat\+\_\+light\+\_\+tol\+\_\+mult}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_a6d84772ba134e820424223ce7d80339c}{pat\+\_\+light\+\_\+mxd\+\_\+fac}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_a8b4ec11892e3c764826370cf51373e14}{pat\+\_\+diff\+\_\+age\+\_\+tol}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_aedb2d1fec80d093291cb6df9f88191c0}{pat\+\_\+min\+\_\+area\+\_\+remain}}
+\item 
+integer \mbox{\hyperlink{namespacefusion__fission__coms_acffc9d5e4f6c552bb214c92e1790f236}{niter\+\_\+cohfus}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_a561ce4e68a920c9908682c7e62faa2d7}{coh\+\_\+size\+\_\+tol\+\_\+min}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_aaf4d52d7cc35f579f9c673a04eb1dcce}{coh\+\_\+size\+\_\+tol\+\_\+max}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_a1fbf0580224a75cd7906064240a5ec65}{coh\+\_\+size\+\_\+tol\+\_\+mult}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_ad01836d622d3d9ece106127c598eb0d5}{lai\+\_\+tol}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_aa480a4503cfdfdbfc8c76fa5570672d1}{corr\+\_\+patch}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_ae94ecd34b091879520d758e554ec9efc}{corr\+\_\+cohort}}
+\item 
+logical \mbox{\hyperlink{namespacefusion__fission__coms_afaa756efb130d43d617b625105e6efc3}{print\+\_\+fuse\+\_\+details}}
+\item 
+character(len=str\+\_\+len) \mbox{\hyperlink{namespacefusion__fission__coms_a459ec82605ae0362d2556be00084a964}{fuse\+\_\+prefix}}
+\item 
+real \mbox{\hyperlink{namespacefusion__fission__coms_ab6702ae26ed3b78fb8eb5da8be0b5912}{pat\+\_\+laimax\+\_\+fine}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacefusion__fission__coms_aaf4d52d7cc35f579f9c673a04eb1dcce}\label{namespacefusion__fission__coms_aaf4d52d7cc35f579f9c673a04eb1dcce}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!coh\_size\_tol\_max@{coh\_size\_tol\_max}}
+\index{coh\_size\_tol\_max@{coh\_size\_tol\_max}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{coh\_size\_tol\_max}{coh\_size\_tol\_max}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::coh\+\_\+size\+\_\+tol\+\_\+max}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_a561ce4e68a920c9908682c7e62faa2d7}\label{namespacefusion__fission__coms_a561ce4e68a920c9908682c7e62faa2d7}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!coh\_size\_tol\_min@{coh\_size\_tol\_min}}
+\index{coh\_size\_tol\_min@{coh\_size\_tol\_min}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{coh\_size\_tol\_min}{coh\_size\_tol\_min}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::coh\+\_\+size\+\_\+tol\+\_\+min}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_a1fbf0580224a75cd7906064240a5ec65}\label{namespacefusion__fission__coms_a1fbf0580224a75cd7906064240a5ec65}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!coh\_size\_tol\_mult@{coh\_size\_tol\_mult}}
+\index{coh\_size\_tol\_mult@{coh\_size\_tol\_mult}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{coh\_size\_tol\_mult}{coh\_size\_tol\_mult}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::coh\+\_\+size\+\_\+tol\+\_\+mult}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_a26b067f4070a314e0e5d2c52088aa6d9}\label{namespacefusion__fission__coms_a26b067f4070a314e0e5d2c52088aa6d9}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!coh\_tolerance\_max@{coh\_tolerance\_max}}
+\index{coh\_tolerance\_max@{coh\_tolerance\_max}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{coh\_tolerance\_max}{coh\_tolerance\_max}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::coh\+\_\+tolerance\+\_\+max}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_ae94ecd34b091879520d758e554ec9efc}\label{namespacefusion__fission__coms_ae94ecd34b091879520d758e554ec9efc}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!corr\_cohort@{corr\_cohort}}
+\index{corr\_cohort@{corr\_cohort}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{corr\_cohort}{corr\_cohort}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::corr\+\_\+cohort}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_aa480a4503cfdfdbfc8c76fa5570672d1}\label{namespacefusion__fission__coms_aa480a4503cfdfdbfc8c76fa5570672d1}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!corr\_patch@{corr\_patch}}
+\index{corr\_patch@{corr\_patch}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{corr\_patch}{corr\_patch}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::corr\+\_\+patch}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_a750dd18910894531bd08cc5449849759}\label{namespacefusion__fission__coms_a750dd18910894531bd08cc5449849759}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!dark\_cumlai\_max@{dark\_cumlai\_max}}
+\index{dark\_cumlai\_max@{dark\_cumlai\_max}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{dark\_cumlai\_max}{dark\_cumlai\_max}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::dark\+\_\+cumlai\+\_\+max}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_a8f814b477d6953f5b8f16e71d0014d64}\label{namespacefusion__fission__coms_a8f814b477d6953f5b8f16e71d0014d64}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!dark\_cumlai\_min@{dark\_cumlai\_min}}
+\index{dark\_cumlai\_min@{dark\_cumlai\_min}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{dark\_cumlai\_min}{dark\_cumlai\_min}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::dark\+\_\+cumlai\+\_\+min}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_a858c59d63500c90bf2d5aa0d9304597f}\label{namespacefusion__fission__coms_a858c59d63500c90bf2d5aa0d9304597f}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!dark\_cumlai\_mult@{dark\_cumlai\_mult}}
+\index{dark\_cumlai\_mult@{dark\_cumlai\_mult}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{dark\_cumlai\_mult}{dark\_cumlai\_mult}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::dark\+\_\+cumlai\+\_\+mult}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_a70870869c112cab58081fe3db61c9dc7}\label{namespacefusion__fission__coms_a70870869c112cab58081fe3db61c9dc7}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!ff\_nhgt@{ff\_nhgt}}
+\index{ff\_nhgt@{ff\_nhgt}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{ff\_nhgt}{ff\_nhgt}}
+{\footnotesize\ttfamily integer fusion\+\_\+fission\+\_\+coms\+::ff\+\_\+nhgt}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_a459ec82605ae0362d2556be00084a964}\label{namespacefusion__fission__coms_a459ec82605ae0362d2556be00084a964}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!fuse\_prefix@{fuse\_prefix}}
+\index{fuse\_prefix@{fuse\_prefix}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{fuse\_prefix}{fuse\_prefix}}
+{\footnotesize\ttfamily character(len=str\+\_\+len) fusion\+\_\+fission\+\_\+coms\+::fuse\+\_\+prefix}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_ae3996cd91b27f9b130517df7870d5869}\label{namespacefusion__fission__coms_ae3996cd91b27f9b130517df7870d5869}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!fuse\_relax@{fuse\_relax}}
+\index{fuse\_relax@{fuse\_relax}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{fuse\_relax}{fuse\_relax}}
+{\footnotesize\ttfamily logical fusion\+\_\+fission\+\_\+coms\+::fuse\+\_\+relax}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_ab21fc53bfafeb048e8f02a26cd204b02}\label{namespacefusion__fission__coms_ab21fc53bfafeb048e8f02a26cd204b02}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!fusetol@{fusetol}}
+\index{fusetol@{fusetol}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{fusetol}{fusetol}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::fusetol}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_a19463812b3be234c086b50080c6431cf}\label{namespacefusion__fission__coms_a19463812b3be234c086b50080c6431cf}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!fusetol\_h@{fusetol\_h}}
+\index{fusetol\_h@{fusetol\_h}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{fusetol\_h}{fusetol\_h}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::fusetol\+\_\+h}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_ae764a0782d428f619f8699436f781b6a}\label{namespacefusion__fission__coms_ae764a0782d428f619f8699436f781b6a}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!hgt\_class@{hgt\_class}}
+\index{hgt\_class@{hgt\_class}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{hgt\_class}{hgt\_class}}
+{\footnotesize\ttfamily real, dimension(\+:), allocatable fusion\+\_\+fission\+\_\+coms\+::hgt\+\_\+class}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_a78c1c7721c7ee7618a074d7566b59912}\label{namespacefusion__fission__coms_a78c1c7721c7ee7618a074d7566b59912}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!ifusion@{ifusion}}
+\index{ifusion@{ifusion}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{ifusion}{ifusion}}
+{\footnotesize\ttfamily integer fusion\+\_\+fission\+\_\+coms\+::ifusion}
+
+
+
+IFUSION is a temporary flag for patch fusion. 0 -- Original (ED-\/2.\+1) patch/cohort fusion routines. 1 -- Updated (ED-\/2.\+2) patch/cohort fusion routines. (MLO) The old scheme had some issues, mostly the fact that it used relative differences in light levels, and had high rate of tolerance increase. This would eventually fuse patches with very different upper canopy. Also, the patch fusion scheme did not check for number of remaining patches that were so small that would be terminated. Both problems are much more likely to make a difference when initial conditions have a large number of patches (\texorpdfstring{$>$}{>} 1000), which is quite common when using airborne lidar. I am keeping the old scheme to avoid disrupting people\textquotesingle{}s work, but eventually I would prefer deleting the routines. 
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_ab1cef63eced987708359ace3d7c8405d}\label{namespacefusion__fission__coms_ab1cef63eced987708359ace3d7c8405d}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!lai\_fuse\_tol@{lai\_fuse\_tol}}
+\index{lai\_fuse\_tol@{lai\_fuse\_tol}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{lai\_fuse\_tol}{lai\_fuse\_tol}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::lai\+\_\+fuse\+\_\+tol}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_ad01836d622d3d9ece106127c598eb0d5}\label{namespacefusion__fission__coms_ad01836d622d3d9ece106127c598eb0d5}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!lai\_tol@{lai\_tol}}
+\index{lai\_tol@{lai\_tol}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{lai\_tol}{lai\_tol}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::lai\+\_\+tol}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_a35ae334e26d06d11e6d7373a538694b9}\label{namespacefusion__fission__coms_a35ae334e26d06d11e6d7373a538694b9}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!light\_toler\_max@{light\_toler\_max}}
+\index{light\_toler\_max@{light\_toler\_max}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{light\_toler\_max}{light\_toler\_max}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::light\+\_\+toler\+\_\+max}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_a18de7d0363e629bf717866e1be6d6784}\label{namespacefusion__fission__coms_a18de7d0363e629bf717866e1be6d6784}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!light\_toler\_min@{light\_toler\_min}}
+\index{light\_toler\_min@{light\_toler\_min}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{light\_toler\_min}{light\_toler\_min}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::light\+\_\+toler\+\_\+min}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_aa0ffb9883c43635481ab9abb79b66de3}\label{namespacefusion__fission__coms_aa0ffb9883c43635481ab9abb79b66de3}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!light\_toler\_mult@{light\_toler\_mult}}
+\index{light\_toler\_mult@{light\_toler\_mult}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{light\_toler\_mult}{light\_toler\_mult}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::light\+\_\+toler\+\_\+mult}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_acffc9d5e4f6c552bb214c92e1790f236}\label{namespacefusion__fission__coms_acffc9d5e4f6c552bb214c92e1790f236}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!niter\_cohfus@{niter\_cohfus}}
+\index{niter\_cohfus@{niter\_cohfus}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{niter\_cohfus}{niter\_cohfus}}
+{\footnotesize\ttfamily integer fusion\+\_\+fission\+\_\+coms\+::niter\+\_\+cohfus}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_a08e50e0002f567a0ba2065dcec007a5d}\label{namespacefusion__fission__coms_a08e50e0002f567a0ba2065dcec007a5d}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!niter\_patfus@{niter\_patfus}}
+\index{niter\_patfus@{niter\_patfus}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{niter\_patfus}{niter\_patfus}}
+{\footnotesize\ttfamily integer fusion\+\_\+fission\+\_\+coms\+::niter\+\_\+patfus}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_a8b4ec11892e3c764826370cf51373e14}\label{namespacefusion__fission__coms_a8b4ec11892e3c764826370cf51373e14}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!pat\_diff\_age\_tol@{pat\_diff\_age\_tol}}
+\index{pat\_diff\_age\_tol@{pat\_diff\_age\_tol}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{pat\_diff\_age\_tol}{pat\_diff\_age\_tol}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::pat\+\_\+diff\+\_\+age\+\_\+tol}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_ab6702ae26ed3b78fb8eb5da8be0b5912}\label{namespacefusion__fission__coms_ab6702ae26ed3b78fb8eb5da8be0b5912}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!pat\_laimax\_fine@{pat\_laimax\_fine}}
+\index{pat\_laimax\_fine@{pat\_laimax\_fine}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{pat\_laimax\_fine}{pat\_laimax\_fine}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::pat\+\_\+laimax\+\_\+fine}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_adc5b88f096f2a868081bcf6694437abf}\label{namespacefusion__fission__coms_adc5b88f096f2a868081bcf6694437abf}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!pat\_light\_ext@{pat\_light\_ext}}
+\index{pat\_light\_ext@{pat\_light\_ext}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{pat\_light\_ext}{pat\_light\_ext}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::pat\+\_\+light\+\_\+ext}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_a6d84772ba134e820424223ce7d80339c}\label{namespacefusion__fission__coms_a6d84772ba134e820424223ce7d80339c}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!pat\_light\_mxd\_fac@{pat\_light\_mxd\_fac}}
+\index{pat\_light\_mxd\_fac@{pat\_light\_mxd\_fac}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{pat\_light\_mxd\_fac}{pat\_light\_mxd\_fac}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::pat\+\_\+light\+\_\+mxd\+\_\+fac}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_af27e175638058e76d9773b9f1cc3686d}\label{namespacefusion__fission__coms_af27e175638058e76d9773b9f1cc3686d}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!pat\_light\_tol\_max@{pat\_light\_tol\_max}}
+\index{pat\_light\_tol\_max@{pat\_light\_tol\_max}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{pat\_light\_tol\_max}{pat\_light\_tol\_max}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::pat\+\_\+light\+\_\+tol\+\_\+max}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_af8a3d10210eee70144d32ad1f5ecf2a7}\label{namespacefusion__fission__coms_af8a3d10210eee70144d32ad1f5ecf2a7}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!pat\_light\_tol\_min@{pat\_light\_tol\_min}}
+\index{pat\_light\_tol\_min@{pat\_light\_tol\_min}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{pat\_light\_tol\_min}{pat\_light\_tol\_min}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::pat\+\_\+light\+\_\+tol\+\_\+min}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_acdca356e5a4cdc3a471e23542a0d3ef2}\label{namespacefusion__fission__coms_acdca356e5a4cdc3a471e23542a0d3ef2}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!pat\_light\_tol\_mult@{pat\_light\_tol\_mult}}
+\index{pat\_light\_tol\_mult@{pat\_light\_tol\_mult}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{pat\_light\_tol\_mult}{pat\_light\_tol\_mult}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::pat\+\_\+light\+\_\+tol\+\_\+mult}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_aedb2d1fec80d093291cb6df9f88191c0}\label{namespacefusion__fission__coms_aedb2d1fec80d093291cb6df9f88191c0}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!pat\_min\_area\_remain@{pat\_min\_area\_remain}}
+\index{pat\_min\_area\_remain@{pat\_min\_area\_remain}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{pat\_min\_area\_remain}{pat\_min\_area\_remain}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::pat\+\_\+min\+\_\+area\+\_\+remain}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_afaa756efb130d43d617b625105e6efc3}\label{namespacefusion__fission__coms_afaa756efb130d43d617b625105e6efc3}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!print\_fuse\_details@{print\_fuse\_details}}
+\index{print\_fuse\_details@{print\_fuse\_details}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{print\_fuse\_details}{print\_fuse\_details}}
+{\footnotesize\ttfamily logical fusion\+\_\+fission\+\_\+coms\+::print\+\_\+fuse\+\_\+details}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_a9eadfcde9b06a4ed1c36ffa027a98c80}\label{namespacefusion__fission__coms_a9eadfcde9b06a4ed1c36ffa027a98c80}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!sunny\_cumlai\_max@{sunny\_cumlai\_max}}
+\index{sunny\_cumlai\_max@{sunny\_cumlai\_max}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{sunny\_cumlai\_max}{sunny\_cumlai\_max}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::sunny\+\_\+cumlai\+\_\+max}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_af9d1927c4edb9281fb1ee94b3cf43820}\label{namespacefusion__fission__coms_af9d1927c4edb9281fb1ee94b3cf43820}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!sunny\_cumlai\_min@{sunny\_cumlai\_min}}
+\index{sunny\_cumlai\_min@{sunny\_cumlai\_min}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{sunny\_cumlai\_min}{sunny\_cumlai\_min}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::sunny\+\_\+cumlai\+\_\+min}
+
+\mbox{\Hypertarget{namespacefusion__fission__coms_a75dd3af0dafb1c866f6b29f647227a79}\label{namespacefusion__fission__coms_a75dd3af0dafb1c866f6b29f647227a79}} 
+\index{fusion\_fission\_coms@{fusion\_fission\_coms}!sunny\_cumlai\_mult@{sunny\_cumlai\_mult}}
+\index{sunny\_cumlai\_mult@{sunny\_cumlai\_mult}!fusion\_fission\_coms@{fusion\_fission\_coms}}
+\doxysubsubsection{\texorpdfstring{sunny\_cumlai\_mult}{sunny\_cumlai\_mult}}
+{\footnotesize\ttfamily real fusion\+\_\+fission\+\_\+coms\+::sunny\+\_\+cumlai\+\_\+mult}
+

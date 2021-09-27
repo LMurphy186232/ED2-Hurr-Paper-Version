@@ -1,0 +1,24 @@
+digraph "getconfigstring"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="getconfigstring",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="libxml2f90__existid",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libxml2f90_8f90__pp_8f90.html#aa7cbdbfe67d0ec6b1ce87ce016b6cb22",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="libxml2f90_existid",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libxml2f90_8f90__pp_8f90.html#aedaeb0ba8d5ce41c39baed261d3f82c5",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="libxml2f90__ll_exist",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libxml2f90_8f90__pp_8f90.html#a3693c7841e7cf085873b2193e4eb51cf",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="libxml2f90__ll_getch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libxml2f90_8f90__pp_8f90.html#a6197ea91babb017cbc3cec50fe124c03",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="libxml2f90_ll_getch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libxml2f90_8f90__pp_8f90.html#a4f559755e5ceb6b3e6c845315d74ea7c",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="libxml2f90__ll_getsize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libxml2f90_8f90__pp_8f90.html#a6ae6ccc230fcca3282294c098febee5a",tooltip=" "];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="libxml2f90_ll_getsize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libxml2f90_8f90__pp_8f90.html#acfe9271d1d35656ab0b7c9ab2d303476",tooltip=" "];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="libxml2f90__ll_selecttag",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libxml2f90_8f90__pp_8f90.html#a82a4ef1569ea46506f400cf73fce7369",tooltip=" "];
+}

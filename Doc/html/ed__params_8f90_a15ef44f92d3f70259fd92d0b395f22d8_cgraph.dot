@@ -1,0 +1,12 @@
+digraph "init_pft_hydro_params"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="init_pft_hydro_params",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="This subroutine initializes plant hydraulic parameters."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="plant_hydro::psi2rwc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceplant__hydro.html#ae27d78c83f41d9d6fdd38ad2052b32af",tooltip="\\breif Convert water potential of leaf and wood to relative water content"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="plant_hydro::rwc2psi",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceplant__hydro.html#a7cc35f0ea4e11517e3bc7eb75fd19e36",tooltip="Convert relative water content to water potential."];
+}

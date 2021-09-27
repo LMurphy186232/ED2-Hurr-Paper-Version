@@ -1,0 +1,55 @@
+\hypertarget{plant__hydro_8f90}{}\doxysection{plant\+\_\+hydro.\+f90 File Reference}
+\label{plant__hydro_8f90}\index{plant\_hydro.f90@{plant\_hydro.f90}}
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespaceplant__hydro}{plant\+\_\+hydro}}
+\begin{DoxyCompactList}\small\item\em Calculations of plant hydrodynamics at ED2 timestep, including various utils for plant hydraulics. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceplant__hydro_abfe8a320d427f69bf1406dfaa6451d78}{plant\+\_\+hydro\+::plant\+\_\+hydro\+\_\+driver}} (csite, ipa, ntext\+\_\+soil)
+\begin{DoxyCompactList}\small\item\em Main driver to calculate plant hydrodynamics within a site. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceplant__hydro_ae182f350bc482ea1c98058bdd24a7c15}{plant\+\_\+hydro\+::calc\+\_\+plant\+\_\+water\+\_\+flux}} (dt, sap\+\_\+area, nplant, ipft, is\+\_\+small, krdepth, bleaf, bsap, broot, hite, transp, leaf\+\_\+psi, wood\+\_\+psi, soil\+\_\+psi, soil\+\_\+cond, ipa, ico, wflux\+\_\+wl, wflux\+\_\+gw, wflux\+\_\+gw\+\_\+layer)
+\begin{DoxyCompactList}\small\item\em Calculate water flow within plants driven by hydraulic laws. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceplant__hydro_ae27d78c83f41d9d6fdd38ad2052b32af}{plant\+\_\+hydro\+::psi2rwc}} (leaf\+\_\+psi, wood\+\_\+psi, ipft, leaf\+\_\+rwc, wood\+\_\+rwc)
+\begin{DoxyCompactList}\small\item\em \textbackslash{}breif Convert water potential of leaf and wood to relative water content \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceplant__hydro_a7cc35f0ea4e11517e3bc7eb75fd19e36}{plant\+\_\+hydro\+::rwc2psi}} (leaf\+\_\+rwc, wood\+\_\+rwc, ipft, leaf\+\_\+psi, wood\+\_\+psi)
+\begin{DoxyCompactList}\small\item\em Convert relative water content to water potential. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceplant__hydro_af7799ce8ba25fef66ade9730bc9f6c77}{plant\+\_\+hydro\+::rwc2tw}} (leaf\+\_\+rwc, wood\+\_\+rwc, bleaf, bsapwooda, bsapwoodb, bdeada, bdeadb, broot, dbh, ipft, leaf\+\_\+water\+\_\+int, wood\+\_\+water\+\_\+int)
+\begin{DoxyCompactList}\small\item\em Convert relative water content to total water for both leaf and wood. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceplant__hydro_a09860c21fcc80cc71cd5d5c11ff2ddd2}{plant\+\_\+hydro\+::tw2rwc}} (leaf\+\_\+water\+\_\+int, wood\+\_\+water\+\_\+int, is\+\_\+small, bleaf, bsapwooda, bsapwoodb, bdeada, bdeadb, broot, dbh, ipft, leaf\+\_\+rwc, wood\+\_\+rwc)
+\begin{DoxyCompactList}\small\item\em Convert total water to relative water content for both leaf and wood. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceplant__hydro_a8f7b187fbc4e18ea8c2329f506ac674e}{plant\+\_\+hydro\+::psi2tw}} (leaf\+\_\+psi, wood\+\_\+psi, bleaf, bsapwooda, bsapwoodb, bdeada, bdeadb, broot, dbh, ipft, leaf\+\_\+water\+\_\+int, wood\+\_\+water\+\_\+int)
+\begin{DoxyCompactList}\small\item\em Convert water potential to total water for both leaf and wood. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceplant__hydro_a1fb5bda697f01054edcbfc46d216dbfc}{plant\+\_\+hydro\+::tw2psi}} (leaf\+\_\+water\+\_\+int, wood\+\_\+water\+\_\+int, is\+\_\+small, bleaf, bsapwooda, bsapwoodb, bdeada, bdeadb, broot, dbh, ipft, leaf\+\_\+psi, wood\+\_\+psi)
+\begin{DoxyCompactList}\small\item\em Convert total water to water potential for both leaf and wood. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceplant__hydro_ac96b04cb776694987ccefd7c37aab829}{plant\+\_\+hydro\+::twi2twe}} (leaf\+\_\+water\+\_\+int, wood\+\_\+water\+\_\+int, nplant, leaf\+\_\+water\+\_\+im2, wood\+\_\+water\+\_\+im2)
+\begin{DoxyCompactList}\small\item\em Intensive to extensive internal water converter. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceplant__hydro_aeec57a396eb838de8a254337d9b9851d}{plant\+\_\+hydro\+::twe2twi}} (leaf\+\_\+water\+\_\+im2, wood\+\_\+water\+\_\+im2, nplant, leaf\+\_\+water\+\_\+int, wood\+\_\+water\+\_\+int)
+\begin{DoxyCompactList}\small\item\em Extensive to extensive internal water converter. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceplant__hydro_ac89709711c9ca9b56ed327f767e842c2}{plant\+\_\+hydro\+::psi2twe}} (leaf\+\_\+psi, wood\+\_\+psi, ipft, nplant, bleaf, bsapwooda, bsapwoodb, bdeada, bdeadb, broot, dbh, leaf\+\_\+water\+\_\+im2, wood\+\_\+water\+\_\+im2)
+\begin{DoxyCompactList}\small\item\em \textbackslash{}breif Convert water potential of leaf and wood to extensive water storage \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceplant__hydro_aee5e9b3f26944e3c39aa053c891d534c}{plant\+\_\+hydro\+::update\+\_\+plc}} (cpatch, ico)
+\begin{DoxyCompactList}\small\item\em \textbackslash{}breif update percentage loss of xylem conductance using daily minimum leaf psi \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+real(kind=4), parameter \mbox{\hyperlink{namespaceplant__hydro_ac287cbcde462cfff9ae16f742d5358e2}{plant\+\_\+hydro\+::tol\+\_\+buff}} = 1.e-\/4
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespaceplant__hydro_a8d699833137beb778a1a8fb615cb671f}{plant\+\_\+hydro\+::tol\+\_\+buff\+\_\+d}} = dble(tol\+\_\+buff)
+\item 
+real(kind=4), parameter \mbox{\hyperlink{namespaceplant__hydro_a3c185febf0c7ef0df6dae91e4a7b52b8}{plant\+\_\+hydro\+::om\+\_\+buff}} = 1. -\/ tol\+\_\+buff
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespaceplant__hydro_a4b260480ab407ab5c941319c7d35292c}{plant\+\_\+hydro\+::om\+\_\+buff\+\_\+d}} = dble(om\+\_\+buff)
+\item 
+real(kind=4), parameter \mbox{\hyperlink{namespaceplant__hydro_aad54319c331bda02da512bf658a5d0e9}{plant\+\_\+hydro\+::op\+\_\+buff}} = 1. + tol\+\_\+buff
+\item 
+real(kind=8), parameter \mbox{\hyperlink{namespaceplant__hydro_a920abe9cf8905c1050f158943e8366ff}{plant\+\_\+hydro\+::op\+\_\+buff\+\_\+d}} = dble(op\+\_\+buff)
+\item 
+real(kind=4), parameter \mbox{\hyperlink{namespaceplant__hydro_ad08e1d2ab7bca169ad516ccf19c403fc}{plant\+\_\+hydro\+::mg\+\_\+safe}} = 0.\+05
+\item 
+real(kind=4), parameter \mbox{\hyperlink{namespaceplant__hydro_a22708ca7ad47af7e684fd28aa7b2afd2}{plant\+\_\+hydro\+::op\+\_\+safe}} = 1. + mg\+\_\+safe
+\item 
+real(kind=4), parameter \mbox{\hyperlink{namespaceplant__hydro_a467362cb40e4cd045610d079df4a4385}{plant\+\_\+hydro\+::om\+\_\+safe}} = 1. -\/ mg\+\_\+safe
+\end{DoxyCompactItemize}

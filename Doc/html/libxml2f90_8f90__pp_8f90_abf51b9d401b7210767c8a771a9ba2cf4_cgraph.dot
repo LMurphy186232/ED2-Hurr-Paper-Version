@@ -1,0 +1,10 @@
+digraph "libxml2f90_transform_paw"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="libxml2f90_transform_paw",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="libxml2f90_strings\l_module::uppercase",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacelibxml2f90__strings__module.html#a9793dff5114e7403d7f95c0b8f493e1d",tooltip=" "];
+}

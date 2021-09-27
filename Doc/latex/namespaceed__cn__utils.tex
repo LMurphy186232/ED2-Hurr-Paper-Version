@@ -1,0 +1,39 @@
+\hypertarget{namespaceed__cn__utils}{}\doxysection{ed\+\_\+cn\+\_\+utils Module Reference}
+\label{namespaceed__cn__utils}\index{ed\_cn\_utils@{ed\_cn\_utils}}
+
+
+Sub-\/routines that handle carbon\+:nitrogen budgets and sthoichiometry.  
+
+
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceed__cn__utils_a3058642efe07574278e4db8776792ce3}{print\+\_\+c\+\_\+and\+\_\+n\+\_\+budgets}} (cgrid)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__cn__utils_a871cf9e18e375b69efb130964f60cf88}{compute\+\_\+c\+\_\+and\+\_\+n\+\_\+storage}} (cgrid, ipy, soil\+\_\+C, soil\+\_\+N, veg\+\_\+C, veg\+\_\+N)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sub-\/routines that handle carbon\+:nitrogen budgets and sthoichiometry. 
+
+This module contains some sub-\/routines that relate carbon and nitrogen and assess their budgets. These routines used to be in structural growth, however they were migrated to a separate module to avoid circular dependency. \begin{DoxyAuthor}{Author}
+David Medvigy and Michael Dietze. 
+
+20 Oct 2017. Migrated routines from structural growth, Marcos Longo 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespaceed__cn__utils_a871cf9e18e375b69efb130964f60cf88}\label{namespaceed__cn__utils_a871cf9e18e375b69efb130964f60cf88}} 
+\index{ed\_cn\_utils@{ed\_cn\_utils}!compute\_c\_and\_n\_storage@{compute\_c\_and\_n\_storage}}
+\index{compute\_c\_and\_n\_storage@{compute\_c\_and\_n\_storage}!ed\_cn\_utils@{ed\_cn\_utils}}
+\doxysubsubsection{\texorpdfstring{compute\_c\_and\_n\_storage()}{compute\_c\_and\_n\_storage()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+cn\+\_\+utils\+::compute\+\_\+c\+\_\+and\+\_\+n\+\_\+storage (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{integer, intent(in)}]{ipy,  }\item[{real, intent(out)}]{soil\+\_\+C,  }\item[{real, intent(out)}]{soil\+\_\+N,  }\item[{real, intent(out)}]{veg\+\_\+C,  }\item[{real, intent(out)}]{veg\+\_\+N }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__cn__utils_a3058642efe07574278e4db8776792ce3}\label{namespaceed__cn__utils_a3058642efe07574278e4db8776792ce3}} 
+\index{ed\_cn\_utils@{ed\_cn\_utils}!print\_c\_and\_n\_budgets@{print\_c\_and\_n\_budgets}}
+\index{print\_c\_and\_n\_budgets@{print\_c\_and\_n\_budgets}!ed\_cn\_utils@{ed\_cn\_utils}}
+\doxysubsubsection{\texorpdfstring{print\_c\_and\_n\_budgets()}{print\_c\_and\_n\_budgets()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+cn\+\_\+utils\+::print\+\_\+c\+\_\+and\+\_\+n\+\_\+budgets (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid }\end{DoxyParamCaption})}
+

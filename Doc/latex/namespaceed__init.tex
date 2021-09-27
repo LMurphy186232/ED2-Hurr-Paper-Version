@@ -1,0 +1,126 @@
+\hypertarget{namespaceed__init}{}\doxysection{ed\+\_\+init Module Reference}
+\label{namespaceed__init}\index{ed\_init@{ed\_init}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceed__init_a046223d9d38a94efd70b831f41c535d8}{set\+\_\+polygon\+\_\+coordinates}} ()
+\item 
+subroutine \mbox{\hyperlink{namespaceed__init_a870136e2cbfd47dbd5ed21e3e21c5ecb}{set\+\_\+site\+\_\+defprops}} ()
+\item 
+subroutine \mbox{\hyperlink{namespaceed__init_a1c325c081bad109acafdb272baa9c056}{soil\+\_\+default\+\_\+fill}} (cgrid, ifm, ipy)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__init_a8181c9f2a37fc0800a7579090f3b3ed0}{load\+\_\+ecosystem\+\_\+state}} ()
+\item 
+subroutine \mbox{\hyperlink{namespaceed__init_a64dde45798215030fadf8e798b772448}{sfcdata\+\_\+ed}} ()
+\item 
+subroutine \mbox{\hyperlink{namespaceed__init_a3a92d1eba9e4613fd9e8eb3f44657ce6}{print\+\_\+soil\+\_\+info}} (cgrid, ifm)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__init_a736b981974d69fb456a9c1b6d9976638}{read\+\_\+site\+\_\+file}} (cgrid, igr)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__init_ae8ee33a91351caf34341ed3759bd09a3}{calc\+\_\+flow\+\_\+routing}} (cgrid, ipy)
+\item 
+subroutine \mbox{\hyperlink{namespaceed__init_a59b3b93d76bdf9a0f4f12313f859746d}{read\+\_\+obstime}} ()
+\begin{DoxyCompactList}\small\item\em Read and store observational time from file provided from ED2\+IN. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__init_a13c65dbcfd65ddf809bae5ceb27d55d9}{remove\+\_\+obstime}} (time\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Remove the specific entry of obstime\+\_\+list and update obstime\+\_\+list\+\_\+len. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceed__init_aaa0a8ad23089801b91136e56d17ebff5}{is\+\_\+obstime}} (year, month, date, time, observation\+\_\+time, time\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Determine whether it is observation\+\_\+time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespaceed__init_ae8ee33a91351caf34341ed3759bd09a3}\label{namespaceed__init_ae8ee33a91351caf34341ed3759bd09a3}} 
+\index{ed\_init@{ed\_init}!calc\_flow\_routing@{calc\_flow\_routing}}
+\index{calc\_flow\_routing@{calc\_flow\_routing}!ed\_init@{ed\_init}}
+\doxysubsubsection{\texorpdfstring{calc\_flow\_routing()}{calc\_flow\_routing()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+init\+::calc\+\_\+flow\+\_\+routing (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{integer, intent(in)}]{ipy }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__init_aaa0a8ad23089801b91136e56d17ebff5}\label{namespaceed__init_aaa0a8ad23089801b91136e56d17ebff5}} 
+\index{ed\_init@{ed\_init}!is\_obstime@{is\_obstime}}
+\index{is\_obstime@{is\_obstime}!ed\_init@{ed\_init}}
+\doxysubsubsection{\texorpdfstring{is\_obstime()}{is\_obstime()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+init\+::is\+\_\+obstime (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{year,  }\item[{integer, intent(in)}]{month,  }\item[{integer, intent(in)}]{date,  }\item[{real, intent(in)}]{time,  }\item[{logical, intent(out)}]{observation\+\_\+time,  }\item[{integer, intent(out)}]{time\+\_\+idx }\end{DoxyParamCaption})}
+
+
+
+Determine whether it is observation\+\_\+time. 
+
+\begin{DoxyAuthor}{Author}
+Miriam Johnston, Xiangtao Xu 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2018.\+04 
+\end{DoxyDate}
+\mbox{\Hypertarget{namespaceed__init_a8181c9f2a37fc0800a7579090f3b3ed0}\label{namespaceed__init_a8181c9f2a37fc0800a7579090f3b3ed0}} 
+\index{ed\_init@{ed\_init}!load\_ecosystem\_state@{load\_ecosystem\_state}}
+\index{load\_ecosystem\_state@{load\_ecosystem\_state}!ed\_init@{ed\_init}}
+\doxysubsubsection{\texorpdfstring{load\_ecosystem\_state()}{load\_ecosystem\_state()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+init\+::load\+\_\+ecosystem\+\_\+state}
+
+\mbox{\Hypertarget{namespaceed__init_a3a92d1eba9e4613fd9e8eb3f44657ce6}\label{namespaceed__init_a3a92d1eba9e4613fd9e8eb3f44657ce6}} 
+\index{ed\_init@{ed\_init}!print\_soil\_info@{print\_soil\_info}}
+\index{print\_soil\_info@{print\_soil\_info}!ed\_init@{ed\_init}}
+\doxysubsubsection{\texorpdfstring{print\_soil\_info()}{print\_soil\_info()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+init\+::print\+\_\+soil\+\_\+info (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{integer, intent(in)}]{ifm }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__init_a59b3b93d76bdf9a0f4f12313f859746d}\label{namespaceed__init_a59b3b93d76bdf9a0f4f12313f859746d}} 
+\index{ed\_init@{ed\_init}!read\_obstime@{read\_obstime}}
+\index{read\_obstime@{read\_obstime}!ed\_init@{ed\_init}}
+\doxysubsubsection{\texorpdfstring{read\_obstime()}{read\_obstime()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+init\+::read\+\_\+obstime}
+
+
+
+Read and store observational time from file provided from ED2\+IN. 
+
+\begin{DoxyAuthor}{Author}
+Miriam Johnston, Xiangtao Xu 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2018.\+04 
+\end{DoxyDate}
+\mbox{\Hypertarget{namespaceed__init_a736b981974d69fb456a9c1b6d9976638}\label{namespaceed__init_a736b981974d69fb456a9c1b6d9976638}} 
+\index{ed\_init@{ed\_init}!read\_site\_file@{read\_site\_file}}
+\index{read\_site\_file@{read\_site\_file}!ed\_init@{ed\_init}}
+\doxysubsubsection{\texorpdfstring{read\_site\_file()}{read\_site\_file()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+init\+::read\+\_\+site\+\_\+file (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}})}]{cgrid,  }\item[{integer}]{igr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceed__init_a13c65dbcfd65ddf809bae5ceb27d55d9}\label{namespaceed__init_a13c65dbcfd65ddf809bae5ceb27d55d9}} 
+\index{ed\_init@{ed\_init}!remove\_obstime@{remove\_obstime}}
+\index{remove\_obstime@{remove\_obstime}!ed\_init@{ed\_init}}
+\doxysubsubsection{\texorpdfstring{remove\_obstime()}{remove\_obstime()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+init\+::remove\+\_\+obstime (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{time\+\_\+idx }\end{DoxyParamCaption})}
+
+
+
+Remove the specific entry of obstime\+\_\+list and update obstime\+\_\+list\+\_\+len. 
+
+\begin{DoxyAuthor}{Author}
+Miriam Johnston, Xiangtao Xu 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2018.\+04 
+\end{DoxyDate}
+\mbox{\Hypertarget{namespaceed__init_a046223d9d38a94efd70b831f41c535d8}\label{namespaceed__init_a046223d9d38a94efd70b831f41c535d8}} 
+\index{ed\_init@{ed\_init}!set\_polygon\_coordinates@{set\_polygon\_coordinates}}
+\index{set\_polygon\_coordinates@{set\_polygon\_coordinates}!ed\_init@{ed\_init}}
+\doxysubsubsection{\texorpdfstring{set\_polygon\_coordinates()}{set\_polygon\_coordinates()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+init\+::set\+\_\+polygon\+\_\+coordinates}
+
+\mbox{\Hypertarget{namespaceed__init_a870136e2cbfd47dbd5ed21e3e21c5ecb}\label{namespaceed__init_a870136e2cbfd47dbd5ed21e3e21c5ecb}} 
+\index{ed\_init@{ed\_init}!set\_site\_defprops@{set\_site\_defprops}}
+\index{set\_site\_defprops@{set\_site\_defprops}!ed\_init@{ed\_init}}
+\doxysubsubsection{\texorpdfstring{set\_site\_defprops()}{set\_site\_defprops()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+init\+::set\+\_\+site\+\_\+defprops}
+
+\mbox{\Hypertarget{namespaceed__init_a64dde45798215030fadf8e798b772448}\label{namespaceed__init_a64dde45798215030fadf8e798b772448}} 
+\index{ed\_init@{ed\_init}!sfcdata\_ed@{sfcdata\_ed}}
+\index{sfcdata\_ed@{sfcdata\_ed}!ed\_init@{ed\_init}}
+\doxysubsubsection{\texorpdfstring{sfcdata\_ed()}{sfcdata\_ed()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+init\+::sfcdata\+\_\+ed}
+
+\mbox{\Hypertarget{namespaceed__init_a1c325c081bad109acafdb272baa9c056}\label{namespaceed__init_a1c325c081bad109acafdb272baa9c056}} 
+\index{ed\_init@{ed\_init}!soil\_default\_fill@{soil\_default\_fill}}
+\index{soil\_default\_fill@{soil\_default\_fill}!ed\_init@{ed\_init}}
+\doxysubsubsection{\texorpdfstring{soil\_default\_fill()}{soil\_default\_fill()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+init\+::soil\+\_\+default\+\_\+fill (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{integer, intent(in)}]{ifm,  }\item[{integer, intent(in)}]{ipy }\end{DoxyParamCaption})}
+

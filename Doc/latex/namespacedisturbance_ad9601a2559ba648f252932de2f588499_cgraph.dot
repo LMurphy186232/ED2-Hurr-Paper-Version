@@ -1,0 +1,23 @@
+digraph "disturbance::insert_survivors"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="disturbance::insert\l_survivors",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="ed_state_vars::allocate\l_patchtype",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__state__vars.html#a4837fc010e19721a127c9a8b04874594",tooltip="Allocates the cohort-level variables."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="ed_state_vars::nullify\l_patchtype",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__state__vars.html#af1a07724c13a8dceb6ba2d3dab21b899",tooltip="Nullifies all cohort pointers."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="ed_state_vars::copy\l_patchtype",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__state__vars.html#accd794e0e8d71ba375c3669097ae5c8d",tooltip="Copies a continuous chunk of cohorts from one place to another."];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="fatal_error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fatal__error_8_f90.html#a2a2bff228716ab48a81c795b348d1665",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="ed_state_vars::deallocate\l_patchtype",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__state__vars.html#a2845fb7d7264ed3c00651e9e46a16ed8",tooltip="De-allocates all cohort pointers."];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="mortality::survivorship",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacemortality.html#ac9f747e1d8a610623b544a4976375c41",tooltip=" "];
+  Node7 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="update_derived_utils\l::update_cohort_extensive_props",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceupdate__derived__utils.html#a96a6adc29bc251b72ec7bb4a5bbfbad9",tooltip=" "];
+}

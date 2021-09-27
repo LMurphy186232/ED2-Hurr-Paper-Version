@@ -1,0 +1,25 @@
+digraph "radiate_utils::mean_daysecz"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="radiate_utils::mean\l_daysecz",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="radiate_utils::ed_zen",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceradiate__utils.html#ab6af403301e564c95a9b81de699dd478",tooltip=" "];
+  Node2 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="isleap",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dateutils_8f90.html#acbfdb1c78beb593447108203011b380c",tooltip=" "];
+  Node3 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="julday",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dateutils_8f90.html#ab4306c1f20ef02cf582fb1050fa0c5d9",tooltip=" "];
+  Node4 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="sngloff",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$numutils_8f90.html#a97ff3973394dba1b9534e055e358de97",tooltip=" "];
+  Node5 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node1 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="update_derived_utils\l::update_model_time_dm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceupdate__derived__utils.html#add8f6e17651869f7700a4e7841aaf1af",tooltip=" "];
+  Node6 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+}

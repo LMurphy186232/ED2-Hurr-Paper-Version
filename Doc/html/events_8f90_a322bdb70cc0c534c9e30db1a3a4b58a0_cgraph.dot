@@ -1,0 +1,36 @@
+digraph "event_fertilize"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="event_fertilize",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ed_state_vars::allocate\l_patchtype",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__state__vars.html#a4837fc010e19721a127c9a8b04874594",tooltip="Allocates the cohort-level variables."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ed_state_vars::nullify\l_patchtype",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__state__vars.html#af1a07724c13a8dceb6ba2d3dab21b899",tooltip="Nullifies all cohort pointers."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ed_state_vars::copy\l_patchtype",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__state__vars.html#accd794e0e8d71ba375c3669097ae5c8d",tooltip="Copies a continuous chunk of cohorts from one place to another."];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="fatal_error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fatal__error_8_f90.html#a2a2bff228716ab48a81c795b348d1665",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="ed_state_vars::deallocate\l_patchtype",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__state__vars.html#a2845fb7d7264ed3c00651e9e46a16ed8",tooltip="De-allocates all cohort pointers."];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="update_derived_utils\l::update_patch_derived_props",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceupdate__derived__utils.html#a5405d4f087e58593585a72bcf6081b1c",tooltip=" "];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="allometry::ed_biomass",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceallometry.html#ab6a3d3302db0096b21354babe768677b",tooltip=" "];
+  Node8 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="update_derived_utils\l::patch_pft_size_profile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceupdate__derived__utils.html#a9b732fc650e42658e5e31b19e0915610",tooltip=" "];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="allometry::size2bl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceallometry.html#a10c3f179ffa5bee4c98a338aa18067ee",tooltip=" "];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="allometry::h2dbh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceallometry.html#a31aa8db06e86ec74efb5e692417399df",tooltip=" "];
+  Node11 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="therm_lib::tq2enthalpy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacetherm__lib.html#addd05382298a8487d09d7f6e2664dd62",tooltip=" "];
+  Node12 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="update_derived_utils\l::update_site_derived_props",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceupdate__derived__utils.html#a5286b7242911faccf91eb1f9d9944e55",tooltip=" "];
+}

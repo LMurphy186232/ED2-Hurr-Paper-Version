@@ -1,0 +1,38 @@
+\hypertarget{fuse__fiss__utils_8f90}{}\doxysection{fuse\+\_\+fiss\+\_\+utils.\+f90 File Reference}
+\label{fuse__fiss__utils_8f90}\index{fuse\_fiss\_utils.f90@{fuse\_fiss\_utils.f90}}
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacefuse__fiss__utils}{fuse\+\_\+fiss\+\_\+utils}}
+\begin{DoxyCompactList}\small\item\em Routines to terminate and fuse patches, and to terminate, fuse and split cohorts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_a31e4835d2465d1400c7cbbb51976b341}{fuse\+\_\+fiss\+\_\+utils\+::sort\+\_\+cohorts}} (cpatch)
+\begin{DoxyCompactList}\small\item\em This subroutine will sort the cohorts by size (1st = tallest, last = shortest.) \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_a8afe150340753f32f88a5033afb66ff1}{fuse\+\_\+fiss\+\_\+utils\+::terminate\+\_\+cohorts}} (csite, ipa, cmet, is\+\_\+initial, elim\+\_\+nplant, elim\+\_\+lai)
+\begin{DoxyCompactList}\small\item\em This subroutine will eliminate cohorts based on their sizes. This is intended to eliminate cohorts that have little contribution and thus we can speed up the run. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_ac687a950d92b23661a3d3ef73b723201}{fuse\+\_\+fiss\+\_\+utils\+::terminate\+\_\+patches}} (csite, lai\+\_\+criterion)
+\begin{DoxyCompactList}\small\item\em This subroutine will eliminate tiny or empty patches. This is intended to eliminate patches that have little contribution and thus we can speed up the run. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_ab3b0eeed8a63cc2f4b866ac243e25ec6}{fuse\+\_\+fiss\+\_\+utils\+::rescale\+\_\+patches}} (csite)
+\begin{DoxyCompactList}\small\item\em This subroutine will rescale the area of the patches. This is almost the same as the terminate\+\_\+patches subroutine, except that no patch is removed. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_a58e649bf27d8b87ff164e16ba0c3bccb}{fuse\+\_\+fiss\+\_\+utils\+::new\+\_\+fuse\+\_\+cohorts}} (csite, ipa, lsl, fuse\+\_\+initial)
+\begin{DoxyCompactList}\small\item\em This subroutine will perform cohort fusion based on various similarity criteria to determine whether they can be fused with no significant loss of information. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_a331f78834118341c99058f69325c95fc}{fuse\+\_\+fiss\+\_\+utils\+::old\+\_\+fuse\+\_\+cohorts}} (csite, ipa, lsl, fuse\+\_\+initial)
+\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_acca6c05e04827c45b18ddb564c537de9}{fuse\+\_\+fiss\+\_\+utils\+::split\+\_\+cohorts}} (csite, ipa, green\+\_\+leaf\+\_\+factor, is\+\_\+initial)
+\begin{DoxyCompactList}\small\item\em This subroutine will split two cohorts if its LAI has become too large. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_a2fc600375d38f7ddcf60ebf5da725971}{fuse\+\_\+fiss\+\_\+utils\+::fuse\+\_\+2\+\_\+cohorts}} (cpatch, donc, recc, can\+\_\+prss, can\+\_\+shv, lsl, fuse\+\_\+initial)
+\begin{DoxyCompactList}\small\item\em This subroutine will merge two cohorts into 1. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_a546d7beff2f991a07c8fbba91921ce5f}{fuse\+\_\+fiss\+\_\+utils\+::sort\+\_\+patches}} (csite)
+\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_ab15ffcdcb79ee2bcb69f5a9954ca14ea}{fuse\+\_\+fiss\+\_\+utils\+::new\+\_\+fuse\+\_\+patches}} (cgrid, ifm, fuse\+\_\+initial)
+\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_a6776a45b5a81e01186fbac86854c6741}{fuse\+\_\+fiss\+\_\+utils\+::old\+\_\+fuse\+\_\+patches}} (cgrid, ifm, fuse\+\_\+initial)
+\begin{DoxyCompactList}\small\item\em This subroutine will perform patch fusion based on some similarity criteria to determine whether they can be fused with no significant loss of information. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_a9d06bb3b18a9c6bf45b3cc30b01cb4be}{fuse\+\_\+fiss\+\_\+utils\+::fuse\+\_\+2\+\_\+patches}} (csite, donp, recp, mzg, mzs, cmet, lsl, ntext\+\_\+soil, green\+\_\+leaf\+\_\+factor, fuse\+\_\+initial, elim\+\_\+nplant, elim\+\_\+lai)
+\begin{DoxyCompactList}\small\item\em This subroutine will merge two patches into 1. \end{DoxyCompactList}\item 
+real(kind=4) function \mbox{\hyperlink{namespacefuse__fiss__utils_aae52213c98fe3ffb3ecde24d8ffc6e03}{fuse\+\_\+fiss\+\_\+utils\+::fuse\+\_\+msqu}} (xmean, xmsqu, xwght, ymean, ymsqu, ywght, r\+\_\+xy, extensive)
+\begin{DoxyCompactList}\small\item\em This subroutine combines the mean sum of squares of two quantities (x and y). \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefuse__fiss__utils_ace5e880797709c6be154c2ce38803f08}{fuse\+\_\+fiss\+\_\+utils\+::check\+\_\+bfusion\+\_\+patch}} (csite, osite, lsl, ipa)
+\end{DoxyCompactItemize}

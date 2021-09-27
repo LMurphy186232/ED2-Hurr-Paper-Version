@@ -1,0 +1,220 @@
+\hypertarget{utils__c_8c}{}\doxysection{utils\+\_\+c.\+c File Reference}
+\label{utils__c_8c}\index{utils\_c.c@{utils\_c.c}}
+{\ttfamily \#include \char`\"{}utils\+\_\+sub\+\_\+names.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$malloc.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$dirent.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$utmpx.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{utils__c_8c_a6b1a08be4d91e910e7a0592ffbdbed1e}{nlocrams}}~1000
+\item 
+\#define \mbox{\hyperlink{utils__c_8c_aee607f864fc7e8c0cef308d7035a8d1e}{BITFIELDLENGTH}}~6
+\item 
+\#define \mbox{\hyperlink{utils__c_8c_a0a776c60489f8cec6fa4c5f5801fccdc}{SMALL\+\_\+\+OFFSET}}~1.e-\/20
+\item 
+\#define \mbox{\hyperlink{utils__c_8c_a77369401d637a4124b5c2070663f7ca1}{VFORMMASK}}~63
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{utils__c_8c_aa9ad290e3e4b0f4a3940b6a0ae0d56d9}{iralloc}} (int $\ast$memtot, int $\ast$ia, int $\ast$ioff)
+\item 
+int \mbox{\hyperlink{utils__c_8c_a97f5502ebef1ee23e9118aca5e6c8c59}{irfree}} (int $\ast$nmem)
+\item 
+void \mbox{\hyperlink{utils__c_8c_a5897a77f2bd0f398ca26d3adbd0f2a9d}{irsleep}} (int $\ast$seconds)
+\item 
+int \mbox{\hyperlink{utils__c_8c_a922061919147e0747d863e9afbbcdd6d}{rams\+\_\+c\+\_\+open}} (char $\ast$filename, char $\ast$faccess)
+\item 
+int \mbox{\hyperlink{utils__c_8c_aa8d2954ed4d7d73a7f0f631f78bc9fee}{rams\+\_\+c\+\_\+close}} ()
+\item 
+int \mbox{\hyperlink{utils__c_8c_a839b711375635e10b43f5bdb4e8d08c1}{rams\+\_\+c\+\_\+pos}} (long int $\ast$fbyte)
+\item 
+void \mbox{\hyperlink{utils__c_8c_acefce5719f6f3066a89740a6eb09e4cd}{rams\+\_\+c\+\_\+tell}} (int $\ast$pos)
+\item 
+int \mbox{\hyperlink{utils__c_8c_a339a8f6e8795dae27ff38a995085163a}{rams\+\_\+c\+\_\+read}} (int $\ast$fbyte, int $\ast$numbytes, int $\ast$a)
+\item 
+int \mbox{\hyperlink{utils__c_8c_a8333814f43d330c669173351673df333}{rams\+\_\+c\+\_\+read\+\_\+char}} (int $\ast$fbyte, int $\ast$numbytes, int $\ast$a)
+\item 
+int \mbox{\hyperlink{utils__c_8c_a54ff5d179343165ef67fef85211ea208}{rams\+\_\+c\+\_\+write}} (int $\ast$fbyte, int $\ast$numbytes, int $\ast$a)
+\item 
+void \mbox{\hyperlink{utils__c_8c_a665598b66ce9a193c83c0d895560cf58}{vfirecr}} (int $\ast$unit, float $\ast$a, int $\ast$n, char $\ast$type, char $\ast$b, int $\ast$irec)
+\item 
+void \mbox{\hyperlink{utils__c_8c_af3f961b3098a093b9b640c833c3be71f}{vforecr}} (int $\ast$unit, float $\ast$a, int $\ast$n, int $\ast$nbits, float $\ast$scr, char $\ast$cscr, char $\ast$type, int $\ast$irec)
+\item 
+int \mbox{\hyperlink{utils__c_8c_ab10f44141e244d8ebcc0d6450fec8371}{vfscale}} (float $\ast$a, int n, double $\ast$min, double $\ast$max)
+\item 
+void \mbox{\hyperlink{utils__c_8c_ad19df4fc9d0f9847548cc6a712e8ba02}{filelist\+\_\+c\+\_\+}} (int $\ast$inum, int $\ast$indices, char $\ast$prefix, char $\ast$chario)
+\item 
+int \mbox{\hyperlink{utils__c_8c_a42888a490b3af636fd5bfc0535de12c0}{sched\+\_\+getcpu}} ()
+\item 
+int \mbox{\hyperlink{utils__c_8c_a61157ab692a9326ab9208bfa7fff2f0f}{findmycpu\+\_\+}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{utils__c_8c_a9a1984a4282124cfb751e4308216392a}{iaddrams}} \mbox{[}\mbox{\hyperlink{utils__c_8c_a6b1a08be4d91e910e7a0592ffbdbed1e}{nlocrams}}\mbox{]}
+\item 
+FILE $\ast$ \mbox{\hyperlink{utils__c_8c_a6fb6b1fe075bb83210bfa93071a61057}{ramsfile}}
+\item 
+char \mbox{\hyperlink{utils__c_8c_a361d5b27f9aa65e78fabf63bcd0dcba3}{vc}} \mbox{[}65\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{utils__c_8c_aee607f864fc7e8c0cef308d7035a8d1e}\label{utils__c_8c_aee607f864fc7e8c0cef308d7035a8d1e}} 
+\index{utils\_c.c@{utils\_c.c}!BITFIELDLENGTH@{BITFIELDLENGTH}}
+\index{BITFIELDLENGTH@{BITFIELDLENGTH}!utils\_c.c@{utils\_c.c}}
+\doxysubsubsection{\texorpdfstring{BITFIELDLENGTH}{BITFIELDLENGTH}}
+{\footnotesize\ttfamily \#define BITFIELDLENGTH~6}
+
+\mbox{\Hypertarget{utils__c_8c_a6b1a08be4d91e910e7a0592ffbdbed1e}\label{utils__c_8c_a6b1a08be4d91e910e7a0592ffbdbed1e}} 
+\index{utils\_c.c@{utils\_c.c}!nlocrams@{nlocrams}}
+\index{nlocrams@{nlocrams}!utils\_c.c@{utils\_c.c}}
+\doxysubsubsection{\texorpdfstring{nlocrams}{nlocrams}}
+{\footnotesize\ttfamily \#define nlocrams~1000}
+
+\doxysubparagraph*{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\# Change Log}
+
+! 2.\+0.\+0 ! !\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\# ! Copyright (C) 1990, 1995, 1999, 2000, 2003 -\/ All Rights Reserved ! Regional Atmospheric Modeling System -\/ RAMS !\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\# \mbox{\Hypertarget{utils__c_8c_a0a776c60489f8cec6fa4c5f5801fccdc}\label{utils__c_8c_a0a776c60489f8cec6fa4c5f5801fccdc}} 
+\index{utils\_c.c@{utils\_c.c}!SMALL\_OFFSET@{SMALL\_OFFSET}}
+\index{SMALL\_OFFSET@{SMALL\_OFFSET}!utils\_c.c@{utils\_c.c}}
+\doxysubsubsection{\texorpdfstring{SMALL\_OFFSET}{SMALL\_OFFSET}}
+{\footnotesize\ttfamily \#define SMALL\+\_\+\+OFFSET~1.e-\/20}
+
+\mbox{\Hypertarget{utils__c_8c_a77369401d637a4124b5c2070663f7ca1}\label{utils__c_8c_a77369401d637a4124b5c2070663f7ca1}} 
+\index{utils\_c.c@{utils\_c.c}!VFORMMASK@{VFORMMASK}}
+\index{VFORMMASK@{VFORMMASK}!utils\_c.c@{utils\_c.c}}
+\doxysubsubsection{\texorpdfstring{VFORMMASK}{VFORMMASK}}
+{\footnotesize\ttfamily \#define VFORMMASK~63}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{utils__c_8c_ad19df4fc9d0f9847548cc6a712e8ba02}\label{utils__c_8c_ad19df4fc9d0f9847548cc6a712e8ba02}} 
+\index{utils\_c.c@{utils\_c.c}!filelist\_c\_@{filelist\_c\_}}
+\index{filelist\_c\_@{filelist\_c\_}!utils\_c.c@{utils\_c.c}}
+\doxysubsubsection{\texorpdfstring{filelist\_c\_()}{filelist\_c\_()}}
+{\footnotesize\ttfamily void filelist\+\_\+c\+\_\+ (\begin{DoxyParamCaption}\item[{int $\ast$}]{inum,  }\item[{int $\ast$}]{indices,  }\item[{char $\ast$}]{prefix,  }\item[{char $\ast$}]{chario }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{utils__c_8c_a61157ab692a9326ab9208bfa7fff2f0f}\label{utils__c_8c_a61157ab692a9326ab9208bfa7fff2f0f}} 
+\index{utils\_c.c@{utils\_c.c}!findmycpu\_@{findmycpu\_}}
+\index{findmycpu\_@{findmycpu\_}!utils\_c.c@{utils\_c.c}}
+\doxysubsubsection{\texorpdfstring{findmycpu\_()}{findmycpu\_()}}
+{\footnotesize\ttfamily int findmycpu\+\_\+ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{utils__c_8c_aa9ad290e3e4b0f4a3940b6a0ae0d56d9}\label{utils__c_8c_aa9ad290e3e4b0f4a3940b6a0ae0d56d9}} 
+\index{utils\_c.c@{utils\_c.c}!iralloc@{iralloc}}
+\index{iralloc@{iralloc}!utils\_c.c@{utils\_c.c}}
+\doxysubsubsection{\texorpdfstring{iralloc()}{iralloc()}}
+{\footnotesize\ttfamily int iralloc (\begin{DoxyParamCaption}\item[{int $\ast$}]{memtot,  }\item[{int $\ast$}]{ia,  }\item[{int $\ast$}]{ioff }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{utils__c_8c_a97f5502ebef1ee23e9118aca5e6c8c59}\label{utils__c_8c_a97f5502ebef1ee23e9118aca5e6c8c59}} 
+\index{utils\_c.c@{utils\_c.c}!irfree@{irfree}}
+\index{irfree@{irfree}!utils\_c.c@{utils\_c.c}}
+\doxysubsubsection{\texorpdfstring{irfree()}{irfree()}}
+{\footnotesize\ttfamily int irfree (\begin{DoxyParamCaption}\item[{int $\ast$}]{nmem }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{utils__c_8c_a5897a77f2bd0f398ca26d3adbd0f2a9d}\label{utils__c_8c_a5897a77f2bd0f398ca26d3adbd0f2a9d}} 
+\index{utils\_c.c@{utils\_c.c}!irsleep@{irsleep}}
+\index{irsleep@{irsleep}!utils\_c.c@{utils\_c.c}}
+\doxysubsubsection{\texorpdfstring{irsleep()}{irsleep()}}
+{\footnotesize\ttfamily void irsleep (\begin{DoxyParamCaption}\item[{int $\ast$}]{seconds }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{utils__c_8c_aa8d2954ed4d7d73a7f0f631f78bc9fee}\label{utils__c_8c_aa8d2954ed4d7d73a7f0f631f78bc9fee}} 
+\index{utils\_c.c@{utils\_c.c}!rams\_c\_close@{rams\_c\_close}}
+\index{rams\_c\_close@{rams\_c\_close}!utils\_c.c@{utils\_c.c}}
+\doxysubsubsection{\texorpdfstring{rams\_c\_close()}{rams\_c\_close()}}
+{\footnotesize\ttfamily int rams\+\_\+c\+\_\+close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{utils__c_8c_a922061919147e0747d863e9afbbcdd6d}\label{utils__c_8c_a922061919147e0747d863e9afbbcdd6d}} 
+\index{utils\_c.c@{utils\_c.c}!rams\_c\_open@{rams\_c\_open}}
+\index{rams\_c\_open@{rams\_c\_open}!utils\_c.c@{utils\_c.c}}
+\doxysubsubsection{\texorpdfstring{rams\_c\_open()}{rams\_c\_open()}}
+{\footnotesize\ttfamily int rams\+\_\+c\+\_\+open (\begin{DoxyParamCaption}\item[{char $\ast$}]{filename,  }\item[{char $\ast$}]{faccess }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{utils__c_8c_a839b711375635e10b43f5bdb4e8d08c1}\label{utils__c_8c_a839b711375635e10b43f5bdb4e8d08c1}} 
+\index{utils\_c.c@{utils\_c.c}!rams\_c\_pos@{rams\_c\_pos}}
+\index{rams\_c\_pos@{rams\_c\_pos}!utils\_c.c@{utils\_c.c}}
+\doxysubsubsection{\texorpdfstring{rams\_c\_pos()}{rams\_c\_pos()}}
+{\footnotesize\ttfamily int rams\+\_\+c\+\_\+pos (\begin{DoxyParamCaption}\item[{long int $\ast$}]{fbyte }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{utils__c_8c_a339a8f6e8795dae27ff38a995085163a}\label{utils__c_8c_a339a8f6e8795dae27ff38a995085163a}} 
+\index{utils\_c.c@{utils\_c.c}!rams\_c\_read@{rams\_c\_read}}
+\index{rams\_c\_read@{rams\_c\_read}!utils\_c.c@{utils\_c.c}}
+\doxysubsubsection{\texorpdfstring{rams\_c\_read()}{rams\_c\_read()}}
+{\footnotesize\ttfamily int rams\+\_\+c\+\_\+read (\begin{DoxyParamCaption}\item[{int $\ast$}]{fbyte,  }\item[{int $\ast$}]{numbytes,  }\item[{int $\ast$}]{a }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{utils__c_8c_a8333814f43d330c669173351673df333}\label{utils__c_8c_a8333814f43d330c669173351673df333}} 
+\index{utils\_c.c@{utils\_c.c}!rams\_c\_read\_char@{rams\_c\_read\_char}}
+\index{rams\_c\_read\_char@{rams\_c\_read\_char}!utils\_c.c@{utils\_c.c}}
+\doxysubsubsection{\texorpdfstring{rams\_c\_read\_char()}{rams\_c\_read\_char()}}
+{\footnotesize\ttfamily int rams\+\_\+c\+\_\+read\+\_\+char (\begin{DoxyParamCaption}\item[{int $\ast$}]{fbyte,  }\item[{int $\ast$}]{numbytes,  }\item[{int $\ast$}]{a }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{utils__c_8c_acefce5719f6f3066a89740a6eb09e4cd}\label{utils__c_8c_acefce5719f6f3066a89740a6eb09e4cd}} 
+\index{utils\_c.c@{utils\_c.c}!rams\_c\_tell@{rams\_c\_tell}}
+\index{rams\_c\_tell@{rams\_c\_tell}!utils\_c.c@{utils\_c.c}}
+\doxysubsubsection{\texorpdfstring{rams\_c\_tell()}{rams\_c\_tell()}}
+{\footnotesize\ttfamily void rams\+\_\+c\+\_\+tell (\begin{DoxyParamCaption}\item[{int $\ast$}]{pos }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{utils__c_8c_a54ff5d179343165ef67fef85211ea208}\label{utils__c_8c_a54ff5d179343165ef67fef85211ea208}} 
+\index{utils\_c.c@{utils\_c.c}!rams\_c\_write@{rams\_c\_write}}
+\index{rams\_c\_write@{rams\_c\_write}!utils\_c.c@{utils\_c.c}}
+\doxysubsubsection{\texorpdfstring{rams\_c\_write()}{rams\_c\_write()}}
+{\footnotesize\ttfamily int rams\+\_\+c\+\_\+write (\begin{DoxyParamCaption}\item[{int $\ast$}]{fbyte,  }\item[{int $\ast$}]{numbytes,  }\item[{int $\ast$}]{a }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{utils__c_8c_a42888a490b3af636fd5bfc0535de12c0}\label{utils__c_8c_a42888a490b3af636fd5bfc0535de12c0}} 
+\index{utils\_c.c@{utils\_c.c}!sched\_getcpu@{sched\_getcpu}}
+\index{sched\_getcpu@{sched\_getcpu}!utils\_c.c@{utils\_c.c}}
+\doxysubsubsection{\texorpdfstring{sched\_getcpu()}{sched\_getcpu()}}
+{\footnotesize\ttfamily int sched\+\_\+getcpu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{utils__c_8c_a665598b66ce9a193c83c0d895560cf58}\label{utils__c_8c_a665598b66ce9a193c83c0d895560cf58}} 
+\index{utils\_c.c@{utils\_c.c}!vfirecr@{vfirecr}}
+\index{vfirecr@{vfirecr}!utils\_c.c@{utils\_c.c}}
+\doxysubsubsection{\texorpdfstring{vfirecr()}{vfirecr()}}
+{\footnotesize\ttfamily void vfirecr (\begin{DoxyParamCaption}\item[{int $\ast$}]{unit,  }\item[{float $\ast$}]{a,  }\item[{int $\ast$}]{n,  }\item[{char $\ast$}]{type,  }\item[{char $\ast$}]{b,  }\item[{int $\ast$}]{irec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{utils__c_8c_af3f961b3098a093b9b640c833c3be71f}\label{utils__c_8c_af3f961b3098a093b9b640c833c3be71f}} 
+\index{utils\_c.c@{utils\_c.c}!vforecr@{vforecr}}
+\index{vforecr@{vforecr}!utils\_c.c@{utils\_c.c}}
+\doxysubsubsection{\texorpdfstring{vforecr()}{vforecr()}}
+{\footnotesize\ttfamily void vforecr (\begin{DoxyParamCaption}\item[{int $\ast$}]{unit,  }\item[{float $\ast$}]{a,  }\item[{int $\ast$}]{n,  }\item[{int $\ast$}]{nbits,  }\item[{float $\ast$}]{scr,  }\item[{char $\ast$}]{cscr,  }\item[{char $\ast$}]{type,  }\item[{int $\ast$}]{irec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{utils__c_8c_ab10f44141e244d8ebcc0d6450fec8371}\label{utils__c_8c_ab10f44141e244d8ebcc0d6450fec8371}} 
+\index{utils\_c.c@{utils\_c.c}!vfscale@{vfscale}}
+\index{vfscale@{vfscale}!utils\_c.c@{utils\_c.c}}
+\doxysubsubsection{\texorpdfstring{vfscale()}{vfscale()}}
+{\footnotesize\ttfamily int vfscale (\begin{DoxyParamCaption}\item[{float $\ast$}]{a,  }\item[{int}]{n,  }\item[{double $\ast$}]{min,  }\item[{double $\ast$}]{max }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{utils__c_8c_a9a1984a4282124cfb751e4308216392a}\label{utils__c_8c_a9a1984a4282124cfb751e4308216392a}} 
+\index{utils\_c.c@{utils\_c.c}!iaddrams@{iaddrams}}
+\index{iaddrams@{iaddrams}!utils\_c.c@{utils\_c.c}}
+\doxysubsubsection{\texorpdfstring{iaddrams}{iaddrams}}
+{\footnotesize\ttfamily void$\ast$ iaddrams\mbox{[}\mbox{\hyperlink{utils__c_8c_a6b1a08be4d91e910e7a0592ffbdbed1e}{nlocrams}}\mbox{]}}
+
+\mbox{\Hypertarget{utils__c_8c_a6fb6b1fe075bb83210bfa93071a61057}\label{utils__c_8c_a6fb6b1fe075bb83210bfa93071a61057}} 
+\index{utils\_c.c@{utils\_c.c}!ramsfile@{ramsfile}}
+\index{ramsfile@{ramsfile}!utils\_c.c@{utils\_c.c}}
+\doxysubsubsection{\texorpdfstring{ramsfile}{ramsfile}}
+{\footnotesize\ttfamily FILE$\ast$ ramsfile}
+
+\mbox{\Hypertarget{utils__c_8c_a361d5b27f9aa65e78fabf63bcd0dcba3}\label{utils__c_8c_a361d5b27f9aa65e78fabf63bcd0dcba3}} 
+\index{utils\_c.c@{utils\_c.c}!vc@{vc}}
+\index{vc@{vc}!utils\_c.c@{utils\_c.c}}
+\doxysubsubsection{\texorpdfstring{vc}{vc}}
+{\footnotesize\ttfamily char vc\mbox{[}65\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= }
+\DoxyCodeLine{     \textcolor{stringliteral}{"{}0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz\{|"{}}}
+
+\end{DoxyCode}

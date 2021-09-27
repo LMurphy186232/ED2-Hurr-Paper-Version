@@ -1,0 +1,40 @@
+digraph "ed_1st_node"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ed_1st_node",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="ed_mem_alloc::ed_memory\l_allocation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__mem__alloc.html#a410d759cf4e13ea20ace04982d91d9bb",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="ed_state_vars::allocate\l_edglobals",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__state__vars.html#a01c02fd632892eb11eaac0daacc106d2",tooltip="Allocates the global dimensions (outside the structure)."];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="fatal_error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fatal__error_8_f90.html#a2a2bff228716ab48a81c795b348d1665",tooltip=" "];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="ed_state_vars::allocate\l_edtype",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__state__vars.html#aa47dd5e1964efcbfa0844f75d1763ce5",tooltip="Allocates the polygon-level variables."];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="ed_state_vars::nullify\l_edtype",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__state__vars.html#a0df5f674bdb76d915f34b1c6987f6815",tooltip="Nullifies all polygon pointers."];
+  Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="ed_work_vars::ed_alloc_work",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__work__vars.html#a01ba1ac60fb7fc6120b2caa0044b3c21",tooltip=" "];
+  Node2 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="ed_newgrid",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__grid_8f90.html#a91112e6806db1100d405228002308384",tooltip=" "];
+  Node2 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="ed_work_vars::ed_nullify_work",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__work__vars.html#aa1df64125c17b7fc7f50eda82c32e805",tooltip=" "];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="ed_nodeget_met_header",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__mpass__init_8_f90.html#a7c43c6c7ffb1ec5ba35396470e532068",tooltip=" "];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="ed_nodeget_nl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__mpass__init_8_f90.html#a71a6170aace1990f255b9da08adc81cf",tooltip=" "];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="ed_nodeget_poly_dims",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__mpass__init_8_f90.html#aa2fb2a5427c2e9a8ae20d387ca95a66e",tooltip=" "];
+  Node1 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="ed_nodeget_processid",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__mpass__init_8_f90.html#a1c980ac7ad5de486780a351778cfb786",tooltip=" "];
+  Node1 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="ed_nodeget_worklist_info",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__mpass__init_8_f90.html#a5ad92c335f14b12bdba706f520c2e3e8",tooltip=" "];
+  Node14 -> Node15 [color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="ed_work_vars::ed_alloc\l_work_vec",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__work__vars.html#a5df6efe6c5b192d365161ad999858f25",tooltip=" "];
+  Node14 -> Node16 [color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="ed_work_vars::ed_nullify\l_work_vec",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__work__vars.html#a328d5a0e766e58bd6e2b015fa91ad8db",tooltip=" "];
+}

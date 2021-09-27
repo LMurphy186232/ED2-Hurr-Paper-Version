@@ -1,0 +1,142 @@
+\hypertarget{namespacebudget__utils}{}\doxysection{budget\+\_\+utils Module Reference}
+\label{namespacebudget__utils}\index{budget\_utils@{budget\_utils}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacebudget__utils_af2d57a4e0f5db59d0ba6a65e1348de61}{ed\+\_\+init\+\_\+budget}} (cgrid, initial)
+\item 
+subroutine \mbox{\hyperlink{namespacebudget__utils_ab49cf1c93767190a1b2ec01763fb6966}{initial\+\_\+patch\+\_\+budget}} (csite, lsl, ipa)
+\item 
+subroutine \mbox{\hyperlink{namespacebudget__utils_a7bcd85146a39494cf9c729d13b5d24f2}{reset\+\_\+cbudget\+\_\+committed}} (csite, ipa, check\+\_\+budget)
+\item 
+subroutine \mbox{\hyperlink{namespacebudget__utils_a886ab06baefc864303a6f8b69dd9325a}{update\+\_\+cbudget\+\_\+committed}} (csite, ipa)
+\item 
+subroutine \mbox{\hyperlink{namespacebudget__utils_a48a8f226bf572e9d9272fb7eeefd1199}{compute\+\_\+budget}} (csite, lsl, pcpg, qpcpg, rshort, rlong, ipa, wcurr\+\_\+loss2atm, ecurr\+\_\+netrad, ecurr\+\_\+loss2atm, co2curr\+\_\+loss2atm, wcurr\+\_\+loss2drainage, ecurr\+\_\+loss2drainage, wcurr\+\_\+loss2runoff, ecurr\+\_\+loss2runoff, co2curr\+\_\+denseffect, ecurr\+\_\+denseffect, wcurr\+\_\+denseffect, ecurr\+\_\+prsseffect, site\+\_\+area, cbudget\+\_\+nep, old\+\_\+can\+\_\+prss, old\+\_\+can\+\_\+enthalpy, old\+\_\+can\+\_\+temp, old\+\_\+can\+\_\+shv, old\+\_\+can\+\_\+co2, old\+\_\+can\+\_\+rhos, old\+\_\+can\+\_\+dmol)
+\item 
+real function \mbox{\hyperlink{namespacebudget__utils_a6910e7531481831c25b2ce9f543b8e8b}{compute\+\_\+water\+\_\+storage}} (csite, lsl, ipa, pool)
+\item 
+subroutine \mbox{\hyperlink{namespacebudget__utils_a91dc846802d5485b6e57d9e3f2bf4ffd}{compute\+\_\+netrad\+\_\+detail}} (csite, ipa, soil\+\_\+rshort\+\_\+net, soil\+\_\+rlong\+\_\+net, sfcw\+\_\+rshort\+\_\+net, sfcw\+\_\+rlong\+\_\+net, leaf\+\_\+rshort\+\_\+net, leaf\+\_\+rlong\+\_\+net, wood\+\_\+rshort\+\_\+net, wood\+\_\+rlong\+\_\+net)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacebudget__utils_a5866b9dbe2ba1c378cf5069ebd09674d}{compute\+\_\+netrad8}} (csite, ipa)
+\item 
+real function \mbox{\hyperlink{namespacebudget__utils_a4bf8fb1787cd267703fc7b8f6ab3a260}{compute\+\_\+enthalpy\+\_\+storage}} (csite, lsl, ipa, pool)
+\item 
+subroutine \mbox{\hyperlink{namespacebudget__utils_a2499143fd9dbb73fb29d30705867a670}{sum\+\_\+plant\+\_\+cfluxes}} (csite, ipa, gpp, leaf\+\_\+resp, root\+\_\+resp, stem\+\_\+resp, storage\+\_\+resp, growth\+\_\+resp)
+\item 
+real function \mbox{\hyperlink{namespacebudget__utils_aa1c4f8466010b1673f2914f1bfe9b6ee}{compute\+\_\+co2\+\_\+storage}} (csite, ipa)
+\item 
+real function \mbox{\hyperlink{namespacebudget__utils_aae1acee2098d96865b520dcbc6ada434}{compute\+\_\+carbon\+\_\+storage}} (csite, ipa, pool)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacebudget__utils_afecbf45a83fa404977fa6502764f7331}{ddens\+\_\+dt\+\_\+effect8}} (depth, old\+\_\+dens, now\+\_\+dens, now\+\_\+prop)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacebudget__utils_a7e8204b1ef31c8b9e18014198f18be48}{find\+\_\+prss\+\_\+effect8}} (depth, old\+\_\+dens, now\+\_\+dens, old\+\_\+enthalpy, now\+\_\+enthalpy)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacebudget__utils_a76a7cbebfcba271be070106982dad2a7}{tol\+\_\+subday\+\_\+budget}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacebudget__utils_a9493ccfa0b755832130b736b1f7f3bd1}{tol\+\_\+carbon\+\_\+budget}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacebudget__utils_a48a8f226bf572e9d9272fb7eeefd1199}\label{namespacebudget__utils_a48a8f226bf572e9d9272fb7eeefd1199}} 
+\index{budget\_utils@{budget\_utils}!compute\_budget@{compute\_budget}}
+\index{compute\_budget@{compute\_budget}!budget\_utils@{budget\_utils}}
+\doxysubsubsection{\texorpdfstring{compute\_budget()}{compute\_budget()}}
+{\footnotesize\ttfamily subroutine budget\+\_\+utils\+::compute\+\_\+budget (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{lsl,  }\item[{real, intent(in)}]{pcpg,  }\item[{real, intent(in)}]{qpcpg,  }\item[{real, intent(in)}]{rshort,  }\item[{real, intent(in)}]{rlong,  }\item[{integer, intent(in)}]{ipa,  }\item[{real, intent(inout)}]{wcurr\+\_\+loss2atm,  }\item[{real, intent(inout)}]{ecurr\+\_\+netrad,  }\item[{real, intent(inout)}]{ecurr\+\_\+loss2atm,  }\item[{real, intent(inout)}]{co2curr\+\_\+loss2atm,  }\item[{real, intent(inout)}]{wcurr\+\_\+loss2drainage,  }\item[{real, intent(inout)}]{ecurr\+\_\+loss2drainage,  }\item[{real, intent(inout)}]{wcurr\+\_\+loss2runoff,  }\item[{real, intent(inout)}]{ecurr\+\_\+loss2runoff,  }\item[{real, intent(inout)}]{co2curr\+\_\+denseffect,  }\item[{real, intent(inout)}]{ecurr\+\_\+denseffect,  }\item[{real, intent(inout)}]{wcurr\+\_\+denseffect,  }\item[{real, intent(inout)}]{ecurr\+\_\+prsseffect,  }\item[{real, intent(in)}]{site\+\_\+area,  }\item[{real, intent(inout)}]{cbudget\+\_\+nep,  }\item[{real, intent(in)}]{old\+\_\+can\+\_\+prss,  }\item[{real, intent(in)}]{old\+\_\+can\+\_\+enthalpy,  }\item[{real, intent(in)}]{old\+\_\+can\+\_\+temp,  }\item[{real, intent(in)}]{old\+\_\+can\+\_\+shv,  }\item[{real, intent(in)}]{old\+\_\+can\+\_\+co2,  }\item[{real, intent(in)}]{old\+\_\+can\+\_\+rhos,  }\item[{real, intent(in)}]{old\+\_\+can\+\_\+dmol }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebudget__utils_aae1acee2098d96865b520dcbc6ada434}\label{namespacebudget__utils_aae1acee2098d96865b520dcbc6ada434}} 
+\index{budget\_utils@{budget\_utils}!compute\_carbon\_storage@{compute\_carbon\_storage}}
+\index{compute\_carbon\_storage@{compute\_carbon\_storage}!budget\_utils@{budget\_utils}}
+\doxysubsubsection{\texorpdfstring{compute\_carbon\_storage()}{compute\_carbon\_storage()}}
+{\footnotesize\ttfamily real function budget\+\_\+utils\+::compute\+\_\+carbon\+\_\+storage (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{pool }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebudget__utils_aa1c4f8466010b1673f2914f1bfe9b6ee}\label{namespacebudget__utils_aa1c4f8466010b1673f2914f1bfe9b6ee}} 
+\index{budget\_utils@{budget\_utils}!compute\_co2\_storage@{compute\_co2\_storage}}
+\index{compute\_co2\_storage@{compute\_co2\_storage}!budget\_utils@{budget\_utils}}
+\doxysubsubsection{\texorpdfstring{compute\_co2\_storage()}{compute\_co2\_storage()}}
+{\footnotesize\ttfamily real function budget\+\_\+utils\+::compute\+\_\+co2\+\_\+storage (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebudget__utils_a4bf8fb1787cd267703fc7b8f6ab3a260}\label{namespacebudget__utils_a4bf8fb1787cd267703fc7b8f6ab3a260}} 
+\index{budget\_utils@{budget\_utils}!compute\_enthalpy\_storage@{compute\_enthalpy\_storage}}
+\index{compute\_enthalpy\_storage@{compute\_enthalpy\_storage}!budget\_utils@{budget\_utils}}
+\doxysubsubsection{\texorpdfstring{compute\_enthalpy\_storage()}{compute\_enthalpy\_storage()}}
+{\footnotesize\ttfamily real function budget\+\_\+utils\+::compute\+\_\+enthalpy\+\_\+storage (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{lsl,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{pool }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebudget__utils_a5866b9dbe2ba1c378cf5069ebd09674d}\label{namespacebudget__utils_a5866b9dbe2ba1c378cf5069ebd09674d}} 
+\index{budget\_utils@{budget\_utils}!compute\_netrad8@{compute\_netrad8}}
+\index{compute\_netrad8@{compute\_netrad8}!budget\_utils@{budget\_utils}}
+\doxysubsubsection{\texorpdfstring{compute\_netrad8()}{compute\_netrad8()}}
+{\footnotesize\ttfamily real(kind=8) function budget\+\_\+utils\+::compute\+\_\+netrad8 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebudget__utils_a91dc846802d5485b6e57d9e3f2bf4ffd}\label{namespacebudget__utils_a91dc846802d5485b6e57d9e3f2bf4ffd}} 
+\index{budget\_utils@{budget\_utils}!compute\_netrad\_detail@{compute\_netrad\_detail}}
+\index{compute\_netrad\_detail@{compute\_netrad\_detail}!budget\_utils@{budget\_utils}}
+\doxysubsubsection{\texorpdfstring{compute\_netrad\_detail()}{compute\_netrad\_detail()}}
+{\footnotesize\ttfamily subroutine budget\+\_\+utils\+::compute\+\_\+netrad\+\_\+detail (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{real, intent(out)}]{soil\+\_\+rshort\+\_\+net,  }\item[{real, intent(out)}]{soil\+\_\+rlong\+\_\+net,  }\item[{real, intent(out)}]{sfcw\+\_\+rshort\+\_\+net,  }\item[{real, intent(out)}]{sfcw\+\_\+rlong\+\_\+net,  }\item[{real, intent(out)}]{leaf\+\_\+rshort\+\_\+net,  }\item[{real, intent(out)}]{leaf\+\_\+rlong\+\_\+net,  }\item[{real, intent(out)}]{wood\+\_\+rshort\+\_\+net,  }\item[{real, intent(out)}]{wood\+\_\+rlong\+\_\+net }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebudget__utils_a6910e7531481831c25b2ce9f543b8e8b}\label{namespacebudget__utils_a6910e7531481831c25b2ce9f543b8e8b}} 
+\index{budget\_utils@{budget\_utils}!compute\_water\_storage@{compute\_water\_storage}}
+\index{compute\_water\_storage@{compute\_water\_storage}!budget\_utils@{budget\_utils}}
+\doxysubsubsection{\texorpdfstring{compute\_water\_storage()}{compute\_water\_storage()}}
+{\footnotesize\ttfamily real function budget\+\_\+utils\+::compute\+\_\+water\+\_\+storage (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{lsl,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{pool }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebudget__utils_afecbf45a83fa404977fa6502764f7331}\label{namespacebudget__utils_afecbf45a83fa404977fa6502764f7331}} 
+\index{budget\_utils@{budget\_utils}!ddens\_dt\_effect8@{ddens\_dt\_effect8}}
+\index{ddens\_dt\_effect8@{ddens\_dt\_effect8}!budget\_utils@{budget\_utils}}
+\doxysubsubsection{\texorpdfstring{ddens\_dt\_effect8()}{ddens\_dt\_effect8()}}
+{\footnotesize\ttfamily real(kind=8) function budget\+\_\+utils\+::ddens\+\_\+dt\+\_\+effect8 (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{depth,  }\item[{real(kind=8), intent(in)}]{old\+\_\+dens,  }\item[{real(kind=8), intent(in)}]{now\+\_\+dens,  }\item[{real(kind=8), intent(in)}]{now\+\_\+prop }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebudget__utils_af2d57a4e0f5db59d0ba6a65e1348de61}\label{namespacebudget__utils_af2d57a4e0f5db59d0ba6a65e1348de61}} 
+\index{budget\_utils@{budget\_utils}!ed\_init\_budget@{ed\_init\_budget}}
+\index{ed\_init\_budget@{ed\_init\_budget}!budget\_utils@{budget\_utils}}
+\doxysubsubsection{\texorpdfstring{ed\_init\_budget()}{ed\_init\_budget()}}
+{\footnotesize\ttfamily subroutine budget\+\_\+utils\+::ed\+\_\+init\+\_\+budget (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{logical, intent(in)}]{initial }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebudget__utils_a7e8204b1ef31c8b9e18014198f18be48}\label{namespacebudget__utils_a7e8204b1ef31c8b9e18014198f18be48}} 
+\index{budget\_utils@{budget\_utils}!find\_prss\_effect8@{find\_prss\_effect8}}
+\index{find\_prss\_effect8@{find\_prss\_effect8}!budget\_utils@{budget\_utils}}
+\doxysubsubsection{\texorpdfstring{find\_prss\_effect8()}{find\_prss\_effect8()}}
+{\footnotesize\ttfamily real(kind=8) function budget\+\_\+utils\+::find\+\_\+prss\+\_\+effect8 (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{depth,  }\item[{real(kind=8), intent(in)}]{old\+\_\+dens,  }\item[{real(kind=8), intent(in)}]{now\+\_\+dens,  }\item[{real(kind=8), intent(in)}]{old\+\_\+enthalpy,  }\item[{real(kind=8), intent(in)}]{now\+\_\+enthalpy }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebudget__utils_ab49cf1c93767190a1b2ec01763fb6966}\label{namespacebudget__utils_ab49cf1c93767190a1b2ec01763fb6966}} 
+\index{budget\_utils@{budget\_utils}!initial\_patch\_budget@{initial\_patch\_budget}}
+\index{initial\_patch\_budget@{initial\_patch\_budget}!budget\_utils@{budget\_utils}}
+\doxysubsubsection{\texorpdfstring{initial\_patch\_budget()}{initial\_patch\_budget()}}
+{\footnotesize\ttfamily subroutine budget\+\_\+utils\+::initial\+\_\+patch\+\_\+budget (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{lsl,  }\item[{integer, intent(in)}]{ipa }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebudget__utils_a7bcd85146a39494cf9c729d13b5d24f2}\label{namespacebudget__utils_a7bcd85146a39494cf9c729d13b5d24f2}} 
+\index{budget\_utils@{budget\_utils}!reset\_cbudget\_committed@{reset\_cbudget\_committed}}
+\index{reset\_cbudget\_committed@{reset\_cbudget\_committed}!budget\_utils@{budget\_utils}}
+\doxysubsubsection{\texorpdfstring{reset\_cbudget\_committed()}{reset\_cbudget\_committed()}}
+{\footnotesize\ttfamily subroutine budget\+\_\+utils\+::reset\+\_\+cbudget\+\_\+committed (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{logical, intent(in)}]{check\+\_\+budget }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebudget__utils_a2499143fd9dbb73fb29d30705867a670}\label{namespacebudget__utils_a2499143fd9dbb73fb29d30705867a670}} 
+\index{budget\_utils@{budget\_utils}!sum\_plant\_cfluxes@{sum\_plant\_cfluxes}}
+\index{sum\_plant\_cfluxes@{sum\_plant\_cfluxes}!budget\_utils@{budget\_utils}}
+\doxysubsubsection{\texorpdfstring{sum\_plant\_cfluxes()}{sum\_plant\_cfluxes()}}
+{\footnotesize\ttfamily subroutine budget\+\_\+utils\+::sum\+\_\+plant\+\_\+cfluxes (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{real, intent(out)}]{gpp,  }\item[{real, intent(out)}]{leaf\+\_\+resp,  }\item[{real, intent(out)}]{root\+\_\+resp,  }\item[{real, intent(out)}]{stem\+\_\+resp,  }\item[{real, intent(out)}]{storage\+\_\+resp,  }\item[{real, intent(out)}]{growth\+\_\+resp }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebudget__utils_a886ab06baefc864303a6f8b69dd9325a}\label{namespacebudget__utils_a886ab06baefc864303a6f8b69dd9325a}} 
+\index{budget\_utils@{budget\_utils}!update\_cbudget\_committed@{update\_cbudget\_committed}}
+\index{update\_cbudget\_committed@{update\_cbudget\_committed}!budget\_utils@{budget\_utils}}
+\doxysubsubsection{\texorpdfstring{update\_cbudget\_committed()}{update\_cbudget\_committed()}}
+{\footnotesize\ttfamily subroutine budget\+\_\+utils\+::update\+\_\+cbudget\+\_\+committed (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer}]{ipa }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacebudget__utils_a9493ccfa0b755832130b736b1f7f3bd1}\label{namespacebudget__utils_a9493ccfa0b755832130b736b1f7f3bd1}} 
+\index{budget\_utils@{budget\_utils}!tol\_carbon\_budget@{tol\_carbon\_budget}}
+\index{tol\_carbon\_budget@{tol\_carbon\_budget}!budget\_utils@{budget\_utils}}
+\doxysubsubsection{\texorpdfstring{tol\_carbon\_budget}{tol\_carbon\_budget}}
+{\footnotesize\ttfamily real(kind=4) budget\+\_\+utils\+::tol\+\_\+carbon\+\_\+budget}
+
+\mbox{\Hypertarget{namespacebudget__utils_a76a7cbebfcba271be070106982dad2a7}\label{namespacebudget__utils_a76a7cbebfcba271be070106982dad2a7}} 
+\index{budget\_utils@{budget\_utils}!tol\_subday\_budget@{tol\_subday\_budget}}
+\index{tol\_subday\_budget@{tol\_subday\_budget}!budget\_utils@{budget\_utils}}
+\doxysubsubsection{\texorpdfstring{tol\_subday\_budget}{tol\_subday\_budget}}
+{\footnotesize\ttfamily real(kind=4) budget\+\_\+utils\+::tol\+\_\+subday\+\_\+budget}
+

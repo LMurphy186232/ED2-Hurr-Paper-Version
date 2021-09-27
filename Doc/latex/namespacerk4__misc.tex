@@ -1,0 +1,119 @@
+\hypertarget{namespacerk4__misc}{}\doxysection{rk4\+\_\+misc Module Reference}
+\label{namespacerk4__misc}\index{rk4\_misc@{rk4\_misc}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__misc_a1d4d4a8632749f2ae1611575efdf75cb}{update\+\_\+diagnostic\+\_\+vars}} (initp, csite, ipa, ibuff)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__misc_a4e67a249ae63c93213ef1dc754e87391}{update\+\_\+density\+\_\+vars}} (initp, prevp)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__misc_af1f79aa2bc00e4d35e1ae56e2e7cca8b}{adjust\+\_\+sfcw\+\_\+properties}} (nzg, nzs, initp, hdid, csite, ipa)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__misc_abe647aee6aafb739922bc6e41c6751b3}{adjust\+\_\+topsoil\+\_\+properties}} (initp, hdid)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__misc_a8246b6afa785c0d2671187d9defadadb}{adjust\+\_\+veg\+\_\+properties}} (initp, hdid, csite, ipa, ibuff)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__misc_a0d8d61f13b9942b30e32c8ff5b9e3021}{print\+\_\+errmax}} (errmax, yerr, yscal, cpatch, y)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__misc_a0c4d2f93e98e7f917d90689dcdaf47e3}{print\+\_\+csiteipa}} (csite, ipa)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__misc_a6f1b7481db8c4187a653058e22652cb9}{print\+\_\+rk4patch}} (y, csite, ipa)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__misc_a0fe72170ef0eaaa9bde73392734d9a45}{print\+\_\+rk4\+\_\+state}} (initp, fluxp, csite, ipa, isi, elapsed, hdid)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__misc_a63cf1dd78ecfe4d8e3a076f728b2b275}{sanity\+\_\+check\+\_\+veg\+\_\+energy}} (csite, ipa)
+\item 
+subroutine \mbox{\hyperlink{namespacerk4__misc_a96a715057881ca2fd6d5ce598792e6e4}{find\+\_\+derived\+\_\+thbounds}} (ibuff, cpatch, can\+\_\+theta, can\+\_\+temp, can\+\_\+shv, can\+\_\+prss, can\+\_\+depth)
+\item 
+logical function \mbox{\hyperlink{namespacerk4__misc_a846f5fcc745485daefb21f238b815f37}{large\+\_\+error}} (err, scal)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacerk4__misc_af1f79aa2bc00e4d35e1ae56e2e7cca8b}\label{namespacerk4__misc_af1f79aa2bc00e4d35e1ae56e2e7cca8b}} 
+\index{rk4\_misc@{rk4\_misc}!adjust\_sfcw\_properties@{adjust\_sfcw\_properties}}
+\index{adjust\_sfcw\_properties@{adjust\_sfcw\_properties}!rk4\_misc@{rk4\_misc}}
+\doxysubsubsection{\texorpdfstring{adjust\_sfcw\_properties()}{adjust\_sfcw\_properties()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+misc\+::adjust\+\_\+sfcw\+\_\+properties (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nzg,  }\item[{integer, intent(in)}]{nzs,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{initp,  }\item[{real(kind=8), intent(in)}]{hdid,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em initp} & Current RK4 patch\\
+\hline
+ & {\em csite} & Current site\\
+\hline
+\mbox{\texttt{ in}}  & {\em hdid} & Time step\\
+\hline
+\mbox{\texttt{ in}}  & {\em ipa} & Current patch ID\\
+\hline
+\mbox{\texttt{ in}}  & {\em nzg} & Number of soil layers\\
+\hline
+\mbox{\texttt{ in}}  & {\em nzs} & Max. number of sfc. water layers \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacerk4__misc_abe647aee6aafb739922bc6e41c6751b3}\label{namespacerk4__misc_abe647aee6aafb739922bc6e41c6751b3}} 
+\index{rk4\_misc@{rk4\_misc}!adjust\_topsoil\_properties@{adjust\_topsoil\_properties}}
+\index{adjust\_topsoil\_properties@{adjust\_topsoil\_properties}!rk4\_misc@{rk4\_misc}}
+\doxysubsubsection{\texorpdfstring{adjust\_topsoil\_properties()}{adjust\_topsoil\_properties()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+misc\+::adjust\+\_\+topsoil\+\_\+properties (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{initp,  }\item[{real(kind=8), intent(in)}]{hdid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__misc_a8246b6afa785c0d2671187d9defadadb}\label{namespacerk4__misc_a8246b6afa785c0d2671187d9defadadb}} 
+\index{rk4\_misc@{rk4\_misc}!adjust\_veg\_properties@{adjust\_veg\_properties}}
+\index{adjust\_veg\_properties@{adjust\_veg\_properties}!rk4\_misc@{rk4\_misc}}
+\doxysubsubsection{\texorpdfstring{adjust\_veg\_properties()}{adjust\_veg\_properties()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+misc\+::adjust\+\_\+veg\+\_\+properties (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{initp,  }\item[{real(kind=8), intent(in)}]{hdid,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{ibuff }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__misc_a96a715057881ca2fd6d5ce598792e6e4}\label{namespacerk4__misc_a96a715057881ca2fd6d5ce598792e6e4}} 
+\index{rk4\_misc@{rk4\_misc}!find\_derived\_thbounds@{find\_derived\_thbounds}}
+\index{find\_derived\_thbounds@{find\_derived\_thbounds}!rk4\_misc@{rk4\_misc}}
+\doxysubsubsection{\texorpdfstring{find\_derived\_thbounds()}{find\_derived\_thbounds()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+misc\+::find\+\_\+derived\+\_\+thbounds (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ibuff,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{real(kind=8), intent(in)}]{can\+\_\+theta,  }\item[{real(kind=8), intent(in)}]{can\+\_\+temp,  }\item[{real(kind=8), intent(in)}]{can\+\_\+shv,  }\item[{real(kind=8), intent(in)}]{can\+\_\+prss,  }\item[{real(kind=8), intent(in)}]{can\+\_\+depth }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__misc_a846f5fcc745485daefb21f238b815f37}\label{namespacerk4__misc_a846f5fcc745485daefb21f238b815f37}} 
+\index{rk4\_misc@{rk4\_misc}!large\_error@{large\_error}}
+\index{large\_error@{large\_error}!rk4\_misc@{rk4\_misc}}
+\doxysubsubsection{\texorpdfstring{large\_error()}{large\_error()}}
+{\footnotesize\ttfamily logical function rk4\+\_\+misc\+::large\+\_\+error (\begin{DoxyParamCaption}\item[{real(kind=8), intent(in)}]{err,  }\item[{real(kind=8), intent(in)}]{scal }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__misc_a0c4d2f93e98e7f917d90689dcdaf47e3}\label{namespacerk4__misc_a0c4d2f93e98e7f917d90689dcdaf47e3}} 
+\index{rk4\_misc@{rk4\_misc}!print\_csiteipa@{print\_csiteipa}}
+\index{print\_csiteipa@{print\_csiteipa}!rk4\_misc@{rk4\_misc}}
+\doxysubsubsection{\texorpdfstring{print\_csiteipa()}{print\_csiteipa()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+misc\+::print\+\_\+csiteipa (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__misc_a0d8d61f13b9942b30e32c8ff5b9e3021}\label{namespacerk4__misc_a0d8d61f13b9942b30e32c8ff5b9e3021}} 
+\index{rk4\_misc@{rk4\_misc}!print\_errmax@{print\_errmax}}
+\index{print\_errmax@{print\_errmax}!rk4\_misc@{rk4\_misc}}
+\doxysubsubsection{\texorpdfstring{print\_errmax()}{print\_errmax()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+misc\+::print\+\_\+errmax (\begin{DoxyParamCaption}\item[{real(kind=8), intent(out)}]{errmax,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{yerr,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{yscal,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__misc_a0fe72170ef0eaaa9bde73392734d9a45}\label{namespacerk4__misc_a0fe72170ef0eaaa9bde73392734d9a45}} 
+\index{rk4\_misc@{rk4\_misc}!print\_rk4\_state@{print\_rk4\_state}}
+\index{print\_rk4\_state@{print\_rk4\_state}!rk4\_misc@{rk4\_misc}}
+\doxysubsubsection{\texorpdfstring{print\_rk4\_state()}{print\_rk4\_state()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+misc\+::print\+\_\+rk4\+\_\+state (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{initp,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{fluxp,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{isi,  }\item[{real(kind=8), intent(in)}]{elapsed,  }\item[{real(kind=8), intent(in)}]{hdid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__misc_a6f1b7481db8c4187a653058e22652cb9}\label{namespacerk4__misc_a6f1b7481db8c4187a653058e22652cb9}} 
+\index{rk4\_misc@{rk4\_misc}!print\_rk4patch@{print\_rk4patch}}
+\index{print\_rk4patch@{print\_rk4patch}!rk4\_misc@{rk4\_misc}}
+\doxysubsubsection{\texorpdfstring{print\_rk4patch()}{print\_rk4patch()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+misc\+::print\+\_\+rk4patch (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{y,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__misc_a63cf1dd78ecfe4d8e3a076f728b2b275}\label{namespacerk4__misc_a63cf1dd78ecfe4d8e3a076f728b2b275}} 
+\index{rk4\_misc@{rk4\_misc}!sanity\_check\_veg\_energy@{sanity\_check\_veg\_energy}}
+\index{sanity\_check\_veg\_energy@{sanity\_check\_veg\_energy}!rk4\_misc@{rk4\_misc}}
+\doxysubsubsection{\texorpdfstring{sanity\_check\_veg\_energy()}{sanity\_check\_veg\_energy()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+misc\+::sanity\+\_\+check\+\_\+veg\+\_\+energy (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__misc_a4e67a249ae63c93213ef1dc754e87391}\label{namespacerk4__misc_a4e67a249ae63c93213ef1dc754e87391}} 
+\index{rk4\_misc@{rk4\_misc}!update\_density\_vars@{update\_density\_vars}}
+\index{update\_density\_vars@{update\_density\_vars}!rk4\_misc@{rk4\_misc}}
+\doxysubsubsection{\texorpdfstring{update\_density\_vars()}{update\_density\_vars()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+misc\+::update\+\_\+density\+\_\+vars (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{initp,  }\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{prevp }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerk4__misc_a1d4d4a8632749f2ae1611575efdf75cb}\label{namespacerk4__misc_a1d4d4a8632749f2ae1611575efdf75cb}} 
+\index{rk4\_misc@{rk4\_misc}!update\_diagnostic\_vars@{update\_diagnostic\_vars}}
+\index{update\_diagnostic\_vars@{update\_diagnostic\_vars}!rk4\_misc@{rk4\_misc}}
+\doxysubsubsection{\texorpdfstring{update\_diagnostic\_vars()}{update\_diagnostic\_vars()}}
+{\footnotesize\ttfamily subroutine rk4\+\_\+misc\+::update\+\_\+diagnostic\+\_\+vars (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structrk4__coms_1_1rk4patchtype}{rk4patchtype}}), target}]{initp,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{ibuff }\end{DoxyParamCaption})}
+

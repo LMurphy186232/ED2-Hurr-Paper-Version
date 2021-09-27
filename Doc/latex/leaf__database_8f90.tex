@@ -1,0 +1,48 @@
+\hypertarget{leaf__database_8f90}{}\doxysection{leaf\+\_\+database.\+f90 File Reference}
+\label{leaf__database_8f90}\index{leaf\_database.f90@{leaf\_database.f90}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{leaf__database_8f90_a5009d489b8b1c0d281ea517731499fb9}{leaf\+\_\+database}} (ofn, nsite, nlandsea, iaction, lat, lon, classout, pctout)
+\item 
+subroutine \mbox{\hyperlink{leaf__database_8f90_a65620476257f7895a1e7494a74f69b97}{get\+\_\+file\+\_\+indices}} (lat, lon, west, south, nper, ni, nj, xyoff, io\+\_\+full, jo\+\_\+full, io\+\_\+loc, jo\+\_\+loc, ifile, jfile)
+\item 
+subroutine \mbox{\hyperlink{leaf__database_8f90_a2bc9d20bb929b6dcaf614245dc11fa28}{ed\+\_\+datp\+\_\+datq}} (datp, datq)
+\item 
+subroutine \mbox{\hyperlink{leaf__database_8f90_aec88c09dd7b546407a1a529befffc346}{ed\+\_\+datp\+\_\+datsoil}} (datp, datsoil)
+\item 
+subroutine \mbox{\hyperlink{leaf__database_8f90_aad22620a117c4d316d32f8cb3a185496}{read\+\_\+soil\+\_\+depth}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{leaf__database_8f90_a2bc9d20bb929b6dcaf614245dc11fa28}\label{leaf__database_8f90_a2bc9d20bb929b6dcaf614245dc11fa28}} 
+\index{leaf\_database.f90@{leaf\_database.f90}!ed\_datp\_datq@{ed\_datp\_datq}}
+\index{ed\_datp\_datq@{ed\_datp\_datq}!leaf\_database.f90@{leaf\_database.f90}}
+\doxysubsubsection{\texorpdfstring{ed\_datp\_datq()}{ed\_datp\_datq()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+datp\+\_\+datq (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{datp,  }\item[{integer, intent(out)}]{datq }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{leaf__database_8f90_aec88c09dd7b546407a1a529befffc346}\label{leaf__database_8f90_aec88c09dd7b546407a1a529befffc346}} 
+\index{leaf\_database.f90@{leaf\_database.f90}!ed\_datp\_datsoil@{ed\_datp\_datsoil}}
+\index{ed\_datp\_datsoil@{ed\_datp\_datsoil}!leaf\_database.f90@{leaf\_database.f90}}
+\doxysubsubsection{\texorpdfstring{ed\_datp\_datsoil()}{ed\_datp\_datsoil()}}
+{\footnotesize\ttfamily subroutine ed\+\_\+datp\+\_\+datsoil (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{datp,  }\item[{integer, intent(out)}]{datsoil }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{leaf__database_8f90_a65620476257f7895a1e7494a74f69b97}\label{leaf__database_8f90_a65620476257f7895a1e7494a74f69b97}} 
+\index{leaf\_database.f90@{leaf\_database.f90}!get\_file\_indices@{get\_file\_indices}}
+\index{get\_file\_indices@{get\_file\_indices}!leaf\_database.f90@{leaf\_database.f90}}
+\doxysubsubsection{\texorpdfstring{get\_file\_indices()}{get\_file\_indices()}}
+{\footnotesize\ttfamily subroutine get\+\_\+file\+\_\+indices (\begin{DoxyParamCaption}\item[{real, intent(in)}]{lat,  }\item[{real, intent(in)}]{lon,  }\item[{integer, intent(in)}]{west,  }\item[{integer, intent(in)}]{south,  }\item[{integer, intent(in)}]{nper,  }\item[{integer, intent(in)}]{ni,  }\item[{integer, intent(in)}]{nj,  }\item[{real, intent(in)}]{xyoff,  }\item[{integer, intent(out)}]{io\+\_\+full,  }\item[{integer, intent(out)}]{jo\+\_\+full,  }\item[{integer, intent(out)}]{io\+\_\+loc,  }\item[{integer, intent(out)}]{jo\+\_\+loc,  }\item[{integer, intent(out)}]{ifile,  }\item[{integer, intent(out)}]{jfile }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{leaf__database_8f90_a5009d489b8b1c0d281ea517731499fb9}\label{leaf__database_8f90_a5009d489b8b1c0d281ea517731499fb9}} 
+\index{leaf\_database.f90@{leaf\_database.f90}!leaf\_database@{leaf\_database}}
+\index{leaf\_database@{leaf\_database}!leaf\_database.f90@{leaf\_database.f90}}
+\doxysubsubsection{\texorpdfstring{leaf\_database()}{leaf\_database()}}
+{\footnotesize\ttfamily subroutine leaf\+\_\+database (\begin{DoxyParamCaption}\item[{character(len=$\ast$), intent(in)}]{ofn,  }\item[{integer, intent(in)}]{nsite,  }\item[{integer, intent(in)}]{nlandsea,  }\item[{character(len=$\ast$), intent(in)}]{iaction,  }\item[{real, dimension(    3,nlandsea), intent(in)}]{lat,  }\item[{real, dimension(    3,nlandsea), intent(in)}]{lon,  }\item[{integer, dimension(nsite,nlandsea), intent(out)}]{classout,  }\item[{real, dimension(nsite,nlandsea), intent(out)}]{pctout }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{leaf__database_8f90_aad22620a117c4d316d32f8cb3a185496}\label{leaf__database_8f90_aad22620a117c4d316d32f8cb3a185496}} 
+\index{leaf\_database.f90@{leaf\_database.f90}!read\_soil\_depth@{read\_soil\_depth}}
+\index{read\_soil\_depth@{read\_soil\_depth}!leaf\_database.f90@{leaf\_database.f90}}
+\doxysubsubsection{\texorpdfstring{read\_soil\_depth()}{read\_soil\_depth()}}
+{\footnotesize\ttfamily subroutine read\+\_\+soil\+\_\+depth}
+

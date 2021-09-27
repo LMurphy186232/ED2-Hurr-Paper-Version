@@ -1,0 +1,171 @@
+\hypertarget{preproc_2ascii2hdf_2utils__sub__names_8h_source}{}\doxysection{preproc/ascii2hdf/utils\+\_\+sub\+\_\+names.h}
+\label{preproc_2ascii2hdf_2utils__sub__names_8h_source}\index{utils\_sub\_names.h@{utils\_sub\_names.h}}
+\mbox{\hyperlink{preproc_2ascii2hdf_2utils__sub__names_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#if defined(SUN) || defined(ALPHA) || defined(SGI) || defined (PC\_LINUX1) || defined(NEC\_SX)}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define fegetenv fegetenv\_}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define form\_tmpname form\_tmpname\_}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define irsleep irsleep\_}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define iralloc iralloc\_}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define irfree irfree\_}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define rams\_c\_open rams\_c\_open\_}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define rams\_c\_close rams\_c\_close\_}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define rams\_c\_pos rams\_c\_pos\_}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define rams\_c\_tell rams\_c\_tell\_}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define rams\_c\_write rams\_c\_write\_}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define rams\_c\_read rams\_c\_read\_}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define rams\_c\_read\_char rams\_c\_read\_char\_}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define vfirecr vfirecr\_}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define vforecr vforecr\_}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define readdted1 readdted1\_}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define rams\_master rams\_master\_}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define rams\_node rams\_node\_}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define walltime walltime\_}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define par\_init\_fortran par\_init\_fortran\_}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define par\_init\_put par\_init\_put\_}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define par\_send par\_send\_}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define par\_put\_int par\_put\_int\_}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define par\_put\_float par\_put\_float\_}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define par\_put\_char par\_put\_char\_}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define par\_send\_noblock par\_send\_noblock\_}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define par\_get\_noblock par\_get\_noblock\_}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define par\_assoc\_buff par\_assoc\_buff\_}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define par\_wait par\_wait\_}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define par\_get\_new par\_get\_new\_}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define par\_get\_int par\_get\_int\_}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define par\_get\_float par\_get\_float\_}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define par\_get\_char par\_get\_char\_}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define par\_init par\_init\_}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define par\_enroll par\_enroll\_}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define par\_exit par\_exit\_}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define par\_pause par\_pause\_}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define par\_ready par\_ready\_}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define fh5f\_open          fh5f\_open\_}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define fh5f\_create        fh5f\_create\_}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define fh5f\_close         fh5f\_close\_}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define fh5d\_open          fh5d\_open\_}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define fh5d\_close         fh5d\_close\_}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define fh5s\_get\_ndims     fh5s\_get\_ndims\_}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define fh5s\_get\_dims      fh5s\_get\_dims\_}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define fh5\_prepare\_read   fh5\_prepare\_read\_}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define fh5d\_read          fh5d\_read\_}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define fh5\_close\_read     fh5\_close\_read\_}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define fh5\_prepare\_write  fh5\_prepare\_write\_}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define fh5\_write          fh5\_write\_}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define fh5\_close\_write    fh5\_close\_write\_}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#if defined(CRAY)}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define fegetenv FEGETENV}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define form\_tmpname FORM\_TMPNAME}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define irsleep IRSLEEP}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define iralloc IRALLOC}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define irfree IRFREE}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define rams\_c\_open RAMS\_C\_OPEN}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define rams\_c\_close RAMS\_C\_CLOSE}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define rams\_c\_pos RAMS\_C\_POS}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define rams\_c\_tell RAMS\_C\_TELL}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define rams\_c\_read RAMS\_C\_READ}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define rams\_c\_read\_char RAMS\_C\_READ\_CHAR}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define rams\_c\_write RAMS\_C\_WRITE}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define vfirecr VFIRECR}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define vforecr VFORECR}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define readdted1 READDTED1}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define rams\_master RAMS\_MASTER}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#define rams\_node RAMS\_NODE}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#define walltime WALLTIME}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#define par\_init\_fortran PAR\_INIT\_FORTRAN}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define par\_init\_put PAR\_INIT\_PUT}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#define par\_send PAR\_SEND}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#define par\_put\_int PAR\_PUT\_INT}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#define par\_put\_float PAR\_PUT\_FLOAT}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define par\_put\_char PAR\_PUT\_CHAR}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#define par\_send\_noblock PAR\_SEND\_NOBLOCK}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#define par\_get\_noblock PAR\_GET\_NOBLOCK}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#define par\_assoc\_buff PAR\_ASSOC\_BUFF}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#define par\_wait PAR\_WAIT}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#define par\_get\_new PAR\_GET\_NEW}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#define par\_get\_int PAR\_GET\_INT}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define par\_get\_float PAR\_GET\_FLOAT}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define par\_get\_char PAR\_GET\_CHAR}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define par\_init PAR\_INIT}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#define par\_enroll PAR\_ENROLL}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define par\_exit PAR\_EXIT}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define par\_pause PAR\_PAUSE}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define par\_ready PAR\_READY}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define fh5f\_open          FH5F\_OPEN}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#define fh5f\_create        FH5F\_CREATE}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define fh5f\_close         FH5F\_CLOSE}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define fh5d\_open          FH5D\_OPEN}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define fh5d\_close         FH5D\_CLOSE}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define fh5s\_get\_ndims     FH5S\_GET\_NDIMS}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define fh5s\_get\_dims      FH5S\_GET\_DIMS}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define fh5\_prepare\_read   FH5\_PREPARE\_READ}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define fh5d\_read          FH5D\_READ}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define fh5\_close\_read     FH5\_CLOSE\_READ}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define fh5\_prepare\_write  FH5\_PREPARE\_WRITE}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define fh5\_write          FH5\_WRITE}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define fh5\_close\_write    FH5\_CLOSE\_WRITE}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#if defined(PC\_NT1)}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#define fegetenv FEGETENV}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#define form\_tmpname FORM\_TMPNAME}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#define irsleep IRSLEEP}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#define iralloc IRALLOC}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#define irfree IRFREE}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#define rams\_c\_open RAMS\_C\_OPEN}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#define rams\_c\_close RAMS\_C\_CLOSE}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#define rams\_c\_pos RAMS\_C\_POS}}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#define rams\_c\_tell RAMS\_C\_TELL}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#define rams\_c\_read RAMS\_C\_READ}}
+\DoxyCodeLine{161 \textcolor{preprocessor}{\#define rams\_c\_read\_char RAMS\_C\_READ\_CHAR}}
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#define rams\_c\_write RAMS\_C\_WRITE}}
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#define vfirecr VFIRECR}}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#define vforecr VFORECR}}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#define readdted1 READDTED1}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#define rams\_master RAMS\_MASTER}}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#define rams\_node RAMS\_NODE}}
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#define walltime WALLTIME}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#define par\_init\_fortran PAR\_INIT\_FORTRAN}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#define par\_init\_put PAR\_INIT\_PUT}}
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#define par\_send PAR\_SEND}}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#define par\_put\_int PAR\_PUT\_INT}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#define par\_put\_float PAR\_PUT\_FLOAT}}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#define par\_put\_char PAR\_PUT\_CHAR}}
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#define par\_send\_noblock PAR\_SEND\_NOBLOCK}}
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#define par\_get\_noblock PAR\_GET\_NOBLOCK}}
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#define par\_assoc\_buff PAR\_ASSOC\_BUFF}}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#define par\_wait PAR\_WAIT}}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#define par\_get\_new PAR\_GET\_NEW}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#define par\_get\_int PAR\_GET\_INT}}
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#define par\_get\_float PAR\_GET\_FLOAT}}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#define par\_get\_char PAR\_GET\_CHAR}}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#define par\_init PAR\_INIT}}
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#define par\_enroll PAR\_ENROLL}}
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#define par\_exit PAR\_EXIT}}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#define par\_pause PAR\_PAUSE}}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#define par\_ready PAR\_READY}}
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#define fh5f\_open\_         FH5F\_OPEN}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#define fh5f\_create\_       FH5F\_CREATE}}
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#define fh5f\_close\_        FH5F\_CLOSE}}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#define fh5d\_open\_         FH5D\_OPEN}}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#define fh5d\_close\_        FH5D\_CLOSE}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#define fh5s\_get\_ndims\_    FH5S\_GET\_NDIMS}}
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#define fh5s\_get\_dims\_     FH5S\_GET\_DIMS}}
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#define fh5\_prepare\_read\_  FH5\_PREPARE\_READ}}
+\DoxyCodeLine{196 \textcolor{preprocessor}{\#define fh5d\_read\_         FH5D\_READ}}
+\DoxyCodeLine{197 \textcolor{preprocessor}{\#define fh5\_close\_read\_    FH5\_CLOSE\_READ}}
+\DoxyCodeLine{198 \textcolor{preprocessor}{\#define fh5\_prepare\_write\_ FH5\_PREPARE\_WRITE}}
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#define fh5\_write\_         FH5\_WRITE}}
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#define fh5\_close\_write\_   FH5\_CLOSE\_WRITE}}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

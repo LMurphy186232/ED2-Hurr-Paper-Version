@@ -1,0 +1,184 @@
+\hypertarget{namespaceallometry}{}\doxysection{allometry Module Reference}
+\label{namespaceallometry}\index{allometry@{allometry}}
+
+
+This module is a library with the allometric relationships used by ED2.  
+
+
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+real function \mbox{\hyperlink{namespaceallometry_a31aa8db06e86ec74efb5e692417399df}{h2dbh}} (h, ipft)
+\item 
+real function \mbox{\hyperlink{namespaceallometry_a56f11dc07da4d5e7114dc37d6cc5f2cc}{dbh2h}} (ipft, dbh)
+\item 
+real function \mbox{\hyperlink{namespaceallometry_a08a0764bc1887e71051914ed5b30c72c}{size2bd}} (dbh, hite, ipft)
+\item 
+real function \mbox{\hyperlink{namespaceallometry_aded2a9492711f07e5c157c17e9029c10}{dbh2sf}} (dbh, ipft)
+\item 
+real function \mbox{\hyperlink{namespaceallometry_ab6e678cf9b820dfc053d8c150bb21372}{bd2dbh}} (ipft, bdeada, bdeadb)
+\item 
+real function \mbox{\hyperlink{namespaceallometry_a10c3f179ffa5bee4c98a338aa18067ee}{size2bl}} (dbh, hite, sla\+\_\+in, ipft)
+\item 
+real function \mbox{\hyperlink{namespaceallometry_ab23ba731395d989a2979f55196d059a2}{ba2h}} (balive, ipft)
+\item 
+real function \mbox{\hyperlink{namespaceallometry_a67787845882155e7adf0cbb05b268d7c}{bl2dbh}} (bleaf, sla\+\_\+in, ipft)
+\item 
+real function \mbox{\hyperlink{namespaceallometry_a1f747b7e54286ecc0674e969deae51f6}{bl2h}} (bleaf, sla\+\_\+in, ipft)
+\item 
+real function \mbox{\hyperlink{namespaceallometry_aed6e96368f347aaebe3a7c16fe32289f}{size2ca}} (dbh, hite, sla, ipft, cap\+\_\+crit)
+\item 
+real function \mbox{\hyperlink{namespaceallometry_a0a36cf7374fc6c412a4a3975429e4127}{size2vol}} (dbh, hgt, ipft)
+\item 
+real function \mbox{\hyperlink{namespaceallometry_ac230dfaa6f3a6177011cc298eecb569a}{size2bt}} (dbh, hgt, bdeada, bsapwooda, bbarka, ipft)
+\item 
+real function \mbox{\hyperlink{namespaceallometry_a774c3e4785f2bfe0a7fe2d5d15293137}{size2xb}} (dbh, hgt, bbarka, bbarkb, sla\+\_\+in, ipft)
+\item 
+real function \mbox{\hyperlink{namespaceallometry_aa96d4524c2ac20b6604bb171bbf3559f}{size2prd}} (hite, dbh, ipft)
+\item 
+integer function \mbox{\hyperlink{namespaceallometry_a91ab563e850c9a9486fadbb0227f6567}{size2krdepth}} (hite, dbh, ipft, lsl)
+\item 
+real function \mbox{\hyperlink{namespaceallometry_a88949ed487fccc2f1dfd065399043b0d}{h2crownbh}} (height, ipft)
+\item 
+real function \mbox{\hyperlink{namespaceallometry_ab6a3d3302db0096b21354babe768677b}{ed\+\_\+biomass}} (cpatch, ico)
+\item 
+real function \mbox{\hyperlink{namespaceallometry_a5bd25d4c4a3c5dda8a2158e3c7c57792}{ed\+\_\+balive}} (cpatch, ico)
+\item 
+real function \mbox{\hyperlink{namespaceallometry_a789c128140a2d52c0ddc914f8352e594}{size2be}} (dbh, hite, ipft)
+\item 
+subroutine \mbox{\hyperlink{namespaceallometry_a7abbed82084f965c83a4a7c215c12530}{expand\+\_\+bevery}} (ipft, bevery, dbh, hite, bleaf, broot, bsapa, bsapb, bbarka, bbarkb, balive, bdeada, bdeadb)
+\item 
+subroutine \mbox{\hyperlink{namespaceallometry_ac715c0d308392f2b0eee93ab9ae210b1}{area\+\_\+indices}} (cpatch, ico)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This module is a library with the allometric relationships used by ED2. 
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespaceallometry_ac715c0d308392f2b0eee93ab9ae210b1}\label{namespaceallometry_ac715c0d308392f2b0eee93ab9ae210b1}} 
+\index{allometry@{allometry}!area\_indices@{area\_indices}}
+\index{area\_indices@{area\_indices}!allometry@{allometry}}
+\doxysubsubsection{\texorpdfstring{area\_indices()}{area\_indices()}}
+{\footnotesize\ttfamily subroutine allometry\+::area\+\_\+indices (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{ico }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceallometry_ab23ba731395d989a2979f55196d059a2}\label{namespaceallometry_ab23ba731395d989a2979f55196d059a2}} 
+\index{allometry@{allometry}!ba2h@{ba2h}}
+\index{ba2h@{ba2h}!allometry@{allometry}}
+\doxysubsubsection{\texorpdfstring{ba2h()}{ba2h()}}
+{\footnotesize\ttfamily real function allometry\+::ba2h (\begin{DoxyParamCaption}\item[{real, intent(in)}]{balive,  }\item[{integer, intent(in)}]{ipft }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceallometry_ab6e678cf9b820dfc053d8c150bb21372}\label{namespaceallometry_ab6e678cf9b820dfc053d8c150bb21372}} 
+\index{allometry@{allometry}!bd2dbh@{bd2dbh}}
+\index{bd2dbh@{bd2dbh}!allometry@{allometry}}
+\doxysubsubsection{\texorpdfstring{bd2dbh()}{bd2dbh()}}
+{\footnotesize\ttfamily real function allometry\+::bd2dbh (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ipft,  }\item[{real, intent(in)}]{bdeada,  }\item[{real, intent(in)}]{bdeadb }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceallometry_a67787845882155e7adf0cbb05b268d7c}\label{namespaceallometry_a67787845882155e7adf0cbb05b268d7c}} 
+\index{allometry@{allometry}!bl2dbh@{bl2dbh}}
+\index{bl2dbh@{bl2dbh}!allometry@{allometry}}
+\doxysubsubsection{\texorpdfstring{bl2dbh()}{bl2dbh()}}
+{\footnotesize\ttfamily real function allometry\+::bl2dbh (\begin{DoxyParamCaption}\item[{real, intent(in)}]{bleaf,  }\item[{real, intent(in)}]{sla\+\_\+in,  }\item[{integer, intent(in)}]{ipft }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceallometry_a1f747b7e54286ecc0674e969deae51f6}\label{namespaceallometry_a1f747b7e54286ecc0674e969deae51f6}} 
+\index{allometry@{allometry}!bl2h@{bl2h}}
+\index{bl2h@{bl2h}!allometry@{allometry}}
+\doxysubsubsection{\texorpdfstring{bl2h()}{bl2h()}}
+{\footnotesize\ttfamily real function allometry\+::bl2h (\begin{DoxyParamCaption}\item[{real, intent(in)}]{bleaf,  }\item[{real, intent(in)}]{sla\+\_\+in,  }\item[{integer, intent(in)}]{ipft }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceallometry_a56f11dc07da4d5e7114dc37d6cc5f2cc}\label{namespaceallometry_a56f11dc07da4d5e7114dc37d6cc5f2cc}} 
+\index{allometry@{allometry}!dbh2h@{dbh2h}}
+\index{dbh2h@{dbh2h}!allometry@{allometry}}
+\doxysubsubsection{\texorpdfstring{dbh2h()}{dbh2h()}}
+{\footnotesize\ttfamily real function allometry\+::dbh2h (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ipft,  }\item[{real, intent(in)}]{dbh }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceallometry_aded2a9492711f07e5c157c17e9029c10}\label{namespaceallometry_aded2a9492711f07e5c157c17e9029c10}} 
+\index{allometry@{allometry}!dbh2sf@{dbh2sf}}
+\index{dbh2sf@{dbh2sf}!allometry@{allometry}}
+\doxysubsubsection{\texorpdfstring{dbh2sf()}{dbh2sf()}}
+{\footnotesize\ttfamily real function allometry\+::dbh2sf (\begin{DoxyParamCaption}\item[{real, intent(in)}]{dbh,  }\item[{integer, intent(in)}]{ipft }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceallometry_a5bd25d4c4a3c5dda8a2158e3c7c57792}\label{namespaceallometry_a5bd25d4c4a3c5dda8a2158e3c7c57792}} 
+\index{allometry@{allometry}!ed\_balive@{ed\_balive}}
+\index{ed\_balive@{ed\_balive}!allometry@{allometry}}
+\doxysubsubsection{\texorpdfstring{ed\_balive()}{ed\_balive()}}
+{\footnotesize\ttfamily real function allometry\+::ed\+\_\+balive (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{ico }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceallometry_ab6a3d3302db0096b21354babe768677b}\label{namespaceallometry_ab6a3d3302db0096b21354babe768677b}} 
+\index{allometry@{allometry}!ed\_biomass@{ed\_biomass}}
+\index{ed\_biomass@{ed\_biomass}!allometry@{allometry}}
+\doxysubsubsection{\texorpdfstring{ed\_biomass()}{ed\_biomass()}}
+{\footnotesize\ttfamily real function allometry\+::ed\+\_\+biomass (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1patchtype}{patchtype}}), target}]{cpatch,  }\item[{integer, intent(in)}]{ico }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceallometry_a7abbed82084f965c83a4a7c215c12530}\label{namespaceallometry_a7abbed82084f965c83a4a7c215c12530}} 
+\index{allometry@{allometry}!expand\_bevery@{expand\_bevery}}
+\index{expand\_bevery@{expand\_bevery}!allometry@{allometry}}
+\doxysubsubsection{\texorpdfstring{expand\_bevery()}{expand\_bevery()}}
+{\footnotesize\ttfamily subroutine allometry\+::expand\+\_\+bevery (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ipft,  }\item[{real, intent(in)}]{bevery,  }\item[{real, intent(out)}]{dbh,  }\item[{real, intent(out)}]{hite,  }\item[{real, intent(out)}]{bleaf,  }\item[{real, intent(out)}]{broot,  }\item[{real, intent(out)}]{bsapa,  }\item[{real, intent(out)}]{bsapb,  }\item[{real, intent(out)}]{bbarka,  }\item[{real, intent(out)}]{bbarkb,  }\item[{real, intent(out)}]{balive,  }\item[{real, intent(out)}]{bdeada,  }\item[{real, intent(out)}]{bdeadb }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceallometry_a88949ed487fccc2f1dfd065399043b0d}\label{namespaceallometry_a88949ed487fccc2f1dfd065399043b0d}} 
+\index{allometry@{allometry}!h2crownbh@{h2crownbh}}
+\index{h2crownbh@{h2crownbh}!allometry@{allometry}}
+\doxysubsubsection{\texorpdfstring{h2crownbh()}{h2crownbh()}}
+{\footnotesize\ttfamily real function allometry\+::h2crownbh (\begin{DoxyParamCaption}\item[{real, intent(in)}]{height,  }\item[{integer, intent(in)}]{ipft }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceallometry_a31aa8db06e86ec74efb5e692417399df}\label{namespaceallometry_a31aa8db06e86ec74efb5e692417399df}} 
+\index{allometry@{allometry}!h2dbh@{h2dbh}}
+\index{h2dbh@{h2dbh}!allometry@{allometry}}
+\doxysubsubsection{\texorpdfstring{h2dbh()}{h2dbh()}}
+{\footnotesize\ttfamily real function allometry\+::h2dbh (\begin{DoxyParamCaption}\item[{real, intent(in)}]{h,  }\item[{integer, intent(in)}]{ipft }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceallometry_a08a0764bc1887e71051914ed5b30c72c}\label{namespaceallometry_a08a0764bc1887e71051914ed5b30c72c}} 
+\index{allometry@{allometry}!size2bd@{size2bd}}
+\index{size2bd@{size2bd}!allometry@{allometry}}
+\doxysubsubsection{\texorpdfstring{size2bd()}{size2bd()}}
+{\footnotesize\ttfamily real function allometry\+::size2bd (\begin{DoxyParamCaption}\item[{real, intent(in)}]{dbh,  }\item[{real, intent(in)}]{hite,  }\item[{integer, intent(in)}]{ipft }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceallometry_a789c128140a2d52c0ddc914f8352e594}\label{namespaceallometry_a789c128140a2d52c0ddc914f8352e594}} 
+\index{allometry@{allometry}!size2be@{size2be}}
+\index{size2be@{size2be}!allometry@{allometry}}
+\doxysubsubsection{\texorpdfstring{size2be()}{size2be()}}
+{\footnotesize\ttfamily real function allometry\+::size2be (\begin{DoxyParamCaption}\item[{real, intent(in)}]{dbh,  }\item[{real, intent(in)}]{hite,  }\item[{integer, intent(in)}]{ipft }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceallometry_a10c3f179ffa5bee4c98a338aa18067ee}\label{namespaceallometry_a10c3f179ffa5bee4c98a338aa18067ee}} 
+\index{allometry@{allometry}!size2bl@{size2bl}}
+\index{size2bl@{size2bl}!allometry@{allometry}}
+\doxysubsubsection{\texorpdfstring{size2bl()}{size2bl()}}
+{\footnotesize\ttfamily real function allometry\+::size2bl (\begin{DoxyParamCaption}\item[{real, intent(in)}]{dbh,  }\item[{real, intent(in)}]{hite,  }\item[{real, intent(in)}]{sla\+\_\+in,  }\item[{integer, intent(in)}]{ipft }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceallometry_ac230dfaa6f3a6177011cc298eecb569a}\label{namespaceallometry_ac230dfaa6f3a6177011cc298eecb569a}} 
+\index{allometry@{allometry}!size2bt@{size2bt}}
+\index{size2bt@{size2bt}!allometry@{allometry}}
+\doxysubsubsection{\texorpdfstring{size2bt()}{size2bt()}}
+{\footnotesize\ttfamily real function allometry\+::size2bt (\begin{DoxyParamCaption}\item[{real(kind=4), intent(in)}]{dbh,  }\item[{real(kind=4), intent(in)}]{hgt,  }\item[{real(kind=4), intent(in)}]{bdeada,  }\item[{real(kind=4), intent(in)}]{bsapwooda,  }\item[{real(kind=4), intent(in)}]{bbarka,  }\item[{integer, intent(in)}]{ipft }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceallometry_aed6e96368f347aaebe3a7c16fe32289f}\label{namespaceallometry_aed6e96368f347aaebe3a7c16fe32289f}} 
+\index{allometry@{allometry}!size2ca@{size2ca}}
+\index{size2ca@{size2ca}!allometry@{allometry}}
+\doxysubsubsection{\texorpdfstring{size2ca()}{size2ca()}}
+{\footnotesize\ttfamily real function allometry\+::size2ca (\begin{DoxyParamCaption}\item[{real, intent(in)}]{dbh,  }\item[{real, intent(in)}]{hite,  }\item[{real, intent(in)}]{sla,  }\item[{integer, intent(in)}]{ipft,  }\item[{logical, intent(in), optional}]{cap\+\_\+crit }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceallometry_a91ab563e850c9a9486fadbb0227f6567}\label{namespaceallometry_a91ab563e850c9a9486fadbb0227f6567}} 
+\index{allometry@{allometry}!size2krdepth@{size2krdepth}}
+\index{size2krdepth@{size2krdepth}!allometry@{allometry}}
+\doxysubsubsection{\texorpdfstring{size2krdepth()}{size2krdepth()}}
+{\footnotesize\ttfamily integer function allometry\+::size2krdepth (\begin{DoxyParamCaption}\item[{real, intent(in)}]{hite,  }\item[{real, intent(in)}]{dbh,  }\item[{integer, intent(in)}]{ipft,  }\item[{integer, intent(in)}]{lsl }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceallometry_aa96d4524c2ac20b6604bb171bbf3559f}\label{namespaceallometry_aa96d4524c2ac20b6604bb171bbf3559f}} 
+\index{allometry@{allometry}!size2prd@{size2prd}}
+\index{size2prd@{size2prd}!allometry@{allometry}}
+\doxysubsubsection{\texorpdfstring{size2prd()}{size2prd()}}
+{\footnotesize\ttfamily real function allometry\+::size2prd (\begin{DoxyParamCaption}\item[{real, intent(in)}]{hite,  }\item[{real, intent(in)}]{dbh,  }\item[{integer, intent(in)}]{ipft }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceallometry_a0a36cf7374fc6c412a4a3975429e4127}\label{namespaceallometry_a0a36cf7374fc6c412a4a3975429e4127}} 
+\index{allometry@{allometry}!size2vol@{size2vol}}
+\index{size2vol@{size2vol}!allometry@{allometry}}
+\doxysubsubsection{\texorpdfstring{size2vol()}{size2vol()}}
+{\footnotesize\ttfamily real function allometry\+::size2vol (\begin{DoxyParamCaption}\item[{real, intent(in)}]{dbh,  }\item[{real, intent(in)}]{hgt,  }\item[{integer, intent(in)}]{ipft }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceallometry_a774c3e4785f2bfe0a7fe2d5d15293137}\label{namespaceallometry_a774c3e4785f2bfe0a7fe2d5d15293137}} 
+\index{allometry@{allometry}!size2xb@{size2xb}}
+\index{size2xb@{size2xb}!allometry@{allometry}}
+\doxysubsubsection{\texorpdfstring{size2xb()}{size2xb()}}
+{\footnotesize\ttfamily real function allometry\+::size2xb (\begin{DoxyParamCaption}\item[{real(kind=4), intent(in)}]{dbh,  }\item[{real(kind=4), intent(in)}]{hgt,  }\item[{real(kind=4), intent(in)}]{bbarka,  }\item[{real(kind=4), intent(in)}]{bbarkb,  }\item[{real(kind=4), intent(in)}]{sla\+\_\+in,  }\item[{integer, intent(in)}]{ipft }\end{DoxyParamCaption})}
+

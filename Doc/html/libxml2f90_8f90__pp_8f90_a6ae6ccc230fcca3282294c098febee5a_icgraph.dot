@@ -1,0 +1,20 @@
+digraph "libxml2f90__ll_getsize"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="libxml2f90__ll_getsize",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="getconfigstring",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__xml__config_8f90.html#af0adc799495cd223935aceec004ccb11",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="read_ed_xml_config",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__xml__config_8f90.html#accb60513f4c46e691fcd1f96c1e9df36",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="overwrite_with_xml\l_config",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__params_8f90.html#a2c0c887700d85a5be6fbd26b071c8da6",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ed_driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__driver_8_f90.html#a5706bd8bee60960fe8166de1870e47da",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$edmain_8_f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d",tooltip=" "];
+  Node3 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

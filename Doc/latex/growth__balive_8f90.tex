@@ -1,0 +1,36 @@
+\hypertarget{growth__balive_8f90}{}\doxysection{growth\+\_\+balive.\+f90 File Reference}
+\label{growth__balive_8f90}\index{growth\_balive.f90@{growth\_balive.f90}}
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacegrowth__balive}{growth\+\_\+balive}}
+\begin{DoxyCompactList}\small\item\em Various routines handling plant C and N use given size and allometry. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_a2711ed86cca4027a15a5a8de2bc9873a}{growth\+\_\+balive\+::dbalive\+\_\+dt}} (cgrid, gr\+\_\+tfact0, year\+\_\+o\+\_\+day, veget\+\_\+dyn\+\_\+on)
+\begin{DoxyCompactList}\small\item\em Updates living biomass. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_a8755e8a40fed1f4342f338b76073b962}{growth\+\_\+balive\+::update\+\_\+maintenance}} (cpatch, ico, year\+\_\+o\+\_\+day, tempk, tissue\+\_\+maintenance, storage\+\_\+maintenance)
+\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_a9b00d88a6c204e75778651c3143dffb7}{growth\+\_\+balive\+::get\+\_\+metabolic\+\_\+npp}} (cpatch, ico, metnpp\+\_\+actual, metnpp\+\_\+pot, metnpp\+\_\+lightmax, metnpp\+\_\+moistmax, metnpp\+\_\+mlmax)
+\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_aca3956ef7564c2f63eef8324d4b7c576}{growth\+\_\+balive\+::get\+\_\+growth\+\_\+respiration}} (cpatch, ico, metnpp\+\_\+actual, metnpp\+\_\+pot, metnpp\+\_\+lightmax, metnpp\+\_\+moistmax, metnpp\+\_\+mlmax, growresp\+\_\+actual, growresp\+\_\+pot, growresp\+\_\+lightmax, growresp\+\_\+moistmax, growresp\+\_\+mlmax, pat\+\_\+growth\+\_\+resp)
+\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_ab967f3e22fdd9ac551a3f39165f07fcf}{growth\+\_\+balive\+::update\+\_\+carbon\+\_\+balances}} (cpatch, ipa, ico, metnpp\+\_\+actual, metnpp\+\_\+pot, metnpp\+\_\+lightmax, metnpp\+\_\+moistmax, metnpp\+\_\+mlmax, growresp\+\_\+actual, growresp\+\_\+pot, growresp\+\_\+lightmax, growresp\+\_\+moistmax, growresp\+\_\+mlmax, tissue\+\_\+maintenance, storage\+\_\+maintenance, npp\+\_\+actual, npp\+\_\+pot)
+\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_aa8ab1a92ea4f2e1e42e4c948ce88b52a}{growth\+\_\+balive\+::get\+\_\+c\+\_\+xfers}} (csite, ipa, ico, npp\+\_\+actual, green\+\_\+leaf\+\_\+factor, gr\+\_\+tfact0, tr\+\_\+bleaf, tr\+\_\+broot, tr\+\_\+bsapwooda, tr\+\_\+bsapwoodb, tr\+\_\+bbarka, tr\+\_\+bbarkb, tr\+\_\+bstorage, carbon\+\_\+debt, flushing, balive\+\_\+aim, carbon\+\_\+miss, xfer\+\_\+case)
+\begin{DoxyCompactList}\small\item\em Calculates plant-\/internal C transfers for growth and maintainance. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_a8dcf6f4255838da8cbc73b34930ea40a}{growth\+\_\+balive\+::apply\+\_\+c\+\_\+xfers}} (cpatch, ico, tr\+\_\+bleaf, tr\+\_\+broot, tr\+\_\+bsapwooda, tr\+\_\+bsapwoodb, tr\+\_\+bbarka, tr\+\_\+bbarkb, tr\+\_\+bstorage)
+\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_a57cedd650867822f04066d9ed8925449}{growth\+\_\+balive\+::update\+\_\+today\+\_\+npp\+\_\+vars}} (cpatch, ico, tr\+\_\+bleaf, tr\+\_\+broot, tr\+\_\+bsapwooda, tr\+\_\+bsapwoodb, tr\+\_\+bbarka, tr\+\_\+bbarkb, npp\+\_\+actual)
+\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_a828be2c6929cf4bbbd40502e08b78082}{growth\+\_\+balive\+::update\+\_\+nitrogen}} (flushing, ipft, npp\+\_\+actual, nplant, tr\+\_\+bleaf, tr\+\_\+broot, tr\+\_\+bsapwooda, tr\+\_\+bsapwoodb, tr\+\_\+bbarka, tr\+\_\+bbarkb, tr\+\_\+bstorage, nitrogen\+\_\+uptake, fgn\+\_\+in, fsn\+\_\+in)
+\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_abc7dc486c5530d19d42b5e8e826da9f8}{growth\+\_\+balive\+::potential\+\_\+n\+\_\+uptake}} (cpatch, ico, npp\+\_\+pot, N\+\_\+uptake\+\_\+pot, green\+\_\+leaf\+\_\+factor)
+\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_a58c485c5b34cdfc309233daecb116e4b}{growth\+\_\+balive\+::update\+\_\+litter\+\_\+inputs}} (csite, ipa)
+\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_ae3ea5c807059e149b415cb529db3fe75}{growth\+\_\+balive\+::check\+\_\+balive\+\_\+cohort}} (csite, ipa, ico, bleaf\+\_\+in, broot\+\_\+in, bsapwooda\+\_\+in, bsapwoodb\+\_\+in, bbarka\+\_\+in, bbarkb\+\_\+in, balive\+\_\+in, bstorage\+\_\+in, bdeada\+\_\+in, bdeadb\+\_\+in, phenstatus\+\_\+in, metnpp\+\_\+actual, npp\+\_\+actual, growresp\+\_\+actual, tissue\+\_\+maintenance, storage\+\_\+maintenance, carbon\+\_\+miss, xfer\+\_\+case)
+\item 
+subroutine \mbox{\hyperlink{namespacegrowth__balive_a1dd979be3f927d1318918d53cbeff8ab}{growth\+\_\+balive\+::check\+\_\+balive\+\_\+patch}} (csite, ipa, fgc\+\_\+in\+\_\+in, fsc\+\_\+in\+\_\+in, stgc\+\_\+in\+\_\+in, stsc\+\_\+in\+\_\+in, pat\+\_\+balive\+\_\+in, pat\+\_\+bdead\+\_\+in, pat\+\_\+bstorage\+\_\+in, pat\+\_\+metnpp\+\_\+actual, pat\+\_\+npp\+\_\+actual, pat\+\_\+tissue\+\_\+maintenance, pat\+\_\+carbon\+\_\+miss)
+\end{DoxyCompactItemize}

@@ -1,0 +1,41 @@
+\hypertarget{namespacephotosyn__driv}{}\doxysection{photosyn\+\_\+driv Module Reference}
+\label{namespacephotosyn__driv}\index{photosyn\_driv@{photosyn\_driv}}
+
+
+Main photosynthesis driver. ~\newline
+  
+
+
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacephotosyn__driv_aa13393b717dc9eb128ecd16b900d696b}{canopy\+\_\+photosynthesis}} (csite, cmet, mzg, ipa, ibuff, ntext\+\_\+soil, leaf\+\_\+aging\+\_\+factor, green\+\_\+leaf\+\_\+factor)
+\begin{DoxyCompactList}\small\item\em This subroutine will control the photosynthesis scheme (Farquar and Leuning). This is called every step, but not every sub-\/step. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacephotosyn__driv_a302f4af7d3d25579b2ad5422e61b11bd}{print\+\_\+photo\+\_\+details}} (cmet, csite, ipa, ico, limit\+\_\+flag, vm, jm, tpm, jact, compp)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main photosynthesis driver. ~\newline
+ 
+
+Include Farquhar-\/\+Leuning and Farquhar-\/\+Katul two options ~\newline
+ 
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacephotosyn__driv_aa13393b717dc9eb128ecd16b900d696b}\label{namespacephotosyn__driv_aa13393b717dc9eb128ecd16b900d696b}} 
+\index{photosyn\_driv@{photosyn\_driv}!canopy\_photosynthesis@{canopy\_photosynthesis}}
+\index{canopy\_photosynthesis@{canopy\_photosynthesis}!photosyn\_driv@{photosyn\_driv}}
+\doxysubsubsection{\texorpdfstring{canopy\_photosynthesis()}{canopy\_photosynthesis()}}
+{\footnotesize\ttfamily subroutine photosyn\+\_\+driv\+::canopy\+\_\+photosynthesis (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{type(\mbox{\hyperlink{structmet__driver__coms_1_1met__driv__state}{met\+\_\+driv\+\_\+state}}), target}]{cmet,  }\item[{integer, intent(in)}]{mzg,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{ibuff,  }\item[{integer, dimension(mzg), intent(in)}]{ntext\+\_\+soil,  }\item[{real, dimension(n\+\_\+pft), intent(in)}]{leaf\+\_\+aging\+\_\+factor,  }\item[{real, dimension(n\+\_\+pft), intent(in)}]{green\+\_\+leaf\+\_\+factor }\end{DoxyParamCaption})}
+
+
+
+This subroutine will control the photosynthesis scheme (Farquar and Leuning). This is called every step, but not every sub-\/step. 
+
+\mbox{\Hypertarget{namespacephotosyn__driv_a302f4af7d3d25579b2ad5422e61b11bd}\label{namespacephotosyn__driv_a302f4af7d3d25579b2ad5422e61b11bd}} 
+\index{photosyn\_driv@{photosyn\_driv}!print\_photo\_details@{print\_photo\_details}}
+\index{print\_photo\_details@{print\_photo\_details}!photosyn\_driv@{photosyn\_driv}}
+\doxysubsubsection{\texorpdfstring{print\_photo\_details()}{print\_photo\_details()}}
+{\footnotesize\ttfamily subroutine photosyn\+\_\+driv\+::print\+\_\+photo\+\_\+details (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structmet__driver__coms_1_1met__driv__state}{met\+\_\+driv\+\_\+state}}), target}]{cmet,  }\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{ico,  }\item[{integer, intent(in)}]{limit\+\_\+flag,  }\item[{real, intent(in)}]{vm,  }\item[{real, intent(in)}]{jm,  }\item[{real, intent(in)}]{tpm,  }\item[{real, intent(in)}]{jact,  }\item[{real, intent(in)}]{compp }\end{DoxyParamCaption})}
+

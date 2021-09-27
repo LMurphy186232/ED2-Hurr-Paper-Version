@@ -1,0 +1,30 @@
+digraph "ed_state_vars::nullify_polygontype"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="ed_state_vars::nullify\l_polygontype",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Nullifies all site pointers."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ed_state_vars::allocate\l_polygontype",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__state__vars.html#ad14e882e6c902118f0e369dd846eeedf",tooltip="Allocates the site-level variables."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="read_ed21_history_file",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__read__ed21__history_8f90.html#ab0faf0a20947c74801841975108b59ba",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ed_init::load_ecosystem\l_state",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__init.html#a8181c9f2a37fc0800a7579090f3b3ed0",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ed_driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__driver_8_f90.html#a5706bd8bee60960fe8166de1870e47da",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$edmain_8_f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d",tooltip=" "];
+  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="read_ed21_polyclone",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__read__ed21__history_8f90.html#a1e9d28328ec655a6bcac03ee1618759a",tooltip=" "];
+  Node7 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="ed_init::read_site_file",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__init.html#a736b981974d69fb456a9c1b6d9976638",tooltip=" "];
+  Node8 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="ed_init_history::resume\l_from_history",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__init__history.html#a8369fa1f9ca2551e5c4e3ae6bb032dbc",tooltip=" "];
+  Node9 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="ed_init::set_site_defprops",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceed__init.html#a870136e2cbfd47dbd5ed21e3e21c5ecb",tooltip=" "];
+  Node10 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

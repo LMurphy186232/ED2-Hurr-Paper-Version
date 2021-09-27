@@ -1,0 +1,12 @@
+digraph "rk4_coms::allocate_rk4_patch"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="rk4_coms::allocate\l_rk4_patch",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="rk4_coms::nullify_rk4\l_patch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacerk4__coms.html#a34a6a346af3d032c14f416435801598a",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="rk4_coms::zero_rk4\l_patch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacerk4__coms.html#a4206f404f555c50ee6570211356bd537",tooltip=" "];
+}

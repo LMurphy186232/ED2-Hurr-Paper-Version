@@ -1,0 +1,21 @@
+digraph "allometry::ba2h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="allometry::ba2h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="growth_balive::get\l_c_xfers",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacegrowth__balive.html#aa8ab1a92ea4f2e1e42e4c948ce88b52a",tooltip="Calculates plant-internal C transfers for growth and maintainance."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="growth_balive::dbalive_dt",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacegrowth__balive.html#a2711ed86cca4027a15a5a8de2bc9873a",tooltip="Updates living biomass."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="vegetation_dynamics\l::veg_dynamics_driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacevegetation__dynamics.html#ac0aac7ba29275bab000373bd850a36e6",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="ed_model",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__model_8_f90.html#a9804b9ca3fcb1b4e17171d786d50c32c",tooltip="Begins, updates, and outputs results from ecosystem simulation."];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="ed_driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ed__driver_8_f90.html#a5706bd8bee60960fe8166de1870e47da",tooltip=" "];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$edmain_8_f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d",tooltip=" "];
+}

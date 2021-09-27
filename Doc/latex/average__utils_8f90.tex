@@ -1,0 +1,53 @@
+\hypertarget{average__utils_8f90}{}\doxysection{average\+\_\+utils.\+f90 File Reference}
+\label{average__utils_8f90}\index{average\_utils.f90@{average\_utils.f90}}
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespaceaverage__utils}{average\+\_\+utils}}
+\begin{DoxyCompactList}\small\item\em This module contains sub-\/routines used to create the averaged output variables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceaverage__utils_a90965230835c19a82d90127089235c76}{average\+\_\+utils\+::aggregate\+\_\+polygon\+\_\+fmean}} (cgrid)
+\begin{DoxyCompactList}\small\item\em The following subroutine finds the polygon averages from site-\/, patch-\/, and cohort-\/level properties that have fmean variables associated. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceaverage__utils_acf7868319b9242daa7eea553b25f2899}{average\+\_\+utils\+::integrate\+\_\+ed\+\_\+fmean\+\_\+met\+\_\+vars}} (cgrid)
+\begin{DoxyCompactList}\small\item\em This subroutine increments the time averaged site met-\/forcing variables. The polygon-\/level averages are found after the site-\/level are normalised. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceaverage__utils_a662a31926be61beb22be003b5ec40343}{average\+\_\+utils\+::normalize\+\_\+ed\+\_\+fmean\+\_\+vars}} (cgrid)
+\begin{DoxyCompactList}\small\item\em The following sub-\/routine scales several variables that are integrated during one output step (frqsum) to actual rates, and find derived properties. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceaverage__utils_a40f7a4a46972fb6b9c0fe90fdc73a173}{average\+\_\+utils\+::zero\+\_\+ed\+\_\+fmean\+\_\+vars}} (cgrid)
+\item 
+subroutine \mbox{\hyperlink{namespaceaverage__utils_a985b401d85dd857f44371dd2c3e7c40c}{average\+\_\+utils\+::integrate\+\_\+ed\+\_\+dmean\+\_\+vars}} (cgrid)
+\begin{DoxyCompactList}\small\item\em This subroutine integrates most of the daily averages. This is called after the \char`\"{}fmean\char`\"{} variables are normalised, so we take advantage of these \char`\"{}fmean\char`\"{} variables. ~\newline
+ \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceaverage__utils_a538e2e59c7c2889ae624b6e1d2a9e5f2}{average\+\_\+utils\+::normalize\+\_\+ed\+\_\+today\+\_\+vars}} (cgrid)
+\begin{DoxyCompactList}\small\item\em This subroutine will scale the daily averages of GPP and some respiration variables to normal units. These variables are not for output, so they are done separatedly. There are also some output variables here, because these depend on the average of the gpp, and leaf and root respiration and would need to be calculated again otherwise. ! \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceaverage__utils_a446f9090fbbcf3eb12f4b9231d946e89}{average\+\_\+utils\+::normalize\+\_\+ed\+\_\+todaynpp\+\_\+vars}} (cgrid)
+\begin{DoxyCompactList}\small\item\em This subroutine will scale the daily NPP allocation terms. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceaverage__utils_a2203ebc403bfd01a55cf7aac61777819}{average\+\_\+utils\+::normalize\+\_\+ed\+\_\+dmean\+\_\+vars}} (cgrid)
+\begin{DoxyCompactList}\small\item\em This subroutine normalises the daily mean variables of those variables that could not be integrated directly. This includes temperatures, polygon-\/level budget variables, and variables that are defined during daytime only. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceaverage__utils_a6a92d00bf7112b127a596bd765cc12c6}{average\+\_\+utils\+::zero\+\_\+ed\+\_\+today\+\_\+vars}} (cgrid)
+\begin{DoxyCompactList}\small\item\em This subroutine resets the daily\+\_\+averages for variables actually used in the integration. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceaverage__utils_a480977137a13818b5fe0668914a4c52e}{average\+\_\+utils\+::zero\+\_\+ed\+\_\+dx\+\_\+vars}} (cgrid)
+\begin{DoxyCompactList}\small\item\em This subroutine resets the daily e\+Xtreme (maximum,minimum) variables, once the variables have been used. Current only dmin/dmax water potentials are included. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceaverage__utils_af1a2224da3c590c5645db8efa5c16c9f}{average\+\_\+utils\+::zero\+\_\+ed\+\_\+dmean\+\_\+vars}} (cgrid)
+\item 
+subroutine \mbox{\hyperlink{namespaceaverage__utils_a24f0cd542ec9741c1bcc76e640498cd2}{average\+\_\+utils\+::integrate\+\_\+ed\+\_\+mmean\+\_\+vars}} (cgrid)
+\begin{DoxyCompactList}\small\item\em This subroutine integrates most of the monthly mean variables. This sub-\/routine ~\newline
+ is called after the dmean variables have been normalised, so we can take advantage of their values.~\newline
+. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceaverage__utils_afce18c59b2e9d5605d22e4d356934bdb}{average\+\_\+utils\+::normalize\+\_\+ed\+\_\+mmean\+\_\+vars}} (cgrid)
+\begin{DoxyCompactList}\small\item\em This subroutine normalises the daily mean variables of those variables that could not be integrated directly. This includes temperatures, liquid fraction, and soil matric potential. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceaverage__utils_aa5221fd3b377dfe424dbdcb81b83c378}{average\+\_\+utils\+::zero\+\_\+ed\+\_\+mmean\+\_\+vars}} (cgrid)
+\begin{DoxyCompactList}\small\item\em This subroutine resets the monthly averages for variables actually used in the integration. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceaverage__utils_af429d166f6097c18d6ab4ce05adbd31f}{average\+\_\+utils\+::integrate\+\_\+ed\+\_\+qmean\+\_\+vars}} (cgrid)
+\begin{DoxyCompactList}\small\item\em This subroutine integrates most of the mean diel variables. This subroutine is called after the fmean variables have been normalised, so we can take advantage of their values. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceaverage__utils_ad7f232f9a24079c3430b005098729615}{average\+\_\+utils\+::normalize\+\_\+ed\+\_\+qmean\+\_\+vars}} (cgrid)
+\begin{DoxyCompactList}\small\item\em This subroutine normalises the daily mean variables of those variables that could not be integrated directly. These are pretty much just temperature, density, and liquid water fraction. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceaverage__utils_a2e9cb2592327099345c147516b927f51}{average\+\_\+utils\+::zero\+\_\+ed\+\_\+qmean\+\_\+vars}} (cgrid)
+\begin{DoxyCompactList}\small\item\em This subroutine resets the mean diel once the \char`\"{}\+Q\char`\"{} file has been written. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceaverage__utils_a81384775dd05dba144bf83e9731d5275}{average\+\_\+utils\+::update\+\_\+ed\+\_\+yearly\+\_\+vars}} (cgrid)
+\begin{DoxyCompactList}\small\item\em This sub-\/routine updates the yearly variables. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceaverage__utils_a81df7cc84b1d62f7fb950e91d410abbd}{average\+\_\+utils\+::zero\+\_\+ed\+\_\+yearly\+\_\+vars}} (cgrid)
+\begin{DoxyCompactList}\small\item\em This sub-\/routine re-\/sets the yearly variables. \end{DoxyCompactList}\item 
+real(kind=4) function \mbox{\hyperlink{namespaceaverage__utils_ac90817fe39c27153ed7bbee2cb856611}{average\+\_\+utils\+::isqu\+\_\+ftz}} (x)
+\end{DoxyCompactItemize}

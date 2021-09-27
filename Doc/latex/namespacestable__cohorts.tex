@@ -1,0 +1,34 @@
+\hypertarget{namespacestable__cohorts}{}\doxysection{stable\+\_\+cohorts Module Reference}
+\label{namespacestable__cohorts}\index{stable\_cohorts@{stable\_cohorts}}
+
+
+Sub-\/routine and functions that flag whether cohorts are resolvable or not.  
+
+
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacestable__cohorts_a49ef30c73c7bf9c7912bebb5207ce986}{flag\+\_\+stable\+\_\+cohorts}} (cgrid, is\+\_\+initial)
+\item 
+subroutine \mbox{\hyperlink{namespacestable__cohorts_a00b7ade90014855bc382264976df8d53}{is\+\_\+resolvable}} (csite, ipa, ico, is\+\_\+initial, force\+\_\+resolvable, called\+\_\+from)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sub-\/routine and functions that flag whether cohorts are resolvable or not. 
+
+These routines and functions define two logical flags (leaf\+\_\+resolvable and wood\+\_\+resolvable) that will decide whether cohorts can be solved in the water, energy, and CO2 budget. These flags ensure that the cohort is consistently skipped or resolved. 
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacestable__cohorts_a49ef30c73c7bf9c7912bebb5207ce986}\label{namespacestable__cohorts_a49ef30c73c7bf9c7912bebb5207ce986}} 
+\index{stable\_cohorts@{stable\_cohorts}!flag\_stable\_cohorts@{flag\_stable\_cohorts}}
+\index{flag\_stable\_cohorts@{flag\_stable\_cohorts}!stable\_cohorts@{stable\_cohorts}}
+\doxysubsubsection{\texorpdfstring{flag\_stable\_cohorts()}{flag\_stable\_cohorts()}}
+{\footnotesize\ttfamily subroutine stable\+\_\+cohorts\+::flag\+\_\+stable\+\_\+cohorts (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{logical, intent(in)}]{is\+\_\+initial }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestable__cohorts_a00b7ade90014855bc382264976df8d53}\label{namespacestable__cohorts_a00b7ade90014855bc382264976df8d53}} 
+\index{stable\_cohorts@{stable\_cohorts}!is\_resolvable@{is\_resolvable}}
+\index{is\_resolvable@{is\_resolvable}!stable\_cohorts@{stable\_cohorts}}
+\doxysubsubsection{\texorpdfstring{is\_resolvable()}{is\_resolvable()}}
+{\footnotesize\ttfamily subroutine stable\+\_\+cohorts\+::is\+\_\+resolvable (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1sitetype}{sitetype}}), target}]{csite,  }\item[{integer, intent(in)}]{ipa,  }\item[{integer, intent(in)}]{ico,  }\item[{logical, intent(in)}]{is\+\_\+initial,  }\item[{logical, intent(in)}]{force\+\_\+resolvable,  }\item[{character(len=$\ast$), intent(in)}]{called\+\_\+from }\end{DoxyParamCaption})}
+

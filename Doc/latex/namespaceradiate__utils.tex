@@ -1,0 +1,80 @@
+\hypertarget{namespaceradiate__utils}{}\doxysection{radiate\+\_\+utils Module Reference}
+\label{namespaceradiate__utils}\index{radiate\_utils@{radiate\_utils}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceradiate__utils_ad5abe43cdad79c838aa25e4c9e3aaf91}{solar\+\_\+radiation\+\_\+breakdown}} (cgrid, ipy)
+\item 
+subroutine \mbox{\hyperlink{namespaceradiate__utils_a074e9b79152bd5bb5c0790ad8cd6b0a2}{short2diff\+\_\+sib}} (rshort\+\_\+tot, cosz, rshort\+\_\+diff)
+\item 
+subroutine \mbox{\hyperlink{namespaceradiate__utils_a64fb52ccdab90800c724aaee1d517e41}{short\+\_\+bdown\+\_\+weissnorman}} (rshort\+\_\+full, atm\+\_\+prss, cosz, par\+\_\+beam, par\+\_\+diff, nir\+\_\+beam, nir\+\_\+diff, rshort\+\_\+diff)
+\item 
+subroutine \mbox{\hyperlink{namespaceradiate__utils_a44a2b8e0cac500428df3b79c8c8f0313}{short\+\_\+bdown\+\_\+clearidx}} (rshort\+\_\+full, cosz, par\+\_\+beam, par\+\_\+diff, nir\+\_\+beam, nir\+\_\+diff, rshort\+\_\+diff)
+\item 
+subroutine \mbox{\hyperlink{namespaceradiate__utils_aa02a740ba0f8def8ca27c15c3bfc754d}{update\+\_\+rad\+\_\+avg}} (cgrid)
+\item 
+subroutine \mbox{\hyperlink{namespaceradiate__utils_aef35bf0781a8ea2fcc914f20301de61b}{dump\+\_\+radinfo}} (cgrid, ipy, mprev, mnext, prevmet\+\_\+timea, nextmet\+\_\+timea, met\+\_\+frq, wprev, wnext, secz\+\_\+prev, secz\+\_\+next, fperp\+\_\+prev, fperp\+\_\+next, night\+\_\+prev, night\+\_\+next, variable)
+\item 
+subroutine \mbox{\hyperlink{namespaceradiate__utils_afb5a6c2df8443382f94902d35af33722}{angle\+\_\+of\+\_\+incid}} (aoi, cosz, solar\+\_\+hour\+\_\+aspect, slope, terrain\+\_\+aspect)
+\item 
+real function \mbox{\hyperlink{namespaceradiate__utils_ab6af403301e564c95a9b81de699dd478}{ed\+\_\+zen}} (plon, plat, when)
+\item 
+real function \mbox{\hyperlink{namespaceradiate__utils_a98ac31f29ba35067e35e3df58b749213}{mean\+\_\+daysecz}} (plon, plat, whena, dt, tmax)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespaceradiate__utils_afb5a6c2df8443382f94902d35af33722}\label{namespaceradiate__utils_afb5a6c2df8443382f94902d35af33722}} 
+\index{radiate\_utils@{radiate\_utils}!angle\_of\_incid@{angle\_of\_incid}}
+\index{angle\_of\_incid@{angle\_of\_incid}!radiate\_utils@{radiate\_utils}}
+\doxysubsubsection{\texorpdfstring{angle\_of\_incid()}{angle\_of\_incid()}}
+{\footnotesize\ttfamily subroutine radiate\+\_\+utils\+::angle\+\_\+of\+\_\+incid (\begin{DoxyParamCaption}\item[{real, intent(out)}]{aoi,  }\item[{real, intent(in)}]{cosz,  }\item[{real, intent(in)}]{solar\+\_\+hour\+\_\+aspect,  }\item[{real, intent(in)}]{slope,  }\item[{real, intent(in)}]{terrain\+\_\+aspect }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceradiate__utils_aef35bf0781a8ea2fcc914f20301de61b}\label{namespaceradiate__utils_aef35bf0781a8ea2fcc914f20301de61b}} 
+\index{radiate\_utils@{radiate\_utils}!dump\_radinfo@{dump\_radinfo}}
+\index{dump\_radinfo@{dump\_radinfo}!radiate\_utils@{radiate\_utils}}
+\doxysubsubsection{\texorpdfstring{dump\_radinfo()}{dump\_radinfo()}}
+{\footnotesize\ttfamily subroutine radiate\+\_\+utils\+::dump\+\_\+radinfo (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{integer, intent(in)}]{ipy,  }\item[{integer, intent(in)}]{mprev,  }\item[{integer, intent(in)}]{mnext,  }\item[{type(\mbox{\hyperlink{structed__misc__coms_1_1simtime}{simtime}}), intent(in)}]{prevmet\+\_\+timea,  }\item[{type(\mbox{\hyperlink{structed__misc__coms_1_1simtime}{simtime}}), intent(in)}]{nextmet\+\_\+timea,  }\item[{real, intent(in)}]{met\+\_\+frq,  }\item[{real, intent(in)}]{wprev,  }\item[{real, intent(in)}]{wnext,  }\item[{real, intent(in)}]{secz\+\_\+prev,  }\item[{real, intent(in)}]{secz\+\_\+next,  }\item[{real, intent(in)}]{fperp\+\_\+prev,  }\item[{real, intent(in)}]{fperp\+\_\+next,  }\item[{logical, intent(in)}]{night\+\_\+prev,  }\item[{logical, intent(in)}]{night\+\_\+next,  }\item[{character(len=5), intent(in)}]{variable }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceradiate__utils_ab6af403301e564c95a9b81de699dd478}\label{namespaceradiate__utils_ab6af403301e564c95a9b81de699dd478}} 
+\index{radiate\_utils@{radiate\_utils}!ed\_zen@{ed\_zen}}
+\index{ed\_zen@{ed\_zen}!radiate\_utils@{radiate\_utils}}
+\doxysubsubsection{\texorpdfstring{ed\_zen()}{ed\_zen()}}
+{\footnotesize\ttfamily real function radiate\+\_\+utils\+::ed\+\_\+zen (\begin{DoxyParamCaption}\item[{real(kind=4), intent(in)}]{plon,  }\item[{real(kind=4), intent(in)}]{plat,  }\item[{type(\mbox{\hyperlink{structed__misc__coms_1_1simtime}{simtime}}), intent(in)}]{when }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceradiate__utils_a98ac31f29ba35067e35e3df58b749213}\label{namespaceradiate__utils_a98ac31f29ba35067e35e3df58b749213}} 
+\index{radiate\_utils@{radiate\_utils}!mean\_daysecz@{mean\_daysecz}}
+\index{mean\_daysecz@{mean\_daysecz}!radiate\_utils@{radiate\_utils}}
+\doxysubsubsection{\texorpdfstring{mean\_daysecz()}{mean\_daysecz()}}
+{\footnotesize\ttfamily real function radiate\+\_\+utils\+::mean\+\_\+daysecz (\begin{DoxyParamCaption}\item[{real(kind=4), intent(in)}]{plon,  }\item[{real(kind=4), intent(in)}]{plat,  }\item[{type(\mbox{\hyperlink{structed__misc__coms_1_1simtime}{simtime}}), intent(in)}]{whena,  }\item[{real(kind=4), intent(in)}]{dt,  }\item[{real(kind=4), intent(in)}]{tmax }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceradiate__utils_a074e9b79152bd5bb5c0790ad8cd6b0a2}\label{namespaceradiate__utils_a074e9b79152bd5bb5c0790ad8cd6b0a2}} 
+\index{radiate\_utils@{radiate\_utils}!short2diff\_sib@{short2diff\_sib}}
+\index{short2diff\_sib@{short2diff\_sib}!radiate\_utils@{radiate\_utils}}
+\doxysubsubsection{\texorpdfstring{short2diff\_sib()}{short2diff\_sib()}}
+{\footnotesize\ttfamily subroutine radiate\+\_\+utils\+::short2diff\+\_\+sib (\begin{DoxyParamCaption}\item[{real, intent(in)}]{rshort\+\_\+tot,  }\item[{real, intent(in)}]{cosz,  }\item[{real, intent(out)}]{rshort\+\_\+diff }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceradiate__utils_a44a2b8e0cac500428df3b79c8c8f0313}\label{namespaceradiate__utils_a44a2b8e0cac500428df3b79c8c8f0313}} 
+\index{radiate\_utils@{radiate\_utils}!short\_bdown\_clearidx@{short\_bdown\_clearidx}}
+\index{short\_bdown\_clearidx@{short\_bdown\_clearidx}!radiate\_utils@{radiate\_utils}}
+\doxysubsubsection{\texorpdfstring{short\_bdown\_clearidx()}{short\_bdown\_clearidx()}}
+{\footnotesize\ttfamily subroutine radiate\+\_\+utils\+::short\+\_\+bdown\+\_\+clearidx (\begin{DoxyParamCaption}\item[{real, intent(in)}]{rshort\+\_\+full,  }\item[{real, intent(in)}]{cosz,  }\item[{real, intent(out)}]{par\+\_\+beam,  }\item[{real, intent(out)}]{par\+\_\+diff,  }\item[{real, intent(out)}]{nir\+\_\+beam,  }\item[{real, intent(out)}]{nir\+\_\+diff,  }\item[{real, intent(out)}]{rshort\+\_\+diff }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceradiate__utils_a64fb52ccdab90800c724aaee1d517e41}\label{namespaceradiate__utils_a64fb52ccdab90800c724aaee1d517e41}} 
+\index{radiate\_utils@{radiate\_utils}!short\_bdown\_weissnorman@{short\_bdown\_weissnorman}}
+\index{short\_bdown\_weissnorman@{short\_bdown\_weissnorman}!radiate\_utils@{radiate\_utils}}
+\doxysubsubsection{\texorpdfstring{short\_bdown\_weissnorman()}{short\_bdown\_weissnorman()}}
+{\footnotesize\ttfamily subroutine radiate\+\_\+utils\+::short\+\_\+bdown\+\_\+weissnorman (\begin{DoxyParamCaption}\item[{real, intent(in)}]{rshort\+\_\+full,  }\item[{real, intent(in)}]{atm\+\_\+prss,  }\item[{real, intent(in)}]{cosz,  }\item[{real, intent(out)}]{par\+\_\+beam,  }\item[{real, intent(out)}]{par\+\_\+diff,  }\item[{real, intent(out)}]{nir\+\_\+beam,  }\item[{real, intent(out)}]{nir\+\_\+diff,  }\item[{real, intent(out)}]{rshort\+\_\+diff }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceradiate__utils_ad5abe43cdad79c838aa25e4c9e3aaf91}\label{namespaceradiate__utils_ad5abe43cdad79c838aa25e4c9e3aaf91}} 
+\index{radiate\_utils@{radiate\_utils}!solar\_radiation\_breakdown@{solar\_radiation\_breakdown}}
+\index{solar\_radiation\_breakdown@{solar\_radiation\_breakdown}!radiate\_utils@{radiate\_utils}}
+\doxysubsubsection{\texorpdfstring{solar\_radiation\_breakdown()}{solar\_radiation\_breakdown()}}
+{\footnotesize\ttfamily subroutine radiate\+\_\+utils\+::solar\+\_\+radiation\+\_\+breakdown (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid,  }\item[{integer, intent(in)}]{ipy }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceradiate__utils_aa02a740ba0f8def8ca27c15c3bfc754d}\label{namespaceradiate__utils_aa02a740ba0f8def8ca27c15c3bfc754d}} 
+\index{radiate\_utils@{radiate\_utils}!update\_rad\_avg@{update\_rad\_avg}}
+\index{update\_rad\_avg@{update\_rad\_avg}!radiate\_utils@{radiate\_utils}}
+\doxysubsubsection{\texorpdfstring{update\_rad\_avg()}{update\_rad\_avg()}}
+{\footnotesize\ttfamily subroutine radiate\+\_\+utils\+::update\+\_\+rad\+\_\+avg (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structed__state__vars_1_1edtype}{edtype}}), target}]{cgrid }\end{DoxyParamCaption})}
+

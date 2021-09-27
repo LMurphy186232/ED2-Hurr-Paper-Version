@@ -1,0 +1,45 @@
+\hypertarget{budget__utils_8f90}{}\doxysection{budget\+\_\+utils.\+f90 File Reference}
+\label{budget__utils_8f90}\index{budget\_utils.f90@{budget\_utils.f90}}
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacebudget__utils}{budget\+\_\+utils}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacebudget__utils_af2d57a4e0f5db59d0ba6a65e1348de61}{budget\+\_\+utils\+::ed\+\_\+init\+\_\+budget}} (cgrid, initial)
+\item 
+subroutine \mbox{\hyperlink{namespacebudget__utils_ab49cf1c93767190a1b2ec01763fb6966}{budget\+\_\+utils\+::initial\+\_\+patch\+\_\+budget}} (csite, lsl, ipa)
+\item 
+subroutine \mbox{\hyperlink{namespacebudget__utils_a7bcd85146a39494cf9c729d13b5d24f2}{budget\+\_\+utils\+::reset\+\_\+cbudget\+\_\+committed}} (csite, ipa, check\+\_\+budget)
+\item 
+subroutine \mbox{\hyperlink{namespacebudget__utils_a886ab06baefc864303a6f8b69dd9325a}{budget\+\_\+utils\+::update\+\_\+cbudget\+\_\+committed}} (csite, ipa)
+\item 
+subroutine \mbox{\hyperlink{namespacebudget__utils_a48a8f226bf572e9d9272fb7eeefd1199}{budget\+\_\+utils\+::compute\+\_\+budget}} (csite, lsl, pcpg, qpcpg, rshort, rlong, ipa, wcurr\+\_\+loss2atm, ecurr\+\_\+netrad, ecurr\+\_\+loss2atm, co2curr\+\_\+loss2atm, wcurr\+\_\+loss2drainage, ecurr\+\_\+loss2drainage, wcurr\+\_\+loss2runoff, ecurr\+\_\+loss2runoff, co2curr\+\_\+denseffect, ecurr\+\_\+denseffect, wcurr\+\_\+denseffect, ecurr\+\_\+prsseffect, site\+\_\+area, cbudget\+\_\+nep, old\+\_\+can\+\_\+prss, old\+\_\+can\+\_\+enthalpy, old\+\_\+can\+\_\+temp, old\+\_\+can\+\_\+shv, old\+\_\+can\+\_\+co2, old\+\_\+can\+\_\+rhos, old\+\_\+can\+\_\+dmol)
+\item 
+real function \mbox{\hyperlink{namespacebudget__utils_a6910e7531481831c25b2ce9f543b8e8b}{budget\+\_\+utils\+::compute\+\_\+water\+\_\+storage}} (csite, lsl, ipa, pool)
+\item 
+subroutine \mbox{\hyperlink{namespacebudget__utils_a91dc846802d5485b6e57d9e3f2bf4ffd}{budget\+\_\+utils\+::compute\+\_\+netrad\+\_\+detail}} (csite, ipa, soil\+\_\+rshort\+\_\+net, soil\+\_\+rlong\+\_\+net, sfcw\+\_\+rshort\+\_\+net, sfcw\+\_\+rlong\+\_\+net, leaf\+\_\+rshort\+\_\+net, leaf\+\_\+rlong\+\_\+net, wood\+\_\+rshort\+\_\+net, wood\+\_\+rlong\+\_\+net)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacebudget__utils_a5866b9dbe2ba1c378cf5069ebd09674d}{budget\+\_\+utils\+::compute\+\_\+netrad8}} (csite, ipa)
+\item 
+real function \mbox{\hyperlink{namespacebudget__utils_a4bf8fb1787cd267703fc7b8f6ab3a260}{budget\+\_\+utils\+::compute\+\_\+enthalpy\+\_\+storage}} (csite, lsl, ipa, pool)
+\item 
+subroutine \mbox{\hyperlink{namespacebudget__utils_a2499143fd9dbb73fb29d30705867a670}{budget\+\_\+utils\+::sum\+\_\+plant\+\_\+cfluxes}} (csite, ipa, gpp, leaf\+\_\+resp, root\+\_\+resp, stem\+\_\+resp, storage\+\_\+resp, growth\+\_\+resp)
+\item 
+real function \mbox{\hyperlink{namespacebudget__utils_aa1c4f8466010b1673f2914f1bfe9b6ee}{budget\+\_\+utils\+::compute\+\_\+co2\+\_\+storage}} (csite, ipa)
+\item 
+real function \mbox{\hyperlink{namespacebudget__utils_aae1acee2098d96865b520dcbc6ada434}{budget\+\_\+utils\+::compute\+\_\+carbon\+\_\+storage}} (csite, ipa, pool)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacebudget__utils_afecbf45a83fa404977fa6502764f7331}{budget\+\_\+utils\+::ddens\+\_\+dt\+\_\+effect8}} (depth, old\+\_\+dens, now\+\_\+dens, now\+\_\+prop)
+\item 
+real(kind=8) function \mbox{\hyperlink{namespacebudget__utils_a7e8204b1ef31c8b9e18014198f18be48}{budget\+\_\+utils\+::find\+\_\+prss\+\_\+effect8}} (depth, old\+\_\+dens, now\+\_\+dens, old\+\_\+enthalpy, now\+\_\+enthalpy)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacebudget__utils_a76a7cbebfcba271be070106982dad2a7}{budget\+\_\+utils\+::tol\+\_\+subday\+\_\+budget}}
+\item 
+real(kind=4) \mbox{\hyperlink{namespacebudget__utils_a9493ccfa0b755832130b736b1f7f3bd1}{budget\+\_\+utils\+::tol\+\_\+carbon\+\_\+budget}}
+\end{DoxyCompactItemize}
