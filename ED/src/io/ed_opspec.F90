@@ -2277,6 +2277,13 @@ end do
       call opspec_fatal(reason,'opspec_misc')
       ifaterr = ifaterr +1
    end if
+
+   !---- Cannot use hurricanes when BIGLEAF is true ---------------------------------------!
+   if (include_hurricanes > 0 .and. ibigleaf == 1) then
+     write (reason,fmt='(a,1x)') 'Cannot use hurricanes if ED2 is in BIGLEAF mode.'
+     call opspec_fatal(reason,'opspec_misc')
+     ifaterr = ifaterr +1
+   end if
    !---------------------------------------------------------------------------------------!
 
 
