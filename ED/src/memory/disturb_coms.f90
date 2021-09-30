@@ -336,6 +336,7 @@ module disturb_coms
        !> Between 0 and 1; 1 is a max severity storm
        real    :: severity
    end type hurrtime
+
    !> Filename containing the hurricane list
    character(len=str_len) :: hurricane_db
 
@@ -344,6 +345,9 @@ module disturb_coms
 
    !> Total length of the hurricane schedule
    integer :: hurricane_db_list_len
+
+   !> Filename of detailed hurricane report, if the user asks for it
+   character(len=str_len) :: hurricane_report
    !=======================================================================================!
    !=======================================================================================!
 

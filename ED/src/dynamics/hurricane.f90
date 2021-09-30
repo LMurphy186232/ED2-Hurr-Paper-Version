@@ -17,7 +17,13 @@
 !>
 !> Hurricanes cannot be used if ED2 is in bigleaf mode.
 !>
-!> Possible future work: randomly generate a storm regime.
+!> If IDETAILED = 64, indicating disturbance details are to be written, this will write a
+!> detailed file of storm activity called "hurricane_report.txt"
+!>
+!> Possible future work: randomly generate a storm regime; further decouple biomass pools
+!> to allow preferential removal of, say, leaves (right now doing so causes the cohorts
+!> to fail budget checks in structural growth, since part of the check is that the
+!> pools are on allometry).
 !> \author Lora Murphy, September 2021
 !> \todo Parameter copying and passing in MPI situations
 !> \todo Figure out how to deal with lianas
@@ -35,14 +41,16 @@ module hurricane
    !> \param cgrid Main grid.
    !---------------------------------------------------------------------------------------!
    subroutine apply_hurricane(cgrid)
-      use disturb_coms        , only : include_hurricanes         &
-                                     , hurricane_db_list          &
-                                     , hurricane_db_list_len
+     use ed_max_dims          , only : n_pft
+      use disturb_coms        , only : include_hurricanes          &
+                                     , hurricane_db_list           &
+                                     , hurricane_db_list_len       &
+                                     , hurricane_report
       use ed_misc_coms        , only : current_time
-      use ed_state_vars       , only : edtype                     & ! structure
-                                     , polygontype                & ! structure
-                                     , sitetype                   & ! structure
-                                     , patchtype                  ! ! structure
+      use ed_state_vars       , only : edtype                      & ! structure
+                                     , polygontype                 & ! structure
+                                     , sitetype                    & ! structure
+                                     , patchtype                   ! ! structure
       use pft_coms            , only : c2n_leaf                    & ! intent(in)
                                      , c2n_storage                 & ! intent(in)
                                      , c2n_stem                    & ! intent(in)
@@ -62,11 +70,16 @@ module hurricane
       use plant_hydro         , only : rwc2tw                      & ! subroutine
                                      , twi2twe                     ! ! subroutine
       use detailed_coms       , only : idetailed
+      use allometry           , only : size2bd                     &
+                                     , size2bl
 
       implicit none
       !----- Arguments. -------------------------------------------------------------------!
       type(edtype)                    , target      :: cgrid
       !----- Local variables. -------------------------------------------------------------!
+      real, dimension(n_pft)        :: agb_removed      ! Amount of AGB removed per PFT
+      real, dimension(n_pft)        :: nplant_removed   ! Amount of NPLANT removed per PFT
+
       type(polygontype), pointer    :: cpoly
       type(sitetype)   , pointer    :: csite
       type(patchtype)  , pointer    :: cpatch
@@ -94,15 +107,15 @@ module hurricane
       !real                          :: pat_mortality
       !real                          :: pat_carbon_miss
       !real                          :: carbon_miss
-      !real                          :: bleaf_in
-      !real                          :: broot_in
-      !real                          :: bsapwooda_in
-      !real                          :: bsapwoodb_in
-      !real                          :: bbarka_in
-      !real                          :: bbarkb_in
-      !real                          :: balive_in
-      !real                          :: bdeada_in
-      !real                          :: bdeadb_in
+      real                          :: bleaf_in
+      real                          :: broot_in
+      real                          :: bsapwooda_in
+      real                          :: bsapwoodb_in
+      real                          :: bbarka_in
+      real                          :: bbarkb_in
+      real                          :: balive_in
+      real                          :: bdeada_in
+      real                          :: bdeadb_in
       !real                          :: bevery_in
       !real                          :: hite_in
       !real                          :: dbh_in
@@ -132,12 +145,12 @@ module hurricane
       !real                          :: f_bdeadb
       !real                          :: f_growth
       !real                          :: f_bstorage
-      real                          :: a_bfast_mort_litter
-      real                          :: b_bfast_mort_litter
-      real                          :: a_bstruct_mort_litter
-      real                          :: b_bstruct_mort_litter
-      real                          :: a_bstorage_mort_litter
-      real                          :: b_bstorage_mort_litter
+      real                          :: a_bfast_litter
+      real                          :: b_bfast_litter
+      real                          :: a_bstruct_litter
+      real                          :: b_bstruct_litter
+      real                          :: a_bstorage_litter
+      real                          :: b_bstorage_litter
       real                          :: a_bfast
       real                          :: b_bfast
       real                          :: a_bstruct
@@ -145,7 +158,7 @@ module hurricane
       real                          :: a_bstorage
       real                          :: b_bstorage
       !real                          :: maxh !< maximum patch height
-      real                          :: mort_litter
+      !real                          :: mort_litter
       !real                          :: bseeds_mort_litter
       !real                          :: net_seed_N_uptake
       !real                          :: net_stem_N_uptake
@@ -157,6 +170,7 @@ module hurricane
       real                          :: old_wood_water_im2
       real                          :: nplant_in
       real                          :: nplant_loss
+      real                          :: bleaf_loss
       real                          :: severity
       logical                       :: hurricane_time
       logical                       :: print_detailed
@@ -180,7 +194,12 @@ module hurricane
       if (.not.hurricane_time) return
       !------------------------------------------------------------------------------------!
 
+      !------------------------------------------------------------------------------------!
+      !    Get ready: announce the hurricane, empty the reporting variables                !
+      !------------------------------------------------------------------------------------!
       write (unit=*,fmt='(a,1x,es12.5)')  'Hurricane occurring of severity ', severity
+      agb_removed    = 0
+      nplant_removed = 0
 
       !------------------------------------------------------------------------------------!
       !    Loop over everything down to the cohort level.                                  !
@@ -196,8 +215,26 @@ module hurricane
 
                cohortloop: do ico = 1,cpatch%ncohorts
 
+                  !----- Assigning an alias for PFT type. ---------------------------------!
+                  ipft    = cpatch%pft(ico)
+
                   !------------------------------------------------------------------------!
-                  !      Save original heat capacitiy and water content for both leaves    !
+                  !      Save original cohort biomass fractions. We will use these         !
+                  ! later to determine how much biomass was removed from where, so we      !
+                  ! can correctly assign litter                                            !
+                  !------------------------------------------------------------------------!
+                  !balive_in       = cpatch%balive          (ico)
+                  bdeada_in       = cpatch%bdeada          (ico)
+                  bdeadb_in       = cpatch%bdeadb          (ico)
+                  bleaf_in        = cpatch%bleaf           (ico)
+                  broot_in        = cpatch%broot           (ico)
+                  bsapwooda_in    = cpatch%bsapwooda       (ico)
+                  bsapwoodb_in    = cpatch%bsapwoodb       (ico)
+                  bbarka_in       = cpatch%bbarka          (ico)
+                  bbarkb_in       = cpatch%bbarkb          (ico)
+
+                  !------------------------------------------------------------------------!
+                  !      Save original heat capacity and water content for both leaves     !
                   ! and wood.  These are used to track changes in energy and water         !
                   ! storage due to vegetation dynamics.                                    !
                   !------------------------------------------------------------------------!
@@ -209,12 +246,54 @@ module hurricane
                   old_wood_water_im2 = cpatch%wood_water_im2(ico)
                   !------------------------------------------------------------------------!
 
+
                   !------------------------------------------------------------------------!
                   !       Storm mortality                                                  !
                   !------------------------------------------------------------------------!
                   nplant_in = cpatch%nplant(ico)
-                  cpatch%nplant(ico)         = cpatch%nplant(ico) * 0.9
+                  cpatch%nplant(ico) = cpatch%nplant(ico) * 0.9
                   nplant_loss = nplant_in - cpatch%nplant(ico)
+                  !------------------------------------------------------------------------!
+
+
+
+
+                  !------------------------------------------------------------------------!
+                  !       Storm damage                                                     !
+                  ! We reduce the height of the cohort in an amount corresponding to the   !
+                  ! level of damage this storm inflicts. We track the amount of biomass    !
+                  ! lost as a result so we can send it to the appropriate litter pools.    !
+                  ! This assumes that the biomass pools continue to track size             !
+                  !------------------------------------------------------------------------!
+                  hite_in = cpatch%hite(ico)
+                  cpatch%hite(ico) = cpatch%hite(ico) * 0.9
+
+                  !----- Determine the amount of leaf biomass lost ------------------------!
+                  bleaf_loss = bleaf_in - size2bl(cpatch%dbh(ico), cpatch%hite(ico),       &
+                                                  cpatch%sla(ico), ipft)
+
+                  !----- Determine the amount of above and belowground structural lost ----!
+                  new_bdead = size2bd(cpatch%dbh(ico), cpatch%hite(ico), ipft)
+                  bdeada_loss = bdeada_in - (agf_bs(ipft) * new_bdead)
+                  bdeadb_loss = bdeadb_in - ((1.0 - agf_bs(ipft)) * new_bdead)
+
+                  !----- Determine the amount of bark lost --------------------------------!
+
+
+                  !----- Determine the amount of roots lost -------------------------------!
+
+                  !----- Determine the amount of sapwood lost -----------------------------!
+                  ! Won't change actually, since it's based on DBH
+
+                  !------------------------------------------------------------------------!
+
+                  !------------------------------------------------------------------------!
+                  !       Update our reporting variables                                   !
+                  !------------------------------------------------------------------------!
+                  nplant_removed(ipft) = nplant_removed(ipft) +                            &
+                                         (nplant_loss * csite%area(ipa))
+                  agb_removed(ipft) = agb_removed(ipft) +                                    &
+                                         (cpatch%agb(ico) * nplant_loss * csite%area(ipa))
 
                   !------------------------------------------------------------------------!
                   !     Add storm-killed trees to litter                                   !
@@ -242,45 +321,45 @@ module hurricane
                   !------------------------------------------------------------------------!
 
                   !----- Multiply by mortality to get litter inputs -----------------------!
-                  a_bfast_mort_litter    = a_bfast    * nplant_loss
-                  b_bfast_mort_litter    = b_bfast    * nplant_loss
-                  a_bstruct_mort_litter  = a_bstruct  * nplant_loss
-                  b_bstruct_mort_litter  = b_bstruct  * nplant_loss
-                  a_bstorage_mort_litter = a_bstorage * nplant_loss
-                  b_bstorage_mort_litter = b_bstorage * nplant_loss
-                  mort_litter            = a_bfast_mort_litter    + b_bfast_mort_litter    &
-                                         + a_bstruct_mort_litter  + b_bstruct_mort_litter  &
-                                         + a_bstorage_mort_litter + b_bstorage_mort_litter
+                  a_bfast_litter    = a_bfast    * nplant_loss
+                  b_bfast_litter    = b_bfast    * nplant_loss
+                  a_bstruct_litter  = a_bstruct  * nplant_loss
+                  b_bstruct_litter  = b_bstruct  * nplant_loss
+                  a_bstorage_litter = a_bstorage * nplant_loss
+                  b_bstorage_litter = b_bstorage * nplant_loss
 
+                  !----- Damage removed biomass -------------------------------------------!
+                  a_bfast_litter   = a_bfast_litter +                                      &
+                                     bleaf_loss * f_labile_leaf(ipft)
+                  a_bstruct_litter = a_bstruct_litter +                                    &
+                                     bleaf_loss * (1.0 - f_labile_leaf(ipft))
 
                   !------------------------------------------------------------------------!
                   !     Finalize litter inputs.                                            !
                   !------------------------------------------------------------------------!
-                  csite%fgc_in (ipa) = csite%fgc_in(ipa) + a_bfast_mort_litter             &
-                                     + a_bstorage_mort_litter
-                  csite%fsc_in (ipa) = csite%fsc_in(ipa) + b_bfast_mort_litter             &
-                                     + b_bstorage_mort_litter
+                  csite%fgc_in (ipa) = csite%fgc_in(ipa) + a_bfast_litter                  &
+                                     + a_bstorage_litter
+                  csite%fsc_in (ipa) = csite%fsc_in(ipa) + b_bfast_litter                  &
+                                     + b_bstorage_litter
                   csite%fgn_in (ipa) = csite%fgn_in(ipa)                                   &
-                                     + a_bfast_mort_litter    / c2n_leaf   (ipft)          &
-                                     + a_bstorage_mort_litter / c2n_storage
+                                     + a_bfast_litter    / c2n_leaf   (ipft)               &
+                                     + a_bstorage_litter / c2n_storage
                   csite%fsn_in (ipa) = csite%fsn_in(ipa)                                   &
-                                     + b_bfast_mort_litter    / c2n_leaf   (ipft)          &
-                                     + b_bstorage_mort_litter / c2n_storage
-                  csite%stgc_in(ipa) = csite%stgc_in(ipa) + a_bstruct_mort_litter
-                  csite%stsc_in(ipa) = csite%stsc_in(ipa) + b_bstruct_mort_litter
+                                     + b_bfast_litter    / c2n_leaf   (ipft)               &
+                                     + b_bstorage_litter / c2n_storage
+                  csite%stgc_in(ipa) = csite%stgc_in(ipa) + a_bstruct_litter
+                  csite%stsc_in(ipa) = csite%stsc_in(ipa) + b_bstruct_litter
                   csite%stgl_in(ipa) = csite%stgl_in(ipa)                                  &
-                                     + a_bstruct_mort_litter * l2n_stem / c2n_stem(ipft)
+                                     + a_bstruct_litter * l2n_stem / c2n_stem(ipft)
                   csite%stsl_in(ipa) = csite%stsl_in(ipa)                                  &
-                                     + b_bstruct_mort_litter * l2n_stem / c2n_stem(ipft)
+                                     + b_bstruct_litter * l2n_stem / c2n_stem(ipft)
                   csite%stgn_in(ipa) = csite%stgn_in(ipa)                                  &
-                                     + a_bstruct_mort_litter  / c2n_stem   (ipft)
+                                     + a_bstruct_litter  / c2n_stem   (ipft)
                   csite%stsn_in(ipa) = csite%stsn_in(ipa)                                  &
-                                     + b_bstruct_mort_litter  / c2n_stem   (ipft)
+                                     + b_bstruct_litter  / c2n_stem   (ipft)
                   !------------------------------------------------------------------------!
 
                   ! Terminate cohorts
-
-                  ! Patch carbon check
 
                   !------------------------------------------------------------------------!
                   !  Update the heat capacity and the vegetation internal energy, again,   !
@@ -315,6 +394,26 @@ module hurricane
       !       Find out whether to print detailed information on screen.                    !
       !------------------------------------------------------------------------------------!
       print_detailed = btest(idetailed,6)
+      if (print_detailed) then
+        open (unit=79,file=trim(hurricane_report),form='formatted',access='append'          &
+             ,status='old')
+
+        write (unit=79,fmt='(a,i4,a,i4,a,f12.5)')  'Hurricane occurring in '          &
+             ,current_time%month, '/', current_time%year, ' of severity ', severity
+        write (unit=79,fmt='(a)') 'NPLANT removed:'
+        do ipft=1,n_pft
+           if (nplant_removed(ipft) > 0) then
+              write (unit=79,fmt='(a,i4,a,es12.5)') 'PFT ', ipft, ': ', nplant_removed(ipft)
+           end if
+        end do
+        write (unit=79,fmt='(a,1x)') 'AGB removed:'
+        do ipft=1,n_pft
+           if (agb_removed(ipft) > 0) then
+              write (unit=79,fmt='(a,i4,a,es12.5)') 'PFT ', ipft, ': ', agb_removed(ipft)
+           end if
+        end do
+        close(unit=79,status='keep')
+      end if
       !------------------------------------------------------------------------------------!
 
       return
@@ -334,11 +433,13 @@ module hurricane
    !> \param hurricane_db Name of hurricane schedule.
    !---------------------------------------------------------------------------------------!
    subroutine read_hurricane_db()
-      use ed_max_dims           , only : str_len                 &
-                                       , max_hurricanes
-      use disturb_coms          , only : hurricane_db            &
-                                       , hurricane_db_list       &
-                                       , hurricane_db_list_len
+      use ed_max_dims         , only : str_len                 &
+                                     , max_hurricanes
+      use disturb_coms        , only : hurricane_db            &
+                                     , hurricane_db_list       &
+                                     , hurricane_db_list_len   &
+                                     , hurricane_report
+      use detailed_coms       , only : idetailed
       implicit none
 
       !----- Local variables. -------------------------------------------------------------!
@@ -445,9 +546,18 @@ module hurricane
       !      If we had too many observations, warn the user                                !
       !------------------------------------------------------------------------------------!
       if (hurricane_db_list_len .eq. max_hurricanes) then
-      write (unit=*,fmt='(a,i4,a)') &
+         write (unit=*,fmt='(a,i4,a)') &
                'Too many entries in input HURRICANE_DB. Using only the first ', max_hurricanes, '...'
-end if
+      end if
+      !------------------------------------------------------------------------------------!
+      !      If detailed output is requested, set up the hurricane report file             !
+      !------------------------------------------------------------------------------------!
+      hurricane_report = 'hurricane_report.txt'
+      if (btest(idetailed,6)) then
+        open  (unit=79,file=trim(hurricane_report),form='formatted',status='replace')
+        write (unit=79,fmt='(a,1x)') 'Hurricane report'
+        close (unit=79,status='keep')
+      end if
 
 end subroutine read_hurricane_db
 !=======================================================================================!
