@@ -244,7 +244,7 @@ module hurricane
                   old_wood_water     = cpatch%wood_water    (ico)
                   old_leaf_water_im2 = cpatch%leaf_water_im2(ico)
                   old_wood_water_im2 = cpatch%wood_water_im2(ico)
-                  !------------------------------------------------------------------------!
+
 
 
                   !------------------------------------------------------------------------!
@@ -261,45 +261,21 @@ module hurricane
                   !------------------------------------------------------------------------!
                   !       Storm damage                                                     !
                   ! We reduce the height of the cohort in an amount corresponding to the   !
-                  ! level of damage this storm inflicts. We track the amount of biomass    !
-                  ! lost as a result so we can send it to the appropriate litter pools.    !
-                  ! This assumes that the biomass pools continue to track size             !
+                  ! level of damage this storm inflicts.
                   !------------------------------------------------------------------------!
                   hite_in = cpatch%hite(ico)
                   cpatch%hite(ico) = cpatch%hite(ico) * 0.9
 
-                  !----- Determine the amount of leaf biomass lost ------------------------!
-                  bleaf_loss = bleaf_in - size2bl(cpatch%dbh(ico), cpatch%hite(ico),       &
-                                                  cpatch%sla(ico), ipft)
-
-                  !----- Determine the amount of above and belowground structural lost ----!
-                  new_bdead = size2bd(cpatch%dbh(ico), cpatch%hite(ico), ipft)
-                  bdeada_loss = bdeada_in - (agf_bs(ipft) * new_bdead)
-                  bdeadb_loss = bdeadb_in - ((1.0 - agf_bs(ipft)) * new_bdead)
-
-                  !----- Determine the amount of bark lost --------------------------------!
-
-
-                  !----- Determine the amount of roots lost -------------------------------!
-
-                  !----- Determine the amount of sapwood lost -----------------------------!
-                  ! Won't change actually, since it's based on DBH
-
+                  !----- Have the cohort update itself ------------------------------------!
+                  call update_cohort_derived_props(cpatch,ico,cpoly%lsl(isi),.false.       &
+                                                  ,cpoly%llspan_toc(ipft,isi)              &
+                                                  ,cpoly%vm_bar_toc(ipft,isi)              &
+                                                  ,cpoly%rd_bar_toc(ipft,isi)              &
+                                                  ,cpoly%sla_toc   (ipft,isi) )
                   !------------------------------------------------------------------------!
 
                   !------------------------------------------------------------------------!
-                  !       Update our reporting variables                                   !
-                  !------------------------------------------------------------------------!
-                  nplant_removed(ipft) = nplant_removed(ipft) +                            &
-                                         (nplant_loss * csite%area(ipa))
-                  agb_removed(ipft) = agb_removed(ipft) +                                    &
-                                         (cpatch%agb(ico) * nplant_loss * csite%area(ipa))
-
-                  !------------------------------------------------------------------------!
-                  !     Add storm-killed trees to litter                                   !
-                  ! Use approach from structural growth                                    !
-                  !------------------------------------------------------------------------!
-                  !----- Split biomass components that are labile or structural. ----------!
+                  !      Split biomass components that are labile or structural. ----------!
                   a_bfast    = f_labile_leaf(ipft) * cpatch%bleaf(ico)                     &
                              + f_labile_stem(ipft)                                         &
                              * ( cpatch%bsapwooda(ico) + cpatch%bbarka(ico)                &
@@ -319,6 +295,57 @@ module hurricane
                   a_bstorage =        agf_bs(ipft)  * cpatch%bstorage(ico)
                   b_bstorage = (1.0 - agf_bs(ipft)) * cpatch%bstorage(ico)
                   !------------------------------------------------------------------------!
+
+
+                  !------------------------------------------------------------------------!
+                  !      Get the amount of each biomass fraction lost, to send to litter   !
+                  !------------------------------------------------------------------------!
+
+                  ! LEM: This seems like it wouldn't add up...
+
+                  !----- Amount lost due to storm damage - original amount minus current --!
+                  bleaf_loss     = bleaf_in     - cpatch%bleaf    (ico)
+                  bdeada_loss    = bdeada_in    - cpatch%bdeada   (ico)
+                  bdeadb_loss    = bdeadb_in    - cpatch%bdeadb   (ico)
+                  broot_loss     = broot_in     - cpatch%broot    (ico)
+                  bbarka_loss    = bbarka_in    - cpatch%bbarka   (ico)
+                  bbarkb_loss    = bbarkb_in    - cpatch%bbarkb   (ico)
+                  bsapwooda_loss = bsapwooda_in - cpatch%bsapwooda(ico)
+                  bsapwoodb_loss = bsapwoodb_in - cpatch%bsapwoodb(ico)
+
+                  !----- Amount lost to storm mortality -----------------------------------!
+                  bleaf_loss     = bleaf_loss     + (bleaf_in     * nplant_loss)
+                  bdeada_loss    = bdeada_loss    + (bdeada_in    * nplant_loss)
+                  bdeadb_loss    = bdeadb_loss    + (bdeadb_in    * nplant_loss)
+                  broot_loss     = broot_loss     + (broot_in     * nplant_loss)
+                  bbarka_loss    = bbarka_loss    + (bbarka_in    * nplant_loss)
+                  bbarkb_loss    = bbarkb_loss    + (bbarkb_in    * nplant_loss)
+                  bsapwooda_loss = bsapwooda_loss + (bsapwooda_in * nplant_loss)
+                  bsapwoodb_loss = bsapwoodb_loss + (bsapwoodb_in * nplant_loss)
+
+                  !----- Determine the amount of above and belowground structural lost ----!
+                  !new_bdead = size2bd(cpatch%dbh(ico), cpatch%hite(ico), ipft)
+                  !bdeada_loss = bdeada_in - (agf_bs(ipft) * new_bdead)
+                  !bdeadb_loss = bdeadb_in - ((1.0 - agf_bs(ipft)) * new_bdead)
+
+                  !------------------------------------------------------------------------!
+
+                  !------------------------------------------------------------------------!
+                  !       Update our reporting variables                                   !
+                  ! LEM: I feel like this isn't right. Adjust loss for nplant?
+                  !------------------------------------------------------------------------!
+                  nplant_removed(ipft) = nplant_removed(ipft) +                            &
+                                         (nplant_loss * csite%area(ipa))
+                  agb_removed(ipft)    = agb_removed(ipft)                                 &
+                                       + ((cpatch%agb(ico) * nplant_loss)                  &
+                                       + (bleaf_loss + bdeada_loss + bbarka_loss
+                                       +  bsapwooda_loss)) * csite%area(ipa)
+
+                  !------------------------------------------------------------------------!
+                  !     Add storm-killed trees to litter                                   !
+                  ! Use approach from structural growth                                    !
+                  !------------------------------------------------------------------------!
+
 
                   !----- Multiply by mortality to get litter inputs -----------------------!
                   a_bfast_litter    = a_bfast    * nplant_loss
