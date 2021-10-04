@@ -46,6 +46,7 @@ module hurricane
                                      , hurricane_db_list           &
                                      , hurricane_db_list_len       &
                                      , hurricane_report
+      use update_derived_utils, only : update_cohort_derived_props
       use ed_misc_coms        , only : current_time
       use ed_state_vars       , only : edtype                      & ! structure
                                      , polygontype                 & ! structure
@@ -55,13 +56,13 @@ module hurricane
                                      , c2n_storage                 & ! intent(in)
                                      , c2n_stem                    & ! intent(in)
                                      , l2n_stem                    & ! intent(in)
+                                     , qsw                         &
+                                     , qbark                       &
                                     !, negligible_nplant           & ! intent(in)
-                                    !, is_grass                    & ! intent(in)
+                                     , is_grass                    & ! intent(in)
                                      , agf_bs                      & ! intent(in)
                                     !, q                           & ! intent(in)
-                                    !, storage_reflush_times       & ! intent(in)
                                     !, is_liana                    & ! intent(in)
-                                    !, cbr_severe_stress           & ! intent(in)
                                     !, h_edge                      & ! intent(in)
                                      , f_labile_leaf               & ! intent(in)
                                      , f_labile_stem               ! ! intent(in)
@@ -71,7 +72,8 @@ module hurricane
                                      , twi2twe                     ! ! subroutine
       use detailed_coms       , only : idetailed
       use allometry           , only : size2bd                     &
-                                     , size2bl
+                                     , size2bl                     &
+                                     , h2dbh
 
       implicit none
       !----- Arguments. -------------------------------------------------------------------!
@@ -89,24 +91,6 @@ module hurricane
       integer                       :: ico
       integer                       :: ihu
       integer                       :: ipft
-      !integer                       :: prev_month
-      !integer                       :: prev_year
-      !integer                       :: prev_ndays
-      !integer                       :: imonth
-      !integer                       :: phenstatus_in
-      !integer                       :: krdepth_in
-      !real                          :: tor_fact
-      !real                          :: fgc_in_in
-      !real                          :: fsc_in_in
-      !real                          :: stgc_in_in
-      !real                          :: stsc_in_in
-      !real                          :: nplant_loss
-      !real                          :: pat_balive_in
-      !real                          :: pat_bdead_in
-      !real                          :: pat_bstorage_in
-      !real                          :: pat_mortality
-      !real                          :: pat_carbon_miss
-      !real                          :: carbon_miss
       real                          :: bleaf_in
       real                          :: broot_in
       real                          :: bsapwooda_in
@@ -116,52 +100,23 @@ module hurricane
       real                          :: balive_in
       real                          :: bdeada_in
       real                          :: bdeadb_in
-      !real                          :: bevery_in
-      !real                          :: hite_in
-      !real                          :: dbh_in
-      !real                          :: nplant_in
-      !real                          :: bstorage_in
-      !real                          :: bstorage_reserve
-      !real                          :: agb_in
-      !real                          :: lai_in
-      !real                          :: wai_in
-      !real                          :: cai_in
-      !real                          :: ba_in
-      !real                          :: bag_in
-      !real                          :: bam_in
-      !real                          :: vm_bar_in
-      !real                          :: sla_in
-      !real                          :: psi_open_in
-      !real                          :: psi_closed_in
-      !real                          :: cb_act
-      !real                          :: cb_lightmax
-      !real                          :: cb_moistmax
-      !real                          :: cb_mlmax
-      !real                          :: cbr_light
-      !real                          :: cbr_moist
-      !real                          :: cbr_ml
-      !real                          :: f_bseeds
-      !real                          :: f_bdeada
-      !real                          :: f_bdeadb
-      !real                          :: f_growth
-      !real                          :: f_bstorage
-      real                          :: a_bfast_litter
-      real                          :: b_bfast_litter
-      real                          :: a_bstruct_litter
-      real                          :: b_bstruct_litter
-      real                          :: a_bstorage_litter
-      real                          :: b_bstorage_litter
+      real                          :: bstorage_in
+      real                          :: bleaf_loss
+      real                          :: broot_loss
+      real                          :: bsapwooda_loss
+      real                          :: bsapwoodb_loss
+      real                          :: bbarka_loss
+      real                          :: bbarkb_loss
+      real                          :: balive_loss
+      real                          :: bdeada_loss
+      real                          :: bdeadb_loss
+      real                          :: bstorage_loss
       real                          :: a_bfast
       real                          :: b_bfast
       real                          :: a_bstruct
       real                          :: b_bstruct
       real                          :: a_bstorage
       real                          :: b_bstorage
-      !real                          :: maxh !< maximum patch height
-      !real                          :: mort_litter
-      !real                          :: bseeds_mort_litter
-      !real                          :: net_seed_N_uptake
-      !real                          :: net_stem_N_uptake
       real                          :: old_leaf_hcap
       real                          :: old_wood_hcap
       real                          :: old_leaf_water
@@ -170,7 +125,7 @@ module hurricane
       real                          :: old_wood_water_im2
       real                          :: nplant_in
       real                          :: nplant_loss
-      real                          :: bleaf_loss
+      real                          :: dbh_aim
       real                          :: severity
       logical                       :: hurricane_time
       logical                       :: print_detailed
@@ -218,197 +173,193 @@ module hurricane
                   !----- Assigning an alias for PFT type. ---------------------------------!
                   ipft    = cpatch%pft(ico)
 
-                  !------------------------------------------------------------------------!
-                  !      Save original cohort biomass fractions. We will use these         !
-                  ! later to determine how much biomass was removed from where, so we      !
-                  ! can correctly assign litter                                            !
-                  !------------------------------------------------------------------------!
-                  !balive_in       = cpatch%balive          (ico)
-                  bdeada_in       = cpatch%bdeada          (ico)
-                  bdeadb_in       = cpatch%bdeadb          (ico)
-                  bleaf_in        = cpatch%bleaf           (ico)
-                  broot_in        = cpatch%broot           (ico)
-                  bsapwooda_in    = cpatch%bsapwooda       (ico)
-                  bsapwoodb_in    = cpatch%bsapwoodb       (ico)
-                  bbarka_in       = cpatch%bbarka          (ico)
-                  bbarkb_in       = cpatch%bbarkb          (ico)
-
-                  !------------------------------------------------------------------------!
-                  !      Save original heat capacity and water content for both leaves     !
-                  ! and wood.  These are used to track changes in energy and water         !
-                  ! storage due to vegetation dynamics.                                    !
-                  !------------------------------------------------------------------------!
-                  old_leaf_hcap      = cpatch%leaf_hcap     (ico)
-                  old_wood_hcap      = cpatch%wood_hcap     (ico)
-                  old_leaf_water     = cpatch%leaf_water    (ico)
-                  old_wood_water     = cpatch%wood_water    (ico)
-                  old_leaf_water_im2 = cpatch%leaf_water_im2(ico)
-                  old_wood_water_im2 = cpatch%wood_water_im2(ico)
+                  !----- Hurricanes don't affect grass ------------------------------------!
+                  if (.not.is_grass(ipft)) then
 
 
+                     !---------------------------------------------------------------------!
+                     !      Save original cohort biomass fractions. We will use these      !
+                     ! later to determine how much biomass was removed from where, so we   !
+                     ! can correctly assign litter                                         !
+                     !---------------------------------------------------------------------!
+                     !balive_in       = cpatch%balive          (ico)
+                     bdeada_in       = cpatch%bdeada          (ico)
+                     bdeadb_in       = cpatch%bdeadb          (ico)
+                     bleaf_in        = cpatch%bleaf           (ico)
+                     broot_in        = cpatch%broot           (ico)
+                     bsapwooda_in    = cpatch%bsapwooda       (ico)
+                     bsapwoodb_in    = cpatch%bsapwoodb       (ico)
+                     bbarka_in       = cpatch%bbarka          (ico)
+                     bbarkb_in       = cpatch%bbarkb          (ico)
+                     bstorage_in     = cpatch%bstorage        (ico)
 
-                  !------------------------------------------------------------------------!
-                  !       Storm mortality                                                  !
-                  !------------------------------------------------------------------------!
-                  nplant_in = cpatch%nplant(ico)
-                  cpatch%nplant(ico) = cpatch%nplant(ico) * 0.9
-                  nplant_loss = nplant_in - cpatch%nplant(ico)
-                  !------------------------------------------------------------------------!
+                     !---------------------------------------------------------------------!
+                     !      Save original heat capacity and water content for both leaves  !
+                     ! and wood.  These are used to track changes in energy and water      !
+                     ! storage due to vegetation dynamics.                                 !
+                     !---------------------------------------------------------------------!
+                     old_leaf_hcap      = cpatch%leaf_hcap     (ico)
+                     old_wood_hcap      = cpatch%wood_hcap     (ico)
+                     old_leaf_water     = cpatch%leaf_water    (ico)
+                     old_wood_water     = cpatch%wood_water    (ico)
+                     old_leaf_water_im2 = cpatch%leaf_water_im2(ico)
+                     old_wood_water_im2 = cpatch%wood_water_im2(ico)
 
 
 
-
-                  !------------------------------------------------------------------------!
-                  !       Storm damage                                                     !
-                  ! We reduce the height of the cohort in an amount corresponding to the   !
-                  ! level of damage this storm inflicts.
-                  !------------------------------------------------------------------------!
-                  hite_in = cpatch%hite(ico)
-                  cpatch%hite(ico) = cpatch%hite(ico) * 0.9
-
-                  !----- Have the cohort update itself ------------------------------------!
-                  call update_cohort_derived_props(cpatch,ico,cpoly%lsl(isi),.false.       &
-                                                  ,cpoly%llspan_toc(ipft,isi)              &
-                                                  ,cpoly%vm_bar_toc(ipft,isi)              &
-                                                  ,cpoly%rd_bar_toc(ipft,isi)              &
-                                                  ,cpoly%sla_toc   (ipft,isi) )
-                  !------------------------------------------------------------------------!
-
-                  !------------------------------------------------------------------------!
-                  !      Split biomass components that are labile or structural. ----------!
-                  a_bfast    = f_labile_leaf(ipft) * cpatch%bleaf(ico)                     &
-                             + f_labile_stem(ipft)                                         &
-                             * ( cpatch%bsapwooda(ico) + cpatch%bbarka(ico)                &
-                             + cpatch%bdeada   (ico) )
-                  b_bfast    = f_labile_leaf(ipft) * cpatch%broot(ico)                     &
-                             + f_labile_stem(ipft)                                         &
-                             * ( cpatch%bsapwoodb(ico) + cpatch%bbarkb(ico)                &
-                             + cpatch%bdeadb   (ico) )
-                  a_bstruct  = (1.0 - f_labile_leaf(ipft)) * cpatch%bleaf(ico)             &
-                             + (1.0 - f_labile_stem(ipft))                                 &
-                             * ( cpatch%bsapwooda(ico) + cpatch%bbarka(ico)                &
-                             + cpatch%bdeada   (ico) )
-                  b_bstruct  = (1.0 - f_labile_leaf(ipft)) * cpatch%broot(ico)             &
-                             + (1.0 - f_labile_stem(ipft))                                 &
-                             * ( cpatch%bsapwoodb(ico) + cpatch%bbarkb(ico)                &
-                             + cpatch%bdeadb   (ico) )
-                  a_bstorage =        agf_bs(ipft)  * cpatch%bstorage(ico)
-                  b_bstorage = (1.0 - agf_bs(ipft)) * cpatch%bstorage(ico)
-                  !------------------------------------------------------------------------!
+                     !---------------------------------------------------------------------!
+                     !       Storm mortality                                               !
+                     !---------------------------------------------------------------------!
+                     nplant_in = cpatch%nplant(ico)
+                     cpatch%nplant(ico) = cpatch%nplant(ico) * 0.9
+                     nplant_loss = nplant_in - cpatch%nplant(ico)
+                     !---------------------------------------------------------------------!
 
 
-                  !------------------------------------------------------------------------!
-                  !      Get the amount of each biomass fraction lost, to send to litter   !
-                  !------------------------------------------------------------------------!
-
-                  ! LEM: This seems like it wouldn't add up...
-
-                  !----- Amount lost due to storm damage - original amount minus current --!
-                  bleaf_loss     = bleaf_in     - cpatch%bleaf    (ico)
-                  bdeada_loss    = bdeada_in    - cpatch%bdeada   (ico)
-                  bdeadb_loss    = bdeadb_in    - cpatch%bdeadb   (ico)
-                  broot_loss     = broot_in     - cpatch%broot    (ico)
-                  bbarka_loss    = bbarka_in    - cpatch%bbarka   (ico)
-                  bbarkb_loss    = bbarkb_in    - cpatch%bbarkb   (ico)
-                  bsapwooda_loss = bsapwooda_in - cpatch%bsapwooda(ico)
-                  bsapwoodb_loss = bsapwoodb_in - cpatch%bsapwoodb(ico)
-
-                  !----- Amount lost to storm mortality -----------------------------------!
-                  bleaf_loss     = bleaf_loss     + (bleaf_in     * nplant_loss)
-                  bdeada_loss    = bdeada_loss    + (bdeada_in    * nplant_loss)
-                  bdeadb_loss    = bdeadb_loss    + (bdeadb_in    * nplant_loss)
-                  broot_loss     = broot_loss     + (broot_in     * nplant_loss)
-                  bbarka_loss    = bbarka_loss    + (bbarka_in    * nplant_loss)
-                  bbarkb_loss    = bbarkb_loss    + (bbarkb_in    * nplant_loss)
-                  bsapwooda_loss = bsapwooda_loss + (bsapwooda_in * nplant_loss)
-                  bsapwoodb_loss = bsapwoodb_loss + (bsapwoodb_in * nplant_loss)
-
-                  !----- Determine the amount of above and belowground structural lost ----!
-                  !new_bdead = size2bd(cpatch%dbh(ico), cpatch%hite(ico), ipft)
-                  !bdeada_loss = bdeada_in - (agf_bs(ipft) * new_bdead)
-                  !bdeadb_loss = bdeadb_in - ((1.0 - agf_bs(ipft)) * new_bdead)
-
-                  !------------------------------------------------------------------------!
-
-                  !------------------------------------------------------------------------!
-                  !       Update our reporting variables                                   !
-                  ! LEM: I feel like this isn't right. Adjust loss for nplant?
-                  !------------------------------------------------------------------------!
-                  nplant_removed(ipft) = nplant_removed(ipft) +                            &
-                                         (nplant_loss * csite%area(ipa))
-                  agb_removed(ipft)    = agb_removed(ipft)                                 &
-                                       + ((cpatch%agb(ico) * nplant_loss)                  &
-                                       + (bleaf_loss + bdeada_loss + bbarka_loss
-                                       +  bsapwooda_loss)) * csite%area(ipa)
-
-                  !------------------------------------------------------------------------!
-                  !     Add storm-killed trees to litter                                   !
-                  ! Use approach from structural growth                                    !
-                  !------------------------------------------------------------------------!
 
 
-                  !----- Multiply by mortality to get litter inputs -----------------------!
-                  a_bfast_litter    = a_bfast    * nplant_loss
-                  b_bfast_litter    = b_bfast    * nplant_loss
-                  a_bstruct_litter  = a_bstruct  * nplant_loss
-                  b_bstruct_litter  = b_bstruct  * nplant_loss
-                  a_bstorage_litter = a_bstorage * nplant_loss
-                  b_bstorage_litter = b_bstorage * nplant_loss
+                     !---------------------------------------------------------------------!
+                     !       Storm damage                                                  !
+                     ! To damage the cohort, remove some BDEADA. This will remove height   !
+                     ! as well. Remove aboveground biomass fractions to match height       !
+                     !---------------------------------------------------------------------!
+                     !hite_in = cpatch%hite(ico)
+                     cpatch%hite(ico) = cpatch%hite(ico) * 0.9
 
-                  !----- Damage removed biomass -------------------------------------------!
-                  a_bfast_litter   = a_bfast_litter +                                      &
-                                     bleaf_loss * f_labile_leaf(ipft)
-                  a_bstruct_litter = a_bstruct_litter +                                    &
-                                     bleaf_loss * (1.0 - f_labile_leaf(ipft))
+                     !----- What is the dbh that matches this new height? -----------------!
+                     dbh_aim = h2dbh(cpatch%hite(ico), ipft)
 
-                  !------------------------------------------------------------------------!
-                  !     Finalize litter inputs.                                            !
-                  !------------------------------------------------------------------------!
-                  csite%fgc_in (ipa) = csite%fgc_in(ipa) + a_bfast_litter                  &
-                                     + a_bstorage_litter
-                  csite%fsc_in (ipa) = csite%fsc_in(ipa) + b_bfast_litter                  &
-                                     + b_bstorage_litter
-                  csite%fgn_in (ipa) = csite%fgn_in(ipa)                                   &
-                                     + a_bfast_litter    / c2n_leaf   (ipft)               &
-                                     + a_bstorage_litter / c2n_storage
-                  csite%fsn_in (ipa) = csite%fsn_in(ipa)                                   &
-                                     + b_bfast_litter    / c2n_leaf   (ipft)               &
-                                     + b_bstorage_litter / c2n_storage
-                  csite%stgc_in(ipa) = csite%stgc_in(ipa) + a_bstruct_litter
-                  csite%stsc_in(ipa) = csite%stsc_in(ipa) + b_bstruct_litter
-                  csite%stgl_in(ipa) = csite%stgl_in(ipa)                                  &
-                                     + a_bstruct_litter * l2n_stem / c2n_stem(ipft)
-                  csite%stsl_in(ipa) = csite%stsl_in(ipa)                                  &
-                                     + b_bstruct_litter * l2n_stem / c2n_stem(ipft)
-                  csite%stgn_in(ipa) = csite%stgn_in(ipa)                                  &
-                                     + a_bstruct_litter  / c2n_stem   (ipft)
-                  csite%stsn_in(ipa) = csite%stsn_in(ipa)                                  &
-                                     + b_bstruct_litter  / c2n_stem   (ipft)
-                  !------------------------------------------------------------------------!
+                     !----- Use these size measures to get other ABG values ---------------!
+                     cpatch%bdeada   (ico) = size2bd(dbh_aim, cpatch%hite(ico), ipft) * agf_bs(ipft)
+                     cpatch%bleaf    (ico) = size2bl(dbh_aim, cpatch%hite(ico), cpatch%sla(ico), ipft)
+                     cpatch%bbarka   (ico) = cpatch%bleaf(ico) * qbark(ipft) * cpatch%hite(ico) * agf_bs(ipft)
+                     cpatch%bsapwooda(ico) = cpatch%bleaf(ico) * qsw  (ipft) * cpatch%hite(ico) * agf_bs(ipft)
 
-                  ! Terminate cohorts
+                     !----- Have the cohort update itself ---------------------------------!
+                     call update_cohort_derived_props(cpatch,ico,cpoly%lsl(isi),.false.    &
+                                                     ,cpoly%llspan_toc(ipft,isi)           &
+                                                     ,cpoly%vm_bar_toc(ipft,isi)           &
+                                                     ,cpoly%rd_bar_toc(ipft,isi)           &
+                                                     ,cpoly%sla_toc   (ipft,isi) )
+                     !---------------------------------------------------------------------!
 
-                  !------------------------------------------------------------------------!
-                  !  Update the heat capacity and the vegetation internal energy, again,   !
-                  !  following structural growth                                           !
-                  !------------------------------------------------------------------------!
-                  call calc_veg_hcap(cpatch%bleaf(ico),cpatch%bdeada(ico)                  &
-                                    ,cpatch%bsapwooda(ico),cpatch%bbarka(ico)              &
-                                    ,cpatch%nplant(ico),cpatch%pft(ico)                    &
-                                    ,cpatch%leaf_hcap(ico),cpatch%wood_hcap(ico) )
-                  call rwc2tw(cpatch%leaf_rwc(ico),cpatch%wood_rwc(ico)                    &
-                             ,cpatch%bleaf(ico),cpatch%bsapwooda(ico)                      &
-                             ,cpatch%bsapwoodb(ico),cpatch%bdeada(ico),cpatch%bdeadb(ico)  &
-                             ,cpatch%broot(ico),cpatch%dbh(ico),cpatch%pft(ico)            &
-                             ,cpatch%leaf_water_int(ico),cpatch%wood_water_int(ico))
-                  call twi2twe(cpatch%leaf_water_int(ico),cpatch%wood_water_int(ico)       &
-                              ,cpatch%nplant(ico),cpatch%leaf_water_im2(ico)               &
-                              ,cpatch%wood_water_im2(ico))
-                  call update_veg_energy_cweh(csite,ipa,ico,old_leaf_hcap,old_wood_hcap    &
-                                             ,old_leaf_water,old_wood_water                &
-                                             ,old_leaf_water_im2,old_wood_water_im2        &
-                                             ,.true.,.false.)
-                  !------------------------------------------------------------------------!
+
+
+
+                     !---------------------------------------------------------------------!
+                     !      Get the amount of each biomass fraction lost, to send to       !
+                     ! litter. Biomass fractions are reported in kgC / plant. nplant is in !
+                     ! plants / m2. Multiplying by nplant gives us kgC / m2, which is the  !
+                     ! units of the litter pools                                           !
+                     !---------------------------------------------------------------------!
+                     !----- Amount lost due to storm damage - original amount minus current!
+                     bleaf_loss     = (bleaf_in     - cpatch%bleaf    (ico)) * cpatch%nplant(ico)
+                     bdeada_loss    = (bdeada_in    - cpatch%bdeada   (ico)) * cpatch%nplant(ico)
+                     bdeadb_loss    = (bdeadb_in    - cpatch%bdeadb   (ico)) * cpatch%nplant(ico)
+                     broot_loss     = (broot_in     - cpatch%broot    (ico)) * cpatch%nplant(ico)
+                     bbarka_loss    = (bbarka_in    - cpatch%bbarka   (ico)) * cpatch%nplant(ico)
+                     bbarkb_loss    = (bbarkb_in    - cpatch%bbarkb   (ico)) * cpatch%nplant(ico)
+                     bsapwooda_loss = (bsapwooda_in - cpatch%bsapwooda(ico)) * cpatch%nplant(ico)
+                     bsapwoodb_loss = (bsapwoodb_in - cpatch%bsapwoodb(ico)) * cpatch%nplant(ico)
+
+                     !----- Add amount lost to storm mortality -----------------------------!
+                     bleaf_loss     = bleaf_loss     + (bleaf_in     * nplant_loss)
+                     bdeada_loss    = bdeada_loss    + (bdeada_in    * nplant_loss)
+                     bdeadb_loss    = bdeadb_loss    + (bdeadb_in    * nplant_loss)
+                     broot_loss     = broot_loss     + (broot_in     * nplant_loss)
+                     bbarka_loss    = bbarka_loss    + (bbarka_in    * nplant_loss)
+                     bbarkb_loss    = bbarkb_loss    + (bbarkb_in    * nplant_loss)
+                     bsapwooda_loss = bsapwooda_loss + (bsapwooda_in * nplant_loss)
+                     bsapwoodb_loss = bsapwoodb_loss + (bsapwoodb_in * nplant_loss)
+                     ! There shouldn't be a change of storage due to damage - only mortality
+                     bstorage_loss  =                   bstorage_in  * nplant_loss
+                     !---------------------------------------------------------------------!
+
+
+                     !---------------------------------------------------------------------!
+                     !      Split biomass lost into fast and slow to add to appropriate    !
+                     ! litter pools.                                                       !
+                     !---------------------------------------------------------------------!
+                     !---------------------------------------------------------------------!
+                     !      Split biomass components that are labile or structural. -------!
+                     a_bfast    = f_labile_leaf(ipft) * bleaf_loss                         &
+                                + f_labile_stem(ipft)                                      &
+                                * (bsapwooda_loss + bbarka_loss + bdeada_loss)
+                     b_bfast    = f_labile_leaf(ipft) * broot_loss                         &
+                                + f_labile_stem(ipft)                                      &
+                                * (bsapwoodb_loss + bbarkb_loss + bdeadb_loss)
+                     a_bstruct  = (1.0 - f_labile_leaf(ipft)) * bleaf_loss                 &
+                                + (1.0 - f_labile_stem(ipft))                              &
+                                * (bsapwooda_loss + bbarka_loss + bdeada_loss)
+                     b_bstruct  = (1.0 - f_labile_leaf(ipft)) * broot_loss                 &
+                                + (1.0 - f_labile_stem(ipft))                              &
+                                * (bsapwoodb_loss + bbarkb_loss + bdeadb_loss)
+                     a_bstorage =        agf_bs(ipft)  * bstorage_loss
+                     b_bstorage = (1.0 - agf_bs(ipft)) * bstorage_loss
+                     !---------------------------------------------------------------------!
+
+
+                     !---------------------------------------------------------------------!
+
+
+                     !---------------------------------------------------------------------!
+                     !       Update our reporting variables                                !
+                     !---------------------------------------------------------------------!
+                     nplant_removed(ipft) = nplant_removed(ipft) + nplant_loss
+                     agb_removed(ipft)    = agb_removed(ipft)                              &
+                                          + (bleaf_loss + bdeada_loss + bbarka_loss        &
+                                          +  bsapwooda_loss)
+                     !---------------------------------------------------------------------!
+
+
+                     !---------------------------------------------------------------------!
+                     !     Finalize litter inputs.                                         !
+                     !---------------------------------------------------------------------!
+                     csite%fgc_in (ipa) = csite%fgc_in(ipa) + a_bfast + a_bstorage
+                     csite%fsc_in (ipa) = csite%fsc_in(ipa) + b_bfast + b_bstorage
+                     csite%fgn_in (ipa) = csite%fgn_in(ipa)                                &
+                                        + a_bfast    / c2n_leaf   (ipft)                   &
+                                        + a_bstorage / c2n_storage
+                     csite%fsn_in (ipa) = csite%fsn_in(ipa)                                &
+                                        + b_bfast    / c2n_leaf   (ipft)                   &
+                                        + b_bstorage / c2n_storage
+                     csite%stgc_in(ipa) = csite%stgc_in(ipa) + a_bstruct
+                     csite%stsc_in(ipa) = csite%stsc_in(ipa) + b_bstruct
+                     csite%stgl_in(ipa) = csite%stgl_in(ipa)                               &
+                                        + a_bstruct * l2n_stem / c2n_stem(ipft)
+                     csite%stsl_in(ipa) = csite%stsl_in(ipa)                               &
+                                        + b_bstruct * l2n_stem / c2n_stem(ipft)
+                     csite%stgn_in(ipa) = csite%stgn_in(ipa)                               &
+                                        + a_bstruct  / c2n_stem   (ipft)
+                     csite%stsn_in(ipa) = csite%stsn_in(ipa)                               &
+                                        + b_bstruct  / c2n_stem   (ipft)
+                     !---------------------------------------------------------------------!
+
+
+
+                     !---------------------------------------------------------------------!
+                     !  Update the heat capacity and the vegetation internal energy,       !
+                     ! again, following structural growth                                  !
+                     !---------------------------------------------------------------------!
+                     call calc_veg_hcap(cpatch%bleaf(ico),cpatch%bdeada(ico)               &
+                                       ,cpatch%bsapwooda(ico),cpatch%bbarka(ico)           &
+                                       ,cpatch%nplant(ico),cpatch%pft(ico)                 &
+                                       ,cpatch%leaf_hcap(ico),cpatch%wood_hcap(ico) )
+                     call rwc2tw(cpatch%leaf_rwc(ico),cpatch%wood_rwc(ico)                 &
+                                ,cpatch%bleaf(ico),cpatch%bsapwooda(ico)                   &
+                                ,cpatch%bsapwoodb(ico),cpatch%bdeada(ico)                  &
+                                ,cpatch%bdeadb(ico),cpatch%broot(ico),cpatch%dbh(ico)      &
+                                ,cpatch%pft(ico),cpatch%leaf_water_int(ico),               &
+                                cpatch%wood_water_int(ico))
+                     call twi2twe(cpatch%leaf_water_int(ico),cpatch%wood_water_int(ico)    &
+                                 ,cpatch%nplant(ico),cpatch%leaf_water_im2(ico)            &
+                                 ,cpatch%wood_water_im2(ico))
+                     call update_veg_energy_cweh(csite,ipa,ico,old_leaf_hcap,old_wood_hcap &
+                                                ,old_leaf_water,old_wood_water             &
+                                                ,old_leaf_water_im2,old_wood_water_im2     &
+                                                ,.true.,.false.)
+                     !---------------------------------------------------------------------!
+                   end if  ! Eliminating grasses
                end do cohortloop
             end do patchloop
          end do siteloop
