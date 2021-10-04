@@ -231,6 +231,7 @@ module hurricane
 
                      !----- Use these size measures to get other ABG values ---------------!
                      cpatch%bdeada   (ico) = size2bd(dbh_aim, cpatch%hite(ico), ipft) * agf_bs(ipft)
+                     cpatch%bdeada   (ico) = size2bd(dbh_aim, cpatch%hite(ico), ipft) * (1.0 - agf_bs(ipft))
                      cpatch%bleaf    (ico) = size2bl(dbh_aim, cpatch%hite(ico), cpatch%sla(ico), ipft)
                      cpatch%bbarka   (ico) = cpatch%bleaf(ico) * qbark(ipft) * cpatch%hite(ico) * agf_bs(ipft)
                      cpatch%bsapwooda(ico) = cpatch%bleaf(ico) * qsw  (ipft) * cpatch%hite(ico) * agf_bs(ipft)
