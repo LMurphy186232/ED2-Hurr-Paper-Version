@@ -86,7 +86,9 @@ Functions/Subroutines</h2></td></tr>
 <p >Hurricanes occur at pre-determined times, input by the user. Depending on their severity, they will remove some amount of biomass, and possibly kill some of the cohort as well. A mild storm might remove leaves only. A stronger storm would remove some branches, up to crown snap. To replicate this, the cohort will lose some degree of height. In conjunction with the tolerance for cohorts to be off allometry, this will simulate damage that a cohort must repair.</p>
 <p >This module checks monthly to see if a hurricane is scheduled. The hurricane schedule is in a separate file that is read in at start up, and whose name is passed in ED2IN. While it is certainly possible in the real world for two hurricanes to occur in the same month, in this module it is not allowed.</p>
 <p >Hurricanes cannot be used if ED2 is in bigleaf mode.</p>
-<p >Possible future work: randomly generate a storm regime. </p><dl class="section author"><dt>Author</dt><dd>Lora Murphy, September 2021 </dd></dl>
+<p >The basic model for the cumulative probability of damage level j for stem i of species s is logit(p<sub>isj</sub>) = a<sub>j</sub> + c<sub>s</sub> * S * dbh ^<sup>b<sub>s</sub></sup></p>
+<p >If IDETAILED = 64, indicating disturbance details are to be written, this will write a detailed file of storm activity called "hurricane_report.txt"</p>
+<p >Possible future work: randomly generate a storm regime; further decouple biomass pools to allow preferential removal of, say, leaves (right now doing so causes the cohorts to fail budget checks in structural growth, since part of the check is that the pools are on allometry). </p><dl class="section author"><dt>Author</dt><dd>Lora Murphy, September 2021 </dd></dl>
 </div><h2 class="groupheader">Function/Subroutine Documentation</h2>
 <a id="ad3ee6f09761aa907411bc5f0d58ee3d2" name="ad3ee6f09761aa907411bc5f0d58ee3d2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad3ee6f09761aa907411bc5f0d58ee3d2">&#9670;&nbsp;</a></span>apply_hurricane()</h2>

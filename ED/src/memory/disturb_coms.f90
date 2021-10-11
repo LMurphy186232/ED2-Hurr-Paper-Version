@@ -312,45 +312,6 @@ module disturb_coms
    end type lutime
    !=======================================================================================!
    !=======================================================================================!
-
-
-
-   !=======================================================================================!
-   !=======================================================================================!
-   !     Variables related to hurricanes.                                                  !
-   ! Code to execute hurricanes present in hurricane.f90.                                  !
-   ! Author: Lora Murphy Sept 2021                                                         !
-   !---------------------------------------------------------------------------------------!
-
-   !> Whether to include hurricanes. 0 = no; 1 = yes. If hurricanes are included, the
-   !> storm schedule must be included in a text file.
-   integer :: include_hurricanes
-
-   !----- Hurricane specification list ----------------------------------------------------!
-   !> A structure for holding the info for a single hurricane
-   type hurrtime
-       !> Year hurricane occurs
-       integer :: year
-       !> Month hurricane occurs, 1-12
-       integer :: month
-       !> Between 0 and 1; 1 is a max severity storm
-       real    :: severity
-   end type hurrtime
-
-   !> Filename containing the hurricane list
-   character(len=str_len) :: hurricane_db
-
-   !> List of scheduled hurricanes
-   type(hurrtime), dimension(max_hurricanes) :: hurricane_db_list
-
-   !> Total length of the hurricane schedule
-   integer :: hurricane_db_list_len
-
-   !> Filename of detailed hurricane report, if the user asks for it
-   character(len=str_len) :: hurricane_report
-   !=======================================================================================!
-   !=======================================================================================!
-
 end module disturb_coms
 !==========================================================================================!
 !==========================================================================================!

@@ -173,8 +173,8 @@ subroutine copy_nl(copy_type)
                                    , sl_felling_s_ltharv       & ! intent(out)
                                    , cl_fseeds_harvest         & ! intent(out)
                                    , cl_fstorage_harvest       & ! intent(out)
-                                   , cl_fleaf_harvest          & ! intent(out)
-                                   , include_hurricanes        &
+                                   , cl_fleaf_harvest          ! ! intent(out)
+  use hurricane_coms        , only : include_hurricanes        &
                                    , hurricane_db
    use pft_coms             , only : include_these_pft         & ! intent(out)
                                    , pasture_stock             & ! intent(out)

@@ -37,7 +37,8 @@ subroutine ed_driver()
    use canopy_radiation_coms, only : ihrzrad                       ! ! intent(in)
    use random_utils         , only : init_random_seed              ! ! subroutine
    use hurricane            , only : read_hurricane_db             ! ! subroutine
-   use disturb_coms         , only : include_hurricanes
+   use hurricane_coms       , only : include_hurricanes
+   use hurricane            , only : init_hurricane_derived_params_after_xml
    implicit none
    !----- Included variables. -------------------------------------------------------------!
 #if defined(RAMS_MPI)
@@ -134,6 +135,7 @@ subroutine ed_driver()
    !---------------------------------------------------------------------------------------!
    if (mynum == nnodetot) write (unit=*,fmt='(a)') ' [+] Init_derived_params_after_xml...'
    call init_derived_params_after_xml()
+   call init_hurricane_derived_params_after_xml()
    !---------------------------------------------------------------------------------------!
 
    !-----Always write out a copy of model parameters in xml--------------------------!

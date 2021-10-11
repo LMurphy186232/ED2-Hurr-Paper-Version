@@ -176,12 +176,15 @@ Variables</h2></td></tr>
 <tr class="memitem:a70fb4629c92c67ab106c4076c4da4407"><td class="memItemLeft" align="right" valign="top">character(len=str_len)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedisturb__coms.html#a70fb4629c92c67ab106c4076c4da4407">hurricane_db</a></td></tr>
 <tr class="memdesc:a70fb4629c92c67ab106c4076c4da4407"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filename containing the hurricane list.  <a href="namespacedisturb__coms.html#a70fb4629c92c67ab106c4076c4da4407">More...</a><br /></td></tr>
 <tr class="separator:a70fb4629c92c67ab106c4076c4da4407"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15b5d5228db5b5e12bd51b7a2af99ab8"><td class="memItemLeft" align="right" valign="top">type(<a class="el" href="structdisturb__coms_1_1hurrtime.html">hurrtime</a>), dimension(max_obstime)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedisturb__coms.html#a15b5d5228db5b5e12bd51b7a2af99ab8">hurricane_db_list</a></td></tr>
-<tr class="memdesc:a15b5d5228db5b5e12bd51b7a2af99ab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of scheduled hurricanes.  <a href="namespacedisturb__coms.html#a15b5d5228db5b5e12bd51b7a2af99ab8">More...</a><br /></td></tr>
-<tr class="separator:a15b5d5228db5b5e12bd51b7a2af99ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add02a1e458a4c80756548b312fbb061d"><td class="memItemLeft" align="right" valign="top">type(<a class="el" href="structdisturb__coms_1_1hurrtime.html">hurrtime</a>), dimension(max_hurricanes)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedisturb__coms.html#add02a1e458a4c80756548b312fbb061d">hurricane_db_list</a></td></tr>
+<tr class="memdesc:add02a1e458a4c80756548b312fbb061d"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of scheduled hurricanes.  <a href="namespacedisturb__coms.html#add02a1e458a4c80756548b312fbb061d">More...</a><br /></td></tr>
+<tr class="separator:add02a1e458a4c80756548b312fbb061d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53b72fde1f4dbd81873bb0204468a3c3"><td class="memItemLeft" align="right" valign="top">integer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedisturb__coms.html#a53b72fde1f4dbd81873bb0204468a3c3">hurricane_db_list_len</a></td></tr>
 <tr class="memdesc:a53b72fde1f4dbd81873bb0204468a3c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total length of the hurricane schedule.  <a href="namespacedisturb__coms.html#a53b72fde1f4dbd81873bb0204468a3c3">More...</a><br /></td></tr>
 <tr class="separator:a53b72fde1f4dbd81873bb0204468a3c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ac404af420a5b183a9c9c017b022296"><td class="memItemLeft" align="right" valign="top">character(len=str_len)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedisturb__coms.html#a2ac404af420a5b183a9c9c017b022296">hurricane_report</a></td></tr>
+<tr class="memdesc:a2ac404af420a5b183a9c9c017b022296"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filename of detailed hurricane report, if the user asks for it.  <a href="namespacedisturb__coms.html#a2ac404af420a5b183a9c9c017b022296">More...</a><br /></td></tr>
+<tr class="separator:a2ac404af420a5b183a9c9c017b022296"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a42942f09e1f80adbb629f5bc82d36127" name="a42942f09e1f80adbb629f5bc82d36127"></a>
@@ -396,14 +399,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a15b5d5228db5b5e12bd51b7a2af99ab8" name="a15b5d5228db5b5e12bd51b7a2af99ab8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15b5d5228db5b5e12bd51b7a2af99ab8">&#9670;&nbsp;</a></span>hurricane_db_list</h2>
+<a id="add02a1e458a4c80756548b312fbb061d" name="add02a1e458a4c80756548b312fbb061d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add02a1e458a4c80756548b312fbb061d">&#9670;&nbsp;</a></span>hurricane_db_list</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">type(<a class="el" href="structdisturb__coms_1_1hurrtime.html">hurrtime</a>), dimension(max_obstime) disturb_coms::hurricane_db_list</td>
+          <td class="memname">type(<a class="el" href="structdisturb__coms_1_1hurrtime.html">hurrtime</a>), dimension(max_hurricanes) disturb_coms::hurricane_db_list</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -425,6 +428,22 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Total length of the hurricane schedule. </p>
+
+</div>
+</div>
+<a id="a2ac404af420a5b183a9c9c017b022296" name="a2ac404af420a5b183a9c9c017b022296"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ac404af420a5b183a9c9c017b022296">&#9670;&nbsp;</a></span>hurricane_report</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">character(len=str_len) disturb_coms::hurricane_report</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Filename of detailed hurricane report, if the user asks for it. </p>
 
 </div>
 </div>

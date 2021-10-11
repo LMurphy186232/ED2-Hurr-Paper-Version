@@ -1268,8 +1268,8 @@ subroutine ed_opspec_misc
                                     , sl_felling_s_ltharv          & ! intent(in)
                                     , cl_fseeds_harvest            & ! intent(in)
                                     , cl_fstorage_harvest          & ! intent(in)
-                                    , cl_fleaf_harvest             & ! intent(in)
-                                    , include_hurricanes
+                                    , cl_fleaf_harvest             ! ! intent(in)
+   use hurricane_coms        , only : include_hurricanes
    use phenology_coms        , only : iphen_scheme                 & ! intent(in)
                                     , repro_scheme                 & ! intent(in)
                                     , radint                       & ! intent(in)

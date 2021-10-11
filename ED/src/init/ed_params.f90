@@ -222,6 +222,7 @@ subroutine load_ed_ecosystem_params()
    call init_phen_coms()
    call init_ed_misc_coms()
    call init_hrzshade_params()
+   call init_hurricane_params()
    !---------------------------------------------------------------------------------------!
 
 
@@ -835,9 +836,7 @@ subroutine init_disturb_params
                            , f_combusted_struct_n      & ! intent(out)
                            , k_fire_first              & ! intent(out)
                            , min_plantation_frac       & ! intent(out)
-                           , max_plantation_dist       & ! intent(out)
-                           , hurricane_db              &
-                           , include_hurricanes
+                           , max_plantation_dist       ! ! intent(out)
    use consts_coms  , only : erad                      & ! intent(in)
                            , pio180                    & ! intent(in)
                            , tiny_num                  & ! intent(in)
@@ -939,25 +938,31 @@ subroutine init_disturb_params
    min_oldgrowth(8) = huge_num
    !---------------------------------------------------------------------------------------!
 
-
-   !---------------------------------------------------------------------------------------!
-   !     Initialize hurricane parameters                                                   !
-   !---------------------------------------------------------------------------------------!
-   select case (include_hurricanes)
-   case (1)
-
-   case default
-      hurricane_db         = ''
-
-   end select
-
    return
-
 end subroutine init_disturb_params
 !==========================================================================================!
 !==========================================================================================!
 
 
+
+
+!==========================================================================================!
+!==========================================================================================!
+subroutine init_hurricane_params
+
+   use hurricane_coms , only : hurricane_db
+   implicit none
+
+
+   !---------------------------------------------------------------------------------------!
+   !     Initialize hurricane parameters                                                   !
+   !---------------------------------------------------------------------------------------!
+   hurricane_db  = ''
+
+   return
+end subroutine init_hurricane_params
+!==========================================================================================!
+!==========================================================================================!
 
 
 

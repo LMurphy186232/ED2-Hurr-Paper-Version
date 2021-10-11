@@ -274,19 +274,15 @@ real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_ad09f83976cb3669
 real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_ad3bbe689555844c42499f937ba5c5718}{wood\+\_\+psi\+\_\+osmotic}}
 \begin{DoxyCompactList}\small\item\em Sapwood osmotic water potential at saturation \mbox{[}m\mbox{]}. \end{DoxyCompactList}\item 
 real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_a0b2b49cec1cce9095908ea3b20e69e6f}{leaf\+\_\+elastic\+\_\+mod}}
-\begin{DoxyCompactList}\small\item\em Leaf bulk elastic modulus \mbox{[}MPa\mbox{]} ~\newline
- \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Leaf bulk elastic modulus \mbox{[}MPa\mbox{]}. \end{DoxyCompactList}\item 
 real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_ac7b6445ce4f16e039a49cee01f767cd9}{wood\+\_\+elastic\+\_\+mod}}
-\begin{DoxyCompactList}\small\item\em Sapwood bulk elastic modulus \mbox{[}MPa\mbox{]} ~\newline
- \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Sapwood bulk elastic modulus \mbox{[}MPa\mbox{]}. \end{DoxyCompactList}\item 
 real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_a11a14ee2c6243e6a231884e68601997f}{wood\+\_\+kmax}}
-\begin{DoxyCompactList}\small\item\em Maximum hydraulic conductivity of the stem \mbox{[}kg H2O / m / s\mbox{]} ~\newline
- \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Maximum hydraulic conductivity of the stem \mbox{[}kg H2O / m / s\mbox{]}. \end{DoxyCompactList}\item 
 real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_a9365e3320be63eb211567acd17ad2a50}{wood\+\_\+kexp}}
 \begin{DoxyCompactList}\small\item\em Exponent for the hydraulic vulnerability curve of stem conductivity under the Weibull function 1/(1+(psi/psi50) $\ast$$\ast$ Kexp\+\_\+stem) \mbox{[}-\/\mbox{]}. \end{DoxyCompactList}\item 
 real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_a6297b85bb820a841ba090b1adbde3cb9}{wood\+\_\+psi50}}
-\begin{DoxyCompactList}\small\item\em Water potential at which 50\% of stem conductivity is lost \mbox{[}m\mbox{]} ~\newline
- \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Water potential at which 50\% of stem conductivity is lost \mbox{[}m\mbox{]}. \end{DoxyCompactList}\item 
 real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_ac6af0aa16230411119e8e844096d4921}{vessel\+\_\+curl\+\_\+factor}}
 \begin{DoxyCompactList}\small\item\em Ratio of actual vessel length (water conducting length) to tree height \mbox{[}-\/\mbox{]}. \end{DoxyCompactList}\item 
 real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_a774f901bd7b602d42e22117c9b986ac9}{stoma\+\_\+lambda}}
@@ -378,11 +374,11 @@ real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_a5a62d41f91497ee
 real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_a44670697b8e45be7f179f3e6e11a9991}{b1xs}}
 \item 
 real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_ac229f7e09d60178e45e5af2f44124a81}{b1sa}}
-\begin{DoxyCompactList}\small\item\em DBH-\/sapwood area allometry intercept. \end{DoxyCompactList}\item 
-real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_aeb33a99e00a6ec3609487877146a9292}{b2sa}}
-\begin{DoxyCompactList}\small\item\em DBH-\/sapwood area allometry slope. \end{DoxyCompactList}\item 
-real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_a6290d41cd79d6f8ac7819f9bf06cad60}{min\+\_\+dbh}}
 \item 
+real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_aeb33a99e00a6ec3609487877146a9292}{b2sa}}
+\begin{DoxyCompactList}\small\item\em DBH-\/sapwood area allometry intercept. \end{DoxyCompactList}\item 
+real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_a6290d41cd79d6f8ac7819f9bf06cad60}{min\+\_\+dbh}}
+\begin{DoxyCompactList}\small\item\em DBH-\/sapwood area allometry slope. \end{DoxyCompactList}\item 
 real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_a987147752a27cb72be37336a14f0b57e}{max\+\_\+dbh}}
 \item 
 real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_a39e1c4892ebafc9be2ac78b48d954d5c}{dbh\+\_\+crit}}
@@ -399,6 +395,8 @@ real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_ad206883adf11b50
 \item 
 real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_a036c00f799bee75f67760d0dff255693}{bevery\+\_\+crit}}
 \item 
+real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_a3cd1d016384b57b072456ec49cda6f4a}{off\+\_\+allom\+\_\+tol}}
+\begin{DoxyCompactList}\small\item\em Tolerance for DBH-\/height allometry mismatch, in units of m height. \end{DoxyCompactList}\item 
 integer, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_a5a3bbf23e4825378c0f3c8bd788c6c68}{phenology}}
 \item 
 real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_ac9aba7609beabf8387afac8a12a89d5c}{leaf\+\_\+width}}
@@ -491,6 +489,20 @@ real \mbox{\hyperlink{namespacepft__coms_a0bbe125185f8eb65aa373e892473ab32}{h\+\
 \begin{DoxyCompactList}\small\item\em maximum height advantage for lianas \end{DoxyCompactList}\item 
 real \mbox{\hyperlink{namespacepft__coms_af773d17184fbcc12c8ac9ad136d48e82}{liana\+\_\+dbh\+\_\+crit}}
 \begin{DoxyCompactList}\small\item\em liana specific critical dbh \end{DoxyCompactList}\item 
+real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_ace9aa18572406599cc87dbb2d9c9be52}{hurr\+\_\+a1}}
+\begin{DoxyCompactList}\small\item\em \char`\"{}a\char`\"{} in probability of light damage eqn \end{DoxyCompactList}\item 
+real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_af4dd3cb1ea06805963ac285ae38842d5}{hurr\+\_\+a2}}
+\begin{DoxyCompactList}\small\item\em \char`\"{}a\char`\"{} in probability of medium damage eqn \end{DoxyCompactList}\item 
+real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_a9901dc65df95d2cfa1fed87838f9e143}{hurr\+\_\+c}}
+\begin{DoxyCompactList}\small\item\em Storm intensity coefficient. \end{DoxyCompactList}\item 
+real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_a278f19164ffc4b909fb02dee0f449836}{hurr\+\_\+b}}
+\begin{DoxyCompactList}\small\item\em Storm DBH coefficient. \end{DoxyCompactList}\item 
+real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_a678146ab550c385d1f23773e63649875}{hurr\+\_\+g}}
+\begin{DoxyCompactList}\small\item\em Storm survival \char`\"{}g\char`\"{} parameter. \end{DoxyCompactList}\item 
+real, dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_a5eae96585cf41c3b77a3b9556af9ccff}{hurr\+\_\+h}}
+\begin{DoxyCompactList}\small\item\em Storm survival \char`\"{}h\char`\"{} parameter. \end{DoxyCompactList}\item 
+real \mbox{\hyperlink{namespacepft__coms_a6667572b7a4d7f75d13cad915d64d0da}{min\+\_\+hurr\+\_\+dbh}}
+\begin{DoxyCompactList}\small\item\em Minimum DBH for cohorts to be affected by hurricanes. \end{DoxyCompactList}\item 
 integer \mbox{\hyperlink{namespacepft__coms_a3982ecbd5ceae019ec04814706095c94}{nbt\+\_\+lut}}
 \item 
 real(kind=4), dimension(\+:,\+:), allocatable \mbox{\hyperlink{namespacepft__coms_a976f5c7c2a3ad46a03b47152cfed64c5}{dbh\+\_\+lut}}
@@ -599,10 +611,6 @@ character(len=16), dimension(n\+\_\+pft) \mbox{\hyperlink{namespacepft__coms_abb
 \doxysubsubsection{\texorpdfstring{b1sa}{b1sa}}
 {\footnotesize\ttfamily real, dimension(n\+\_\+pft) pft\+\_\+coms\+::b1sa}
 
-
-
-DBH-\/sapwood area allometry intercept. 
-
 \mbox{\Hypertarget{namespacepft__coms_a44136dea8d02d3eba884e01b192a6895}\label{namespacepft__coms_a44136dea8d02d3eba884e01b192a6895}} 
 \index{pft\_coms@{pft\_coms}!b1vol@{b1vol}}
 \index{b1vol@{b1vol}!pft\_coms@{pft\_coms}}
@@ -689,7 +697,7 @@ DBH-\/sapwood area allometry intercept.
 
 
 
-DBH-\/sapwood area allometry slope. 
+DBH-\/sapwood area allometry intercept. 
 
 \mbox{\Hypertarget{namespacepft__coms_a54ac66449833305ba8a3c3415044856d}\label{namespacepft__coms_a54ac66449833305ba8a3c3415044856d}} 
 \index{pft\_coms@{pft\_coms}!b2vol@{b2vol}}
@@ -1069,6 +1077,66 @@ maximum height advantage for lianas
 
 Threshold of consecutive wet days to grow new leaves \mbox{[}\# of days\mbox{]}. 
 
+\mbox{\Hypertarget{namespacepft__coms_ace9aa18572406599cc87dbb2d9c9be52}\label{namespacepft__coms_ace9aa18572406599cc87dbb2d9c9be52}} 
+\index{pft\_coms@{pft\_coms}!hurr\_a1@{hurr\_a1}}
+\index{hurr\_a1@{hurr\_a1}!pft\_coms@{pft\_coms}}
+\doxysubsubsection{\texorpdfstring{hurr\_a1}{hurr\_a1}}
+{\footnotesize\ttfamily real, dimension(n\+\_\+pft) pft\+\_\+coms\+::hurr\+\_\+a1}
+
+
+
+\char`\"{}a\char`\"{} in probability of light damage eqn 
+
+\mbox{\Hypertarget{namespacepft__coms_af4dd3cb1ea06805963ac285ae38842d5}\label{namespacepft__coms_af4dd3cb1ea06805963ac285ae38842d5}} 
+\index{pft\_coms@{pft\_coms}!hurr\_a2@{hurr\_a2}}
+\index{hurr\_a2@{hurr\_a2}!pft\_coms@{pft\_coms}}
+\doxysubsubsection{\texorpdfstring{hurr\_a2}{hurr\_a2}}
+{\footnotesize\ttfamily real, dimension(n\+\_\+pft) pft\+\_\+coms\+::hurr\+\_\+a2}
+
+
+
+\char`\"{}a\char`\"{} in probability of medium damage eqn 
+
+\mbox{\Hypertarget{namespacepft__coms_a278f19164ffc4b909fb02dee0f449836}\label{namespacepft__coms_a278f19164ffc4b909fb02dee0f449836}} 
+\index{pft\_coms@{pft\_coms}!hurr\_b@{hurr\_b}}
+\index{hurr\_b@{hurr\_b}!pft\_coms@{pft\_coms}}
+\doxysubsubsection{\texorpdfstring{hurr\_b}{hurr\_b}}
+{\footnotesize\ttfamily real, dimension(n\+\_\+pft) pft\+\_\+coms\+::hurr\+\_\+b}
+
+
+
+Storm DBH coefficient. 
+
+\mbox{\Hypertarget{namespacepft__coms_a9901dc65df95d2cfa1fed87838f9e143}\label{namespacepft__coms_a9901dc65df95d2cfa1fed87838f9e143}} 
+\index{pft\_coms@{pft\_coms}!hurr\_c@{hurr\_c}}
+\index{hurr\_c@{hurr\_c}!pft\_coms@{pft\_coms}}
+\doxysubsubsection{\texorpdfstring{hurr\_c}{hurr\_c}}
+{\footnotesize\ttfamily real, dimension(n\+\_\+pft) pft\+\_\+coms\+::hurr\+\_\+c}
+
+
+
+Storm intensity coefficient. 
+
+\mbox{\Hypertarget{namespacepft__coms_a678146ab550c385d1f23773e63649875}\label{namespacepft__coms_a678146ab550c385d1f23773e63649875}} 
+\index{pft\_coms@{pft\_coms}!hurr\_g@{hurr\_g}}
+\index{hurr\_g@{hurr\_g}!pft\_coms@{pft\_coms}}
+\doxysubsubsection{\texorpdfstring{hurr\_g}{hurr\_g}}
+{\footnotesize\ttfamily real, dimension(n\+\_\+pft) pft\+\_\+coms\+::hurr\+\_\+g}
+
+
+
+Storm survival \char`\"{}g\char`\"{} parameter. 
+
+\mbox{\Hypertarget{namespacepft__coms_a5eae96585cf41c3b77a3b9556af9ccff}\label{namespacepft__coms_a5eae96585cf41c3b77a3b9556af9ccff}} 
+\index{pft\_coms@{pft\_coms}!hurr\_h@{hurr\_h}}
+\index{hurr\_h@{hurr\_h}!pft\_coms@{pft\_coms}}
+\doxysubsubsection{\texorpdfstring{hurr\_h}{hurr\_h}}
+{\footnotesize\ttfamily real, dimension(n\+\_\+pft) pft\+\_\+coms\+::hurr\+\_\+h}
+
+
+
+Storm survival \char`\"{}h\char`\"{} parameter. 
+
 \mbox{\Hypertarget{namespacepft__coms_af16406431ca0086ae1576b4fc10a91aa}\label{namespacepft__coms_af16406431ca0086ae1576b4fc10a91aa}} 
 \index{pft\_coms@{pft\_coms}!hydro\_mort0@{hydro\_mort0}}
 \index{hydro\_mort0@{hydro\_mort0}!pft\_coms@{pft\_coms}}
@@ -1263,8 +1331,7 @@ Threshold of consecutive wet days to grow new leaves \mbox{[}\# of days\mbox{]}.
 
 
 
-Leaf bulk elastic modulus \mbox{[}MPa\mbox{]} ~\newline
- 
+Leaf bulk elastic modulus \mbox{[}MPa\mbox{]}. 
 
 \mbox{\Hypertarget{namespacepft__coms_a2303edaf6a862f91add46243fed9ffd5}\label{namespacepft__coms_a2303edaf6a862f91add46243fed9ffd5}} 
 \index{pft\_coms@{pft\_coms}!leaf\_grow\_rate@{leaf\_grow\_rate}}
@@ -1420,6 +1487,20 @@ Threshold of consecutive dry days to grow new leaves \mbox{[}\# of days\mbox{]}.
 \doxysubsubsection{\texorpdfstring{min\_dbh}{min\_dbh}}
 {\footnotesize\ttfamily real, dimension(n\+\_\+pft) pft\+\_\+coms\+::min\+\_\+dbh}
 
+
+
+DBH-\/sapwood area allometry slope. 
+
+\mbox{\Hypertarget{namespacepft__coms_a6667572b7a4d7f75d13cad915d64d0da}\label{namespacepft__coms_a6667572b7a4d7f75d13cad915d64d0da}} 
+\index{pft\_coms@{pft\_coms}!min\_hurr\_dbh@{min\_hurr\_dbh}}
+\index{min\_hurr\_dbh@{min\_hurr\_dbh}!pft\_coms@{pft\_coms}}
+\doxysubsubsection{\texorpdfstring{min\_hurr\_dbh}{min\_hurr\_dbh}}
+{\footnotesize\ttfamily real pft\+\_\+coms\+::min\+\_\+hurr\+\_\+dbh}
+
+
+
+Minimum DBH for cohorts to be affected by hurricanes. 
+
 \mbox{\Hypertarget{namespacepft__coms_a4a008038dd34f2531f2ca7637c6e74b0}\label{namespacepft__coms_a4a008038dd34f2531f2ca7637c6e74b0}} 
 \index{pft\_coms@{pft\_coms}!min\_recruit\_size@{min\_recruit\_size}}
 \index{min\_recruit\_size@{min\_recruit\_size}!pft\_coms@{pft\_coms}}
@@ -1473,6 +1554,16 @@ Threshold of consecutive dry days to grow new leaves \mbox{[}\# of days\mbox{]}.
 \index{nonlocal\_dispersal@{nonlocal\_dispersal}!pft\_coms@{pft\_coms}}
 \doxysubsubsection{\texorpdfstring{nonlocal\_dispersal}{nonlocal\_dispersal}}
 {\footnotesize\ttfamily real, dimension(n\+\_\+pft) pft\+\_\+coms\+::nonlocal\+\_\+dispersal}
+
+\mbox{\Hypertarget{namespacepft__coms_a3cd1d016384b57b072456ec49cda6f4a}\label{namespacepft__coms_a3cd1d016384b57b072456ec49cda6f4a}} 
+\index{pft\_coms@{pft\_coms}!off\_allom\_tol@{off\_allom\_tol}}
+\index{off\_allom\_tol@{off\_allom\_tol}!pft\_coms@{pft\_coms}}
+\doxysubsubsection{\texorpdfstring{off\_allom\_tol}{off\_allom\_tol}}
+{\footnotesize\ttfamily real, dimension(n\+\_\+pft) pft\+\_\+coms\+::off\+\_\+allom\+\_\+tol}
+
+
+
+Tolerance for DBH-\/height allometry mismatch, in units of m height. 
 
 \mbox{\Hypertarget{namespacepft__coms_a584bfab014a9ec5b4a5d7ed9e458df9f}\label{namespacepft__coms_a584bfab014a9ec5b4a5d7ed9e458df9f}} 
 \index{pft\_coms@{pft\_coms}!one\_plant\_c@{one\_plant\_c}}
@@ -2038,8 +2129,7 @@ Ratio of actual vessel length (water conducting length) to tree height \mbox{[}-
 
 
 
-Sapwood bulk elastic modulus \mbox{[}MPa\mbox{]} ~\newline
- 
+Sapwood bulk elastic modulus \mbox{[}MPa\mbox{]}. 
 
 \mbox{\Hypertarget{namespacepft__coms_a9365e3320be63eb211567acd17ad2a50}\label{namespacepft__coms_a9365e3320be63eb211567acd17ad2a50}} 
 \index{pft\_coms@{pft\_coms}!wood\_kexp@{wood\_kexp}}
@@ -2059,8 +2149,7 @@ Exponent for the hydraulic vulnerability curve of stem conductivity under the We
 
 
 
-Maximum hydraulic conductivity of the stem \mbox{[}kg H2O / m / s\mbox{]} ~\newline
- 
+Maximum hydraulic conductivity of the stem \mbox{[}kg H2O / m / s\mbox{]}. 
 
 \mbox{\Hypertarget{namespacepft__coms_a6297b85bb820a841ba090b1adbde3cb9}\label{namespacepft__coms_a6297b85bb820a841ba090b1adbde3cb9}} 
 \index{pft\_coms@{pft\_coms}!wood\_psi50@{wood\_psi50}}
@@ -2070,8 +2159,7 @@ Maximum hydraulic conductivity of the stem \mbox{[}kg H2O / m / s\mbox{]} ~\newl
 
 
 
-Water potential at which 50\% of stem conductivity is lost \mbox{[}m\mbox{]} ~\newline
- 
+Water potential at which 50\% of stem conductivity is lost \mbox{[}m\mbox{]}. 
 
 \mbox{\Hypertarget{namespacepft__coms_ae6ad593cfff844ed3904af4ab4a24811}\label{namespacepft__coms_ae6ad593cfff844ed3904af4ab4a24811}} 
 \index{pft\_coms@{pft\_coms}!wood\_psi\_min@{wood\_psi\_min}}

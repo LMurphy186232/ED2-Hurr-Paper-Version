@@ -961,6 +961,24 @@ module pft_coms
    !=======================================================================================!
 
 
+
+   !=======================================================================================!
+   !=======================================================================================!
+   !     Hurricane parameters.                                                             !
+   !=======================================================================================!
+   !=======================================================================================!
+   real, dimension(n_pft) :: hurr_a1 !< "a" in probability of light damage eqn
+   real, dimension(n_pft) :: hurr_a2 !< "a" in probability of medium damage eqn
+   real, dimension(n_pft) :: hurr_c  !< Storm intensity coefficient
+   real, dimension(n_pft) :: hurr_b  !< Storm DBH coefficient
+   real, dimension(n_pft) :: hurr_g  !< Storm survival "g" parameter
+   real, dimension(n_pft) :: hurr_h  !< Storm survival "h" parameter
+   real :: min_hurr_dbh              !< Minimum DBH for cohorts to be affected by hurricanes
+
+   !=======================================================================================!
+   !=======================================================================================!
+
+
    !=======================================================================================!
    !=======================================================================================!
    !     Look-up table used to convert total woody biomass to DBH.                         !

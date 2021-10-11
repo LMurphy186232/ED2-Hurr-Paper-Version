@@ -17,6 +17,10 @@
 !>
 !> Hurricanes cannot be used if ED2 is in bigleaf mode.
 !>
+!> The basic model for the cumulative probability of damage level j for stem i of species s
+!> is logit(p<sub>isj</sub>) = a<sub>j</sub> + c<sub>s</sub> * S * dbh ^<sup>b<sub>s</sub></sup>
+!> where S is the storm intensity.
+!>
 !> If IDETAILED = 64, indicating disturbance details are to be written, this will write a
 !> detailed file of storm activity called "hurricane_report.txt"
 !>
@@ -42,7 +46,7 @@ module hurricane
    !---------------------------------------------------------------------------------------!
    subroutine apply_hurricane(cgrid)
      use ed_max_dims          , only : n_pft
-      use disturb_coms        , only : include_hurricanes          &
+      use hurricane_coms      , only : include_hurricanes          &
                                      , hurricane_db_list           &
                                      , hurricane_db_list_len       &
                                      , hurricane_report
@@ -58,12 +62,14 @@ module hurricane
                                      , l2n_stem                    & ! intent(in)
                                      , qsw                         &
                                      , qbark                       &
-                                    !, negligible_nplant           & ! intent(in)
+                                     , hurr_a1                     &
+                                     , hurr_a2                     &
+                                     , hurr_b                      &
+                                     , hurr_c                      &
+                                     , hurr_g                      &
+                                     , hurr_h                      &
                                      , is_grass                    & ! intent(in)
                                      , agf_bs                      & ! intent(in)
-                                    !, q                           & ! intent(in)
-                                    !, is_liana                    & ! intent(in)
-                                    !, h_edge                      & ! intent(in)
                                      , f_labile_leaf               & ! intent(in)
                                      , f_labile_stem               ! ! intent(in)
       use ed_therm_lib        , only : calc_veg_hcap               & ! function
@@ -414,7 +420,7 @@ module hurricane
    subroutine read_hurricane_db()
       use ed_max_dims         , only : str_len                 &
                                      , max_hurricanes
-      use disturb_coms        , only : hurricane_db            &
+      use hurricane_coms      , only : hurricane_db            &
                                      , hurricane_db_list       &
                                      , hurricane_db_list_len   &
                                      , hurricane_report
@@ -541,6 +547,27 @@ module hurricane
 end subroutine read_hurricane_db
 !=======================================================================================!
 !=======================================================================================!
+
+
+!=======================================================================================!
+!=======================================================================================!
+!> \brief Reads in the file of scheduled hurricanes.
+!> \details The hurricane filename is specified in the ED2IN file as "HURRICANE_DB".
+!> The format is a space-delimited text file with a header and three columns:
+!> year, month, and severity. This throws a fatal error if the file is not found, or
+!> multiple hurricanes are supposed to take place at the same time. A warning is written
+!> if the file is longer than the maximum number of allowed records.
+!> \param hurricane_db Name of hurricane schedule.
+!---------------------------------------------------------------------------------------!
+subroutine init_hurricane_derived_params_after_xml()
+  use ed_max_dims   , only : n_pft
+  use hurricane_coms, only : agb_to_height_lut           &
+                           , nbt_agb_to_height_lut
+
+  allocate(agb_to_height_lut(nbt_agb_to_height_lut,n_pft))
+end subroutine init_hurricane_derived_params_after_xml
+!==========================================================================================!
+!==========================================================================================!
 
 
 end module hurricane

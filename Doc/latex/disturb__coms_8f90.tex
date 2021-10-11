@@ -109,7 +109,9 @@ integer \mbox{\hyperlink{namespacedisturb__coms_a2c6b06614e89040eabac55d3146f2bd
 \begin{DoxyCompactList}\small\item\em Whether to include hurricanes. 0 = no; 1 = yes. If hurricanes are included, the storm schedule must be included in a text file. \end{DoxyCompactList}\item 
 character(len=str\+\_\+len) \mbox{\hyperlink{namespacedisturb__coms_a70fb4629c92c67ab106c4076c4da4407}{disturb\+\_\+coms\+::hurricane\+\_\+db}}
 \begin{DoxyCompactList}\small\item\em Filename containing the hurricane list. \end{DoxyCompactList}\item 
-type(hurrtime), dimension(max\+\_\+obstime) \mbox{\hyperlink{namespacedisturb__coms_a15b5d5228db5b5e12bd51b7a2af99ab8}{disturb\+\_\+coms\+::hurricane\+\_\+db\+\_\+list}}
+type(hurrtime), dimension(max\+\_\+hurricanes) \mbox{\hyperlink{namespacedisturb__coms_add02a1e458a4c80756548b312fbb061d}{disturb\+\_\+coms\+::hurricane\+\_\+db\+\_\+list}}
 \begin{DoxyCompactList}\small\item\em List of scheduled hurricanes. \end{DoxyCompactList}\item 
 integer \mbox{\hyperlink{namespacedisturb__coms_a53b72fde1f4dbd81873bb0204468a3c3}{disturb\+\_\+coms\+::hurricane\+\_\+db\+\_\+list\+\_\+len}}
-\begin{DoxyCompactList}\small\item\em Total length of the hurricane schedule. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Total length of the hurricane schedule. \end{DoxyCompactList}\item 
+character(len=str\+\_\+len) \mbox{\hyperlink{namespacedisturb__coms_a2ac404af420a5b183a9c9c017b022296}{disturb\+\_\+coms\+::hurricane\+\_\+report}}
+\begin{DoxyCompactList}\small\item\em Filename of detailed hurricane report, if the user asks for it. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -23,7 +23,11 @@ This module checks monthly to see if a hurricane is scheduled. The hurricane sch
 
 Hurricanes cannot be used if ED2 is in bigleaf mode.
 
-Possible future work\+: randomly generate a storm regime. \begin{DoxyAuthor}{Author}
+The basic model for the cumulative probability of damage level j for stem i of species s is logit(p\textsubscript{isj}) = a\textsubscript{j} + c\textsubscript{s} $\ast$ S $\ast$ dbh $^\wedge$\textsuperscript{b\textsubscript{s}}
+
+If IDETAILED = 64, indicating disturbance details are to be written, this will write a detailed file of storm activity called \char`\"{}hurricane\+\_\+report.\+txt\char`\"{}
+
+Possible future work\+: randomly generate a storm regime; further decouple biomass pools to allow preferential removal of, say, leaves (right now doing so causes the cohorts to fail budget checks in structural growth, since part of the check is that the pools are on allometry). \begin{DoxyAuthor}{Author}
 Lora Murphy, September 2021 
 \end{DoxyAuthor}
 

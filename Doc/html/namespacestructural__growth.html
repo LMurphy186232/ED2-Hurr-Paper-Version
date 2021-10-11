@@ -74,7 +74,7 @@ Functions/Subroutines</h2></td></tr>
 <tr class="memitem:a469170de4bcc0161752017f5904a1939"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestructural__growth.html#a469170de4bcc0161752017f5904a1939">dbstruct_dt</a> (cgrid, veget_dyn_on, new_year)</td></tr>
 <tr class="separator:a469170de4bcc0161752017f5904a1939"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac374f41078648b979846d72bb20c078e"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestructural__growth.html#ac374f41078648b979846d72bb20c078e">plant_structural_allocation</a> (ipft, hite, dbh, lat, phen_status, elongf, bdeada, bdeadb, bstorage, bstorage_reserve, maxh, f_bseeds, f_growth, f_bstorage)</td></tr>
-<tr class="memdesc:ac374f41078648b979846d72bb20c078e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This subroutine will decide the partition of storage biomass into seeds and dead (structural) biomass. Modified by Lora Murphy to take into account the possibility that a cohort will be off allometry (height is less than expected for DBH). If this is the case, all storage carbon will go to restoring height first, before other structural growth or reproduction.  <a href="namespacestructural__growth.html#ac374f41078648b979846d72bb20c078e">More...</a><br /></td></tr>
+<tr class="memdesc:ac374f41078648b979846d72bb20c078e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This subroutine will decide the partition of storage biomass into seeds and dead (structural) biomass.  <a href="namespacestructural__growth.html#ac374f41078648b979846d72bb20c078e">More...</a><br /></td></tr>
 <tr class="separator:ac374f41078648b979846d72bb20c078e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd0090ed3f15ad8b8f09e52ae37bbb3a"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestructural__growth.html#acd0090ed3f15ad8b8f09e52ae37bbb3a">bdead_structural_allocation</a> (ipft, bstorage_in, bleaf_in, broot_in, bsapwooda_in, bsapwoodb_in, bbarka_in, bbarkb_in, bdeada_in, bdeadb_in, bevery_in, f_bstorage, f_growth, f_bdeada, f_bdeadb)</td></tr>
 <tr class="separator:acd0090ed3f15ad8b8f09e52ae37bbb3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -534,7 +534,8 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>This subroutine will decide the partition of storage biomass into seeds and dead (structural) biomass. Modified by Lora Murphy to take into account the possibility that a cohort will be off allometry (height is less than expected for DBH). If this is the case, all storage carbon will go to restoring height first, before other structural growth or reproduction. </p>
+<p>This subroutine will decide the partition of storage biomass into seeds and dead (structural) biomass. </p>
+<p >Modified by Lora Murphy to take into account the possibility that a cohort will be off allometry (height is less than expected for DBH). If this is the case, all storage carbon will go to restoring height first, before other structural growth or reproduction. The tolerance for allometry mismatch is settable by the user but defaults to 0-ish. </p>
 
 </div>
 </div>
