@@ -950,14 +950,60 @@ end subroutine init_disturb_params
 !==========================================================================================!
 subroutine init_hurricane_params
 
-   use hurricane_coms , only : hurricane_db
+   !use hurricane_coms , only : hurricane_db
+   use pft_coms       , only : hurr_a1        &
+                             , hurr_a2        &
+                             , hurr_c         &
+                             , hurr_b         &
+                             , hurr_g         &
+                             , hurr_h         &
+                             , min_hurr_dbh
    implicit none
 
+   !hurricane_db  = ''
+
+   min_hurr_dbh = 10.0
 
    !---------------------------------------------------------------------------------------!
    !     Initialize hurricane parameters                                                   !
+   ! We have no basis for parameterizing non-tropical PFTs with damage and survival        !
+   ! parameters. Any tree PFT we don't already know about, give them late tropical values  !
+   ! just to avoid memory problems
    !---------------------------------------------------------------------------------------!
-   hurricane_db  = ''
+
+   !----- Put in the late values as a default ---------------------------------------------!
+   hurr_a1 = 2.2203369
+   hurr_a2 = 3.7107217
+   hurr_b  = 0.2238506
+   hurr_c  = -1.941200
+   hurr_g  = 1.438688
+   hurr_h  = 0.005136475
+
+   !----- Put in the rest of the tropical values ------------------------------------------!
+   hurr_a1(2)  = 2.4636
+   hurr_a1(3)  = 2.4705823
+   hurr_a1(18) = 2.99916
+
+   hurr_a2(2)  = 3.0796
+   hurr_a2(3)  = 3.4985469
+   hurr_a2(18) = 2.99045
+
+   hurr_b(2)  = 0.026185
+   hurr_b(3)  = 0.1327321
+   hurr_b(18) = 0.23077
+
+   hurr_c(2)  = -4.20356
+   hurr_c(3)  = -3.0648894
+   hurr_c(18) = -0.83756
+
+   hurr_g(2)  = 0.596089
+   hurr_g(3)  = 1.985226
+   hurr_g(18) = -2.156441
+
+   hurr_h(2)  = -0.06984992
+   hurr_h(3)  = -0.05683523
+   hurr_h(18) = -0.005643411
+
 
    return
 end subroutine init_hurricane_params
