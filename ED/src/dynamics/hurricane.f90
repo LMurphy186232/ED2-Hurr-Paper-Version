@@ -336,7 +336,7 @@ module hurricane
                             + cpatch%bdeada(ico) + cpatch%bsapwooda(ico)
 
                      !----- New AGB -------------------------------------------------------!
-                     new_agb = agb_in * agb_loss
+                     new_agb = agb_in * (1 - agb_loss)
 
                      !----- Get the new height corresponding to this AGB ------------------!
                      hite_in = cpatch%hite(ico)
@@ -356,6 +356,8 @@ module hurricane
 
                         new_hite = agb1 + (new_agb - agb1) * ((h2 - h1) / (agb2 - agb1))
                      end if
+
+                     cpatch%bleaf(ico) = cpatch%bleaf(ico) * 0.9
 
                      !----- Don't let height grow -----------------------------------------!
                      if (new_hite < cpatch%hite(ico)) then
@@ -467,8 +469,7 @@ module hurricane
                     write (unit=79,fmt='(i4,a,f12.5,a,f12.5,a,f12.5,a,f12.5,a,f12.5,a,f12.5,a,f12.5)')&
                              ipft, ',', cpatch%dbh(ico), ',', hite_in, ','                 &
                              , cpatch%hite(ico), ',', agb_in, ','                          &
-                             , amt, ','         &
-                             , nplant_in, ',', cpatch%nplant(ico)
+                             , amt, ',', nplant_in, ',', cpatch%nplant(ico)
                     !---------------------------------------------------------------------!
 
 

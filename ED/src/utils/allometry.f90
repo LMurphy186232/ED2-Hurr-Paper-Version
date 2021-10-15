@@ -1,6 +1,6 @@
 !==========================================================================================!
 !==========================================================================================!
-! MODULE: ALLOMETRY  
+! MODULE: ALLOMETRY
 !> \brief This module is a library with the allometric relationships used by ED2.
 !------------------------------------------------------------------------------------------!
 module allometry
@@ -190,12 +190,78 @@ module allometry
 
 
 
+   !=======================================================================================!
+   !=======================================================================================!
+   !     Function that finds height from BDEAD                                             !
+   ! DBH is only used in the case where size - dbh^2 * h. If this function is being        !
+   ! used, there is every possibility that you don't know exactly what the correct DBH     !
+   ! should be. So in the case of IALLOM = 3 or IALLOM = 4, this will push things off      !
+   ! allometry by an unexpected amount.
+   !---------------------------------------------------------------------------------------!
+   real function bd2h(bdead,dbh,ipft)
+
+      use pft_coms    , only : C2B         & ! intent(in)
+                             , bdead_crit  & ! intent(in)
+                             , b1Bs_small  & ! intent(in)
+                             , b2Bs_small  & ! intent(in)
+                             , b1Bs_large  & ! intent(in)
+                             , b2Bs_large  & ! intent(in)
+                             , is_grass    & ! intent(in)
+                             , is_tropical & ! intent(in)
+                             , is_liana    ! ! intent(in)
+      use ed_misc_coms, only : igrass      & ! intent(in)
+                             , iallom      ! ! intent(in)
+      implicit none
+
+      !----- Arguments --------------------------------------------------------------------!
+      real   , intent(in) :: dbh
+      real   , intent(in) :: bdead
+      integer, intent(in) :: ipft
+      !----- Local variables. -------------------------------------------------------------!
+      real                :: size
+      !------------------------------------------------------------------------------------!
+
+
+      !------------------------------------------------------------------------------------!
+      !     Structural biomass depends on the allometry and the size.                      !
+      !------------------------------------------------------------------------------------!
+      if (igrass == 1 .and. is_grass(ipft)   ) then
+         bd2h = 0.0
+      else
+
+         !----- Decide parameters based on seedling/adult size. ---------------------------!
+         if (bdead <= bdead_crit(ipft)) then
+            size = (bdead * C2B / b1Bs_small(ipft)) ** (1/b2Bs_small(ipft))
+         else
+            size = (bdead * C2B / b1Bs_large(ipft)) ** (1/b2Bs_large(ipft))
+         end if
+
+         !---------------------------------------------------------------------------------!
+
+         !----- Depending on the allometry, size means DBH or DBH^2 * Height. -------------!
+         if ( (iallom == 3 .or. iallom == 4)                            &
+              .and. is_tropical(ipft) .and. (.not. is_liana(ipft))) then
+            bd2h = size / (dbh * dbh)
+         else
+            bd2h = dbh2h(ipft, size)
+         end if
+         !---------------------------------------------------------------------------------!
+      end if
+      !------------------------------------------------------------------------------------!
+
+      return
+   end function bd2h
+   !=======================================================================================!
+   !=======================================================================================!
+
+
+
 
 
 
    !=======================================================================================!
    !=======================================================================================!
-   ! FUNCTION DBH2SF             
+   ! FUNCTION DBH2SF
    !< \brief Calculate sapwood fraction from DBH
    !< \author Xiangtao Xu, 31 Jan. 2018
    !---------------------------------------------------------------------------------------!
@@ -230,7 +296,7 @@ module allometry
          !---------------------------------------------------------------------------------!
       end if
 
-      return 
+      return
    end function dbh2sf
    !=======================================================================================!
    !=======================================================================================!
@@ -326,7 +392,7 @@ module allometry
       !------------------------------------------------------------------------------------!
       !     Get the DBH, or potential DBH in case of grasses.                              !
       !------------------------------------------------------------------------------------!
-      if (igrass == 1 .and. is_grass(ipft)) then 
+      if (igrass == 1 .and. is_grass(ipft)) then
          !---- Use height for new grasses. ------------------------------------------------!
          mdbh   = min(dbh,h2dbh(hite,ipft))
       elseif (is_liana(ipft)) then
@@ -344,7 +410,7 @@ module allometry
       if ((iallom == 3 .or. iallom == 4)                                                  &
           .and. is_tropical(ipft) .and. (.not. is_liana(ipft))) then
          size = mdbh * mdbh * hite
-      else 
+      else
          size = mdbh
       end if
       !------------------------------------------------------------------------------------!
@@ -509,7 +575,7 @@ module allometry
    real function bl2h(bleaf,sla_in,ipft)
       use pft_coms,      only:  hgt_max    ! ! intent(in)
       implicit none
-      
+
       !----- Arguments --------------------------------------------------------------------!
       real   , intent(in)      :: bleaf
       real   , intent(in)      :: sla_in
@@ -577,7 +643,7 @@ module allometry
       else
 
          !----- make this function generic to size, not just dbh. -------------------------!
-         loclai = sla * size2bl(dbh,hite,sla,ipft) 
+         loclai = sla * size2bl(dbh,hite,sla,ipft)
          !---------------------------------------------------------------------------------!
 
 
@@ -787,7 +853,7 @@ module allometry
 
 
          !----- Find on-allometry bark biomass. -------------------------------------------!
-         bleaf_max = size2bl(mdbh,hgt,sla_in,ipft) 
+         bleaf_max = size2bl(mdbh,hgt,sla_in,ipft)
          bbark_max = qbark(ipft) * hgt * bleaf_max
          !---------------------------------------------------------------------------------!
 
@@ -1002,7 +1068,7 @@ module allometry
    real function h2crownbh(height,ipft)
       use pft_coms, only : b1Cl & ! intent(in)
                          , b2Cl ! ! intent(in)
-      implicit none 
+      implicit none
 
       !----- Arguments --------------------------------------------------------------------!
       real   , intent(in) :: height
@@ -1010,7 +1076,7 @@ module allometry
       !----- Local variables. -------------------------------------------------------------!
       real                :: crown_length
       !------------------------------------------------------------------------------------!
-      
+
       crown_length = b1Cl(ipft) * height ** b2Cl(ipft)
       h2crownbh    = max(0.05,height - crown_length)
 
@@ -1030,7 +1096,7 @@ module allometry
    !---------------------------------------------------------------------------------------!
    real function ed_biomass(cpatch,ico)
       use ed_state_vars, only : patchtype  ! ! Structure
-      implicit none 
+      implicit none
 
       !----- Arguments --------------------------------------------------------------------!
       type(patchtype), target :: cpatch
@@ -1056,7 +1122,7 @@ module allometry
    !---------------------------------------------------------------------------------------!
    real function ed_balive(cpatch,ico)
       use ed_state_vars, only : patchtype  ! ! Structure
-      implicit none 
+      implicit none
 
       !----- Arguments --------------------------------------------------------------------!
       type(patchtype), target :: cpatch
@@ -1103,7 +1169,7 @@ module allometry
       !------------------------------------------------------------------------------------!
       !     Find potential leaf and heartwood biomass.                                     !
       !------------------------------------------------------------------------------------!
-      bleaf   = size2bl(dbh,hite,SLA(ipft),ipft) 
+      bleaf   = size2bl(dbh,hite,SLA(ipft),ipft)
       !NOTE: here the canopy top SLA is used because size2be is only used in expand_bevery to create
       !a look up table for biomass allometry. When generating the lut, we do not know the light
       !environment and thus the trait plasticity in SLA. This can create biases in lut but the only
@@ -1269,7 +1335,7 @@ module allometry
                write (unit=*,fmt='(a)')           '--------------------------------------'
                call fatal_error('Ill-posed first guesses for Regula Falsi'                 &
                                ,'expand_bevery','allometry.f90')
-               
+
             end if
             !------------------------------------------------------------------------------!
 
@@ -1349,7 +1415,7 @@ module allometry
                write (unit=*,fmt='(a)')           '--------------------------------------'
                call fatal_error('Ill-posed first guess for Regula Falsi'                   &
                                ,'expand_bevery','allometry.f90')
-               
+
             end if
             !------------------------------------------------------------------------------!
          end if
@@ -1444,7 +1510,7 @@ module allometry
       ! otherwise, simply assign zeroes to them.                                           !
       !------------------------------------------------------------------------------------!
       select case (ibranch_thermo)
-      case (0) 
+      case (0)
          !----- Ignore branches and trunk. ------------------------------------------------!
          cpatch%wai(ico)  = 0.
          !---------------------------------------------------------------------------------!
@@ -1453,7 +1519,7 @@ module allometry
          !---------------------------------------------------------------------------------!
          !     Get the DBH, or potential DBH in case of grasses.                           !
          !---------------------------------------------------------------------------------!
-         if (is_grass(ipft) .and. igrass == 1) then 
+         if (is_grass(ipft) .and. igrass == 1) then
             !---- Use height for new grasses. ---------------------------------------------!
             mdbh   = min(cpatch%dbh(ico),h2dbh(cpatch%hite(ico),ipft))
          elseif (is_liana(ipft)) then
@@ -1484,5 +1550,3 @@ module allometry
 end module allometry
 !==========================================================================================!
 !==========================================================================================!
-
-
