@@ -75,6 +75,7 @@ module update_derived_utils
                                 , yr1st_census            & ! intent(in)
                                 , mon1st_census           & ! intent(in)
                                 , min_recruit_dbh         ! ! intent(in)
+      use hurricane_coms , only : coh_off_allom                                
       implicit none
       !----- Arguments --------------------------------------------------------------------!
       type(patchtype), target     :: cpatch
@@ -131,6 +132,7 @@ module update_derived_utils
             ! it before growing further.                                                   !
             !------------------------------------------------------------------------------!
             cpatch%hite(ico) = dbh2h (ipft, dbh_aim)
+            coh_off_allom = coh_off_allom + 1
           end if
       end if
       !------------------------------------------------------------------------------------!

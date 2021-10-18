@@ -28,13 +28,8 @@
 !> If IDETAILED = 64, indicating disturbance details are to be written, this will write a
 !> detailed file of storm activity called "hurricane_report.txt"
 !>
-!> Possible future work: randomly generate a storm regime; further decouple biomass pools
-!> to allow preferential removal of, say, leaves (right now doing so causes the cohorts
-!> to fail budget checks in structural growth, since part of the check is that the
-!> pools are on allometry).
+!> Possible future work: randomly generate a storm regime
 !> \author Lora Murphy, September 2021
-!> \todo Parameter copying and passing in MPI situations
-!> \todo Figure out how to deal with lianas
 !------------------------------------------------------------------------------------------!
 module hurricane
 
@@ -53,10 +48,6 @@ module hurricane
       use hurricane_coms      , only : include_hurricanes          &
                                      , hurricane_db_list           &
                                      , hurricane_db_list_len       &
-                                     , agb_to_height_lut           &
-                                     , height_for_agb_lut          &
-                                     , ge_mask_hurr_lut            &
-                                     , le_mask_hurr_lut            &
                                      , hurricane_report
       use update_derived_utils, only : update_cohort_derived_props
       use ed_misc_coms        , only : current_time
@@ -89,6 +80,7 @@ module hurricane
       use detailed_coms       , only : idetailed
       use allometry           , only : size2bd                     &
                                      , size2bl                     &
+                                     , bd2h                        &
                                      , h2dbh
 
       implicit none
@@ -113,7 +105,6 @@ module hurricane
       real                          :: bsapwoodb_in
       real                          :: bbarka_in
       real                          :: bbarkb_in
-      real                          :: balive_in
       real                          :: bdeada_in
       real                          :: bdeadb_in
       real                          :: bstorage_in
@@ -123,7 +114,6 @@ module hurricane
       real                          :: bsapwoodb_loss
       real                          :: bbarka_loss
       real                          :: bbarkb_loss
-      real                          :: balive_loss
       real                          :: bdeada_loss
       real                          :: bdeadb_loss
       real                          :: bstorage_loss
@@ -147,18 +137,13 @@ module hurricane
       real                          :: prob_med
       real                          :: prob_heavy
       real                          :: prob_mort
-      real                          :: agb_loss
-      real                          :: new_agb
+      real                          :: bdead_loss
+      real                          :: new_bdead
       real                          :: amt
       real                          :: new_hite
       real                          :: hite_in
-      real                          :: h1
-      real                          :: h2
-      real                          :: agb1
-      real                          :: agb2
       real                          :: agb_in
-      integer                       :: ilwr
-      integer                       :: iupr
+      real                          :: bdead_in
       logical                       :: hurricane_time
       logical                       :: print_detailed
       !------------------------------------------------------------------------------------!
@@ -280,26 +265,6 @@ module hurricane
 
 
                      !---------------------------------------------------------------------!
-                     !       Calculate amount of AGB to remove                             !
-                     ! Use random numbers to choose final amount to remove                 !
-                     !---------------------------------------------------------------------!
-                     agb_loss = 0
-
-                     !----- Light damage: biomass loss between 0 and 3.8 percent ----------!
-                     agb_loss = agb_loss + (prob_light * (rand() * 0.038))
-
-                     !----- Medium damage: loss between 20 and 53.8% ----------------------!
-                     amt = (rand() * (0.538 - 0.2)) + 0.2
-                     agb_loss = agb_loss + (prob_med   * amt)
-
-                     !----- Heavy damage: loss between 51.3 and 83% -----------------------!
-                     amt = (rand() * (0.83 - 0.513)) + 0.513
-                     agb_loss = agb_loss + (prob_heavy * amt)
-                     !---------------------------------------------------------------------!
-
-
-
-                     !---------------------------------------------------------------------!
                      !       Calculate storm mortality                                     !
                      ! Our function is the probability that a heavily damaged tree         !
                      ! survives; flip to mortality                                         !
@@ -327,40 +292,34 @@ module hurricane
 
                      !---------------------------------------------------------------------!
                      !       Apply storm damage                                            !
-                     ! Use our lookup table to determine how much height is lost based     !
-                     ! on amount of AGB loss                                               !
+                     ! Cohorts will lose BLEAF and BDEAD. The loss of BDEAD equals a loss  !
+                     ! of height
                      !---------------------------------------------------------------------!
+                     bdead_loss = 0
 
-                     !----- Current AGB ---------------------------------------------------!
-                     agb_in = cpatch%bleaf (ico) + cpatch%bbarka   (ico)                   &
-                            + cpatch%bdeada(ico) + cpatch%bsapwooda(ico)
+                     !----- Medium damage: loss between 20 and 53.8% ----------------------!
+                     amt = (rand() * (0.538 - 0.2)) + 0.2
+                     bdead_loss = bdead_loss + (prob_med   * amt)
 
-                     !----- New AGB -------------------------------------------------------!
-                     new_agb = agb_in * (1 - agb_loss)
+                     !----- Heavy damage: loss between 51.3 and 83% -----------------------!
+                     amt = (rand() * (0.83 - 0.513)) + 0.513
+                     bdead_loss = bdead_loss + (prob_heavy * amt)
 
-                     !----- Get the new height corresponding to this AGB ------------------!
+                     !----- Current BDEAD -------------------------------------------------!
+                     bdead_in = cpatch%bdeada(ico) + cpatch%bdeadb(ico)
+                     !----- Current AGB, for reporting ------------------------------------!
+                     agb_in = cpatch%bdeada(ico) + cpatch%bleaf(ico)                       &
+                            + cpatch%bbarka(ico) + cpatch%bsapwooda(ico)
+
+                     !----- New BDEAD -----------------------------------------------------!
+                     new_bdead = bdead_in * (1 - bdead_loss)
+
+                     !----- Get the new height corresponding to this BDEAD ----------------!
                      hite_in = cpatch%hite(ico)
-                     le_mask_hurr_lut(:) = new_agb <= agb_to_height_lut(:,ipft)
-                     ge_mask_hurr_lut(:) = new_agb >= agb_to_height_lut(:,ipft)
-                     ilwr  = maxloc (agb_to_height_lut(:,ipft),dim=1,mask=le_mask_hurr_lut)
-                     iupr  = minloc (agb_to_height_lut(:,ipft),dim=1,mask=ge_mask_hurr_lut)
-
-                     !----- Linear interpolate if necessary -------------------------------!
-                     if (ilwr == iupr) then
-                        new_hite = height_for_agb_lut(ilwr,ipft)
-                     else
-                        h2   = agb_to_height_lut (iupr, ipft)
-                        h1   = agb_to_height_lut (ilwr, ipft)
-                        agb2 = agb_to_height_lut (iupr, ipft)
-                        agb1 = agb_to_height_lut (ilwr, ipft)
-
-                        new_hite = agb1 + (new_agb - agb1) * ((h2 - h1) / (agb2 - agb1))
-                     end if
-
-                     cpatch%bleaf(ico) = cpatch%bleaf(ico) * 0.9
+                     new_hite = bd2h(new_bdead, cpatch%dbh(ico), ipft)
 
                      !----- Don't let height grow -----------------------------------------!
-                     if (new_hite < cpatch%hite(ico)) then
+                     if (new_hite <= cpatch%hite(ico)) then
 
                         cpatch%hite(ico) = new_hite
 
@@ -372,6 +331,9 @@ module hurricane
                         cpatch%bleaf    (ico) = size2bl(dbh_aim, cpatch%hite(ico), cpatch%sla(ico), ipft)
                         cpatch%bbarka   (ico) = cpatch%bleaf(ico) * qbark(ipft) * cpatch%hite(ico) * agf_bs(ipft)
                         cpatch%bsapwooda(ico) = cpatch%bleaf(ico) * qsw  (ipft) * cpatch%hite(ico) * agf_bs(ipft)
+
+                        !----- Light damage: leaf loss only, up to 25% -----------------------!
+                        cpatch%bleaf(ico) = cpatch%bleaf(ico) * (prob_light * (rand() * 0.25))
 
                         !----- Have the cohort update itself ------------------------------!
                         call update_cohort_derived_props(cpatch,ico,cpoly%lsl(isi),.false. &
@@ -390,26 +352,14 @@ module hurricane
                      ! plants / m2. Multiplying by nplant gives us kgC / m2, which is the  !
                      ! units of the litter pools                                           !
                      !---------------------------------------------------------------------!
-                     !----- Amount lost due to storm damage - original amount minus current!
-                     if (new_hite < cpatch%hite(ico)) then
-                        bleaf_loss     = (bleaf_in     - cpatch%bleaf    (ico)) * cpatch%nplant(ico)
-                        bdeada_loss    = (bdeada_in    - cpatch%bdeada   (ico)) * cpatch%nplant(ico)
-                        bdeadb_loss    = (bdeadb_in    - cpatch%bdeadb   (ico)) * cpatch%nplant(ico)
-                        broot_loss     = (broot_in     - cpatch%broot    (ico)) * cpatch%nplant(ico)
-                        bbarka_loss    = (bbarka_in    - cpatch%bbarka   (ico)) * cpatch%nplant(ico)
-                        bbarkb_loss    = (bbarkb_in    - cpatch%bbarkb   (ico)) * cpatch%nplant(ico)
-                        bsapwooda_loss = (bsapwooda_in - cpatch%bsapwooda(ico)) * cpatch%nplant(ico)
-                        bsapwoodb_loss = (bsapwoodb_in - cpatch%bsapwoodb(ico)) * cpatch%nplant(ico)
-                     else
-                        bleaf_loss     = 0.0
-                        bdeada_loss    = 0.0
-                        bdeadb_loss    = 0.0
-                        broot_loss     = 0.0
-                        bbarka_loss    = 0.0
-                        bbarkb_loss    = 0.0
-                        bsapwooda_loss = 0.0
-                        bsapwoodb_loss = 0.0
-                     end if
+                     bleaf_loss     = (bleaf_in     - cpatch%bleaf    (ico)) * cpatch%nplant(ico)
+                     bdeada_loss    = (bdeada_in    - cpatch%bdeada   (ico)) * cpatch%nplant(ico)
+                     bdeadb_loss    = (bdeadb_in    - cpatch%bdeadb   (ico)) * cpatch%nplant(ico)
+                     broot_loss     = (broot_in     - cpatch%broot    (ico)) * cpatch%nplant(ico)
+                     bbarka_loss    = (bbarka_in    - cpatch%bbarka   (ico)) * cpatch%nplant(ico)
+                     bbarkb_loss    = (bbarkb_in    - cpatch%bbarkb   (ico)) * cpatch%nplant(ico)
+                     bsapwooda_loss = (bsapwooda_in - cpatch%bsapwooda(ico)) * cpatch%nplant(ico)
+                     bsapwoodb_loss = (bsapwoodb_in - cpatch%bsapwoodb(ico)) * cpatch%nplant(ico)
 
 
                      !----- Add amount lost to storm mortality -----------------------------!
@@ -530,7 +480,7 @@ module hurricane
       ! Prune lianas
 
       !------------------------------------------------------------------------------------!
-      !       Find out whether to print detailed information on screen.                    !
+      !       Find out whether to print detailed information.                              !
       !------------------------------------------------------------------------------------!
       print_detailed = btest(idetailed,6)
       if (print_detailed) then
@@ -660,9 +610,9 @@ module hurricane
          if (hurricane_db_list(ihu)%month < 1   .or. &
              hurricane_db_list(ihu)%month > 12) then
 
-            write (unit=*,fmt='(a,1x,i12,1x)')  'Cannot understand hurricane month value: ', &
+            write (unit=*,fmt='(a,i4,a)')  'Cannot understand hurricane month value: ', &
                             hurricane_db_list(ihu)%month, &
-                            'Hurricane months must be between 1 and 12.'
+                            ' Hurricane months must be between 1 and 12.'
             call fatal_error('Cannot understand hurricane month value.','read_hurricane_times' &
                              ,'hurricane.f90')
          end if
@@ -671,7 +621,7 @@ module hurricane
          if (hurricane_db_list(ihu)%severity < 0  .or. &
              hurricane_db_list(ihu)%severity > 1) then
 
-            write (unit=*,fmt='(a,1x,i12,1x)')  'Cannot understand hurricane severity value: ', &
+            write (unit=*,fmt='(a,f12.5,a)')  'Cannot understand hurricane severity value: ', &
                  hurricane_db_list(ihu)%severity, '. Hurricane severity must be between 0 and 1.'
             call fatal_error('Cannot understand hurricane severity value.','read_hurricane_times' &
                              ,'hurricane.f90')
@@ -685,7 +635,7 @@ module hurricane
       !      If we had too many observations, warn the user                                !
       !------------------------------------------------------------------------------------!
       if (hurricane_db_list_len .eq. max_hurricanes) then
-         write (unit=*,fmt='(a,i4,a)') &
+         write (unit=*,fmt='(a,i5,a)') &
                'Too many entries in input HURRICANE_DB. Using only the first ', max_hurricanes, '...'
       end if
       !------------------------------------------------------------------------------------!
@@ -697,89 +647,9 @@ module hurricane
         write (unit=79,fmt='(a,1x)') 'Hurricane report'
         close (unit=79,status='keep')
       end if
-
 end subroutine read_hurricane_db
 !=========================================================================================!
 !=========================================================================================!
-
-
-!=========================================================================================!
-!=========================================================================================!
-!> \brief Calculates lookup table relating height to AGB.
-!> \details Since allometry is strongly dependent on user settings, including those in
-!> an XML config file, this will calculate the height-AGB relationship based on how
-!> allometry is set up and put the results in a lookup table. This will allow the
-!> hurricane module to quickly determine how much height needs to be removed from a
-!> cohort to remove a desired amount of AGB.
-!-----------------------------------------------------------------------------------------!
-subroutine init_hurricane_derived_params_after_xml()
-  use allometry     , only : size2bd                     &
-                           , size2bl                     &
-                           , h2dbh
-  use ed_max_dims   , only : n_pft
-  use pft_coms      , only : hgt_max                     &
-                           , agf_bs                      &
-                           , SLA                         &
-                           , qbark                       &
-                           , qsw
-  use hurricane_coms, only : agb_to_height_lut           &
-                           , height_for_agb_lut          &
-                           , ge_mask_hurr_lut            &
-                           , le_mask_hurr_lut            &
-                           , nbt_agb_to_height_lut
-
-  !----- Local variables ------------------------------------------------------------------!
-  real                    :: height_chunk
-  real                    :: height_now
-  real                    :: dbh_now
-  real                    :: bleaf_now
-  real                    :: bbarka_now
-  real                    :: bdeada_now
-  real                    :: bsapwooda_now
-  integer                 :: ipft
-  integer                 :: ilut
-
-  !----- Set the number of height divisions, and allocate the table array -----------------!
-  nbt_agb_to_height_lut = 100.0
-  allocate(agb_to_height_lut (nbt_agb_to_height_lut,n_pft))
-  allocate(height_for_agb_lut(nbt_agb_to_height_lut,n_pft))
-  allocate(le_mask_hurr_lut  (nbt_agb_to_height_lut))
-  allocate(ge_mask_hurr_lut  (nbt_agb_to_height_lut))
-
-  !------ Divide height up to max height, and get AGB for each ----------------------------!
-  do ipft=1, n_pft
-
-    !----- How big will the divisions be for this PFT? ------------------------------------!
-    height_chunk = hgt_max(ipft) / nbt_agb_to_height_lut
-    height_now   = height_chunk
-
-    !----- Calculate AGB for each height increment ----------------------------------------!
-    do ilut=1, nbt_agb_to_height_lut
-      height_for_agb_lut(ilut, ipft) = height_now
-
-      !----- AGB is leaf, aboveground sapwood, aboveground bdead, and aboveground bark ----!
-
-      !----- What is the dbh that matches this current height? ----------------------------!
-      dbh_now = h2dbh(height_now, ipft)
-
-      !----- Calculate the fractions for this size ----------------------------------------!
-      bdeada_now    = size2bd(dbh_now, height_now, ipft) * agf_bs(ipft)
-      bleaf_now     = size2bl(dbh_now, height_now, SLA(ipft), ipft)
-      bbarka_now    = bleaf_now * qbark(ipft) * height_now * agf_bs(ipft)
-      bsapwooda_now = bleaf_now * qsw(ipft) * height_now * agf_bs(ipft)
-
-      agb_to_height_lut(ilut, ipft) = bdead_now + bleaf_now + bbarka_now + bsapwooda_now
-
-      height_now = height_now + height_chunk
-    end do
-
-  end do
-
-end subroutine init_hurricane_derived_params_after_xml
-!==========================================================================================!
-!==========================================================================================!
-
-
 end module hurricane
 !==========================================================================================!
 !==========================================================================================!

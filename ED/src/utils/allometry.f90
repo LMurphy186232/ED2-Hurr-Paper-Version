@@ -196,7 +196,7 @@ module allometry
    ! DBH is only used in the case where size - dbh^2 * h. If this function is being        !
    ! used, there is every possibility that you don't know exactly what the correct DBH     !
    ! should be. So in the case of IALLOM = 3 or IALLOM = 4, this will push things off      !
-   ! allometry by an unexpected amount.
+   ! allometry by potentially an unexpected amount.                                        !
    !---------------------------------------------------------------------------------------!
    real function bd2h(bdead,dbh,ipft)
 

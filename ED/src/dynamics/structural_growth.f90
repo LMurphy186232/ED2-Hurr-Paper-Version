@@ -55,6 +55,9 @@ module structural_growth
                                      , almost_zero                 ! ! intent(in)
       use plant_hydro         , only : rwc2tw                      & ! subroutine
                                      , twi2twe                     ! ! subroutine
+      use hurricane_coms      , only : coh_off_allom               &
+                                     , hurricane_report
+      use detailed_coms       , only : idetailed
       implicit none
       !----- Arguments --------------------------------------------------------------------!
       type(edtype)     , target     :: cgrid
@@ -148,6 +151,7 @@ module structural_growth
       real                          :: old_wood_water
       real                          :: old_leaf_water_im2
       real                          :: old_wood_water_im2
+      logical                       :: print_detailed
       logical          , parameter  :: printout  = .false.
       character(len=17), parameter  :: fracfile  = 'struct_growth.txt'
       !----- Locally saved variables. -----------------------------------------------------!
@@ -176,6 +180,7 @@ module structural_growth
       end if
       !------------------------------------------------------------------------------------!
 
+      coh_off_allom = 0
 
       !----- Previous month (for crop yield update and carbon balance mortality). ---------!
       prev_month = 1 + modulo(current_time%month-2,12)
@@ -883,6 +888,19 @@ module structural_growth
          !---------------------------------------------------------------------------------!
       end do polyloop
       !------------------------------------------------------------------------------------!
+
+      !------------------------------------------------------------------------------------!
+      ! Print info about number of off-allometry cohorts                                   !
+      !------------------------------------------------------------------------------------!
+      print_detailed = btest(idetailed,6)
+      if (print_detailed) then
+         open (unit=79,file=trim(hurricane_report),form='formatted',access='append'         &
+              ,status='old')
+
+         write (unit=79,fmt='(i4,a,i4,a,i7,a)')  current_time%month, '/'                 &
+               ,current_time%year, ': ', coh_off_allom, ' cohorts off allometry'
+         close(unit=79,status='keep')
+      end if
       return
    end subroutine dbstruct_dt
    !=======================================================================================!
