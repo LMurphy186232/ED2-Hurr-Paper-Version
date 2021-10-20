@@ -49,7 +49,9 @@ module hurricane
                                      , hurricane_db_list           &
                                      , hurricane_db_list_len       &
                                      , hurricane_report
-      use update_derived_utils, only : update_cohort_derived_props
+      use update_derived_utils, only : update_cohort_derived_props &
+                                     , update_patch_derived_props  &
+                                     , update_site_derived_props
       use ed_misc_coms        , only : current_time
       use ed_state_vars       , only : edtype                      & ! structure
                                      , polygontype                 & ! structure
@@ -82,6 +84,9 @@ module hurricane
                                      , size2bl                     &
                                      , bd2h                        &
                                      , h2dbh
+      use ed_type_init        , only : new_patch_sfc_props
+      use grid_coms           , only : nzg                        & ! intent(in)
+                                     , nzs                        ! ! intent(in)
 
       implicit none
       !----- Arguments. -------------------------------------------------------------------!
@@ -472,7 +477,21 @@ module hurricane
                      !---------------------------------------------------------------------!
                    end if  ! Eliminating grasses
                end do cohortloop
+
+               !------------------------------------------------------------------------!
+               !     Update the derived properties including veg_height, and patch-     !
+               ! -level LAI, WAI.                                                       !
+               !------------------------------------------------------------------------!
+               call update_patch_derived_props(csite,ipa,.true.)
+
+               !----- Update soil temperature, liquid fraction, etc. -------------------!
+               call new_patch_sfc_props(csite,ipa,nzg,nzs                       &
+                                       ,cpoly%ntext_soil(:,isi))
             end do patchloop
+
+           !----- Update AGB, basal area. ------------------------------------------!
+            call update_site_derived_props(cpoly,1,isi)
+            !------------------------------------------------------------------------!
          end do siteloop
       end do polyloop
       !---------------------------------------------------------------------------!
