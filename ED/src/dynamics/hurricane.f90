@@ -87,6 +87,7 @@ module hurricane
       use ed_type_init        , only : new_patch_sfc_props
       use grid_coms           , only : nzg                        & ! intent(in)
                                      , nzs                        ! ! intent(in)
+      use fuse_fiss_utils     , only : sort_cohorts
 
       implicit none
       !----- Arguments. -------------------------------------------------------------------!
@@ -482,6 +483,7 @@ module hurricane
                !     Update the derived properties including veg_height, and patch-     !
                ! -level LAI, WAI.                                                       !
                !------------------------------------------------------------------------!
+               call sort_cohorts(cpatch)
                call update_patch_derived_props(csite,ipa,.true.)
 
                !----- Update soil temperature, liquid fraction, etc. -------------------!
@@ -496,7 +498,6 @@ module hurricane
       end do polyloop
       !---------------------------------------------------------------------------!
 
-      ! Prune lianas
 
       !------------------------------------------------------------------------------------!
       !       Find out whether to print detailed information.                              !
