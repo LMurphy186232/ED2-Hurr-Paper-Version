@@ -247,15 +247,15 @@ module hurricane
                      !---------------------------------------------------------------------!
                      !----- Probability of light damage -----------------------------------!
                      prob_light = exp(hurr_a1(ipft) + hurr_c(ipft) * severity              &
-                                                    * cpatch%DBH(ico) ** hurr_b(ipft))     &
+                                                    * cpatch%dbh(ico) ** hurr_b(ipft))     &
                           /  (1 + exp(hurr_a1(ipft) + hurr_c(ipft) * severity              &
-                                                    * cpatch%DBH(ico) ** hurr_b(ipft)))
+                                                    * cpatch%dbh(ico) ** hurr_b(ipft)))
 
                      !----- Probability of light plus medium damage -----------------------!
                      prob_med = exp(hurr_a2(ipft) + hurr_c(ipft) * severity                &
-                                                    * cpatch%DBH(ico) ** hurr_b(ipft))     &
+                                                    * cpatch%dbh(ico) ** hurr_b(ipft))     &
                         /  (1 + exp(hurr_a2(ipft) + hurr_c(ipft) * severity                &
-                                                    * cpatch%DBH(ico) ** hurr_b(ipft)))
+                                                    * cpatch%dbh(ico) ** hurr_b(ipft)))
 
                      !----- Subtract out light damage to make it medium alone -------------!
                      prob_med = prob_med - prob_light
@@ -303,12 +303,12 @@ module hurricane
                      !---------------------------------------------------------------------!
                      bdead_loss = 0
 
-                     !----- Medium damage: loss between 20 and 53.8% ----------------------!
-                     amt = (rand() * (0.538 - 0.2)) + 0.2
+                     !----- Medium damage: structural loss between 20 and 50% -------------!
+                     amt = (rand() * (0.5 - 0.2)) + 0.2
                      bdead_loss = bdead_loss + (prob_med   * amt)
 
-                     !----- Heavy damage: loss between 51.3 and 83% -----------------------!
-                     amt = (rand() * (0.83 - 0.513)) + 0.513
+                     !----- Heavy damage: structural loss between 50 and 80% --------------!
+                     amt = (rand() * (0.8 - 0.5)) + 0.5
                      bdead_loss = bdead_loss + (prob_heavy * amt)
 
                      !----- Current BDEAD -------------------------------------------------!
