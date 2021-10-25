@@ -70,6 +70,10 @@ module hurricane
                                      , hurr_g                      &
                                      , hurr_h                      &
                                      , min_hurr_dbh                &
+                                     , med_dmg_min                 &
+                                     , med_dmg_max                 &
+                                     , max_dmg_min                 &
+                                     , max_dmg_max                 &
                                      , is_grass                    & ! intent(in)
                                      , is_liana                    &
                                      , agf_bs                      & ! intent(in)
@@ -303,12 +307,14 @@ module hurricane
                      !---------------------------------------------------------------------!
                      bdead_loss = 0
 
-                     !----- Medium damage: structural loss between 20 and 50% -------------!
-                     amt = (rand() * (0.5 - 0.2)) + 0.2
+                     !----- Medium damage: structural loss --------------------------------!
+                     amt = (rand() * (med_dmg_max(ipft) - med_dmg_min(ipft)))              &
+                         + med_dmg_min(ipft)
                      bdead_loss = bdead_loss + (prob_med   * amt)
 
-                     !----- Heavy damage: structural loss between 50 and 80% --------------!
-                     amt = (rand() * (0.8 - 0.5)) + 0.5
+                     !----- Heavy damage: structural loss ---------------------------------!
+                     amt = (rand() * (max_dmg_max(ipft) - max_dmg_min(ipft)))              &
+                         + max_dmg_min(ipft)
                      bdead_loss = bdead_loss + (prob_heavy * amt)
 
                      !----- Current BDEAD -------------------------------------------------!

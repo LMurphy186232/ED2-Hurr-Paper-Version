@@ -957,7 +957,11 @@ subroutine init_hurricane_params
                              , hurr_b         &
                              , hurr_g         &
                              , hurr_h         &
-                             , min_hurr_dbh
+                             , min_hurr_dbh   &
+                             , med_dmg_min    &
+                             , med_dmg_max    &
+                             , max_dmg_min    &
+                             , max_dmg_max
    implicit none
 
    !hurricane_db  = ''
@@ -978,6 +982,10 @@ subroutine init_hurricane_params
    hurr_c  = -1.941200
    hurr_g  = 1.438688
    hurr_h  = 0.005136475
+   med_dmg_min = 0.2
+   med_dmg_max = 0.5
+   max_dmg_min = 0.5
+   max_dmg_max = 0.8
 
    !----- Put in the rest of the tropical values ------------------------------------------!
    hurr_a1(2)  = 2.4636
@@ -1003,6 +1011,12 @@ subroutine init_hurricane_params
    hurr_h(2)  = -0.06984992
    hurr_h(3)  = -0.05683523
    hurr_h(18) = -0.005643411
+
+   !----- Palms don't really get damaged --------------------------------------------------!
+   med_dmg_min(18) = 0
+   med_dmg_max(18) = 0
+   max_dmg_min(18) = 0
+   max_dmg_max(18) = 0
 
 
    return

@@ -973,6 +973,10 @@ module pft_coms
    real, dimension(n_pft) :: hurr_b  !< Storm DBH coefficient
    real, dimension(n_pft) :: hurr_g  !< Storm survival "g" parameter
    real, dimension(n_pft) :: hurr_h  !< Storm survival "h" parameter
+   real, dimension(n_pft) :: med_dmg_min  !< Minimum loss of structural for medium damage
+   real, dimension(n_pft) :: med_dmg_max  !< Maximum loss of structural for medium damage
+   real, dimension(n_pft) :: max_dmg_min  !< Minimum loss of structural for heavy damage
+   real, dimension(n_pft) :: max_dmg_max  !< Maximum loss of structural for heavy damage
    real :: min_hurr_dbh              !< Minimum DBH for cohorts to be affected by hurricanes
 
    !=======================================================================================!
