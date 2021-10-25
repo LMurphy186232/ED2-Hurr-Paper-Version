@@ -92,6 +92,7 @@ module hurricane
       use grid_coms           , only : nzg                        & ! intent(in)
                                      , nzs                        ! ! intent(in)
       use fuse_fiss_utils     , only : sort_cohorts
+      use stable_cohorts      , only : is_resolvable
 
       implicit none
       !----- Arguments. -------------------------------------------------------------------!
@@ -481,6 +482,7 @@ module hurricane
                                                 ,old_leaf_water,old_wood_water             &
                                                 ,old_leaf_water_im2,old_wood_water_im2     &
                                                 ,.true.,.false.)
+                     call is_resolvable(csite, ipa, ico, .false., .false., 'hurricane')
                      !---------------------------------------------------------------------!
                    end if  ! Eliminating grasses
                end do cohortloop
