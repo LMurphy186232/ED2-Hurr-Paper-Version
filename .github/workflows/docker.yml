@@ -72,7 +72,7 @@ jobs:
           BUILDNUMBER: ${{ github.run_number }}
           GITSHA1: ${{ github.sha  }}
         with:
-          name: ${{ env.DOCKERHUB_ORG }}/ed
+          name: ${{ secrets.DOCKER_HUB_REPOSITORY }}
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
           tags: ""
