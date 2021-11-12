@@ -75,5 +75,5 @@ jobs:
           name: ${{ env.DOCKERHUB_ORG }}/ed
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
-          tags: "${{ env.TAGS }}"
+          tags: ""
           buildargs: BRANCH,BUILDNUMBER,GITSHA1
