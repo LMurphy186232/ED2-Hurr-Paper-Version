@@ -75,7 +75,7 @@ module update_derived_utils
                                 , yr1st_census            & ! intent(in)
                                 , mon1st_census           & ! intent(in)
                                 , min_recruit_dbh         ! ! intent(in)
-      use hurricane_coms , only : coh_off_allom                                
+      use hurricane_coms , only : coh_off_allom
       implicit none
       !----- Arguments --------------------------------------------------------------------!
       type(patchtype), target     :: cpatch
@@ -121,7 +121,11 @@ module update_derived_utils
           !---- Trees and old grasses get dbh from bdead. ---------------------------------!
           !---- Determine what DBH should be based on BDEAD -------------------------------!
           dbh_aim          = bd2dbh(ipft, cpatch%bdeada(ico), cpatch%bdeadb(ico))
-          if (dbh_aim >= cpatch%dbh(ico)) then
+
+          !----- We want to test for being off-allometry. Guard against the case where ----!
+          !----- a floating-point number infinitesimally smaller than the existing number -!
+          !----- makes us think we're off allometry ---------------------------------------!
+          if (dbh_aim >= cpatch%dbh(ico) .or. ABS(dbh_aim - cpatch%dbh(ico)) < 0.001) then
             !---- DBH has increased! Proceed as normal ------------------------------------!
             cpatch%dbh(ico)  = bd2dbh(ipft, cpatch%bdeada(ico), cpatch%bdeadb(ico))
             cpatch%hite(ico) = dbh2h (ipft, cpatch%dbh   (ico))
