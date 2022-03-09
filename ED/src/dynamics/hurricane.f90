@@ -332,8 +332,8 @@ module hurricane
                      new_hite = bd2h(new_bdead, cpatch%dbh(ico), ipft)
 
                      !----- Don't let height grow -----------------------------------------!
-                     if (new_hite <= cpatch%hite(ico)) then
-
+                     !if (new_hite <= cpatch%hite(ico)) then
+                     if (new_hite < cpatch%hite(ico)) then
                         cpatch%hite(ico) = new_hite
 
                         !----- What is the dbh that matches this new height? --------------!
@@ -355,6 +355,18 @@ module hurricane
                                                         ,cpoly%rd_bar_toc(ipft,isi)        &
                                                         ,cpoly%sla_toc   (ipft,isi) )
                         !------------------------------------------------------------------!
+                     else
+                       !----- Light damage: leaf loss only, up to 25% -----------------------!
+                       cpatch%bleaf(ico) = cpatch%bleaf(ico) * (prob_light * (rand() * 0.25))
+
+                       !----- Have the cohort update itself ------------------------------!
+                       call update_cohort_derived_props(cpatch,ico,cpoly%lsl(isi),.false. &
+                                                       ,cpoly%llspan_toc(ipft,isi)        &
+                                                       ,cpoly%vm_bar_toc(ipft,isi)        &
+                                                       ,cpoly%rd_bar_toc(ipft,isi)        &
+                                                       ,cpoly%sla_toc   (ipft,isi) )
+                       !------------------------------------------------------------------!
+                       
                      end if
 
 
