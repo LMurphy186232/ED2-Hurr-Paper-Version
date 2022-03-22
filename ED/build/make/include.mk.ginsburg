@@ -1,0 +1,106 @@
+#Makefile include include.mk.opt
+# Define make (gnu make works best).
+
+MAKE=/usr/bin/make
+
+# libraries.
+
+BASE=$(ED_ROOT)/build/
+
+# Activate appropriate parts below, comment out others.
+
+# HDF 5  Libraries
+HDF5_INCS= -I/cm/shared/apps/hdf5/1.10.1/lib
+HDF5_LIBS= -L/cm/shared/apps/hdf5/1.10.1/lib -lhdf5 -lm -lhdf5_fortran -lhdf5 \
+	 -lhdf5_hl -L/usr/lib -lz 
+#---------------------------------------------------------------
+# If you have a version of hdf5 compiled in parallel, then you
+# may benefit from collective I/O, then use this flag = 1
+# Otherwise, set it to zero.
+
+USE_COLLECTIVE_MPIO=0
+ 
+#---------------------------------------------------------------
+
+
+# netCDF libraries ---------------------------------------------
+# If you have netCDF set USENC=1 and type the lib folder
+# at NC_LIBS, with the leading -L (e.g. -L/usr/local/lib).
+# If you don't have it, leave USENC=0 and type a dummy
+# folder for NC_LIBS (e.g. -L/dev/null or leave it blank)
+USENC=0
+NC_LIBS=-L/dev/null
+# --------------------------------------------------------------
+
+# interface ----------------------------------------------------
+# This should be 1 unless you are running with -gen-interfaces.
+# Interfaces usually make the compilation to crash when the 
+# -gen-interfaces option are on, so this flag bypass all 
+# interfaces in the code.
+USE_INTERF=1
+
+
+# MPI_Wtime. ---------------------------------------------------
+# If USE_MPIWTIME=1, then it will use MPI libraries to compute
+# the wall time (the only double-precision intrinsic).  In case
+# you don't have it, leave USE_MPIWTIME=0, in which case it will
+# use a simpler, single-precision function.
+USE_MPIWTIME=1
+
+
+#-----------------  LINUX INTEL FORTRAN-95 Compiler/GCC  ---------
+CMACH=PC_LINUX1
+FC_TYPE=GNU
+F_COMP=mpif90
+C_COMP=mpicc
+LOADER=mpif90
+C_LOADER=mpicc
+LIBS=
+MOD_EXT=mod
+
+#------------------------------------------------------------------------------------------#
+##################################### COMPILER OPTIONS #####################################
+##------------------------------------------------------------------------------------------#
+## A/B/C/D. Debugging, strictest compilation flags, lowest performance.                     #
+## E.       Running, most relaxed compilation flags, highest performance.                   #
+##------------------------------------------------------------------------------------------#
+ifeq ($(KIND_COMP),)
+   KIND_COMP=E
+endif
+
+ifeq ($(KIND_COMP),$(filter $(KIND_COMP), A B C D))
+   F_OPTS= -g -fopenmp -O0 -Wall -W -ffpe-trap=invalid,zero,overflow -Wconversion -fbounds-check -fbacktrace -fdump-core
+   C_OPTS = -g -fopenmp -O0 -ffpe-trap=invalid,zero,overflow -fbounds-check
+   LOADER_OPTS=${F_OPTS}
+endif
+    
+ifeq ($(KIND_COMP),E)
+   # fastest runtime options
+   F_OPTS= -O3 -march=native -fopenmp -funroll-loops -fbacktrace
+   C_OPTS= -O2 -march=native -fopenmp -funroll-loops -fbacktrace #-ffpe-trap=invalid,zero,overflow -fbounds-check #-O2
+   LOADER_OPTS=${F_OPTS}
+endif
+
+#------------------------------------------------------------------------------------------#
+############################################################################################
+
+
+#------------------------------------------------------------------------------------------#
+#     If using mpicc and mpif90 as compilers (recommended), leave MPI_PATH, PAR_INCS, and  #
+# PAR_LIBS blank, otherwise provide the includes and libraries for mpi.  Either way, don't #
+# change PAR_DEFS unless you know what you are doing.                                      #
+#------------------------------------------------------------------------------------------#
+MPI_PATH=
+PAR_INCS=
+PAR_LIBS=
+#PAR_DEFS=
+PAR_DEFS=-DRAMS_MPI
+#------------------------------------------------------------------------------------------#
+
+# For IBM,HP,SGI,ALPHA,LINUX use these:
+ARCHIVE=ar rs
+# For NEC SX-6
+#ARCHIVE=sxar rs
+# For SUN,CONVEX
+#ARCHIVE=ar r'
+
