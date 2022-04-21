@@ -3858,7 +3858,7 @@ subroutine init_pft_alloc_params()
    !   limited so most PFTs will be set with a very high number to preserve this behavior. !
    !---------------------------------------------------------------------------------------!
    max_dbh(1:17) = 1000.0
-   max_dbh(18)   = 30.0
+   max_dbh(18)   = 25.0
 
    !---------------------------------------------------------------------------------------!
    !   Tolerance for being off allometry in the DBH-height relationship. This is in        !
@@ -4158,11 +4158,6 @@ subroutine init_pft_alloc_params()
    b2Bl(4) = 1.839431
    b1Bl(18) = 0.02390478
    b2Bl(18) = 1.664594
-
-
-   !----- Palms ------------------------------------------------------------------!
-   b1Bl (18)   = 1.84
-   b2Bl (18)   = 0.88
 
 
    !---------------------------------------------------------------------------------------!
