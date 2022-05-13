@@ -152,7 +152,7 @@ module structural_growth
       real                          :: old_leaf_water_im2
       real                          :: old_wood_water_im2
       logical                       :: print_detailed
-      logical          , parameter  :: printout  = .true.
+      logical          , parameter  :: printout  = .false.
       character(len=17), parameter  :: fracfile  = 'struct_growth.txt'
       !----- Locally saved variables. -----------------------------------------------------!
       logical          , save       :: first_time = .true.
