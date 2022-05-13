@@ -56,6 +56,7 @@ module structural_growth
       use plant_hydro         , only : rwc2tw                      & ! subroutine
                                      , twi2twe                     ! ! subroutine
       use hurricane_coms      , only : coh_off_allom               &
+                                     , include_hurricanes          &
                                      , hurricane_report
       use detailed_coms       , only : idetailed
       implicit none
@@ -893,7 +894,7 @@ module structural_growth
       ! Print info about number of off-allometry cohorts                                   !
       !------------------------------------------------------------------------------------!
       print_detailed = btest(idetailed,6)
-      if (print_detailed) then
+      if (print_detailed .and. include_hurricanes .eq. 1) then
          open (unit=79,file=trim(hurricane_report),form='formatted',access='append'         &
               ,status='old')
 
