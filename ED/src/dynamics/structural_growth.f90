@@ -974,7 +974,7 @@ module structural_growth
       logical                      :: zero_growth
       logical                      :: zero_repro
       logical                      :: off_allometry
-      logical          , parameter :: printout  = .true.
+      logical          , parameter :: printout  = .false.
       character(len=13), parameter :: fracfile  = 'storalloc.txt'
       !----- Locally saved variables. -----------------------------------------------------!
       logical          , save      :: first_time = .true.
