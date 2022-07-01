@@ -16,6 +16,7 @@ module allometry
                              , is_liana    & ! intent(in)
                              , b1Ht        & ! intent(in), lookup table
                              , b2Ht        & ! intent(in), lookup table
+                             , dbhHt_inter &
                              , hgt_ref     ! ! intent(in)
       use ed_misc_coms, only : iallom      ! ! intent(in)
       implicit none
@@ -38,16 +39,21 @@ module allometry
          select case (iallom)
          case (2)
             !----- Poorter et al. (2006) allometry. ---------------------------------------!
-            h2dbh =  ( log(hgt_ref(ipft) / ( hgt_ref(ipft) - h ) ) / b1Ht(ipft) )          &
+            h2dbh =  ( log((hgt_ref(ipft) - dbhHt_inter(ipft))/(hgt_ref(ipft) - h)) / b1Ht(ipft))          &
                ** ( 1.0 / b2Ht(ipft) )
          case default
             !----- Default ED-2.1 allometry. ----------------------------------------------!
-            h2dbh = exp((log(h)-b1Ht(ipft))/b2Ht(ipft))
+            h2dbh = exp((log(h-dbhHt_inter(ipft))-b1Ht(ipft))/b2Ht(ipft))
          end select
       else ! Temperate
-         h2dbh = log(1.0-(h-hgt_ref(ipft))/b1Ht(ipft))/b2Ht(ipft)
+         h2dbh = log(1.0-(h-dbhHt_inter(ipft)-hgt_ref(ipft))/b1Ht(ipft))/b2Ht(ipft)
       end if
       !------------------------------------------------------------------------------------!
+
+      !----- Because we have an intercept, trap for negatives -----------------------------!
+      if (h2dbh <= 0) then
+        h2dbh = 0.0001
+      end if
 
       return
    end function h2dbh
@@ -68,6 +74,7 @@ module allometry
                               , b1Ht        & ! intent(in)
                               , b2Ht        & ! intent(in)
                               , hgt_ref     & ! intent(in)
+                              , dbhHt_inter &
                               , hgt_max     ! ! intent(in)
       use ed_misc_coms , only : iallom      & ! intent(in)
                               , ibigleaf    ! ! intent(in)
@@ -100,14 +107,14 @@ module allometry
                case (2)
                   !----- Weibull function. ------------------------------------------------!
                   lnexp = max(lnexp_min,min(lnexp_max,b1Ht(ipft) * mdbh ** b2Ht(ipft)))
-                  dbh2h = hgt_ref(ipft) * (1. - exp(-lnexp))
+                  dbh2h = dbhHt_inter(ipft) + hgt_ref(ipft) * (1. - exp(-lnexp))
                case default
                   !----- Default ED-2.1 allometry. ----------------------------------------!
-                  dbh2h = exp (b1Ht(ipft) + b2Ht(ipft) * log(mdbh) )
+                  dbh2h = dbhHt_inter(ipft) + exp (b1Ht(ipft) + b2Ht(ipft) * log(mdbh) )
                end select
             else !----- Temperate PFT allometry. ------------------------------------------!
                lnexp = max(lnexp_min,min(lnexp_max,b2Ht(ipft) * dbh))
-               dbh2h = hgt_ref(ipft) + b1Ht(ipft) * (1.0 - exp(lnexp))
+               dbh2h = dbhHt_inter(ipft) + hgt_ref(ipft) + b1Ht(ipft) * (1.0 - exp(lnexp))
             end if
 
          case (1)

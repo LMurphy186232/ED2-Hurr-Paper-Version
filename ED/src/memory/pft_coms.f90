@@ -679,6 +679,12 @@ module pft_coms
    ! PFTs but when they are, they have a different meaning from the temperate allometry.   !
    !---------------------------------------------------------------------------------------!
    real   , dimension(n_pft)    :: hgt_ref
+   !---------------------------------------------------------------------------------------!
+   !     Intercept for DBH -> height allometry. The intercept above is the intercept for   !
+   ! a log-linear relationship. This is a true intercept, allowing the function to not go  !
+   ! through zero.
+   !---------------------------------------------------------------------------------------!
+   real   , dimension(n_pft)    :: dbhHt_inter
    !----- DBH-stem allometry intercept.  All PFTs. ----------------------------------------!
    real   , dimension(n_pft)    :: b1Bs_small
    !----- DBH-stem allometry slope (dimensionless).  All PFTs. ----------------------------!

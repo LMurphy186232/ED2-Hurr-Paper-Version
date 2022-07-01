@@ -2988,6 +2988,7 @@ subroutine init_pft_alloc_params()
                              , bdead_crit            & ! intent(out)
                              , b1Ht                  & ! intent(out)
                              , b2Ht                  & ! intent(out)
+                             , dbhHt_inter           &
                              , b1Bs_small            & ! intent(out)
                              , b2Bs_small            & ! intent(out)
                              , b1Bs_large            & ! intent(out)
@@ -3686,6 +3687,10 @@ subroutine init_pft_alloc_params()
    ! temperate PFTs, and the meaning for tropical PFTs depends on IALLOM.                  !
    !---------------------------------------------------------------------------------------!
    do ipft=1,n_pft
+
+      !----- Default true intercepts to 0 to match old functions --------------------------!
+      dbhHt_inter(ipft) = 0.0
+
       if (is_liana(ipft)) then
          !---- Liana allometry: 10cm lianas are 35m tall ----------------------------------!
          hgt_ref(ipft) = 61.7
@@ -3812,9 +3817,10 @@ subroutine init_pft_alloc_params()
    b1Ht   (2) = 0.02146
    b2Ht   (2) = 0.904
    !----- palms ------------------------------------------------------------------!
-   b1Ht   (18)   = 0.0006546497
-   b2Ht   (18)   = 1.812685
-   hgt_ref(18)   = 100
+   b1Ht       (18)   = 9.662e-05
+   b2Ht       (18)   = 2.941088
+   hgt_ref    (18)   = 26
+   dbhHt_inter(18)   = 4.12
 
    !---------------------------------------------------------------------------------------!
    !    Minimum and maximum height allowed for each cohort.                                !
@@ -3833,6 +3839,8 @@ subroutine init_pft_alloc_params()
    hgt_min(:) = merge( merge(0.50        ,0.50         ,is_grass(:))                       &
                      , merge(0.15        ,hgt_ref+0.2  ,is_grass(:))                       &
                      , is_tropical(:)                                )
+   !----- Don't allow hgt_min to be less than height intercept ----------------------------!
+   hgt_min(:) = max(hgt_min(:), dbhHt_inter(:))
    hgt_max(:) = merge( merge(1.50        ,hgt_max_trop ,is_grass(:))                       &
                      , merge(0.95*b1Ht(:),0.999*b1Ht(:),is_grass(:))                       &
                      , is_tropical(:)                                )
