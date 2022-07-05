@@ -719,6 +719,8 @@ recursive subroutine read_ed_xml_config(filename)
            if(texist) hgt_max(myPFT) = sngloff(rval,tiny_offset)
            call getConfigREAL  ('min_dbh','pft',i,rval,texist)
            if(texist) min_dbh(myPFT) = sngloff(rval,tiny_offset)
+           call getConfigREAL  ('dbhHt_inter','pft',i,rval,texist)
+           if(texist) dbhHt_inter(myPFT) = sngloff(rval,tiny_offset)
 
            call getConfigREAL  ('max_dbh','pft',i,rval,texist)
            if(texist) max_dbh(myPFT) = sngloff(rval,tiny_offset)
@@ -2137,6 +2139,7 @@ subroutine write_ed_xml_config
         call putConfigREAL("hgt_max",      hgt_max(i))
         call putConfigREAL("min_dbh",      min_dbh(i))
         call putConfigREAL("max_dbh",      max_dbh(i))
+        call putConfigREAL("dbhHt_inter" , dbhHt_inter(i))
         call putConfigREAL("dbh_crit",     dbh_crit(i))
         call putConfigREAL("dbh_bigleaf",  dbh_bigleaf(i))
         call putConfigREAL("off_allom_tol",off_allom_tol(i))
@@ -2223,7 +2226,7 @@ subroutine write_ed_xml_config
         call putConfigREAL("hurr_b" , hurr_b (i))
         call putConfigREAL("hurr_c" , hurr_c (i))
         call putConfigREAL("hurr_g" , hurr_b (i))
-        call putConfigREAL("hurr_h" , hurr_h (i))                   
+        call putConfigREAL("hurr_h" , hurr_h (i))
 
      !! OTHER
         call putConfigREAL("seed_rain",        seed_rain(i))
