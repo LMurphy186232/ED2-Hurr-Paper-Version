@@ -216,6 +216,7 @@ module hurricane
                   !----- Hurricanes don't affect grass and small cohorts ------------------!
                   if (.not. is_grass(ipft) .and.                                           &
                       .not. is_liana(ipft) .and.                                           &
+                      cpatch%wood_resolvable(ico) .and.                                    &
                       cpatch%dbh(ico)      .ge. min_hurr_dbh) then
 
 
@@ -507,8 +508,9 @@ module hurricane
                call update_patch_derived_props(csite,ipa,.true.)
 
                !----- Update soil temperature, liquid fraction, etc. -------------------!
-               call new_patch_sfc_props(csite,ipa,nzg,nzs                       &
-                                       ,cpoly%ntext_soil(:,isi))
+               ! No - shouldn't need this as we are not creating new patches
+               !call new_patch_sfc_props(csite,ipa,nzg,nzs                       &
+               !                        ,cpoly%ntext_soil(:,isi))
             end do patchloop
 
            !----- Update AGB, basal area. ------------------------------------------!

@@ -29,7 +29,8 @@ USE_MPIWTIME=1
 CMACH=PC_LINUX1
 FC_TYPE=GNU
 F_COMP=mpif90
-#F_OPTS=-O3 -ffree-line-length-none  -fno-whole-file
+#F_OPTS=-O3 -ffree-line-length-none  -fno-whole-file 
+#-fopenmp doesn't work on the VM
 F_OPTS= -O0 -ffree-line-length-none -fno-whole-file -g
 C_COMP=mpicc
 C_OPTS=-O3
