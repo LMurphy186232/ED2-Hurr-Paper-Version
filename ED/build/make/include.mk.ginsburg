@@ -10,7 +10,7 @@ BASE=$(ED_ROOT)/build/
 # Activate appropriate parts below, comment out others.
 
 # HDF 5  Libraries
-HDF5_INCS= -I/cm/shared/apps/hdf5/1.10.1/lib
+HDF5_INCS= -I/cm/shared/apps/hdf5/1.10.1/include
 HDF5_LIBS= -L/cm/shared/apps/hdf5/1.10.1/lib -lhdf5 -lm -lhdf5_fortran -lhdf5 \
 	 -lhdf5_hl -L/usr/lib -lz 
 #---------------------------------------------------------------
@@ -69,14 +69,14 @@ ifeq ($(KIND_COMP),)
 endif
 
 ifeq ($(KIND_COMP),$(filter $(KIND_COMP), A B C D))
-   F_OPTS= -g -fopenmp -O0 -Wall -W -ffpe-trap=invalid,zero,overflow -Wconversion -fbounds-check -fbacktrace -fdump-core
+   F_OPTS= -g -fopenmp -O0 -ffree-line-length-none -Wall -W -ffpe-trap=invalid,zero,overflow -Wconversion -fbounds-check -fbacktrace -fdump-core
    C_OPTS = -g -fopenmp -O0 -ffpe-trap=invalid,zero,overflow -fbounds-check
    LOADER_OPTS=${F_OPTS}
 endif
     
 ifeq ($(KIND_COMP),E)
    # fastest runtime options
-   F_OPTS= -O3 -march=native -fopenmp -funroll-loops -fbacktrace
+   F_OPTS= -O3 -march=native -fopenmp -funroll-loops -fbacktrace -ffree-line-length-none
    C_OPTS= -O2 -march=native -fopenmp -funroll-loops -fbacktrace #-ffpe-trap=invalid,zero,overflow -fbounds-check #-O2
    LOADER_OPTS=${F_OPTS}
 endif
