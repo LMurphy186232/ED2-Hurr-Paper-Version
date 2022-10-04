@@ -125,7 +125,7 @@ module update_derived_utils
           !----- We want to test for being off-allometry. Guard against the case where ----!
           !----- a floating-point number infinitesimally smaller than the existing number -!
           !----- makes us think we're off allometry ---------------------------------------!
-          if (dbh_aim >= cpatch%dbh(ico) .or. ABS(dbh_aim - cpatch%dbh(ico)) < 0.001) then
+          if (dbh_aim >= cpatch%dbh(ico) .or. ABS(dbh_aim - cpatch%dbh(ico)) < 0.1) then
             !---- DBH has increased! Proceed as normal ------------------------------------!
             cpatch%dbh(ico)  = bd2dbh(ipft, cpatch%bdeada(ico), cpatch%bdeadb(ico))
             cpatch%hite(ico) = dbh2h (ipft, cpatch%dbh   (ico))
