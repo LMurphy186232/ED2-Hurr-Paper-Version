@@ -884,8 +884,16 @@ recursive subroutine read_ed_xml_config(filename)
            call getConfigREAL  ('hurr_g','pft',i,rval,texist)
            if(texist) hurr_g(myPFT) = sngloff(rval,tiny_offset)
            call getConfigREAL  ('hurr_h','pft',i,rval,texist)
-           if(texist) hurr_g(myPFT) = sngloff(rval,tiny_offset)
-
+           if(texist) hurr_h(myPFT) = sngloff(rval,tiny_offset)
+           call getConfigREAL  ('med_dmg_min','pft',i,rval,texist)
+           if(texist) med_dmg_min(myPFT) = sngloff(rval,tiny_offset)
+           call getConfigREAL  ('med_dmg_max','pft',i,rval,texist)
+           if(texist) med_dmg_max(myPFT) = sngloff(rval,tiny_offset)
+           call getConfigREAL  ('max_dmg_min','pft',i,rval,texist)
+           if(texist) max_dmg_min(myPFT) = sngloff(rval,tiny_offset)
+           call getConfigREAL  ('max_dmg_max','pft',i,rval,texist)
+           if(texist) max_dmg_max(myPFT) = sngloff(rval,tiny_offset)
+           
 !!! OTHER / derived
            call getConfigREAL  ('seed_rain','pft',i,rval,texist)
            if(texist) seed_rain(myPFT) = sngloff(rval,tiny_offset)
@@ -2227,6 +2235,10 @@ subroutine write_ed_xml_config
         call putConfigREAL("hurr_c" , hurr_c (i))
         call putConfigREAL("hurr_g" , hurr_b (i))
         call putConfigREAL("hurr_h" , hurr_h (i))
+        call putConfigREAL("med_dmg_min" , med_dmg_min(i))
+        call putConfigREAL("med_dmg_max" , med_dmg_max(i))
+        call putConfigREAL("max_dmg_min" , max_dmg_min(i))
+        call putConfigREAL("max_dmg_max" , max_dmg_max(i))
 
      !! OTHER
         call putConfigREAL("seed_rain",        seed_rain(i))
