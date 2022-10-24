@@ -334,7 +334,7 @@ module hurricane
 
                      !----- Don't let height grow -----------------------------------------!
                      !if (new_hite <= cpatch%hite(ico)) then
-                     if (new_hite < cpatch%hite(ico)) then
+                     if (new_hite < cpatch%hite(ico) .and. cpatch%hite(ico) - new_hite > 0.1) then
                         cpatch%hite(ico) = new_hite
 
                         !----- What is the dbh that matches this new height? --------------!
