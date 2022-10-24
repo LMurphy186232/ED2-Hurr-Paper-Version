@@ -39,7 +39,7 @@ module allometry
          select case (iallom)
          case (2)
             !----- Poorter et al. (2006) allometry. ---------------------------------------!
-            h2dbh =  ( log((hgt_ref(ipft) - dbhHt_inter(ipft))/(hgt_ref(ipft) - h)) / b1Ht(ipft))          &
+            h2dbh =  (log(1-((h-dbhHt_inter(ipft))/hgt_ref(ipft)))/-b1Ht(ipft))            &
                ** ( 1.0 / b2Ht(ipft) )
          case default
             !----- Default ED-2.1 allometry. ----------------------------------------------!
