@@ -9539,8 +9539,9 @@ subroutine init_derived_params_after_xml()
          select case (trait_plasticity_scheme)
          case (3)
             if (is_tropical(ipft) .and. (.not. is_grass(ipft))) then
-                kplastic_vm0(ipft) = - 1.0 * (0.811 * log(Vcmax25(ipft)) - 2.22)           &
-                                   / kplastic_ref_lai
+                !kplastic_vm0(ipft) = - 1.0 * (0.811 * log(Vcmax25(ipft)) - 2.22)           &
+                !                   / kplastic_ref_lai
+                kplastic_vm0(ipft) = -1.0 * (0.0121 * Vcmax25(ipft) + 0.31055) / kplastic_ref_lai
             endif
          end select
          !---------------------------------------------------------------------------------!
@@ -9572,7 +9573,9 @@ subroutine init_derived_params_after_xml()
          case (3)
             !----- Make sure this is applied to tropical trees only. ----------------------!
             if (is_tropical(ipft) .and. (.not. is_grass(ipft))) then
-                kplastic_rd0(ipft) = - 1.0 * (0.559 * log(Rdark25) + 0.82)                 &
+                !kplastic_rd0(ipft) = - 1.0 * (0.559 * log(Rdark25) + 0.82)                 &
+                !                   / kplastic_ref_lai
+                kplastic_rd0(ipft) = - 1.0 * (0.9487 *Rdark25 + 0.5872)                    &
                                    / kplastic_ref_lai
             end if
             !------------------------------------------------------------------------------!
@@ -9609,8 +9612,10 @@ subroutine init_derived_params_after_xml()
          select case (trait_plasticity_scheme)
          case (3)
             if (is_tropical(ipft) .and. (.not. is_grass(ipft))) then
-                kplastic_SLA(ipft) = (0.214 * log(1. / SLA(ipft) * 2000.) - 0.088)         &
-                                   / kplastic_ref_lai
+                !kplastic_SLA(ipft) = (0.214 * log(1. / SLA(ipft) * 2000.) - 0.088)         &
+                !                   / kplastic_ref_lai
+                kplastic_SLA(ipft) = 0.9962 / kplastic_ref_lai        &
+                                  / kplastic_ref_lai
             endif
          end select
          !---------------------------------------------------------------------------------!
@@ -9646,8 +9651,9 @@ subroutine init_derived_params_after_xml()
          select case (trait_plasticity_scheme)
          case (3)
             if (is_tropical(ipft) .and. (.not. is_grass(ipft))) then
-                kplastic_LL(ipft) = -1.0 * (0.504 * log(Vcmax25(ipft) * SLA(ipft) / 2000.) &
-                                           - 0.401) / kplastic_ref_lai
+                !kplastic_LL(ipft) = -1.0 * (0.504 * log(Vcmax25(ipft) * SLA(ipft) / 2000.) &
+                !                           - 0.401) / kplastic_ref_lai
+                kplastic_LL(ipft) = 1.2 / kplastic_ref_lai
             endif
          end select
 
