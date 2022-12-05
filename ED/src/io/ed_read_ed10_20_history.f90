@@ -931,10 +931,10 @@ subroutine read_ed10_ed20_history_file
                         case default
                         
                            !----- Add plasticity default variables ------------------------!
-                           cpatch%sla(ic2) = SLA(ipft(ic))
-                           cpatch%llspan(ic2) = 12. / leaf_turnover_rate(ipft(ic))
-                           cpatch%rd0(ic2) = Rd0(ipft(ic))
-                           cpatch%vm0(ic2) = Vm0(ipft(ic))
+                           !cpatch%sla(ic2) = SLA(ipft(ic))
+                           !cpatch%llspan(ic2) = 12. / leaf_turnover_rate(ipft(ic))
+                           !cpatch%rd0(ic2) = Rd0(ipft(ic))
+                           !cpatch%vm0(ic2) = Vm0(ipft(ic))
                            
                            call update_cohort_plastic_trait(cpatch,ic2,.true.              &
                                                            ,leaf_lifespan(ipft(ic))        &
