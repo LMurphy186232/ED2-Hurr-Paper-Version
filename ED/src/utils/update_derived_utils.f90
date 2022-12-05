@@ -317,21 +317,26 @@ module update_derived_utils
         !--------------------------------------------------------------------------------------------!
         ! use leaf longevity to determine how much trait can change with the assumption that trait
         ! can only change after leaf replacement
-        !--------------------------------------------------------------------------------------------!
-        lnexp              = max(lnexp_min,kplastic_vm0(ipft) * max_cum_lai)
-        trait_change_frac  = vm_bar_toc * exp(lnexp) / cpatch%vm_bar(ico) - 1.
+        !--------------------------------------------------------------------------------------------!        
+        if (cpatch%vm_bar(ico) .eq. 0) then
+          lnexp              = max(lnexp_min,kplastic_vm0(ipft) * max_cum_lai)
+          cpatch%vm_bar(ico) = vm_bar_toc * exp(lnexp)
+        else
+          lnexp              = max(lnexp_min,kplastic_vm0(ipft) * max_cum_lai)
+          trait_change_frac  = vm_bar_toc * exp(lnexp) / cpatch%vm_bar(ico) - 1.
 
-        !--------------------------------------------------------------------------------------------!
-        ! modify the trait_change_frac based on how much leaf has turned over within a month (i.e.
-        ! the update frequency). Meanwhile, two special cases are considered here. (1) when the
-        ! total frac_change is smaller than 5%, we just allow for the change. Otherwise, the trait
-        ! can never reach the target value; (2) for new cohorts or initialized runs that are
-        ! marked by the is_instant flag
-        !--------------------------------------------------------------------------------------------!
-        instant_change_flag = (abs(trait_change_frac) < 0.05) .or. is_instant
-        trait_change_frac = trait_change_frac                                          &
+          !--------------------------------------------------------------------------------------------!
+          ! modify the trait_change_frac based on how much leaf has turned over within a month (i.e.
+          ! the update frequency). Meanwhile, two special cases are considered here. (1) when the
+          ! total frac_change is smaller than 5%, we just allow for the change. Otherwise, the trait
+          ! can never reach the target value; (2) for new cohorts or initialized runs that are
+          ! marked by the is_instant flag
+          !--------------------------------------------------------------------------------------------!
+          instant_change_flag = (abs(trait_change_frac) < 0.05) .or. is_instant
+          trait_change_frac = trait_change_frac                                          &
                           * merge(1., min(1.,1. / cpatch%llspan(ico)),instant_change_flag)
-        cpatch%vm_bar(ico) = cpatch%vm_bar(ico) * (1. + trait_change_frac)
+          cpatch%vm_bar(ico) = cpatch%vm_bar(ico) * (1. + trait_change_frac)
+        end if
       case default
         !----- Use light level to change Vm0. ---------------------------------------------!
         lnexp              = max(lnexp_min,kplastic_vm0(ipft) * max_cum_lai)
