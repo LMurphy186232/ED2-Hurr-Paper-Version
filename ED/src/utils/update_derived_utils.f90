@@ -324,6 +324,9 @@ module update_derived_utils
         if (cpatch%vm_bar(ico) .eq. 0) then
           cpatch%vm_bar(ico) = Vm0(ipft)
         end if
+        if (cpatch%llspan(ico) .eq. 0) then
+          cpatch%llspan(ico) = 12.0 / leaf_turnover_rate(ipft)
+        end if
         
         lnexp              = max(lnexp_min,kplastic_vm0(ipft) * max_cum_lai)
         trait_change_frac  = vm_bar_toc * exp(lnexp) / cpatch%vm_bar(ico) - 1.
