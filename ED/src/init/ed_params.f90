@@ -9029,6 +9029,7 @@ subroutine init_derived_params_after_xml()
          if (seed_rain(ipft) == undef_real) seed_rain(ipft)  = 0.1 * init_density(ipft)
          !---------------------------------------------------------------------------------!
       end select
+      veg_hcap_min(18) = 0.2
       !------------------------------------------------------------------------------------!
 
 
