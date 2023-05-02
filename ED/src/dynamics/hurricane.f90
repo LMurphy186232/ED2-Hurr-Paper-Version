@@ -343,16 +343,24 @@ module hurricane
                         !----- Use these size measures to get other ABG values ------------!
                         !----- Make sure that no measure increases ------------------------!
                         amt = size2bd(dbh_aim, cpatch%hite(ico), ipft) * agf_bs(ipft)
-                        if (amt < cpatch%bdeada(ico)) then cpatch%bdeada(ico) = amt
+                        if (amt < cpatch%bdeada(ico)) then 
+                          cpatch%bdeada(ico) = amt
+                        end if
                         
                         amt = size2bl(dbh_aim, cpatch%hite(ico), cpatch%sla(ico), ipft)
-                        if (amt < cpatch%bleaf(ico)) then cpatch%bleaf(ico) = amt
+                        if (amt < cpatch%bleaf(ico)) then 
+                          cpatch%bleaf(ico) = amt
+                        end if
                         
                         amt = cpatch%bleaf(ico) * qbark(ipft) * cpatch%hite(ico) * agf_bs(ipft)
-                        if (amt < cpatch%bbarka(ico)) then cpatch%bbarka(ico) = amt
+                        if (amt < cpatch%bbarka(ico)) then 
+                          cpatch%bbarka(ico) = amt
+                        end if
                         
                         amt = cpatch%bleaf(ico) * qsw  (ipft) * cpatch%hite(ico) * agf_bs(ipft)
-                        if (amt < cpatch%bsapwooda(ico)) then cpatch%bsapwooda(ico) = amt
+                        if (amt < cpatch%bsapwooda(ico)) then 
+                          cpatch%bsapwooda(ico) = amt
+                        end if
 
                         !----- Light damage: leaf loss only, up to 25% -----------------------!
                         cpatch%bleaf(ico) = cpatch%bleaf(ico) * (prob_light * (rand() * 0.25))
