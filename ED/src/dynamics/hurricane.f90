@@ -192,7 +192,7 @@ module hurricane
         write (unit=79,fmt='(a,i4,a,i4,a,f12.5)')  'Hurricane occurring in '               &
              ,current_time%month, '/', current_time%year, ' of severity ', severity
 
-        write (unit=79,fmt='(a)') 'PFT, DBH, Beginning height, Ending height, Beginning AGB, Ending AGB, Beginning NPLANT, Ending NPLANT'
+        write (unit=79,fmt='(a)') 'PFT, DBH, Beginning height, Ending height, Beginning AGB, Ending AGB, Beginning NPLANT, Ending NPLANT, Patch area'
 
       end if
 
@@ -341,10 +341,18 @@ module hurricane
                         dbh_aim = h2dbh(cpatch%hite(ico), ipft)
 
                         !----- Use these size measures to get other ABG values ------------!
-                        cpatch%bdeada   (ico) = size2bd(dbh_aim, cpatch%hite(ico), ipft) * agf_bs(ipft)
-                        cpatch%bleaf    (ico) = size2bl(dbh_aim, cpatch%hite(ico), cpatch%sla(ico), ipft)
-                        cpatch%bbarka   (ico) = cpatch%bleaf(ico) * qbark(ipft) * cpatch%hite(ico) * agf_bs(ipft)
-                        cpatch%bsapwooda(ico) = cpatch%bleaf(ico) * qsw  (ipft) * cpatch%hite(ico) * agf_bs(ipft)
+                        !----- Make sure that no measure increases ------------------------!
+                        amt = size2bd(dbh_aim, cpatch%hite(ico), ipft) * agf_bs(ipft)
+                        if (amt < cpatch%bdeada(ico)) then cpatch%bdeada(ico) = amt
+                        
+                        amt = size2bl(dbh_aim, cpatch%hite(ico), cpatch%sla(ico), ipft)
+                        if (amt < cpatch%bleaf(ico)) then cpatch%bleaf(ico) = amt
+                        
+                        amt = cpatch%bleaf(ico) * qbark(ipft) * cpatch%hite(ico) * agf_bs(ipft)
+                        if (amt < cpatch%bbarka(ico)) then cpatch%bbarka(ico) = amt
+                        
+                        amt = cpatch%bleaf(ico) * qsw  (ipft) * cpatch%hite(ico) * agf_bs(ipft)
+                        if (amt < cpatch%bsapwooda(ico)) then cpatch%bsapwooda(ico) = amt
 
                         !----- Light damage: leaf loss only, up to 25% -----------------------!
                         cpatch%bleaf(ico) = cpatch%bleaf(ico) * (prob_light * (rand() * 0.25))
@@ -430,22 +438,21 @@ module hurricane
 
                      !---------------------------------------------------------------------!
                      !       Update our reporting variables                                !
+                     !       Turning off summary for now - need more thought here          !
                      !---------------------------------------------------------------------!
-                     nplant_removed(ipft) = nplant_removed(ipft) + nplant_loss
-                     agb_removed(ipft)    = agb_removed(ipft)                              &
-                                          + (bleaf_loss + bdeada_loss + bbarka_loss        &
-                                          +  bsapwooda_loss)
+                     !nplant_removed(ipft) = nplant_removed(ipft) + (nplant_loss * csite%area(ipa))
+                     !agb_removed(ipft)    = agb_removed(ipft)                              &
+                     !                     + (bleaf_loss + bdeada_loss + bbarka_loss        &
+                     !                     +  bsapwooda_loss)
 
                      amt = cpatch%bbarka(ico) + cpatch%bleaf(ico) + cpatch%bdeada(ico)     &
                          + cpatch%bsapwooda(ico)
-                     !write (unit=79,fmt='(i4,a,f12.5,a,f12.5,a,f12.5)')                    &
-                    !   ipft, ',', cpatch%dbh(ico), ',', hite_in, ','                 &
-                    !            ,cpatch%hite(ico)
-
-                    write (unit=79,fmt='(i4,a,f12.5,a,f12.5,a,f12.5,a,f12.5,a,f12.5,a,f12.5,a,f12.5)')&
+                   
+                    write (unit=79,fmt='(i4,a,f12.5,a,f12.5,a,f12.5,a,f12.5,a,f12.5,a,f12.5,a,f12.5,a,f12.5)')&
                              ipft, ',', cpatch%dbh(ico), ',', hite_in, ','                 &
                              , cpatch%hite(ico), ',', agb_in, ','                          &
-                             , amt, ',', nplant_in, ',', cpatch%nplant(ico)
+                             , amt, ',', nplant_in, ',', cpatch%nplant(ico), ','           &
+                             , csite%area(ipa)
                     !---------------------------------------------------------------------!
 
 
@@ -524,27 +531,27 @@ module hurricane
       !------------------------------------------------------------------------------------!
       !       Find out whether to print detailed information.                              !
       !------------------------------------------------------------------------------------!
-      print_detailed = btest(idetailed,6)
-      if (print_detailed) then
+      !print_detailed = btest(idetailed,6)
+      !if (print_detailed) then
         !open (unit=79,file=trim(hurricane_report),form='formatted',access='append'          &
         !     ,status='old')
 
-        write (unit=79,fmt='(a,i4,a,i4,a,f12.5)')  'Hurricane occurring in '          &
-             ,current_time%month, '/', current_time%year, ' of severity ', severity
-        write (unit=79,fmt='(a)') 'NPLANT removed:'
-        do ipft=1,n_pft
-           if (nplant_removed(ipft) > 0) then
-              write (unit=79,fmt='(a,i4,a,es12.5)') 'PFT ', ipft, ': ', nplant_removed(ipft)
-           end if
-        end do
-        write (unit=79,fmt='(a,1x)') 'AGB removed:'
-        do ipft=1,n_pft
-           if (agb_removed(ipft) > 0) then
-              write (unit=79,fmt='(a,i4,a,es12.5)') 'PFT ', ipft, ': ', agb_removed(ipft)
-           end if
-        end do
-        close(unit=79,status='keep')
-      end if
+      !  write (unit=79,fmt='(a,i4,a,i4,a,f12.5)')  'Hurricane occurring in '          &
+      !       ,current_time%month, '/', current_time%year, ' of severity ', severity
+      !  write (unit=79,fmt='(a)') 'NPLANT removed:'
+      !  do ipft=1,n_pft
+      !     if (nplant_removed(ipft) > 0) then
+      !        write (unit=79,fmt='(a,i4,a,es12.5)') 'PFT ', ipft, ': ', nplant_removed(ipft)
+      !     end if
+      !  end do
+      !  write (unit=79,fmt='(a,1x)') 'AGB removed:'
+      !  do ipft=1,n_pft
+      !     if (agb_removed(ipft) > 0) then
+      !        write (unit=79,fmt='(a,i4,a,es12.5)') 'PFT ', ipft, ': ', agb_removed(ipft)
+      !     end if
+      !  end do
+      !  close(unit=79,status='keep')
+      !end if
       !------------------------------------------------------------------------------------!
 
       return
