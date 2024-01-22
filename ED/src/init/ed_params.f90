@@ -5031,7 +5031,7 @@ subroutine init_pft_photo_params()
    Vm0(2) = 12
    Vm0(3) = 9
    Vm0(4) = 8
-   Vm0(19) = 10
+   Vm0(18) = 10
 
 
 
