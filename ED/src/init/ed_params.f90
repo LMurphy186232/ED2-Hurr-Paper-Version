@@ -4328,6 +4328,11 @@ subroutine init_pft_alloc_params()
    b1Bs_large(4) = 0.118
    b2Bs_small(4) = 2.455
    b2Bs_large(4) = 2.455
+   
+   b1Bs_small(18) = 0.03
+   b1Bs_large(18) = 0.03
+   b2Bs_small(18) = 2.75
+   b2Bs_large(18) = 2.75
 
 
 
