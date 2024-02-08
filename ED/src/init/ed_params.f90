@@ -3405,6 +3405,9 @@ subroutine init_pft_alloc_params()
 
    !----- Fraction of structural stem that is assumed to be above ground. -----------------!
    agf_bs(:) = 0.7
+   
+   !----- LEM hardcoding for palms --------------------------------------------------------!
+   agf_bs(18) = 0.8
    !---------------------------------------------------------------------------------------!
 
 
